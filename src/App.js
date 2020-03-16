@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.png';
 import './App.css';
+import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
         <img src={logo} alt="logo" />
       </header>
       <body>
+        <Container>
+          
+        </Container>
       </body>
     </div>
   );
