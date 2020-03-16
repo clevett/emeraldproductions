@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.png';
 import './App.css';
-import Container from 'react-bootstrap/Container';
+import { Container, Row, Col } from 'react-bootstrap';
+import './bootstrap/dist/css/bootstrap.css';
+import { Navigation } from './components/Navigation';
 
 function App() {
   return (
@@ -9,11 +11,12 @@ function App() {
       <header className="App-header fluid">
         <img src={logo} alt="logo" />
       </header>
-      <body>
-        <Container>
-          
-        </Container>
-      </body>
+      <Navigation />
+      <Container className='bg-primary'>
+        <Row>
+          dfasfdasfadsfadsfadsfsd
+        </Row>
+      </Container>
     </div>
   );
 }
