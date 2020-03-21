@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './imgs/logo.png';
 import portrait from './imgs/takedown.png';
 import './App.css';
-import './scss/custom.scss';
+import './index.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Navigation } from './components/Navigation';
 
