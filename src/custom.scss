@@ -1,0 +1,17 @@
+// Import Bootstrap and its default variables
+// Required
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// change the theme
+$theme-colors: (
+  "primary":gold,
+  "danger": #ff4136
+);
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.test {
+  background-color: magenta;
+}

@@ -1,10 +1,21 @@
-// Import Bootstrap and its default variables
-// Required
-@import "../node_modules/bootstrap/scss/bootstrap";
+
 
 // change the theme
 $theme-colors: (
-  "primary":gold,
+  "primary":#2b2b2b,
+  "secondary":black,
   "danger": #ff4136
 );
+
+
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px;
+  }
+}
+
+// Import Bootstrap and its default variables
+// Required
+@import "../node_modules/bootstrap/scss/bootstrap";
 
