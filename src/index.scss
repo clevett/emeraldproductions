@@ -8,14 +8,20 @@ $theme-colors: (
 );
 
 
-
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px;
   }
 }
 
+$dark: black;
+
+.navbar {
+  min-width: 150px;
+}
+
 // Import Bootstrap and its default variables
 // Required
 @import "../node_modules/bootstrap/scss/bootstrap";
+
 

@@ -1,34 +1,30 @@
 import React from 'react';
-import logo from './imgs/logo.png';
 import portrait from './imgs/takedown.png';
 import './index.scss';
+import './App.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Navigation } from './components/Navigation';
+import Image from 'react-bootstrap/Image'
+import logo from './imgs/logo.png';
 
 function App() {
   return (
     <div className="App">
-      <Row className='bg-secondary'>
-        <header className="App-header fluid">
-          <img src={logo} alt="Emerald Productions, LLC" />
-        </header>
-      </Row>
       <Navigation />
-      <body>
+      <Row className='bg-primary'>
         <Container className='bg-primary'>
-          <Row>
-            <Col>
-              <img src={portrait} alt='super hero known as Takedown' />
-            </Col>
-            <Col>
+          <Col xs={6} md={5} className='portrait'>
+            <Image className='box-shadow' src={portrait} alt='super hero known as Takedown' />
+          </Col>
+          <Col xs={6} md={7} className='text-left'>
+            <section className='description'>
               <h1>Cassie Levett</h1>
               <h2>Front-End Developer</h2>
-              <section>Building solutions one challenge at a time.</section>
-            </Col>
-          </Row>
+              <span>Building solutions one challenge at a time.</span>
+            </section>
+          </Col>
         </Container>
-      </body>
-
+      </Row>
     </div>
   );
 }
