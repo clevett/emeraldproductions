@@ -1,22 +1,33 @@
 import React from 'react';
-import logo from './logo.png';
+import logo from './imgs/logo.png';
+import portrait from './imgs/takedown.png';
 import './App.css';
+import './scss/custom.scss';
 import { Container, Row, Col } from 'react-bootstrap';
-import './bootstrap/dist/css/bootstrap.css';
 import { Navigation } from './components/Navigation';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header fluid">
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="Emerald Productions, LLC" />
       </header>
       <Navigation />
-      <Container className='bg-primary'>
-        <Row>
-          dfasfdasfadsfadsfadsfsd
-        </Row>
-      </Container>
+      <body>
+        <Container className='bg-primary'>
+          <Row>
+            <Col>
+              <img src={portrait} alt='super hero known as Takedown' />
+            </Col>
+            <Col>
+              <h1>Cassie Levett</h1>
+              <h2>Front-End Developer</h2>
+              <section>Building solutions one challenge at a time.</section>
+            </Col>
+          </Row>
+        </Container>
+      </body>
+
     </div>
   );
 }
