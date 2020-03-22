@@ -1,31 +1,18 @@
-import React from 'react'
-import Image from 'react-bootstrap/Image'
-import discord from '../../imgs/Discord-Icon.png';
-import github from '../../imgs/GitHub-Icon.png';
-import linkedin from '../../imgs/LinkedIN-Icon.png';
-import { Col, Row } from 'react-bootstrap';
+import React from 'react';
 
-export function ContactBar() {
+import Contact from '../Contact/Contact'
+import { Row } from 'react-bootstrap';
+
+export class ContactBar extends React.Component {
+  render() {
     return (
-        <Row className='bg-secondary contact-bar'>
-            <Col md={41}>
-                <Row>
-                    <Image className='shadow' src={github} alt='super hero known as Takedown' />
-                    <span>cllevett</span>
-                </Row>
-            </Col>
-            <Col md={4}>
-                <Row>
-                    <Image className='shadow' src={discord} alt='super hero known as Takedown' />
-                    <span>Necoya #7621</span>
-                </Row>
-            </Col>
-            <Col md={4}>
-                <Row>
-                    <Image className='shadow' src={linkedin} alt='super hero known as Takedown' />
-                    <span>LinkedIn</span>
-                </Row>
-            </Col>
+        <Row className="ContactBar bg-secondary contact-bar text-white font-weight-bold">
+            {
+            this.props.contacts.map(contact => <Contact contact={contact} />)
+            }
         </Row>
-    );
+    )
+  }
 }
+
+export default ContactBar;
