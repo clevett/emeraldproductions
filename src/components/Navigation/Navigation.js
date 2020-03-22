@@ -23,8 +23,8 @@ class Navigation extends React.Component {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.1">Shadowrun</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link className='text-white font-weight-bold' href="#home">About</Nav.Link>
-                    <Nav.Link className='text-white font-weight-bold' href="#link">Contact</Nav.Link>
+                    <Nav.Link className='text-white font-weight-bold' href="#about">About</Nav.Link>
+                    <Nav.Link className='text-white font-weight-bold' href="#contact">Contact</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             </Navbar>
