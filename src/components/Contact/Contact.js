@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image'
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap'
 
 class Contact extends React.Component {
   render() {
@@ -8,12 +8,14 @@ class Contact extends React.Component {
       return (
         <Col className='Contact'>
             <Row>
-                <Image className='shadow' src={contact.src} alt={`${contact.name} logo`} />
+              <Col className='m-auto'>
+                <Image className='shadow mr-2' src={contact.src} alt={`${contact.name} logo`} />
                 <span>{contact.name}</span>
+              </Col>
             </Row>
         </Col>
       );     
   }
 }
 
-export default Contact;
+export default Contact

@@ -8,8 +8,8 @@ class AppCenter extends React.Component {
   render() {
     return (
       <Row className='Center bg-primary'>
-        <Container className='bg-primary'>
-          <Row>
+        <Container>
+          <Row className="">
             <Col xs={6} md={7} className='portrait'>
               <Image className='box-shadow' src={portrait} alt='super hero known as Takedown' />
             </Col>

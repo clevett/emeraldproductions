@@ -1,22 +1,22 @@
-import React from 'react';
+import React from 'react'
 
 import Contact from '../Contact/Contact'
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap'
 
-import './ContactBar.css';
+import './ContactBar.css'
 
-export class ContactBar extends React.Component {
+class ContactBar extends React.Component {
   render() {
-    return (
-        <Container className="mx-auto">
-            <Row className="ContactBar bg-secondary contact-bar text-white font-weight-bold mt-4">
-                {
-                this.props.contacts.map(contact => <Contact contact={contact} />)
-                }
-            </Row>
-        </Container>
-    )
+		return (
+			<Container className="mx-auto">
+				<Row className="ContactBar bg-secondary contact-bar text-white font-weight-bold p-4">
+					{
+					this.props.contacts.map(contact => <Contact contact={contact} />)
+					}
+				</Row>
+			</Container>
+		)
   }
 }
 
-export default ContactBar;
+export default ContactBar
