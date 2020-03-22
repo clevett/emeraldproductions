@@ -3,9 +3,9 @@ import portrait from './imgs/takedown.png';
 import './index.scss';
 import './App.scss';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Navigation } from './components/Navigation';
+import { Navigation } from './components/Navigation/Navigation';
+import { ContactBar } from './components/ContactBar/ContactBar';
 import Image from 'react-bootstrap/Image'
-import logo from './imgs/logo.png';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
           </Col>
         </Container>
       </Row>
+      <ContactBar />
     </div>
   );
 }
