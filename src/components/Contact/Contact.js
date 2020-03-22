@@ -8,7 +8,7 @@ class Contact extends React.Component {
         return (
           <Col className='Contact'>
               <Row>
-                  <Image className='shadow' src={contact.src} alt={`${contact.name} logo`} />
+                  <Image className='shadow' src={`../imgs/${contact.name}-Icon.png`} alt={`${contact.name} logo`} />
                   <span>{contact.name}</span>
               </Row>
           </Col>

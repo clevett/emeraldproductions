@@ -9,12 +9,7 @@ import { ContactBar } from '../ContactBar/ContactBar';
 
 import Image from 'react-bootstrap/Image'
 
-const contact = {
-  name: 'GitHub',
-  src: `./imgs/GitHub-Icon.png`
-}
-
-const contacts = [contact, contact, contact]
+const contacts = [{name: 'GitHub'}, {name: 'Discord'}, {name: 'LinkedIN'}]
 
 class App extends React.Component {
   render() {
