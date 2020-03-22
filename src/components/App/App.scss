@@ -1,27 +1,33 @@
-//@import './index.scss'
+
 
 .App {
-  background-color: black;
+  background-color: #0f0e0e;
   text-align: center;
   height: 100%;
 
   .portrait {
     img {
       width: 100%;
-      max-width: 500px;
+      max-width: 450px;
       min-width: 250px;
-      margin: 5%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
       border-radius: 0.85em;
       border: 2px solid transparent;
     }
   }
-  
+
+
   section.description {
-    padding-left: 5%;
+    padding-left: 15%;
   }
 
   nav {
     min-height: 150px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .Center {
+    min-height: 700px;
   }
 }

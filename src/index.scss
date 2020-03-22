@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
 html {
   height: 100%;
-
+  
   body {
     height: 100%;
+  }
+
+  h1 {
+    font-family: 'Merriweather', cursive;
+  }
+
+  h2 {
+    margin-bottom: 5%;
+  }
+
+  p {
+    font-family: 'Merriweather';
   }
 
   div[id='root'] {
@@ -13,10 +27,9 @@ html {
 // change the theme
 $theme-colors: (
   "primary":#2b2b2b,
-  "secondary":black,
+  "secondary":#0f0e0e,
   "danger": #ff4136
 );
-
 
 @media (min-width: 768px) {
   .navbar {
@@ -24,7 +37,7 @@ $theme-colors: (
   }
 }
 
-$dark: black;
+$dark: #0f0e0e;
 
 .navbar {
   min-width: 150px;

@@ -2,6 +2,8 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import logo from '../../imgs/logo.png'
 
+import './Navigation.css'
+
 class Navigation extends React.Component {
     render() {
         return (
@@ -9,8 +11,8 @@ class Navigation extends React.Component {
             <Navbar.Brand href="#home">
             <img
                 src={logo}
-                width="150"
-                height="50"
+                width="250"
+                height="100"
                 className="d-inline-block align-top"
                 alt="Emerald Productions, LLC"
             />
@@ -18,13 +20,13 @@ class Navigation extends React.Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                 <Nav className="text-white font-weight-bold" activeKey="/home">
-                    <NavDropdown className='text-white font-weight-bold' title="RPGs" id="basic-nav-dropdown">
+                    <Nav.Link className='text-white font-weight-bold' href="#about">About</Nav.Link>
+                    <NavDropdown className='text-white font-weight-bold ml-5' title="RPGs" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.3">Roll20</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.1">Shadowrun</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link className='text-white font-weight-bold' href="#about">About</Nav.Link>
-                    <Nav.Link className='text-white font-weight-bold' href="#contact">Contact</Nav.Link>
+                    <Nav.Link className='text-white font-weight-bold ml-5' href="#contact">Contact</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             </Navbar>

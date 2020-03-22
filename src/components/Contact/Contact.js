@@ -9,8 +9,10 @@ class Contact extends React.Component {
         <Col className='Contact'>
             <Row>
               <Col className='m-auto'>
-                <Image className='shadow mr-2' src={contact.src} alt={`${contact.name} logo`} />
-                <span>{contact.name}</span>
+                <a className='text-white' href={contact.href}>
+                  <Image className='shadow mr-2' src={contact.src} alt={`${contact.name} logo`} />
+                  <span>{contact.name}</span>
+                </a>
               </Col>
             </Row>
         </Col>
