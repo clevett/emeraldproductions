@@ -1,62 +1,31 @@
 .App {
+  background-color: #0f0e0e;
   text-align: center;
+  height: 100%;
 }
 
-.App img {
-  width: 15%;
+.App .portrait img {
+  width: 100%;
+  max-width: 450px;
+  min-width: 250px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+  border-radius: 0.85em;
+  border: 2px solid transparent;
+  -webkit-animation: moveInLeft 1s ease-in;
+          animation: moveInLeft 1s ease-in;
 }
 
-.App body {
-  background-color: #2b2b2b;
-  min-height: 600px;
+.App section.description {
+  padding-left: 15%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App nav {
+  min-height: 150px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    -webkit-animation: App-logo-spin infinite 20s linear;
-            animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #0D0D0D;
-  min-height: 15vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: white;
-}
-
-@-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+@media only screen and (min-width: 1000px) {
+  .Center {
+    min-height: 700px;
   }
 }

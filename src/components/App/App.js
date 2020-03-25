@@ -5,6 +5,7 @@ import Navigation from '../Navigation/Navigation'
 import AppCenter  from '../AppCenter/AppCenter'
 import ContactBar from '../ContactBar/ContactBar'
 import SkillsList  from '../SkillsList/SkillsList'
+import ProductionCycle from '../ProductionCycle/ProductionCycle'
 
 class App extends React.Component {
   render() {
@@ -14,6 +15,8 @@ class App extends React.Component {
         <AppCenter />
         <ContactBar />
         <SkillsList />
+        <ProductionCycle />
+        <footer className='bg-secondary font-italic'>Emerald Productions, LLC 2020</footer>
       </div>
     );
   }

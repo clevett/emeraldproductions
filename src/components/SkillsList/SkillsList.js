@@ -3,12 +3,12 @@ import React from 'react'
 import DeckBuilder from '../DeckBuilder/DeckBuilder'
 import { Container, Row } from 'react-bootstrap'
 
-import usability  from '../../imgs/Icons/button-finger.svg'
-import frontend  from '../../imgs/Icons/keyboard.svg'
-import accessibility  from '../../imgs/Icons/earth-america.svg'
-import management  from '../../imgs/Icons/checklist.svg'
-import teambuilder  from '../../imgs/Icons/conversation.png'
-import adaptability  from '../../imgs/Icons/artificial-intelligence.svg'
+import usability  from './Icons/button-finger.svg'
+import frontend  from './Icons/keyboard.svg'
+import accessibility  from './Icons/earth-america.svg'
+import management  from './Icons/checklist.svg'
+import teambuilder  from './Icons/conversation.png'
+import adaptability  from './Icons/artificial-intelligence.svg'
 const skills = [
   {
     name: 'Usability', 
@@ -26,7 +26,8 @@ const skills = [
   }
 ]
 
-const skills2 = [ {
+const skills2 = [ 
+  {
     name: 'Project Management', 
     src: management,
     description: 'Understand the challenge, define the milestones, and lead incremental progress.' 

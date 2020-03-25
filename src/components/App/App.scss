@@ -1,5 +1,4 @@
 
-
 .App {
   background-color: #0f0e0e;
   text-align: center;
@@ -13,9 +12,10 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
       border-radius: 0.85em;
       border: 2px solid transparent;
+
+      animation: moveInLeft 1s ease-in;
     }
   }
-
 
   section.description {
     padding-left: 15%;

@@ -4,6 +4,8 @@ import portrait from '../../imgs/takedown.png'
 
 import { Container, Row, Col, Image } from 'react-bootstrap'
 
+import './AppCenter.css'
+
 class AppCenter extends React.Component {
   render() {
     return (
