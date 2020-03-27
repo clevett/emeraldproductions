@@ -1,0 +1,19 @@
+//Abstracts first
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/typography";
+
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px;
+  }
+}
+
+.navbar {
+  min-width: 150px;
+}
+
+
+

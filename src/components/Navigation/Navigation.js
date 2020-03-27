@@ -2,8 +2,6 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import logo from '../../imgs/logo.png'
 
-import './Navigation.css'
-
 class Navigation extends React.Component {
     render() {
         return (
