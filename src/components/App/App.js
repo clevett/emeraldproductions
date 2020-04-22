@@ -7,6 +7,7 @@ import ContactBar from '../ContactBar/ContactBar'
 import SkillsList  from '../SkillsList/SkillsList'
 import ProductionCycle from '../ProductionCycle/ProductionCycle'
 import ContactForm from '../ContactForm/ContactForm'
+import Footer from '../Footer/Footer'
 
 class App extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class App extends React.Component {
         <SkillsList />
         <ProductionCycle />
         <ContactForm />
-        <footer className='bg-secondary font-italic'>Emerald Productions, LLC 2020</footer>
+        <Footer />
       </div>
     );
   }
