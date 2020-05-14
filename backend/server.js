@@ -16,11 +16,9 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 const connection = mongoose.connection
 connection.once('open', () => console.log("MongoDB databse connection established successfully"))
 
-const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
 const bestiaryRouter = require('./routes/bestiary');
 
-app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 app.use('/bestiary', bestiaryRouter)
 
