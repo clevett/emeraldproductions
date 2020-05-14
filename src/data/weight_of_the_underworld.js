@@ -2,7 +2,7 @@ module.exports = [
   {
     "name": "Grim Reaper",
     "difficulty": 750,
-    "type": "spirit",
+    "descriptor": "spirit",
     "source": "Weight of the Underworld"
   }
 ]

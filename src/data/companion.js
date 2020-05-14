@@ -2,55 +2,55 @@ module.exports = [
   {
     "name": "Arachne",
     "difficulty": 10,
-    "type": "monster",
+    "descriptor": "monster",
     "source": "Demon Lord's Companion"
   },
   {
     "name": "Bestia",
     "difficulty": 50,
-    "type": "bestia",
+    "descriptor": "bestia",
     "source": "Demon Lord's Companion"
   },
   {
     "name": "Brownie",
     "difficulty": 10,
-    "type": "faerie",
+    "descriptor": "faerie",
     "source": "Demon Lord's Companion"
   },
   {
     "name": "Centaur",
     "difficulty": 5,
-    "type": "centaur",
+    "descriptor": "centaur",
     "source": "Demon Lord's Companion"
   },
   {
     "name": "Mog",
     "difficulty": 25,
-    "type": "monster",
+    "descriptor": "monster",
     "source": "Demon Lord's Companion"
   },
   {
     "name": "Roc",
     "difficulty": 250,
-    "type": "animal",
+    "descriptor": "animal",
     "source": "Demon Lord's Companion"
   },
   {
     "name": "Specter",
     "difficulty": 250,
-    "type": "spirit",
+    "descriptor": "spirit",
     "source": "Demon Lord's Companion"
   },
   {
     "name": "Spider Assassin",
     "difficulty": 1,
-    "type": "construct",
+    "descriptor": "construct",
     "source": "Demon Lord's Companion"
   },
   {
     "name": "Slime Brute",
     "difficulty": 100,
-    "type": "plant",
+    "descriptor": "plant",
     "source": "Demon Lord's Companion"
   }
 ]

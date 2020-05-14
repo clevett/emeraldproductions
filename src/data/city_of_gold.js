@@ -2,13 +2,13 @@ module.exports = [
   {
     "name": "Coin",
     "difficulty": 5,
-    "type": "human",
+    "descriptor": "human",
     "source": "City of Gold"
   },
   {
     "name": "Captain Gloom",
     "difficulty": 25,
-    "type": "human",
+    "descriptor": "human",
     "source": "City of Gold"
   }
 ]

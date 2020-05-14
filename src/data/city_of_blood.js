@@ -2,25 +2,25 @@ module.exports = [
   {
     "name": "Boastman",
     "difficulty": 25,
-    "type": "human",
+    "descriptor": "human",
     "source": "City of Blood"
   },
   {
     "name": "Orc Brawler",
     "difficulty": 25,
-    "type": "orc",
+    "descriptor": "orc",
     "source": "City of Blood"
   },
   {
     "name": "Hardbit",
     "difficulty": 100,
-    "type": "clockwork",
+    "descriptor": "clockwork",
     "source": "City of Blood"
   },
   {
     "name": "Pit Beast",
     "difficulty": 50,
-    "type": "monster",
+    "descriptor": "monster",
     "source": "City of Blood"
   }
 ]

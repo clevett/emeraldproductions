@@ -2,7 +2,7 @@ module.exports = [
   {
     "name": "Lady Cat",
     "difficulty": 100,
-    "type": "human",
+    "descriptor": "human",
     "source": "City of Thieves"
   }
 ]

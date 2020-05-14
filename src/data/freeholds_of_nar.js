@@ -2,7 +2,7 @@ module.exports = [
   {
     "name": "Memory Mist",
     "difficulty": 250,
-    "type": "undead",
+    "descriptor": "undead",
     "source": "City of Gold"
   }
 ]
