@@ -1,9 +1,10 @@
 const fs = require('fs');
 const jsonFolder = './src/data/';
 
+//Reformat my initial JSON files into the format needed for MongoDB import
+
 fs.readdir(jsonFolder, (err, files) => {
   files.forEach(file => {
-    console.log(file);
     const fileName = `./src/json/${file}`;
     const fileData = require(fileName);
     const newFileEntry = [];
@@ -14,10 +15,9 @@ fs.readdir(jsonFolder, (err, files) => {
       newFileEntry.push(object)
     }
 
-    console.log(newFileEntry)
-
     fs.writeFile(fileName, JSON.stringify(newFileEntry, null, 2), function writeJSON(err) {
       if (err) return console.log(err);
+      console.log(`updating file ${fileName}`)
     });
   });
 });
