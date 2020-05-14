@@ -4,7 +4,7 @@ import { Col, Row, Container, Form, Button } from 'react-bootstrap'
 class ContactForm extends React.Component {
   render() {
     return (
-      <section className='bg-primary'>
+      <section className='Center d-flex align-items-center bg-primary'>
         <Container>
           <Row>
             <h1>Contact Me</h1>

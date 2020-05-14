@@ -4,9 +4,9 @@ import portrait from '../../imgs/takedown.png'
 
 import { Container, Row, Col, Image } from 'react-bootstrap'
 
-import './AppCenter.css'
+import './AboutCenter.scss'
 
-class AppCenter extends React.Component {
+class AboutCenter extends React.Component {
   render() {
     return (
       <section className='Center d-flex align-items-center bg-primary'>
@@ -27,4 +27,4 @@ class AppCenter extends React.Component {
   }
 }
 
-export default AppCenter
+export default AboutCenter

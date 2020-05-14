@@ -9,7 +9,7 @@ class DeckBuilder extends React.Component {
     return (
       <CardDeck className=''>
         {
-        skills.map(skill => <Skill skill={skill} />)
+        skills.map(skill => <Skill key={skill.name} skill={skill} />)
         }
       </CardDeck>
     )

@@ -44,12 +44,12 @@ class ProductionCycle extends React.Component {
             <Col>
               <CardDeck md={4}>
                 {
-                  cycleSteps.map(step => <ProductionStep step={step} />)
+                  cycleSteps.map(step => <ProductionStep key={step.name} step={step} />)
                 }
               </CardDeck>
               <CardDeck md={8}>
                 {
-                  cycleSteps1.map(step => <ProductionStep step={step} />)
+                  cycleSteps1.map(step => <ProductionStep key={step.name} step={step} />)
                 }
               </CardDeck>
             </Col>

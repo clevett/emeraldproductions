@@ -1,9 +1,10 @@
 import React from 'react'
+import './Footer.scss'
 
 class Footer extends React.Component {
   render() {
     return (
-      <footer className='bg-secondary font-italic mt-5'>Emerald Productions, LLC 2020</footer>
+      <footer className='Footer text-white bg-secondary font-italic mt-5'>Emerald Productions, LLC 2020</footer>
     )
   }
 }

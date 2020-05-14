@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Contact from '../Contact/Contact'
+import Contact from './Contact/Contact'
 import { Container, Row } from 'react-bootstrap'
 
 import './ContactBar.css'
@@ -17,7 +17,7 @@ class ContactBar extends React.Component {
 				<Container className="mx-auto">
 					<Row className="ContactBar bg-secondary contact-bar text-white font-weight-bold p-4">
 						{
-						contacts.map(contact => <Contact contact={contact} />)
+						contacts.map(contact => <Contact key={contact.name} contact={contact} />)
 						}
 					</Row>
 				</Container>
