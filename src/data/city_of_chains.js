@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Manacle",
     "difficulty": 25,

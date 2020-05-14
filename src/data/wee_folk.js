@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Atomy",
     "difficulty": 0,

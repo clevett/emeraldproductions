@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Honorable Cloak",
     "difficulty": 25,

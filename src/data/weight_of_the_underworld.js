@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Grim Reaper",
     "difficulty": 750,

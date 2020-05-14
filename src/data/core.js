@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Amphisbaena",
     "difficulty": 25,

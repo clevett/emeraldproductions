@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Animated Corpse",
     "difficulty": 1,

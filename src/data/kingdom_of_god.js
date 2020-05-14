@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Bearer of the Faith",
     "difficulty": 5,

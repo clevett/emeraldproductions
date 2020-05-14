@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Titanic Monster",
     "difficulty": 500,

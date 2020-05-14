@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Grave Regent",
     "difficulty": 500,

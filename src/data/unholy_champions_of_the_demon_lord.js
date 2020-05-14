@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Arcolinus, the Joyous One",
     "difficulty": 25,

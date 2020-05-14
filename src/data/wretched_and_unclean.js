@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Troglodyte",
     "difficulty": 10,

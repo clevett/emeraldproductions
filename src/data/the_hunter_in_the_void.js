@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Void Larvae Mob",
     "difficulty": 10,

@@ -1,9 +1,9 @@
 const fs = require('fs');
-const jsonFolder = './src/data/';
+const dataFolder = '../src/data/';
 
 //Reformat my initial JSON files into the format needed for MongoDB import
 
-fs.readdir(jsonFolder, (err, files) => {
+fs.readdir(dataFolder, (err, files) => {
   files.forEach(file => {
     const fileName = `./src/json/${file}`;
     const fileData = require(fileName);

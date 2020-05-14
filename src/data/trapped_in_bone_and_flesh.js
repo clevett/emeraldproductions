@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Boneguard",
     "difficulty": 25,

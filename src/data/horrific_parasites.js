@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Flesh Tailor",
     "difficulty": 50,
