@@ -20,6 +20,6 @@ const usersRouter = require('./routes/users');
 const bestiaryRouter = require('./routes/bestiary');
 
 app.use('/users', usersRouter);
-app.use('/bestiary', bestiaryRouter)
+app.use('/ShadowoftheDemonLord', bestiaryRouter)
 
 app.listen(port, () => console.log(`Server is running on port: ${port}`))

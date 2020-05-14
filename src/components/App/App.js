@@ -3,7 +3,7 @@ import './App.scss'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 //import "bootstrap/dist/css/bootstrap.min.css"
 
-import Navigation from '../Navigation/NavigationBar/NavigationBar'
+import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
 import About from '../../pages/About/About'
 import Contact from '../pages/Contact/Contact'
 import Roll20 from '../pages/Roll20/Roll20'
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          <Navigation />
+          <NavigationBar />
           <Route path="/" exact component={About} />
           <Route path="/roll20" component={Roll20} />
           <Route path="/ShadowoftheDemonLord" component={ShadowoftheDemonLord} />
