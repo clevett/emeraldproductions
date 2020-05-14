@@ -1,0 +1,78 @@
+{
+  "Splitter": {
+    "difficulty": 10,
+    "type": "construct",
+    "source": "False Lives"
+  },
+  "Driller": {
+    "difficulty": 10,
+    "type": "construct",
+    "source": "False Lives"
+  },
+  "Hammerer": {
+    "difficulty": 25,
+    "type": "construct",
+    "source": "False Lives"
+  },
+  "Hauler": {
+    "difficulty": 50,
+    "type": "construct",
+    "source": "False Lives"
+  },
+  "Loader": {
+    "difficulty": 5,
+    "type": "construct",
+    "source": "False Lives"
+  },
+  "Smelter": {
+    "difficulty": 10,
+    "type": "construct",
+    "source": "False Lives"
+  },
+  "Clockwork": {
+    "difficulty": 25,
+    "type": "clockwork",
+    "source": "False Lives"
+  },
+  "Cherub": {
+    "difficulty": 5,
+    "type": "clockwork",
+    "source": "False Lives"
+  },
+  "Gladius": {
+    "difficulty": 250,
+    "type": "clockwork",
+    "source": "False Lives"
+  },
+  "Assembled": {
+    "difficulty": 25,
+    "type": "clockwork",
+    "source": "False Lives"
+  },
+  "Tick-Tock": {
+    "difficulty": 25,
+    "type": "clockwork",
+    "source": "False Lives"
+  },
+  "Colossus": {
+    "difficulty": 1000,
+    "type": "construct",
+    "source": "False Lives"
+  },
+  "Golem": {
+    "difficulty": 500,
+    "type": "construct",
+    "source": "False Lives"
+  },
+  "Legion": {
+    "difficulty": 50,
+    "type": "construct",
+    "subtype": "swarm",
+    "source": "False Lives"
+  },
+  "Promethean": {
+    "difficulty": 250,
+    "type": "construct",
+    "source": "False Lives"
+  }
+}

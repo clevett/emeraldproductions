@@ -1,0 +1,642 @@
+{
+  "Amphisbaena": {
+    "difficulty": 25,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord p.216"
+  },
+  "Huge Animal": {
+    "difficulty": 50,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord p.217"
+  },
+  "Large Animal": {
+    "difficulty": 25,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Medium Animal": {
+    "difficulty": 10,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Small Animal": {
+    "difficulty": 1,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Tiny Animal": {
+    "difficulty": 1,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Animal Swarm": {
+    "difficulty": 5,
+    "type": "animal",
+    "subtype": "swarm",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Animated Corpse": {
+    "difficulty": 1,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Barghest": {
+    "difficulty": 250,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Borrow Wight": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Basilisk": {
+    "difficulty": 250,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Bear": {
+    "difficulty": 50,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Fomor": {
+    "difficulty": 1,
+    "type": "beastman",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Warg": {
+    "difficulty": 10,
+    "type": "beastman",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Minotaur": {
+    "difficulty": 100,
+    "type": "beastman",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Bloody Bones": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Boggart": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Bone Machine": {
+    "difficulty": 250,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Boneguard": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Broodling": {
+    "difficulty": 100,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Burrowing Centipede": {
+    "difficulty": 5,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Catoblepas": {
+    "difficulty": 100,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Chainbound": {
+    "difficulty": 50,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Changeling": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Clockwork": {
+    "difficulty": 10,
+    "type": "clockwork",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Cockatrice": {
+    "difficulty": 25,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Huge Construct": {
+    "difficulty": 100,
+    "type": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Large Construct": {
+    "difficulty": 50,
+    "type": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Medium Construct": {
+    "difficulty": 10,
+    "type": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Small Construct": {
+    "difficulty": 5,
+    "type": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Huge Demon": {
+    "difficulty": 500,
+    "type": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Large Demon": {
+    "difficulty": 250,
+    "type": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Medium Demon": {
+    "difficulty": 100,
+    "type": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Small Demon": {
+    "difficulty": 25,
+    "type": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Tiny Demon": {
+    "difficulty": 10,
+    "type": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Dire Wolf": {
+    "difficulty": 50,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Dragon": {
+    "difficulty": 500,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Drake": {
+    "difficulty": 100,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Dread Mother": {
+    "difficulty": 25,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Dryad": {
+    "difficulty": 50,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Dwarf": {
+    "difficulty": 10,
+    "type": "dwarf",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Elf": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Emerald Darter": {
+    "difficulty": 25,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Fungal Hulk": {
+    "difficulty": 50,
+    "type": "fungus",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Fungal Mite": {
+    "difficulty": 5,
+    "type": "fungus",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Fury": {
+    "difficulty": 250,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Earth Genie": {
+    "difficulty": 100,
+    "type": "genie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Flame Genie": {
+    "difficulty": 100,
+    "type": "genie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Water Genie": {
+    "difficulty": 100,
+    "type": "genie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Wind Genie": {
+    "difficulty": 100,
+    "type": "genie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Ghastly Chorus": {
+    "difficulty": 50,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Ghoul": {
+    "difficulty": 25,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Giant": {
+    "difficulty": 100,
+    "type": "giant",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Goblin": {
+    "difficulty": 1,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Golem": {
+    "difficulty": 500,
+    "type": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Gorgon": {
+    "difficulty": 500,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Grave Thrall": {
+    "difficulty": 10,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Great Cat": {
+    "difficulty": 50,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Gremlin": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Griffon": {
+    "difficulty": 50,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Hag": {
+    "difficulty": 500,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Halfing": {
+    "difficulty": 1,
+    "type": "halfling",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Harpy": {
+    "difficulty": 50,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Organ Filtch": {
+    "difficulty": 10,
+    "type": "harvester",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Tear Thief": {
+    "difficulty": 50,
+    "type": "harvester",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Hell Swine": {
+    "difficulty": 50,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Hobgoblin": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Hood": {
+    "difficulty": 1,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Horse": {
+    "difficulty": 250,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Jack-O-Lantern": {
+    "difficulty": 250,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Killing Mist": {
+    "difficulty": 250,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Large Spider": {
+    "difficulty": 10,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Lash Crawler": {
+    "difficulty": 1,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Leshy": {
+    "difficulty": 250,
+    "type": "plant",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Living Tar": {
+    "difficulty": 100,
+    "type": "ooze",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Lizardman": {
+    "difficulty": 25,
+    "type": "lizardman",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Lurk": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Manes": {
+    "difficulty": 5,
+    "type": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Huge Monster": {
+    "difficulty": 100,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Large Monster": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Medium Monster": {
+    "difficulty": 10,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Small Monster": {
+    "difficulty": 5,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Tiny Monster": {
+    "difficulty": 1,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Muttering Maw": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Nisse": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Oculus": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Ogre": {
+    "difficulty": 50,
+    "type": "ogre",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Horned Ogre": {
+    "difficulty": 250,
+    "type": "ogre",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Ettin": {
+    "difficulty": 100,
+    "type": "ogre",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Ooze": {
+    "difficulty": 50,
+    "type": "ooze",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Orc": {
+    "difficulty": 10,
+    "type": "orc",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Phantom": {
+    "difficulty": 25,
+    "type": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Poltergeist": {
+    "difficulty": 5,
+    "type": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Promethean": {
+    "difficulty": 250,
+    "type": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Redcap": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Reen": {
+    "difficulty": 50,
+    "type": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Rot Maiden": {
+    "difficulty": 25,
+    "type": "fungus",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Shadow": {
+    "difficulty": 25,
+    "type": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Shadow Weaver": {
+    "difficulty": 25,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Shrieking Eel": {
+    "difficulty": 10,
+    "type": "animal",
+    "subtype": "aquatic",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Skinchanger": {
+    "difficulty": 25,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Spriggan": {
+    "difficulty": 25,
+    "type": "plant",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Stone Worm": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Stranglevine": {
+    "difficulty": 50,
+    "type": "plant",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Tomb Scarab Swarm": {
+    "difficulty": 25,
+    "type": "animal",
+    "subtype": "swarm",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Troglodyte": {
+    "difficulty": 10,
+    "type": "troglodyte",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Troll": {
+    "difficulty": 250,
+    "type": "troll",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Vampire": {
+    "difficulty": 250,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Vampire Bat": {
+    "difficulty": 10,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Void Larva": {
+    "difficulty": 1,
+    "type": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Warhorse": {
+    "difficulty": 10,
+    "type": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Wraith": {
+    "difficulty": 100,
+    "type": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Zombie": {
+    "difficulty": 5,
+    "type": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Acolyte of the New God": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Apprentice Witch": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Apprentice Wizard": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Bandit": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Brigand": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Commoner or Professional": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Cultist": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "High Cultist": {
+    "difficulty": 50,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Hired Killer": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Initiate of the Old Faith": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Mercenary": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Patroller": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Pickpocket": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  "Veteran": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Shadow of the Demon Lord"
+  }
+}

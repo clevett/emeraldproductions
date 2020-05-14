@@ -1,0 +1,107 @@
+{
+  "Boneguard": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Boneguard Executioner": {
+    "difficulty": 50,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Boneguard Commander": {
+    "difficulty": 100,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Conflagration Boneguard": {
+    "difficulty": 50,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Ghastly Boneguard": {
+    "difficulty": 50,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Symbiotic Boneguard": {
+    "difficulty": 100,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Spider Boneguard": {
+    "difficulty": 100,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Grave Thrall": {
+    "difficulty": 10,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Infested Grave Thrall": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Grave Thrall Champion": {
+    "difficulty": 100,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Relentless Grave Thrall": {
+    "difficulty": 10,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Blind Butcher": {
+    "difficulty": 100,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Bloated": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Cold Lover": {
+    "difficulty": 10,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Corpse Mother": {
+    "difficulty": 50,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Death Angel": {
+    "difficulty": 100,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Dying Bride": {
+    "difficulty": 1,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Eater of the Dead": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Encaged": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Ragamuffin": {
+    "difficulty": 1,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  "Rotton": {
+    "difficulty": 1,
+    "type": "undead",
+    "source": "Trapped in Bone and Flesh"
+  }
+}

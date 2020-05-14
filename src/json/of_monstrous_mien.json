@@ -1,0 +1,37 @@
+{
+  "Titanic Monster": {
+    "difficulty": 500,
+    "type": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  "Huge Monster": {
+    "difficulty": 100,
+    "type": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  "Large Monster": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  "Medium Monster": {
+    "difficulty": 10,
+    "type": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  "Small Monster": {
+    "difficulty": 5,
+    "type": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  "Tiny Monster": {
+    "difficulty": 1,
+    "type": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  "The Screaming Thing": {
+    "difficulty": 10,
+    "type": "monster",
+    "source": "Of Monstrous Mien"
+  },
+}

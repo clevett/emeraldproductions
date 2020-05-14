@@ -1,0 +1,33 @@
+{
+  "Drake": {
+    "difficulty": 100,
+    "type": "monster",
+    "source": "Of Fire and Venom"
+  },
+  "Dragon": {
+    "difficulty": 500,
+    "type": "monster",
+    "source": "Of Fire and Venom"
+  },
+  "Bloodsipper Drake": {
+    "difficulty": 250,
+    "type": "monster",
+    "source": "Of Fire and Venom"
+  },
+  "Gaping Gorger": {
+    "difficulty": 100,
+    "type": "monster",
+    "source": "Of Fire and Venom"
+  },
+  "Rime Dragon": {
+    "difficulty": 500,
+    "type": "dragon",
+    "source": "Of Fire and Venom"
+  },
+  "Sea Dragon": {
+    "difficulty": 500,
+    "type": "monster",
+    "subtype": "aquatic",
+    "source": "Of Fire and Venom"
+  }
+}

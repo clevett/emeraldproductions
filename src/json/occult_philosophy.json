@@ -1,0 +1,139 @@
+{
+  "Angel": {
+    "difficulty": 50,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Occult Philosphy"
+  },
+  "Mob of Corpses": {
+    "difficulty": 10,
+    "type": "undead",
+    "subtype": "mob",
+    "source": "Occult Philosphy"
+  },
+  "Animated Plant": {
+    "difficulty": 10,
+    "type": "plant",
+    "source": "Occult Philosphy"
+  },
+  "Animated Tree": {
+    "difficulty": 100,
+    "type": "plant",
+    "source": "Occult Philosphy"
+  },
+  "Apparition": {
+    "difficulty": 1,
+    "type": "spirit",
+    "source": "Occult Philosphy"
+  },
+  "Arion Charger": {
+    "difficulty": 100,
+    "type": "animal",
+    "source": "Occult Philosphy"
+  },
+  "Brownie": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Occult Philosphy"
+  },
+  "Tiny Construct": {
+    "difficulty": 1,
+    "type": "construct",
+    "source": "Occult Philosphy"
+  },
+  "Mob of Small Demons": {
+    "difficulty": 100,
+    "type": "demon",
+    "source": "Occult Philosphy"
+  },
+  "Faceless Servant": {
+    "difficulty": 1,
+    "type": "construct",
+    "source": "Occult Philosphy"
+  },
+  "Fire Imp": {
+    "difficulty": 10,
+    "type": "construct",
+    "source": "Occult Philosphy"
+  },
+  "Storm Genie": {
+    "difficulty": 100,
+    "type": "genie",
+    "source": "Occult Philosphy"
+  },
+  "Grim Reaper": {
+    "difficulty": 1000,
+    "type": "spirit",
+    "source": "Occult Philosphy"
+  },
+  "Incarnation of Nature": {
+    "difficulty": 1000,
+    "type": "plant",
+    "source": "Occult Philosphy"
+  },
+  "Iron Guardian": {
+    "difficulty": 750,
+    "type": "construct",
+    "source": "Occult Philosphy"
+  },
+  "Mob of Manes": {
+    "difficulty": 25,
+    "type": "spirit",
+    "source": "Occult Philosphy"
+  },
+  "Titanic Monster": {
+    "difficulty": 500,
+    "type": "monster",
+    "source": "Occult Philosphy"
+  },
+  "Mob of Medium Monsters": {
+    "difficulty": 25,
+    "type": "monster",
+    "source": "Occult Philosphy"
+  },
+  "Ore Thrall": {
+    "difficulty": 25,
+    "type": "construct",
+    "source": "Occult Philosphy"
+  },
+  "Mob of Phantoms": {
+    "difficulty": 100,
+    "type": "spirit",
+    "source": "Occult Philosphy"
+  },
+  "Primal Champion": {
+    "difficulty": 250,
+    "type": "animal",
+    "source": "Occult Philosphy"
+  },
+  "Slime": {
+    "difficulty": 10,
+    "type": "ooze",
+    "source": "Occult Philosphy"
+  },
+  "Specter": {
+    "difficulty": 250,
+    "type": "spirit",
+    "source": "Occult Philosphy"
+  },
+  "Sprite": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Occult Philosphy"
+  },
+  "Stalwart Defender": {
+    "difficulty": 100,
+    "type": "construct",
+    "source": "Occult Philosphy"
+  },
+  "Unicorn": {
+    "difficulty": 100,
+    "type": "faerie",
+    "source": "Occult Philosphy"
+  },
+  "Wyvern": {
+    "difficulty": 250,
+    "type": "monster",
+    "source": "Occult Philosphy"
+  },
+}

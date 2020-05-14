@@ -1,0 +1,88 @@
+{
+  "Atomy": {
+    "difficulty": 0,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Swarm of Atomies": {
+    "difficulty": 5,
+    "type": "faerie",
+    "subtype": "swarm",
+    "source": "Wee Folk"
+  },
+  "Bauchan": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Brownie": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Duegar": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Fenoderee": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Fir Darrig (Leprechaun Form)": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Fir Darrig (Clurichaun Form)": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Fuath": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Gremlin": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Hobyah": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Jack-O-Lantern": {
+    "difficulty": 250,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Kilmoulis": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Nisse": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Pooka": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Redcap": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Wee Folk"
+  },
+  "Sprite": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Wee Folk"
+  }
+}

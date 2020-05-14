@@ -1,0 +1,52 @@
+{
+  "Clasta": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "City of Decay"
+  },
+  "Verity Flent": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "City of Decay"
+  },
+  "Ruin Watcher": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "City of Decay"
+  },
+  "Radiant Disciple": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "City of Decay"
+  },
+  "Apparition": {
+    "difficulty": 1,
+    "type": "spirit",
+    "source": "City of Decay"
+  },
+  "Bone Queen": {
+    "difficulty": 250,
+    "type": "human",
+    "source": "City of Decay"
+  },
+  "Yerathi Drone": {
+    "difficulty": 1,
+    "type": "yerath",
+    "source": "City of Decay"
+  },
+  "Yerathi Scout": {
+    "difficulty": 1,
+    "type": "yerath",
+    "source": "City of Decay"
+  },
+  "Yerathi Soldier": {
+    "difficulty": 1,
+    "type": "yerath",
+    "source": "City of Decay"
+  },
+  "Yerathi Soldier": {
+    "difficulty": 10,
+    "type": "yerath",
+    "source": "City of Decay"
+  }
+}

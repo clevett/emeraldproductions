@@ -1,0 +1,47 @@
+{
+  "Arachne": {
+    "difficulty": 10,
+    "type": "monster",
+    "source": "Demon Lord's Companion"
+  },
+  "Bestia": {
+    "difficulty": 50,
+    "type": "bestia",
+    "source": "Demon Lord's Companion"
+  },
+  "Brownie": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Demon Lord's Companion"
+  },
+  "Centaur": {
+    "difficulty": 5,
+    "type": "centaur",
+    "source": "Demon Lord's Companion"
+  },
+  "Mog": {
+    "difficulty": 25,
+    "type": "monster",
+    "source": "Demon Lord's Companion"
+  },
+  "Roc": {
+    "difficulty": 250,
+    "type": "animal",
+    "source": "Demon Lord's Companion"
+  },
+  "Specter": {
+    "difficulty": 250,
+    "type": "spirit",
+    "source": "Demon Lord's Companion"
+  },
+  "Spider Assassin": {
+    "difficulty": 1,
+    "type": "construct",
+    "source": "Demon Lord's Companion"
+  },
+  "Slime Brute": {
+    "difficulty": 100,
+    "type": "plant",
+    "source": "Demon Lord's Companion"
+  }
+}

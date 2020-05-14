@@ -1,0 +1,22 @@
+{
+  "Manacle": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "City of Chains"
+  },
+  "Captain Bastard": {
+    "difficulty": 50,
+    "type": "orc",
+    "source": "City of Chains"
+  },
+  "Chain": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "City of Chains"
+  },
+  "Bronze Elite": {
+    "difficulty": 100,
+    "type": "human",
+    "source": "City of Chains"
+  }
+}

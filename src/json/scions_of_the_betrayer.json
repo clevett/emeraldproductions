@@ -1,0 +1,20 @@
+{
+  "Darklings": {
+    "difficulty": 1,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Scions of the Betrayer"
+  },
+  "Hellbound Darklings": {
+    "difficulty": 250,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Scions of the Betrayer"
+  },
+  "Darkling Manhunter": {
+    "difficulty": 50,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Scions of the Betrayer"
+  }
+}

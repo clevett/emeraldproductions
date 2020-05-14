@@ -1,0 +1,284 @@
+{
+  "Assassin": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Urchin": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Freeporter": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Beggars": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Lobsterman": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Longshoreman": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Merchant": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Pirate": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Pirate Captain": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Celebrant of the Pirate God": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Devotee of the Sea God": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Sailor": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Sea Lord's Guard": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Guard Sergeant": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Freeport Watch Sergeant": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Accursed Hand": {
+    "difficulty": 1,
+    "type": "undead",
+    "source": "Freeport Companion"
+  },
+  "Alchemist's Fault": {
+    "difficulty": 250,
+    "type": "monster",
+    "source": "Freeport Companion"
+  },
+  "Blemmyae": {
+    "difficulty": 10,
+    "type": "monster",
+    "source": "Freeport Companion"
+  },
+  "Brass Monkey": {
+    "difficulty": 5,
+    "type": "construct",
+    "source": "Freeport Companion"
+  },
+  "Chiao": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Burnling": {
+    "difficulty": 10,
+    "type": "genie",
+    "source": "Freeport Companion"
+  },
+  "Deadwood Tree": {
+    "difficulty": 100,
+    "type": "undead",
+    "source": "Freeport Companion"
+  },
+  "Deep One": {
+    "difficulty": 10,
+    "type": "deep one",
+    "subtype": "aquatic",
+    "source": "Freeport Companion"
+  },
+  "Devil Lizard": {
+    "difficulty": 25,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Freeport Companion"
+  },
+  "Dream Child": {
+    "difficulty": 25,
+    "type": "spirit",
+    "source": "Freeport Companion"
+  },
+  "Fire Specter": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Freeport Companion"
+  },
+  "Kothar The Accursed": {
+    "difficulty": 50,
+    "type": "undead",
+    "source": "Freeport Companion"
+  },
+  "Fleshraker": {
+    "difficulty": 25,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Freeport Companion"
+  },
+  "Scalewing": {
+    "difficulty": 5,
+    "type": "animal",
+    "source": "Freeport Companion"
+  },
+  "Irontooth": {
+    "difficulty": 25,
+    "type": "animal",
+    "source": "Freeport Companion"
+  },
+  "Blackwing": {
+    "difficulty": 50,
+    "type": "animal",
+    "source": "Freeport Companion"
+  },
+  "Ghost Eater": {
+    "difficulty": 5,
+    "type": "monster",
+    "source": "Freeport Companion"
+  },
+  "Infernal Automation": {
+    "difficulty": 50,
+    "type": "construct",
+    "source": "Freeport Companion"
+  },
+  "Malkin": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Freeport Companion"
+  },
+  "Monstrous Clam": {
+    "difficulty": 5,
+    "type": "animal",
+    "source": "Freeport Companion"
+  },
+  "Monstrous Crab": {
+    "difficulty": 5,
+    "type": "animal",
+    "source": "Freeport Companion"
+  },
+  "Swarm of Monstrous Jellyfish": {
+    "difficulty": 10,
+    "type": "animal",
+    "subtype": "swarm",
+    "source": "Freeport Companion"
+  },
+  "Monstrous Leech": {
+    "difficulty": 10,
+    "type": "animal",
+    "subtype": "aquatic",
+    "source": "Freeport Companion"
+  },
+  "Nereid": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Freeport Companion"
+  },
+  "Picacouatl": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Freeport Companion"
+  },
+  "Pit-Briar": {
+    "difficulty": 50,
+    "type": "plant",
+    "source": "Freeport Companion"
+  },
+  "Pwalg": {
+    "difficulty": 251,
+    "type": "demon",
+    "source": "Freeport Companion"
+  },
+  "Reef Eel": {
+    "difficulty": 5,
+    "type": "animal",
+    "subtype": "aquatic",
+    "source": "Freeport Companion"
+  },
+  "Serpent Person": {
+    "difficulty": 10,
+    "type": "serpent person",
+    "source": "Freeport Companion"
+  },
+  "Valossan Mystic": {
+    "difficulty": 10,
+    "type": "serpent person",
+    "source": "Freeport Companion"
+  },
+  "Degenerate Serpent Person": {
+    "difficulty": 5,
+    "type": "serpent person",
+    "source": "Freeport Companion"
+  },
+  "Shadow Serpent": {
+    "difficulty": 50,
+    "type": "spirit",
+    "source": "Freeport Companion"
+  },
+  "Sharkman": {
+    "difficulty": 50,
+    "type": "beastman",
+    "source": "Freeport Companion"
+  },
+  "Skin Cloak": {
+    "difficulty": 10,
+    "type": "undead",
+    "source": "Freeport Companion"
+  },
+  "Spirit Lizard": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Freeport Companion"
+  },
+  "Tavi": {
+    "difficulty": 5,
+    "type": "monster",
+    "source": "Freeport Companion"
+  },
+  "Thanatos": {
+    "difficulty": 100,
+    "type": "undead",
+    "subtype": "aquatic",
+    "source": "Freeport Companion"
+  },
+  "Undine": {
+    "difficulty": 1,
+    "type": "elemental",
+    "source": "Freeport Companion"
+  },
+  "Vulpine": {
+    "difficulty": 25,
+    "type": "fearie",
+    "source": "Freeport Companion"
+  },
+  "X'Sval": {
+    "difficulty": 250,
+    "type": "demon",
+    "source": "Freeport Companion"
+  },
+}

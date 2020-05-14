@@ -1,0 +1,93 @@
+{
+  "Beastman, Anubin": {
+    "difficulty": 25,
+    "type": "beastman",
+    "source": "Tombs of the Desolation"
+  },
+  "Cyclops": {
+    "difficulty": 100,
+    "type": "giant",
+    "source": "Tombs of the Desolation"
+  },
+  "Death Lord": {
+    "difficulty": 500,
+    "type": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  "Desiccated One": {
+    "difficulty": 10,
+    "type": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  "Dust Devil": {
+    "difficulty": 25,
+    "type": "genie",
+    "source": "Tombs of the Desolation"
+  },
+  "Forsaken": {
+    "difficulty": 25,
+    "type": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  "Giant Scorpion": {
+    "difficulty": 100,
+    "type": "animal",
+    "source": "Tombs of the Desolation"
+  },
+  "Great Horned Beetle": {
+    "difficulty": 100,
+    "type": "animal",
+    "source": "Tombs of the Desolation"
+  },
+  "Lamia": {
+    "difficulty": 250,
+    "type": "monster",
+    "source": "Tombs of the Desolation"
+  },
+  "Mummy": {
+    "difficulty": 100,
+    "type": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  "Murk": {
+    "difficulty": 50,
+    "type": "monster",
+    "source": "Tombs of the Desolation"
+  },
+  "Revenant": {
+    "difficulty": 50,
+    "type": "revenant",
+    "source": "Tombs of the Desolation"
+  },
+  "Salamander": {
+    "difficulty": 5,
+    "type": "elemental",
+    "source": "Tombs of the Desolation"
+  },
+  "Sand Mite Swarm": {
+    "difficulty": 10,
+    "type": "animal",
+    "subtype": "swarm",
+    "source": "Tombs of the Desolation"
+  },
+  "Severed": {
+    "difficulty": 1,
+    "type": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  "Skeletal Steed": {
+    "difficulty": 5,
+    "type": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  "Vampire Brood": {
+    "difficulty": 50,
+    "type": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  "Whisper Cactus": {
+    "difficulty": 1,
+    "type": "plant",
+    "source": "Tombs of the Desolation"
+  }
+}

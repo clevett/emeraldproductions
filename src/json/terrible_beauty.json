@@ -1,0 +1,99 @@
+{
+  "Asrai": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Banshee": {
+    "difficulty": 500,
+    "type": "spirit",
+    "source": "Terrible Beauty"
+  },
+  "Bean-Nighie": {
+    "difficulty": 50,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Cu Sith": {
+    "difficulty": 50,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Elf Highborn": {
+    "difficulty": 50,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Elf Knight-Errant": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Elf Reveler": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Fechen": {
+    "difficulty": 10,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Faun": {
+    "difficulty": 1,
+    "type": "faun",
+    "source": "Terrible Beauty"
+  },
+  "Imp": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Jabberwock": {
+    "difficulty": 500,
+    "type": "monster",
+    "source": "Terrible Beauty"
+  },
+  "Kobold": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Lares": {
+    "difficulty": 5,
+    "type": "spirit",
+    "source": "Terrible Beauty"
+  },
+  "Merrow Male": {
+    "difficulty": 10,
+    "type": "faerie",
+    "subtype": "aquatic",
+    "source": "Terrible Beauty"
+  },
+  "Merrow Maid": {
+    "difficulty": 10,
+    "type": "faerie",
+    "subtype": "aquatic",
+    "source": "Terrible Beauty"
+  },
+  "Nymph": {
+    "difficulty": 250,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Pixie": {
+    "difficulty": 5,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Satyr": {
+    "difficulty": 25,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  },
+  "Unicorn": {
+    "difficulty": 100,
+    "type": "faerie",
+    "source": "Terrible Beauty"
+  }
+}

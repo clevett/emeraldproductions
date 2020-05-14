@@ -1,0 +1,116 @@
+{
+  "Angel": {
+    "difficulty": 50,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Behemoth": {
+    "difficulty": 750,
+    "type": "demon",
+    "source": "Exquisite Agony"
+  },
+  "Bogie": {
+    "difficulty": 5,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Butcher": {
+    "difficulty": 25,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Cambion": {
+    "difficulty": 5,
+    "type": "cambion",
+    "source": "Exquisite Agony"
+  },
+  "Chimera": {
+    "difficulty": 750,
+    "type": "monster",
+    "source": "Exquisite Agony"
+  },
+  "Devilkin": {
+    "difficulty": 5,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Familiar": {
+    "difficulty": 5,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Gargoyle": {
+    "difficulty": 50,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Gaunt": {
+    "difficulty": 10,
+    "type": "spirit",
+    "source": "Exquisite Agony"
+  },
+  "Hogman": {
+    "difficulty": 1,
+    "type": "monster",
+    "source": "Exquisite Agony"
+  },
+  "Ifrit": {
+    "difficulty": 500,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Incubus/Succubus": {
+    "difficulty": 750,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Lemure": {
+    "difficulty": 25,
+    "type": "spirit",
+    "source": "Exquisite Agony"
+  },
+  "Malebranche": {
+    "difficulty": 100,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Seraphim": {
+    "difficulty": 50,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Shedim": {
+    "difficulty": 25,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Termagant": {
+    "difficulty": 250,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Tormentor": {
+    "difficulty": 100,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  "Zeboul": {
+    "difficulty": 100,
+    "type": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  }
+}

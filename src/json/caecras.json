@@ -1,0 +1,77 @@
+{
+  "Apparition": {
+    "difficulty": 1,
+    "type": "spirit",
+    "source": "Caecras"
+  },
+  "Ghost": {
+    "difficulty": 500,
+    "type": "spirit",
+    "source": "Caecras"
+  },
+  "Caliban": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Caecras"
+  },
+  "Caliban Mob": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Caecras"
+  },
+  "Gray Cloak": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Caecras"
+  },
+  "Guerrilla": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Caecras"
+  },
+  "Looter": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Caecras"
+  },
+  "Orc Bone Guard": {
+    "difficulty": 100,
+    "type": "orc",
+    "source": "Caecras"
+  },
+  "Orc Gothi": {
+    "difficulty": 25,
+    "type": "orc",
+    "source": "Caecras"
+  },
+  "Orc Overseer": {
+    "difficulty": 5,
+    "type": "orc",
+    "source": "Caecras"
+  },
+  "Orc Renegade": {
+    "difficulty": 25,
+    "type": "orc",
+    "source": "Caecras"
+  },
+  "Orc Sergeant": {
+    "difficulty": 50,
+    "type": "orc",
+    "source": "Caecras"
+  },
+  "Orc Trooper": {
+    "difficulty": 50,
+    "type": "orc",
+    "source": "Caecras"
+  },
+  "Slave": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Caecras"
+  },
+  "Tower Wizard": {
+    "difficulty": 250,
+    "type": "human",
+    "source": "Caecras"
+  }
+}

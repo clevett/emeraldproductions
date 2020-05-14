@@ -1,0 +1,209 @@
+{
+  "Assassin": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Urchin": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Freeporter": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Beggars": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Lobsterman": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Longshoreman": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Merchant": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Pirate": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Pirate Captain": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Celebrant of the Pirate God": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Devotee of the Sea God": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Sailor": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Sea Lord's Guard": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Guard Sergeant": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Freeport Watch Sergeant": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Alcindar": {
+    "difficulty": 5,
+    "type": "dwarf",
+    "source": "Freeport Companion"
+  },
+  "Aleksander Tovac": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Alfhild": {
+    "difficulty": 100,
+    "type": "jotun",
+    "source": "Freeport Companion"
+  },
+  "Andrea Blax": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Arena Quen": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Angelo Stampfel": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Argyle McGill": {
+    "difficulty": 1,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Asha Sante": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Bianka Altanish": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Bill Sangapulatele": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Bobbin Brandydale": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Buster Wallace": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Celeste D'Arran": {
+    "difficulty": 50,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Countess D'Amberville": {
+    "difficulty": 100,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "C.Q.Calame": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Cragwipe": {
+    "difficulty": 10,
+    "type": "orc",
+    "source": "Freeport Companion"
+  },
+  "Cyril Berryhill": {
+    "difficulty": 10,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Darius Dorvin": {
+    "difficulty": 5,
+    "type": "halfling",
+    "source": "Freeport Companion"
+  },
+  "Dimetrios": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Dirk Haslinger": {
+    "difficulty": 5,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Dirwin \"Nimblefingers\" Arnig ": {
+    "difficulty": 5,
+    "type": "elemental",
+    "subtype": "gnome",
+    "source": "Freeport Companion"
+  },
+  "Draegar Redblade": {
+    "difficulty": 50,
+    "type": "faerie",
+    "subtype": "hobgoblin",
+    "source": "Freeport Companion"
+  },
+  "Dreiden Simmerswell": {
+    "difficulty": 5,
+    "type": "halfling",
+    "source": "Freeport Companion"
+  },
+  "Dunbar": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Hellhound": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+  "Egil": {
+    "difficulty": 25,
+    "type": "human",
+    "source": "Freeport Companion"
+  },
+}
