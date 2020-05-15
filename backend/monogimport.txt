@@ -1,0 +1,1 @@
+mongoimport --host cluster0-shard-00-02-pznxb.gcp.mongodb.net:27017 --db sodl --type json --file ./backend/beasts.json --jsonArray --authenticationDatabase admin --ssl --username emeraldDataBase --password HZKWHerb713Xfi7o
