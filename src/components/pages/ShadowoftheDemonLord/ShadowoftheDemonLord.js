@@ -3,14 +3,7 @@ import axios from 'axios'
 
 import { Container, Col, Row } from 'react-bootstrap'
 
-const BeastTableRow = props => (
-  <tr>
-    <th>{props.beastData.name}</th>
-    <td>{props.beastData.difficulty}</td>
-    <td>{props.beastData.descriptor}</td>
-    <td>{props.beastData.source}</td>
-  </tr>
-)
+import BeastTable from './components/BeastTable/BeastTable'
 
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {
@@ -28,10 +21,6 @@ class ShadowoftheDemonLord extends React.Component {
     .catch(error => console.log(error) )
   }
 
-  beastList() {
-    return this.state.beasts.map(beastData => <BeastTableRow beastData={beastData} key={beastData._id} /> )
-  }
-
   render() {
     return (
       <Container className="ShadowoftheDemonLord text-white">
@@ -41,19 +30,7 @@ class ShadowoftheDemonLord extends React.Component {
           </Col>
           <Col>
             <h2>Beasts</h2>
-            <table className="table text-white table-striped table-dark table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Difficulty</th>
-                  <th scope="col">Descriptor</th>
-                  <th scope="col">Source</th>
-                </tr>
-              </thead>
-              <tbody>
-                { this.beastList() }
-              </tbody>
-            </table>
+            <BeastTable beasts={this.state.beasts} />
           </Col> 
         </Row>
       </Container>
