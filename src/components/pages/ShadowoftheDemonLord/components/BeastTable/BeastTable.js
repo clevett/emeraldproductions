@@ -2,6 +2,9 @@ import React from 'react'
 
 const BeastTableRow = props => (
   <tr>
+    <th>
+      <button className='btn btn-success'><span>+</span></button>
+    </th>
     <th>{props.beastData.name}</th>
     <td>{props.beastData.difficulty}</td>
     <td>{props.beastData.descriptor}</td>
@@ -10,8 +13,13 @@ const BeastTableRow = props => (
 )
 
 class BeastTable extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { term: '' }
+  }
+
   beastList() {
-    return this.props.beasts.map(beastData => <BeastTableRow beastData={beastData} key={beastData._id} />)
+    return this.props.filtered.map(beastData => <BeastTableRow beastData={beastData} key={beastData._id} />)
   }
 
   render() {
@@ -19,6 +27,7 @@ class BeastTable extends React.Component {
       <table className="table text-white table-striped table-dark table-hover">
         <thead>
           <tr>
+            <th scope='col'></th>
             <th scope="col">Name</th>
             <th scope="col">Difficulty</th>
             <th scope="col">Descriptor</th>
