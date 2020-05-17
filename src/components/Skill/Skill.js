@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
-import './Skill.css'
+import './Skill.scss'
 
 class Skill extends React.Component {
   render() {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 import AboutCenter from '../../AboutCenter/AboutCenter'
 import ContactBar from '../../ContactBar/ContactBar'
@@ -8,10 +9,10 @@ import ContactBar from '../../ContactBar/ContactBar'
 class About extends React.Component {
   render() {
     return (
-      <div className="About text-white">
+      <Container className='About text-white'>
         <AboutCenter />
         <ContactBar />
-      </div>
+      </Container>
     )
   }
 }

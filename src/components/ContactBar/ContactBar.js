@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Contact from './Contact/Contact'
-import { Container, Row } from 'react-bootstrap'
+import Contact from '../Contact/Contact'
+import { Row } from 'react-bootstrap'
 
 import './ContactBar.scss'
 
@@ -13,15 +13,11 @@ const contacts = [{name: 'GitHub', src:github, href:'https://github.com/clevett'
 class ContactBar extends React.Component {
   render() {
 		return (
-			<section>
-				<Container className="mx-auto">
-					<Row className="ContactBar bg-secondary contact-bar text-white font-weight-bold p-4">
-						{
-						contacts.map(contact => <Contact key={contact.name} contact={contact} />)
-						}
-					</Row>
-				</Container>
-			</section>
+		<Row className="ContactBar contact-bar text-white font-weight-bold p-4">
+			{
+				contacts.map(contact => <Contact key={contact.name} contact={contact} />)
+			}
+		</Row>
 		)
   }
 }

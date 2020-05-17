@@ -23,19 +23,17 @@ class ShadowoftheDemonLord extends React.Component {
 
   render() {
     return (
-      <section className='Center d-flex align-items-center bg-primary'>
-        <Container className="ShadowoftheDemonLord text-white">
-            <Row>
-              <Col>
-                <h2>Total</h2>
-              </Col>
-              <Col>
-                <h2>Beasts</h2>
-                <input id='term' placeholder='Search term' type='text' value='animal' />
-              </Col> 
-            </Row>
-        </Container>
-      </section>
+      <Container className="ShadowoftheDemonLord text-white">
+        <Row>
+          <Col>
+            <h2>Total</h2>
+          </Col>
+          <Col>
+            <h2>Beasts</h2>
+            <input id='term' placeholder='Search term' type='text' value='animal' />
+          </Col> 
+        </Row>
+      </Container>
     )
   }
 }

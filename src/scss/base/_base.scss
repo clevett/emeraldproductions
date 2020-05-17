@@ -1,8 +1,9 @@
 html {
   height: 100%;
   
-  body {
-    height: 100%;
+  & > body {
+    background-color: #0f0e0e;
+    height: 100vh;
   }
 
   h2 {

@@ -7139,14 +7139,28 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+html {
+  height: 100%; }
+  html > body {
+    background-color: #0f0e0e;
+    height: 100vh; }
+  html h2 {
+    margin-bottom: 5%; }
+  html div[id='root'] {
+    height: 100%; }
+
 html h1 {
   font-family: 'Merriweather', cursive; }
 
 html p {
   font-family: 'Merriweather'; }
 
-nav {
+html nav {
   font-size: 1.25em; }
+
+.Center {
+  min-height: 70vh;
+  padding: 3% 2%; }
 
 @media (min-width: 768px) {
   .navbar {

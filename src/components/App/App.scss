@@ -1,8 +1,6 @@
 
 .App {
-  background-color: #0f0e0e;
   text-align: center;
-  height: 100%;
 
   .portrait {
     img {
@@ -12,8 +10,7 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
       border-radius: 0.85em;
       border: 2px solid transparent;
-
-      animation: moveInLeft 1s ease-in;
+      transition: all .3s ease;
     }
   }
 
@@ -22,12 +19,6 @@
   }
 
   nav {
-    min-height: 150px;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .Center {
-    min-height: 75vh;
+    min-height: 15vh;
   }
 }
