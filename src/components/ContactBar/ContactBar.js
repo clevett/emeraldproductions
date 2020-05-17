@@ -3,7 +3,7 @@ import React from 'react'
 import Contact from './Contact/Contact'
 import { Container, Row } from 'react-bootstrap'
 
-import './ContactBar.css'
+import './ContactBar.scss'
 
 import discord  from './Discord-Icon.png'
 import github  from './GitHub-Icon.png'

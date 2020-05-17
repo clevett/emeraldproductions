@@ -2,8 +2,8 @@ import React from 'react'
 
 import AboutCenter from '../../AboutCenter/AboutCenter'
 import ContactBar from '../../ContactBar/ContactBar'
-import SkillsList from '../../SkillsList/SkillsList'
-import ProductionCycle from '../../ProductionCycle/ProductionCycle'
+//import SkillsList from '../../SkillsList/SkillsList'
+//import ProductionCycle from '../../ProductionCycle/ProductionCycle'
 
 class About extends React.Component {
   render() {
@@ -11,8 +11,6 @@ class About extends React.Component {
       <div className="About text-white">
         <AboutCenter />
         <ContactBar />
-        <SkillsList />
-        <ProductionCycle />
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Container } from 'react-bootstrap'
+import { Container, Col, Row } from 'react-bootstrap'
 
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {
@@ -24,10 +24,16 @@ class ShadowoftheDemonLord extends React.Component {
   render() {
     return (
       <section className='Center d-flex align-items-center bg-primary'>
-        <Container>
-          <div className="ShadowoftheDemonLord text-white">
-            "Work in progress"
-          </div>
+        <Container className="ShadowoftheDemonLord text-white">
+            <Row>
+              <Col>
+                <h2>Total</h2>
+              </Col>
+              <Col>
+                <h2>Beasts</h2>
+                <input id='term' placeholder='Search term' type='text' value='animal' />
+              </Col> 
+            </Row>
         </Container>
       </section>
     )
