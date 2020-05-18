@@ -1,17 +1,15 @@
 import React from 'react'
 
-const BeastTableRow = props =>  {
-  console.log(props)
-  
+const BeastTableRow = ({ beastData, onBeastSelect }) =>  {
   return (
     <tr>
       <th>
-        <button className='btn btn-success'><span>+</span></button>
+        <button className='btn btn-success' onClick={() => onBeastSelect(beastData)}><span>+</span></button>
       </th>
-      <th>{props.name}</th>
-      <td>{props.difficulty}</td>
-      <td>{props.descriptor}</td>
-      <td>{props.source}</td>
+      <th>{beastData.name}</th>
+      <td>{beastData.difficulty}</td>
+      <td>{beastData.descriptor}</td>
+      <td>{beastData.source}</td>
     </tr>
   )
 }

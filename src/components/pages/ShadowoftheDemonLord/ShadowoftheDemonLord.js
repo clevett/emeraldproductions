@@ -46,7 +46,9 @@ class ShadowoftheDemonLord extends React.Component {
   }
 
   onBeastSelect = beast => {
-    //this.setState({ selectedVideo: video })
+    console.log(beast)
+    console.log('Select')
+    this.setState({ selected: [beast] })
   }
   
   render() {
@@ -55,12 +57,12 @@ class ShadowoftheDemonLord extends React.Component {
         <Row>
           <Col>
             <h2>Total</h2>
-            <BeastTable filtered={this.state.selected} />
+            <BeastTable beasts={this.state.selected} />
           </Col>
           <Col>
             <h2>Beasts</h2>
             <SearchBar onFormSubmit={this.onTermSubmit} />
-            <BeastTable filtered={this.state.search} />
+            <BeastTable beasts={this.state.search} onBeastSelect={this.onBeastSelect} />
           </Col> 
         </Row>
       </Container>

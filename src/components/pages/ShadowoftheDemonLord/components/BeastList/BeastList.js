@@ -1,11 +1,9 @@
 import React from 'react'
-import BeastTableRow from './BeastTableRow/BeastTableRow'
-//{ filtered, onBeastSelect }
-const BeastList = () => {
-  ///const renderedList = filtered.map(beastData => <BeastTableRow beastData={beastData} key={beastData._id} />)
-  //return <div> {renderedList} </div>
+import BeastTableRow from '../BeastTableRow/BeastTableRow'
 
-  return "Hello"
+const BeastList = ({ beasts, onBeastSelect }) => {
+  const renderedList = beasts.map(beastData => <BeastTableRow beastData={beastData} key={beastData._id} onBeastSelect={onBeastSelect} />)
+  return <tbody> {renderedList} </tbody>
 }
 
 export default BeastList
