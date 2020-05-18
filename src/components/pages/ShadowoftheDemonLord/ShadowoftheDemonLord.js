@@ -12,18 +12,12 @@ class ShadowoftheDemonLord extends React.Component {
     this.state = {
       beasts: [],
       search: [],
-      selected: []
+      selected: [],
+      difficulty: 0
     }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/ShadowoftheDemonLord/')
-    .then(response => {
-      this.setState({ beasts: response.data })
-      console.log(this.state)
-    })
-    .catch(error => console.log(error) )
-
     this.onTermSubmit('1')
   }
 
@@ -45,10 +39,23 @@ class ShadowoftheDemonLord extends React.Component {
     this.setState({ search: filter })
   }
 
-  onBeastSelect = beast => {
-    console.log(beast)
-    console.log('Select')
-    this.setState({ selected: [beast] })
+
+
+  //TO DO: This function needs to look for duplicates
+  //TO DO: It should increase a running total instead of adding a new one
+  addBeast = beast => {
+    const newSelectedBeastList = this.state.selected.concat([beast])
+    this.setState({ selected: newSelectedBeastList })
+    this.setState({ difficulty: this.state.difficulty += beast.difficulty })
+  }
+
+  //TO DO: This function will need to remove a single on if there is duplicate
+  //TO DO: It should increase a decrease total instead of adding a new one
+  removeBeast = beast => {
+    const currentSelected = this.state.selected
+    const newSelectedBeastList = currentSelected.filter(selected => selected._id != beast._id)
+    this.setState({ selected: newSelectedBeastList })
+    this.setState({ difficulty: this.state.difficulty -= beast.difficulty })
   }
   
   render() {
@@ -57,12 +64,13 @@ class ShadowoftheDemonLord extends React.Component {
         <Row>
           <Col>
             <h2>Total</h2>
-            <BeastTable beasts={this.state.selected} />
+            <div><label>Difficulty Total</label> <span>= {this.state.difficulty}</span></div>
+            <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.removeBeast} />
           </Col>
           <Col>
             <h2>Beasts</h2>
             <SearchBar onFormSubmit={this.onTermSubmit} />
-            <BeastTable beasts={this.state.search} onBeastSelect={this.onBeastSelect} />
+            <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.addBeast} />
           </Col> 
         </Row>
       </Container>

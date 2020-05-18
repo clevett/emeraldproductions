@@ -15,7 +15,7 @@ class BeastTable extends React.Component {
             <th scope="col">Source</th>
           </tr>
         </thead>
-        <BeastList beasts={this.props.beasts} onBeastSelect={this.props.onBeastSelect} />
+        <BeastList beasts={this.props.beasts} beastButton={this.props.beastButton} buttonType={this.props.buttonType} />
       </table>
     );
   }
