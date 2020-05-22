@@ -9,7 +9,7 @@ class NavigationBar extends React.Component {
 	render() {
 		return (
 			<Navbar className='navbar-thicker py-3 px-5' bg="dark" variant="dark" expand="lg">
-				<Navbar.Brand href="#home">
+				<Navbar.Brand href="/">
 				<img
 					src={logo}
 					width="250"
