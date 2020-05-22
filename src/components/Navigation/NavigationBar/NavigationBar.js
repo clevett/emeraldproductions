@@ -8,7 +8,7 @@ import NavigationLink from '../NavigationLink/NavigationLink'
 class NavigationBar extends React.Component {
 	render() {
 		return (
-			<Navbar className='navbar-thicker w-100 py-3 px-5' bg="dark" variant="dark" expand="lg">
+			<Navbar className='navbar-thicker py-3 px-5' bg="dark" variant="dark" expand="lg">
 				<Navbar.Brand href="#home">
 				<img
 					src={logo}

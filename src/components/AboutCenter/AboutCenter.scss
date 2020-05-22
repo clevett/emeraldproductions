@@ -1,3 +1,7 @@
+.AboutCenter {
+  backface-visibility: hidden;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
