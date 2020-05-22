@@ -3,8 +3,8 @@ import axios from 'axios'
 
 import { Container, Col, Row } from 'react-bootstrap'
 
-import BeastTable from './components/BeastTable/BeastTable'
-import SearchBar from './components/SearchBar/SearchBar'
+import BeastTable from './BeastTable/BeastTable'
+import SearchBar from './SearchBar/SearchBar'
 
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class ShadowoftheDemonLord extends React.Component {
   }
 
   onTermSubmit = async term => {
-    const response = await axios.get('http://localhost:5000/ShadowoftheDemonLord/')
+    await axios.get('http://localhost:5000/ShadowoftheDemonLord/')
     .then(response => {
       this.setState({ beasts: response.data })
       console.log(this.state)
@@ -56,7 +56,7 @@ class ShadowoftheDemonLord extends React.Component {
     }
 
     this.setState({ selected: selectedList })
-    this.setState({ difficulty: this.state.difficulty += beast.difficulty })
+    this.setState({ difficulty: this.state.difficulty + beast.difficulty })
   }
 
   //TO DO: This function will need to remove a single on if there is duplicate
@@ -70,11 +70,11 @@ class ShadowoftheDemonLord extends React.Component {
       currentEntry.total -= 1
       selectedList.splice(index, 1, currentEntry)
     } else  {
-      selectedList = selectedList.filter(selected => selected._id != beast._id)
+      selectedList = selectedList.filter(selected => selected._id !== beast._id)
     }
 
     this.setState({ selected: selectedList })
-    this.setState({ difficulty: this.state.difficulty -= beast.difficulty })
+    this.setState({ difficulty: this.state.difficulty - beast.difficulty })
   }
   
   render() {

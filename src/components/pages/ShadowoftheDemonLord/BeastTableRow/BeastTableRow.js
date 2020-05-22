@@ -10,7 +10,7 @@ const BeastTableRow = ({ beastData, beastButton, buttonType }) =>  {
   }
 
   //Left side column will have a number next to name for multiples of the same Bugbear x2
-  const numDisplay = () => buttonType != 'add' && beastData.total > 1 ? ` x ${beastData.total}` : ''
+  const numDisplay = () => buttonType !== 'add' && beastData.total > 1 ? ` x ${beastData.total}` : ''
 
   return (
     <tr>
