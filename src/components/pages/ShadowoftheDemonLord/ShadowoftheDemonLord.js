@@ -40,8 +40,6 @@ class ShadowoftheDemonLord extends React.Component {
 
   findIndex = beast => this.state.selected.indexOf(beast)
 
-  //TO DO: This function needs to look for duplicates
-  //TO DO: It should increase a running total instead of adding a new one
   addBeast = beast => {
     const index = this.findIndex(beast)
     let selectedList = this.state.selected
@@ -59,8 +57,6 @@ class ShadowoftheDemonLord extends React.Component {
     this.setState({ difficulty: this.state.difficulty + beast.difficulty })
   }
 
-  //TO DO: This function will need to remove a single on if there is duplicate
-  //TO DO: It should increase a decrease total instead of adding a new one
   removeBeast = beast => {
     const index = this.findIndex(beast)
     let selectedList = this.state.selected
