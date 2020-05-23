@@ -12,7 +12,8 @@ import './Roll20.scss'
 
 const sheets = [{
   name: 'Delta Green',
-  img: './images/deltagreen.png'
+  key: 'deltagreen',
+  src: './images/deltagreen.png'
 }]
 
 class Roll20 extends React.Component {
