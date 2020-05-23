@@ -18,8 +18,10 @@ connection.once('open', () => console.log("MongoDB databse connection establishe
 
 const usersRouter = require('./routes/users');
 const bestiaryRouter = require('./routes/bestiary');
+const roll20Router = require('./routes/sheets');
 
 app.use('/users', usersRouter);
 app.use('/ShadowoftheDemonLord', bestiaryRouter)
+app.use('/Roll20', roll20Router)
 
 app.listen(port, () => console.log(`Server is running on port: ${port}`))

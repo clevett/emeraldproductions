@@ -28,7 +28,7 @@ class Roll20 extends React.Component {
       <Container className='Roll20 text-white'>
         <Carousel>
           {
-            this.state.sheets.map(sheet => <CarouselItem key={sheet.key} sheet={sheet} />)
+            imageList.map(sheet => <CarouselItem key={sheet.name} sheet={sheet} />)
           }
         </Carousel>
       </Container>

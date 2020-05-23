@@ -4,7 +4,6 @@ import { Carousel } from 'react-bootstrap'
 
 const CarouselItem = props => {
   const { sheet } = props
-  console.log(sheet)
   return (
     <Carousel.Item >
         <img

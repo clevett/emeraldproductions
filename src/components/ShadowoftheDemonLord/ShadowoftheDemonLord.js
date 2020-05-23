@@ -25,7 +25,6 @@ class ShadowoftheDemonLord extends React.Component {
     await axios.get('http://localhost:5000/ShadowoftheDemonLord/')
     .then(response => {
       this.setState({ beasts: response.data })
-      console.log(this.state)
     })
     .catch(error => console.log(error) )
 

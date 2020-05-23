@@ -1,4 +1,4 @@
-import deltagreen from './deltagreen.png'
+/*import deltagreen from './deltagreen.png'
 import pendragon from './pendragon.png'
 import startrek from './startrek.png'
 import shadowrun4 from './shadowrun4e.png'
@@ -13,67 +13,67 @@ import shadowrun4e from './shadowrun4e.png'
 import shadowrunanarchy from './shadowrunanarchy.png'
 import synthicide from './synthicide.png'
 import trophygold from './trophygold.png'
-import wrathnglory from './wrathnglory.png'
+import wrathnglory from './wrathnglory.png' */
 
 export const imageList = [
   {
     name: 'Delta Green',
-    image: 'deltagreen.png'
+    src: 'deltagreen.png'
   },
   {
     name: 'Shadowrun 5th Edition',
-    image: 'shadowrun5e.png'
+    src: 'shadowrun5e.png'
   },
   {
     name: 'Pendragon 5th Edition',
-    image: 'pendragon.png'
+    src: 'pendragon.png'
   },
   {
     name: 'Star Trek',
-    image: 'startrek.png'
+    src: 'startrek.png'
   },
   {
     name: 'Shadowrun 4th Edition',
-    image: 'shadowrun4e.png'
+    src: 'shadowrun4e.png'
   },
   {
     name: 'Outbreak: Undead',
-    image: 'outbreak.png'
+    src: 'outbreak.png'
   },
   {
     name: 'Kids on Bikes',
-    image: 'kidsonbikes.png'
+    src: 'kidsonbikes.png'
   },
   {
     name: 'Mutant: Year Zero',
-    image: 'mutantyearzero.png'
+    src: 'mutantyearzero.png'
   },
   {
     name: 'Nemesis',
-    image: 'nemesis.png'
+    src: 'nemesis.png'
   },
   {
     name: 'Night Witches',
-    image: 'nightwitches.png'
+    src: 'nightwitches.png'
   },
   {
     name: 'Reach of Titan',
-    image: 'reachoftitan.png'
+    src: 'reachoftitan.png'
   },
   {
     name: 'Shadowrun Anarchy',
-    image: 'shadowrunanarchy.png'
+    src: 'shadowrunanarchy.png'
   },
   {
     name: 'Synthicide',
-    image: 'synthicide.png'
+    src: 'synthicide.png'
   },
   {
     name: 'Trophy Gold',
-    image: 'trophygold.png'
+    src: 'trophygold.png'
   },
   {
     name: 'Wrath and Glory',
-    image: 'wrathnglory.png'
+    src: 'wrathnglory.png'
   }
 ]
