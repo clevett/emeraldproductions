@@ -1,9 +1,7 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
 
-import ContactForm from '../../ContactForm/ContactForm'
-
-//d-flex align-items-center
+import ContactForm from '../ContactForm/ContactForm'
 
 class ContactPage extends React.Component {
   render() {

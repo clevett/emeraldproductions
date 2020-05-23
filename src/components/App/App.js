@@ -6,10 +6,10 @@ import { Row } from 'react-bootstrap'
 //import "bootstrap/dist/css/bootstrap.min.css"
 
 import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
-import About from '../pages/About/About'
-import ContactPage from '../pages/ContactPage/ContactPage'
-import Roll20 from '../pages/Roll20/Roll20'
-import ShadowoftheDemonLord from '../pages/ShadowoftheDemonLord/ShadowoftheDemonLord'
+import About from '../About/About'
+import ContactPage from '../ContactPage/ContactPage'
+import Roll20 from '../Roll20/Roll20'
+import ShadowoftheDemonLord from '../ShadowoftheDemonLord/ShadowoftheDemonLord'
 import Footer from '../Footer/Footer'
 
 class App extends React.Component {
