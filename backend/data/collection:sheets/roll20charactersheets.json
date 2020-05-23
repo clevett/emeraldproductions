@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Delta Green",
+    "image": "deltagreen.png"
+  },
+  {
+    "name": "Shadowrun 5th Edition",
+    "image": "shadowrun5e.png"
+  },
+  {
+    "name": "Pendragon 5th Edition",
+    "image": "pendragon.png"
+  },
+  {
+    "name": "Star Trek",
+    "image": "startrek.png"
+  },
+  {
+    "name": "Shadowrun 4th Edition",
+    "image": "shadowrun4e.png"
+  },
+  {
+    "name": "Outbreak: Undead",
+    "image": "outbreak.png"
+  },
+  {
+    "name": "Kids on Bikes",
+    "image": "kidsonbikes.png"
+  },
+  {
+    "name": "Mutant: Year Zero",
+    "image": "mutantyearzero.png"
+  },
+  {
+    "name": "Nemesis",
+    "image": "nemesis.png"
+  },
+  {
+    "name": "Night Witches",
+    "image": "nightwitches.png"
+  },
+  {
+    "name": "Reach of Titan",
+    "image": "reachoftitan.png"
+  },
+  {
+    "name": "Shadowrun Anarchy",
+    "image": "shadowrunanarchy.png"
+  },
+  {
+    "name": "Synthicide",
+    "image": "synthicide.png"
+  },
+  {
+    "name": "Trophy Gold",
+    "image": "trophygold.png"
+  },
+  {
+    "name": "Wrath and Glory",
+    "image": "wrathnglory.png"
+  }
+]

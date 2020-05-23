@@ -22,7 +22,7 @@ class App extends React.Component {
           </Row>
           <Row className='Center bg-primary'>
             <Route path="/" exact component={About} />
-            <Route path="/roll20" component={Roll20} />
+            <Route path="/Roll20" component={Roll20} />
             <Route path="/ShadowoftheDemonLord" component={ShadowoftheDemonLord} />
             <Route path="/contact" component={ContactPage} />
           </Row>
