@@ -17,11 +17,11 @@ const connection = mongoose.connection
 connection.once('open', () => console.log("MongoDB databse connection established successfully"))
 
 const usersRouter = require('./routes/users');
-const bestiaryRouter = require('./routes/bestiary');
-const roll20Router = require('./routes/sheets');
+const sodlbestiaryRouter = require('./routes/sodlbestiary');
+const roll20charsheetsRouter = require('./routes/roll20charsheets');
 
 app.use('/users', usersRouter);
-app.use('/ShadowoftheDemonLord', bestiaryRouter)
-app.use('/Roll20', roll20Router)
+app.use('/ShadowoftheDemonLord', sodlbestiaryRouter)
+app.use('/Roll20', roll20charsheetsRouter)
 
 app.listen(port, () => console.log(`Server is running on port: ${port}`))

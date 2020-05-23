@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const sheetSchema = new mongoose.Schema({
+const roll20charsheetsSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -13,6 +13,6 @@ const sheetSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const Sheet = mongoose.model('Sheet', sheetSchema)
+const CharacterSheets = mongoose.model('roll20charsheets', roll20charsheetsSchema)
 
-module.exports = Sheet;
+module.exports = CharacterSheets;

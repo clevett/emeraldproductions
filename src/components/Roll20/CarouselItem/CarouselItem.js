@@ -4,11 +4,12 @@ import { Carousel } from 'react-bootstrap'
 
 const CarouselItem = props => {
   const { sheet } = props
+  const src = `/src/imgs/charsheets/${sheet.image}`
   return (
     <Carousel.Item >
         <img
           className="d-block w-100"
-          src={sheet.src}
+          src={src}
           alt={sheet.name}
         />
     </Carousel.Item >

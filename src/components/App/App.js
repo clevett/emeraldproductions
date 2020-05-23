@@ -3,8 +3,6 @@ import './App.scss'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Row } from 'react-bootstrap'
 
-//import "bootstrap/dist/css/bootstrap.min.css"
-
 import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
 import About from '../About/About'
 import ContactPage from '../ContactPage/ContactPage'
