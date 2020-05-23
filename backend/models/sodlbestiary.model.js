@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const bestiarySchema = new mongoose.Schema({
+const sodlbestiarySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -17,13 +17,13 @@ const bestiarySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  username: { 
+  username: {
     type: String
   }
 }, {
   timestamps: true
 })
 
-const Beast = mongoose.model('Beast', bestiarySchema)
+const sodlbestiary = mongoose.model('sodlbeasts', sodlbestiarySchema)
 
-module.exports = Beast;
+module.exports = sodlbestiary;

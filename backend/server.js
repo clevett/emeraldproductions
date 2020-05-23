@@ -14,10 +14,10 @@ const uri = process.env.ATLAS_URI
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const connection = mongoose.connection
-connection.once('open', () => console.log("MongoDB databse connection established successfully"))
+connection.once('open', () => console.log("MongoDB database connection established successfully"))
 
 const usersRouter = require('./routes/users');
-const sodlbestiaryRouter = require('./routes/sodlbestiary');
+const sodlbestiaryRouter = require('./routes/sodlbestiary')
 const roll20charsheetsRouter = require('./routes/roll20charsheets');
 
 app.use('/users', usersRouter);
