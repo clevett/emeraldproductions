@@ -27,7 +27,7 @@ class NavigationBar extends React.Component {
 							<NavDropdown.Divider />
 							<NavDropdown.Item href="/ShadowoftheDemonLord">Shadow of the Demon Lord</NavDropdown.Item>
 						</NavDropdown>
-						<NavigationLink reference={{ name: 'Roll20', href: '/roll20' }} />
+						<NavigationLink reference={{ name: 'Roll20', href: '/Roll20' }} />
 						<NavigationLink reference={{ name: 'Contact', href: '/contact' }} />
 					</Nav>
 				</Navbar.Collapse>
