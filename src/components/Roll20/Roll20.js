@@ -22,6 +22,7 @@ class Roll20 extends React.Component {
     return (
       <Container className='Roll20 text-white'>
         <h1>Character Sheets</h1>
+        <p>Roll20 character sheets designed and programmed for professional and personal purpose.</p>
         <Carousel>
           {
             this.state.sheets.map(sheet => {
