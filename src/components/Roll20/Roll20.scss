@@ -1,22 +1,11 @@
 .Roll20 {
-  display:inline-grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1%;
-  
   img {
-    width: 350px;
-    height: 400px;
+    height: 700px;
   }
 
   .carousel {
-    grid-column: 2;
-
-    .carousel-control-next {
-      right: -15%;
-    }
-
-    .carousel-control-prev {
-      left: -15%;
+    .carousel-indicators {
+      bottom: -6%
     }
 
     .carousel-indicators li {
