@@ -1,6 +1,6 @@
 import React from 'react'
 
-import portrait from '../../imgs/takedown.png'
+import portrait from '../../../imgs/takedown.png'
 
 import { Row, Col, Image } from 'react-bootstrap'
 
@@ -9,7 +9,7 @@ import './AboutCenter.scss'
 class AboutCenter extends React.Component {
   render() {
     return (
-      <Row className='AboutCenter d-flex align-items-center mb-5'>
+      <Row className='AboutCenter d-flex align-items-center mt-5 mb-5'>
           <Col xs={6} className='portrait'>
             <Image className='box-shadow' src={portrait} alt='super hero known as Takedown' />
           </Col>

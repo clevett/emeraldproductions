@@ -75,6 +75,9 @@ class ShadowoftheDemonLord extends React.Component {
   render() {
     return (
       <Container className="ShadowoftheDemonLord text-white">
+        <Row className='text-center mb-5'>
+          <h1 className='w-100'>Shadow of the Demon Lord Encounter Builder</h1>
+        </Row>
         <Row>
           <Col>
             <h2>Total</h2>

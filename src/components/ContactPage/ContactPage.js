@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
 
-import ContactForm from '../ContactForm/ContactForm'
+import ContactForm from './ContactForm/ContactForm'
 
 class ContactPage extends React.Component {
   render() {

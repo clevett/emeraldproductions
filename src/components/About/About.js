@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 
-import AboutCenter from '../AboutCenter/AboutCenter'
+import AboutCenter from './AboutCenter/AboutCenter'
 import ContactBar from '../ContactBar/ContactBar'
 //import SkillsList from '../../SkillsList/SkillsList'
 //import ProductionCycle from '../../ProductionCycle/ProductionCycle'

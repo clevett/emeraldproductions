@@ -27,7 +27,7 @@ class Roll20 extends React.Component {
           {
             this.state.sheets.map(sheet => {
               return (
-                <Carousel.Item>
+                <Carousel.Item key={sheet._id}>
                   <img
                     src={`/assets/images/${sheet.image}`}
                     alt={sheet.name}

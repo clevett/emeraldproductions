@@ -1,6 +1,6 @@
 import React from 'react'
 
-import DeckBuilder from '../DeckBuilder/DeckBuilder'
+import DeckBuilder from '../../DeckBuilder/DeckBuilder'
 import { Container, Row } from 'react-bootstrap'
 
 import usability  from './Icons/button-finger.svg'

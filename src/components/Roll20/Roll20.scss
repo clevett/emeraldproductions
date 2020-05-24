@@ -1,4 +1,6 @@
 .Roll20 {
+  margin-bottom: 3%;
+
   img {
     height: 700px;
     box-shadow: 0 5rem 4rem rgba(black, .5);
@@ -8,7 +10,7 @@
 
   .carousel {
     .carousel-indicators {
-      bottom: -6%
+      bottom: -8%
     }
 
     .carousel-indicators li {
