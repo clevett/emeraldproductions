@@ -4,7 +4,7 @@ import { Carousel } from 'react-bootstrap'
 
 const CarouselItem = props => {
   const { sheet } = props
-  const src = `assets/images/${sheet.image}`
+  const src = `/assets/images/${sheet.image}`
   return (
     <Carousel.Item >
         <img

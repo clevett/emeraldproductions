@@ -24,11 +24,12 @@ class Roll20 extends React.Component {
   render() {
     return (
       <Container className='Roll20 text-white'>
-        <Carousel>
-          {
-            this.state.sheets.map(sheet => <CarouselItem key={sheet._id} sheet={sheet} />)
-          }
-        </Carousel>
+        {
+          this.state.sheets.map(sheet => {
+            const src = `/assets/images/${sheet.image}`
+            return <img src={src} />
+          })
+        }
       </Container>
     )
   }
