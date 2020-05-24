@@ -6,7 +6,7 @@ import { Row } from 'react-bootstrap'
 import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
 import About from '../About/About'
 import ContactPage from '../ContactPage/ContactPage'
-import Roll20 from '../Roll20/Roll20'
+import Roll20CharSheets from '../Roll20/Roll20'
 import ShadowoftheDemonLord from '../ShadowoftheDemonLord/ShadowoftheDemonLord'
 import Footer from '../Footer/Footer'
 
@@ -20,7 +20,7 @@ class App extends React.Component {
           </Row>
           <Row className='Center bg-primary'>
             <Route path="/" exact component={About} />
-            <Route path="/Roll20" component={Roll20} />
+            <Route path="/Roll20CharSheets" component={Roll20CharSheets} />
             <Route path="/ShadowoftheDemonLord" component={ShadowoftheDemonLord} />
             <Route path="/contact" component={ContactPage} />
           </Row>

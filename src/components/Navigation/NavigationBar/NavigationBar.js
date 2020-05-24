@@ -22,12 +22,14 @@ class NavigationBar extends React.Component {
 				<Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
 					<Nav className="text-white font-weight-bold" activeKey="/home">
 						<NavigationLink reference={{name: 'About', href:'/'}} />
-						<NavDropdown className='text-white font-weight-bold mr-5' title="RPGs" id="basic-nav-dropdown">
+						<NavDropdown className='text-white font-weight-bold mr-5' title="RPG Tools" id="basic-nav-dropdown">
 							<NavDropdown.Item href="#shadowrun">Shadowrun</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<NavDropdown.Item href="/ShadowoftheDemonLord">Shadow of the Demon Lord</NavDropdown.Item>
 						</NavDropdown>
-						<NavigationLink reference={{ name: 'Roll20', href: '/Roll20' }} />
+						<NavDropdown className='text-white font-weight-bold mr-5' title="Roll20" id="basic-nav-dropdown">
+							<NavDropdown.Item href="/Roll20CharSheets">Character Sheets</NavDropdown.Item>
+						</NavDropdown>
 						<NavigationLink reference={{ name: 'Contact', href: '/contact' }} />
 					</Nav>
 				</Navbar.Collapse>
