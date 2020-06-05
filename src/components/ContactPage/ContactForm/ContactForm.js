@@ -30,7 +30,7 @@ class ContactForm extends React.Component {
       method: "POST", 
       url:"http://localhost:3000/send", 
       data:  this.state
-    }).then((response)=>{
+    }).then((response)=> {
       if (response.data.status === 'success') {
         alert("Message Sent."); 
         this.resetForm()
