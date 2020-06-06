@@ -1,0 +1,31 @@
+button[type='submit'] {
+	box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffffff45;
+	transition: all .2s;
+
+	&:hover {
+		transform: translateY(-3px);
+		box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem rgba(#17be5b, .2);
+		animation: pulse 5s;
+		@keyframes pulse {
+			0% {
+				background-color: black;
+			}
+			100% {
+				background-color: #086a31;
+				box-shadow: none;
+			}
+		}	
+				
+		&::after {
+				transform: scaleX(1.4) scaleY(1.6);
+				opacity: 0;
+		}
+	}
+
+	&:active,
+	&:focus {
+		outline: none;
+		transform: translateY(1px);
+		box-shadow: 0 .5rem 1rem rgba(black, .2);
+	}
+}

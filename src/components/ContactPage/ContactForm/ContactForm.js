@@ -2,6 +2,8 @@ import React from 'react'
 import { Col, Form, Button } from 'react-bootstrap'
 import axios from 'axios'
 
+import './ContactForm.scss'
+
 class ContactForm extends React.Component {
   constructor(props) {
     super(props)
@@ -23,19 +25,19 @@ class ContactForm extends React.Component {
   resetForm = () => this.setState({name: "", email: "", message: ""})
   
   handleSubmit = event => {
-    console.log(this.state)
     event.preventDefault()
 
     axios({
       method: "POST", 
-      url:"http://localhost:3000/send", 
+      url:"http://localhost:5000/send", 
       data:  this.state
     }).then((response)=> {
-      if (response.data.status === 'success') {
+      console.log(response)
+      if (response.data.msg === 'success') {
         alert("Message Sent."); 
         this.resetForm()
-       } else if (response.data.status === 'fail') {
-        alert("Message failed to send.")
+       } else if (response.data.msg === 'fail') {
+        alert("Message failed to send. You can send an email to support@emeraldproductionsllc.com")
       }
     })
   }

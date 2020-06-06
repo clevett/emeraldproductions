@@ -19,14 +19,11 @@ transporter.verify((error, success) => {
   }
 });
 
-router.post('/send', (req, res, next) => {
+router.route('/').post((req, res, next) => {
 	let name = req.body.name
 	let email = req.body.email
 	let message = req.body.message
-	let content = `name: ${name} \n email: ${email} \n message: ${content} `
-
-	console.log("POST")
-	console.log(req)
+	let content = `name: ${name} \n email: ${email} \n message: ${message}`
 
 	let mail = {
 		from: name,

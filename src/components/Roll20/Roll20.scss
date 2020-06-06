@@ -20,4 +20,26 @@
       width: 10px;
     }
   }
+
+  .carousel-indicators li,
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    transition: all .2s;
+
+    &:hover {
+      transform: translateY(-3px);
+
+      &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+      }
+    }
+  
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(1px);
+      box-shadow: 0 .5rem 1rem rgba(black, .2);
+    }
+  }
 }
