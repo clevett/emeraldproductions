@@ -10,8 +10,6 @@
     "bootstrap": "^4.4.1",
     "firebase": "^7.15.0",
     "firebase-tools": "^8.4.2",
-    "latest": "^0.2.0",
-    "n": "^6.5.1",
     "node": "^14.4.0",
     "npm-run-all": "^4.1.1",
     "react": "^16.13.0",
