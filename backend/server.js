@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 
 const app = express()
-const port = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
@@ -26,4 +26,8 @@ app.use('/ShadowoftheDemonLord', sodlbestiaryRouter)
 app.use('/Roll20', roll20charsheetsRouter)
 app.use('/send', send)
 
-app.listen(port, () => console.log(`Server is running on port: ${port}`))
+if (process.env.NODE_ENV === 'production') {
+    
+}
+
+app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
