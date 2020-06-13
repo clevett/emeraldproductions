@@ -1,12 +1,9 @@
-const express = require('express')
-const cors = require('cors')
-const mongoose = require('mongoose')
+const express = require('express'), cors = require('cors'), mongoose = require('mongoose')
 const path = require('path')
 
 require('dotenv').config()
 
 const app = express()
-const PORT = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
@@ -31,13 +28,13 @@ app.use('/ShadowoftheDemonLord', sodlbestiaryRouter)
 app.use('/Roll20CharSheets', roll20charsheetsRouter)
 app.use('/send', send)
 
-//ENV
+//Server static assets in production
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(_dirname, 'client', 'build', 'index.html')) // relative path
-    })
+    //Set the static folder
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')))
 }
 
+const PORT = process.env.PORT || 5000
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
