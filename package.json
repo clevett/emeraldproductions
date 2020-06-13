@@ -31,7 +31,7 @@
     "react:test": "react-scripts test",
     "react:eject": "react-scripts eject",
     "sass:watch": "node-sass src/scss/index.scss src/index.css -w",
-    "sass:compile": "node-sass src/scss/index.scss src/index.css",
+    "sass:compile": "node-sass src/scss/index.scss build/index.css",
     "node:server": "node server.js",
     "heroku-postbuild": "npm install && npm run build"
   },
