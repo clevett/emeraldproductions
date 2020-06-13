@@ -32,9 +32,8 @@
     "react:eject": "react-scripts eject",
     "sass:watch": "node-sass src/scss/index.scss src/index.css -w",
     "sass:compile": "node-sass src/scss/index.scss src/index.css",
-    "node:server": "cd backend && node server.js",
-    "install:client": "npm install",
-    "heroku-postbuild": "npm run install:client && npm run build"
+    "node:server": "node server.js",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
