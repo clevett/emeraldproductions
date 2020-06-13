@@ -6,7 +6,7 @@ import { Row } from 'react-bootstrap'
 import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
 import About from '../About/About'
 import ContactPage from '../ContactPage/ContactPage'
-import Roll20CharSheets from '../Roll20/Roll20'
+import Roll20CharSheets from '../Roll20/Roll20CharSheets/Roll20CharSheets'
 import ShadowoftheDemonLord from '../ShadowoftheDemonLord/ShadowoftheDemonLord'
 import Footer from '../Footer/Footer'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import { Container, Carousel} from 'react-bootstrap'
-import './Roll20.scss'
+import './Roll20CharSheets.scss'
 
 class Roll20 extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Roll20 extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://emeraldproductions.herokuapp.com/Roll20CharSheets/')
+    axios.get('https://emeraldproductions.herokuapp.com/api/Roll20CharSheets/')
       .then(response => this.setState({ sheets: response.data }))
       .catch(error => console.log(error))
   }

@@ -29,7 +29,7 @@ class ContactForm extends React.Component {
 
     axios({
       method: "POST", 
-      url:"https://emeraldproductions.herokuapp.com/send", 
+      url:"https://emeraldproductions.herokuapp.com/api/send", 
       data:  this.state
     }).then((response)=> {
       if (response.data.msg === 'success') {

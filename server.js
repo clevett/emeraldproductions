@@ -24,9 +24,9 @@ const roll20charsheetsRouter = require('./routes/roll20charsheets')
 const send = require('./routes/send')
 
 app.use('/users', usersRouter);
-app.use('/ShadowoftheDemonLord', sodlbestiaryRouter)
-app.use('/Roll20CharSheets', roll20charsheetsRouter)
-app.use('/send', send)
+app.use('/api/ShadowoftheDemonLord', sodlbestiaryRouter)
+app.use('/api/Roll20CharSheets', roll20charsheetsRouter)
+app.use('/api/send', send)
 
 //Server static assets in production
 if (process.env.NODE_ENV === 'production') {

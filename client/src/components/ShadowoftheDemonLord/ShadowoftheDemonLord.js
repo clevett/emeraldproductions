@@ -22,7 +22,7 @@ class ShadowoftheDemonLord extends React.Component {
   }
 
   onTermSubmit = async term => {
-    await axios.get('https://emeraldproductions.herokuapp.com/ShadowoftheDemonLord/')
+    await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
     .then(response => {
       this.setState({ beasts: response.data })
     })
