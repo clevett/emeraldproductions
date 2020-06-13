@@ -21,7 +21,7 @@ class App extends React.Component {
           <Row className='Center bg-primary'>
             <Route path="/" exact component={About} />
             <Route path="/Roll20CharSheets" component={Roll20CharSheets} />
-            <Route path="/ShadowoftheDemonLord" component={ShadowoftheDemonLord} />
+            <Route path="/shadow_of_the_demon_lord" component={ShadowoftheDemonLord} />
             <Route path="/contact" component={ContactPage} />
           </Row>
           <Row>

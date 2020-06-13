@@ -23,7 +23,7 @@ class NavigationBar extends React.Component {
 					<Nav className="text-white font-weight-bold" activeKey="/home">
 						<NavigationLink reference={{name: 'About', href:'/'}} />
 						<NavDropdown className='text-white font-weight-bold mr-5' title="RPG Tools" id="basic-nav-dropdown">
-							<NavDropdown.Item href="/ShadowoftheDemonLord">Shadow of the Demon Lord</NavDropdown.Item>
+							<NavDropdown.Item href="/shadow_of_the_demon_lord">Shadow of the Demon Lord</NavDropdown.Item>
 						</NavDropdown>
 						<NavDropdown className='text-white font-weight-bold mr-5' title="Roll20" id="basic-nav-dropdown">
 							<NavDropdown.Item href="/Roll20CharSheets">Character Sheets</NavDropdown.Item>
