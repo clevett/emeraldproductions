@@ -13,7 +13,7 @@ class Roll20 extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/Roll20/')
+    axios.get('https://emeraldproductions.herokuapp.com/Roll20CharSheets/')
       .then(response => this.setState({ sheets: response.data }))
       .catch(error => console.log(error))
   }

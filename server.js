@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000
 app.use(cors())
 app.use(express.json())
 
+//MONGO ATLAS
 const uri = process.env.ATLAS_URI
 mongoose.connect(uri, { 
     useNewUrlParser: true, useUnifiedTopology: true 
@@ -19,6 +20,7 @@ mongoose.connect(uri, {
 const connection = mongoose.connection
 connection.once('open', () => console.log("MongoDB database connection established successfully"))
 
+//ROUTES
 const usersRouter = require('./backend/routes/users')
 const sodlbestiaryRouter = require('./backend/routes/sodlbestiary')
 const roll20charsheetsRouter = require('./backend/routes/roll20charsheets')
@@ -26,9 +28,10 @@ const send = require('./backend/routes/send')
 
 app.use('/users', usersRouter);
 app.use('/ShadowoftheDemonLord', sodlbestiaryRouter)
-app.use('/Roll20', roll20charsheetsRouter)
+app.use('/Roll20CharSheets', roll20charsheetsRouter)
 app.use('/send', send)
 
+//ENV
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('./build'))
 

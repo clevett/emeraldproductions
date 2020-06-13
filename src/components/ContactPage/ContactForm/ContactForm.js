@@ -29,10 +29,9 @@ class ContactForm extends React.Component {
 
     axios({
       method: "POST", 
-      url:"http://localhost:5000/send", 
+      url:"https://emeraldproductions.herokuapp.com/send", 
       data:  this.state
     }).then((response)=> {
-      console.log(response)
       if (response.data.msg === 'success') {
         alert("Message Sent."); 
         this.resetForm()
