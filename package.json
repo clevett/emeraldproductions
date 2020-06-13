@@ -19,12 +19,19 @@
   },
   "scripts": {
     "react:start": "react-scripts start",
-    "start": "npm-run-all --parallel react:start sass:watch nodemon:server",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "npm-run-all --parallel react:start sass:compile node:server",
+    "start:dev": "npm-run-all --parallel react:start sass:watch node:server",
+    "build": "npm-run-all --parallel react:build sass:compile",
+    "react:build": "react-scripts build",
+    "react:test": "react-scripts test",
+    "react:eject": "react-scripts eject",
     "sass:watch": "node-sass src/scss/index.scss src/index.css -w",
-    "nodemon:server": "cd backend/ && nodemon server"
+    "sass:compile": "node-sass src/scss/index.scss src/index.css",
+    "node:server": "cd backend/ && node server.js",
+    "nodemon:server": "cd backend/ && nodemon server",
+    "install:client": "npm install",
+    "install:backend": "cd backend && npm install",
+    "heroku-postbuild": "npm run install:client && npm run build && install:backend"
   },
   "eslintConfig": {
     "extends": "react-app"

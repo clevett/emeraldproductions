@@ -27,7 +27,7 @@ app.use('/Roll20', roll20charsheetsRouter)
 app.use('/send', send)
 
 if (process.env.NODE_ENV === 'production') {
-    
+    app.use(express.static('../build'))
 }
 
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
