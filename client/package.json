@@ -3,33 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "firebase": "^7.15.0",
     "firebase-tools": "^8.4.2",
+    "jest": "^26.0.1",
     "node": "^14.4.0",
+    "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.0",
-    "reactstrap": "^8.4.1",
-    "node-sass": "^4.14.1"
+    "reactstrap": "^8.4.1"
   },
   "scripts": {
     "react:start": "react-scripts start",
-    "start": "npm-run-all --parallel react:start node:server",
-    "start:dev": "npm-run-all --parallel react:start sass:watch node:server",
+    "start": "npm-run-all --parallel react:start sass:watch node:server",
     "build": "npm-run-all --parallel react:build sass:compile",
     "react:build": "react-scripts build",
     "react:test": "react-scripts test",
     "react:eject": "react-scripts eject",
     "sass:watch": "node-sass src/scss/index.scss src/index.css -w",
     "sass:compile": "node-sass src/scss/index.scss src/index.css",
-    "node:server": "cd .. && node server.js"
+    "node:server": "cd .. && node server.js",
+    "test": "jest --watchAll"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,9 +46,6 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^9.5.0",
-    "jest-dom": "^4.0.0",
-    "node-sass": "^4.14.1",
-    "react-test-render": "^1.1.2"
+    "node-sass": "^4.14.1"
   }
 }
