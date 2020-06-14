@@ -6,6 +6,10 @@ import { Container, Col, Row } from 'react-bootstrap'
 import BeastTable from './BeastTable/BeastTable'
 import SearchBar from './SearchBar/SearchBar'
 
+import './ShadowoftheDemonLord.scss'
+
+//import createSelectedList from './createSelectedList.js'
+
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {
     super(props)
@@ -42,9 +46,9 @@ class ShadowoftheDemonLord extends React.Component {
   addBeast = beast => {
     const index = this.findIndex(beast)
     let selectedList = this.state.selected
+    let currentEntry = selectedList[index]
 
     if (index >= 0) {
-      let currentEntry = selectedList[index]
       currentEntry.total += 1
       selectedList.splice(index, 1, currentEntry)
     } else {
@@ -75,17 +79,63 @@ class ShadowoftheDemonLord extends React.Component {
   render() {
     return (
       <Container className="ShadowoftheDemonLord text-white">
-        <Row className='text-center mb-5'>
+        <Row className='text-center mb-3'>
           <h1 className='w-100'>Shadow of the Demon Lord Encounter Builder</h1>
         </Row>
         <Row>
-          <Col>
-            <h2>Total</h2>
-            <div><label>Difficulty Total</label> <span>= {this.state.difficulty}</span></div>
-            <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.removeBeast} />
+          <Col className='col-lg-7'>
+            <h2>Encounter Difficulty ({this.state.difficulty})</h2>
+            <Row className='text-left mb-3'>
+              <Col>
+                <h3>Level</h3>
+                <select>
+                  <option value='starting'>Starting</option>
+                  <option value='novice'>Novice</option>
+                  <option value='expert'>Expert</option>
+                  <option value='master'>Master</option>
+                </select>
+              </Col>
+              <Col>
+                <h3>Easy</h3>
+                <span>3 or less</span>
+              </Col>
+              <Col>
+                <h3>Average</h3>
+                <span>4-15</span>
+              </Col>
+              <Col>
+                <h3>Challenging</h3>
+                <span>16-30</span>
+              </Col>
+              <Col>
+                <h3>Hard</h3>
+                <span>31 or more</span>
+              </Col>
+              <Col>
+                <h3>Max. Creature Difficulty</h3>
+                <span>25</span>
+              </Col>
+            </Row>
+            <Row>
+              <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.removeBeast} />
+            </Row>
           </Col>
-          <Col>
-            <h2>Beasts</h2>
+          <Col className='col-lg-5'>
+            <h2>Beastiary</h2>
+            <Row className='text-left mb-3'>
+              <Col>
+                <h3>Difficult Rating</h3>
+                <select>
+                  <option>1</option>
+                </select>
+              </Col>
+              <Col>
+                <h3>Descriptor</h3>
+              </Col>
+              <Col>
+                <h3>Source</h3>
+              </Col>
+            </Row>
             <SearchBar onFormSubmit={this.onTermSubmit} />
             <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.addBeast} />
           </Col> 

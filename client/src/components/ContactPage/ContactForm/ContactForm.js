@@ -43,7 +43,7 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit} method="POST">
+      <Form className='ContactForm' onSubmit={this.handleSubmit} method="POST">
         <Form.Row id='contact-form'>
           <Form.Group className='text-left' as={Col} controlId="formGridName">
             <Form.Label className='text-left'>Name*</Form.Label>
