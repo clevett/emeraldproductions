@@ -6,9 +6,10 @@ import { Container, Col, Row } from 'react-bootstrap'
 import BeastTable from './BeastTable/BeastTable'
 import SearchBar from './SearchBar/SearchBar'
 
+
 import './ShadowoftheDemonLord.scss'
 
-//import createSelectedList from './createSelectedList.js'
+import { addBeast, removeBeast } from './updateSelected'
 
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {
@@ -41,39 +42,11 @@ class ShadowoftheDemonLord extends React.Component {
     this.setState({ search: filter })
   }
 
-  findIndex = beast => this.state.selected.indexOf(beast)
-
-  addBeast = beast => {
-    const index = this.findIndex(beast)
-    let selectedList = this.state.selected
-    let currentEntry = selectedList[index]
-
-    if (index >= 0) {
-      currentEntry.total += 1
-      selectedList.splice(index, 1, currentEntry)
-    } else {
-      beast.total = 1
-      selectedList.splice(selectedList.length + 1, 1, beast)
-    }
-
-    this.setState({ selected: selectedList })
-    this.setState({ difficulty: this.state.difficulty + beast.difficulty })
-  }
-
-  removeBeast = beast => {
-    const index = this.findIndex(beast)
-    let selectedList = this.state.selected
-    let currentEntry = selectedList[index]
-
-    if (index >= 0 && currentEntry.total > 1) {
-      currentEntry.total -= 1
-      selectedList.splice(index, 1, currentEntry)
-    } else  {
-      selectedList = selectedList.filter(selected => selected._id !== beast._id)
-    }
-
-    this.setState({ selected: selectedList })
-    this.setState({ difficulty: this.state.difficulty - beast.difficulty })
+  updateEncounter = (beast, buttonAction) => {
+    const selected = buttonAction === 'add' ? addBeast(this.state.selected, beast) : removeBeast(this.state.selected, beast)
+    const difficulty = buttonAction === 'add' ? this.state.difficulty + beast.difficulty : this.state.difficulty - beast.difficulty
+    this.setState({ selected })
+    this.setState({ difficulty })
   }
   
   render() {
@@ -117,7 +90,7 @@ class ShadowoftheDemonLord extends React.Component {
               </Col>
             </Row>
             <Row>
-              <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.removeBeast} />
+              <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.updateEncounter} />
             </Row>
           </Col>
           <Col className='col-lg-5'>
@@ -137,7 +110,7 @@ class ShadowoftheDemonLord extends React.Component {
               </Col>
             </Row>
             <SearchBar onFormSubmit={this.onTermSubmit} />
-            <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.addBeast} />
+            <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.updateEncounter} />
           </Col> 
         </Row>
       </Container>

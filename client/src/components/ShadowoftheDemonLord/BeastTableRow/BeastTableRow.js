@@ -3,9 +3,9 @@ import React from 'react'
 const BeastTableRow = ({ beastData, beastButton, buttonType }) =>  {
   const buttonDetermination = () => {
     if (buttonType === 'add') {
-      return <button className='btn btn-success' onClick={() => beastButton(beastData)}>+</button>
+      return <button className='btn btn-success' onClick={() => beastButton(beastData, buttonType)}><span>+</span></button>
     } else {
-      return <button className='btn btn-danger' onClick={() => beastButton(beastData)}>-</button>
+      return <button className='btn btn-danger' onClick={() => beastButton(beastData, buttonType)}><span>-</span></button>
     }
   }
 
