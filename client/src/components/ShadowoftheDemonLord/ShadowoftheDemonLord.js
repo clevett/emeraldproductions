@@ -1,15 +1,17 @@
 import React from 'react'
 import axios from 'axios'
 
+//Components
 import { Container, Col, Row } from 'react-bootstrap'
-
 import BeastTable from './BeastTable/BeastTable'
 import SearchBar from './SearchBar/SearchBar'
+import SelectBuilder from './Encounter Builder/SelectBuilder/SelectBuilder'
 
+//Helper function
+import { addBeast, removeBeast } from './Encounter Builder/updateSelected'
 
 import './ShadowoftheDemonLord.scss'
 
-import { addBeast, removeBeast } from './updateSelected'
 
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {
@@ -18,7 +20,8 @@ class ShadowoftheDemonLord extends React.Component {
       beasts: [],
       search: [],
       selected: [],
-      difficulty: 0
+      difficulty: 0,
+      levels: ['Starting', 'Novice', 'Expert', 'Master']
     }
   }
 
@@ -61,12 +64,7 @@ class ShadowoftheDemonLord extends React.Component {
             <Row className='text-left mb-3'>
               <Col>
                 <h3>Level</h3>
-                <select>
-                  <option value='starting'>Starting</option>
-                  <option value='novice'>Novice</option>
-                  <option value='expert'>Expert</option>
-                  <option value='master'>Master</option>
-                </select>
+                <SelectBuilder options={this.state.levels} />
               </Col>
               <Col>
                 <h3>Easy</h3>

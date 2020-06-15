@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BeastList from '../BeastList/BeastList'
+import BeastList from './BeastList/BeastList'
 
 class BeastTable extends React.Component {
   render() {
