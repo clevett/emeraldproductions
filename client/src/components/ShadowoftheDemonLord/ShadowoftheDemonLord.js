@@ -56,7 +56,7 @@ class ShadowoftheDemonLord extends React.Component {
           <h1 className='w-100'>Shadow of the Demon Lord Encounter Builder</h1>
         </Row>
         <Row>
-          <Col className='col-lg-7'>
+          <Col className='col-12 col-lg-7'>
             <h2>Encounter Difficulty ({this.state.difficulty})</h2>
             <Row className='text-left mb-3'>
               <Col>
@@ -93,7 +93,7 @@ class ShadowoftheDemonLord extends React.Component {
               <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.updateEncounter} />
             </Row>
           </Col>
-          <Col className='col-lg-5'>
+          <Col className='col-12 col-lg-5'>
             <h2>Beastiary</h2>
             <Row className='text-left mb-3'>
               <Col>
