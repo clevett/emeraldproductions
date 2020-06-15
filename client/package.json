@@ -50,8 +50,6 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.10.2",
-    "babel-jest": "^26.0.1",
-    "jest": "^26.0.1",
     "node-sass": "^4.14.1"
   }
 }
