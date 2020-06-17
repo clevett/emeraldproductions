@@ -2,16 +2,15 @@ import React from 'react'
 import axios from 'axios'
 
 //Components
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container, Col, Row, Spinner } from 'react-bootstrap'
 import BeastTable from './BeastTable/BeastTable'
 import SearchBar from './SearchBar/SearchBar'
-import SelectBuilder from './Encounter Builder/SelectBuilder/SelectBuilder'
+import SelectBuilder from '../SelectBuilder/SelectBuilder'
 
 //Helper function
 import { addBeast, removeBeast } from './Encounter Builder/updateSelected'
 
 import './ShadowoftheDemonLord.scss'
-
 
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {
@@ -19,20 +18,29 @@ class ShadowoftheDemonLord extends React.Component {
     this.state = {
       beasts: [],
       search: [],
+      searchStatus: 'loading',
       selected: [],
       difficulty: 0,
-      levels: ['Starting', 'Novice', 'Expert', 'Master']
+      levels: {
+        options: ['Starting', 'Novice', 'Expert', 'Master'],
+        selected: 'Novice',
+        danger: {
+          easy: '10 or less',
+          average: '11-30',
+          challenging: '31-50',
+          hard: '50 or more',
+          max: '100'
+        }
+      }
     }
   }
 
-  componentDidMount() {
-    this.onTermSubmit('1')
-  }
+  componentDidMount = () => this.onTermSubmit('1')
 
   onTermSubmit = async term => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
     .then(response => {
-      this.setState({ beasts: response.data })
+      this.setState({ beasts: response.data, searchStatus: 'done' })
     })
     .catch(error => console.log(error) )
 
@@ -51,6 +59,18 @@ class ShadowoftheDemonLord extends React.Component {
     this.setState({ selected })
     this.setState({ difficulty })
   }
+
+  spinnerToggle = () => {
+    if (this.state.searchStatus === 'done') {
+      return <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.updateEncounter} />
+    } else {
+      return (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      )
+    }
+  }
   
   render() {
     return (
@@ -64,11 +84,11 @@ class ShadowoftheDemonLord extends React.Component {
             <Row className='text-left mb-3'>
               <Col>
                 <h3>Level</h3>
-                <SelectBuilder options={this.state.levels} />
+                <SelectBuilder options={this.state.levels.options} selected={this.state.levels.selected} />
               </Col>
               <Col>
                 <h3>Easy</h3>
-                <span>3 or less</span>
+                <span>{this.state.levels.danger.easy}</span>
               </Col>
               <Col>
                 <h3>Average</h3>
@@ -108,7 +128,7 @@ class ShadowoftheDemonLord extends React.Component {
               </Col>
             </Row>
             <SearchBar onFormSubmit={this.onTermSubmit} />
-            <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.updateEncounter} />
+            {this.spinnerToggle()}
           </Col> 
         </Row>
       </Container>
