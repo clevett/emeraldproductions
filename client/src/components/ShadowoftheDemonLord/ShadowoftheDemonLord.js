@@ -3,12 +3,13 @@ import axios from 'axios'
 
 //Components
 import { Container, Col, Row, Spinner } from 'react-bootstrap'
-import BeastTable from './BeastTable/BeastTable'
+import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
 import SearchBar from './SearchBar/SearchBar'
 import SelectBuilder from '../SelectBuilder/SelectBuilder'
+import EncounterDifficulty from './EncounterBuilder/EncounterDanger/EncounterDanger'
 
 //Helper function
-import { addBeast, removeBeast } from './Encounter Builder/updateSelected'
+import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
 
 import './ShadowoftheDemonLord.scss'
 
@@ -20,22 +21,13 @@ class ShadowoftheDemonLord extends React.Component {
       search: [],
       searchStatus: 'loading',
       selected: [],
-      difficulty: 0,
-      levels: {
-        options: ['Starting', 'Novice', 'Expert', 'Master'],
-        selected: 'Novice',
-        danger: {
-          easy: '10 or less',
-          average: '11-30',
-          challenging: '31-50',
-          hard: '50 or more',
-          max: '100'
-        }
-      }
+      selectedLevel: 'Novice',
+      levelOptions: ['Starting', 'Novice', 'Expert', 'Master'],
+      difficulty: 0
     }
   }
 
-  componentDidMount = () => this.onTermSubmit('1')
+  componentDidMount = () => this.onTermSubmit('human')
 
   onTermSubmit = async term => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
@@ -71,6 +63,10 @@ class ShadowoftheDemonLord extends React.Component {
       )
     }
   }
+
+  selectChange = option => {
+    console.log(option)
+  }
   
   render() {
     return (
@@ -84,28 +80,9 @@ class ShadowoftheDemonLord extends React.Component {
             <Row className='text-left mb-3'>
               <Col>
                 <h3>Level</h3>
-                <SelectBuilder options={this.state.levels.options} selected={this.state.levels.selected} />
+                <SelectBuilder options={this.state.levelOptions} selected={this.state.selectedLevel} onChange={this.selectChange} />
               </Col>
-              <Col>
-                <h3>Easy</h3>
-                <span>{this.state.levels.danger.easy}</span>
-              </Col>
-              <Col>
-                <h3>Average</h3>
-                <span>4-15</span>
-              </Col>
-              <Col>
-                <h3>Challenging</h3>
-                <span>16-30</span>
-              </Col>
-              <Col>
-                <h3>Hard</h3>
-                <span>31 or more</span>
-              </Col>
-              <Col>
-                <h3>Max. Creature Difficulty</h3>
-                <span>25</span>
-              </Col>
+              <EncounterDifficulty selected={this.state.selectedLevel} />
             </Row>
             <Row>
               <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.updateEncounter} />

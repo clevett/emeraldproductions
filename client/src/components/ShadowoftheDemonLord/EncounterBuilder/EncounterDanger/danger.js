@@ -1,5 +1,3 @@
-import React from 'react'
-
 const danger = {
   starting: {
     easy: '3 or less',
@@ -30,3 +28,5 @@ const danger = {
     max: 'None'
   }
 }
+
+export default danger
