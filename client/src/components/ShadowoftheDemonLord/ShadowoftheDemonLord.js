@@ -1,12 +1,17 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Container, Col, Row } from 'react-bootstrap'
-
-import BeastTable from './BeastTable/BeastTable'
+//Components
+import { Container, Col, Row, Spinner } from 'react-bootstrap'
+import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
 import SearchBar from './SearchBar/SearchBar'
+import SelectBuilder from '../SelectBuilder/SelectBuilder'
+import EncounterDanger from './EncounterBuilder/EncounterDanger/EncounterDanger'
 
-import { addBeast, removeBeast } from './updateSelected'
+//Helper function
+import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
+
+import './ShadowoftheDemonLord.scss'
 
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {
@@ -14,19 +19,31 @@ class ShadowoftheDemonLord extends React.Component {
     this.state = {
       beasts: [],
       search: [],
+      searchStatus: 'loading',
       selected: [],
-      difficulty: 0
+      selectedLevel: 'novice',
+      levelOptions: ['starting', 'novice', 'expert', 'master'],
+      difficulty: 0,
+      difficultyOptions: [1, 5, 10, 25, 50, 100, 250, 500]
     }
   }
 
-  componentDidMount() {
-    this.onTermSubmit('1')
+  componentDidMount = () => {
+    this.onTermSubmit('human')
+    this.setFilterOptions(this.state.beasts)
   }
 
+  setFilterOptions = beasts => {
+    //const filter = []
+    //Object.values(beast).forEach(value => searchableValue(value) === term.toLowerCase() ? filter.push(beast) : false)
+    //this.setState({ search: filter })
+  }
+
+  
   onTermSubmit = async term => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
     .then(response => {
-      this.setState({ beasts: response.data })
+      this.setState({ beasts: response.data, searchStatus: 'done' })
     })
     .catch(error => console.log(error) )
 
@@ -45,23 +62,57 @@ class ShadowoftheDemonLord extends React.Component {
     this.setState({ selected })
     this.setState({ difficulty })
   }
+
+  spinnerToggle = () => {
+    if (this.state.searchStatus === 'done') {
+      return <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.updateEncounter} />
+    } else {
+      return (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      )
+    }
+  }
+
+  onSelectValueChange = value => this.setState({selectedLevel: value})
   
   render() {
     return (
       <Container className="ShadowoftheDemonLord text-white">
-        <Row className='text-center mb-5'>
+        <Row className='text-center mb-3'>
           <h1 className='w-100'>Shadow of the Demon Lord Encounter Builder</h1>
         </Row>
         <Row>
-          <Col>
-            <h2>Total</h2>
-            <div><label>Difficulty Total</label> <span>= {this.state.difficulty}</span></div>
-            <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.updateEncounter} />
+          <Col className='col-12 col-lg-7'>
+            <h2>Encounter Difficulty ({this.state.difficulty})</h2>
+            <Row className='text-left mb-3'>
+              <Col>
+                <h3>Level</h3>
+                <SelectBuilder options={this.state.levelOptions} selected={this.state.selectedLevel} onSelectValueChange={this.onSelectValueChange} />
+              </Col>
+              <EncounterDanger selected={this.state.selectedLevel} />
+            </Row>
+            <Row>
+              <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.updateEncounter} />
+            </Row>
           </Col>
-          <Col>
-            <h2>Beasts</h2>
+          <Col className='col-12 col-lg-5'>
+            <h2>Beastiary</h2>
+            {/* <Row className='text-left mb-3'>
+              <Col>
+                <h3>Difficult Rating</h3>
+                <SelectBuilder options={this.state.difficultyOptions} selected={1} onSelectValueChange={this.onSelectValueChange} />
+              </Col>
+              <Col>
+                <h3>Descriptor</h3>
+              </Col>
+              <Col>
+                <h3>Source</h3>
+              </Col>
+            </Row> */}
             <SearchBar onFormSubmit={this.onTermSubmit} />
-            <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.updateEncounter} />
+            {this.spinnerToggle()}
           </Col> 
         </Row>
       </Container>
