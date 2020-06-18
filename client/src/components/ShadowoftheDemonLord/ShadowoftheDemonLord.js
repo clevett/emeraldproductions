@@ -6,7 +6,7 @@ import { Container, Col, Row, Spinner } from 'react-bootstrap'
 import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
 import SearchBar from './SearchBar/SearchBar'
 import SelectBuilder from '../SelectBuilder/SelectBuilder'
-import EncounterDifficulty from './EncounterBuilder/EncounterDanger/EncounterDanger'
+import EncounterDanger from './EncounterBuilder/EncounterDanger/EncounterDanger'
 
 //Helper function
 import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
@@ -21,14 +21,25 @@ class ShadowoftheDemonLord extends React.Component {
       search: [],
       searchStatus: 'loading',
       selected: [],
-      selectedLevel: 'Novice',
-      levelOptions: ['Starting', 'Novice', 'Expert', 'Master'],
-      difficulty: 0
+      selectedLevel: 'novice',
+      levelOptions: ['starting', 'novice', 'expert', 'master'],
+      difficulty: 0,
+      difficultyOptions: [1, 5, 10, 25, 50, 100, 250, 500]
     }
   }
 
-  componentDidMount = () => this.onTermSubmit('human')
+  componentDidMount = () => {
+    this.onTermSubmit('human')
+    this.setFilterOptions(this.state.beasts)
+  }
 
+  setFilterOptions = beasts => {
+    //const filter = []
+    //Object.values(beast).forEach(value => searchableValue(value) === term.toLowerCase() ? filter.push(beast) : false)
+    //this.setState({ search: filter })
+  }
+
+  
   onTermSubmit = async term => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
     .then(response => {
@@ -64,9 +75,7 @@ class ShadowoftheDemonLord extends React.Component {
     }
   }
 
-  selectChange = option => {
-    console.log(option)
-  }
+  onSelectValueChange = value => this.setState({selectedLevel: value})
   
   render() {
     return (
@@ -80,9 +89,9 @@ class ShadowoftheDemonLord extends React.Component {
             <Row className='text-left mb-3'>
               <Col>
                 <h3>Level</h3>
-                <SelectBuilder options={this.state.levelOptions} selected={this.state.selectedLevel} onChange={this.selectChange} />
+                <SelectBuilder options={this.state.levelOptions} selected={this.state.selectedLevel} onSelectValueChange={this.onSelectValueChange} />
               </Col>
-              <EncounterDifficulty selected={this.state.selectedLevel} />
+              <EncounterDanger selected={this.state.selectedLevel} />
             </Row>
             <Row>
               <BeastTable beasts={this.state.selected} buttonType={'remove'} beastButton={this.updateEncounter} />
@@ -90,12 +99,10 @@ class ShadowoftheDemonLord extends React.Component {
           </Col>
           <Col className='col-12 col-lg-5'>
             <h2>Beastiary</h2>
-            <Row className='text-left mb-3'>
+            {/* <Row className='text-left mb-3'>
               <Col>
                 <h3>Difficult Rating</h3>
-                <select>
-                  <option>1</option>
-                </select>
+                <SelectBuilder options={this.state.difficultyOptions} selected={1} onSelectValueChange={this.onSelectValueChange} />
               </Col>
               <Col>
                 <h3>Descriptor</h3>
@@ -103,7 +110,7 @@ class ShadowoftheDemonLord extends React.Component {
               <Col>
                 <h3>Source</h3>
               </Col>
-            </Row>
+            </Row> */}
             <SearchBar onFormSubmit={this.onTermSubmit} />
             {this.spinnerToggle()}
           </Col> 

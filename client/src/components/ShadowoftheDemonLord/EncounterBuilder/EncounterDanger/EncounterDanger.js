@@ -3,7 +3,7 @@ import React from 'react'
 import danger from './danger'
 import DangerColumn from './DangerColumn/DangerColumn'
 
-const EncounterDifficult = ({ selected }) => {
+const EncounterDanger = ({ selected }) => {
   const dangerObject = danger[selected.toLowerCase()]
   const dangerKeys = Object.keys(dangerObject)
   
@@ -12,4 +12,4 @@ const EncounterDifficult = ({ selected }) => {
   return renderedList
 }
 
-export default EncounterDifficult
+export default EncounterDanger

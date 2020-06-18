@@ -7,22 +7,22 @@ class Select extends React.Component {
     super(props)
     this.state = { 
       options: props.options,
-      selected: props.selected
+      selected: props.selected,
+      value: ''
     }
 
-    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange = option => {
-    console.log(option)
-    this.setState({value: option})
+  handleChange = event => {
+    this.setState({value: event.target.value})
+    this.props.onSelectValueChange(event.target.value)
   }
 
-  renderedList = options => options.map(option => <Option key={option.toLowerCase()} option={option} />)
+  renderedList = options => options.map(option => <Option key={option} option={option} />)
 
   render() {
     return (
-      <select defaultValue={this.state.selected.toLowerCase()} onChange={this.onInputChange}>{this.renderedList(this.state.options)}</select>
+      <select defaultValue={this.state.selected} onChange={this.handleChange}>{this.renderedList(this.state.options)}</select>
     )
   }
 }
