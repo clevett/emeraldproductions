@@ -21,7 +21,8 @@ html {
 }
 
 button,
-button[type="submit"] {
+button[type="submit"],
+a {
   transition: all .2s;
 
   &:hover {

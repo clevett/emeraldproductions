@@ -11,6 +11,8 @@ import EncounterDanger from './EncounterBuilder/EncounterDanger/EncounterDanger'
 //Helper function
 import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
 
+//Images & Styling
+import pentagram from './pentagram-hi.png'
 import './ShadowoftheDemonLord.scss'
 
 class ShadowoftheDemonLord extends React.Component {
@@ -80,8 +82,11 @@ class ShadowoftheDemonLord extends React.Component {
   render() {
     return (
       <Container className="ShadowoftheDemonLord text-white">
-        <Row className='text-center mb-3'>
-          <h1 className='w-100'>Shadow of the Demon Lord Encounter Builder</h1>
+        <Row className='header-row text-center mb-3 justify-content-center w-100'>
+          <img alt='bloody pentagram' src={pentagram}></img>
+          <a href='https://www.drivethrurpg.com/product/155572/Shadow-of-the-Demon-Lord?affiliate_id=879798'>Shadow of the Demon Lord</a>
+          <h1>Encounter Builder</h1>
+          <img alt='bloody pentagram' src={pentagram}></img>
         </Row>
         <Row>
           <Col className='col-12 col-lg-7'>

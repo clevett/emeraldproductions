@@ -7175,18 +7175,23 @@ html {
     font-size: 62.5%; }
 
 button,
-button[type="submit"] {
+button[type="submit"],
+a {
   transition: all .2s; }
   button:hover,
-  button[type="submit"]:hover {
+  button[type="submit"]:hover,
+  a:hover {
     transform: translateY(-3px); }
     button:hover::after,
-    button[type="submit"]:hover::after {
+    button[type="submit"]:hover::after,
+    a:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
   button:active, button:focus,
   button[type="submit"]:active,
-  button[type="submit"]:focus {
+  button[type="submit"]:focus,
+  a:active,
+  a:focus {
     outline: none;
     transform: translateY(1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
