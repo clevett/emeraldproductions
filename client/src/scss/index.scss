@@ -5,16 +5,9 @@
 @import "base/typography";
 @import "base/utilities";
 
-
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px;
   }
 }
-
-.navbar {
-  min-width: 150px;
-}
-
-
 

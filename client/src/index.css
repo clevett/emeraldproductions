@@ -7171,6 +7171,25 @@ html {
     margin-bottom: 5%; }
   html div[id='root'] {
     height: 100%; }
+  html html {
+    font-size: 62.5%; }
+
+button,
+button[type="submit"] {
+  transition: all .2s; }
+  button:hover,
+  button[type="submit"]:hover {
+    transform: translateY(-3px); }
+    button:hover::after,
+    button[type="submit"]:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  button:active, button:focus,
+  button[type="submit"]:active,
+  button[type="submit"]:focus {
+    outline: none;
+    transform: translateY(1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 html h1 {
   font-family: 'Merriweather', cursive; }
@@ -7180,6 +7199,16 @@ html p {
 
 html nav {
   font-size: 1.25em; }
+
+html h1 {
+  font-size: 2rem; }
+
+html h2 {
+  font-size: 1.75rem; }
+
+html h3 {
+  font-size: 1rem;
+  font-weight: bolder; }
 
 .Center {
   min-height: 70vh;
@@ -7191,6 +7220,3 @@ html nav {
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px; } }
-
-.navbar {
-  min-width: 150px; }

@@ -2,40 +2,6 @@
   text-align: center;
   padding: 1% 0.2%;
 
-  button,
-  button[type="submit"] {
-    transition: all .2s;
-
-    &:hover {
-      transform: translateY(-3px);
-          
-      &::after {
-          transform: scaleX(1.4) scaleY(1.6);
-          opacity: 0;
-      }
-    }
-  
-    &:active,
-    &:focus {
-      outline: none;
-      transform: translateY(1px);
-      box-shadow: 0 .5rem 1rem rgba(black, .2);
-    }
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1rem;
-    font-weight: bolder;
-  }
-
   .portrait {
     img {
       width: 100%;
