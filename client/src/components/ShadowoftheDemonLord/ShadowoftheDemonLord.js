@@ -31,7 +31,7 @@ class ShadowoftheDemonLord extends React.Component {
   }
 
   componentDidMount = () => {
-    this.onTermSubmit('Orc')
+    this.onTermSubmit('human')
     this.setFilterOptions(this.state.beasts)
   }
 
@@ -40,6 +40,7 @@ class ShadowoftheDemonLord extends React.Component {
     //Object.values(beast).forEach(value => searchableValue(value) === term.toLowerCase() ? filter.push(beast) : false)
     //this.setState({ search: filter })
   }
+
   
   onTermSubmit = async term => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
