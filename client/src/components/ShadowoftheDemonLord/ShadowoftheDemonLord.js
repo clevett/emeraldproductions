@@ -31,7 +31,7 @@ class ShadowoftheDemonLord extends React.Component {
   }
 
   componentDidMount = () => {
-    this.onTermSubmit('human')
+    this.onTermSubmit('Orc')
     this.setFilterOptions(this.state.beasts)
   }
 
@@ -40,7 +40,6 @@ class ShadowoftheDemonLord extends React.Component {
     //Object.values(beast).forEach(value => searchableValue(value) === term.toLowerCase() ? filter.push(beast) : false)
     //this.setState({ search: filter })
   }
-
   
   onTermSubmit = async term => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
@@ -119,6 +118,9 @@ class ShadowoftheDemonLord extends React.Component {
             <SearchBar onFormSubmit={this.onTermSubmit} />
             {this.spinnerToggle()}
           </Col> 
+        </Row>
+        <Row className='text-center d-block font-italic'>
+          Shadow of the Demon Lord is (c) 2014-2020 Schwalb Entertainment, LLC. All rights reserved. Material here used with permission.
         </Row>
       </Container>
     )
