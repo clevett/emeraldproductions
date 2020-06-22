@@ -4,12 +4,13 @@ import axios from 'axios'
 //Components
 import { Container, Col, Row, Spinner } from 'react-bootstrap'
 import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
-import SearchBar from './SearchBar/SearchBar'
+import SearchBar from '../SearchBar/SearchBar'
 import SelectBuilder from '../SelectBuilder/SelectBuilder'
 import EncounterDanger from './EncounterBuilder/EncounterDanger/EncounterDanger'
 
 //Helper function
 import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
+import fuzzySearch from '../SearchBar/fuzzySearch'
 
 //Images & Styling
 import pentagram from './pentagram-hi.png'
@@ -51,14 +52,9 @@ class ShadowoftheDemonLord extends React.Component {
     //this.setState({ search: filter })
   }
 
-  onTermSubmit = async term => {
-    const filter = []
-    this.state.beasts.forEach(beast => {
-      const searchableValue = value => value.toString().toLowerCase()
-      Object.values(beast).forEach(value => searchableValue(value) === term.toLowerCase() ? filter.push(beast) : false)
-    })
-
-    this.setState({ search: filter })
+  onTermSubmit = term => {
+    const results = fuzzySearch(this.state.beasts, term)
+    this.setState({ search: results })
   }
 
   updateEncounter = (beast, buttonAction) => {
