@@ -7,6 +7,7 @@ import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
 import SearchBar from '../SearchBar/SearchBar'
 import SelectBuilder from '../SelectBuilder/SelectBuilder'
 import EncounterDanger from './EncounterBuilder/EncounterDanger/EncounterDanger'
+import Filters from './EncounterBuilder/Filters/Filters'
 
 //Helper function
 import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
@@ -26,15 +27,12 @@ class ShadowoftheDemonLord extends React.Component {
       selected: [],
       selectedLevel: 'novice',
       levelOptions: ['starting', 'novice', 'expert', 'master'],
-      difficulty: 0,
-      difficultyOptions: [1, 5, 10, 25, 50, 100, 250, 500]
+      difficulty: 10,
+      difficultyOptions: []
     }
   }
 
-  componentDidMount = () => {
-    this.loadData()
-    this.setFilterOptions(this.state.beasts)
-  }
+  componentDidMount = () => this.loadData()
 
   loadData = async () => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
@@ -44,13 +42,25 @@ class ShadowoftheDemonLord extends React.Component {
     .catch(error => console.log(error)) 
 
     this.onTermSubmit('human')
+    this.setFilters('difficulty')
   }
 
-  setFilterOptions = beasts => {
-    //const filter = []
-    //Object.values(beast).forEach(value => searchableValue(value) === term.toLowerCase() ? filter.push(beast) : false)
-    //this.setState({ search: filter })
+  setFilters = filterTerm => {
+    let options = []
+    this.state.beasts.forEach(beast => {
+      options.push(beast[`${filterTerm}`])
+      options = [...new Set(options)]
+      options.sort((a, b) => a-b)
+    })
+
+    this.setState({ [`${filterTerm}Options`]: options })
   }
+
+  //setFilterOptions = beasts => {
+    // const filter = []
+    // Object.values(this.state.beasts).forEach(value => searchableValue(value) === term.toLowerCase() ? filter.push(beast) : false)
+    // this.setState({ search: filter })
+  //}
 
   onTermSubmit = term => {
     const results = fuzzySearch(this.state.beasts, term)
@@ -82,16 +92,16 @@ class ShadowoftheDemonLord extends React.Component {
     return (
       <Container className="ShadowoftheDemonLord text-white">
         <Row className='header-row text-center mb-3 justify-content-center w-100'>
-          <img alt='bloody pentagram' src={pentagram}></img>
+          <img alt='bloody pentagram' className='pentagram' src={pentagram}></img>
           <a href='https://www.drivethrurpg.com/product/155572/Shadow-of-the-Demon-Lord?affiliate_id=879798'>Shadow of the Demon Lord</a>
           <h1>Encounter Builder</h1>
-          <img alt='bloody pentagram' src={pentagram}></img>
+          <img alt='bloody pentagram' className='pentagram' src={pentagram}></img>
         </Row>
         <Row>
           <Col className='col-12 col-lg-7'>
             <h2>Encounter Difficulty ({this.state.difficulty})</h2>
             <Row className='text-left mb-3'>
-              <Col>
+              <Col className='align-self-end'>
                 <h3>Level</h3>
                 <SelectBuilder options={this.state.levelOptions} selected={this.state.selectedLevel} onSelectValueChange={this.onSelectValueChange} />
               </Col>
@@ -103,18 +113,7 @@ class ShadowoftheDemonLord extends React.Component {
           </Col>
           <Col className='col-12 col-lg-5'>
             <h2>Beastiary</h2>
-            {/* <Row className='text-left mb-3'>
-              <Col>
-                <h3>Difficult Rating</h3>
-                <SelectBuilder options={this.state.difficultyOptions} selected={1} onSelectValueChange={this.onSelectValueChange} />
-              </Col>
-              <Col>
-                <h3>Descriptor</h3>
-              </Col>
-              <Col>
-                <h3>Source</h3>
-              </Col>
-            </Row> */}
+            <Filters options={this.state.difficultyOptions} selected={1} onSelectValueChange={this.onSelectValueChange} />
             <SearchBar onFormSubmit={this.onTermSubmit} />
             {this.spinnerToggle()}
           </Col> 

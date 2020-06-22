@@ -9,13 +9,15 @@ const Filters = ({ options, onSelectValueChange }) => {
   const [open, setOpen] = useState(false);
 
   const filterImage = () => {
-
     if (open) {
       return <img src={xIcon} className="d-inline-block align-top" alt="Close filter icon" />
     } else {
       return <img src={filterIcon} className="d-inline-block align-top" alt="Open filter icon" />
     }
   }
+
+  console.log('Options in Filters')
+  console.log(options)
 
   return (
     <>
@@ -32,7 +34,7 @@ const Filters = ({ options, onSelectValueChange }) => {
           <Row className='text-left mb-3'>
             <Col>
               <h3>Difficult Rating</h3>
-              <SelectBuilder options={options} selected={1} onSelectValueChange={onSelectValueChange} />
+              <SelectBuilder options={options} selected={10} onSelectValueChange={onSelectValueChange} />
             </Col>
             <Col>
               <h3>Descriptor</h3>

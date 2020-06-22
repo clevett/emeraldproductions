@@ -2,7 +2,7 @@ import React from 'react'
 
 import Option from './Option/Option'
 
-class Select extends React.Component {
+class SelectBuilder extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
@@ -10,7 +10,6 @@ class Select extends React.Component {
       selected: props.selected,
       value: ''
     }
-
   }
 
   handleChange = event => {
@@ -21,10 +20,12 @@ class Select extends React.Component {
   renderedList = options => options.map(option => <Option key={option} option={option} />)
 
   render() {
+    console.log("Options in Select")
+    console.log(this.state)
     return (
       <select defaultValue={this.state.selected} onChange={this.handleChange}>{this.renderedList(this.state.options)}</select>
     )
   }
 }
 
-export default Select
+export default SelectBuilder
