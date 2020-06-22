@@ -31,8 +31,18 @@ class ShadowoftheDemonLord extends React.Component {
   }
 
   componentDidMount = () => {
-    this.onTermSubmit('human')
+    this.loadData()
     this.setFilterOptions(this.state.beasts)
+  }
+
+  loadData = async () => {
+    await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
+    .then(response => {
+      this.setState({ beasts: response.data, searchStatus: 'done' })
+    })
+    .catch(error => console.log(error)) 
+
+    this.onTermSubmit('human')
   }
 
   setFilterOptions = beasts => {
@@ -41,14 +51,7 @@ class ShadowoftheDemonLord extends React.Component {
     //this.setState({ search: filter })
   }
 
-  
   onTermSubmit = async term => {
-    await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
-    .then(response => {
-      this.setState({ beasts: response.data, searchStatus: 'done' })
-    })
-    .catch(error => console.log(error) )
-
     const filter = []
     this.state.beasts.forEach(beast => {
       const searchableValue = value => value.toString().toLowerCase()
