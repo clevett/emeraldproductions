@@ -102,7 +102,7 @@ class ShadowoftheDemonLord extends React.Component {
             </Row>
           </Col>
           <Col className='col-12 col-lg-5'>
-            <h2>Beastiary</h2>
+            <h2>Bestiary</h2>
             {/* <Row className='text-left mb-3'>
               <Col>
                 <h3>Difficult Rating</h3>
