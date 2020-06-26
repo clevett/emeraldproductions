@@ -17,10 +17,10 @@ const connection = mongoose.connection
 connection.once('open', () => console.log("MongoDB database connection established successfully"))
 
 //ROUTES
-const usersRouter = require('./routes/users')
-const sodlbestiaryRouter = require('./routes/sodlbestiary')
-const roll20charsheetsRouter = require('./routes/roll20charsheets')
-const send = require('./routes/send')
+const usersRouter = require('./backend/routes/users')
+const sodlbestiaryRouter = require('./backend/routes/sodlbestiary')
+const roll20charsheetsRouter = require('./backend/routes/roll20charsheets')
+const send = require('./backend/routes/send')
 
 app.use('/users', usersRouter);
 app.use('/api/ShadowoftheDemonLord', sodlbestiaryRouter)
