@@ -1,12 +1,15 @@
 import React from 'react'
 import axios from 'axios'
 
+//Vendor Components
+import { Container, Col, Row, Spinner, Page } from 'react-bootstrap'
+
 //Components
-import { Container, Col, Row, Spinner } from 'react-bootstrap'
 import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
 import SearchBar from '../SearchBar/SearchBar'
 import SelectBuilder from '../SelectBuilder/SelectBuilder'
 import EncounterDanger from './EncounterBuilder/EncounterDanger/EncounterDanger'
+import Pagination from '../Pagination/Pagination'
 
 //Helper function
 import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
@@ -38,9 +41,7 @@ class ShadowoftheDemonLord extends React.Component {
 
   loadData = async () => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
-    .then(response => {
-      this.setState({ beasts: response.data, searchStatus: 'done' })
-    })
+    .then(response => this.setState({ beasts: response.data, searchStatus: 'done' }))
     .catch(error => console.log(error)) 
 
     this.onTermSubmit('human')
@@ -52,10 +53,7 @@ class ShadowoftheDemonLord extends React.Component {
     //this.setState({ search: filter })
   }
 
-  onTermSubmit = term => {
-    const results = fuzzySearch(this.state.beasts, term)
-    this.setState({ search: results })
-  }
+  onTermSubmit = term => this.setState({ search: fuzzySearch(this.state.beasts, term) })
 
   updateEncounter = (beast, buttonAction) => {
     const selected = buttonAction === 'add' ? addBeast(this.state.selected, beast) : removeBeast(this.state.selected, beast)
@@ -66,7 +64,13 @@ class ShadowoftheDemonLord extends React.Component {
 
   spinnerToggle = () => {
     if (this.state.searchStatus === 'done') {
-      return <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.updateEncounter} />
+      console.log(this.state.search)
+      //<BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.updateEncounter} />
+      return (
+        <div>
+          <Pagination beasts={this.state.search} />
+        </div>
+      )
     } else {
       return (
         <Spinner animation="border" role="status">
@@ -103,18 +107,6 @@ class ShadowoftheDemonLord extends React.Component {
           </Col>
           <Col className='col-12 col-lg-5'>
             <h2>Bestiary</h2>
-            {/* <Row className='text-left mb-3'>
-              <Col>
-                <h3>Difficult Rating</h3>
-                <SelectBuilder options={this.state.difficultyOptions} selected={1} onSelectValueChange={this.onSelectValueChange} />
-              </Col>
-              <Col>
-                <h3>Descriptor</h3>
-              </Col>
-              <Col>
-                <h3>Source</h3>
-              </Col>
-            </Row> */}
             <SearchBar onFormSubmit={this.onTermSubmit} />
             {this.spinnerToggle()}
           </Col> 

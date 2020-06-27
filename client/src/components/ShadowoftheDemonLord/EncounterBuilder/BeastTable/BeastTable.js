@@ -1,4 +1,5 @@
 import React from 'react'
+import { TablePagination } from 'react-pagination-table';
 
 import BeastList from './BeastList/BeastList'
 
