@@ -26,7 +26,7 @@ class MissionCreation extends React.Component {
 	componentDidMount = () => this.loadData()
 
   loadData = async () => {
-    await axios.get('http://localhost:5000/api/ShadowrunJobType')
+    await axios.get('http://localhost:5000/api/ShadowrunMissionCreation')
     .then(response => {
 			console.log(response.data)
       this.setState({ job: response.data.description })

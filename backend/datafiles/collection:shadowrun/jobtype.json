@@ -2,31 +2,37 @@
   {
     "description": "Datasteal",
     "result": 1,
-    "source": "Shadowrun 5th Edition"
+    "source": "Shadowrun 5th Edition",
+    "type": "job"
 	},
 	{
     "description": "Assassination or Destruction",
     "result": 2,
-    "source": "Shadowrun 5th Edition"
+    "source": "Shadowrun 5th Edition",
+    "type": "job"
 	},
 	{
     "description": "Extraction or Insertion",
     "result": 3,
-    "source": "Shadowrun 5th Edition"
+    "source": "Shadowrun 5th Edition",
+    "type": "job"
 	},
 	{
     "description": "Misdirection",
     "result": 4,
-    "source": "Shadowrun 5th Edition"
+    "source": "Shadowrun 5th Edition",
+    "type": "job"
 	},
 	{
     "description": "Protection",
     "result": 5,
-    "source": "Shadowrun 5th Edition"
+    "source": "Shadowrun 5th Edition",
+    "type": "job"
 	},
 	{
     "description": "Delivery",
     "result": 6,
-    "source": "Shadowrun 5th Edition"
+    "source": "Shadowrun 5th Edition",
+    "type": "job"
   }
 ]
