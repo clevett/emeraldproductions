@@ -83,7 +83,7 @@ class ShadowoftheDemonLord extends React.Component {
       <Container className="ShadowoftheDemonLord content text-white">
         <Row className='header-row text-center mb-3 justify-content-center w-100'>
           <img alt='bloody pentagram' src={pentagram}></img>
-          <a href='https://www.drivethrurpg.com/product/155572/Shadow-of-the-Demon-Lord?affiliate_id=879798'>Shadow of the Demon Lord</a>
+          <a href='https://www.drivethrurpg.com/product/155572/Shadow-of-the-Demon-Lord?affiliate_id=879798' target="_blank">Shadow of the Demon Lord</a>
           <h1 className='mb-0'>Encounter Builder</h1>
           <img alt='bloody pentagram' src={pentagram}></img>
         </Row>

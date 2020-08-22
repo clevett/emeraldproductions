@@ -5,6 +5,7 @@ import { Container, Col, Row, } from 'react-bootstrap'
 
 //Images & Styling
 import dragon from '../dragon.png'
+import './MissionCreation.scss'
 
 class MissionCreation extends React.Component {
 	constructor(props) {
@@ -24,11 +25,11 @@ class MissionCreation extends React.Component {
 	render() {
 		return (
       <Container className="ShadowrunMissionCreation content text-white">
-        <Row className='header-row text-center mb-3 justify-content-center w-100'>
-          <img alt='bloody pentagram' src={dragon}></img>
-          <a href='https://www.drivethrurpg.com/product/115985/Shadowrun-Fifth-Edition-Core-Rulebook-Master-Index-Edition?affiliate_id=879798'>Shadowrun</a>
+        <Row className='header text-center mb-3 justify-content-center w-100'>
+          <img alt='shadowrun dragon logo' src={dragon}></img>
+          <a href='https://www.drivethrurpg.com/product/115985/Shadowrun-Fifth-Edition-Core-Rulebook-Master-Index-Edition?affiliate_id=879798' target="_blank">Shadowrun</a>
           <h1 className='mb-0'>Mission Creation</h1>
-          <img alt='bloody pentagram' src={dragon}></img>
+          <img alt='shadowrun dragon logo' src={dragon}></img>
         </Row>
 			</Container>
 		)
