@@ -1,7 +1,9 @@
 
 import React from 'react'
 
-import { Container, Col, Row, } from 'react-bootstrap'
+import { Container, Button, Row, } from 'react-bootstrap'
+
+import Card from './Card/Card'
 
 //Images & Styling
 import dragon from '../dragon.png'
@@ -11,14 +13,11 @@ class MissionCreation extends React.Component {
 	constructor(props) {
     super(props)
     this.state = {
-      // beasts: [],
-      // search: [],
-      // searchStatus: 'loading',
-      // selected: [],
-      // selectedLevel: 'novice',
-      // levelOptions: ['starting', 'novice', 'expert', 'master'],
-      // difficulty: 0,
-      // difficultyOptions: [1, 5, 10, 25, 50, 100, 250, 500]
+			employer: 'Secret Society',
+			location: 'Astral Space',
+			job: 'Datasteal',
+			macguffin: 'Magical object',
+			twist: 'Security is unexpectedly high'
     }
 	}
 	
@@ -31,6 +30,24 @@ class MissionCreation extends React.Component {
           <h1 className='mb-0'>Mission Creation</h1>
           <img alt='shadowrun dragon logo' src={dragon}></img>
         </Row>
+				<Row className='mb-5'>
+					<div className='box text-center w-100'>
+						<p>A {this.state.employer} meets you at/in {this.state.location}. They hire you to  perform a/an {this.state.job} involving a/an {this.state.macguffin}.</p>
+						<p><i>The twist is {this.state.twist}.</i></p>
+					</div>
+				</Row>
+				<Row className='mb-3 justify-content-center'>
+					<Card title='Employer' result={this.state.employer} />
+					<Card title='Meet Location' result={this.state.location} />
+					<Card title='Job Type' result={this.state.job} />
+				</Row>
+				<Row className='mb-5 justify-content-center'>
+					<Card title='MacGuffin' result={this.state.macguffin} />
+					<Card title='Twist' result={this.state.twist} />
+				</Row>
+				<Row className='d-grid justify-content-end'>
+					<Button variant="primary">Generate New Mission</Button>
+				</Row>
 			</Container>
 		)
 	}
