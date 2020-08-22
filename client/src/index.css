@@ -7227,21 +7227,10 @@ html h3 {
   display: inline-flex;
   align-items: center; }
 
-.content .header-row:hover img {
-  animation-timing-function: ease-out;
-  opacity: 1.0;
-  transition: opacity .55s ease-in-out;
-  -moz-transition: opacity .55s ease-in-out;
-  -webkit-transition: opacity .55s ease-in-out; }
-
 .content img {
   height: 2.5rem;
   margin: 0px 2%;
-  width: 2.5rem;
-  opacity: 0.6;
-  transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -webkit-transition: opacity 1s ease-in-out; }
+  width: 2.5rem; }
 
 @media (min-width: 768px) {
   .navbar {
