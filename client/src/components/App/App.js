@@ -8,6 +8,7 @@ import About from '../About/About'
 import ContactPage from '../ContactPage/ContactPage'
 import Roll20CharSheets from '../Roll20/Roll20CharSheets/Roll20CharSheets'
 import ShadowoftheDemonLord from '../ShadowoftheDemonLord/ShadowoftheDemonLord'
+import ShadowrunMissionCreation from '../Shadowrun/MissionCreation/MissionCreation'
 import Footer from '../Footer/Footer'
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
             <Route path="/" exact component={About} />
             <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
             <Route path="/shadow_of_the_demon_lord" component={ShadowoftheDemonLord} />
+            <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
             <Route path="/contact" component={ContactPage} />
           </Row>
           <Row>

@@ -1,0 +1,32 @@
+[
+  {
+    "description": "Datasteal",
+    "result": 1,
+    "source": "Shadowrun 5th Edition"
+	},
+	{
+    "description": "Assassination or Destruction",
+    "result": 2,
+    "source": "Shadowrun 5th Edition"
+	},
+	{
+    "description": "Extraction or Insertion",
+    "result": 3,
+    "source": "Shadowrun 5th Edition"
+	},
+	{
+    "description": "Misdirection",
+    "result": 4,
+    "source": "Shadowrun 5th Edition"
+	},
+	{
+    "description": "Protection",
+    "result": 5,
+    "source": "Shadowrun 5th Edition"
+	},
+	{
+    "description": "Delivery",
+    "result": 6,
+    "source": "Shadowrun 5th Edition"
+  }
+]
