@@ -1,38 +1,38 @@
 [
   {
     "description": "Security is unexpectedly high",
-    "result": 1,
+    "result": [1],
     "source": "Shadowrun 5th Edition",
-    "type": "twist"
+    "table": "twist"
 	},
 	{
     "description": "A third party is also interested",
-    "result": 2,
+    "result": [2],
     "source": "Shadowrun 5th Edition",
-    "type": "twist"
+    "table": "twist"
 	},
 	{
     "description": "The target is not what it appears to be (group was lied to)",
-    "result": 3,
+    "result": [3],
     "source": "Shadowrun 5th Edition",
-    "type": "twist"
+    "table": "twist"
 	},
 	{
     "description": "The job requries a rare piece of equipment",
-    "result": 4,
+    "result": [4],
     "source": "Shadowrun 5th Edition",
-    "type": "twist"
+    "table": "twist"
 	},
 	{
     "description": "Target has been moved or is being moved",
-    "result": 5,
+    "result": [5],
     "source": "Shadowrun 5th Edition",
-    "type": "twist"
+    "table": "twist"
 	},
 	{
     "description": "The employer decides to double-cross the runners",
-    "result": 6,
+    "result": [6],
     "source": "Shadowrun 5th Edition",
-    "type": "twist"
+    "table": "twist"
   }
 ]

@@ -1,38 +1,38 @@
 [
   {
     "description": "A key employee",
-    "result": 1,
+    "result": [1],
     "source": "Shadowrun 5th Edition",
-    "type": "macguffin"
+    "table": "macguffin"
 	},
 	{
-    "description": "A prototype product",
-    "result": 2,
+    "description": "A prototable product",
+    "result": [2],
     "source": "Shadowrun 5th Edition",
-    "type": "macguffin"
+    "table": "macguffin"
 	},
 	{
     "description": "Cutting-edge tech research",
-    "result": 3,
+    "result": [3],
     "source": "Shadowrun 5th Edition",
-    "type": "macguffin"
+    "table": "macguffin"
 	},
 	{
     "description": "Bioengineered life form",
-    "result": 4,
+    "result": [4],
     "source": "Shadowrun 5th Edition",
-    "type": "macguffin"
+    "table": "macguffin"
 	},
 	{
     "description": "Magical object",
-    "result": 5,
+    "result": [5],
     "source": "Shadowrun 5th Edition",
-    "type": "macguffin"
+    "table": "macguffin"
 	},
 	{
     "description": "Urban building, rural location, or infrastructure object",
-    "result": 6,
+    "result": [6],
     "source": "Shadowrun 5th Edition",
-    "type": "macguffin"
+    "table": "macguffin"
   }
 ]

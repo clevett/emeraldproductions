@@ -1,38 +1,38 @@
 [
   {
     "description": "Bar, Club, Restaurant",
-    "result": 1,
+    "result": [1],
     "source": "Shadowrun 5th Edition",
-    "type": "location"
+    "table": "location"
 	},
 	{
     "description": "Warehouse, Loading DOck, Factory, or Other Underused Site",
-    "result": 2,
+    "result": [2],
     "source": "Shadowrun 5th Edition",
-    "type": "location"
+    "table": "location"
 	},
 	{
     "description": "Barrens District or Other Urban Hellhole",
-    "result": 3,
+    "result": [3],
     "source": "Shadowrun 5th Edition",
-    "type": "location"
+    "table": "location"
 	},
 	{
     "description": "Moving Vehicle",
-    "result": 4,
+    "result": [4],
     "source": "Shadowrun 5th Edition",
-    "type": "location"
+    "table": "location"
 	},
 	{
     "description": "Matrix Host",
-    "result": 5,
+    "result": [5],
     "source": "Shadowrun 5th Edition",
-    "type": "location"
+    "table": "location"
 	},
 	{
     "description": "Astral Space",
-    "result": 6,
+    "result": [6],
     "source": "Shadowrun 5th Edition",
-    "type": "location"
+    "table": "location"
   }
 ]
