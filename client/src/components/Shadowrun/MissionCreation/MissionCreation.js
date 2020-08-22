@@ -1,7 +1,9 @@
 
 import React from 'react'
+import axios from 'axios'
 
 import { Container, Button, Row, } from 'react-bootstrap'
+import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 
 import Card from './Card/Card'
 
@@ -13,20 +15,31 @@ class MissionCreation extends React.Component {
 	constructor(props) {
     super(props)
     this.state = {
-			employer: 'Secret Society',
-			location: 'Astral Space',
-			job: 'Datasteal',
-			macguffin: 'Magical object',
-			twist: 'Security is unexpectedly high'
+			employer: '',
+			location: '',
+			job: '',
+			macguffin: '',
+			twist: ''
     }
 	}
-	
+
+	componentDidMount = () => this.loadData()
+
+  loadData = async () => {
+    await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowrunJobType')
+    .then(response => {
+			console.log(response.data)
+      this.setState({ job: response.data.description })
+    })
+    .catch(error => console.log(error)) 
+  }
+
 	render() {
 		return (
       <Container className="ShadowrunMissionCreation content text-white">
         <Row className='header text-center mb-3 justify-content-center w-100'>
           <img alt='shadowrun dragon logo' src={dragon}></img>
-          <a href='https://www.drivethrurpg.com/product/115985/Shadowrun-Fifth-Edition-Core-Rulebook-Master-Index-Edition?affiliate_id=879798' target="_blank">Shadowrun</a>
+					<DriveThruLink id='115985' name='Shadowrun' />
           <h1 className='mb-0'>Mission Creation</h1>
           <img alt='shadowrun dragon logo' src={dragon}></img>
         </Row>

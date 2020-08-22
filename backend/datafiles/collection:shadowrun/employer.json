@@ -1,23 +1,23 @@
 [
   {
-    "name": "Secret Society",
-		"result": 2,
+    "description": "Secret Society",
+		"result": [2],
 		"note": "(Black Lodge, Human Nation)",
     "source": "Shadowrun 5th Edition"
 	},
 	{
-    "name": "Political or Activist Group",
-		"result": 3,
+    "description": "Political or Activist Group",
+		"result": [3],
 		"note": "(Humanis Policlub, Mothers of Metahumans)",
     "source": "Shadowrun 5th Edition"
 	},
 	{
-    "name": "Government Official or Agency",
-    "result": 4,
+    "description": "Government Official or Agency",
+    "result": [4],
     "source": "Shadowrun 5th Edition"
 	},
 	{
-    "name": "Minor Corporation",
+    "description": "Minor Corporation",
 		"result": [5, 6],
 		"note": "(A-level or smaller)",
     "source": "Shadowrun 5th Edition"
@@ -30,24 +30,24 @@
 	},
 	{
     "description": "Criminal Syndicate",
-		"result": 9,
+		"result": [9],
 		"note": "(Yakuza, Mafia)",
     "source": "Shadowrun 5th Edition"
 	},
 	{
     "description": "Magical Group",
-		"result": 10,
+		"result": [10],
 		"note": "(Illuminates of the New Dawn)",
     "source": "Shadowrun 5th Edition"
 	},
 	{
     "description": "Private Individual",
-		"result": 11,
+		"result": [11],
     "source": "Shadowrun 5th Edition"
 	},
 	{
     "description": "Exotic or Mysterious Being",
-		"result": 12,
+		"result": [12],
 		"note": "(free spirit, dragon, AI)",
     "source": "Shadowrun 5th Edition"
 	}

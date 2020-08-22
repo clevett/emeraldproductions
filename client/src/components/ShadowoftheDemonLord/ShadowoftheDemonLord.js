@@ -3,6 +3,8 @@ import axios from 'axios'
 
 //Components
 import { Container, Col, Row, Spinner } from 'react-bootstrap'
+import DriveThruLink from '../DriveThruLink/DriveThruLink'
+
 import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
 import SearchBar from '../SearchBar/SearchBar'
 import SelectBuilder from '../SelectBuilder/SelectBuilder'
@@ -33,23 +35,16 @@ class ShadowoftheDemonLord extends React.Component {
 
   componentDidMount = () => {
     this.loadData()
-    this.setFilterOptions(this.state.beasts)
   }
 
   loadData = async () => {
-    await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/')
+    await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord')
     .then(response => {
       this.setState({ beasts: response.data, searchStatus: 'done' })
     })
     .catch(error => console.log(error)) 
 
     this.onTermSubmit('human')
-  }
-
-  setFilterOptions = beasts => {
-    //const filter = []
-    //Object.values(beast).forEach(value => searchableValue(value) === term.toLowerCase() ? filter.push(beast) : false)
-    //this.setState({ search: filter })
   }
 
   onTermSubmit = term => {
@@ -83,7 +78,7 @@ class ShadowoftheDemonLord extends React.Component {
       <Container className="ShadowoftheDemonLord content text-white">
         <Row className='header-row text-center mb-3 justify-content-center w-100'>
           <img alt='bloody pentagram' src={pentagram}></img>
-          <a href='https://www.drivethrurpg.com/product/155572/Shadow-of-the-Demon-Lord?affiliate_id=879798' target="_blank">Shadow of the Demon Lord</a>
+          <DriveThruLink id='155572' name='Shadow of the Demon Lord' />
           <h1 className='mb-0'>Encounter Builder</h1>
           <img alt='bloody pentagram' src={pentagram}></img>
         </Row>
