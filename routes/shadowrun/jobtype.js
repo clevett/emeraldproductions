@@ -1,8 +1,8 @@
 const router = require('express').Router();
-let jobtype = require('../../models/shadowrunmission.model');
+const JobType = require('../../models/shadowrun/jobtype.model');
 
 router.route('/').get((req, res) => {
-  shadowrun5ejobtype.find()
+  JobType.find()
     .then(shadowrun5ejobtype => res.json(shadowrun5ejobtype))
     .catch(err => res.status(400).json(`Error: ${err}`));
 });

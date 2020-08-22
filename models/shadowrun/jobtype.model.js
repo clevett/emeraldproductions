@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const shadowrunMissionSchema = new mongoose.Schema({
+const jobTypeSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true
@@ -12,17 +12,11 @@ const shadowrunMissionSchema = new mongoose.Schema({
   source: {
     type: String,
     required: true
-  },
-  note: {
-    type: String,
-  },
-  username: {
-    type: String
   }
 }, {
   timestamps: true
 })
 
-const shadowrunMission = mongoose.model('jobtype', shadowrunMissionSchema)
+const jobtype = mongoose.model('shadowrun5ejobtype', jobTypeSchema)
 
-module.exports = shadowrunMission;
+module.exports = jobtype;

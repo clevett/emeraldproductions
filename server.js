@@ -20,19 +20,17 @@ connection.once('open', () => console.log("MongoDB database connection establish
 //ROUTES
 const usersRouter = require('./routes/users')
 //SODL
-const sodlbestiaryRouter = require('./routes/sodlbestiary')
+const sodlbestiaryRouter = require('./routes/sodl/bestiary')
 //Shadowrun
-const shadowrunMissionJobTypeRouter = require('./routes/shadowrun/jobtype')
+
 //Roll20
-const roll20charsheetsRouter = require('./routes/roll20charsheets')
+const roll20charsheetsRouter = require('./routes/roll20/charsheets')
 //Contact form
 const send = require('./routes/send')
 
 app.use('/users', usersRouter);
 
 app.use('/api/ShadowoftheDemonLord', sodlbestiaryRouter)
-
-app.use('/api/ShadowrunJobType', shadowrunMissionJobTypeRouter)
 
 app.use('/api/Roll20CharSheets', roll20charsheetsRouter)
 
