@@ -1,0 +1,40 @@
+
+.content {
+  a {
+    font-size: 2rem;
+    color: white;
+    text-decoration: underline;
+    margin-right: 0.5rem;
+
+    &:visited {
+        color: white;
+    }
+  }
+
+  a, h1 {
+    font-size: 2rem;
+    display: inline-flex;
+    align-items: center;
+	}
+	
+  .header-row:hover {
+		img {
+			animation-timing-function:ease-out;
+			opacity: 1.0;
+			transition: opacity .55s ease-in-out;
+			-moz-transition: opacity .55s ease-in-out;
+			-webkit-transition: opacity .55s ease-in-out;
+		}
+	}
+
+	img {
+		height: 2.5rem;
+		margin: 0px 2%;
+		width: 2.5rem;
+
+		opacity: 0.6;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+	}
+}
