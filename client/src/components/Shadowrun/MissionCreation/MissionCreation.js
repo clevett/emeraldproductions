@@ -46,7 +46,7 @@ class MissionCreation extends React.Component {
 					<Card title='Twist' result={this.state.twist} />
 				</Row>
 				<Row className='d-grid justify-content-end'>
-					<Button variant="primary">Generate New Mission</Button>
+					<Button type="submit">Generate New Mission</Button>
 				</Row>
 			</Container>
 		)

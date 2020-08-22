@@ -1,6 +1,11 @@
-//@import "../../scss/base/animations";
-
 .ShadowrunMissionCreation {
+	$gold: #E5AC34;
+
+	button {
+		color: black;
+		background-color: $gold;
+	}
+
 	.header {
 		transition: all .2s;
 
@@ -37,7 +42,7 @@
 		}
 		
 		h2 {
-			color: #E5AC34;
+			color: $gold;
 		}
 	}
 }
