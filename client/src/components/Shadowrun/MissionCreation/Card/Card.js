@@ -8,8 +8,9 @@ const missionCard = ({title, result}) => {
 			<Card.Body>
 				<Card.Title>{title}</Card.Title>
 				<Card.Text>
-					<div>{result.description}</div>
-					<div><small>{result.note}</small></div>
+					{result.description} 
+					<br />
+					<small>{result.note}</small>
 				</Card.Text>
 			</Card.Body>
 		</Card>

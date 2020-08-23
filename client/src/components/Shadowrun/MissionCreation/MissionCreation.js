@@ -77,21 +77,19 @@ class MissionCreation extends React.Component {
           <h1 className='mb-0'>Mission Creation</h1>
           <img alt='shadowrun dragon logo' src={dragon}></img>
         </Row>
-				<Row className='mb-3 justify-content-center'>
-					<CardGroup>
+				<Row className='mb-5 content'>
+					<CardGroup className='mb-5 w-100'>
 						<Card title='Employer' result={this.state.employer} />
 						<Card title='Meet Location' result={this.state.location} />
 						<Card title='Job Type' result={this.state.job} />
 					</CardGroup>
-				</Row>
-				<Row className='mb-5 justify-content-center'>
-					<CardGroup>
+					<CardGroup className='w-100'>
 						<Card title='MacGuffin' result={this.state.macguffin} />
 						<Card title='Twist' result={this.state.twist} />
 					</CardGroup>
 				</Row>
 				<Row className='d-grid justify-content-end'>
-					<Button onSubmit={this.handleSubmit} type="submit">Generate New Mission</Button>
+					<Button onClick={this.handleSubmit} type="button">Generate New Mission</Button>
 				</Row>
 			</Container>
 		)
