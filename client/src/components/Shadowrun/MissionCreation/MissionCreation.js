@@ -1,6 +1,6 @@
 
 import React from 'react'
-import axios from 'axios'
+//import axios from 'axios'
 
 import { Container, Button, Row, CardGroup } from 'react-bootstrap'
 
@@ -12,7 +12,7 @@ import NaturalLanguage from './NaturalLanguage/NaturalLanguage'
 import dragon from '../dragon.png'
 import './MissionCreation.scss'
 
-import mockdata from  './mockdata.js'
+import data from  './data.js'
 
 class MissionCreation extends React.Component {
 	constructor(props) {
@@ -36,7 +36,16 @@ class MissionCreation extends React.Component {
 
 	componentDidMount = () => this.loadData()
 
-	//Data is not loading
+	loadData = async () => {
+		const update = {}
+		await this.state.options.forEach(name => {
+			update[`${name}Table`] = data.filter(object => object.table === name)
+		})
+		this.setState(update)
+		this.updateAll()
+	}
+
+	// //Database is not loading
   // loadData = async () => {
   //   await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowrunMissionCreation')
   //   .then(response => {
