@@ -1,6 +1,6 @@
 import React from 'react'
 
-import isVowel from './isVowel/isVowel'
+import isVowel from '../isVowel/isVowel'
 import splitEmployer from './splitEmployer/splitEmployer'
 
 const Employer = (result, employer) => {

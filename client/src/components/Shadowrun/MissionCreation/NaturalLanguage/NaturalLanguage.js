@@ -1,10 +1,10 @@
 import React from 'react'
 
 import './NaturalLanguage.scss'
-import Location from './Location'
-import Employer from './Employer'
-import Job from './Job'
-import MacGuffin from './MacGuffin'
+import Location from './Location/Location'
+import Employer from './Employer/Employer'
+import Job from './Job/Job'
+import MacGuffin from './MacGuffin/MacGuffin'
 
 const NaturalLanguage = ({ employer, location, job, macguffin, twist })  => {
 	const lowerCase = string => string.toLowerCase()

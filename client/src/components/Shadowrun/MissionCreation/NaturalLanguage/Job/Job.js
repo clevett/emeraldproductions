@@ -1,7 +1,7 @@
 import React from 'react'
 
-import isVowel from './isVowel/isVowel'
-import randomArrayElement from './randomArrayElement/randomArrayElement'
+import isVowel from '../isVowel/isVowel'
+import randomArrayElement from '../randomArrayElement/randomArrayElement'
 
 const Job = (result, job) => {
 	const orSplit = string => randomArrayElement(string.split(' or '))

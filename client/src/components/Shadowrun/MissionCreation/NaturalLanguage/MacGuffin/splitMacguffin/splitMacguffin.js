@@ -1,4 +1,4 @@
-import randomArrayElement from '../randomArrayElement/randomArrayElement'
+import randomArrayElement from '../../randomArrayElement/randomArrayElement'
 
 const splitMacguffin = macguffin => {
 	const split = macguffin.split(', ')
