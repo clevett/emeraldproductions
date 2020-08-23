@@ -12,7 +12,6 @@ import dragon from '../dragon.png'
 import './MissionCreation.scss'
 
 import mockdata from  './mockdata.js'
-import { table } from 'console'
 
 class MissionCreation extends React.Component {
 	constructor(props) {
@@ -51,35 +50,31 @@ class MissionCreation extends React.Component {
     })
 		.catch(error => console.log(error))
 
+		this.randomMission('location')
+		this.randomMission('job')
+		this.randomMission('macguffin')
 		this.randomMission('employer')
+		this.randomMission('twist')
 	}
 	
 	d6 = () => 1 + Math.floor(Math.random()*6)
 
 	randomMission = table => {
-		const roll = table == 'employer' ? this.d6() + this.d6() : this.d6()
-		console.log(table)
-		// const data = this.state[`${table}Table`]
-		// const result = data.find(object => object.result.includes(roll))
-		// console.log(result)
-		// this.setState({ [`${table}`]: result.description })
+		const roll = table === 'employer' ? this.d6() + this.d6() : this.d6()
+		const data = this.state[`${table}Table`]
+		const result = data.find(object => object.result.includes(roll))
+		this.setState({ [`${table}`]: result.description })
 	}
 
 	render() {
 		return (
       <Container className="ShadowrunMissionCreation content text-white">
-        <Row className='header text-center mb-3 justify-content-center w-100'>
+        <Row className='header text-center mb-5 justify-content-center w-100'>
           <img alt='shadowrun dragon logo' src={dragon}></img>
 					<DriveThruLink id='115985' name='Shadowrun' />
           <h1 className='mb-0'>Mission Creation</h1>
           <img alt='shadowrun dragon logo' src={dragon}></img>
         </Row>
-				<Row className='mb-5'>
-					<div className='box text-center w-100'>
-						<p>A {this.state.employer} meets you at/in {this.state.location}. They hire you to  perform a/an {this.state.job} involving a/an {this.state.macguffin}.</p>
-						<p><i>The twist is {this.state.twist}.</i></p>
-					</div>
-				</Row>
 				<Row className='mb-3 justify-content-center'>
 					<Card title='Employer' result={this.state.employer} />
 					<Card title='Meet Location' result={this.state.location} />

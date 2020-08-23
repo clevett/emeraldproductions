@@ -139,7 +139,7 @@ const mockdata = [
     "table": "location"
 	},
 	{
-    "description": "Warehouse, Loading DOck, Factory, or Other Underused Site",
+    "description": "Warehouse, Loading Dock, Factory, or Other Underused Site",
     "result": [2],
     "source": "Shadowrun 5th Edition",
     "table": "location"
