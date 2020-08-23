@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const missioncreation = require('../../models/shadowrun/missioncreation.model');
-//const missioncreation = require('../../models/sodl/bestiary.model');
 
 router.route('/').get((req, res) => {
   missioncreation.find()

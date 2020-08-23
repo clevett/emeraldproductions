@@ -11,10 +11,19 @@ import Card from './Card/Card'
 import dragon from '../dragon.png'
 import './MissionCreation.scss'
 
+import mockdata from  './mockdata.js'
+import { table } from 'console'
+
 class MissionCreation extends React.Component {
 	constructor(props) {
     super(props)
     this.state = {
+			locationTable: [],
+			jobTable: [],
+			macguffinTable: [],
+			employerTable: [],
+			twistTable: [],
+
 			employer: '',
 			location: '',
 			job: '',
@@ -23,16 +32,38 @@ class MissionCreation extends React.Component {
     }
 	}
 
-	componentDidMount = () => this.loadData()
+	componentDidMount = () => {
+		this.loadData()
+	}
 
   loadData = async () => {
     await axios.get('http://localhost:5000/api/ShadowrunMissionCreation')
     .then(response => {
+			const data = mockdata
+			this.setState({ 
+				locationTable: data.filter(object => object.table === 'location'),
+				jobTable: data.filter(object => object.table === 'job'),
+				macguffinTable: data.filter(object => object.table === 'macguffin'),
+				employerTable: data.filter(object => object.table === 'employer'),
+				twistTable: data.filter(object => object.table === 'twist')
+			})
 			console.log(response.data)
-      this.setState({ job: response.data.description })
     })
-    .catch(error => console.log(error)) 
-  }
+		.catch(error => console.log(error))
+
+		this.randomMission('employer')
+	}
+	
+	d6 = () => 1 + Math.floor(Math.random()*6)
+
+	randomMission = table => {
+		const roll = table == 'employer' ? this.d6() + this.d6() : this.d6()
+		console.log(table)
+		// const data = this.state[`${table}Table`]
+		// const result = data.find(object => object.result.includes(roll))
+		// console.log(result)
+		// this.setState({ [`${table}`]: result.description })
+	}
 
 	render() {
 		return (
