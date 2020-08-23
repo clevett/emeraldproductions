@@ -103,7 +103,7 @@ const mockdata = [
     "table": "macguffin"
 	},
 	{
-    "description": "A prototable product",
+    "description": "A prototype product",
     "result": [2],
     "source": "Shadowrun 5th Edition",
     "table": "macguffin"

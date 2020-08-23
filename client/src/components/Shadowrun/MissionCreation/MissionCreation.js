@@ -2,7 +2,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Container, Button, Row, } from 'react-bootstrap'
+import { Container, Button, Row, CardGroup } from 'react-bootstrap'
 import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 
 import Card from './Card/Card'
@@ -17,6 +17,8 @@ class MissionCreation extends React.Component {
 	constructor(props) {
     super(props)
     this.state = {
+			options: ['location', 'job', 'macguffin', 'employer', 'twist'],
+
 			locationTable: [],
 			jobTable: [],
 			macguffinTable: [],
@@ -39,22 +41,15 @@ class MissionCreation extends React.Component {
     await axios.get('http://localhost:5000/api/ShadowrunMissionCreation')
     .then(response => {
 			const data = mockdata
-			this.setState({ 
-				locationTable: data.filter(object => object.table === 'location'),
-				jobTable: data.filter(object => object.table === 'job'),
-				macguffinTable: data.filter(object => object.table === 'macguffin'),
-				employerTable: data.filter(object => object.table === 'employer'),
-				twistTable: data.filter(object => object.table === 'twist')
+			const update = {}
+			this.state.options.forEach(name => {
+				update[`${name}Table`] = data.filter(object => object.table === name)
 			})
+			this.setState(update)
 			console.log(response.data)
     })
 		.catch(error => console.log(error))
-
-		this.randomMission('location')
-		this.randomMission('job')
-		this.randomMission('macguffin')
-		this.randomMission('employer')
-		this.randomMission('twist')
+		this.updateAll()
 	}
 	
 	d6 = () => 1 + Math.floor(Math.random()*6)
@@ -63,8 +58,15 @@ class MissionCreation extends React.Component {
 		const roll = table === 'employer' ? this.d6() + this.d6() : this.d6()
 		const data = this.state[`${table}Table`]
 		const result = data.find(object => object.result.includes(roll))
-		this.setState({ [`${table}`]: result.description })
+		this.setState({ [`${table}`]: result })
 	}
+
+	updateAll = () => this.state.options.forEach(name => this.randomMission(name) )
+
+  handleSubmit = async event => {
+    event.preventDefault()
+		this.updateAll()
+  }
 
 	render() {
 		return (
@@ -76,16 +78,20 @@ class MissionCreation extends React.Component {
           <img alt='shadowrun dragon logo' src={dragon}></img>
         </Row>
 				<Row className='mb-3 justify-content-center'>
-					<Card title='Employer' result={this.state.employer} />
-					<Card title='Meet Location' result={this.state.location} />
-					<Card title='Job Type' result={this.state.job} />
+					<CardGroup>
+						<Card title='Employer' result={this.state.employer} />
+						<Card title='Meet Location' result={this.state.location} />
+						<Card title='Job Type' result={this.state.job} />
+					</CardGroup>
 				</Row>
 				<Row className='mb-5 justify-content-center'>
-					<Card title='MacGuffin' result={this.state.macguffin} />
-					<Card title='Twist' result={this.state.twist} />
+					<CardGroup>
+						<Card title='MacGuffin' result={this.state.macguffin} />
+						<Card title='Twist' result={this.state.twist} />
+					</CardGroup>
 				</Row>
 				<Row className='d-grid justify-content-end'>
-					<Button type="submit">Generate New Mission</Button>
+					<Button onSubmit={this.handleSubmit} type="submit">Generate New Mission</Button>
 				</Row>
 			</Container>
 		)
