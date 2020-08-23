@@ -8,8 +8,7 @@ const MacGuffin = (result, macguffin) => {
 		macguffin = splitMacguffin(macguffin)
 	}
 
-	console.log(macguffin)
-	if (macguffin.startsWith('a ')) {
+	if (result === 1 || result === 2) {
 		return <span>{macguffin}</span>
 	} else {
 		const article = isVowel(macguffin) ? 'an' : 'a'

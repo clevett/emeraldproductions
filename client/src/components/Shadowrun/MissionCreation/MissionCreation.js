@@ -34,24 +34,23 @@ class MissionCreation extends React.Component {
     }
 	}
 
-	componentDidMount = () => {
-		this.loadData()
-	}
+	componentDidMount = () => this.loadData()
 
-  loadData = async () => {
-    await axios.get('http://localhost:5000/api/ShadowrunMissionCreation')
-    .then(response => {
-			const data = mockdata
-			const update = {}
-			this.state.options.forEach(name => {
-				update[`${name}Table`] = data.filter(object => object.table === name)
-			})
-			this.setState(update)
-			console.log(response.data)
-    })
-		.catch(error => console.log(error))
-		this.updateAll()
-	}
+	//Data is not loading
+  // loadData = async () => {
+  //   await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowrunMissionCreation')
+  //   .then(response => {
+	// 		const data = mockdata
+	// 		const update = {}
+	// 		this.state.options.forEach(name => {
+	// 			update[`${name}Table`] = data.filter(object => object.table === name)
+	// 		})
+	// 		this.setState(update)
+	// 		console.log(response.data)
+  //   })
+	// 	.catch(error => console.log(error))
+	// 	this.updateAll()
+	// }
 	
 	d6 = () => 1 + Math.floor(Math.random()*6)
 

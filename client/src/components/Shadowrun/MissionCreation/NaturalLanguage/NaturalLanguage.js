@@ -13,7 +13,7 @@ const NaturalLanguage = ({ employer, location, job, macguffin, twist })  => {
 	employer 	= employer.result && Employer(employer.result[0], lowerCase(`${employer.description}`))
 	job 			= job.result && Job(job.result[0], lowerCase(`${job.description}`))
 	macguffin = macguffin.result && MacGuffin(macguffin.result[0], lowerCase(`${macguffin.description}`))
-	twist 		= lowerCase(`${macguffin.description}`)
+	twist 		= lowerCase(`${twist.description}`)
 
 	return (
 		<div className='NaturalLanguage text-center w-100'>
