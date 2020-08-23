@@ -3,9 +3,10 @@ import React from 'react'
 import axios from 'axios'
 
 import { Container, Button, Row, CardGroup } from 'react-bootstrap'
-import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 
+import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 import Card from './Card/Card'
+import NaturalLanguage from './NaturalLanguage/NaturalLanguage'
 
 //Images & Styling
 import dragon from '../dragon.png'
@@ -66,8 +67,8 @@ class MissionCreation extends React.Component {
   handleSubmit = async event => {
     event.preventDefault()
 		this.updateAll()
-  }
-
+	}
+	
 	render() {
 		return (
       <Container className="ShadowrunMissionCreation content text-white">
@@ -77,6 +78,9 @@ class MissionCreation extends React.Component {
           <h1 className='mb-0'>Mission Creation</h1>
           <img alt='shadowrun dragon logo' src={dragon}></img>
         </Row>
+				<Row className='mb-5'>
+					<NaturalLanguage employer={this.state.employer} location={this.state.location} job={this.state.job} macguffin={this.state.macguffin} twist={this.state.twist} />
+				</Row>
 				<Row className='mb-5 content'>
 					<CardGroup className='mb-5 w-100'>
 						<Card title='Employer' result={this.state.employer} />
