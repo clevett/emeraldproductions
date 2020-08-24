@@ -10,22 +10,30 @@ app.use(express.json())
 
 //MONGO ATLAS
 const uri = process.env.ATLAS_URI
-mongoose.connect(uri, { 
-    useNewUrlParser: true, useUnifiedTopology: true 
-})
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const connection = mongoose.connection
 connection.once('open', () => console.log("MongoDB database connection established successfully"))
 
 //ROUTES
 const usersRouter = require('./routes/users')
-const sodlbestiaryRouter = require('./routes/sodlbestiary')
-const roll20charsheetsRouter = require('./routes/roll20charsheets')
+//SODL
+const sodlbestiaryRouter = require('./routes/sodl/bestiary')
+//Shadowrun
+const shadowrunMissionCreationRouter = require('./routes/shadowrun/missioncreation')
+//Roll20
+const roll20charsheetsRouter = require('./routes/roll20/charsheets')
+//Contact form
+
 const send = require('./routes/send')
 
-app.use('/users', usersRouter);
+//SODL
 app.use('/api/ShadowoftheDemonLord', sodlbestiaryRouter)
+//Shadowrun
+app.use('/api/ShadowrunMissionCreation', shadowrunMissionCreationRouter)
+//Roll20
 app.use('/api/Roll20CharSheets', roll20charsheetsRouter)
+//Contact form
 app.use('/api/send', send)
 
 //Server static assets in production
@@ -34,6 +42,8 @@ if (process.env.NODE_ENV === 'production') {
 
     //Set the static folder
     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')))
+} else {
+    app.use(express.static('client/build'))
 }
 
 const PORT = process.env.PORT || 5000
