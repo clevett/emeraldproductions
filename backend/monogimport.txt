@@ -1,7 +1,9 @@
 mongoimport --host cluster0-shard-00-02-pznxb.gcp.mongodb.net:27017 --db sodl --type json --file ./backend/beasts.json --jsonArray --authenticationDatabase admin --ssl --username emeraldDataBase --password HZKWHerb713Xfi7o
 
 TEST
-mongoimport --host Cluster0-shard-0/cluster0-shard-00-00-pznxb.gcp.mongodb.net:27017,cluster0-shard-00-01-pznxb.gcp.mongodb.net:27017,cluster0-shard-00-02-pznxb.gcp.mongodb.net:27017 --ssl --username emeraldDataBase --password HZKWHerb713Xfi7o --authenticationDatabase admin --db egproduction --collection sodlbestiary --type json --file ./backend/data/collection:sodl/beasts.json --jsonArray
+mongoimport --host Cluster0-shard-0/cluster0-shard-00-00-pznxb.gcp.mongodb.net:27017,cluster0-shard-00-01-pznxb.gcp.mongodb.net:27017,cluster0-shard-00-02-pznxb.gcp.mongodb.net:27017 --ssl --username emeraldDataBase --password HZKWHerb713Xfi7o --authenticationDatabase admin --db egproduction --collection sodlbestiary --type json --file ./backend/datafiles/collection:sodl/beasts.json --jsonArray
 
 PRODUCTION
 mongoimport --host Cluster0-shard-0/cluster0-shard-00-00-pznxb.gcp.mongodb.net:27017,cluster0-shard-00-01-pznxb.gcp.mongodb.net:27017,cluster0-shard-00-02-pznxb.gcp.mongodb.net:27017 --ssl --username emeraldDataBase --password HZKWHerb713Xfi7o --authenticationDatabase admin --db sodl --collection beasts --type json --file ./backend/godless.json --jsonArray
+
+mongoimport --host Cluster0-shard-0/cluster0-shard-00-00-pznxb.gcp.mongodb.net:27017,cluster0-shard-00-01-pznxb.gcp.mongodb.net:27017,cluster0-shard-00-02-pznxb.gcp.mongodb.net:27017 --ssl --username emeraldDataBase --password HZKWHerb713Xfi7o --authenticationDatabase admin --db egproduction --collection shadowrun5mission --type json --file ./backend/datafiles/collection:shadowrun/twists.json --jsonArray

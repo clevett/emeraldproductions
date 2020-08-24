@@ -1,9 +1,9 @@
 const router = require('express').Router();
-let sodlbestiary = require('../models/sodlbestiary.model');
+const CharacterSheets = require('../../models/roll20/charsheets.model');
 
 router.route('/').get((req, res) => {
-  sodlbestiary.find()
-    .then(sodlbestiary => res.json(sodlbestiary))
+  CharacterSheets.find()
+    .then(roll20charsheets => res.json(roll20charsheets))
     .catch(err => res.status(400).json(`Error: ${err}`));
 });
 

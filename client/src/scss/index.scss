@@ -5,6 +5,9 @@
 @import "base/typography";
 @import "base/utilities";
 
+
+@import "components/content";
+
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px;

@@ -22,8 +22,12 @@ class NavigationBar extends React.Component {
 				<Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
 					<Nav className="text-white font-weight-bold" activeKey="/home">
 						<NavigationLink reference={{name: 'About', href:'/'}} />
-						<NavDropdown className='text-white font-weight-bold mr-5' title="RPG Tools" id="basic-nav-dropdown">
-							<NavDropdown.Item href="/shadow_of_the_demon_lord">Shadow of the Demon Lord</NavDropdown.Item>
+						<NavDropdown className='text-white font-weight-bold mr-5 rpg-tools' title="RPG Tools" id="basic-nav-dropdown">
+							<label>Shadow of the Demon Lord</label>
+							<NavDropdown.Item href="/shadow_of_the_demon_lord/encounter_builder">Encounter Builder</NavDropdown.Item>
+							<NavDropdown.Divider />
+							<label>Shadowrun</label>
+							<NavDropdown.Item href="/shadowrun/mission_creation">Mission Creation</NavDropdown.Item>
 						</NavDropdown>
 						<NavDropdown className='text-white font-weight-bold mr-5' title="Roll 20" id="basic-nav-dropdown">
 							<NavDropdown.Item href="/roll_20_character_sheets">Character Sheets</NavDropdown.Item>
