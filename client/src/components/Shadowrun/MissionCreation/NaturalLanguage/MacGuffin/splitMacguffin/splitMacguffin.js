@@ -1,10 +1,8 @@
-import randomArrayElement from '../../randomArrayElement/randomArrayElement'
-
 const splitMacguffin = macguffin => {
 	const split = macguffin.split(', ')
-	const macguffins = [split[0], split[1], split[2].split('or ')[1]]
+	const removeOr = split.pop().split('or ')[1]
 
-	return randomArrayElement(macguffins)
+	return [...split, removeOr]
 }
 
 export default splitMacguffin
