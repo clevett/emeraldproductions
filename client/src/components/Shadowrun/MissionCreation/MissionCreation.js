@@ -13,7 +13,6 @@ import dragon from '../dragon.png'
 import './MissionCreation.scss'
 
 import data from  './data.js'
-import { defaultCipherList } from 'constants'
 
 class MissionCreation extends React.Component {
 	constructor(props) {
