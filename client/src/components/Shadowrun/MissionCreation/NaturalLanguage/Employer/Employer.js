@@ -2,10 +2,11 @@ import React from 'react'
 
 import isVowel from '../isVowel/isVowel'
 import splitEmployer from './splitEmployer/splitEmployer'
+import randomArrayElement from '../randomArrayElement/randomArrayElement'
 
 const Employer = (result, employer) => {
 	if (result === 12 || result === 3 || result === 4) {
-		employer = splitEmployer(employer)
+		employer = randomArrayElement(splitEmployer(employer))
 	}
 
 	const article = isVowel(employer) ? 'An' : 'A'

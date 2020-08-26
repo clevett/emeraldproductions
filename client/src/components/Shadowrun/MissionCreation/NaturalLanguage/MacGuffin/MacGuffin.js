@@ -1,11 +1,12 @@
 import React from 'react'
 
 import isVowel from '../isVowel/isVowel'
+import randomArrayElement from '../randomArrayElement/randomArrayElement'
 import splitMacguffin from './splitMacguffin/splitMacguffin'
 
 const MacGuffin = (result, macguffin) => {
 	if (result === 6) {
-		macguffin = splitMacguffin(macguffin)
+		macguffin = randomArrayElement(splitMacguffin(macguffin))
 	}
 
 	if (result === 1 || result === 2) {
