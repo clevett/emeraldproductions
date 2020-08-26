@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap'
 
 const missionCard = ({title, result}) => {
 	return (
-		<Card className='box text-center' style={{ width: '18rem' }}>
+		<Card className='text-center' style={{ width: '18rem' }}>
 			<Card.Body>
 				<Card.Title>{title}</Card.Title>
 				<Card.Text>

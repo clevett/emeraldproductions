@@ -1,22 +1,13 @@
-import randomArrayElement from '../../randomArrayElement/randomArrayElement'
-
 const splitEmployer = string => {
-	const array = string.split(' or ')
-	const randomElement = randomArrayElement(array)
+	let array = string.split(' or ')
 
-	let updatedString = `${randomElement}`
-
-	if (!randomElement.includes(' ')) {
-		const index = randomElement.includes('agency') ? 0 : 1
-		const noun = array[index].split(' ')[index]
-		if (index === 1) {
-			updatedString += ` ${noun}`
-		} else {
-			updatedString = `${noun} ${randomElement}`
-		}
+	if (array[1].includes(' ')) {
+		array = [`${array.shift()} ${array[0].split(' ')[1]}`, ...array]
+	} else {
+		array = [`${array[0].split(' ')[0]} ${array.pop()}`, ...array]
 	}
 
-	return updatedString
+	return array
 }
 
 export default splitEmployer
