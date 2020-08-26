@@ -1,6 +1,6 @@
 
 import React from 'react'
-//import axios from 'axios'
+import Roll from 'roll'
 
 import { Container, Button, Row, CardGroup } from 'react-bootstrap'
 
@@ -13,6 +13,7 @@ import dragon from '../dragon.png'
 import './MissionCreation.scss'
 
 import data from  './data.js'
+import { defaultCipherList } from 'constants'
 
 class MissionCreation extends React.Component {
 	constructor(props) {
@@ -45,27 +46,11 @@ class MissionCreation extends React.Component {
 		this.updateAll()
 	}
 
-	// //Database is not loading
-  // loadData = async () => {
-  //   await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowrunMissionCreation')
-  //   .then(response => {
-	// 		const data = mockdata
-	// 		const update = {}
-	// 		this.state.options.forEach(name => {
-	// 			update[`${name}Table`] = data.filter(object => object.table === name)
-	// 		})
-	// 		this.setState(update)
-	// 		console.log(response.data)
-  //   })
-	// 	.catch(error => console.log(error))
-	// 	this.updateAll()
-	// }
-	
-	d6 = () => 1 + Math.floor(Math.random()*6)
+	diceRoll = quantity => new Roll().roll(`${quantity || 1}d6`).result
 
-	randomMission = table => {
-		const roll = table === 'employer' ? this.d6() + this.d6() : this.d6()
-		const data = this.state[`${table}Table`]
+	randomMission = async table => {
+		const quantity = table === 'employer' ? 2 : 1
+		const roll = await this.diceRoll(quantity)
 		const result = data.find(object => object.result.includes(roll))
 		this.setState({ [`${table}`]: result })
 	}
