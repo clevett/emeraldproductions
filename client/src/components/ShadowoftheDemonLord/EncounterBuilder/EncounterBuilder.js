@@ -3,20 +3,20 @@ import axios from 'axios'
 
 //Components
 import { Container, Col, Row, Spinner } from 'react-bootstrap'
-import DriveThruLink from '../DriveThruLink/DriveThruLink'
+import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 
-import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
-import SearchBar from '../SearchBar/SearchBar'
-import SelectBuilder from '../SelectBuilder/SelectBuilder'
-import EncounterDanger from './EncounterBuilder/EncounterDanger/EncounterDanger'
+import BeastTable from './BeastTable/BeastTable'
+import SearchBar from '../../SearchBar/SearchBar'
+import SelectBuilder from '../../SelectBuilder/SelectBuilder'
+import EncounterDanger from './EncounterDanger/EncounterDanger'
 
 //Helper function
-import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
-import fuzzySearch from '../SearchBar/fuzzySearch'
+import { addBeast, removeBeast } from './updateSelected'
+import fuzzySearch from '../../SearchBar/fuzzySearch'
 
 //Images & Styling
-import pentagram from './pentagram-hi.png'
-import './ShadowoftheDemonLord.scss'
+import pentagram from '../pentagram-hi.png'
+import './EncounterBuilder.scss'
 
 class ShadowoftheDemonLord extends React.Component {
   constructor(props) {

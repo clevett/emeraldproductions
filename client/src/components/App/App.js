@@ -7,7 +7,7 @@ import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
 import About from '../About/About'
 import ContactPage from '../ContactPage/ContactPage'
 import Roll20CharSheets from '../Roll20/Roll20CharSheets/Roll20CharSheets'
-import ShadowoftheDemonLord from '../ShadowoftheDemonLord/ShadowoftheDemonLord'
+import ShadowoftheDemonLord from '../ShadowoftheDemonLord/EncounterBuilder/EncounterBuilder'
 import ShadowrunMissionCreation from '../Shadowrun/MissionCreation/MissionCreation'
 import Footer from '../Footer/Footer'
 
