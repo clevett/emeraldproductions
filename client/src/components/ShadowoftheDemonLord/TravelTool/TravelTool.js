@@ -1,7 +1,5 @@
 import React from 'react'
 
-import pentagram from '../pentagram-hi.png'
-
 class TravelTool extends React.Component {
   constructor(props) {
     super(props)
