@@ -5,7 +5,7 @@ import Roll from 'roll'
 import { Container, Button, Row, CardGroup } from 'react-bootstrap'
 
 import DriveThruLink from '../../DriveThruLink/DriveThruLink'
-import Card from './Card/Card'
+import MissionCard from './MissionCard/MissionCard'
 import NaturalLanguage from './NaturalLanguage/NaturalLanguage'
 
 //Images & Styling
@@ -75,13 +75,13 @@ class MissionCreation extends React.Component {
 				</Row>
 				<Row className='mb-5 content'>
 					<CardGroup className='mb-5 w-100'>
-						<Card title='Employer' result={this.state.employer} />
-						<Card title='Meet Location' result={this.state.location} />
-						<Card title='Job Type' result={this.state.job} />
+						<MissionCard title='Employer' result={this.state.employer} />
+						<MissionCard title='Meet Location' result={this.state.location} />
+						<MissionCard title='Job Type' result={this.state.job} />
 					</CardGroup>
 					<CardGroup className='w-100'>
-						<Card title='MacGuffin' result={this.state.macguffin} />
-						<Card title='Twist' result={this.state.twist} />
+						<MissionCard title='MacGuffin' result={this.state.macguffin} />
+						<MissionCard title='Twist' result={this.state.twist} />
 					</CardGroup>
 				</Row>
 				<Row className='d-grid justify-content-end'>

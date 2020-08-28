@@ -4,9 +4,9 @@ import { Card } from 'react-bootstrap'
 
 const TravelCard = ({title, result}) => {
 	return (
-		<Card className='text-center' style={{ width: '18rem' }}>
+		<Card className='text-center'>
 			<Card.Body>
-				<Card.Title>{title}</Card.Title>
+				<Card.Title className='font-weight-bold'>{title}</Card.Title>
 				<Card.Text>{result}</Card.Text>
 			</Card.Body>
 		</Card>
