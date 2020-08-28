@@ -25,6 +25,7 @@ class NavigationBar extends React.Component {
 						<NavDropdown className='text-white font-weight-bold mr-5 rpg-tools' title="RPG Tools" id="basic-nav-dropdown">
 							<label>Shadow of the Demon Lord</label>
 							<NavDropdown.Item href="/shadow_of_the_demon_lord/encounter_builder">Encounter Builder</NavDropdown.Item>
+							<NavDropdown.Item href="/shadow_of_the_demon_lord/travel_tool">Travel Tool</NavDropdown.Item>
 							<NavDropdown.Divider />
 							<label>Shadowrun</label>
 							<NavDropdown.Item href="/shadowrun/mission_creation">Mission Creation</NavDropdown.Item>
