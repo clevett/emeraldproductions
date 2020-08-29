@@ -4,11 +4,11 @@ import { Container, Col, Row, CardGroup } from 'react-bootstrap'
 import RPGHeader from '../RPGHeader/RPGHeader'
 import TravelCard from './TravelCard/TravelCard'
 
-import threat from  './collection:sodltravel/threat.js'
-import conditions from  './collection:sodltravel/conditions.js'
-import encounter from  './collection:sodltravel/encounter.js'
-import terrain from  './collection:sodltravel/terrain.js'
-import weather from  './collection:sodltravel/weather.js'
+import threat from  './data/threat.js'
+import conditions from  './data/conditions.js'
+import encounter from  './data/encounter.js'
+import terrain from  './data/terrain.js'
+import weather from  './data/weather.js'
 
 class TravelTool extends React.Component {
   constructor(props) {
