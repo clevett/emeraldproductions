@@ -3,22 +3,21 @@ import axios from 'axios'
 
 //Components
 import { Container, Col, Row, Spinner } from 'react-bootstrap'
-import DriveThruLink from '../DriveThruLink/DriveThruLink'
 
-import BeastTable from './EncounterBuilder/BeastTable/BeastTable'
-import SearchBar from '../SearchBar/SearchBar'
-import SelectBuilder from '../SelectBuilder/SelectBuilder'
-import EncounterDanger from './EncounterBuilder/EncounterDanger/EncounterDanger'
+import BeastTable from './BeastTable/BeastTable'
+import SearchBar from '../../SearchBar/SearchBar'
+import SelectBuilder from '../../SelectBuilder/SelectBuilder'
+import EncounterDanger from './EncounterDanger/EncounterDanger'
+import RPGHeader from '../RPGHeader/RPGHeader'
 
 //Helper function
-import { addBeast, removeBeast } from './EncounterBuilder/updateSelected'
-import fuzzySearch from '../SearchBar/fuzzySearch'
+import { addBeast, removeBeast } from './updateSelected'
+import fuzzySearch from '../../SearchBar/fuzzySearch'
 
 //Images & Styling
-import pentagram from './pentagram-hi.png'
-import './ShadowoftheDemonLord.scss'
+import './EncounterBuilder.scss'
 
-class ShadowoftheDemonLord extends React.Component {
+class EncounterBuilder extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -38,7 +37,7 @@ class ShadowoftheDemonLord extends React.Component {
   }
 
   loadData = async () => {
-    await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord')
+    await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/encounter_builder')
     .then(response => {
       this.setState({ beasts: response.data, searchStatus: 'done' })
     })
@@ -75,13 +74,8 @@ class ShadowoftheDemonLord extends React.Component {
   
   render() {
     return (
-      <Container className="ShadowoftheDemonLord content text-white">
-        <Row className='header-row text-center mb-3 justify-content-center w-100'>
-          <img alt='bloody pentagram' src={pentagram}></img>
-          <DriveThruLink id='155572' name='Shadow of the Demon Lord' />
-          <h1 className='mb-0'>Encounter Builder</h1>
-          <img alt='bloody pentagram' src={pentagram}></img>
-        </Row>
+      <Container className="EncounterBuilder content text-white">
+        <RPGHeader title='Encounter Builder' />
         <Row>
           <Col className='col-12 col-lg-7'>
             <h2>Encounter Difficulty ({this.state.difficulty})</h2>
@@ -122,4 +116,4 @@ class ShadowoftheDemonLord extends React.Component {
   }
 }
 
-export default ShadowoftheDemonLord
+export default EncounterBuilder
