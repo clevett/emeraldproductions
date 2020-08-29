@@ -2,39 +2,31 @@ import React from 'react'
 
 import { Col } from 'react-bootstrap'
 import SelectBuilder from '../../../SelectBuilder/SelectBuilder'
-import data from  '../data/weather.js'
-import findObject from '../findObject/findObject'
+import data from  '../data/threat.js'
 
-class Weather extends React.Component {
+class Threat extends React.Component {
 	constructor(props) {
     super(props)
     this.state = {
 			data,
 			options: data.map(object => object.name) || [],
-			selected: 'Normal conditions',
-			multipier: 1,
+			selected: 'Moderate'
     }
 	}
 
 	handleChange = async event => {
-		const object = await findObject(data, event)
-
-		this.setState({
-			selected: event,
-			multipier: object.multiplier
-		})
-		
-    this.props.onSelectValueChange('weatherMultiplier', this.state.multipier)
+		await this.setState({ selected: event })
+    this.props.onSelectValueChange('threat', this.state.selected)
   }
 	
 	render() {
 		return (
 			<Col>
-				<h2>Weather</h2>
+				<h2>Threat</h2>
 				<SelectBuilder options={this.state.options} selected={this.state.selected} onSelectValueChange={this.handleChange} />
 			</Col>
 		)
 	}
 }
 
-export default Weather
+export default Threat

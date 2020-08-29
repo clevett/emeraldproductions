@@ -5,12 +5,13 @@ import { Container, Col, Row, CardGroup } from 'react-bootstrap'
 import RPGHeader from '../RPGHeader/RPGHeader'
 import TravelCard from './TravelCard/TravelCard'
 import Weather from './Weather/Weather'
+import Pace from './Pace/Pace'
+import Threat from './Threat/Threat'
 
 import threat from  './data/threat.js'
 import conditions from  './data/conditions.js'
 import encounter from  './data/encounter.js'
 import terrain from  './data/terrain.js'
-import pace from  './data/pace.js'
 
 //Images & Styling
 import './TravelTool.scss'
@@ -19,22 +20,18 @@ class TravelTool extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-			threat, 
 			conditions,
 			encounter,
 			terrain,
 
-			weatherModifier: 1,
-
-			threatOptions: threat.map(object => object.name) || [],
-			threatSelected: 'Moderate',
-
-			paceOptions: pace.map(object => object.name) || [],
-			paceSelected: 'walk',
-			paceModifier: 3,
+			weatherMultiplier: 1,
 
 			milesPerHour: 3,
-			hoursOfTravel: 1
+			milesPerDay: 24,
+
+			hoursOfTravel: 1,
+
+			threat: "Moderate"
     }
   }
 
@@ -44,7 +41,10 @@ class TravelTool extends React.Component {
 		console.log(this.state)
 	}
 	
-	onSelectValueChange = (key, value) => this.setState({[`${key}`]: value})
+	onSelectValueChange = async (key, value) => {
+		await this.setState({[`${key}`]: value})
+		console.log(this.state)
+	}
 
 	render() {
 		return (
@@ -61,10 +61,7 @@ class TravelTool extends React.Component {
 						<h2>Terrain</h2>
 					</Col>
 					<Weather onSelectValueChange={this.onSelectValueChange} />
-					<Col className='pace'>
-						<h2>Pace</h2>
-						{/* <SelectBuilder options={this.state.paceOptions} selected={this.state.paceSelected} onSelectValueChange={this.onSelectValueChange} /> */}
-					</Col>
+					<Pace className='pace' onSelectValueChange={this.onSelectValueChange} />
 					<Col>
 						<h2>Miles to Travel</h2>
 						<input type='number' />
@@ -76,10 +73,7 @@ class TravelTool extends React.Component {
 						<TravelCard title='Getting Lost' result='On track' />
 					</CardGroup>
 					<Row className='content w-100'>
-						<Col>
-							<h2>Threat Level</h2>
-							{/* <SelectBuilder options={this.state.threatOptions} selected={this.state.threatSelected} onSelectValueChange={this.onSelectValueChange} /> */}
-						</Col>
+						<Threat onSelectValueChange={this.onSelectValueChange} />
 						<Col>
 							<h2>Navigator</h2>
 						</Col>
