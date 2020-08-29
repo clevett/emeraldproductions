@@ -92,18 +92,6 @@ class EncounterBuilder extends React.Component {
           </Col>
           <Col className='col-12 col-lg-5'>
             <h2>Bestiary</h2>
-            {/* <Row className='text-left mb-3'>
-              <Col>
-                <h3>Difficult Rating</h3>
-                <SelectBuilder options={this.state.difficultyOptions} selected={1} onSelectValueChange={this.onSelectValueChange} />
-              </Col>
-              <Col>
-                <h3>Descriptor</h3>
-              </Col>
-              <Col>
-                <h3>Source</h3>
-              </Col>
-            </Row> */}
             <SearchBar onFormSubmit={this.onTermSubmit} />
             {this.spinnerToggle()}
           </Col> 
