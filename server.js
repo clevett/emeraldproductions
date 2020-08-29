@@ -15,17 +15,14 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 const connection = mongoose.connection
 connection.once('open', () => console.log("MongoDB database connection established successfully"))
 
-//ROUTES
-const usersRouter = require('./routes/users')
 //SODL
-const sodlbestiaryRouter = require('./routes/sodl/bestiary')
+const sodlbestiaryRouter = require('./backend/routes/sodl/bestiary')
 //Shadowrun
-const shadowrunMissionCreationRouter = require('./routes/shadowrun/missioncreation')
+const shadowrunMissionCreationRouter = require('./backend/routes/shadowrun/missioncreation')
 //Roll20
-const roll20charsheetsRouter = require('./routes/roll20/charsheets')
+const roll20charsheetsRouter = require('./backend/routes/roll20/charsheets')
 //Contact form
-
-const send = require('./routes/send')
+const send = require('./backend/routes/send')
 
 //SODL
 app.use('/api/ShadowoftheDemonLord', sodlbestiaryRouter)
