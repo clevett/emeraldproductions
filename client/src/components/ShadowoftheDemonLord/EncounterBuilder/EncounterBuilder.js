@@ -39,7 +39,6 @@ class EncounterBuilder extends React.Component {
   loadData = async () => {
     await axios.get('https://emeraldproductions.herokuapp.com/api/ShadowoftheDemonLord/encounter_builder')
     .then(response => {
-      console.log(response)
       this.setState({ beasts: response.data, searchStatus: 'done' })
     })
     .catch(error => console.log(error)) 
