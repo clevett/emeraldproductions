@@ -17,7 +17,6 @@ connection.once('open', () => console.log("MongoDB database connection establish
 
 //SODL
 const sodlbestiaryRouter = require('./backend/routes/sodl/bestiary')
-const sodlThreat = require('./backend/routes/sodl/threat')
 //Shadowrun
 const shadowrunMissionCreationRouter = require('./backend/routes/shadowrun/missioncreation')
 //Roll20
@@ -27,9 +26,8 @@ const send = require('./backend/routes/send')
 
 //SODL
 app.use('/api/ShadowoftheDemonLord/encounter_builder', sodlbestiaryRouter)
-app.use('/api/ShadowoftheDemonLord/travel_threat', sodlThreat)
 //Shadowrun
-app.use('/api/ShadowrunMissionCreation', shadowrunMissionCreationRouter)
+app.use('/api/Shadowrun/mission_creation', shadowrunMissionCreationRouter)
 //Roll20
 app.use('/api/Roll20CharSheets', roll20charsheetsRouter)
 //Contact form
