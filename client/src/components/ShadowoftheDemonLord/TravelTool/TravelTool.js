@@ -7,11 +7,10 @@ import TravelCard from './TravelCard/TravelCard'
 import Weather from './Weather/Weather'
 import Pace from './Pace/Pace'
 import Threat from './Threat/Threat'
+import Terrain from './Terrain/Terrain'
 
-import threat from  './data/threat.js'
 import conditions from  './data/conditions.js'
 import encounter from  './data/encounter.js'
-import terrain from  './data/terrain.js'
 
 //Images & Styling
 import './TravelTool.scss'
@@ -22,7 +21,6 @@ class TravelTool extends React.Component {
     this.state = {
 			conditions,
 			encounter,
-			terrain,
 
 			weatherMultiplier: 1,
 
@@ -31,7 +29,9 @@ class TravelTool extends React.Component {
 
 			hoursOfTravel: 1,
 
-			threat: "Moderate"
+			threat: "Moderate",
+
+			terrain: ''
     }
   }
 
@@ -57,14 +57,12 @@ class TravelTool extends React.Component {
 					</CardGroup>
 				</Row>
 				<Row className='content w-100'>
-					<Col>
-						<h2>Terrain</h2>
-					</Col>
+					<Terrain onSelectValueChange={this.onSelectValueChange} />
 					<Weather onSelectValueChange={this.onSelectValueChange} />
 					<Pace className='pace' onSelectValueChange={this.onSelectValueChange} />
 					<Col>
 						<h2>Miles to Travel</h2>
-						<input type='number' />
+						<input className='text-center' type='number' value='3' />
 					</Col>
 				</Row>
 				<Row className='content mt-5'>

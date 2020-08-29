@@ -3,7 +3,7 @@ import React from 'react'
 import { Col } from 'react-bootstrap'
 import SelectBuilder from '../../../SelectBuilder/SelectBuilder'
 import data from  '../data/weather.js'
-import findObject from '../findObject/findObject'
+import findObjectByName from '../findObjectByName/findObjectByName'
 
 class Weather extends React.Component {
 	constructor(props) {
@@ -17,7 +17,7 @@ class Weather extends React.Component {
 	}
 
 	handleChange = async event => {
-		const object = await findObject(data, event)
+		const object = await findObjectByName(data, event)
 
 		this.setState({
 			selected: event,

@@ -1,4 +1,4 @@
-import findObject from './findObject'
+import findObjectByName from './findObjectByName'
 
 const data = [
 	{
@@ -13,8 +13,8 @@ const data = [
 	}
 ]
 
-describe('When findObject is given an array of objects AND a string', () => {
-	const result = findObject(data, "Heavy precipitation")
+describe('When findObjectByName is given an array of objects AND a string', () => {
+	const result = findObjectByName(data, "Heavy precipitation")
 	test('Then returns the object', () => expect(result).toEqual(data[1]))
 	test('Then returns an object', () => expect(typeof result).toEqual('object'))
 })
