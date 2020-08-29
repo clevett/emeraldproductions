@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const travelThreat = new mongoonse.Schema({
+const travelThreat = new mongoose.Schema({
 	threat: {
 		type: String,
 		required: true
@@ -11,6 +11,6 @@ const travelThreat = new mongoonse.Schema({
 	}
 })
 
-const sodlTravelThreat = mongoose.model('sodltravel', travelThreat)
+const sodlTravelThreat = mongoose.model('sodlthreat', travelThreat)
 
 module.exports = sodlTravelThreat;

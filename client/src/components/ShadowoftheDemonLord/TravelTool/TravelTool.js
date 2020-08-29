@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 import { Container, Col, Row, CardGroup } from 'react-bootstrap'
 import RPGHeader from '../RPGHeader/RPGHeader'
@@ -12,7 +13,18 @@ class TravelTool extends React.Component {
   }
 
   componentDidMount = () => {
-    //this.loadData()
+    this.loadData()
+  }
+
+  loadData = async () => {
+    await axios.get('http://localhost:5000/api/ShadowoftheDemonLord/travel_threat')
+    .then(response => {
+			//this.setState({ beasts: response.data, searchStatus: 'done' })
+			console.log(response)
+    })
+    .catch(error => console.log(error)) 
+
+    //this.onTermSubmit('human')
 	}
 	
 	render() {
