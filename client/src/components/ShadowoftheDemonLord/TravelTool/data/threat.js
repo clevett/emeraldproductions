@@ -1,18 +1,18 @@
 export default [
 	{
-		"threat": "Extreme",
+		"name": "Extreme",
 		"check": "Hourly"
 	},
 	{
-		"threat": "Major",
+		"name": "Major",
 		"check": "Once per 4 hours"
 	},
 	{
-		"threat":"Moderate",
+		"name":"Moderate",
 		"check": "Once per 8 hours"
 	},
 	{
-		"threat": "Minor",
+		"name": "Minor",
 		"check":"Oncer per day and once per night"
 	}
 ]

@@ -16,11 +16,7 @@ export default [
 		"multiplier": 3
 	},
 	{
-		"name": "Plains",
-		"multiplier": 1
-	},
-	{
-		"name": "Roads",
+		"name": "Plains/Roads",
 		"multiplier": 1
 	},
 	{
