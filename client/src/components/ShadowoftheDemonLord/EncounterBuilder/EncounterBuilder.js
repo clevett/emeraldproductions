@@ -17,7 +17,7 @@ import fuzzySearch from '../../SearchBar/fuzzySearch'
 //Images & Styling
 import './EncounterBuilder.scss'
 
-class ShadowoftheDemonLord extends React.Component {
+class EncounterBuilder extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -116,4 +116,4 @@ class ShadowoftheDemonLord extends React.Component {
   }
 }
 
-export default ShadowoftheDemonLord
+export default EncounterBuilder
