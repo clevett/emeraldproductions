@@ -1,30 +1,31 @@
 import React from 'react'
-import axios from 'axios'
 
 import { Container, Col, Row, CardGroup } from 'react-bootstrap'
 import RPGHeader from '../RPGHeader/RPGHeader'
 import TravelCard from './TravelCard/TravelCard'
 
+import threat from  './collection:sodltravel/threat.js'
+import conditions from  './collection:sodltravel/conditions.js'
+import encounter from  './collection:sodltravel/encounter.js'
+import terrain from  './collection:sodltravel/terrain.js'
+import weather from  './collection:sodltravel/weather.js'
+
 class TravelTool extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+			threat, 
+			conditions,
+			encounter,
+			terrain,
+			weather
     }
   }
 
-  componentDidMount = () => {
-    this.loadData()
-  }
+  componentDidMount = () => this.loadData()
 
   loadData = async () => {
-    await axios.get('http://localhost:5000/api/ShadowoftheDemonLord/travel_threat')
-    .then(response => {
-			//this.setState({ beasts: response.data, searchStatus: 'done' })
-			console.log(response)
-    })
-    .catch(error => console.log(error)) 
-
-    //this.onTermSubmit('human')
+		console.log(this.state)
 	}
 	
 	render() {
