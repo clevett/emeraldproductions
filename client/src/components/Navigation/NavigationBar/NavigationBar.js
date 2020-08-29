@@ -22,7 +22,7 @@ class NavigationBar extends React.Component {
 				<Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
 					<Nav className="text-white font-weight-bold" activeKey="/home">
 						<NavigationLink reference={{name: 'About', href:'/'}} />
-						<NavDropdown className='text-white font-weight-bold mr-5 rpg-tools' title="RPG Tools" id="basic-nav-dropdown">
+						<NavDropdown className='text-white font-weight-bold mr-5 rpg-tools' title="RPG Tools" id="basic-nav-dropdown-rpg-tools">
 							<label>Shadow of the Demon Lord</label>
 							<NavDropdown.Item href="/shadow_of_the_demon_lord/encounter_builder">Encounter Builder</NavDropdown.Item>
 							{/* <NavDropdown.Item href="/shadow_of_the_demon_lord/travel_tool">Travel Tool</NavDropdown.Item> */}
@@ -30,7 +30,7 @@ class NavigationBar extends React.Component {
 							<label>Shadowrun</label>
 							<NavDropdown.Item href="/shadowrun/mission_creation">Mission Creation</NavDropdown.Item>
 						</NavDropdown>
-						<NavDropdown className='text-white font-weight-bold mr-5' title="Roll 20" id="basic-nav-dropdown">
+						<NavDropdown className='text-white font-weight-bold mr-5' title="Roll 20" id="basic-nav-dropdown-roll-20">
 							<NavDropdown.Item href="/roll_20_character_sheets">Character Sheets</NavDropdown.Item>
 						</NavDropdown>
 						<NavigationLink reference={{ name: 'Contact', href: '/contact' }} />
