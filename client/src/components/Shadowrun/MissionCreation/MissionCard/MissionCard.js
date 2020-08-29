@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Card } from 'react-bootstrap'
 
-const missionCard = ({title, result}) => {
+const MissionCard = ({title, result}) => {
 	return (
-		<Card className='text-center' style={{ width: '18rem' }}>
+		<Card className='text-center'>
 			<Card.Body>
 				<Card.Title>{title}</Card.Title>
 				<Card.Text>
@@ -17,4 +17,4 @@ const missionCard = ({title, result}) => {
 	)
 }
 
-export default missionCard
+export default MissionCard
