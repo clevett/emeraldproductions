@@ -5,7 +5,7 @@ import data from  '../data/terrain.js'
 import './Terrain.scss'
 import Switch from '../../../Switch/Switch'
 import findObjectByName from '../findObjectByName/findObjectByName'
-import calculateMultiplier from './calculateMultiplier/calculateMultiplier'
+import { calculateMultiplier } from './calculateMultiplier/calculateMultiplier'
 
 class Terrain extends React.Component {
 	constructor(props) {
@@ -18,8 +18,8 @@ class Terrain extends React.Component {
 
 	handleToggle = async (name, status) => {
 		const object = await findObjectByName(data, name)
-		const updatedMultiplier = calculateMultiplier(this.state.multiplier, object.multiplier, status)
-		await this.setState({	multiplier: Math.max(updatedMultiplier, 0) })
+		const updatedMultiplier = await calculateMultiplier(this.state.multiplier, object.multiplier, status)
+		await this.setState({	multiplier: updatedMultiplier })
 		this.props.onSelectValueChange('terrain', this.state.multiplier)
 	}
 

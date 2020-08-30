@@ -38,7 +38,7 @@ class TravelTool extends React.Component {
 	
 	onValueChange = async (key, value) => {
 		await this.setState({[`${key}`]: value})
-		console.log(this.state)
+		//console.log(this.state.terrain)
 	}
 
 	render() {
