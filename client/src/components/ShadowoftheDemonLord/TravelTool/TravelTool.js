@@ -12,6 +12,8 @@ import Terrain from './Terrain/Terrain'
 import conditions from  './data/conditions.js'
 import encounter from  './data/encounter.js'
 
+import { combineMultipliers } from './calculateMultiplier/calculateMultiplier'
+
 //Images & Styling
 import './TravelTool.scss'
 
@@ -21,12 +23,14 @@ class TravelTool extends React.Component {
     this.state = {
 			conditions,
 			encounter,
-			weatherMultiplier: 1,
 			milesPerHour: 3,
 			milesPerDay: 24,
 			hoursOfTravel: 1,
 			threat: "Moderate",
-			terrain: 1
+			//Travel Modifiers
+			weather: 1,
+			terrain: 1,
+			multiplier: 1,
     }
   }
 
@@ -35,10 +39,15 @@ class TravelTool extends React.Component {
   loadData = async () => {
 		console.log(this.state)
 	}
-	
+
 	onValueChange = async (key, value) => {
 		await this.setState({[`${key}`]: value})
-		//console.log(this.state.terrain)
+		
+		if (key === 'weather' || key === 'terrain') {
+			await this.setState({
+				multiplier: combineMultipliers(this.state.terrain, this.state.weather)
+			})
+		}
 	}
 
 	render() {

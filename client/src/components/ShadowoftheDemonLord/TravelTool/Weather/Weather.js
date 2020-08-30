@@ -24,7 +24,7 @@ class Weather extends React.Component {
 			multipier: object.multiplier
 		})
 		
-    this.props.onSelectValueChange('weatherMultiplier', this.state.multipier)
+    this.props.onSelectValueChange('weather', this.state.multipier)
   }
 	
 	render() {

@@ -5,7 +5,7 @@ import data from  '../data/terrain.js'
 import './Terrain.scss'
 import Switch from '../../../Switch/Switch'
 import findObjectByName from '../findObjectByName/findObjectByName'
-import { calculateMultiplier } from './calculateMultiplier/calculateMultiplier'
+import { calculateMultiplier } from '../calculateMultiplier/calculateMultiplier'
 
 class Terrain extends React.Component {
 	constructor(props) {
