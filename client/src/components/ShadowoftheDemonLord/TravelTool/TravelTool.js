@@ -21,17 +21,12 @@ class TravelTool extends React.Component {
     this.state = {
 			conditions,
 			encounter,
-
 			weatherMultiplier: 1,
-
 			milesPerHour: 3,
 			milesPerDay: 24,
-
 			hoursOfTravel: 1,
-
 			threat: "Moderate",
-
-			terrain: ''
+			terrain: 1
     }
   }
 
@@ -41,7 +36,7 @@ class TravelTool extends React.Component {
 		console.log(this.state)
 	}
 	
-	onSelectValueChange = async (key, value) => {
+	onValueChange = async (key, value) => {
 		await this.setState({[`${key}`]: value})
 		console.log(this.state)
 	}
@@ -57,9 +52,9 @@ class TravelTool extends React.Component {
 					</CardGroup>
 				</Row>
 				<Row className='content w-100'>
-					<Terrain onSelectValueChange={this.onSelectValueChange} />
-					<Weather onSelectValueChange={this.onSelectValueChange} />
-					<Pace className='pace' onSelectValueChange={this.onSelectValueChange} />
+					<Terrain onSelectValueChange={this.onValueChange} />
+					<Weather onSelectValueChange={this.onValueChange} />
+					<Pace className='pace' onSelectValueChange={this.onValueChange} />
 					<Col>
 						<h2>Miles to Travel</h2>
 						<input className='text-center' type='number' defaultValue='3' />
@@ -71,7 +66,7 @@ class TravelTool extends React.Component {
 						<TravelCard title='Getting Lost' result='On track' />
 					</CardGroup>
 					<Row className='content w-100'>
-						<Threat onSelectValueChange={this.onSelectValueChange} />
+						<Threat onSelectValueChange={this.onValueChange} />
 						<Col>
 							<h2>Navigator</h2>
 						</Col>

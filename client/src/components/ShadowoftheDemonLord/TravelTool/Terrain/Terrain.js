@@ -12,13 +12,6 @@ class Terrain extends React.Component {
     super(props)
     this.state = {
 			data,
-			options: data.map(object => object.name) || [],
-			desert: false,
-			forest: false,
-			hills: false,
-			mountains: false,
-			"plains/roads": false,
-			swamp: false,
 			multiplier: 0
     }
 	}
@@ -26,12 +19,7 @@ class Terrain extends React.Component {
 	handleToggle = async (name, status) => {
 		const object = await findObjectByName(data, name)
 		const updatedMultiplier = calculateMultiplier(this.state.multiplier, object.multiplier, status)
-
-		await this.setState({
-			[`${name.toLowerCase()}`]: status,
-			multiplier: Math.max(updatedMultiplier, 0)
-		})
-		
+		await this.setState({	multiplier: Math.max(updatedMultiplier, 0) })
 		this.props.onSelectValueChange('terrain', this.state.multiplier)
 	}
 
