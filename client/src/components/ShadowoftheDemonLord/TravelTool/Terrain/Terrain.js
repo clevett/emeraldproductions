@@ -1,8 +1,11 @@
 import React from 'react'
 
-import { Col, Form } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 import data from  '../data/terrain.js'
 import './Terrain.scss'
+import Switch from '../../../Switch/Switch'
+import findObjectByName from '../findObjectByName/findObjectByName'
+import calculateMultiplier from './calculateMultiplier/calculateMultiplier'
 
 class Terrain extends React.Component {
 	constructor(props) {
@@ -14,35 +17,26 @@ class Terrain extends React.Component {
 			forest: false,
 			hills: false,
 			mountains: false,
-			"plains/road": false,
+			"plains/roads": false,
 			swamp: false,
-			multiplier: 1
+			multiplier: 0
     }
 	}
 
-	handleChange = async event => {
-		this.setState({
-			multiplier: 1,
+	handleToggle = async (name, status) => {
+		const object = await findObjectByName(data, name)
+		const updatedMultiplier = calculateMultiplier(this.state.multiplier, object.multiplier, status)
+
+		await this.setState({
+			[`${name.toLowerCase()}`]: status,
+			multiplier: Math.max(updatedMultiplier, 0)
 		})
 		
 		this.props.onSelectValueChange('terrain', this.state.multiplier)
 	}
-	
-	handleChange = event => {
-		console.log(event)
-    //this.setState({value: event.target.value})
-    //this.props.onSelectValueChange(event.target.value)
-  }
-	
-	renderedList = terrains => terrains.map(terrain => <Form.Check key={terrain.name} type="switch" id={terrain.name} label={terrain.name} value={terrain.name} onChange={this.handleChange} />)
 
-	terrainSwitches = terrainTypes => {
-		return (
-			<div className='switches'>
-				{this.renderedList(terrainTypes)}
-			</div>
-		)
-	}
+	renderedList = terrains => terrains.map(terrain => <Switch key={terrain.name} name={terrain.name} handleToggle={this.handleToggle} />)
+	terrainSwitches = terrainTypes => <div className='switches'>{this.renderedList(terrainTypes)}</div>
 
 	render() {
 		return (
