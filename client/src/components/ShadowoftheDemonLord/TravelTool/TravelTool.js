@@ -62,7 +62,7 @@ class TravelTool extends React.Component {
 					<Pace className='pace' onSelectValueChange={this.onSelectValueChange} />
 					<Col>
 						<h2>Miles to Travel</h2>
-						<input className='text-center' type='number' value='3' />
+						<input className='text-center' type='number' defaultValue='3' />
 					</Col>
 				</Row>
 				<Row className='content mt-5'>
