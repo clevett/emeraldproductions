@@ -1,0 +1,52 @@
+export default [
+	{
+		"condition": "Navigator",
+		"effect": "boon",
+		"dice": 3
+	},
+	{
+		"condition": "Plains",
+		"effect": "boon",
+		"dice": 1
+	},
+	{
+		"condition": "Desert",
+		"effect": "bane",
+		"dice": 1
+	},
+	{
+		"condition": "Forest",
+		"effect": "bane",
+		"dice": 2
+	},
+	{
+		"condition": "Hills",
+		"effect": "bane",
+		"dice": 1
+	},
+	{
+		"condition": "Mountains",
+		"effect": "bane",
+		"dice": 2
+	},
+	{
+		"condition": "Swamp",
+		"effect": "bane",
+		"dice": 2
+	},
+	{
+		"condition": "Precipitation",
+		"effect": "bane",
+		"dice": 1
+	},
+	{
+		"condition": "Storm",
+		"effect": "bane",
+		"dice": 2
+	},
+	{
+		"condition": "Powerful Storm",
+		"effect": "bane",
+		"dice": 3
+	}
+]

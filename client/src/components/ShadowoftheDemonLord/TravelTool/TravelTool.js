@@ -1,72 +1,82 @@
 import React from 'react'
-import axios from 'axios'
 
-import { Container, Col, Row, CardGroup } from 'react-bootstrap'
+import { Container, Row, CardGroup } from 'react-bootstrap'
+
 import RPGHeader from '../RPGHeader/RPGHeader'
 import TravelCard from './TravelCard/TravelCard'
+import Weather from './Weather/Weather'
+import Pace from './Pace/Pace'
+import Terrain from './Terrain/Terrain'
+
+import conditions from  './data/conditions.js'
+import encounter from  './data/encounter.js'
+
+import { combineMultipliers } from './calculateMultiplier/calculateMultiplier'
+import { adjustedSpeed } from './calculateSpeed/calculateSpeed'
+
+//Images & Styling
+import './TravelTool.scss'
 
 class TravelTool extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-    }
+			conditions,
+			encounter,
+			//Pace
+			pace: 3,
+			//Travel Modifiers
+			weather: 1,
+			terrain: 1,
+			multiplier: 1,
+			//Travel Distance
+			miles: 3,
+			milesPerHour: 3,
+			milesPerDay: 24,
+			adjustedMilesPerHour: 3,
+			adjustedMilesPerDay: 24,
+			//Threat
+			threat: "Moderate",
+		}
+		
+		this.onValueChange = this.onValueChange.bind(this)
   }
 
-  componentDidMount = () => {
-    this.loadData()
-  }
+	onValueChange = async (key, value) => {
+		await this.setState({[`${key}`]: value})
+		
+		if (key === 'weather' || key === 'terrain') {
+			await this.setState({
+				multiplier: combineMultipliers(this.state.terrain, this.state.weather)
+			})
+		}
 
-  loadData = async () => {
-    await axios.get('http://localhost:5000/api/ShadowoftheDemonLord/travel_threat')
-    .then(response => {
-			//this.setState({ beasts: response.data, searchStatus: 'done' })
-			console.log(response)
-    })
-    .catch(error => console.log(error)) 
-
-    //this.onTermSubmit('human')
+		if (key === 'pace' || key === 'terrain' || key === 'weather') {
+			const milesPerHour = await adjustedSpeed(this.state.milesPerHour, this.state.multiplier)
+			const milesPerDay = await adjustedSpeed(this.state.milesPerDay, this.state.multiplier)
+			await this.setState({
+				adjustedMilesPerHour: milesPerHour,
+				adjustedMilesPerDay: milesPerDay
+			})
+		}
 	}
-	
+
 	render() {
 		return (
       <Container className="TravelTool content text-white">
         <RPGHeader title='Travel Tool' />
-        <Row className='content'>
-					<CardGroup className='mb-5 w-100'>
-						<TravelCard title='Miles per Hour' result='3' />
-						<TravelCard title='Hours of Travel' result='1' />
-					</CardGroup>
-				</Row>
-				<Row className='content w-100'>
-					<Col>
-						<h2>Terrain</h2>
-					</Col>
-					<Col>
-						<h2>Weather</h2>
-						<select></select>
-					</Col>
-					<Col>
-						<h2>Pace</h2>
-						<select></select>
-					</Col>
-					<Col>
-						<h2>Miles to Travel</h2>
-						<input type='number' />
-					</Col>
-				</Row>
-				<Row className='content mt-5'>
-					<CardGroup className='mb-5 w-100'>
-						<TravelCard title='Random Encounter' result='Harmless' />
-						<TravelCard title='Getting Lost' result='On track' />
-					</CardGroup>
-					<Row className='content w-100'>
-						<Col>
-							<h2>Threat Level</h2>
-						</Col>
-						<Col>
-							<h2>Navigator</h2>
-						</Col>
+
+        <Row className='content mb-5 w-100'>
+					<Row className='w-100 text-center'>
+						<h2 className='w-100 text-center mb-3'>Speed Calculator</h2>
 					</Row>
+					<CardGroup className='mb-3 w-100'>
+						<TravelCard title='Miles per Hour' result={this.state.adjustedMilesPerHour} />
+						<TravelCard title='Miles per Day' result={this.state.adjustedMilesPerDay} />
+					</CardGroup>
+					<Terrain onSelectValueChange={this.onValueChange} />
+					<Weather onSelectValueChange={this.onValueChange} />
+					<Pace className='pace' onSelectValueChange={this.onValueChange} />
 				</Row>
 			</Container>
 		)
