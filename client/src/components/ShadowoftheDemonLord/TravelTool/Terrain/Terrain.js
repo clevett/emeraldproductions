@@ -29,7 +29,7 @@ class Terrain extends React.Component {
 	render() {
 		return (
 			<Col className='Terrain'>
-				<h2>Terrain</h2>
+				<h3>Terrain</h3>
 				{this.terrainSwitches(data)}
 			</Col>
 		)

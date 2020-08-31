@@ -22,7 +22,7 @@ class Pace extends React.Component {
 	handleChange = async event => {
 		const object = await findObjectByName(data, event)
 
-		this.setState({
+		await this.setState({
 			selected: event,
 			milesPerHour: object.hour,
 			milesPerDay: object.day
@@ -35,7 +35,7 @@ class Pace extends React.Component {
 	render() {
 		return (
 			<Col className='pace'>
-				<h2>Pace</h2>
+				<h3>Pace</h3>
 				<SelectBuilder options={this.state.options} selected={this.state.selected} onSelectValueChange={this.handleChange} />
 			</Col>
 		)

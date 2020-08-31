@@ -30,7 +30,7 @@ class Weather extends React.Component {
 	render() {
 		return (
 			<Col>
-				<h2>Weather</h2>
+				<h3>Weather</h3>
 				<SelectBuilder options={this.state.options} selected={this.state.selected} onSelectValueChange={this.handleChange} />
 			</Col>
 		)
