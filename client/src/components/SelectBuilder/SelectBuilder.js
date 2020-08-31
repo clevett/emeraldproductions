@@ -10,7 +10,6 @@ class Select extends React.Component {
       selected: props.selected,
       value: ''
     }
-
   }
 
   handleChange = event => {
