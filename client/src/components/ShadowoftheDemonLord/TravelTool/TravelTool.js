@@ -44,14 +44,14 @@ class TravelTool extends React.Component {
 
 	onValueChange = async (key, value) => {
 		await this.setState({[`${key}`]: value})
-		
+
 		if (key === 'weather' || key === 'terrain') {
 			await this.setState({
 				multiplier: combineMultipliers(this.state.terrain, this.state.weather)
 			})
 		}
 
-		if (key === 'pace' || key === 'terrain' || key === 'weather') {
+		if (key.includes('miles') || key === 'terrain' || key === 'weather') {
 			const milesPerHour = await adjustedSpeed(this.state.milesPerHour, this.state.multiplier)
 			const milesPerDay = await adjustedSpeed(this.state.milesPerDay, this.state.multiplier)
 			await this.setState({
