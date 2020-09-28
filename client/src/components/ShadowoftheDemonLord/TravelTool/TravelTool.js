@@ -1,18 +1,20 @@
 import React from 'react'
 
-import { Container, Row, CardGroup } from 'react-bootstrap'
+import { Container, Row, CardGroup, Col } from 'react-bootstrap'
 
 import RPGHeader from '../RPGHeader/RPGHeader'
 import TravelCard from './TravelCard/TravelCard'
 import Weather from './Weather/Weather'
 import Pace from './Pace/Pace'
 import Terrain from './Terrain/Terrain'
+import MilesToTravel from './MilesToTravel/MilesToTravel'
 
 import conditions from  './data/conditions.js'
 import encounter from  './data/encounter.js'
 
 import { combineMultipliers } from './calculateMultiplier/calculateMultiplier'
 import { adjustedSpeed } from './calculateSpeed/calculateSpeed'
+import { determineTravelTime } from './determineTravelTime/determineTravelTime'
 
 //Images & Styling
 import './TravelTool.scss'
@@ -23,8 +25,6 @@ class TravelTool extends React.Component {
     this.state = {
 			conditions,
 			encounter,
-			//Pace
-			pace: 3,
 			//Travel Modifiers
 			weather: 1,
 			terrain: 1,
@@ -35,6 +35,9 @@ class TravelTool extends React.Component {
 			milesPerDay: 24,
 			adjustedMilesPerHour: 3,
 			adjustedMilesPerDay: 24,
+			//Time to Travel
+			milesToTravel: 30,
+			travelTime: '1 day, 2 hours',
 			//Threat
 			threat: "Moderate",
 		}
@@ -52,11 +55,11 @@ class TravelTool extends React.Component {
 		}
 
 		if (key.includes('miles') || key === 'terrain' || key === 'weather') {
-			const milesPerHour = await adjustedSpeed(this.state.milesPerHour, this.state.multiplier)
-			const milesPerDay = await adjustedSpeed(this.state.milesPerDay, this.state.multiplier)
+			const adjustedMilesPerHour = adjustedSpeed(this.state.milesPerHour, this.state.multiplier)
 			await this.setState({
-				adjustedMilesPerHour: milesPerHour,
-				adjustedMilesPerDay: milesPerDay
+				adjustedMilesPerHour,
+				adjustedMilesPerDay: adjustedSpeed(this.state.milesPerDay, this.state.multiplier),
+				travelTime: determineTravelTime(adjustedMilesPerHour, this.state.milesToTravel)
 			})
 		}
 	}
@@ -73,10 +76,14 @@ class TravelTool extends React.Component {
 					<CardGroup className='mb-3 w-100'>
 						<TravelCard title='Miles per Hour' result={this.state.adjustedMilesPerHour} />
 						<TravelCard title='Miles per Day' result={this.state.adjustedMilesPerDay} />
+						<TravelCard title={`Time to Travel ${this.state.milesToTravel} Miles`} result={this.state.travelTime} />
 					</CardGroup>
 					<Terrain onSelectValueChange={this.onValueChange} />
-					<Weather onSelectValueChange={this.onValueChange} />
-					<Pace className='pace' onSelectValueChange={this.onValueChange} />
+					<Col>
+						<Weather onSelectValueChange={this.onValueChange} />
+						<Pace className='pace' onSelectValueChange={this.onValueChange} />
+					</Col>
+					<MilesToTravel onChange={this.onValueChange} />
 				</Row>
 			</Container>
 		)

@@ -1,4 +1,4 @@
-import { calculateMultiplier } from './calculateMultiplier'
+import { calculateMultiplier } from '../calculateMultiplier'
 
 describe('When called', () => {
 	const result = calculateMultiplier()
