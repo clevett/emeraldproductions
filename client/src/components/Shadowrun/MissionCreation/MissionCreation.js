@@ -50,7 +50,7 @@ class MissionCreation extends React.Component {
 	randomMission = async table => {
 		const quantity = table === 'employer' ? 2 : 1
 		const roll = await this.diceRoll(quantity)
-		const result = data.find(object => object.result.includes(roll))
+		const result = data.find(object => object.table === table && object.result.includes(roll))
 		this.setState({ [`${table}`]: result })
 	}
 
