@@ -27,5 +27,6 @@ jobs:
         run: |
           echo Testing project
           cd ./client
+          npm install
           npm test
           echo Testing finished
