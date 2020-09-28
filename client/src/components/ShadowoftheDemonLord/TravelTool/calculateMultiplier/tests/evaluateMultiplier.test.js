@@ -1,4 +1,4 @@
-import { evaluateMultiplier } from './calculateMultiplier'
+import { evaluateMultiplier } from '../calculateMultiplier'
 
 describe('When evaluateMultiplier is given a number of 1', () => {
 	const result = evaluateMultiplier(1)

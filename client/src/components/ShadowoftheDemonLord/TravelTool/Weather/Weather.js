@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import SelectBuilder from '../../../SelectBuilder/SelectBuilder'
 import data from  '../data/weather.js'
 import findObjectByName from '../findObjectByName/findObjectByName'
@@ -29,10 +29,10 @@ class Weather extends React.Component {
 	
 	render() {
 		return (
-			<Col>
-				<h3>Weather</h3>
+			<Row className='justify-content-center mb-2'>
+				<h3 className='w-100'>Weather</h3>
 				<SelectBuilder options={this.state.options} selected={this.state.selected} onSelectValueChange={this.handleChange} />
-			</Col>
+			</Row>
 		)
 	}
 }

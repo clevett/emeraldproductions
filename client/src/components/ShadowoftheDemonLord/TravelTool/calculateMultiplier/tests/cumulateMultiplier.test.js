@@ -1,4 +1,4 @@
-import { cumulateMultiplier } from './calculateMultiplier'
+import { cumulateMultiplier } from '../calculateMultiplier'
 
 describe('When cumulateMultiplier is a number, a number, and a status of true', () => {
 	const result = cumulateMultiplier(1, 1.5, true)

@@ -1,4 +1,4 @@
-import { combineMultipliers } from './calculateMultiplier'
+import { combineMultipliers } from '../calculateMultiplier'
 
 describe('When values are over 1', () => {
 	const result = combineMultipliers(2, 2)
