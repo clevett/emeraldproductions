@@ -13,12 +13,8 @@ const determineTravelTime = (milesPerHour, milesToTravel) => {
 	const days = calculateDays(totalHours)
 	const daysString = pluralString('day', days)
 
-	console.log(daysString)
-
 	const hours = totalHours - (days * 8)
 	const hoursString = pluralString('hour', hours)
-
-	console.log(hoursString)
 
 	const string = combineStrings(daysString, hoursString)
 

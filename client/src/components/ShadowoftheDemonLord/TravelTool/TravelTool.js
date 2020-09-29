@@ -68,11 +68,7 @@ class TravelTool extends React.Component {
 		return (
       <Container className="TravelTool content text-white">
         <RPGHeader title='Travel Tool' />
-
         <Row className='content mb-5 w-100'>
-					<Row className='w-100 text-center'>
-						<h2 className='w-100 text-center mb-3'>Speed Calculator</h2>
-					</Row>
 					<CardGroup className='mb-3 w-100'>
 						<TravelCard title='Miles per Hour' result={this.state.adjustedMilesPerHour} />
 						<TravelCard title='Miles per Day' result={this.state.adjustedMilesPerDay} />
@@ -80,8 +76,8 @@ class TravelTool extends React.Component {
 					</CardGroup>
 					<Terrain onSelectValueChange={this.onValueChange} />
 					<Col>
-						<Weather onSelectValueChange={this.onValueChange} />
 						<Pace className='pace' onSelectValueChange={this.onValueChange} />
+						<Weather onSelectValueChange={this.onValueChange} />
 					</Col>
 					<MilesToTravel onChange={this.onValueChange} />
 				</Row>

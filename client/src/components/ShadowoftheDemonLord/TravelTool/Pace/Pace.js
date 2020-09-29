@@ -34,7 +34,7 @@ class Pace extends React.Component {
 	
 	render() {
 		return (
-			<Row className='pace justify-content-center'>
+			<Row className='pace justify-content-center mb-2'>
 				<h3 className='w-100'>Pace</h3>
 				<SelectBuilder options={this.state.options} selected={this.state.selected} onSelectValueChange={this.handleChange} />
 			</Row>
