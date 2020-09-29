@@ -111,6 +111,14 @@
   }
 }
 
+.rollDie {
+  position: relative;
+  x-transition: all 1s ease-in-out;
+  animation: rollDie 1.7s ease-in-out;
+
+  @extend .rotate;
+}
+
 @keyframes rollDie {
   0% {
     left: 0;

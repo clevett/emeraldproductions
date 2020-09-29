@@ -36,6 +36,12 @@ class Weather extends React.Component {
 		const result = data.find(object => object.result.includes(roll))
 
 		this.handleChange(result.name)
+
+		document.querySelector(".dice").classList.add("rollDie")
+
+		setTimeout(() => { 
+			document.querySelector(".dice").classList.remove("rollDie")
+		}, 2200);
 	}
 
 	renderedList = options => options.map(option => <option key={option} option={option} >{option}</option>)
@@ -49,7 +55,7 @@ class Weather extends React.Component {
 					{this.renderedList(this.state.options)}
         </select>
 
-				<Button onClick={this.handleClick} type="button" variant="link">
+				<Button className="dice" onClick={this.handleClick} type="button" variant="link">
 					<img alt='d6' src={d6}></img>
 				</Button>
 			</Row>
