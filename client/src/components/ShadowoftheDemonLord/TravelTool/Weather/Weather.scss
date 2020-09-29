@@ -10,15 +10,7 @@ div.weather {
 		padding: 0px;
 		height: 2.3rem;
 		width: 2.3rem;
-
-		// &:active {
-		// 	position: relative;
-		// 	x-transition: all 1s ease-in-out;
-		// 	animation: rollDie 1.7s ease-in-out;
-
-		// 	@extend .rotate
-		// }
-
+		
 		&:hover img {
 			animation-timing-function:ease-out;
 			transform: scale(1.2);
