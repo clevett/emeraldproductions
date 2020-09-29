@@ -15,6 +15,7 @@ class Weather extends React.Component {
 			options: data.map(object => object.name) || [],
 			selected: 'Normal conditions',
 			multiplier: 1,
+			animation: false
     }
 	}
 
@@ -29,7 +30,7 @@ class Weather extends React.Component {
 		
     this.props.onSelectValueChange('weather', this.state.multiplier)
   }
-	
+
   handleClick = async event => {
 		event.preventDefault()
 		const roll = new Roll().roll(`3d6`).result
@@ -37,16 +38,14 @@ class Weather extends React.Component {
 
 		this.handleChange(result.name)
 
-		document.querySelector(".dice").classList.add("rollDie")
-
-		setTimeout(() => { 
-			document.querySelector(".dice").classList.remove("rollDie")
-		}, 2200);
+		this.setState({ animation: true })
 	}
 
 	renderedList = options => options.map(option => <option key={option} option={option} >{option}</option>)
 
 	render() {
+		const animation = this.state.animation
+
 		return (
 			<Row className='weather justify-content-center align-items-center'>
 				<h3 className='w-100'>Weather</h3>
@@ -55,7 +54,7 @@ class Weather extends React.Component {
 					{this.renderedList(this.state.options)}
         </select>
 
-				<Button className="dice" onClick={this.handleClick} type="button" variant="link">
+				<Button className={animation ? 'rollDie' : ''} onClick={this.handleClick} onAnimationEnd={() => this.setState({ animation: false })} type="button" variant="link">
 					<img alt='d6' src={d6}></img>
 				</Button>
 			</Row>
