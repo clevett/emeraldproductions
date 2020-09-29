@@ -74,12 +74,14 @@ class TravelTool extends React.Component {
 						<TravelCard title='Miles per Day' result={this.state.adjustedMilesPerDay} />
 						<TravelCard title={`Time to Travel ${this.state.milesToTravel} Miles`} result={this.state.travelTime} />
 					</CardGroup>
-					<Terrain onSelectValueChange={this.onValueChange} />
-					<Col>
-						<Pace className='pace' onSelectValueChange={this.onValueChange} />
-						<Weather onSelectValueChange={this.onValueChange} />
-					</Col>
-					<MilesToTravel onChange={this.onValueChange} />
+					<Row className='options w-100'>
+						<Terrain onSelectValueChange={this.onValueChange} />
+						<Col>
+							<Pace className='pace' onSelectValueChange={this.onValueChange} />
+							<Weather onSelectValueChange={this.onValueChange} />
+						</Col>
+						<MilesToTravel onChange={this.onValueChange} />
+					</Row>
 				</Row>
 			</Container>
 		)

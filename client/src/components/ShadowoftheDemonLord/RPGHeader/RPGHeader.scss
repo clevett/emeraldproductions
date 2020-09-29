@@ -1,4 +1,5 @@
 @import "../../../scss/base/animations";
+@import "../../../scss/abstracts/mixins";
 
 .header-row:hover {
 	img {
@@ -28,5 +29,11 @@
 		transition: opacity 1s ease-in-out;
 		-moz-transition: opacity 1s ease-in-out;
 		-webkit-transition: opacity 1s ease-in-out;
+	}
+}
+
+@include respond(tab-land) {
+	.header-row  img {
+		display: none;
 	}
 }

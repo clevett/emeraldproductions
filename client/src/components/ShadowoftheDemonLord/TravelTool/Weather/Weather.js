@@ -19,7 +19,8 @@ class Weather extends React.Component {
 	}
 
 	handleChange = async event => {
-		const object = await findObjectByName(data, event)
+		const value = event.target ? event.target.value : event
+		const object = await findObjectByName(data, value)
 
 		this.setState({
 			selected: event,
@@ -34,16 +35,14 @@ class Weather extends React.Component {
 		const roll = new Roll().roll(`3d6`).result
 		const result = data.find(object => object.result.includes(roll))
 
-		await this.handleChange(result.name)
-
-		console.log(`Selected: ${this.state.selected}, Multiplier: ${this.state.multiplier}`)
+		this.handleChange(result.name)
 	}
 
 	renderedList = options => options.map(option => <option key={option} option={option} >{option}</option>)
 
 	render() {
 		return (
-			<Row className='weather justify-content-center'>
+			<Row className='weather justify-content-center align-items-center'>
 				<h3 className='w-100'>Weather</h3>
 
 				<select value={this.state.selected} onChange={this.handleChange}>
