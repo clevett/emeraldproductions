@@ -8,6 +8,7 @@ import Weather from './Weather/Weather'
 import Pace from './Pace/Pace'
 import Terrain from './Terrain/Terrain'
 import MilesToTravel from './MilesToTravel/MilesToTravel'
+import Threat from './Threat/Threat'
 
 import conditions from  './data/conditions.js'
 import encounter from  './data/encounter.js'
@@ -82,6 +83,25 @@ class TravelTool extends React.Component {
 						</Col>
 						<MilesToTravel onChange={this.onValueChange} />
 					</Row>
+				</Row>
+				<Row className='content mt-2'>
+					<Col className='mr-3'>
+						<Row className='mb-3'>
+							<TravelCard title='Random Encounter' result="Random Encounter" />
+						</Row>
+						<Row>
+							<Threat />
+						</Row>
+					</Col>
+					<Col>
+						<Row>
+							<TravelCard title='Getting Lost' result="Got Lost" />
+						</Row>
+						<Row>
+							<div className='switches'>Navigator</div>
+							<button>d20</button>
+						</Row>
+					</Col>
 				</Row>
 			</Container>
 		)
