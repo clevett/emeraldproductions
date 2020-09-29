@@ -11,13 +11,13 @@ div.weather {
 		height: 2.3rem;
 		width: 2.3rem;
 
-		&:active {
-			position: relative;
-			x-transition: all 1s ease-in-out;
-			animation: rollDie 1.7s ease-in-out;
+		// &:active {
+		// 	position: relative;
+		// 	x-transition: all 1s ease-in-out;
+		// 	animation: rollDie 1.7s ease-in-out;
 
-			@extend .rotate
-		}
+		// 	@extend .rotate
+		// }
 
 		&:hover img {
 			animation-timing-function:ease-out;
