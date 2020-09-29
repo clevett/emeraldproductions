@@ -111,3 +111,17 @@
   }
 }
 
+@keyframes roll {
+  0% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    left: 100px;
+    transform: rotate(359deg) scale(0.9);
+  }
+  100% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
