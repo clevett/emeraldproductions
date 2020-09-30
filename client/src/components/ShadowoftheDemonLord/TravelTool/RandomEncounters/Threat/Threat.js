@@ -1,8 +1,7 @@
 import React from 'react'
 
-import { Col } from 'react-bootstrap'
-import SelectBuilder from '../../../SelectBuilder/SelectBuilder'
-import data from  '../data/threat.js'
+import SelectBuilder from '../../../../SelectBuilder/SelectBuilder'
+import data from  './threat_data.js'
 
 class Threat extends React.Component {
 	constructor(props) {
@@ -16,15 +15,15 @@ class Threat extends React.Component {
 
 	handleChange = async event => {
 		await this.setState({ selected: event })
-    this.props.onSelectValueChange('threat', this.state.selected)
+    this.props.onValueChange('threat', this.state.selected)
   }
 	
 	render() {
 		return (
-			<Col>
-				<h2>Threat</h2>
+			<div>
+				<h3>Threat Level</h3>
 				<SelectBuilder options={this.state.options} selected={this.state.selected} onSelectValueChange={this.handleChange} />
-			</Col>
+			</div>
 		)
 	}
 }

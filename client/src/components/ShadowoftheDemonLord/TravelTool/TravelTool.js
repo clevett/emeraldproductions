@@ -8,9 +8,9 @@ import Weather from './Weather/Weather'
 import Pace from './Pace/Pace'
 import Terrain from './Terrain/Terrain'
 import MilesToTravel from './MilesToTravel/MilesToTravel'
+import RandomEncounters from './RandomEncounters/RandomEncounters'
 
-import conditions from  './data/conditions.js'
-import encounter from  './data/encounter.js'
+import conditions from  './conditions_data.js'
 
 import { combineMultipliers } from './calculateMultiplier/calculateMultiplier'
 import { adjustedSpeed } from './calculateSpeed/calculateSpeed'
@@ -18,13 +18,11 @@ import { determineTravelTime } from './determineTravelTime/determineTravelTime'
 
 //Images & Styling
 import './TravelTool.scss'
-
 class TravelTool extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
 			conditions,
-			encounter,
 			//Travel Modifiers
 			weather: 1,
 			terrain: 1,
@@ -38,8 +36,6 @@ class TravelTool extends React.Component {
 			//Time to Travel
 			milesToTravel: 30,
 			travelTime: '1 day, 2 hours',
-			//Threat
-			threat: "Moderate",
 		}
 		
 		this.onValueChange = this.onValueChange.bind(this)
@@ -82,6 +78,18 @@ class TravelTool extends React.Component {
 						</Col>
 						<MilesToTravel onChange={this.onValueChange} />
 					</Row>
+				</Row>
+				<Row className='content mt-2'>
+					<RandomEncounters />
+					<Col>
+						<Row>
+							<TravelCard title='Getting Lost' result="Coming Soon..." />
+						</Row>
+						{/* <Row>
+							<div className='switches'>Navigator</div>
+							<button>d20</button>
+						</Row> */}
+					</Col>
 				</Row>
 			</Container>
 		)
