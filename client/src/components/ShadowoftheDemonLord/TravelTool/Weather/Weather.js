@@ -1,21 +1,19 @@
 import React from 'react'
-import Roll from 'roll'
 
-import { Row, Button } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import data from  './weather_data.js'
 import findObjectByName from '../findObjectByName/findObjectByName'
+import AnimatedDie from '../../../AnimatedDie/AnimatedDie'
 
 //Images & Styling
 import './Weather.scss'
-import d6 from '../../../../imgs/icons/perspective-dice-six-faces-six.svg'
 class Weather extends React.Component {
 	constructor(props) {
     super(props)
     this.state = {
 			options: data.map(object => object.name) || [],
 			selected: 'Normal conditions',
-			multiplier: 1,
-			animation: false
+			multiplier: 1
     }
 	}
 
@@ -31,31 +29,15 @@ class Weather extends React.Component {
     this.props.onSelectValueChange('weather', this.state.multiplier)
   }
 
-  handleClick = async event => {
-		event.preventDefault()
-		const roll = new Roll().roll(`3d6`).result
-		const result = data.find(object => object.result.includes(roll))
-
+  dieRoll = async roll => {
+		await this.setState({roll})
+		const result = data.find(object => object.result.includes(this.state.roll))
 		this.handleChange(result.name)
-
-		this.setState({ 
-			animation: true,
-			roll,
-			rollResult: ''
-		})
-	}
-
-	animationEnd = () => {
-		this.setState({ 
-			animation: false,
-			rollResult: this.state.roll
-		})
 	}
 
 	renderedList = options => options.map(option => <option key={option} option={option} >{option}</option>)
 
 	render() {
-		const animation = this.state.animation
 
 		return (
 			<Row className='weather justify-content-center align-items-center'>
@@ -65,10 +47,7 @@ class Weather extends React.Component {
 					{this.renderedList(this.state.options)}
         </select>
 
-				<Button className={animation ? 'rollDie' : ''} onClick={this.handleClick} onAnimationEnd={this.animationEnd} type="button" variant="link">
-					<img alt='d6' src={d6}></img>
-					<span className='text-white'>{this.state.rollResult}</span>
-				</Button>
+				<AnimatedDie dieSize='d6' dieQuanity={3} dieRoll={this.dieRoll} />
 			</Row>
 		)
 	}

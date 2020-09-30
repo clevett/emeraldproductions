@@ -9,6 +9,7 @@ import Pace from './Pace/Pace'
 import Terrain from './Terrain/Terrain'
 import MilesToTravel from './MilesToTravel/MilesToTravel'
 import RandomEncounters from './RandomEncounters/RandomEncounters'
+import GettingLost from './GettingLost/GettingLost'
 
 import conditions from  './conditions_data.js'
 
@@ -85,10 +86,9 @@ class TravelTool extends React.Component {
 						<Row>
 							<TravelCard title='Getting Lost' result="Coming Soon..." />
 						</Row>
-						{/* <Row>
-							<div className='switches'>Navigator</div>
-							<button>d20</button>
-						</Row> */}
+						<Row>
+							<GettingLost />
+						</Row>
 					</Col>
 				</Row>
 			</Container>
