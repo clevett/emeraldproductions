@@ -10,7 +10,7 @@ import Terrain from './Terrain/Terrain'
 import MilesToTravel from './MilesToTravel/MilesToTravel'
 import RandomEncounters from './RandomEncounters/RandomEncounters'
 
-import conditions from  './data/conditions.js'
+import conditions from  './conditions_data.js'
 
 import { combineMultipliers } from './calculateMultiplier/calculateMultiplier'
 import { adjustedSpeed } from './calculateSpeed/calculateSpeed'
@@ -18,7 +18,6 @@ import { determineTravelTime } from './determineTravelTime/determineTravelTime'
 
 //Images & Styling
 import './TravelTool.scss'
-
 class TravelTool extends React.Component {
   constructor(props) {
     super(props)
