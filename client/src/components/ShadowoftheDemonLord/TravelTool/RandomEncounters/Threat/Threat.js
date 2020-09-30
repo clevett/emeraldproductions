@@ -15,7 +15,7 @@ class Threat extends React.Component {
 
 	handleChange = async event => {
 		await this.setState({ selected: event })
-    this.props.onValueChange(this.state.selected)
+    this.props.onValueChange('threat', this.state.selected)
   }
 	
 	render() {

@@ -7,8 +7,6 @@ import TravelCard from '../TravelCard/TravelCard'
 import Threat from './Threat/Threat'
 
 import d20 from '../../../../imgs/icons/dice-twenty-faces-twenty.svg'
-import './RandomEncounters.scss'
-
 import data from  './encounter_data.js'
 
 class RandomEncounters extends React.Component {
@@ -36,7 +34,7 @@ class RandomEncounters extends React.Component {
 		const roll = new Roll().roll(`1d20`).result
 		const lowercaseThreat = this.state.threat.toLowerCase()
 		const result = data.find(object => object[lowercaseThreat] && object[lowercaseThreat].includes(roll))
-
+		
 		this.animationStart(roll)
 
 		this.setState({ encounter: result.encounter	})

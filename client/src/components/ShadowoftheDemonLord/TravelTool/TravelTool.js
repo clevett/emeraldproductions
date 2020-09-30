@@ -84,12 +84,12 @@ class TravelTool extends React.Component {
 					<RandomEncounters />
 					<Col>
 						<Row>
-							<TravelCard title='Getting Lost' result="Got Lost" />
+							<TravelCard title='Getting Lost' result="Coming Soon..." />
 						</Row>
-						<Row>
+						{/* <Row>
 							<div className='switches'>Navigator</div>
 							<button>d20</button>
-						</Row>
+						</Row> */}
 					</Col>
 				</Row>
 			</Container>
