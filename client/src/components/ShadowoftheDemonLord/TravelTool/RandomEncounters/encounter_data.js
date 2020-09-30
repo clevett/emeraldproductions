@@ -18,7 +18,7 @@ export default [
 		"minor": [14, 15, 16, 17],
 		"moderate": [14, 15, 16, 17],
 		"major": [18, 19],
-		"extreme": [19, 20]	
+		"extreme": [19, 20]
 	},
 	{
 		"encounter":"Nothing",

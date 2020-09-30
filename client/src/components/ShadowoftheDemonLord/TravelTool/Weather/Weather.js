@@ -2,7 +2,7 @@ import React from 'react'
 import Roll from 'roll'
 
 import { Row, Button } from 'react-bootstrap'
-import data from  '../data/weather.js'
+import data from  './weather_data.js'
 import findObjectByName from '../findObjectByName/findObjectByName'
 
 //Images & Styling
@@ -38,7 +38,18 @@ class Weather extends React.Component {
 
 		this.handleChange(result.name)
 
-		this.setState({ animation: true })
+		this.setState({ 
+			animation: true,
+			roll,
+			rollResult: ''
+		})
+	}
+
+	animationEnd = () => {
+		this.setState({ 
+			animation: false,
+			rollResult: this.state.roll
+		})
 	}
 
 	renderedList = options => options.map(option => <option key={option} option={option} >{option}</option>)
@@ -54,8 +65,9 @@ class Weather extends React.Component {
 					{this.renderedList(this.state.options)}
         </select>
 
-				<Button className={animation ? 'rollDie' : ''} onClick={this.handleClick} onAnimationEnd={() => this.setState({ animation: false })} type="button" variant="link">
+				<Button className={animation ? 'rollDie' : ''} onClick={this.handleClick} onAnimationEnd={this.animationEnd} type="button" variant="link">
 					<img alt='d6' src={d6}></img>
+					<span className='text-white'>{this.state.rollResult}</span>
 				</Button>
 			</Row>
 		)

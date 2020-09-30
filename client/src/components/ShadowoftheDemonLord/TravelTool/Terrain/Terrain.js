@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Col } from 'react-bootstrap'
-import data from  '../data/terrain.js'
+import data from  './terrain_data.js'
 import './Terrain.scss'
 import Switch from '../../../Switch/Switch'
 import findObjectByName from '../findObjectByName/findObjectByName'
