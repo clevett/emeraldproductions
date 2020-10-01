@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Emerald Productions tools",
   "main": "index.js",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "node:server": "node server.js",
     "server:start": "nodemon server.js",
