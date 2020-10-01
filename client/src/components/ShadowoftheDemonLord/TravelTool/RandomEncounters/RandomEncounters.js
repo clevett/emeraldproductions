@@ -1,12 +1,11 @@
 import React from 'react'
-import Roll from 'roll'
 
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 import TravelCard from '../TravelCard/TravelCard'
 import Threat from './Threat/Threat'
+import AnimatedDie from '../../../AnimatedDie/AnimatedDie'
 
-import d20 from '../../../../imgs/icons/dice-twenty-faces-twenty.svg'
 import data from  './encounter_data.js'
 
 class RandomEncounters extends React.Component {
@@ -19,37 +18,18 @@ class RandomEncounters extends React.Component {
 		}
 	}
 
-	onValueChange = async (key, value) => this.setState({[`${key}`]: value})
+	onValueChange = async (key, value) => await this.setState({[`${key}`]: value})
 
-	animationStart = roll => {
-		this.setState({ 
-			animation: true,
-			roll,
-			rollResult: ''
-		})
-	}
-
-  handleClick = async event => {
-		event.preventDefault()
-		const roll = new Roll().roll(`1d20`).result
+  dieRoll = async roll => {
 		const lowercaseThreat = this.state.threat.toLowerCase()
 		const result = data.find(object => object[lowercaseThreat] && object[lowercaseThreat].includes(roll))
-		
-		this.animationStart(roll)
-
-		this.setState({ encounter: result.encounter	})
-	}
-
-	animationEnd = () => {
 		this.setState({ 
-			animation: false,
-			rollResult: this.state.roll
+			roll,
+			encounter: result.encounter	
 		})
 	}
 
 	render() {
-		const animation = this.state.animation
-		
 		return (
 			<Col className='mr-3 RandomEncounters'>
 				<Row className='mb-3'>
@@ -57,10 +37,7 @@ class RandomEncounters extends React.Component {
 				</Row>
 				<Row className='justify-content-center'>
 					<Threat onValueChange={this.onValueChange} />
-					<Button className={animation ? 'rollDie' : ''} onClick={this.handleClick} onAnimationEnd={this.animationEnd} type="button" variant="link">
-						<img alt='d20' src={d20}></img>
-						<span className='text-white'>{this.state.rollResult}</span>
-					</Button>
+					<AnimatedDie dieSize='d20' dieRoll={this.dieRoll} />
 				</Row>
 			</Col>
 		)

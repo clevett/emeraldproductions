@@ -9,8 +9,7 @@ import Pace from './Pace/Pace'
 import Terrain from './Terrain/Terrain'
 import MilesToTravel from './MilesToTravel/MilesToTravel'
 import RandomEncounters from './RandomEncounters/RandomEncounters'
-
-import conditions from  './conditions_data.js'
+import GettingLost from './GettingLost/GettingLost'
 
 import { combineMultipliers } from './calculateMultiplier/calculateMultiplier'
 import { adjustedSpeed } from './calculateSpeed/calculateSpeed'
@@ -22,11 +21,11 @@ class TravelTool extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-			conditions,
 			//Travel Modifiers
 			weather: 1,
 			terrain: 1,
 			multiplier: 1,
+			activeTerrain: [],
 			//Travel Distance
 			miles: 3,
 			milesPerHour: 3,
@@ -39,7 +38,7 @@ class TravelTool extends React.Component {
 		}
 		
 		this.onValueChange = this.onValueChange.bind(this)
-  }
+	}
 
 	onValueChange = async (key, value) => {
 		await this.setState({[`${key}`]: value})
@@ -71,7 +70,7 @@ class TravelTool extends React.Component {
 						<TravelCard title={`Time to Travel ${this.state.milesToTravel} Miles`} result={this.state.travelTime} />
 					</CardGroup>
 					<Row className='options w-100'>
-						<Terrain onSelectValueChange={this.onValueChange} />
+						<Terrain onValueChange={this.onValueChange} />
 						<Col>
 							<Pace className='pace' onSelectValueChange={this.onValueChange} />
 							<Weather onSelectValueChange={this.onValueChange} />
@@ -81,15 +80,7 @@ class TravelTool extends React.Component {
 				</Row>
 				<Row className='content mt-2'>
 					<RandomEncounters />
-					<Col>
-						<Row>
-							<TravelCard title='Getting Lost' result="Coming Soon..." />
-						</Row>
-						{/* <Row>
-							<div className='switches'>Navigator</div>
-							<button>d20</button>
-						</Row> */}
-					</Col>
+					<GettingLost key={this.state.activeTerrain} activeTerrain={this.state.activeTerrain} />
 				</Row>
 			</Container>
 		)
