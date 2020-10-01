@@ -1,0 +1,36 @@
+.ShadowrunMissionCreation {
+	$gold: #E5AC34;
+
+	button {
+		color: black;
+		background-color: $gold;
+	}
+
+	.header {
+		transition: all .2s;
+
+		img {
+			filter: sepia(1);
+			-webkit-filter:sepia(1); /* Safari 6.0 - 9.0 */
+			transition: 2s;
+		}
+
+		&:hover img {
+			animation-timing-function: ease-out;
+			animation: spin 4s linear infinite;
+			-webkit-animation:spin 4s linear infinite;
+			-moz-animation:spin 4s linear infinite;
+
+			filter: none;
+			-webkit-filter:none;
+		}
+	}
+
+	div.content {
+		min-height: 350px;
+	}
+
+	div.card-title {
+		color: $gold;
+	}
+}

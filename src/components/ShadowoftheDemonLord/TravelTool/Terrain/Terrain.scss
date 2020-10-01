@@ -1,0 +1,18 @@
+.custom-control-input:checked ~ .custom-control-label::before {
+	border-color: #8C1717;
+	background-color: #8C1717;
+}
+
+.switches {
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 5%;
+	grid-row-gap: 3%;
+	align-content: center;
+	justify-items: start;
+	transform: scale(1.2);
+}
+
+.custom-control-input {
+	width: 100%;
+}
