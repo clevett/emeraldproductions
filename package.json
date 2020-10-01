@@ -11,7 +11,7 @@
     "node:server": "node server.js",
     "server:start": "nodemon server.js",
     "start": "npm-run-all --parallel server:start react:start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run react:build && npm run sass:compile",
     "react:start": "react-scripts start",
     "build": "npm-run-all --parallel react:build sass:compile",
     "react:build": "react-scripts build",
