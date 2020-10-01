@@ -5,7 +5,7 @@ export default [
 		"dice": 3
 	},
 	{
-		"condition": "Plains",
+		"condition": "Plains/Roads",
 		"effect": "boon",
 		"dice": 1
 	},

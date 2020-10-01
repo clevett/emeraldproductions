@@ -1,10 +1,11 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
-import Roll from 'roll'
 
 import AnimatedDie from '../../../AnimatedDie/AnimatedDie'
 import Switch from '../../../Switch/Switch'
 import TravelCard from '../TravelCard/TravelCard'
+import determineBoonBaneModifier from './determineBoonBaneModifier/determineBoonBaneModifier'
+import calculateRollResult from './calculateRollResult/calculateRollResult'
 
 import data from './conditions_data'
 import './GettingLost.scss'
@@ -15,7 +16,6 @@ class GettingLost extends React.Component {
 		this.state = {
 			data,
 			terrain: this.props.activeTerrain,
-			d20Result: null,
 			navigator: false,
 			banes: 0,
 			boons: 0,
@@ -25,7 +25,19 @@ class GettingLost extends React.Component {
 	}
 
 	componentDidMount() {
-    console.log(this.state.terrain)
+		let banes = 0
+		let boons = 0
+
+		this.state.terrain.forEach(terrain => {
+			const terrainObject = this.findCondition(terrain)
+			if (terrainObject.effect === 'boon') {
+				boons += terrainObject.dice
+			} else {
+				banes += terrainObject.dice
+			}
+		})
+
+		this.setState({	banes, boons })
   }
 
 	findCondition = name => this.state.data.find(object => object.condition === name)
@@ -41,27 +53,18 @@ class GettingLost extends React.Component {
 		})
 	}
 
-	dieRoll = async roll => {
-		const dieTotal = this.state.boons - this.state.banes
-		const d6sRoll = dieTotal !== 0 ? new Roll().roll(`${Math.abs(dieTotal)}d6`).rolled : false
-		const highestD6 = d6sRoll ? Math.max(...d6sRoll) : 0
+	dieRoll = async d20Roll => {
+		const diceTotal = this.state.boons - this.state.banes
+		const highestD6 = determineBoonBaneModifier(diceTotal)
+		const rollResult = calculateRollResult(diceTotal, d20Roll, highestD6)
 
-		console.log(this.state.terrain)
+		const d6String = diceTotal !== 0 ? `d6: ${highestD6}` : ''
+		const updateStatus = rollResult < 10 ? 'You are lost' : "You move in the direction you intended"
 
-		const rollResult = (roll, highestD6) => 
-			dieTotal > 0 ? roll + highestD6 : 
-			dieTotal < 0 ? roll - highestD6	:
-			roll
-
-		const d6String = dieTotal !== 0 ? `Result: ${highestD6}` : ''
-
-		this.setState({
-			d20Result: roll,
-			rollResult,
-			d6Roll: d6String
+		await this.setState({
+			d6Roll: d6String,
+			status: updateStatus
 		})
-
-		console.log(`${roll} + ${highestD6} = ${rollResult(roll, highestD6)}`)
 	}
 
 	render() {

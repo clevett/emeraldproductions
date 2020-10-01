@@ -33,7 +33,7 @@
     "sass:watch": "node-sass src/scss/index.scss src/index.css -w",
     "sass:compile": "node-sass src/scss/index.scss src/index.css",
     "node:server": "cd .. && node server.js",
-    "test": "jest --watchAll"
+    "test": "jest --watch"
   },
   "eslintConfig": {
     "extends": "react-app"
