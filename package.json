@@ -4,16 +4,16 @@
   "description": "Emerald Productions tools",
   "main": "index.js",
   "engines": {
-    "node": "10.x",
+    "node": "14.x",
     "npm": "6.x"
   },
   "scripts": {
     "node:server": "node server.js",
     "server:start": "nodemon server.js",
-    "start": "npm-run-all --parallel server:start react:start",
+    "start": "npm-run-all --parallel server:start react:start sass:watch",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
     "react:start": "react-scripts start",
-    "build": "react:build",
+    "build": "npm-run-all --parallel react:build sass:compile",
     "react:build": "react-scripts build",
     "react:test": "react-scripts test",
     "react:eject": "react-scripts eject",
