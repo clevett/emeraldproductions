@@ -15,6 +15,10 @@ import ShadowoftheDemonLordTravelTool from '../ShadowoftheDemonLord/TravelTool/T
 import ShadowrunMissionCreation from '../Shadowrun/MissionCreation/MissionCreation'
 import Footer from '../Footer/Footer'
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-GRL46FC38X');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 class App extends React.Component {
   render() {
     return (
