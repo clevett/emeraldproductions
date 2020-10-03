@@ -3,6 +3,7 @@ import './App.scss'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Row } from 'react-bootstrap'
 
+
 import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
 import About from '../About/About'
 import ContactPage from '../ContactPage/ContactPage'
@@ -14,6 +15,10 @@ import ShadowoftheDemonLordTravelTool from '../ShadowoftheDemonLord/TravelTool/T
 
 import ShadowrunMissionCreation from '../Shadowrun/MissionCreation/MissionCreation'
 import Footer from '../Footer/Footer'
+
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-GRL46FC38X');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends React.Component {
   render() {
