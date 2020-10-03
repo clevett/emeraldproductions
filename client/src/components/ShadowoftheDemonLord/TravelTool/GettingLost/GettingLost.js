@@ -15,7 +15,7 @@ class GettingLost extends React.Component {
 		super(props)
 		this.state = {
 			data,
-			terrain: this.props.activeTerrain,
+			conditions: this.props.conditions,
 			navigator: false,
 			banes: 0,
 			boons: 0,
@@ -28,19 +28,21 @@ class GettingLost extends React.Component {
 		let banes = 0
 		let boons = 0
 
-		this.state.terrain.forEach(terrain => {
-			const terrainObject = this.findCondition(terrain)
-			if (terrainObject.effect === 'boon') {
-				boons += terrainObject.dice
-			} else {
-				banes += terrainObject.dice
+		this.state.conditions.forEach(condition => {
+			const conditionObject = this.findCondition(condition)
+			if (!conditionObject) {
+				return
+			} else if (conditionObject.effect === 'boon') {
+				boons += conditionObject.dice
+			} else if (conditionObject.effect === 'bane') {
+				banes += conditionObject.dice
 			}
 		})
 
 		this.setState({	banes, boons })
   }
 
-	findCondition = name => this.state.data.find(object => object.condition === name)
+	findCondition = name => this.state.data.find(object => object.condition.toLowerCase() === name.toLowerCase())
 
 	hangleNavigatorToggle = () => {
 		const newStatus = !this.state.navigator ? true : false
@@ -53,12 +55,17 @@ class GettingLost extends React.Component {
 		})
 	}
 
+	buildResultString = d6 => {
+		const d6Type = this.state.boons > this.state.banes ? 'Boon' : 'Bane'
+		return `${d6Type} result: ${d6}`
+	}
+
 	dieRoll = async d20Roll => {
 		const diceTotal = this.state.boons - this.state.banes
 		const highestD6 = determineBoonBaneModifier(diceTotal)
 		const rollResult = calculateRollResult(diceTotal, d20Roll, highestD6)
 
-		const d6String = diceTotal !== 0 ? `d6: ${highestD6}` : ''
+		const d6String = diceTotal !== 0 ? this.buildResultString(highestD6) : ''
 		const updateStatus = rollResult < 10 ? 'You are lost' : "You move in the direction you intended"
 
 		await this.setState({
