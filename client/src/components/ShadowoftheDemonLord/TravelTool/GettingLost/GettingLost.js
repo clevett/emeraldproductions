@@ -28,8 +28,6 @@ class GettingLost extends React.Component {
 		let banes = 0
 		let boons = 0
 
-		console.log(this.state.conditions)
-
 		this.state.conditions.forEach(condition => {
 			const conditionObject = this.findCondition(condition)
 			if (!conditionObject) {
