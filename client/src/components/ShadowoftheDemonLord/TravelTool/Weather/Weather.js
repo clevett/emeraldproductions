@@ -18,15 +18,16 @@ class Weather extends React.Component {
 	}
 
 	handleChange = async event => {
-		const value = event.target ? event.target.value : event
-		const object = await findObjectByName(data, value)
+		const selected = event.target ? event.target.value : event
+		const object = await findObjectByName(data, selected)
 
-		this.setState({
-			selected: event,
+		await this.setState({
+			selected,
 			multiplier: object.multiplier
 		})
-		
-    this.props.onSelectValueChange('weather', this.state.multiplier)
+
+		this.props.onSelectValueChange('weather', this.state.multiplier)
+		this.props.onSelectValueChange('activeWeather', this.state.selected)
   }
 
   dieRoll = async roll => {

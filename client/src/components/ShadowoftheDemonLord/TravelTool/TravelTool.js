@@ -26,6 +26,8 @@ class TravelTool extends React.Component {
 			terrain: 1,
 			multiplier: 1,
 			activeTerrain: [],
+			activeWeather: "Normal conditions",
+			conditions: [],
 			//Travel Distance
 			miles: 3,
 			milesPerHour: 3,
@@ -42,6 +44,12 @@ class TravelTool extends React.Component {
 
 	onValueChange = async (key, value) => {
 		await this.setState({[`${key}`]: value})
+
+		if (key === 'activeTerrain' || key === 'activeWeather') {
+			await this.setState({
+				conditions: [...this.state.activeTerrain, this.state.activeWeather]
+			})
+		}
 
 		if (key === 'weather' || key === 'terrain') {
 			await this.setState({
@@ -80,7 +88,7 @@ class TravelTool extends React.Component {
 				</Row>
 				<Row className='content mt-2'>
 					<RandomEncounters />
-					<GettingLost key={this.state.activeTerrain} activeTerrain={this.state.activeTerrain} />
+					<GettingLost key={this.state.conditions} conditions={this.state.conditions} />
 				</Row>
 			</Container>
 		)

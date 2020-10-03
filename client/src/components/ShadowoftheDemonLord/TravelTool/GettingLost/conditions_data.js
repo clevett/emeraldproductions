@@ -40,6 +40,11 @@ export default [
 		"dice": 1
 	},
 	{
+		"condition": "Heavy Precipitation",
+		"effect": "bane",
+		"dice": 1
+	},
+	{
 		"condition": "Storm",
 		"effect": "bane",
 		"dice": 2
