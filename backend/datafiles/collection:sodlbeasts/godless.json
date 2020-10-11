@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Steel Skeleton",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "source": "Godless"
+  },
+  {
+    "name": "Flesh Stealer",
+    "difficulty": 25,
+    "descriptor": "harvester",
+    "source": "Godless"
+  },
+  {
+    "name": "Inheritor",
+    "difficulty": 10,
+    "descriptor": "inheritor",
+    "source": "Godless"
+  },
+  {
+    "name": "Unseen",
+    "difficulty": 25,
+    "descriptor": "spirit",
+    "source": "Godless"
+  },
+  {
+    "name": "Awakened",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Biker",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Crazy",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Cyborg",
+    "difficulty": 50,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Driver",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Fanatic",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Feral",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Ganger",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Mutant Brute",
+    "difficulty": 50,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Road Pirate",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Survivor",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Warlord",
+    "difficulty": 100,
+    "descriptor": "human",
+    "source": "Godless"
+  }
+]

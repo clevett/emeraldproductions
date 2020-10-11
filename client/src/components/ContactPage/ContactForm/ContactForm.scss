@@ -1,0 +1,20 @@
+.ContactForm {
+	button[type='submit'] {
+		box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffffff45;
+		transition: all .2s;
+		
+		&:hover {
+			box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem rgba(#17be5b, .2);
+			animation: pulse 5s;
+			@keyframes pulse {
+				0% {
+					background-color: black;
+				}
+				100% {
+					background-color: #086a31;
+					box-shadow: none;
+				}
+			}	
+		}
+	}
+}

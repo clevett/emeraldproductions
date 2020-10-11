@@ -1,0 +1,3036 @@
+[
+  {
+    "name": "Apparition",
+    "difficulty": 1,
+    "descriptor": "spirit",
+    "source": "Caecras"
+  },
+  {
+    "name": "Ghost",
+    "difficulty": 500,
+    "descriptor": "spirit",
+    "source": "Caecras"
+  },
+  {
+    "name": "Caliban",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Caecras"
+  },
+  {
+    "name": "Caliban Mob",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Caecras"
+  },
+  {
+    "name": "Gray Cloak",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Caecras"
+  },
+  {
+    "name": "Guerrilla",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Caecras"
+  },
+  {
+    "name": "Looter",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Caecras"
+  },
+  {
+    "name": "Orc Bone Guard",
+    "difficulty": 100,
+    "descriptor": "orc",
+    "source": "Caecras"
+  },
+  {
+    "name": "Orc Gothi",
+    "difficulty": 25,
+    "descriptor": "orc",
+    "source": "Caecras"
+  },
+  {
+    "name": "Orc Overseer",
+    "difficulty": 5,
+    "descriptor": "orc",
+    "source": "Caecras"
+  },
+  {
+    "name": "Orc Renegade",
+    "difficulty": 25,
+    "descriptor": "orc",
+    "source": "Caecras"
+  },
+  {
+    "name": "Orc Sergeant",
+    "difficulty": 50,
+    "descriptor": "orc",
+    "source": "Caecras"
+  },
+  {
+    "name": "Orc Trooper",
+    "difficulty": 50,
+    "descriptor": "orc",
+    "source": "Caecras"
+  },
+  {
+    "name": "Slave",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Caecras"
+  },
+  {
+    "name": "Tower Wizard",
+    "difficulty": 250,
+    "descriptor": "human",
+    "source": "Caecras"
+  },
+  {
+    "name": "Boastman",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "City of Blood"
+  },
+  {
+    "name": "Orc Brawler",
+    "difficulty": 25,
+    "descriptor": "orc",
+    "source": "City of Blood"
+  },
+  {
+    "name": "Hardbit",
+    "difficulty": 100,
+    "descriptor": "clockwork",
+    "source": "City of Blood"
+  },
+  {
+    "name": "Pit Beast",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "City of Blood"
+  },
+  {
+    "name": "Manacle",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "City of Chains"
+  },
+  {
+    "name": "Captain Bastard",
+    "difficulty": 50,
+    "descriptor": "orc",
+    "source": "City of Chains"
+  },
+  {
+    "name": "Chain",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "City of Chains"
+  },
+  {
+    "name": "Bronze Elite",
+    "difficulty": 100,
+    "descriptor": "human",
+    "source": "City of Chains"
+  },
+  {
+    "name": "Honorable Cloak",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "City of Death"
+  },
+  {
+    "name": "Finger of the Black Hand",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "City of Chains"
+  },
+  {
+    "name": "Clasta",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Verity Flent",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Ruin Watcher",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Radiant Disciple",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Apparition",
+    "difficulty": 1,
+    "descriptor": "spirit",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Bone Queen",
+    "difficulty": 250,
+    "descriptor": "human",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Yerathi Drone",
+    "difficulty": 1,
+    "descriptor": "yerath",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Yerathi Scout",
+    "difficulty": 1,
+    "descriptor": "yerath",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Yerathi Soldier",
+    "difficulty": 10,
+    "descriptor": "yerath",
+    "source": "City of Decay"
+  },
+  {
+    "name": "Coin",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "City of Gold"
+  },
+  {
+    "name": "Captain Gloom",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "City of Gold"
+  },
+  {
+    "name": "Lady Cat",
+    "difficulty": 100,
+    "descriptor": "human",
+    "source": "City of Thieves"
+  },
+  {
+    "name": "Arachne",
+    "difficulty": 10,
+    "descriptor": "monster",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Bestia",
+    "difficulty": 50,
+    "descriptor": "bestia",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Brownie",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Centaur",
+    "difficulty": 5,
+    "descriptor": "centaur",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Mog",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Roc",
+    "difficulty": 250,
+    "descriptor": "animal",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Specter",
+    "difficulty": 250,
+    "descriptor": "spirit",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Spider Assassin",
+    "difficulty": 1,
+    "descriptor": "construct",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Slime Brute",
+    "difficulty": 100,
+    "descriptor": "plant",
+    "source": "Demon Lord's Companion"
+  },
+  {
+    "name": "Amphisbaena",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord p.216"
+  },
+  {
+    "name": "Huge Animal",
+    "difficulty": 50,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord p.217"
+  },
+  {
+    "name": "Large Animal",
+    "difficulty": 25,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Medium Animal",
+    "difficulty": 10,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Small Animal",
+    "difficulty": 1,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Tiny Animal",
+    "difficulty": 1,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Animal Swarm",
+    "difficulty": 5,
+    "descriptor": "animal",
+    "subtype": "swarm",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Animated Corpse",
+    "difficulty": 1,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Barghest",
+    "difficulty": 250,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Borrow Wight",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Basilisk",
+    "difficulty": 250,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Bear",
+    "difficulty": 50,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Fomor",
+    "difficulty": 1,
+    "descriptor": "beastman",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Warg",
+    "difficulty": 10,
+    "descriptor": "beastman",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Minotaur",
+    "difficulty": 100,
+    "descriptor": "beastman",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Bloody Bones",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Boggart",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Bone Machine",
+    "difficulty": 250,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Boneguard",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Broodling",
+    "difficulty": 100,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Burrowing Centipede",
+    "difficulty": 5,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Catoblepas",
+    "difficulty": 100,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Chainbound",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Changeling",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Clockwork",
+    "difficulty": 10,
+    "descriptor": "clockwork",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Cockatrice",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Huge Construct",
+    "difficulty": 100,
+    "descriptor": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Large Construct",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Medium Construct",
+    "difficulty": 10,
+    "descriptor": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Small Construct",
+    "difficulty": 5,
+    "descriptor": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Huge Demon",
+    "difficulty": 500,
+    "descriptor": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Large Demon",
+    "difficulty": 250,
+    "descriptor": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Medium Demon",
+    "difficulty": 100,
+    "descriptor": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Small Demon",
+    "difficulty": 25,
+    "descriptor": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Tiny Demon",
+    "difficulty": 10,
+    "descriptor": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Dire Wolf",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Dragon",
+    "difficulty": 500,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Drake",
+    "difficulty": 100,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Dread Mother",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Dryad",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Dwarf",
+    "difficulty": 10,
+    "descriptor": "dwarf",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Elf",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Emerald Darter",
+    "difficulty": 25,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Fungal Hulk",
+    "difficulty": 50,
+    "descriptor": "fungus",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Fungal Mite",
+    "difficulty": 5,
+    "descriptor": "fungus",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Fury",
+    "difficulty": 250,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Earth Genie",
+    "difficulty": 100,
+    "descriptor": "genie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Flame Genie",
+    "difficulty": 100,
+    "descriptor": "genie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Water Genie",
+    "difficulty": 100,
+    "descriptor": "genie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Wind Genie",
+    "difficulty": 100,
+    "descriptor": "genie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Ghastly Chorus",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Ghoul",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Giant",
+    "difficulty": 100,
+    "descriptor": "giant",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Goblin",
+    "difficulty": 1,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Golem",
+    "difficulty": 500,
+    "descriptor": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Gorgon",
+    "difficulty": 500,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Grave Thrall",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Great Cat",
+    "difficulty": 50,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Gremlin",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Griffon",
+    "difficulty": 50,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Hag",
+    "difficulty": 500,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Halfing",
+    "difficulty": 1,
+    "descriptor": "halfling",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Harpy",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Organ Filtch",
+    "difficulty": 10,
+    "descriptor": "harvester",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Tear Thief",
+    "difficulty": 50,
+    "descriptor": "harvester",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Hell Swine",
+    "difficulty": 50,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Hobgoblin",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Hood",
+    "difficulty": 1,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Horse",
+    "difficulty": 250,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Jack-O-Lantern",
+    "difficulty": 250,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Killing Mist",
+    "difficulty": 250,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Large Spider",
+    "difficulty": 10,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Lash Crawler",
+    "difficulty": 1,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Leshy",
+    "difficulty": 250,
+    "descriptor": "plant",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Living Tar",
+    "difficulty": 100,
+    "descriptor": "ooze",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Lizardman",
+    "difficulty": 25,
+    "descriptor": "lizardman",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Lurk",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Manes",
+    "difficulty": 5,
+    "descriptor": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Huge Monster",
+    "difficulty": 100,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Large Monster",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Medium Monster",
+    "difficulty": 10,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Small Monster",
+    "difficulty": 5,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Tiny Monster",
+    "difficulty": 1,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Muttering Maw",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Nisse",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Oculus",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Ogre",
+    "difficulty": 50,
+    "descriptor": "ogre",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Horned Ogre",
+    "difficulty": 250,
+    "descriptor": "ogre",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Ettin",
+    "difficulty": 100,
+    "descriptor": "ogre",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Ooze",
+    "difficulty": 50,
+    "descriptor": "ooze",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Orc",
+    "difficulty": 10,
+    "descriptor": "orc",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Phantom",
+    "difficulty": 25,
+    "descriptor": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Poltergeist",
+    "difficulty": 5,
+    "descriptor": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Promethean",
+    "difficulty": 250,
+    "descriptor": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Redcap",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Reen",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Rot Maiden",
+    "difficulty": 25,
+    "descriptor": "fungus",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Shadow",
+    "difficulty": 25,
+    "descriptor": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Shadow Weaver",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Shrieking Eel",
+    "difficulty": 10,
+    "descriptor": "animal",
+    "subtype": "aquatic",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Skinchanger",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Spriggan",
+    "difficulty": 25,
+    "descriptor": "plant",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Stone Worm",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Stranglevine",
+    "difficulty": 50,
+    "descriptor": "plant",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Tomb Scarab Swarm",
+    "difficulty": 25,
+    "descriptor": "animal",
+    "subtype": "swarm",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Troglodyte",
+    "difficulty": 10,
+    "descriptor": "troglodyte",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Troll",
+    "difficulty": 250,
+    "descriptor": "troll",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Vampire",
+    "difficulty": 250,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Vampire Bat",
+    "difficulty": 10,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Void Larva",
+    "difficulty": 1,
+    "descriptor": "demon",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Warhorse",
+    "difficulty": 10,
+    "descriptor": "animal",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Wraith",
+    "difficulty": 100,
+    "descriptor": "spirit",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Zombie",
+    "difficulty": 5,
+    "descriptor": "undead",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Acolyte of the New God",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Apprentice Witch",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Apprentice Wizard",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Bandit",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Brigand",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Commoner or Professional",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Cultist",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "High Cultist",
+    "difficulty": 50,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Hired Killer",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Initiate of the Old Faith",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Mercenary",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Patroller",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Pickpocket",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Veteran",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Shadow of the Demon Lord"
+  },
+  {
+    "name": "Angel",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Behemoth",
+    "difficulty": 750,
+    "descriptor": "demon",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Bogie",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Butcher",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Cambion",
+    "difficulty": 5,
+    "descriptor": "cambion",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Chimera",
+    "difficulty": 750,
+    "descriptor": "monster",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Devilkin",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Familiar",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Gargoyle",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Gaunt",
+    "difficulty": 10,
+    "descriptor": "spirit",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Hogman",
+    "difficulty": 1,
+    "descriptor": "monster",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Ifrit",
+    "difficulty": 500,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Incubus/Succubus",
+    "difficulty": 750,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Lemure",
+    "difficulty": 25,
+    "descriptor": "spirit",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Malebranche",
+    "difficulty": 100,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Seraphim",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Shedim",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Termagant",
+    "difficulty": 250,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Tormentor",
+    "difficulty": 100,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Zeboul",
+    "difficulty": 100,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Exquisite Agony"
+  },
+  {
+    "name": "Splitter",
+    "difficulty": 10,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Driller",
+    "difficulty": 10,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Hammerer",
+    "difficulty": 25,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Hauler",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Loader",
+    "difficulty": 5,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Smelter",
+    "difficulty": 10,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Clockwork",
+    "difficulty": 25,
+    "descriptor": "clockwork",
+    "source": "False Lives"
+  },
+  {
+    "name": "Cherub",
+    "difficulty": 5,
+    "descriptor": "clockwork",
+    "source": "False Lives"
+  },
+  {
+    "name": "Gladius",
+    "difficulty": 250,
+    "descriptor": "clockwork",
+    "source": "False Lives"
+  },
+  {
+    "name": "Assembled",
+    "difficulty": 25,
+    "descriptor": "clockwork",
+    "source": "False Lives"
+  },
+  {
+    "name": "Tick-Tock",
+    "difficulty": 25,
+    "descriptor": "clockwork",
+    "source": "False Lives"
+  },
+  {
+    "name": "Colossus",
+    "difficulty": 1000,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Golem",
+    "difficulty": 500,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Legion",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "subtype": "swarm",
+    "source": "False Lives"
+  },
+  {
+    "name": "Promethean",
+    "difficulty": 250,
+    "descriptor": "construct",
+    "source": "False Lives"
+  },
+  {
+    "name": "Giant",
+    "difficulty": 100,
+    "descriptor": "giant",
+    "source": "Forces of Nature"
+  },
+  {
+    "name": "Rune-Carved Giants",
+    "difficulty": 1000,
+    "descriptor": "giant",
+    "source": "Forces of Nature"
+  },
+  {
+    "name": "Toll-kin",
+    "difficulty": 500,
+    "descriptor": "giant",
+    "source": "Forces of Nature"
+  },
+  {
+    "name": "Titanic Construct",
+    "difficulty": 500,
+    "descriptor": "construct",
+    "source": "Forgeborn & Magicmade"
+  },
+  {
+    "name": "Huge Construct",
+    "difficulty": 100,
+    "descriptor": "construct",
+    "source": "Forgeborn & Magicmade"
+  },
+  {
+    "name": "Large Construct",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "source": "Forgeborn & Magicmade"
+  },
+  {
+    "name": "Medium Construct",
+    "difficulty": 10,
+    "descriptor": "construct",
+    "source": "Forgeborn & Magicmade"
+  },
+  {
+    "name": "Small Construct",
+    "difficulty": 5,
+    "descriptor": "construct",
+    "source": "Forgeborn & Magicmade"
+  },
+  {
+    "name": "Tiny Construct",
+    "difficulty": 1,
+    "descriptor": "construct",
+    "source": "Forgeborn & Magicmade"
+  },
+  {
+    "name": "Lizardman",
+    "difficulty": 25,
+    "descriptor": "lizardman",
+    "source": "Foulest Reptiles"
+  },
+  {
+    "name": "Lizardman Shaman",
+    "difficulty": 50,
+    "descriptor": "lizardman",
+    "source": "Foulest Reptiles"
+  },
+  {
+    "name": "Dragonman",
+    "difficulty": 50,
+    "descriptor": "lizardman",
+    "source": "Foulest Reptiles"
+  },
+  {
+    "name": "Horned Devil",
+    "difficulty": 50,
+    "descriptor": "lizardman",
+    "source": "Foulest Reptiles"
+  },
+  {
+    "name": "Indigon",
+    "difficulty": 10,
+    "descriptor": "lizardman",
+    "source": "Foulest Reptiles"
+  },
+  {
+    "name": "Memory Mist",
+    "difficulty": 250,
+    "descriptor": "undead",
+    "source": "City of Gold"
+  },
+  {
+    "name": "Assassin",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Urchin",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Freeporter",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Beggars",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Lobsterman",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Longshoreman",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Merchant",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Pirate",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Pirate Captain",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Celebrant of the Pirate God",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Devotee of the Sea God",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Sailor",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Sea Lord's Guard",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Guard Sergeant",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Freeport Watch Sergeant",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Accursed Hand",
+    "difficulty": 1,
+    "descriptor": "undead",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Alchemist's Fault",
+    "difficulty": 250,
+    "descriptor": "monster",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Blemmyae",
+    "difficulty": 10,
+    "descriptor": "monster",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Brass Monkey",
+    "difficulty": 5,
+    "descriptor": "construct",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Chiao",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Burnling",
+    "difficulty": 10,
+    "descriptor": "genie",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Deadwood Tree",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Deep One",
+    "difficulty": 10,
+    "descriptor": "deep one",
+    "subtype": "aquatic",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Devil Lizard",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Dream Child",
+    "difficulty": 25,
+    "descriptor": "spirit",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Fire Specter",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Kothar The Accursed",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Fleshraker",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Scalewing",
+    "difficulty": 5,
+    "descriptor": "animal",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Irontooth",
+    "difficulty": 25,
+    "descriptor": "animal",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Blackwing",
+    "difficulty": 50,
+    "descriptor": "animal",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Ghost Eater",
+    "difficulty": 5,
+    "descriptor": "monster",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Infernal Automation",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Malkin",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Monstrous Clam",
+    "difficulty": 5,
+    "descriptor": "animal",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Monstrous Crab",
+    "difficulty": 5,
+    "descriptor": "animal",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Swarm of Monstrous Jellyfish",
+    "difficulty": 10,
+    "descriptor": "animal",
+    "subtype": "swarm",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Monstrous Leech",
+    "difficulty": 10,
+    "descriptor": "animal",
+    "subtype": "aquatic",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Nereid",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Picacouatl",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Pit-Briar",
+    "difficulty": 50,
+    "descriptor": "plant",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Pwalg",
+    "difficulty": 251,
+    "descriptor": "demon",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Reef Eel",
+    "difficulty": 5,
+    "descriptor": "animal",
+    "subtype": "aquatic",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Serpent Person",
+    "difficulty": 10,
+    "descriptor": "serpent person",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Valossan Mystic",
+    "difficulty": 10,
+    "descriptor": "serpent person",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Degenerate Serpent Person",
+    "difficulty": 5,
+    "descriptor": "serpent person",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Shadow Serpent",
+    "difficulty": 50,
+    "descriptor": "spirit",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Sharkman",
+    "difficulty": 50,
+    "descriptor": "beastman",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Skin Cloak",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Spirit Lizard",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Tavi",
+    "difficulty": 5,
+    "descriptor": "monster",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Thanatos",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "subtype": "aquatic",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Undine",
+    "difficulty": 1,
+    "descriptor": "elemental",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Vulpine",
+    "difficulty": 25,
+    "descriptor": "fearie",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "X'Sval",
+    "difficulty": 250,
+    "descriptor": "demon",
+    "source": "Freeport Companion"
+  },
+  {
+    "name": "Reen",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "source": "From Beyond This World"
+  },
+  {
+    "name": "Reen Vivisector",
+    "difficulty": 250,
+    "descriptor": "construct",
+    "source": "From Beyond This World"
+  },
+  {
+    "name": "Reen Spellbreaker",
+    "difficulty": 500,
+    "descriptor": "construct",
+    "source": "From Beyond This World"
+  },
+  {
+    "name": "Reen Drone Commoner",
+    "difficulty": 1,
+    "descriptor": "construct",
+    "source": "From Beyond This World"
+  },
+  {
+    "name": "Reen Drone Mercenary",
+    "difficulty": 10,
+    "descriptor": "construct",
+    "source": "From Beyond This World"
+  },
+  {
+    "name": "Reen Drone Patroller",
+    "difficulty": 5,
+    "descriptor": "construct",
+    "source": "From Beyond This World"
+  },
+  {
+    "name": "Ogre",
+    "difficulty": 50,
+    "descriptor": "ogre",
+    "source": "Ghastly Gourmands"
+  },
+  {
+    "name": "Boogeyman",
+    "difficulty": 50,
+    "descriptor": "ogre",
+    "source": "Ghastly Gourmands"
+  },
+  {
+    "name": "Ettin",
+    "difficulty": 100,
+    "descriptor": "ogre",
+    "source": "Ghastly Gourmands"
+  },
+  {
+    "name": "Horned Ogre",
+    "difficulty": 250,
+    "descriptor": "ogre",
+    "source": "Ghastly Gourmands"
+  },
+  {
+    "name": "Oni",
+    "difficulty": 10,
+    "descriptor": "ogre",
+    "source": "Ghastly Gourmands"
+  },
+  {
+    "name": "Stallo",
+    "difficulty": 100,
+    "descriptor": "ogre",
+    "source": "Ghastly Gourmands"
+  },
+  {
+    "name": "Vodyanoy",
+    "difficulty": 50,
+    "descriptor": "ogre",
+    "subtype": "aquatic",
+    "source": "Ghastly Gourmands"
+  },
+  {
+    "name": "Flesh Tailor",
+    "difficulty": 50,
+    "descriptor": "harvester",
+    "source": "Horrific Parasites"
+  },
+  {
+    "name": "Humour Drinker",
+    "difficulty": 100,
+    "descriptor": "harvester",
+    "source": "Horrific Parasites"
+  },
+  {
+    "name": "Organ Filch",
+    "difficulty": 10,
+    "descriptor": "harvester",
+    "source": "Horrific Parasites"
+  },
+  {
+    "name": "Tear Theif",
+    "difficulty": 50,
+    "descriptor": "harvester",
+    "source": "Horrific Parasites"
+  },
+  {
+    "name": "Bearer of the Faith",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Hammer of Justice",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Keeper of Lore",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Knight of the Temple",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Black Templar",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Peaceful Sister",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Poor Brother",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Sword of Astrid",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Witch Hunter",
+    "difficulty": 50,
+    "descriptor": "human",
+    "source": "Kingdom of God"
+  },
+  {
+    "name": "Grave Regent",
+    "difficulty": 500,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Wight Champion",
+    "difficulty": 250,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Prophet of Decay",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Wight Witch",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Barrow Warrior",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Deathless",
+    "difficulty": 500,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Oathbound",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Barrow Grim",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Blight Steed",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Butcherbird",
+    "difficulty": 5,
+    "descriptor": "undead",
+    "source": "Lords of the Barrows"
+  },
+  {
+    "name": "Welterkin",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Malicious Mischief"
+  },
+  {
+    "name": "Welterkin Matriarch",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "source": "Malicious Mischief"
+  },
+  {
+    "name": "Menhyad",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "source": "Malicious Mischief"
+  },
+  {
+    "name": "Perooka",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Malicious Mischief"
+  },
+  {
+    "name": "Amphisbaena",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Noisome Beasts"
+  },
+  {
+    "name": "Basilisk",
+    "difficulty": 250,
+    "descriptor": "monster",
+    "source": "Noisome Beasts"
+  },
+  {
+    "name": "Catoblepas",
+    "difficulty": 100,
+    "descriptor": "monster",
+    "source": "Noisome Beasts"
+  },
+  {
+    "name": "Cockatrice",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Noisome Beasts"
+  },
+  {
+    "name": "Manticore",
+    "difficulty": 250,
+    "descriptor": "monster",
+    "source": "Noisome Beasts"
+  },
+  {
+    "name": "Angel",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Mob of Corpses",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "subtype": "mob",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Animated Plant",
+    "difficulty": 10,
+    "descriptor": "plant",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Animated Tree",
+    "difficulty": 100,
+    "descriptor": "plant",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Apparition",
+    "difficulty": 1,
+    "descriptor": "spirit",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Arion Charger",
+    "difficulty": 100,
+    "descriptor": "animal",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Brownie",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Tiny Construct",
+    "difficulty": 1,
+    "descriptor": "construct",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Mob of Small Demons",
+    "difficulty": 100,
+    "descriptor": "demon",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Faceless Servant",
+    "difficulty": 1,
+    "descriptor": "construct",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Fire Imp",
+    "difficulty": 10,
+    "descriptor": "construct",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Storm Genie",
+    "difficulty": 100,
+    "descriptor": "genie",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Grim Reaper",
+    "difficulty": 1000,
+    "descriptor": "spirit",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Incarnation of Nature",
+    "difficulty": 1000,
+    "descriptor": "plant",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Iron Guardian",
+    "difficulty": 750,
+    "descriptor": "construct",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Mob of Manes",
+    "difficulty": 25,
+    "descriptor": "spirit",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Titanic Monster",
+    "difficulty": 500,
+    "descriptor": "monster",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Mob of Medium Monsters",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Ore Thrall",
+    "difficulty": 25,
+    "descriptor": "construct",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Mob of Phantoms",
+    "difficulty": 100,
+    "descriptor": "spirit",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Primal Champion",
+    "difficulty": 250,
+    "descriptor": "animal",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Slime",
+    "difficulty": 10,
+    "descriptor": "ooze",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Specter",
+    "difficulty": 250,
+    "descriptor": "spirit",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Sprite",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Stalwart Defender",
+    "difficulty": 100,
+    "descriptor": "construct",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Unicorn",
+    "difficulty": 100,
+    "descriptor": "faerie",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Wyvern",
+    "difficulty": 250,
+    "descriptor": "monster",
+    "source": "Occult Philosphy"
+  },
+  {
+    "name": "Boggart",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Odd Monsters"
+  },
+  {
+    "name": "Boggle",
+    "difficulty": 10,
+    "descriptor": "monster",
+    "source": "Odd Monsters"
+  },
+  {
+    "name": "Brag",
+    "difficulty": 25,
+    "descriptor": "monster",
+    "source": "Odd Monsters"
+  },
+  {
+    "name": "Buggane",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Odd Monsters"
+  },
+  {
+    "name": "Drake",
+    "difficulty": 100,
+    "descriptor": "monster",
+    "source": "Of Fire and Venom"
+  },
+  {
+    "name": "Dragon",
+    "difficulty": 500,
+    "descriptor": "monster",
+    "source": "Of Fire and Venom"
+  },
+  {
+    "name": "Bloodsipper Drake",
+    "difficulty": 250,
+    "descriptor": "monster",
+    "source": "Of Fire and Venom"
+  },
+  {
+    "name": "Gaping Gorger",
+    "difficulty": 100,
+    "descriptor": "monster",
+    "source": "Of Fire and Venom"
+  },
+  {
+    "name": "Rime Dragon",
+    "difficulty": 500,
+    "descriptor": "dragon",
+    "source": "Of Fire and Venom"
+  },
+  {
+    "name": "Sea Dragon",
+    "difficulty": 500,
+    "descriptor": "monster",
+    "subtype": "aquatic",
+    "source": "Of Fire and Venom"
+  },
+  {
+    "name": "Titanic Monster",
+    "difficulty": 500,
+    "descriptor": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  {
+    "name": "Huge Monster",
+    "difficulty": 100,
+    "descriptor": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  {
+    "name": "Large Monster",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  {
+    "name": "Medium Monster",
+    "difficulty": 10,
+    "descriptor": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  {
+    "name": "Small Monster",
+    "difficulty": 5,
+    "descriptor": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  {
+    "name": "Tiny Monster",
+    "difficulty": 1,
+    "descriptor": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  {
+    "name": "The Screaming Thing",
+    "difficulty": 10,
+    "descriptor": "monster",
+    "source": "Of Monstrous Mien"
+  },
+  {
+    "name": "Darklings",
+    "difficulty": 1,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Scions of the Betrayer"
+  },
+  {
+    "name": "Hellbound Darklings",
+    "difficulty": 250,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Scions of the Betrayer"
+  },
+  {
+    "name": "Darkling Manhunter",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "subtype": "devil",
+    "source": "Scions of the Betrayer"
+  },
+  {
+    "name": "Animated Corpse",
+    "difficulty": 1,
+    "descriptor": "undead",
+    "source": "Slaves in Death"
+  },
+  {
+    "name": "Animated Beast",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Slaves in Death"
+  },
+  {
+    "name": "Animated Steed",
+    "difficulty": 1,
+    "descriptor": "undead",
+    "source": "Slaves in Death"
+  },
+  {
+    "name": "Animated Hulk",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Slaves in Death"
+  },
+  {
+    "name": "Corpse Mob",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "subtype": "mob",
+    "source": "Slaves in Death"
+  },
+  {
+    "name": "Asrai",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Banshee",
+    "difficulty": 500,
+    "descriptor": "spirit",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Bean-Nighie",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Cu Sith",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Elf Highborn",
+    "difficulty": 50,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Elf Knight-Errant",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Elf Reveler",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Fechen",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Faun",
+    "difficulty": 1,
+    "descriptor": "faun",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Imp",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Jabberwock",
+    "difficulty": 500,
+    "descriptor": "monster",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Kobold",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Lares",
+    "difficulty": 5,
+    "descriptor": "spirit",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Merrow Male",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "subtype": "aquatic",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Merrow Maid",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "subtype": "aquatic",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Nymph",
+    "difficulty": 250,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Pixie",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Satyr",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Unicorn",
+    "difficulty": 100,
+    "descriptor": "faerie",
+    "source": "Terrible Beauty"
+  },
+  {
+    "name": "Void Larvae Mob",
+    "difficulty": 10,
+    "descriptor": "demon",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Brother/Sister of Shadow",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Father/Mother of Shadow",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Knight of the One True God",
+    "difficulty": 50,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Blessed Child",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Nameless",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Philosopher of the Glistening Prince",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Reaver of the Skull King",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Seeker of the Wandering Star",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Sister of the Blue Hand",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Fomor Mob",
+    "difficulty": 10,
+    "descriptor": "beastman",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Fomor Warrior",
+    "difficulty": 10,
+    "descriptor": "beastman",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Fomor Void Caller",
+    "difficulty": 25,
+    "descriptor": "beastman",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Warg Berserk",
+    "difficulty": 50,
+    "descriptor": "beastman",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Warg Hunter",
+    "difficulty": 25,
+    "descriptor": "beastman",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Bugbear",
+    "difficulty": 50,
+    "descriptor": "beastman",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Bugbear Headhunter",
+    "difficulty": 100,
+    "descriptor": "beastman",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Void Bull",
+    "difficulty": 250,
+    "descriptor": "beastman",
+    "subtype": "minotaur",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Demon Prince",
+    "difficulty": 1000,
+    "descriptor": "demon",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Shadow",
+    "difficulty": 25,
+    "descriptor": "spirit",
+    "source": "The Hunger in the Void"
+  },
+  {
+    "name": "Beastman, Anubin",
+    "difficulty": 25,
+    "descriptor": "beastman",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Cyclops",
+    "difficulty": 100,
+    "descriptor": "giant",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Death Lord",
+    "difficulty": 500,
+    "descriptor": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Desiccated One",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Dust Devil",
+    "difficulty": 25,
+    "descriptor": "genie",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Forsaken",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Giant Scorpion",
+    "difficulty": 100,
+    "descriptor": "animal",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Great Horned Beetle",
+    "difficulty": 100,
+    "descriptor": "animal",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Lamia",
+    "difficulty": 250,
+    "descriptor": "monster",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Mummy",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Murk",
+    "difficulty": 50,
+    "descriptor": "monster",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Revenant",
+    "difficulty": 50,
+    "descriptor": "revenant",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Salamander",
+    "difficulty": 5,
+    "descriptor": "elemental",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Sand Mite Swarm",
+    "difficulty": 10,
+    "descriptor": "animal",
+    "subtype": "swarm",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Severed",
+    "difficulty": 1,
+    "descriptor": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Skeletal Steed",
+    "difficulty": 5,
+    "descriptor": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Vampire Brood",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Whisper Cactus",
+    "difficulty": 1,
+    "descriptor": "plant",
+    "source": "Tombs of the Desolation"
+  },
+  {
+    "name": "Boneguard",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Boneguard Executioner",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Boneguard Commander",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Conflagration Boneguard",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Ghastly Boneguard",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Symbiotic Boneguard",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Spider Boneguard",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Grave Thrall",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Infested Grave Thrall",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Grave Thrall Champion",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Relentless Grave Thrall",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Blind Butcher",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Bloated",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Cold Lover",
+    "difficulty": 10,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Corpse Mother",
+    "difficulty": 50,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Death Angel",
+    "difficulty": 100,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Dying Bride",
+    "difficulty": 1,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Eater of the Dead",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Encaged",
+    "difficulty": 25,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Ragamuffin",
+    "difficulty": 1,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Rotton",
+    "difficulty": 1,
+    "descriptor": "undead",
+    "source": "Trapped in Bone and Flesh"
+  },
+  {
+    "name": "Arcolinus, the Joyous One",
+    "difficulty": 25,
+    "descriptor": "demon",
+    "source": "Unholy Champions of the Demon Lord"
+  },
+  {
+    "name": "The Bloated Duchess",
+    "difficulty": 250,
+    "descriptor": "demon",
+    "source": "Unholy Champions of the Demon Lord"
+  },
+  {
+    "name": "Cromethius",
+    "difficulty": 250,
+    "descriptor": "demon",
+    "source": "Unholy Champions of the Demon Lord"
+  },
+  {
+    "name": "Hinnom",
+    "difficulty": 25,
+    "descriptor": "demon",
+    "source": "Unholy Champions of the Demon Lord"
+  },
+  {
+    "name": "YG'ZG'Zor",
+    "difficulty": 500,
+    "descriptor": "demon",
+    "source": "Unholy Champions of the Demon Lord"
+  },
+  {
+    "name": "Atomy",
+    "difficulty": 0,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Swarm of Atomies",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "subtype": "swarm",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Bauchan",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Brownie",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Duegar",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Fenoderee",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Fir Darrig (Leprechaun Form)",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Fir Darrig (Clurichaun Form)",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Fuath",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Gremlin",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Hobyah",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Jack-O-Lantern",
+    "difficulty": 250,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Kilmoulis",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Nisse",
+    "difficulty": 25,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Pooka",
+    "difficulty": 10,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Redcap",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Sprite",
+    "difficulty": 5,
+    "descriptor": "faerie",
+    "source": "Wee Folk"
+  },
+  {
+    "name": "Grim Reaper",
+    "difficulty": 750,
+    "descriptor": "spirit",
+    "source": "Weight of the Underworld"
+  },
+  {
+    "name": "Troglodyte",
+    "difficulty": 10,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "God-KIller",
+    "difficulty": 50,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Slave of Ashrakal",
+    "difficulty": 10,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Pale Bride",
+    "difficulty": 50,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Dark Speaker",
+    "difficulty": 50,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Abomination",
+    "difficulty": 100,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Serpent of the Witch-King",
+    "difficulty": 500,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Steel Skeleton",
+    "difficulty": 50,
+    "descriptor": "construct",
+    "source": "Godless"
+  },
+  {
+    "name": "Flesh Stealer",
+    "difficulty": 25,
+    "descriptor": "harvester",
+    "source": "Godless"
+  },
+  {
+    "name": "Inheritor",
+    "difficulty": 10,
+    "descriptor": "inheritor",
+    "source": "Godless"
+  },
+  {
+    "name": "Unseen",
+    "difficulty": 25,
+    "descriptor": "spirit",
+    "source": "Godless"
+  },
+  {
+    "name": "Awakened",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Biker",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Crazy",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Cyborg",
+    "difficulty": 50,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Driver",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Fanatic",
+    "difficulty": 25,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Feral",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Ganger",
+    "difficulty": 10,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Mutant Brute",
+    "difficulty": 50,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Road Pirate",
+    "difficulty": 5,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Survivor",
+    "difficulty": 1,
+    "descriptor": "human",
+    "source": "Godless"
+  },
+  {
+    "name": "Warlord",
+    "difficulty": 100,
+    "descriptor": "human",
+    "source": "Godless"
+  }
+]

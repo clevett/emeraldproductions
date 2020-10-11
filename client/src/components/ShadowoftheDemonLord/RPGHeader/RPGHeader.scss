@@ -1,0 +1,39 @@
+@import "../../../scss/base/animations";
+@import "../../../scss/abstracts/mixins";
+
+.header-row:hover {
+	img {
+		animation-timing-function:ease-out;
+		@extend .rotate;
+
+		opacity: 1.0;
+		transition: opacity .55s ease-in-out;
+		-moz-transition: opacity .55s ease-in-out;
+		-webkit-transition: opacity .55s ease-in-out;
+	}
+}
+
+.header-row {
+	&:hover img {
+		animation-timing-function:ease-out;
+		@extend .rotate;
+
+		opacity: 1.0;
+		transition: opacity .55s ease-in-out;
+		-moz-transition: opacity .55s ease-in-out;
+		-webkit-transition: opacity .55s ease-in-out;
+	}
+
+	img {
+		opacity: 0.6;
+		transition: opacity 1s ease-in-out;
+		-moz-transition: opacity 1s ease-in-out;
+		-webkit-transition: opacity 1s ease-in-out;
+	}
+}
+
+@include respond(tab-land) {
+	.header-row  img {
+		display: none;
+	}
+}

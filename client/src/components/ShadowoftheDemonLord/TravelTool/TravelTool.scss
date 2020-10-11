@@ -1,0 +1,40 @@
+@import "../../../scss/abstracts/mixins";
+
+.custom-control-input:checked ~ .custom-control-label::before {
+	border-color: #8C1717;
+	background-color: #8C1717;
+}
+
+.custom-control-input {
+	width: 100%;
+}
+
+@include respond(tab-port) {
+	.options {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		.col:nth-of-type(1n+2) {
+			margin-top: 3%;
+		}
+	}
+}
+
+@include respond(tab-land) {
+	.card {
+		min-height: 100px;
+		min-width: 300px;
+
+		&:nth-of-type(1n+3) {
+			margin-top: 3%;
+		}
+	}
+}
+	
+@include respond(tab-port) {
+	.card {
+		&:nth-of-type(1n+2) {
+			margin-top: 3%;
+		}
+	}
+}

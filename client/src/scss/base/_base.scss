@@ -1,0 +1,43 @@
+html {
+  height: 100%;
+  
+  & > body {
+    background-color: #0f0e0e;
+    height: 100vh;
+  }
+
+  h2 {
+    margin-bottom: 5%;
+  }
+
+  div[id='root'] {
+    height: 100%;
+  }
+
+  html {
+    font-size: 62.5%; //Defines what 1 rem is. 1 rem === 10px; 10px/16px = 62.5%
+  }
+  
+}
+
+button,
+button[type="submit"],
+a {
+  transition: all .2s;
+
+  &:hover {
+    transform: translateY(-3px);
+        
+    &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(1px);
+    box-shadow: 0 .5rem 1rem rgba(black, .2);
+  }
+}
