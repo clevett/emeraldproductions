@@ -1,13 +1,11 @@
 const nodemailer = require('nodemailer')
-const creds = require('../../config/config')
 const router = require('express').Router()
-
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-			user: creds.USER,
-			pass: creds.PASS
+			user: process.env.mailerUSER,
+			pass: process.env.mailerPASS
 		}
 });
 
