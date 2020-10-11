@@ -25,7 +25,8 @@ class MilesToTravel extends React.Component {
 					<h3>Miles To Travel</h3>
 				</Row>
 				<Row className='justify-content-center'>
-					<input className='text-center' min="0" placeholder='30' type='number' onChange={this.handleChange} />
+					<label for='miles-to-travel' className='sr-only'>Enter number of miles to travel</label>
+					<input id='miles-to-travel' className='text-center' min="0" placeholder='30' type='number' onChange={this.handleChange} />
 				</Row>
 				<Row className='justify-content-center'>
 					<span>(8 hours per day)</span>

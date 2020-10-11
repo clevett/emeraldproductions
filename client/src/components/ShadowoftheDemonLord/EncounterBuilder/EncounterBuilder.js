@@ -11,7 +11,7 @@ import EncounterDanger from './EncounterDanger/EncounterDanger'
 import RPGHeader from '../RPGHeader/RPGHeader'
 
 //Helper function
-import { addBeast, removeBeast } from './updateSelected'
+import { addBeast, removeBeast } from './helpers/updateSelected/updateSelected'
 import fuzzySearch from '../../SearchBar/fuzzySearch'
 
 //Images & Styling

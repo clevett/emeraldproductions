@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Row } from 'react-bootstrap'
 import data from  './weather_data.js'
-import findObjectByName from '../findObjectByName/findObjectByName'
+import findObjectByName from '../helpers/findObjectByName/findObjectByName'
 import AnimatedDie from '../../../AnimatedDie/AnimatedDie'
 
 //Images & Styling

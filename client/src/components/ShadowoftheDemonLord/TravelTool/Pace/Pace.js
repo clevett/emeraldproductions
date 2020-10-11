@@ -3,7 +3,7 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 import SelectBuilder from '../../../SelectBuilder/SelectBuilder'
 import data from  './pace_data.js'
-import findObjectByName from '../findObjectByName/findObjectByName'
+import findObjectByName from '../helpers/findObjectByName/findObjectByName'
 
 import './Pace.scss'
 

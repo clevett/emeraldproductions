@@ -11,9 +11,9 @@ import MilesToTravel from './MilesToTravel/MilesToTravel'
 import RandomEncounters from './RandomEncounters/RandomEncounters'
 import GettingLost from './GettingLost/GettingLost'
 
-import { combineMultipliers } from './calculateMultiplier/calculateMultiplier'
-import { adjustedSpeed } from './calculateSpeed/calculateSpeed'
-import { determineTravelTime } from './determineTravelTime/determineTravelTime'
+import { combineMultipliers } from './helpers/calculateMultiplier/calculateMultiplier'
+import { adjustedSpeed } from './helpers/calculateSpeed/calculateSpeed'
+import { determineTravelTime } from './helpers/determineTravelTime/determineTravelTime'
 
 //Images & Styling
 import './TravelTool.scss'

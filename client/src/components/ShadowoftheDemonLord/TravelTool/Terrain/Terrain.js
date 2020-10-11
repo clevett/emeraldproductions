@@ -4,8 +4,8 @@ import { Col } from 'react-bootstrap'
 import data from  './terrain_data.js'
 import './Terrain.scss'
 import Switch from '../../../Switch/Switch'
-import findObjectByName from '../findObjectByName/findObjectByName'
-import { calculateMultiplier } from '../calculateMultiplier/calculateMultiplier'
+import findObjectByName from '../helpers/findObjectByName/findObjectByName'
+import { calculateMultiplier } from '../helpers/calculateMultiplier/calculateMultiplier'
 
 class Terrain extends React.Component {
 	constructor(props) {
