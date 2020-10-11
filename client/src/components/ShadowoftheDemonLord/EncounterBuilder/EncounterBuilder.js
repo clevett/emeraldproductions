@@ -82,7 +82,13 @@ class EncounterBuilder extends React.Component {
             <Row className='text-left mb-3'>
               <Col>
                 <h3>Level</h3>
-                <SelectBuilder options={this.state.levelOptions} selected={this.state.selectedLevel} onSelectValueChange={this.onSelectValueChange} />
+                <SelectBuilder
+                  id="sodl-encounter-level"
+                  label="select character level"
+                  options={this.state.levelOptions} 
+                  selected={this.state.selectedLevel} 
+                  onSelectValueChange={this.onSelectValueChange} 
+                />
               </Col>
               <EncounterDanger selected={this.state.selectedLevel} />
             </Row>

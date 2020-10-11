@@ -9,7 +9,9 @@ class Threat extends React.Component {
     this.state = {
 			data,
 			options: data.map(object => object.name) || [],
-			selected: 'Moderate'
+			selected: 'Moderate',
+			id: 'sodl-threat-select',
+			label: 'Select a threat level'
     }
 	}
 
@@ -22,7 +24,13 @@ class Threat extends React.Component {
 		return (
 			<div>
 				<h3>Threat Level</h3>
-				<SelectBuilder options={this.state.options} selected={this.state.selected} onSelectValueChange={this.handleChange} />
+				<SelectBuilder 
+					id={this.state.id}
+					label={this.state.label}
+					options={this.state.options} 
+					selected={this.state.selected} 
+					onSelectValueChange={this.handleChange} 
+				/>
 			</div>
 		)
 	}
