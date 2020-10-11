@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  padding: 1% 0.2%;
+  overflow-x: hidden;
+
+  .portrait {
+    img {
+      width: 100%;
+      max-width: 450px;
+      min-width: 250px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+      border-radius: 0.85em;
+      border: 2px solid transparent;
+      transition: all .3s ease;
+    }
+  }
+
+  section.description {
+    padding-left: 15%;
+  }
+
+  nav {
+    min-height: 15vh;
+  }
+}

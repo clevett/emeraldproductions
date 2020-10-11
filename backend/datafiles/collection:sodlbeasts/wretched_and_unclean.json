@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Troglodyte",
+    "difficulty": 10,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "God-KIller",
+    "difficulty": 50,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Slave of Ashrakal",
+    "difficulty": 10,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Pale Bride",
+    "difficulty": 50,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Dark Speaker",
+    "difficulty": 50,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Abomination",
+    "difficulty": 100,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  },
+  {
+    "name": "Serpent of the Witch-King",
+    "difficulty": 500,
+    "descriptor": "troglodyte",
+    "source": "Wretched and Unclean"
+  }
+]

@@ -1,0 +1,24 @@
+@import "../../../../scss/base/animations";
+
+div.weather {
+	select {
+		max-height: 25px;
+	}
+
+	button {
+		margin-left: 2%;
+		padding: 0px;
+		height: 2.3rem;
+		width: 2.3rem;
+		
+		&:hover img {
+			animation-timing-function:ease-out;
+			transform: scale(1.2);
+		}	
+	}
+
+	img {
+		height: 2rem;
+		width: 2rem;
+	}
+}
