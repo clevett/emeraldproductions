@@ -3,7 +3,7 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 import SelectBuilder from '../../../SelectBuilder/SelectBuilder'
 import data from  './pace_data.js'
-import findObjectByName from '../findObjectByName/findObjectByName'
+import findObjectByName from '../helpers/findObjectByName/findObjectByName'
 
 import './Pace.scss'
 
@@ -15,7 +15,9 @@ class Pace extends React.Component {
 			options: data.map(object => object.name) || [],
 			selected: 'walk',
 			milesPerHour: 3,
-			milesPerDay: 24
+			milesPerDay: 24,
+			id: 'sodl-pace-select',
+			label: 'Select a pace'
     }
 	}
 
@@ -36,7 +38,13 @@ class Pace extends React.Component {
 		return (
 			<Row className='pace justify-content-center mb-2'>
 				<h3 className='w-100'>Pace</h3>
-				<SelectBuilder options={this.state.options} selected={this.state.selected} onSelectValueChange={this.handleChange} />
+				<SelectBuilder
+					id={this.state.id}
+					label={this.state.label}
+					options={this.state.options} 
+					selected={this.state.selected} 
+					onSelectValueChange={this.handleChange} 
+				/>
 			</Row>
 		)
 	}

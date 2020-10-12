@@ -8,7 +8,22 @@ import './ContactBar.scss'
 import discord  from './Discord-Icon.png'
 import github  from './GitHub-Icon.png'
 import linkedIn  from './LinkedIN-Icon.png'
-const contacts = [{name: 'GitHub', src:github, href:'https://github.com/clevett'}, {name: 'Necoya #7621', src:discord}, {name: 'LinkedIN', src: linkedIn, href:'https://www.linkedin.com/in/cassie-levett-65029818/'}]
+const contacts = [
+		{	name: 'GitHub', 
+			src:github, 
+			href:'https://github.com/clevett',
+			alt: 'outline of an octapus cat hybrid'
+		}, 
+		{	name: 'Necoya #7621', 
+			src:discord,
+			alt: 'discord robot eyes in a chat bubble'
+		}, 
+		{	name: 'LinkedIN', 
+			src: linkedIn, 
+			href:'https://www.linkedin.com/in/cassie-levett-65029818/',
+			alt: 'letters in inside a box'
+		}
+	]
 
 class ContactBar extends React.Component {
   render() {

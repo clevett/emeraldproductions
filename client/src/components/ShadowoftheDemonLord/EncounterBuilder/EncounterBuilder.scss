@@ -1,5 +1,8 @@
 @import "../../../scss/base/animations";
 
+// import plus from '../../../../../../imgs/icomoon/267-plus.svg'
+// import minus from '../../../../../../imgs/icomoon/268-minus.svg'
+
 .EncounterBuilder {		
 	button {
 		font-weight: bolder;
@@ -7,6 +10,20 @@
 		width: 2rem;
 		border-radius: 1rem;
 		font-size: 0.8rem;
+
+		&.btn {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: auto;
+		}
+
+		&.btn-success {
+			background-image: url('../../../imgs/icomoon/267-plus.svg');
+		}
+
+		&.btn-danger {
+			background-image: url('../../../imgs/icomoon/268-minus.svg');
+		}
 	}
 
 	h2 {
