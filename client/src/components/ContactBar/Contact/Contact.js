@@ -9,7 +9,7 @@ class Contact extends React.Component {
         <Col className='Contact'>
             <Row>
               <Col className='m-auto'>
-                <a className='text-white' href={contact.href} target='_blank'>
+                <a className='text-white' href={contact.href} target='_blank' rel="noopener noreferrer">
                   <Image className='shadow mr-2' src={contact.src} alt={`${contact.alt} logo`} />
                   <span>{contact.name}</span>
                 </a>
