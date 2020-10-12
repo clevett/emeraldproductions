@@ -10,10 +10,11 @@ import Terrain from './Terrain/Terrain'
 import MilesToTravel from './MilesToTravel/MilesToTravel'
 import RandomEncounters from './RandomEncounters/RandomEncounters'
 import GettingLost from './GettingLost/GettingLost'
+import Footer from '../Footer/Footer'
 
-import { combineMultipliers } from './calculateMultiplier/calculateMultiplier'
-import { adjustedSpeed } from './calculateSpeed/calculateSpeed'
-import { determineTravelTime } from './determineTravelTime/determineTravelTime'
+import { combineMultipliers } from './helpers/calculateMultiplier/calculateMultiplier'
+import { adjustedSpeed } from './helpers/calculateSpeed/calculateSpeed'
+import { determineTravelTime } from './helpers/determineTravelTime/determineTravelTime'
 
 //Images & Styling
 import './TravelTool.scss'
@@ -86,10 +87,11 @@ class TravelTool extends React.Component {
 						<MilesToTravel onChange={this.onValueChange} />
 					</Row>
 				</Row>
-				<Row className='content mt-2'>
+				<Row className='content mt-2 mb-5'>
 					<RandomEncounters />
 					<GettingLost key={this.state.conditions} conditions={this.state.conditions} />
 				</Row>
+				<Footer />
 			</Container>
 		)
 	}

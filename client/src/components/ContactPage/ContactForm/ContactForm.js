@@ -57,7 +57,7 @@ class ContactForm extends React.Component {
         <Form.Row>
           <Form.Group className='text-left' as={Col} controlId="exampleForm.ControlTextarea1">
             <Form.Label>Message*</Form.Label>
-            <Form.Control as="textarea" rows="3" value={this.state.message} onChange={this.onMessageChange}  />
+            <Form.Control as="textarea" rows="3" value={this.state.message} onChange={this.onMessageChange} placeholder="Enter message" />
           </Form.Group>
         </Form.Row>
         <Button variant="dark" type="submit">

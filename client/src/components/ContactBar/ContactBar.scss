@@ -5,3 +5,10 @@
     max-height: 50px;
 }
 
+.ContactBar:hover {
+    & span,
+    & img {
+        transform: scale(1.2);
+    }
+}
+

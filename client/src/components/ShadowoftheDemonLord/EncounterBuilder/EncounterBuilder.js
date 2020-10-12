@@ -9,9 +9,10 @@ import SearchBar from '../../SearchBar/SearchBar'
 import SelectBuilder from '../../SelectBuilder/SelectBuilder'
 import EncounterDanger from './EncounterDanger/EncounterDanger'
 import RPGHeader from '../RPGHeader/RPGHeader'
+import Footer from '../Footer/Footer'
 
 //Helper function
-import { addBeast, removeBeast } from './updateSelected'
+import { addBeast, removeBeast } from './helpers/updateSelected/updateSelected'
 import fuzzySearch from '../../SearchBar/fuzzySearch'
 
 //Images & Styling
@@ -82,7 +83,13 @@ class EncounterBuilder extends React.Component {
             <Row className='text-left mb-3'>
               <Col>
                 <h3>Level</h3>
-                <SelectBuilder options={this.state.levelOptions} selected={this.state.selectedLevel} onSelectValueChange={this.onSelectValueChange} />
+                <SelectBuilder
+                  id="sodl-encounter-level"
+                  label="select character level"
+                  options={this.state.levelOptions} 
+                  selected={this.state.selectedLevel} 
+                  onSelectValueChange={this.onSelectValueChange} 
+                />
               </Col>
               <EncounterDanger selected={this.state.selectedLevel} />
             </Row>
@@ -96,9 +103,7 @@ class EncounterBuilder extends React.Component {
             {this.spinnerToggle()}
           </Col> 
         </Row>
-        <Row className='text-center d-block font-italic'>
-          Shadow of the Demon Lord is (c) 2014-2020 Schwalb Entertainment, LLC. All rights reserved. Material here used with permission.
-        </Row>
+        <Footer />
       </Container>
     )
   }
