@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Button, Row, CardGroup } from 'react-bootstrap'
 
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
-import MissionCard from './MissionCard/MissionCard'
+//import MissionCard from './MissionCard/MissionCard'
 
 class RewardsCalculator extends React.Component {
 	constructor(props) {
@@ -14,15 +14,15 @@ class RewardsCalculator extends React.Component {
 
 	render() {
 		return (
-			// <Container>
-			// 	<ShadowrunHeader headerText="Rewards Calculator" />
-			// 	<Row className='mb-5 content'>
-			// 		<CardGroup className='mb-5 w-100'>
-			// 			<MissionCard title='Nuyen Rewards' result={this.state.employer} />
-			// 			<MissionCard title='Karma Rewards' result={this.state.employer} />
-			// 		</CardGroup>
-			// 	</Row>
-			// </Container>
+			<Container>
+				{/* <ShadowrunHeader headerText="Rewards Calculator" />
+				<Row className='mb-5 content'>
+					<CardGroup className='mb-5 w-100'>
+						<MissionCard title='Nuyen Rewards' result={this.state.employer} />
+						<MissionCard title='Karma Rewards' result={this.state.employer} />
+					</CardGroup>
+				</Row> */}
+			</Container>
 		)
 	}
 }
