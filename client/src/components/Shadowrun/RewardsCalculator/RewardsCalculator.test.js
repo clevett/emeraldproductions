@@ -11,4 +11,9 @@ describe('Give RewardsCalculator is called', () => {
 	it('then renders corrrectly', () => {
 		expect(component).toMatchSnapshot()
 	})
+
+	it('the initializes the state with an a base nuyen and karma', () => {
+		expect(component.state().nuyen).toEqual(3000)
+		expect(component.state().karma).toEqual(2)
+	})
 })

@@ -47,3 +47,4 @@ yarn-error.log*
 
 /backend/node_modules/*
 package-lock.json
+*_snapshots_*

@@ -1,14 +1,15 @@
 import React from 'react'
 import { Container, Button, Row, CardGroup } from 'react-bootstrap'
 
-import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
+//import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
 //import MissionCard from './MissionCard/MissionCard'
 
 class RewardsCalculator extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-
+			nuyen: 3000,
+			karma: 2
 		}
 	}
 

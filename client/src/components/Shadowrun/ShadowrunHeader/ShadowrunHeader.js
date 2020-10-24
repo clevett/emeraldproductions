@@ -3,7 +3,7 @@ import React from 'react'
 import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 import { Row } from 'react-bootstrap'
 
-import dragon from '../dragon.png'
+import dragon from './dragon.png'
 
 const ShadowrunHeader = ({ headerText }) => {
 	return (

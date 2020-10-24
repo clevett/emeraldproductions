@@ -50,6 +50,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.10.2"
+    "@babel/plugin-transform-react-jsx": "^7.12.1",
+    "@babel/preset-env": "^7.10.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest-cli": "^26.6.1"
   }
 }
