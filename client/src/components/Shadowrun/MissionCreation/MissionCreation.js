@@ -4,7 +4,7 @@ import Roll from 'roll'
 
 import { Container, Button, Row, CardGroup } from 'react-bootstrap'
 
-import MissionCard from '../MissionCard/MissionCard'
+import DisplayCard from '../DisplayCard/DisplayCard'
 import NaturalLanguage from './NaturalLanguage/NaturalLanguage'
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
 
@@ -69,13 +69,13 @@ class MissionCreation extends React.Component {
 				</Row>
 				<Row className='mb-5 content'>
 					<CardGroup className='mb-5 w-100'>
-						<MissionCard title='Employer' result={this.state.employer} />
-						<MissionCard title='Meet Location' result={this.state.location} />
-						<MissionCard title='Job Type' result={this.state.job} />
+						<DisplayCard title='Employer' result={this.state.employer} />
+						<DisplayCard title='Meet Location' result={this.state.location} />
+						<DisplayCard title='Job Type' result={this.state.job} />
 					</CardGroup>
 					<CardGroup className='w-100'>
-						<MissionCard title='MacGuffin' result={this.state.macguffin} />
-						<MissionCard title='Twist' result={this.state.twist} />
+						<DisplayCard title='MacGuffin' result={this.state.macguffin} />
+						<DisplayCard title='Twist' result={this.state.twist} />
 					</CardGroup>
 				</Row>
 				<Row className='d-grid justify-content-end'>

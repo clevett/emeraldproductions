@@ -5,15 +5,20 @@ import RewardsCalculator from './RewardsCalculator'
 
 configure({ adapter: new Adapter(), disableLifecycleMethods: true })
 
-describe('Give RewardsCalculator is called', () => {
+describe('Given RewardsCalculator is called', () => {
 	const component = shallow(<RewardsCalculator />)
 
-	it('then renders corrrectly', () => {
-		expect(component).toMatchSnapshot()
+	describe('When component initially renders', () => {
+		it('then renders corrrectly', () => expect(component).toMatchSnapshot() )
+
+		const initialState = component.state()
+		it('then initializes the state with an a base of 3000 nuyen', () => expect(initialState.nuyen).toEqual(3000))
+		it('then initializes the state with an a default of 2 karma', () => expect(initialState.karma).toEqual(2))
+		it('then initializes the state with has default run type', () => expect(initialState.runType).toEqual('standard'))
+
+		it('then creates a Display Card component', () => {
+			expect(component.find('DisplayCard').exists()).toEqual(true)
+		})
 	})
 
-	it('the initializes the state with an a base nuyen and karma', () => {
-		expect(component.state().nuyen).toEqual(3000)
-		expect(component.state().karma).toEqual(2)
-	})
 })

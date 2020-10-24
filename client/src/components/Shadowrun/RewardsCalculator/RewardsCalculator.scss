@@ -1,0 +1,29 @@
+@import "../../../scss/components/slider";
+
+.ShadowrunRewardsCalculator {
+	.slider {
+		display: inline-grid;
+		grid-template-columns: repeat(3, 1fr);
+		width: 100%;
+
+		& input {
+			grid-area: 1 / 1 / 1 / 4;
+		}
+
+		& span {
+			grid-row: 2;
+
+			&:nth-of-type(1) {
+				text-align: left;
+			}
+
+			&:nth-of-type(2) {
+				text-align: center;
+			}
+
+			&:nth-of-type(3) {
+				text-align: right;
+			}
+		}
+	}
+}
