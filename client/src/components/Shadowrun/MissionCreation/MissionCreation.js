@@ -4,12 +4,11 @@ import Roll from 'roll'
 
 import { Container, Button, Row, CardGroup } from 'react-bootstrap'
 
-import DriveThruLink from '../../DriveThruLink/DriveThruLink'
-import MissionCard from './MissionCard/MissionCard'
+import MissionCard from '../MissionCard/MissionCard'
 import NaturalLanguage from './NaturalLanguage/NaturalLanguage'
+import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
 
 //Images & Styling
-import dragon from '../dragon.png'
 import './MissionCreation.scss'
 
 import data from  './data.js'
@@ -64,12 +63,7 @@ class MissionCreation extends React.Component {
 	render() {
 		return (
       <Container className="ShadowrunMissionCreation content text-white">
-        <Row className='header text-center mb-5 justify-content-center w-100'>
-          <img alt='shadowrun dragon logo' src={dragon}></img>
-					<DriveThruLink id='115985' name='Shadowrun' />
-          <h1 className='mb-0'>Mission Creation</h1>
-          <img alt='shadowrun dragon logo' src={dragon}></img>
-        </Row>
+				<ShadowrunHeader headerText="Mission Generator" />
 				<Row className='mb-5'>
 					<NaturalLanguage employer={this.state.employer} location={this.state.location} job={this.state.job} macguffin={this.state.macguffin} twist={this.state.twist} />
 				</Row>
