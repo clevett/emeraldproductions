@@ -3,6 +3,7 @@ import { Col, Container, Row, CardGroup } from 'react-bootstrap'
 
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'
+import RunTypeSlider from './RunTypeSlider/RunTypeSlider'
 
 import './RewardsCalculator.scss'
 
@@ -12,9 +13,16 @@ class RewardsCalculator extends React.Component {
 		this.state = {
 			nuyen: 3000,
 			karma: 2,
-			runType: 'standard' //standard, cold-hearted, good feels
+			type: 'standard' //standard, cold-hearted, good feels
 		}
 	}
+
+	updateState = async (key, value) => {
+		await this.setState({
+			[`${key}`]: value
+		})
+	}
+
 
 	handleChange = async event => {
 		console.log(event.target.value)
@@ -25,49 +33,22 @@ class RewardsCalculator extends React.Component {
 		// this.props.onChange('milesToTravel', this.state.milesToTravel)
   }
 
-	sliderChange = async event => {
-		const convertRunType = value => {
-			switch(event.target.value) {
-				case 0:
-					return "good feels"
-				case 2:
-					return 'cold-hearted'
-				default:
-					return 'standard'
-			}
-		}
-
-		const newRunType = convertRunType(event.target.value)
-
-		if (this.state.runType !== newRunType) {
-			await this.setState({
-				runType: newRunType
-			})
-		}
-  }
-
 	render() {
 		return (
 			<Container className="ShadowrunRewardsCalculator content text-white">
 				<ShadowrunHeader headerText="Rewards Calculator" />
 				<Row className='mb-3 content'>
-					<CardGroup className='mb-5 w-100'>
+					<CardGroup className='mb-3 w-100'>
 						<DisplayCard title='Nuyen Rewards' result={{description: `${this.state.nuyen}¥`}} />
 						<DisplayCard title='Karma Rewards' result={{description: this.state.karma}} />
 					</CardGroup>
 				</Row>
 				<Row className='mb-3 content'>
 					<Col>
-						<Row className='mb-3 justify-content-center'>
+						<Row className='justify-content-center'>
 							<h2>Run Type</h2>
 						</Row>
-						<Row className='slider justify-content-center'>
-							<label className='sr-only' htmlFor="customRange2">Choose run type</label>
-							<input type="range" className="custom-range" min="0" max="2" id="customRange2" defaultValue='1' onChange={this.sliderChange} />
-							<span>Good feels</span>
-							<span>Standard</span>
-							<span>Cold-hearted</span>
-						</Row>
+						<RunTypeSlider updateState={this.updateState} />
 					</Col>
 					<Col>
 						<Row className='mb-3 justify-content-center'>
