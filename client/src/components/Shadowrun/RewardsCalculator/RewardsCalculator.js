@@ -12,7 +12,9 @@ class RewardsCalculator extends React.Component {
 		super(props)
 		this.state = {
 			nuyen: 3000,
-			karma: 2,
+			karma: 0,
+			karmaBase: 0,
+			karmaModifier: 0,
 			type: 'standard', //standard, cold-hearted, good feels
 			dicepool: 0
 		}
@@ -23,6 +25,10 @@ class RewardsCalculator extends React.Component {
 	updateState = async (key, value) => {
 		await this.setState({[`${key}`]: value})
 		console.log(this.state)
+
+		if (key === 'karmaBase' || key === 'karmaModifier') {
+			this.setState({karma: this.state.karmaBase + this.state.karmaModifier})
+		}
 	}
 
 	render() {

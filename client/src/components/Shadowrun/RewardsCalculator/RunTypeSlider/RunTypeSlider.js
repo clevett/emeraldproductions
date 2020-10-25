@@ -2,27 +2,31 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 
 import convertRunType from '../helpers/convertRunType/convertRunType'
-import determineTypeMessage from '../helpers/determineTypeMessage/determineTypeMessage'
+import data from '../data/run_types'
+import findObject from '../helpers/findObject/findObject'
 
 import './RunTypeSlider.scss'
 
 class RunTypeSlider extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state =  { type: 'standard' }
+		this.state =  { type: 'standard', karma: 0}
 
 		this.updateState = this.props.updateState.bind(this)
 	}
 
 	sliderChange = async event => {
 		const type = convertRunType(parseInt(event.target.value))
+		const object = findObject(type, data)
 
 		await this.setState({
-			message: determineTypeMessage(type),
+			message: object.description,
+			karma: object.karma,
 			type,
 		})
 
 		this.updateState('type', this.state.type)
+		this.updateState('karmaBase', this.state.karma)
   }
 
 	render() {

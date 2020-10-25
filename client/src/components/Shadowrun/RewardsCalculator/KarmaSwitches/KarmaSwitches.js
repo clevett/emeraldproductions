@@ -28,7 +28,7 @@ class KarmaSwitches extends React.Component {
 			[`${name}`]: status,
 		})
 
-		this.updateState('karmaModifiersTotal', parseInt(this.state.karma))
+		this.updateState('karmaModifier', parseInt(this.state.karma))
 	}
 
 	sliderChange = async event => {
@@ -40,7 +40,7 @@ class KarmaSwitches extends React.Component {
 			objectives: parseInt(event.target.value)
 		})
 
-		this.updateState('karmaModifiers', parseInt(this.state.karma))
+		this.updateState('karmaModifier', parseInt(this.state.karma))
   }
 
 
