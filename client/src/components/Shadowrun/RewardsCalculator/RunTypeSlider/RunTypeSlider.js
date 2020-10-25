@@ -1,7 +1,10 @@
 import React from 'react'
 import { Row } from 'react-bootstrap'
 
-import convertRunType from './helper/convertRunType'
+import convertRunType from '../helpers/convertRunType/convertRunType'
+import determineTypeMessage from '../helpers/determineTypeMessage/determineTypeMessage'
+
+import './RunTypeSlider.scss'
 
 class RunTypeSlider extends React.Component {
 	constructor(props) {
@@ -12,8 +15,11 @@ class RunTypeSlider extends React.Component {
 	}
 
 	sliderChange = async event => {
+		const type = convertRunType(parseInt(event.target.value))
+
 		await this.setState({
-			type: convertRunType(event.target.value)
+			message: determineTypeMessage(type),
+			type,
 		})
 
 		this.updateState('type', this.state.type)
@@ -27,6 +33,7 @@ class RunTypeSlider extends React.Component {
 				<span>Good feels</span>
 				<span>Standard</span>
 				<span>Cold-hearted</span>
+				<small>{this.state.message}</small>
 			</Row>
 		)
 	}

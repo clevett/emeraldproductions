@@ -2,9 +2,10 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 
 import Switch from '../../../Switch/Switch'
-import findObject from './helpers/findObject/findObject'
-import totalSwitchKarma from './helpers/totalSwitchKarma/totalSwitchKarma'
+import findObject from '../helpers/findObject/findObject'
+import totalSwitchKarma from '../helpers/totalSwitchKarma/totalSwitchKarma'
 
+import data from '../data/karma_modifiers'
 import './KarmaSwitches.scss'
 
 class KarmaSwitches extends React.Component {
@@ -20,7 +21,7 @@ class KarmaSwitches extends React.Component {
 	}
 
 	handleToggle = async (name, status) => {
-		const object = findObject(name)
+		const object = findObject(name, data)
 		const karma = totalSwitchKarma({karma: object.karma, status, startingKarma: this.state.karma})
 		await this.setState({
 			karma,
@@ -39,7 +40,7 @@ class KarmaSwitches extends React.Component {
 			objectives: parseInt(event.target.value)
 		})
 
-		this.updateState('karmaModifiersTotal', parseInt(this.state.karma))
+		this.updateState('karmaModifiers', parseInt(this.state.karma))
   }
 
 

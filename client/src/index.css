@@ -13,7 +13,6 @@
   --red: #dc3545;
   --orange: #fd7e14;
   --yellow: #ffc107;
-  --gold: #E5AC34;
   --green: #28a745;
   --teal: #20c997;
   --cyan: #17a2b8;
@@ -7205,6 +7204,10 @@ html h2 {
   font-size: 1.75rem; }
 
 html h3 {
+  font-size: 1.25rem;
+  font-weight: bolder; }
+
+html h4 {
   font-size: 1rem;
   font-weight: bolder; }
 

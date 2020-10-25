@@ -6,9 +6,7 @@ import DisplayCard from '../DisplayCard/DisplayCard'
 import RunTypeSlider from './RunTypeSlider/RunTypeSlider'
 import HighestDicepool from './HighestDicepool/HighestDicepool'
 import KarmaSwitches from './KarmaSwitches/KarmaSwitches'
-
-import './RewardsCalculator.scss'
-
+import CashModifiers from './CashModifiers/CashModifiers'
 class RewardsCalculator extends React.Component {
 	constructor(props) {
 		super(props)
@@ -37,7 +35,7 @@ class RewardsCalculator extends React.Component {
 						<DisplayCard title='Karma Rewards' result={{description: this.state.karma}} />
 					</CardGroup>
 				</Row>
-				<Row className='mb-3 content'>
+				<Row className='mb-5 content'>
 					<Col>
 						<Row className='justify-content-center'>
 							<h2>Run Type</h2>
@@ -51,7 +49,7 @@ class RewardsCalculator extends React.Component {
 						<HighestDicepool updateState={this.updateState} />
 					</Col>
 				</Row>
-				<Row className='mb-3 content'>
+				<Row className='content'>
 					<Col>
 						<Row className='justify-content-center'>
 							<h2>Cash Situation Modifiers</h2>
@@ -61,6 +59,7 @@ class RewardsCalculator extends React.Component {
 						<Row className='justify-content-center'>
 							<h2>Cash Modifiers</h2>
 						</Row>
+						<CashModifiers key={this.state.type} nuyen={this.state.nuyen} runType={this.state.type} updateState={this.updateState} />
 					</Col>
 					<Col>
 						<Row className='justify-content-center'>
