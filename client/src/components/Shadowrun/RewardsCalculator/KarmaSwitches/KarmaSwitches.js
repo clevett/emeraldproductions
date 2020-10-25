@@ -2,34 +2,26 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 
 import Switch from '../../../Switch/Switch'
+import findObject from './helpers/findObject/findObject'
+import totalSwitchKarma from './helpers/totalSwitchKarma/totalSwitchKarma'
 
-import data from './karma_modifiers'
 import './KarmaSwitches.scss'
 
 class KarmaSwitches extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data,
 			survived: true,
-			allObjectives: false,
-			someObjectives: false,
+			objectives: 0,
 			karma: 0
 		}
 
 		this.updateState = this.props.updateState.bind(this)
 	}
 
-	totalKarma = (name, status) => {
-		const dataObject = data.find(object => object.name === name)
-		let karma = this.state.karma
-		status ? karma += dataObject.karma : karma -= dataObject.karma 
-		return karma
-	}
-
 	handleToggle = async (name, status) => {
-		const karma = this.totalKarma(name, status)
-
+		const object = findObject(name)
+		const karma = totalSwitchKarma({karma: object.karma, status, startingKarma: this.state.karma})
 		await this.setState({
 			karma,
 			[`${name}`]: status,
@@ -38,12 +30,36 @@ class KarmaSwitches extends React.Component {
 		this.updateState('karmaModifiersTotal', parseInt(this.state.karma))
 	}
 
-	renderedList = data => data.map(toggle => <Switch key={toggle.name} name={toggle.name} description={toggle.description} handleToggle={this.handleToggle} />)
-	modifierSwitches = data => <div className='switches'>{this.renderedList(data)}</div>
+	sliderChange = async event => {
+		const difference = event.target.value - this.state.objectives
+		const karma = this.state.karma + difference
+
+		await this.setState({
+			karma,
+			objectives: parseInt(event.target.value)
+		})
+
+		this.updateState('karmaModifiersTotal', parseInt(this.state.karma))
+  }
+
 
 	render() {
 		return(
-			<Row className='KarmaSwitches'>{this.modifierSwitches(this.state.data)}</Row>
+			<div className="KarmaModifiers">
+				<Row className='KarmaSwitches switches mb-3'>
+					<Switch key="survived" name="survived" description="Character survived" handleToggle={this.handleToggle} />
+				</Row>
+				<Row className='justify-content-center'>
+					<h3>Group Completed Objectives</h3>
+				</Row>
+				<Row className='slider justify-content-center'>
+					<label className='sr-only' htmlFor="completedObjectives">Choose objectives completed</label>
+					<input type="range" className="custom-range" min="0" max="2" id="completedObjectives" defaultValue='0' onChange={this.sliderChange} />
+					<span>None</span>
+					<span>Some</span>
+					<span>All</span>
+				</Row>
+			</div>
 		)
 	}
 }

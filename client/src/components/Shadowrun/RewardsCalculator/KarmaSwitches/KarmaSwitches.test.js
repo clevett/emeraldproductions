@@ -14,8 +14,7 @@ describe('Given KarmaSwitches is called', () => {
 
 		const initialState = component.state()
 		it('then initializes the state with survived', () => expect(initialState.survived).toEqual(true))
-		it('then initializes the state with allObjectives', () => expect(initialState.allObjectives).toEqual(false))
-		it('then initializes the state with someObjectives', () => expect(initialState.someObjectives).toEqual(false))
+		it('then initializes the state with objectives', () => expect(initialState.objectives).toEqual(0))
 		it('then initializes the state with karma', () => expect(initialState.karma).toEqual(0))
 	})
 })
