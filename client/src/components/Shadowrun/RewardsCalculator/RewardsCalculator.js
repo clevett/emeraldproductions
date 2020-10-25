@@ -4,6 +4,8 @@ import { Col, Container, Row, CardGroup } from 'react-bootstrap'
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'
 import RunTypeSlider from './RunTypeSlider/RunTypeSlider'
+import HighestDicepool from './HighestDicepool/HighestDicepool'
+import KarmaSwitches from './KarmaSwitches/KarmaSwitches'
 
 import './RewardsCalculator.scss'
 
@@ -13,25 +15,17 @@ class RewardsCalculator extends React.Component {
 		this.state = {
 			nuyen: 3000,
 			karma: 2,
-			type: 'standard' //standard, cold-hearted, good feels
+			type: 'standard', //standard, cold-hearted, good feels
+			dicepool: 0
 		}
+
+		this.updateState = this.updateState.bind(this)
 	}
 
 	updateState = async (key, value) => {
-		await this.setState({
-			[`${key}`]: value
-		})
+		await this.setState({[`${key}`]: value})
+		console.log(this.state)
 	}
-
-
-	handleChange = async event => {
-		console.log(event.target.value)
-		// await this.setState({
-		// 	milesToTravel: event.target.value
-		// })
-		
-		// this.props.onChange('milesToTravel', this.state.milesToTravel)
-  }
 
 	render() {
 		return (
@@ -54,16 +48,25 @@ class RewardsCalculator extends React.Component {
 						<Row className='mb-3 justify-content-center'>
 							<h2>Overall Mission Challenge</h2>
 						</Row>
+						<HighestDicepool updateState={this.updateState} />
+					</Col>
+				</Row>
+				<Row className='mb-3 content'>
+					<Col>
 						<Row className='justify-content-center'>
-							<Col>
-								<h3>Highest Opposed Dicepool</h3>
-								<small>This will be divided and rounded down</small>
-							</Col>
-							<Col>
-								<label htmlFor='highest-opposed-dicepool' className='sr-only'>Enter the highest opposed dicepool</label>
-								<input id='highest-opposed-dicepool' className='text-center' min="0" placeholder='14' type='number' onChange={this.handleChange} />
-							</Col>
+							<h2>Cash Situation Modifiers</h2>
 						</Row>
+					</Col>
+					<Col>
+						<Row className='justify-content-center'>
+							<h2>Cash Modifiers</h2>
+						</Row>
+					</Col>
+					<Col>
+						<Row className='justify-content-center'>
+							<h2>Karma Situation Modifiers</h2>
+						</Row>
+						<KarmaSwitches updateState={this.updateState} />
 					</Col>
 				</Row>
 			</Container>

@@ -8,7 +8,8 @@ class Switch extends React.Component {
     super(props)
     this.state = {
       name: props.name,
-			isOn: false
+      isOn: false,
+      description: props.description ? props.description : props.name
     }
   }
 
@@ -24,7 +25,7 @@ class Switch extends React.Component {
         key={this.state.name} 
         type="switch" 
         id={this.state.name}
-        label={this.state.name} 
+        label={this.state.description} 
         value={this.state.name}
         onChange={this.handleChange}
       />

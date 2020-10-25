@@ -6,21 +6,17 @@ import convertRunType from './helper/convertRunType'
 class RunTypeSlider extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state =  {
-			type: 'standard'
-		}
+		this.state =  { type: 'standard' }
+
+		this.updateState = this.props.updateState.bind(this)
 	}
 
 	sliderChange = async event => {
-		const newRunType = convertRunType(event.target.value)
+		await this.setState({
+			type: convertRunType(event.target.value)
+		})
 
-		if (this.state.type !== newRunType) {
-			await this.setState({
-				type: newRunType
-			})
-
-			this.props.updateState('type', this.state.type)
-		}
+		this.updateState('type', this.state.type)
   }
 
 	render() {
