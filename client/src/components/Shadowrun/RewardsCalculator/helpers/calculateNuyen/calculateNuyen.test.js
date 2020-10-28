@@ -2,11 +2,12 @@ import calculateNuyen from "./calculateNuyen"
 
 describe('Given calculateNuyen is called', () => {
 	const mockState = {
+		nuyenBaseRate: 3000,
 		dicepool: 14,
-		cashModifierPercent: 0.1
+		nuyenModifierPercent: 0.1
 	}
 
-	describe('when given three valid numbers', () => {
+	describe('when passed a state', () => {
 		const state = {...mockState, type: 'standard'}
 		it('then returns a number', () => {
 			expect(typeof calculateNuyen(state)).toEqual('number')

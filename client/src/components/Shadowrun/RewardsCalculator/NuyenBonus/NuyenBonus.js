@@ -19,7 +19,7 @@ class NuyenBonus extends React.Component {
 		this.setState({message})
 	}
 
-	sliderChange = async percent => this.updateState('cashModifierPercent', percent)
+	sliderChange = async percent => this.updateState('nuyenModifierPercent', percent)
 
 	render() {
 		return(

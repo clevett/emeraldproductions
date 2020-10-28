@@ -8,6 +8,7 @@ import HighestDicepool from './HighestDicepool/HighestDicepool'
 import KarmaSwitches from './KarmaSwitches/KarmaSwitches'
 import NuyenBonus from './NuyenBonus/NuyenBonus'
 import NuyenSituationSwitches from './NuyenSituationSwitches/NuyenSituationSwitches'
+import Negotiation from './Negotiation/Negotiation'
 
 import calculateNuyen from './helpers/calculateNuyen/calculateNuyen'
 import calculateKarma from './helpers/calculateKarma/calculateKarma'
@@ -19,14 +20,16 @@ class RewardsCalculator extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			nuyen: 3000,
-			karma: 0,
+			dicepool: 0,
+			type: 'standard', //standard, cold-hearted, good feels
 			karmaFromRun: 0,
 			karmaModifier: 0,
-			type: 'standard', //standard, cold-hearted, good feels
-			dicepool: 0,
-			cashModifierPercent: 0.1,
-			cashSituationModifier: 0
+			nuyenBaseRate: 3000,
+			nuyenModifierPercent: 0.1,
+			nuyenSituationModifier: 0,
+			/*Displayed Results*/
+			nuyen: 3000,
+			karma: 0,
 		}
 
 		this.updateState = this.updateState.bind(this)
@@ -35,14 +38,17 @@ class RewardsCalculator extends React.Component {
 	updateState = async (key, value) => {
 		await this.setState({[`${key}`]: value})
 		let update = {}
-		if (key === 'karmaFromRun' || key === 'karmaModifier' || key === 'dicepool') {
+
+		const karmaKeys = ['karmaFromRun', 'karmaModifier', 'dicepool']
+		if (karmaKeys.includes(key)) {
 			update.karma = calculateKarma(this.state.karmaFromRun, this.state.karmaModifier, this.state.dicepool)
 		}
 
-		if (key === 'cashSituationModifier' || key === 'cashModifierPercent' || key === 'dicepool' || key === 'type') {
+		const nuyenKeys = ['nuyenSituationModifier', 'nuyenModifierPercent', 'dicepool', 'type', 'nuyenBaseRate']
+		if (nuyenKeys.includes(key)) {
 			update.nuyen = calculateNuyen(this.state)
 		}
-
+		
 		this.setState(update)
 	}
 
@@ -63,11 +69,14 @@ class RewardsCalculator extends React.Component {
 				<Row className='content'>
 					<NuyenSituationSwitches updateState={this.updateState} />
 					<Col className='col-12 col-md-4'>
-						<PercentContext.Provider value={this.state.cashModifierPercent * 100}>
+						<PercentContext.Provider value={this.state.nuyenModifierPercent * 100}>
 							<NuyenBonus key={this.state.type} runType={this.state.type} updateState={this.updateState} />
 						</PercentContext.Provider>
-						<KarmaSwitches updateState={this.updateState} />
+						<Negotiation updateState={this.updateState} />
 					</Col>
+				</Row>
+				<Row className='content'>
+					<KarmaSwitches updateState={this.updateState} />
 				</Row>
 			</Container>
 		)
