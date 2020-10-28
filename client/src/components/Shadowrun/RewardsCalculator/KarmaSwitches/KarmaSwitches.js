@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 import Switch from '../../../Switch/Switch'
 import findObject from '../helpers/findObject/findObject'
@@ -43,24 +43,26 @@ class KarmaSwitches extends React.Component {
 		this.updateState('karmaModifier', parseInt(this.state.karma))
   }
 
-
 	render() {
 		return(
-			<div className="KarmaModifiers">
+			<Col className="KarmaModifiers">
+				<Row className='justify-content-center'>
+					<h2>Karma Situation Modifiers</h2>
+				</Row>
 				<Row className='KarmaSwitches switches mb-3'>
 					<Switch key="survived" name="survived" description="Character survived" handleToggle={this.handleToggle} />
-				</Row>
-				<Row className='justify-content-center'>
-					<h3>Group Completed Objectives</h3>
-				</Row>
-				<Row className='slider justify-content-center'>
-					<label className='sr-only' htmlFor="completedObjectives">Choose objectives completed</label>
-					<input type="range" className="custom-range" min="0" max="2" id="completedObjectives" defaultValue='0' onChange={this.sliderChange} />
-					<span>None</span>
-					<span>Some</span>
-					<span>All</span>
-				</Row>
-			</div>
+					</Row>
+					<Row className='justify-content-center'>
+						<h3>Group Completed Objectives</h3>
+					</Row>
+					<Row className='slider justify-content-center'>
+						<label className='sr-only' htmlFor="completedObjectives">Choose objectives completed</label>
+						<input type="range" className="custom-range" min="0" max="2" id="completedObjectives" defaultValue='0' onChange={this.sliderChange} />
+						<span>None</span>
+						<span>Some</span>
+						<span>All</span>
+					</Row>
+			</Col>
 		)
 	}
 }

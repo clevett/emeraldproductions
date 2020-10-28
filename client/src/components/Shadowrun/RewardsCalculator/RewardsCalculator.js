@@ -52,18 +52,8 @@ class RewardsCalculator extends React.Component {
 					</CardGroup>
 				</Row>
 				<Row className='mb-5 content'>
-					<Col>
-						<Row className='justify-content-center'>
-							<h2>Run Type</h2>
-						</Row>
-						<RunTypeSlider updateState={this.updateState} />
-					</Col>
-					<Col>
-						<Row className='mb-3 justify-content-center'>
-							<h2>Overall Mission Challenge</h2>
-						</Row>
-						<HighestDicepool updateState={this.updateState} />
-					</Col>
+					<RunTypeSlider updateState={this.updateState} />
+					<HighestDicepool updateState={this.updateState} />
 				</Row>
 				<Row className='content'>
 					<Col>
@@ -71,18 +61,8 @@ class RewardsCalculator extends React.Component {
 							<h2>Cash Situation Modifiers</h2>
 						</Row>
 					</Col>
-					<Col>
-						<Row className='justify-content-center'>
-							<h2>Cash Modifiers</h2>
-						</Row>
-						<CashModifiers key={this.state.type} runType={this.state.type} updateState={this.updateState} percent={this.state.cashModifierPercent} />
-					</Col>
-					<Col>
-						<Row className='justify-content-center'>
-							<h2>Karma Situation Modifiers</h2>
-						</Row>
-						<KarmaSwitches updateState={this.updateState} />
-					</Col>
+					<CashModifiers key={this.state.type} runType={this.state.type} updateState={this.updateState} percent={this.state.cashModifierPercent} />
+					<KarmaSwitches updateState={this.updateState} />
 				</Row>
 			</Container>
 		)

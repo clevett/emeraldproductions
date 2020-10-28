@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 import ModifierRun from '../../ModifierRun.js/ModifierRun'
 
@@ -30,10 +30,13 @@ class CashModifiers extends React.Component {
 
 	render() {
 		return(
-			<div className="CashModifiers">
+			<Col className="CashModifiers">
+				<Row className='justify-content-center'>
+					<h2>Cash Modifiers</h2>
+				</Row>
 				<Row className='justify-content-center mb-3'>{this.state.message}</Row>
 				<ModifierRun runType={this.state.runType} sliderChange={this.sliderChange} percent={this.state.percent} />
-			</div>
+			</Col>
 		)
 	}
 }
