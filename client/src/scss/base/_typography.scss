@@ -31,4 +31,8 @@ html {
     font-size: 1rem;
     font-weight: bolder;
   }
+
+  input::placeholder {
+		color: rgba(0, 0, 0, 0.4);
+	}
 }

@@ -7212,6 +7212,9 @@ html h4 {
   font-size: 1rem;
   font-weight: bolder; }
 
+html input::placeholder {
+  color: rgba(0, 0, 0, 0.4); }
+
 .Center {
   min-height: 70vh;
   padding: 2% 1%;
