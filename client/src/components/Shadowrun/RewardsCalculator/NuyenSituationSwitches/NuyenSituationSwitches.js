@@ -29,7 +29,7 @@ class NuyenSituationSwitches extends React.Component {
 
 	render() {
 		return(
-			<Col className="NuyenSituationSwitches">
+			<Col className="NuyenSituationSwitches col-12 col-md-7">
 				<Row className='justify-content-center mb-3'>
 					<h2>Nuyen Situation Modifiers</h2>
 				</Row>

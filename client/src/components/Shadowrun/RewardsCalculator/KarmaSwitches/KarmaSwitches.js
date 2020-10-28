@@ -44,7 +44,7 @@ class KarmaSwitches extends React.Component {
 
 	render() {
 		return(
-			<Col className="KarmaModifiers">
+			<Col className="KarmaModifiers col-12">
 				<Row className='justify-content-center'>
 					<h2>Karma Situation Modifiers</h2>
 				</Row>

@@ -31,7 +31,7 @@ class RunTypeSlider extends React.Component {
 
 	render() {
 		return (
-			<Col>
+			<Col className='col-12 col-md-6'>
 				<Row className='justify-content-center'>
 					<h2>Run Type</h2>
 				</Row>

@@ -20,7 +20,7 @@ class HighestDicepool extends React.Component {
 	render(){
 
 		return(
-			<Col className='HighestDicepool'>
+			<Col className='HighestDicepool col-12 col-md-6'>
 				<Row className='mb-3 justify-content-center'>
 					<h2>Overall Mission Challenge</h2>
 				</Row>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, CardGroup } from 'react-bootstrap'
+import { Container, Row, Col, CardGroup } from 'react-bootstrap'
 
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'
@@ -58,18 +58,18 @@ class RewardsCalculator extends React.Component {
 						<DisplayCard title='Karma Rewards' result={{description: this.state.karma}} />
 					</CardGroup>
 				</Row>
-				<Row className='mb-5 content'>
+				<Row className='mb-5 content col-12'>
 					<RunTypeSlider updateState={this.updateState} />
 					<HighestDicepool updateState={this.updateState} />
 				</Row>
-				<Row className='mb-5 content'>
-					<PercentContext.Provider value={this.state.cashModifierPercent * 100}>
-						<NuyenBonus key={this.state.type} runType={this.state.type} updateState={this.updateState} />
-					</PercentContext.Provider>
-					<KarmaSwitches updateState={this.updateState} />
-				</Row>
-				<Row className='mb-3 content col-sm-12'>
+				<Row className='mb-3 content'>
 					<NuyenSituationSwitches updateState={this.updateState} />
+					<Col className='col-12 col-md-5'>
+						<PercentContext.Provider value={this.state.cashModifierPercent * 100}>
+							<NuyenBonus key={this.state.type} runType={this.state.type} updateState={this.updateState} />
+						</PercentContext.Provider>
+						<KarmaSwitches updateState={this.updateState} />
+					</Col>
 				</Row>
 			</Container>
 		)

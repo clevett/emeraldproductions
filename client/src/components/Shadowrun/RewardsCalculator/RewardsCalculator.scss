@@ -1,3 +1,5 @@
+@import "../../../scss/abstracts/mixins";
+
 .ShadowrunRewardsCalculator {
 	.switches {
 		grid-template-columns: 1fr;
@@ -14,6 +16,17 @@
 		.custom-control-label::before,
 		.custom-control-label::after {
 			transform: scale(1.2);
+		}
+	}
+
+	@include respond(tab-port) {
+		.NuyenSituationSwitches {
+			margin-bottom: 25%;
+			padding: 0px 10%;
+		}
+
+		img {
+			display: none;
 		}
 	}
 }

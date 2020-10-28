@@ -23,7 +23,7 @@ class NuyenBonus extends React.Component {
 
 	render() {
 		return(
-			<Col className="NuyenBonus">
+			<Col className="NuyenBonus mb-3 col-12">
 				<Row className='justify-content-center'>
 					<h2>Nuyen Bonus</h2>
 				</Row>
