@@ -15,6 +15,8 @@ import calculateKarma from './helpers/calculateKarma/calculateKarma'
 
 import PercentContext from './contexts/PercentContext'
 
+import ReactGA from 'react-ga';
+
 import './RewardsCalculator.scss'
 class RewardsCalculator extends React.Component {
 	constructor(props) {
@@ -33,6 +35,11 @@ class RewardsCalculator extends React.Component {
 		}
 
 		this.updateState = this.updateState.bind(this)
+	}
+
+	componentDidMount() {
+		ReactGA.initialize('G-883TDHMZZM');
+		ReactGA.pageview(window.location.pathname);
 	}
 
 	updateState = async (key, value) => {
