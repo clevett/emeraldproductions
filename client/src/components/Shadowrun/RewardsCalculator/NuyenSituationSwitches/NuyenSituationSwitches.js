@@ -21,7 +21,7 @@ class NuyenSituationSwitches extends React.Component {
 	}
 
 	updateParent = () => {
-		let sum = 0
+		let sum = 1
 		Object.values(this.state).forEach(value => sum += value ? 1 : 0)
 		this.updateState('cashSituationModifier', parseInt(sum))
 	}
