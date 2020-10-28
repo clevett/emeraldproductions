@@ -1,17 +1,20 @@
 import React from 'react'
-import { Col, Container, Row, CardGroup } from 'react-bootstrap'
+import { Container, Row, CardGroup } from 'react-bootstrap'
 
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'
 import RunTypeSlider from './RunTypeSlider/RunTypeSlider'
 import HighestDicepool from './HighestDicepool/HighestDicepool'
 import KarmaSwitches from './KarmaSwitches/KarmaSwitches'
-import CashBonus from './CashBonus/CashBonus'
+import NuyenBonus from './NuyenBonus/NuyenBonus'
+import NuyenSituationSwitches from './NuyenSituationSwitches/NuyenSituationSwitches'
 
 import calculateNuyen from './helpers/calculateNuyen/calculateNuyen'
 import calculateKarma from './helpers/calculateKarma/calculateKarma'
 
 import PercentContext from './contexts/PercentContext'
+
+import './RewardsCalculator.scss'
 class RewardsCalculator extends React.Component {
 	constructor(props) {
 		super(props)
@@ -59,16 +62,14 @@ class RewardsCalculator extends React.Component {
 					<RunTypeSlider updateState={this.updateState} />
 					<HighestDicepool updateState={this.updateState} />
 				</Row>
-				<Row className='content'>
-					<Col>
-						<Row className='justify-content-center'>
-							<h2>Cash Situation Modifiers</h2>
-						</Row>
-					</Col>
+				<Row className='mb-5 content'>
 					<PercentContext.Provider value={this.state.cashModifierPercent * 100}>
-						<CashBonus key={this.state.type} runType={this.state.type} updateState={this.updateState} />
+						<NuyenBonus key={this.state.type} runType={this.state.type} updateState={this.updateState} />
 					</PercentContext.Provider>
 					<KarmaSwitches updateState={this.updateState} />
+				</Row>
+				<Row className='mb-3 content col-sm-12'>
+					<NuyenSituationSwitches updateState={this.updateState} />
 				</Row>
 			</Container>
 		)

@@ -7201,7 +7201,8 @@ html h1 {
   font-size: 2rem; }
 
 html h2 {
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+  margin-bottom: 2%; }
 
 html h3 {
   font-size: 1.25rem;

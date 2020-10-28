@@ -1,0 +1,19 @@
+.ShadowrunRewardsCalculator {
+	.switches {
+		grid-template-columns: 1fr;
+
+		.custom-control-input:checked ~ .custom-control-label::before {
+			background-color: gold;
+			border-color: black;
+		}
+	
+		.custom-control-label::after {
+			border: 1.5px solid black;
+		}
+
+		.custom-control-label::before,
+		.custom-control-label::after {
+			transform: scale(1.2);
+		}
+	}
+}

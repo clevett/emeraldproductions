@@ -6,7 +6,6 @@ import findObject from '../helpers/findObject/findObject'
 import totalSwitchKarma from '../helpers/totalSwitchKarma/totalSwitchKarma'
 
 import data from '../data/karma_modifiers'
-import './KarmaSwitches.scss'
 
 class KarmaSwitches extends React.Component {
 	constructor(props) {

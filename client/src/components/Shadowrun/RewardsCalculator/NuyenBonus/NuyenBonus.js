@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 
 import PercentSlider from './PercentSlider/PercentSlider'
 
-class CashBonus extends React.Component {
+class NuyenBonus extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -23,9 +23,9 @@ class CashBonus extends React.Component {
 
 	render() {
 		return(
-			<Col className="CashBonus">
+			<Col className="NuyenBonus">
 				<Row className='justify-content-center'>
-					<h2>Cash Bonus</h2>
+					<h2>Nuyen Bonus</h2>
 				</Row>
 				<Row className='justify-content-center mb-3'>{this.state.message}</Row>
 				<PercentSlider runType={this.state.runType} sliderChange={this.sliderChange} />
@@ -34,4 +34,4 @@ class CashBonus extends React.Component {
 	}
 }
 
-export default CashBonus
+export default NuyenBonus
