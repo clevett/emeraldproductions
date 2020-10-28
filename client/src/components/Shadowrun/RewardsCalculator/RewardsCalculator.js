@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 import { Container, Row, Col, CardGroup } from 'react-bootstrap'
 
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
@@ -34,6 +35,10 @@ class RewardsCalculator extends React.Component {
 
 		this.updateState = this.updateState.bind(this)
 	}
+
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname)
+  }
 
 	updateState = async (key, value) => {
 		await this.setState({[`${key}`]: value})
