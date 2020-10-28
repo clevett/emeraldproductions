@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 
-import ModifierRun from '../../ModifierRun.js/ModifierRun'
+import PercentSlider from './PercentSlider/PercentSlider'
 
 class CashModifiers extends React.Component {
 	constructor(props) {
@@ -35,7 +35,7 @@ class CashModifiers extends React.Component {
 					<h2>Cash Modifiers</h2>
 				</Row>
 				<Row className='justify-content-center mb-3'>{this.state.message}</Row>
-				<ModifierRun runType={this.state.runType} sliderChange={this.sliderChange} percent={this.state.percent} />
+				<PercentSlider runType={this.state.runType} sliderChange={this.sliderChange} percent={this.state.percent} />
 			</Col>
 		)
 	}

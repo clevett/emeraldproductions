@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row } from 'react-bootstrap'
 
-class ModifierRun extends React.Component {
+class PercentSlider extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -12,8 +12,6 @@ class ModifierRun extends React.Component {
 			opacity: 0.2,
 		 	pointer: 'none'
 		}
-
-		console.log(this.state.percent)
 
 		this.sliderChange = this.props.sliderChange.bind(this)
 	}
@@ -51,4 +49,4 @@ class ModifierRun extends React.Component {
 	}
 }
 
-export default ModifierRun
+export default PercentSlider
