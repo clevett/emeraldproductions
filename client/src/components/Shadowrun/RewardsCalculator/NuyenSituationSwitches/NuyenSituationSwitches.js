@@ -20,9 +20,24 @@ class NuyenSituationSwitches extends React.Component {
 		this.updateState = this.props.updateState.bind(this)
 	}
 
+	updateParent = () => {
+		const values = Object.values(this.state)
+		let sum = 0
+		values.forEach(value => sum += value ? 1 : 0)
+		this.updateState('cashSituationModifier', parseInt(sum))
+	}
+
 	handleToggle = async (name, status) => {
-		console.log(name, status)
-		//this.updateState('karmaModifier', parseInt(this.state.karma))
+		let update = {[`${name}`] : status}
+
+		if (name.includes('outnumbered') && status === true) {
+			const oppositeKey = name === 'outnumbered3to1' ? 'outnumbered2to1' : 'outnumbered3to1'
+			update[`${oppositeKey}`] = false
+		}
+
+		await this.setState(update)
+
+		this.updateParent()
 	}
 
 	renderedList = options => options.map(option => <Switch key={option.name} description={option.description} name={option.name} handleToggle={this.handleToggle} />)
