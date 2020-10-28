@@ -7,16 +7,19 @@ import RunTypeSlider from './RunTypeSlider/RunTypeSlider'
 import HighestDicepool from './HighestDicepool/HighestDicepool'
 import KarmaSwitches from './KarmaSwitches/KarmaSwitches'
 import CashModifiers from './CashModifiers/CashModifiers'
+import { calculateNuyen } from './helpers/calculateNuyen/calculateNuyen'
 class RewardsCalculator extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			nuyen: 3000,
 			karma: 0,
-			karmaBase: 0,
+			karmaFromRun: 0,
 			karmaModifier: 0,
 			type: 'standard', //standard, cold-hearted, good feels
-			dicepool: 0
+			dicepool: 0,
+			cashModifierPercent: 0.1,
+			cashSituationModifier: 0
 		}
 
 		this.updateState = this.updateState.bind(this)
@@ -24,11 +27,18 @@ class RewardsCalculator extends React.Component {
 
 	updateState = async (key, value) => {
 		await this.setState({[`${key}`]: value})
+		let update = {}
 		console.log(this.state)
 
-		if (key === 'karmaBase' || key === 'karmaModifier') {
-			this.setState({karma: this.state.karmaBase + this.state.karmaModifier})
+		if (key === 'karmaFromRun' || key === 'karmaModifier' || key === 'dicepool') {
+			update.karma = this.state.karmaFromRun + this.state.karmaModifier + Math.floor(this.state.dicepool/6)
 		}
+
+		if (key === 'cashSituationModifier' || key === 'cashModifierPercent' || key === 'dicepool' || key === 'type') {
+			update.nuyen = calculateNuyen(this.state)
+		}
+
+		this.setState(update)
 	}
 
 	render() {
@@ -65,7 +75,7 @@ class RewardsCalculator extends React.Component {
 						<Row className='justify-content-center'>
 							<h2>Cash Modifiers</h2>
 						</Row>
-						<CashModifiers key={this.state.type} nuyen={this.state.nuyen} runType={this.state.type} updateState={this.updateState} />
+						<CashModifiers key={this.state.type} runType={this.state.type} updateState={this.updateState} percent={this.state.cashModifierPercent} />
 					</Col>
 					<Col>
 						<Row className='justify-content-center'>

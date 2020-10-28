@@ -26,7 +26,7 @@ class RunTypeSlider extends React.Component {
 		})
 
 		this.updateState('type', this.state.type)
-		this.updateState('karmaBase', this.state.karma)
+		this.updateState('karmaFromRun', this.state.karma)
   }
 
 	render() {

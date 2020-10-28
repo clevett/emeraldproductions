@@ -1,34 +1,38 @@
 import React from 'react'
+import { Row } from 'react-bootstrap'
 
-import StandardRun from './StandardRun'
-import ModifierRun from './ModifierRun'
+import ModifierRun from '../../ModifierRun.js/ModifierRun'
 
 class CashModifiers extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			nuyen: this.props.nuyen,
 			runType: this.props.runType,
-			modifier: 0,
-			percent: 0
+			percent: this.props.percent,
+			message: null
 		}
 		
 		this.updateState = this.props.updateState.bind(this)
 	}
 
-	sliderChange = async percent => {
-		await this.setState({
-			percent: parseInt(percent),
-			modifier: Math.ceil(this.state.nuyen * percent)
-		})
+	componentDidMount = () => {
+		if (this.state.runType !== 'standard') {
+			this.setState({message: `Run type set to ${this.state.runType}`})
+		} else {
+			this.setState({message: 'Standard runs do not have a modifier.'})
+		}
+	}
 
-		this.updateState('cashModifier', this.state.modifier)
+	sliderChange = async percent => {
+		await this.setState({	percent: parseFloat(percent) })
+		this.updateState('cashModifierPercent', this.state.percent)
   }
 
 	render() {
 		return(
 			<div className="CashModifiers">
-				{this.state.runType === 'standard' ? <StandardRun /> : <ModifierRun runType={this.state.runType} sliderChange={this.sliderChange} />}
+				<Row className='justify-content-center mb-3'>{this.state.message}</Row>
+				<ModifierRun runType={this.state.runType} sliderChange={this.sliderChange} percent={this.state.percent} />
 			</div>
 		)
 	}
