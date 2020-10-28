@@ -35,8 +35,6 @@ class RewardsCalculator extends React.Component {
 	updateState = async (key, value) => {
 		await this.setState({[`${key}`]: value})
 		let update = {}
-		console.log(this.state)
-
 		if (key === 'karmaFromRun' || key === 'karmaModifier' || key === 'dicepool') {
 			update.karma = calculateKarma(this.state.karmaFromRun, this.state.karmaModifier, this.state.dicepool)
 		}
