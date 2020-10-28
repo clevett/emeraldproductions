@@ -8,6 +8,7 @@ import HighestDicepool from './HighestDicepool/HighestDicepool'
 import KarmaSwitches from './KarmaSwitches/KarmaSwitches'
 import CashModifiers from './CashModifiers/CashModifiers'
 import { calculateNuyen } from './helpers/calculateNuyen/calculateNuyen'
+import PercentContext from './contexts/PercentContext'
 class RewardsCalculator extends React.Component {
 	constructor(props) {
 		super(props)
@@ -61,7 +62,9 @@ class RewardsCalculator extends React.Component {
 							<h2>Cash Situation Modifiers</h2>
 						</Row>
 					</Col>
-					<CashModifiers key={this.state.type} runType={this.state.type} updateState={this.updateState} percent={this.state.cashModifierPercent} />
+					<PercentContext.Provider value={this.state.cashModifierPercent * 100}>
+						<CashModifiers key={this.state.type} runType={this.state.type} updateState={this.updateState} />
+					</PercentContext.Provider>
 					<KarmaSwitches updateState={this.updateState} />
 				</Row>
 			</Container>

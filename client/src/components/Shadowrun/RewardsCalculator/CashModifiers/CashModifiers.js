@@ -8,7 +8,6 @@ class CashModifiers extends React.Component {
 		super(props)
 		this.state = {
 			runType: this.props.runType,
-			percent: this.props.percent,
 			message: null
 		}
 		
@@ -23,10 +22,7 @@ class CashModifiers extends React.Component {
 		}
 	}
 
-	sliderChange = async percent => {
-		await this.setState({	percent: parseFloat(percent) })
-		this.updateState('cashModifierPercent', this.state.percent)
-  }
+	sliderChange = async percent => this.updateState('cashModifierPercent', percent)
 
 	render() {
 		return(
@@ -35,7 +31,7 @@ class CashModifiers extends React.Component {
 					<h2>Cash Modifiers</h2>
 				</Row>
 				<Row className='justify-content-center mb-3'>{this.state.message}</Row>
-				<PercentSlider runType={this.state.runType} sliderChange={this.sliderChange} percent={this.state.percent} />
+				<PercentSlider runType={this.state.runType} sliderChange={this.sliderChange} />
 			</Col>
 		)
 	}

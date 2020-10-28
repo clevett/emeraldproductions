@@ -1,12 +1,15 @@
 import React from 'react'
 import { Row } from 'react-bootstrap'
 
+import PercentContext from '../../contexts/PercentContext'
+
 class PercentSlider extends React.Component {
+	static contextType = PercentContext
+
 	constructor(props) {
 		super(props)
 		this.state = {
 			runType: this.props.runType,
-			percent: this.props.percent * 100 || 10,
 			symbol: undefined,
 			header: undefined,
 			opacity: 0.2,
@@ -39,7 +42,7 @@ class PercentSlider extends React.Component {
 				</Row>
 				<Row className='slider justify-content-center'>
 					<label className='sr-only' htmlFor="percentageSlider">{this.state.header} modifier to cash rewards</label>
-					<input type="range" className="custom-range" min="10" max="20" id="percentageSlider" defaultValue={this.state.percent} onChange={this.handleChange} />
+					<input type="range" className="custom-range" min="10" max="20" id="percentageSlider" defaultValue={this.context} onChange={this.handleChange} />
 					<span>{this.state.symbol}10%</span>
 					<span></span>
 					<span>{this.state.symbol}20%</span>
