@@ -52,19 +52,19 @@ class RewardsCalculator extends React.Component {
 		return (
 			<Container className="ShadowrunRewardsCalculator content text-white">
 				<ShadowrunHeader headerText="Rewards Calculator" />
-				<Row className='mb-3 content'>
-					<CardGroup className='mb-3 w-100'>
+				<Row className='content'>
+					<CardGroup className='w-100'>
 						<DisplayCard title='Nuyen Rewards' result={{description: `${this.state.nuyen}¥`}} />
 						<DisplayCard title='Karma Rewards' result={{description: this.state.karma}} />
 					</CardGroup>
 				</Row>
-				<Row className='mb-5 content col-12'>
+				<Row className='content col-12'>
 					<RunTypeSlider updateState={this.updateState} />
 					<HighestDicepool updateState={this.updateState} />
 				</Row>
-				<Row className='mb-3 content'>
+				<Row className='content'>
 					<NuyenSituationSwitches updateState={this.updateState} />
-					<Col className='col-12 col-md-5'>
+					<Col className='col-12 col-md-4'>
 						<PercentContext.Provider value={this.state.cashModifierPercent * 100}>
 							<NuyenBonus key={this.state.type} runType={this.state.type} updateState={this.updateState} />
 						</PercentContext.Provider>

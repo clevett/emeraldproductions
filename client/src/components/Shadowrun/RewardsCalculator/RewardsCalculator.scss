@@ -1,6 +1,10 @@
 @import "../../../scss/abstracts/mixins";
 
 .ShadowrunRewardsCalculator {
+	.content:nth-of-type(1n+2) {
+		margin-bottom: 5%;
+	}
+
 	.switches {
 		grid-template-columns: 1fr;
 
