@@ -4,8 +4,8 @@ import determineNuyenPercentBonus from '../determineNuyenPercentBonus/determineN
 
 const calculateNuyen = state => {
 	const multiplier = calculateNuyenMultiplier(state.dicepool, state.cashSituationModifier)
-	const percent = determineNuyenPercentBonus(state.type, state.cashModifierPercent)
 	const subtotal = multiplyBy3000(multiplier)
+	const percent = determineNuyenPercentBonus(state.type, state.cashModifierPercent)
 	return subtotal + (percent * subtotal)
 }
 
