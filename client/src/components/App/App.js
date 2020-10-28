@@ -13,6 +13,8 @@ import ShadowoftheDemonLordEncounterBuilder from '../ShadowoftheDemonLord/Encoun
 import ShadowoftheDemonLordTravelTool from '../ShadowoftheDemonLord/TravelTool/TravelTool'
 
 import ShadowrunMissionCreation from '../Shadowrun/MissionCreation/MissionCreation'
+import ShadowrunRewardsCalculator from '../Shadowrun/RewardsCalculator/RewardsCalculator'
+
 import Footer from '../Footer/Footer'
 
 import ReactGA from 'react-ga';
@@ -33,6 +35,7 @@ class App extends React.Component {
             <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
             <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
             <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
+            <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
             <Route path="/contact" component={ContactPage} />
           </Row>
           <Row>

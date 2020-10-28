@@ -15,6 +15,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.0",
+    "react-ga": "^3.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "react-test-renderer": "^16.13.1",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "react:start": "react-scripts start",
-    "start": "npm-run-all --parallel react:start sass:watch node:server",
+    "start": "npm-run-all --parallel react:start sass:watch",
     "build": "npm-run-all --parallel react:build sass:compile",
     "react:build": "react-scripts build",
     "react:test": "react-scripts test",
@@ -49,6 +50,16 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.10.2"
+    "@babel/plugin-transform-react-jsx": "^7.12.1",
+    "@babel/preset-env": "^7.10.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest-cli": "^26.6.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
+      "\\.(css|less|scss)$": "<rootDir>/mocks/fileMock.js"
+    }
   }
 }
