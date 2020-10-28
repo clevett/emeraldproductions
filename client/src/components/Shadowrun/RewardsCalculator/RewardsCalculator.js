@@ -6,8 +6,11 @@ import DisplayCard from '../DisplayCard/DisplayCard'
 import RunTypeSlider from './RunTypeSlider/RunTypeSlider'
 import HighestDicepool from './HighestDicepool/HighestDicepool'
 import KarmaSwitches from './KarmaSwitches/KarmaSwitches'
-import CashModifiers from './CashModifiers/CashModifiers'
-import { calculateNuyen } from './helpers/calculateNuyen/calculateNuyen'
+import CashBonus from './CashBonus/CashBonus'
+
+import calculateNuyen from './helpers/calculateNuyen/calculateNuyen'
+import calculateKarma from './helpers/calculateKarma/calculateKarma'
+
 import PercentContext from './contexts/PercentContext'
 class RewardsCalculator extends React.Component {
 	constructor(props) {
@@ -32,7 +35,7 @@ class RewardsCalculator extends React.Component {
 		console.log(this.state)
 
 		if (key === 'karmaFromRun' || key === 'karmaModifier' || key === 'dicepool') {
-			update.karma = this.state.karmaFromRun + this.state.karmaModifier + Math.floor(this.state.dicepool/6)
+			update.karma = calculateKarma(this.state.karmaFromRun, this.state.karmaModifier, this.state.dicepool)
 		}
 
 		if (key === 'cashSituationModifier' || key === 'cashModifierPercent' || key === 'dicepool' || key === 'type') {
@@ -63,7 +66,7 @@ class RewardsCalculator extends React.Component {
 						</Row>
 					</Col>
 					<PercentContext.Provider value={this.state.cashModifierPercent * 100}>
-						<CashModifiers key={this.state.type} runType={this.state.type} updateState={this.updateState} />
+						<CashBonus key={this.state.type} runType={this.state.type} updateState={this.updateState} />
 					</PercentContext.Provider>
 					<KarmaSwitches updateState={this.updateState} />
 				</Row>

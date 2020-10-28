@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 
 import PercentSlider from './PercentSlider/PercentSlider'
 
-class CashModifiers extends React.Component {
+class CashBonus extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -15,20 +15,17 @@ class CashModifiers extends React.Component {
 	}
 
 	componentDidMount = () => {
-		if (this.state.runType !== 'standard') {
-			this.setState({message: `Run type set to ${this.state.runType}`})
-		} else {
-			this.setState({message: 'Standard runs do not have a modifier.'})
-		}
+		const message = this.state.runType !== 'standard' ? `Run type set to ${this.state.runType}.` : 'Standard runs do not have a bonus.'
+		this.setState({message})
 	}
 
 	sliderChange = async percent => this.updateState('cashModifierPercent', percent)
 
 	render() {
 		return(
-			<Col className="CashModifiers">
+			<Col className="CashBonus">
 				<Row className='justify-content-center'>
-					<h2>Cash Modifiers</h2>
+					<h2>Cash Bonus</h2>
 				</Row>
 				<Row className='justify-content-center mb-3'>{this.state.message}</Row>
 				<PercentSlider runType={this.state.runType} sliderChange={this.sliderChange} />
@@ -37,4 +34,4 @@ class CashModifiers extends React.Component {
 	}
 }
 
-export default CashModifiers
+export default CashBonus
