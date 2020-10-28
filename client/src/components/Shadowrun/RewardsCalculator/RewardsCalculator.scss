@@ -1,0 +1,36 @@
+@import "../../../scss/abstracts/mixins";
+
+.ShadowrunRewardsCalculator {
+	.content:nth-of-type(1n+2) {
+		margin-top: 5%;
+	}
+
+	.switches {
+		grid-template-columns: 1fr;
+
+		.custom-control-input:checked ~ .custom-control-label::before {
+			background-color: gold;
+			border-color: black;
+		}
+	
+		.custom-control-label::after {
+			border: 2px solid black;
+		}
+
+		.custom-control-label::before,
+		.custom-control-label::after {
+			transform: scale(1.2);
+		}
+	}
+
+	@include respond(tab-port) {
+		.NuyenSituationSwitches {
+			margin-bottom: 25%;
+			padding: 0px 10%;
+		}
+
+		img {
+			display: none;
+		}
+	}
+}

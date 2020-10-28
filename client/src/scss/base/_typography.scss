@@ -19,10 +19,20 @@ html {
   
   h2 {
     font-size: 1.75rem;
+    margin-bottom: 2%;
   }
   
   h3 {
+    font-size: 1.25rem;
+    font-weight: bolder;
+  }
+
+  h4 {
     font-size: 1rem;
     font-weight: bolder;
   }
+
+  input::placeholder {
+		color: rgba(0, 0, 0, 0.4);
+	}
 }

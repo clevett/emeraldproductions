@@ -1,3 +1,15 @@
+.switches {
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 5%;
+	grid-row-gap: 3%;
+	align-content: center;
+}
+
+.custom-control-input {
+	width: 100%;
+}
+
 .react-switch-checkbox {
   height: 0;
   width: 0;
