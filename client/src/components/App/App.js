@@ -18,8 +18,8 @@ import ShadowrunRewardsCalculator from '../Shadowrun/RewardsCalculator/RewardsCa
 import Footer from '../Footer/Footer'
 
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-GRL46FC38X');
-ReactGA.pageview(window.location.pathname + window.location.search);
+ReactGA.initialize('G-883TDHMZZM');
+ReactGA.pageview(window.location.pathname);
 
 class App extends React.Component {
   render() {
