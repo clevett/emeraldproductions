@@ -30,7 +30,7 @@
     "react:test": "react-scripts test",
     "react:eject": "react-scripts eject",
     "sass:watch": "node-sass src/scss/index.scss src/index.css -w",
-    "sass:compile": "node-sass src/scss/index.scss src/index.css --output-style compressed",
+    "sass:compile": "node-sass src/scss/index.scss src/index.css --style compressed",
     "node:server": "cd .. && node server.js",
     "test": "jest --watch"
   },
