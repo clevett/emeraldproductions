@@ -17,6 +17,7 @@
     "react-dom": "^16.13.0",
     "react-ga": "^3.2.0",
     "react-router-dom": "^5.2.0",
+    "react-router-ga": "^1.2.3",
     "react-scripts": "^3.4.3",
     "react-test-renderer": "^16.13.1",
     "reactstrap": "^8.4.1",
