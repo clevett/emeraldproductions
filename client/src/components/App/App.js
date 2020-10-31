@@ -7,24 +7,21 @@ import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
 import About from '../About/About'
 import ContactPage from '../ContactPage/ContactPage'
 import Roll20CharSheets from '../Roll20/Roll20CharSheets/Roll20CharSheets'
+import Footer from '../Footer/Footer'
 
 //SODL
 import ShadowoftheDemonLordEncounterBuilder from '../ShadowoftheDemonLord/EncounterBuilder/EncounterBuilder'
 import ShadowoftheDemonLordTravelTool from '../ShadowoftheDemonLord/TravelTool/TravelTool'
-
+//Shadowrun
 import ShadowrunMissionCreation from '../Shadowrun/MissionCreation/MissionCreation'
 import ShadowrunRewardsCalculator from '../Shadowrun/RewardsCalculator/RewardsCalculator'
 
-import Footer from '../Footer/Footer'
-
+import Analytics from 'react-router-ga'
 import ReactGA from 'react-ga'
 ReactGA.initialize(process.env.GA_Key)
+ReactGA.pageview(window.location.pathname + window.location.search)
 
 class App extends React.Component {
-  componentDidMount() {
-    ReactGA.pageview(window.location.pathname)
-  }
-
   render() {
     return (
       <Router>
@@ -33,13 +30,15 @@ class App extends React.Component {
             <NavigationBar />
           </Row>
           <Row className='Center bg-primary'>
-            <Route path="/" exact component={About} />
-            <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
-            <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
-            <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
-            <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
-            <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
-            <Route path="/contact" component={ContactPage} />
+            <Analytics id={process.env.GA_Key}>
+              <Route path="/" exact component={About} />
+              <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
+              <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
+              <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
+              <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
+              <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
+              <Route path="/contact" component={ContactPage} />
+            </Analytics>
           </Row>
           <Row>
             <Footer />

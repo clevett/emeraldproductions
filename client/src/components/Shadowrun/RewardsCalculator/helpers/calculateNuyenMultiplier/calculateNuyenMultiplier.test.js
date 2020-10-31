@@ -12,6 +12,6 @@ describe('Given calculateNuyenMultiplier is called', () => {
 
 	describe('when passed a 0', () => {	
 		const result = calculateNuyenMultiplier(0, 0)
-		it('then returns a minimum of 1', () => expect(result).toEqual(1))
+		it('then returns a minimum of 1', () => expect(result).toEqual(0))
 	})
 })
