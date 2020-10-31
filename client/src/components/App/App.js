@@ -19,12 +19,9 @@ import Footer from '../Footer/Footer'
 
 import ReactGA from 'react-ga'
 ReactGA.initialize(process.env.GA_Key)
+ReactGA.pageview(window.location.pathname + window.location.search)
 
 class App extends React.Component {
-  componentDidMount() {
-    ReactGA.pageview(window.location.pathname)
-  }
-
   render() {
     return (
       <Router>
