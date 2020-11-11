@@ -18,35 +18,33 @@ import ShadowrunRewardsCalculator from '../Shadowrun/RewardsCalculator/RewardsCa
 
 import Analytics from 'react-router-ga'
 import ReactGA from 'react-ga'
-ReactGA.initialize(process.env.GA_Key)
-ReactGA.pageview(window.location.pathname + window.location.search)
+ReactGA.initialize(process.env.GA)
+ReactGA.pageview(window.location.pathname + window.location.search) 
 
-class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Row>
-            <NavigationBar />
-          </Row>
-          <Row className='Center bg-primary'>
-            <Analytics id={process.env.GA_Key}>
-              <Route path="/" exact component={About} />
-              <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
-              <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
-              <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
-              <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
-              <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
-              <Route path="/contact" component={ContactPage} />
-            </Analytics>
-          </Row>
-          <Row>
-            <Footer />
-          </Row>
-        </div>
-      </Router>
-    );
-  }
+const App = () => {
+  return (
+    <Router>
+      <div className="App">
+        <Row>
+          <NavigationBar />
+        </Row>
+        <Row className='Center bg-primary'>
+          <Analytics id={process.env.GA}>
+            <Route path="/" exact component={About} />
+            <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
+            <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
+            <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
+            <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
+            <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
+            <Route path="/contact" component={ContactPage} />
+          </Analytics>
+        </Row>
+        <Row>
+          <Footer />
+        </Row>
+      </div>
+    </Router>
+  );
 }
 
 export default App

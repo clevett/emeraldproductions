@@ -25,16 +25,14 @@ const contacts = [
 		}
 	]
 
-class ContactBar extends React.Component {
-  render() {
-		return (
-		<Row className="ContactBar contact-bar text-white font-weight-bold p-4">
-			{
-				contacts.map(contact => <Contact key={contact.name} contact={contact} />)
-			}
-		</Row>
-		)
-  }
+const ContactBar = () => {
+	return (
+	<Row className="ContactBar contact-bar text-white font-weight-bold p-4">
+		{
+			contacts.map(contact => <Contact key={contact.name} contact={contact} />)
+		}
+	</Row>
+	)
 }
 
 export default ContactBar
