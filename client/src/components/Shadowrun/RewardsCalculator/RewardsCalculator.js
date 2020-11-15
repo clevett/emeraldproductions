@@ -20,10 +20,6 @@ import calculateKarma from './helpers/calculateKarma/calculateKarma'
 
 import PercentContext from './contexts/PercentContext'
 
-//Save the info for refresh
-import { read_cookie, bake_cookie } from 'sfcookies'
-const KARMA_COOKIE = 'KARMA_COOKIE'
-
 class RewardsCalculator extends React.Component {
 	constructor(props) {
 		super(props)
@@ -44,11 +40,6 @@ class RewardsCalculator extends React.Component {
 	}
 
   componentDidMount() {
-		const karma = parseInt(read_cookie(KARMA_COOKIE)) || 0
-		if(karma) {
-			this.setState({karma})
-		}
-
     ReactGA.pageview(window.location.pathname)
   }
 
@@ -59,9 +50,6 @@ class RewardsCalculator extends React.Component {
 		const karmaKeys = ['karmaFromRun', 'karmaModifier', 'dicepool']
 		if (karmaKeys.includes(key)) {
 			const karmaTotal = calculateKarma(this.state.karmaFromRun, this.state.karmaModifier, this.state.dicepool)
-			
-			bake_cookie(KARMA_COOKIE, karmaTotal)
-
 			update.karma = karmaTotal
 		}
 
