@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactGA from 'react-ga'
+
 import { Container, Row, Col, CardGroup } from 'react-bootstrap'
+import './RewardsCalculator.scss'
 
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'
@@ -16,7 +18,10 @@ import calculateKarma from './helpers/calculateKarma/calculateKarma'
 
 import PercentContext from './contexts/PercentContext'
 
-import './RewardsCalculator.scss'
+//Save the info for restart
+import { read_cookie, bake_cookie } from 'sfcookies'
+const KARMA_COOKIE = 'KARMA_COOKIE'
+
 class RewardsCalculator extends React.Component {
 	constructor(props) {
 		super(props)
@@ -37,6 +42,11 @@ class RewardsCalculator extends React.Component {
 	}
 
   componentDidMount() {
+		const karma = parseInt(read_cookie(KARMA_COOKIE)) || 0
+		if(karma) {
+			this.setState({karma})
+		}
+
     ReactGA.pageview(window.location.pathname)
   }
 
@@ -46,7 +56,11 @@ class RewardsCalculator extends React.Component {
 
 		const karmaKeys = ['karmaFromRun', 'karmaModifier', 'dicepool']
 		if (karmaKeys.includes(key)) {
-			update.karma = calculateKarma(this.state.karmaFromRun, this.state.karmaModifier, this.state.dicepool)
+			const karmaTotal = calculateKarma(this.state.karmaFromRun, this.state.karmaModifier, this.state.dicepool)
+			
+			bake_cookie(KARMA_COOKIE, karmaTotal)
+
+			update.karma = karmaTotal
 		}
 
 		const nuyenKeys = ['nuyenSituationModifier', 'nuyenModifierPercent', 'dicepool', 'type', 'nuyenBaseRate']
