@@ -29,15 +29,17 @@ const App = () => {
           <NavigationBar />
         </Row>
         <Row className='Center bg-primary'>
-          <Analytics id={process.env.GA}>
-            <Route path="/" exact component={About} />
-            <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
-            <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
-            <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
-            <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
-            <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
-            <Route path="/contact" component={ContactPage} />
-          </Analytics>
+          <div className='bg-overlay'>
+            <Analytics id={process.env.GA}>
+              <Route path="/" exact component={About} />
+              <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
+              <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
+              <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
+              <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
+              <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
+              <Route path="/contact" component={ContactPage} />
+            </Analytics>
+          </div>
         </Row>
         <Row>
           <Footer />
