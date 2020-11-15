@@ -1,11 +1,13 @@
+// @version 1.1
+
 import React from 'react'
 import ReactGA from 'react-ga'
 
-import { Container, Row, Col, CardGroup } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import './RewardsCalculator.scss'
 
 import ShadowrunHeader from '../ShadowrunHeader/ShadowrunHeader'
-import DisplayCard from '../DisplayCard/DisplayCard'
+import ResultsDisplays from './ResultsDisplays/ResultsDisplays'
 import RunTypeSlider from './RunTypeSlider/RunTypeSlider'
 import HighestDicepool from './HighestDicepool/HighestDicepool'
 import KarmaSwitches from './KarmaSwitches/KarmaSwitches'
@@ -18,7 +20,7 @@ import calculateKarma from './helpers/calculateKarma/calculateKarma'
 
 import PercentContext from './contexts/PercentContext'
 
-//Save the info for restart
+//Save the info for refresh
 import { read_cookie, bake_cookie } from 'sfcookies'
 const KARMA_COOKIE = 'KARMA_COOKIE'
 
@@ -75,12 +77,7 @@ class RewardsCalculator extends React.Component {
 		return (
 			<Container className="ShadowrunRewardsCalculator content text-white">
 				<ShadowrunHeader headerText="Rewards Calculator" />
-				<Row className='content'>
-					<CardGroup className='w-100'>
-						<DisplayCard title='Nuyen Rewards' result={{description: `${this.state.nuyen}¥`}} />
-						<DisplayCard title='Karma Rewards' result={{description: this.state.karma}} />
-					</CardGroup>
-				</Row>
+				<ResultsDisplays nuyen={this.state.nuyen} karma={this.state.karma} />
 				<Row className='content col-12'>
 					<RunTypeSlider updateState={this.updateState} />
 					<HighestDicepool updateState={this.updateState} />
