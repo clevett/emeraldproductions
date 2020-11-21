@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
 import convertRunType from '../helpers/convertRunType/convertRunType'
@@ -7,45 +7,42 @@ import findObject from '../helpers/findObject/findObject'
 
 import './RunTypeSlider.scss'
 
-class RunTypeSlider extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state =  { type: 'standard', karma: 0}
+const RunTypeSlider = ({ updateState }) => {
+	const [description, setDescription] = useState("")
 
-		this.updateState = this.props.updateState.bind(this)
-	}
+	const sliderChange = event => {
+		const runTypeBasedOnSliderValue = convertRunType(parseInt(event.target.value))
+		const object = findObject(runTypeBasedOnSliderValue, data)
 
-	sliderChange = async event => {
-		const type = convertRunType(parseInt(event.target.value))
-		const object = findObject(type, data)
+		setDescription(object.description)
 
-		await this.setState({
-			message: object.description,
-			karma: object.karma,
-			type,
-		})
-
-		this.updateState('type', this.state.type)
-		this.updateState('karmaFromRun', this.state.karma)
+		updateState('type', runTypeBasedOnSliderValue)
+		updateState('karmaFromRun', object.karma)
   }
 
-	render() {
-		return (
-			<Col className='col-12 col-md-6'>
-				<Row className='justify-content-center'>
-					<h2>Run Type</h2>
-				</Row>
-				<Row className='slider justify-content-center'>
-					<label className='sr-only' htmlFor="runType">Choose run type</label>
-					<input type="range" className="custom-range" min="0" max="2" id="runType" defaultValue='1' onChange={this.sliderChange} />
-					<span>Good feels</span>
-					<span>Standard</span>
-					<span>Cold-hearted</span>
-					<small>{this.state.message}</small>
-				</Row>
-			</Col>
-		)
-	}
+	return (
+		<Col className='col-12 col-md-6'>
+			<Row className='justify-content-center'>
+				<h2>Run Type</h2>
+			</Row>
+			<Row className='slider justify-content-center'>
+				<label className='sr-only' htmlFor="runType">Choose run type</label>
+				<input 
+					type="range" 
+					className="custom-range" 
+					min="0" 
+					max="2" 
+					id="runType" 
+					defaultValue='1' 
+					onChange={sliderChange} 
+				/>
+				<span>Good feels</span>
+				<span>Standard</span>
+				<span>Cold-hearted</span>
+				<small>{description}</small>
+			</Row>
+		</Col>
+	)
 }
 
 export default RunTypeSlider
