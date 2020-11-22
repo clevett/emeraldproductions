@@ -1,55 +1,33 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Row } from 'react-bootstrap'
 
 import PercentContext from '../../contexts/PercentContext'
 
-class PercentSlider extends React.Component {
-	static contextType = PercentContext
+const PercentSlider = ({ sliderChange, runType }) => {
+	const percent = useContext(PercentContext)
 
-	constructor(props) {
-		super(props)
-		this.state = {
-			runType: this.props.runType,
-			symbol: undefined,
-			header: undefined,
-			opacity: 0.2,
-		 	pointer: 'none'
-		}
+	const symbol = runType === 'good feels' ? '-' : '+'
+	const header = runType === 'good feels' ? 'Subtract' : 'Add'
 
-		this.sliderChange = this.props.sliderChange.bind(this)
-	}
+	const opacity = runType === 'standard' ? 0.2 : 1
+	const pointer = runType === 'standard' ? 'none' : 'unset'
 
-	componentDidMount() {
-		let update = {}
-		const goodRun = this.state.runType === 'good feels'
-		update.symbol = goodRun ? '-' : '+'
-		update.header = goodRun ? 'Subtract' : 'Add'
+	const handleChange = event => sliderChange(parseFloat(`0.${event.target.value}`))
 
-		const standardRun = this.state.runType === 'standard'
-		update.opacity = !standardRun ? 1 : 0.2
-		update.pointer = !standardRun ? 'unset' : 'none'
-
-		this.setState(update)
-  }
-
-	handleChange = async event => this.sliderChange(parseFloat(`0.${event.target.value}`))
-
-	render() {
-		return(
-			<div className='ModifierRun' style={{ pointerEvents: this.state.pointer, opacity: this.state.opacity }}>
-				<Row className='justify-content-center'>
-					<h3>{this.state.header} a Percentage</h3>
-				</Row>
-				<Row className='slider justify-content-center'>
-					<label className='sr-only' htmlFor="percentageSlider">{this.state.header} modifier to cash rewards</label>
-					<input type="range" className="custom-range" min="10" max="20" id="percentageSlider" defaultValue={this.context} onChange={this.handleChange} />
-					<span>{this.state.symbol}10%</span>
-					<span></span>
-					<span>{this.state.symbol}20%</span>
-				</Row>
-			</div>
-		)
-	}
+	return(
+		<div className='ModifierRun' style={{ pointerEvents: pointer, opacity: opacity }}>
+			<Row className='justify-content-center'>
+				<h3>{header} a Percentage</h3>
+			</Row>
+			<Row className='slider justify-content-center'>
+				<label className='sr-only' htmlFor="percentageSlider">{header} modifier to cash rewards</label>
+				<input type="range" className="custom-range" min="10" max="20" id="percentageSlider" defaultValue={percent} onChange={handleChange} />
+				<span>{symbol}10%</span>
+				<span></span>
+				<span>{symbol}20%</span>
+			</Row>
+		</div>
+	)
 }
 
 export default PercentSlider
