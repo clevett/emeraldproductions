@@ -11,10 +11,14 @@ describe('Given KarmaSwitches is called', () => {
 
 	describe('when component initially renders', () => {
 		it('then renders corrrectly', () => expect(component).toMatchSnapshot() )
+	})
 
-		const initialState = component.state()
-		it('then initializes the state with survived', () => expect(initialState.survived).toEqual(true))
-		it('then initializes the state with objectives', () => expect(initialState.objectives).toEqual(0))
-		it('then initializes the state with karma', () => expect(initialState.karma).toEqual(0))
+	describe('when group completed objectives is changed', () => {
+		const event = {target: {value: 2}}
+		component.find('#completedObjectives').simulate('change', event)
+		
+		it('then calls the sliderChange onChange', () => {
+			expect(updateState).toBeCalledWith('karmaModifier', 2)
+		})
 	})
 })

@@ -1,7 +1,6 @@
-const totalSwitchKarma = object => {
-	let karma = object.startingKarma
-	object.status ? karma += object.karma : karma -= object.karma 
-	return karma
+const totalSwitchKarma = ({ startingKarma, status, karmaToAdd }) => {
+	const karmaTotal = status ? startingKarma + karmaToAdd : startingKarma - karmaToAdd
+	return karmaTotal
 }
 
 export default totalSwitchKarma
