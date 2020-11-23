@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
-import PercentSlider from './PercentSlider/PercentSlider'
+import PercentSlider from '../PercentSlider/PercentSlider'
 
 const NuyenBonus = ({ updateState, runType }) => {
 	const [type] = useState(runType)
-	const string = type !== 'standard' ? `Run type set to ${type}.` : 'Standard runs do not have a bonus.'
+	const string = 
+		type && type !== 'standard' ? `Run type set to ${type}.` : 
+		type && type === 'standard' ? 'Standard runs do not have a bonus.' :
+		'Run type is not set correcty'
 	const [message] = useState(string)
 
-	const sliderChange = async percent => updateState('nuyenModifierPercent', percent)
+	const sliderChange = percent => updateState('nuyenModifierPercent', percent)
 
 	return (
 		<Col className="NuyenBonus mb-3 col-12">

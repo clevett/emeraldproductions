@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Row } from 'react-bootstrap'
 
-import PercentContext from '../../contexts/PercentContext'
+import PercentContext from '../contexts/PercentContext'
 
 const PercentSlider = ({ sliderChange, runType }) => {
 	const percent = useContext(PercentContext)
