@@ -12,7 +12,7 @@ const contacts = [
 		{	name: 'GitHub', 
 			src:github, 
 			href:'https://github.com/clevett',
-			alt: 'outline of an octapus cat hybrid'
+			alt: 'silhouette of an octapus cat hybrid'
 		}, 
 		{	name: 'Necoya #7621', 
 			src:discord,
@@ -21,7 +21,7 @@ const contacts = [
 		{	name: 'LinkedIN', 
 			src: linkedIn, 
 			href:'https://www.linkedin.com/in/cassie-levett-65029818/',
-			alt: 'letters in inside a box'
+			alt: 'letters "i" "n" inside a box'
 		}
 	]
 
