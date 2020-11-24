@@ -41,9 +41,7 @@ const App = () => {
             </Analytics>
           </div>
         </Row>
-        <Row>
-          <Footer />
-        </Row>
+        <Footer />
       </div>
     </Router>
   );
