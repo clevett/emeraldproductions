@@ -3,7 +3,7 @@ import totalSwitchKarma from './totalSwitchKarma'
 describe('Given totalSwitchKarma is called', () => {
 	const mockObject = {
 		startingKarma: 2,
-		karma: 2
+		karmaToAdd: 2
 	}
 
 	describe('when given an object with a false status', () => {

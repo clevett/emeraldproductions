@@ -16,10 +16,6 @@ describe('Given RewardsCalculator is called', () => {
 		it('then initializes the state with an a default of 2 karma', () => expect(initialState.karma).toEqual(0))
 		it('then initializes the state with has default run type', () => expect(initialState.type).toEqual('standard'))
 
-		it('then creates a Display Card component', () => {
-			expect(component.find('DisplayCard').exists()).toEqual(true)
-		})
-
 		it('then creates a Run Type Slider component', () => {
 			expect(component.find('RunTypeSlider').exists()).toEqual(true)
 		})
