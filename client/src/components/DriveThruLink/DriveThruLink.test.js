@@ -12,6 +12,10 @@ describe('Given DriveThruLink is called', () => {
     const element = component.find('a')
 
     expect(element).toBeTruthy()
-    expect(element.props().href).toEqual('')
+
+    const expectedString = "https://www.drivethrurpg.com/product/1/?affiliate_id=879798"
+    expect(element.props().href).toEqual(expectedString)
+
+    expect(element.text()).toEqual('Shadowrun')
   })
 })
