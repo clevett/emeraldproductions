@@ -13,7 +13,7 @@ import Footer from '../Footer/Footer'
 
 //Helper function
 import { addBeast, removeBeast } from './helpers/updateSelected/updateSelected'
-import fuzzySearch from '../../SearchBar/fuzzySearch'
+import fuzzySearch from '../../SearchBar/fuzzySearch/fuzzySearch'
 
 //Images & Styling
 import './EncounterBuilder.scss'
