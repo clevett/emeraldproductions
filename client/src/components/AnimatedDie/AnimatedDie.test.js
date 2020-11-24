@@ -16,9 +16,9 @@ describe('Given AnimatedDie is called', () => {
     it('then renders correctly', () => expect(component).toMatchSnapshot())
 
     it('then renders a default for alt text', () => {
-      const element = component.find('img')
+      const element = component.find('img').props().alt
       const expectedString = `Roll a d6.`
-      expect(element.html()).toContain(expectedString)
+      expect(element).toContain(expectedString)
     })
 
     it('then renders an empty string for the result span', () => {
@@ -41,9 +41,9 @@ describe('Given AnimatedDie is called', () => {
     const dieSizeComponent = shallow(<AnimatedDie dieSize='d20' />)
 
     it('then renders the alt text with that size', () => {
-      const element = dieSizeComponent.find('img')
+      const element = dieSizeComponent.find('img').props().alt
       const expectedString = `Roll a d20.`
-      expect(element.html()).toContain(expectedString)
+      expect(element).toContain(expectedString)
     })
   })
 
@@ -59,8 +59,8 @@ describe('Given AnimatedDie is called', () => {
     })
 
     it('then updates the alt text', () => {
-      const element = component.find('img')
-      expect(element.html()).toContain(spanElementText)
+      const element = component.find('img').props().alt
+      expect(element).toContain(spanElementText)
     })
   })
 })
