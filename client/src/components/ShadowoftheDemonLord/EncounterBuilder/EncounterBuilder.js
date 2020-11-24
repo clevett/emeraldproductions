@@ -99,7 +99,7 @@ class EncounterBuilder extends React.Component {
           </Col>
           <Col className='col-12 col-lg-5'>
             <h2>Bestiary</h2>
-            <SearchBar onFormSubmit={this.onTermSubmit} />
+            <SearchBar onTermSubmit={this.onTermSubmit} />
             {this.spinnerToggle()}
           </Col> 
         </Row>
