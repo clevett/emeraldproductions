@@ -17,9 +17,7 @@ const SearchBar = ({ onTermSubmit }) => {
           <label className='mr-2'>Search</label>
           <input
             type="text"
-            //Create a Controlled input by assigning the value to state
             value={term}
-            //Built in Callback function
             onChange={onInputChange}
           />
         </div>
