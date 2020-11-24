@@ -5,14 +5,14 @@ import { Col, Row } from 'react-bootstrap'
 const Contact = ({ contact }) => {
   return (
     <Col className='Contact'>
-        <Row>
-          <Col className='m-auto'>
-            <a className='text-white' href={contact.href} target='_blank' rel="noopener noreferrer">
-              <Image className='shadow mr-2' src={contact.src} alt={`${contact.alt} logo`} />
-              <span>{contact.name}</span>
-            </a>
-          </Col>
-        </Row>
+      <Row>
+        <Col className='m-auto'>
+          <a className='text-white' href={contact.href} target='_blank' rel="noopener noreferrer">
+            <Image className='shadow mr-2' src={contact.src} alt={`${contact.alt} logo`} />
+            <span>{contact.name}</span>
+          </a>
+        </Col>
+      </Row>
     </Col>
   )
 }
