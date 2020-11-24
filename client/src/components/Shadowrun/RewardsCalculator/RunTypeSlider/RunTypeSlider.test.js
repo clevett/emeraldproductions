@@ -11,9 +11,6 @@ describe('Given RunTypeSlider is called', () => {
 
 	describe('When component initially renders', () => {
 		it('then renders corrrectly', () => expect(component).toMatchSnapshot() )
-
-		const initialState = component.state()
-		it('then initializes the state with a type', () => expect(initialState.type).toEqual('standard'))
 	})
 
 	describe('When component input changes', () => {
