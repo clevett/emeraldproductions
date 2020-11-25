@@ -2,33 +2,25 @@ import React from 'react'
 
 import Option from './Option/Option'
 
-class Select extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { 
-      options: props.options,
-      selected: props.selected,
-      label: props.label || '',
-      id: props.id || '',
-      value: ''
-    }
+const Select = ({ onSelectValueChange, options, selected, label, id }) => {
+  const handleChange = event => {
+    onSelectValueChange(event.target.value)
   }
+  
+  const renderedList = options => options.map(option => <Option key={option} option={option} />)
 
-  handleChange = event => {
-    this.setState({value: event.target.value})
-    this.props.onSelectValueChange(event.target.value)
-  }
-
-  renderedList = options => options.map(option => <Option key={option} option={option} />)
-
-  render() {
-    return (
-      <div>
-        <label htmlFor={this.state.id} className='sr-only'>{this.state.label}</label>
-        <select id={this.state.id} defaultValue={this.state.selected} onChange={this.handleChange}>{this.renderedList(this.state.options)}</select>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <label htmlFor={id || ""} className='sr-only'>{label || ""}</label>
+      <select 
+        id={id} 
+        defaultValue={selected}
+        onChange={handleChange}
+      >
+        {renderedList(options)}
+      </select>
+    </div>
+  )
 }
 
 export default Select
