@@ -13,7 +13,7 @@ const Select = ({ onSelectValueChange, options, selected, label, id }) => {
     <div>
       <label htmlFor={id || ""} className='sr-only'>{label || ""}</label>
       <select 
-        id={id} 
+        id={id || ''} 
         defaultValue={selected}
         onChange={handleChange}
       >
