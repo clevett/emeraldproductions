@@ -1,7 +1,7 @@
 import React from 'react'
 
 import danger from './danger'
-import DangerColumn from './DangerColumn/DangerColumn'
+import DangerColumn from '../DangerColumn/DangerColumn'
 
 const EncounterDanger = ({ selected }) => {
   const dangerObject = danger[selected.toLowerCase()]
