@@ -1,36 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Switch.scss';
 
 import { Form } from 'react-bootstrap'
 
-class Switch extends React.Component {
-	constructor(props) {
-    super(props)
-    this.state = {
-      name: props.name,
-      isOn: false,
-      description: props.description ? props.description : props.name
-    }
+const Switch = ({ name, description, handleToggle }) => {
+  const [isOn, setIsOn] = useState(false) 
+  const label = description ? description : name
+
+  const handleChange = () => {
+    const updateStatus = isOn ? false : true
+    setIsOn(updateStatus)
+    handleToggle(name, updateStatus)
   }
 
-  handleChange = async () => {
-    const updateStatus = this.state.isOn ? false : true
-    await this.setState({ isOn: updateStatus })
-    this.props.handleToggle(this.state.name, this.state.isOn)
-  }
-
-  render() {
-    return (
-      <Form.Switch
-        key={this.state.name} 
-        type="switch" 
-        id={this.state.name}
-        label={this.state.description} 
-        value={this.state.name}
-        onChange={this.handleChange}
-      />
-    )
-  }
+  return (
+    <Form.Switch
+      key={name} 
+      type="switch" 
+      id={name}
+      label={label} 
+      value={name}
+      onChange={handleChange}
+    />
+  )
 }
 
 export default Switch;
