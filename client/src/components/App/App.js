@@ -18,7 +18,7 @@ import ShadowrunRewardsCalculator from '../Shadowrun/RewardsCalculator/RewardsCa
 
 import Analytics from 'react-router-ga'
 import ReactGA from 'react-ga'
-ReactGA.initialize(process.env.GA)
+ReactGA.initialize('UA-181637915-1')
 ReactGA.pageview(window.location.pathname + window.location.search) 
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
         </Row>
         <Row className='Center bg-primary'>
           <div className='bg-overlay'>
-            <Analytics id={process.env.GA}>
+            <Analytics id={'UA-181637915-1'}>
               <Route path="/" exact component={About} />
               <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
               <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
@@ -41,9 +41,7 @@ const App = () => {
             </Analytics>
           </div>
         </Row>
-        <Row>
-          <Footer />
-        </Row>
+        <Footer />
       </div>
     </Router>
   );

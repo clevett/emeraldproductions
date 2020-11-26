@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Roll from 'roll'
 import { Button } from 'react-bootstrap'
 
@@ -7,54 +7,52 @@ import d6 from '../../imgs/icons/perspective-dice-six-faces-six.svg'
 
 import './AnimatedDie.scss'
 
-class AnimatedDie extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			animation: false,
-			roll: null,
-			rollResult: '',
-			size: this.props.dieSize,
-			quanity: this.props.dieQuanity || 1,
-			image: this.props.dieSize === 'd20' ? d20 : d6
-		}
-	}
+const AnimatedDie = ({ dieSize, dieQuanity, dieRoll }) => {
+	const size = dieSize || 'd6'
+	const quanity = dieQuanity || 1
+	const image = dieSize === 'd20' ? d20 : d6
 
-  handleClick = async event => {
+	const [animation, setAnimation] = useState(false)
+	const [roll, setRoll] = useState(null)
+	const [result, setResult] = useState('')
+
+  const handleClick = event => {
 		event.preventDefault()
-		const roll = new Roll().roll(`${this.state.quanity}${this.state.size}`).result
 
-		//Start Animation
-		this.setState({ 
-			animation: true,
-			roll,
-			rollResult: ''
-		})
+		//Begin animation
+		setAnimation(true)
 
-		this.props.dieRoll(roll)
+		//Roll a die and hold the result
+		const diceRoll = new Roll().roll(`${quanity}${size}`).result
+		setRoll(diceRoll)
+
+		//Reset the previous string to empty
+		setResult('')
+
+		dieRoll(diceRoll)
 	}
 
-	animationEnd = () => {
-		this.setState({ 
-			animation: false,
-			rollResult: this.state.roll
-		})
+	const	animationEnd = () => {
+		setAnimation(false)
+		setResult(roll)
 	}
 
-	altText = () => this.state.rollResult ? `Previous result was ${this.state.rollResult}. Roll a d20.` : `Roll a ${this.props.dieSize}.`
+	const altText = () => result ? `Previous result was ${result}. Roll another ${size}.` : `Roll a ${size}.`
 
-	render() {
-		const animation = this.state.animation
-
-		return (
-			<div className='d-inline die-row'>
-				<Button className={animation ? 'rollDie' : ''} onClick={this.handleClick} onAnimationEnd={this.animationEnd} type="button" variant="link">
-					<img alt={this.altText()} src={this.state.image}></img>
-				</Button>
-				<span className='text-white'>{this.state.rollResult}</span>
-			</div>
-		)
-	}
+	return (
+		<div className='d-inline die-row'>
+			<Button 
+				className={animation ? 'rollDie' : ''} 
+				onClick={handleClick} 
+				onAnimationEnd={animationEnd} 
+				type="button" 
+				variant="link"
+			>
+				<img alt={altText()} src={image}></img>
+			</Button>
+			<span className='text-white'>{result}</span>
+		</div>
+	)
 }
 
 export default AnimatedDie
