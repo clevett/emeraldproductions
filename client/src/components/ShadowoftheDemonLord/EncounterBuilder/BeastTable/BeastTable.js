@@ -1,8 +1,8 @@
 import React from 'react'
 
-import BeastList from './BeastList/BeastList'
+import BeastList from '../BeastList/BeastList'
 
-const BeastTable = props => {
+const BeastTable = ({ beasts, beastButton, buttonType}) => {
   return (
     <table className="table text-white table-striped table-dark table-hover">
       <thead>
@@ -14,7 +14,7 @@ const BeastTable = props => {
           <th scope="col">Source</th>
         </tr>
       </thead>
-      <BeastList beasts={props.beasts} beastButton={props.beastButton} buttonType={props.buttonType} />
+      <BeastList beasts={beasts} beastButton={beastButton} buttonType={buttonType} />
     </table>
   );
 }

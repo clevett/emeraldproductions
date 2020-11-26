@@ -1,3 +1,5 @@
+// @version 1.1
+
 import React from 'react'
 import axios from 'axios'
 
@@ -23,7 +25,7 @@ class EncounterBuilder extends React.Component {
     super(props)
     this.state = {
       beasts: [],
-      search: [],
+      searchResults: [],
       searchStatus: 'loading',
       selected: [],
       selectedLevel: 'novice',
@@ -49,7 +51,7 @@ class EncounterBuilder extends React.Component {
 
   onTermSubmit = term => {
     const results = fuzzySearch(this.state.beasts, term)
-    this.setState({ search: results })
+    this.setState({ searchResults: results })
   }
 
   updateEncounter = (beast, buttonAction) => {
@@ -61,7 +63,7 @@ class EncounterBuilder extends React.Component {
 
   spinnerToggle = () => {
     if (this.state.searchStatus === 'done') {
-      return <BeastTable beasts={this.state.search} buttonType={'add'} beastButton={this.updateEncounter} />
+      return <BeastTable beasts={this.state.searchResults} buttonType={'add'} beastButton={this.updateEncounter} />
     } else {
       return (
         <Spinner animation="border" role="status">
