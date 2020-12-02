@@ -57,7 +57,7 @@ class RewardsCalculator extends React.Component {
 		if (nuyenKeys.includes(key)) {
 			update.nuyen = calculateNuyen(this.state)
 		}
-		
+
 		this.setState(update)
 	}
 
@@ -80,7 +80,11 @@ class RewardsCalculator extends React.Component {
 					</Col>
 				</Row>
 				<Row className='content'>
-					<KarmaSwitches updateState={this.updateState} />
+					<KarmaSwitches
+						key='karmaSwitches'
+						updateState={this.updateState} 
+						nuyenSituationModifier={this.state.nuyenSituationModifier} 
+					/>
 				</Row>
 			</Container>
 		)
