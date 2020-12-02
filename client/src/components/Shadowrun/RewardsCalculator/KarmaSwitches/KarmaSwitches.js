@@ -1,34 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
 import Switch from '../../../Switch/Switch'
-import findObject from '../helpers/findObject/findObject'
-import totalSwitchKarma from '../helpers/totalSwitchKarma/totalSwitchKarma'
 
-import data from '../data/karma_modifiers'
+const KarmaSwitches = ({ updateState, nuyenSituationModifier }) => {
+	const [surviveBonus, setSurviveBonus] = useState(0)
+	const [objectiveBonus, setObjectiveBonus] = useState(0)
+	const [situationBonus, setSituationBonus] = useState(0)
 
-const KarmaSwitches = ({ updateState }) => {
-	const [karma, setKarma] = useState(0)
-	const [objectives, setObjectives] = useState(0)
-
-	const handleToggle = (name, status) => {
-		const object = findObject(name, data)
-		const karmaTotal = totalSwitchKarma({
-			karmaToAdd: object.karma,
-			status,
-			startingKarma: karma
-		})
-		setKarma(karmaTotal)
-		updateState('karmaModifier', parseInt(karmaTotal))
+	const updateKarmaTotal = () => {
+		updateState('karmaModifier', parseInt(surviveBonus + objectiveBonus + situationBonus))
 	}
 
-	const sliderChange = event => {
-		const difference = event.target.value - objectives
-		const karmaDifference = parseInt(karma + difference)
-		setKarma(karmaDifference)
-		setObjectives(parseInt(event.target.value))
-		updateState('karmaModifier', karmaDifference)
-  }
+	useEffect(() => updateKarmaTotal(), [surviveBonus, objectiveBonus, situationBonus])
+
+	const germanToggle = (name, status) => status ? setSituationBonus(nuyenSituationModifier) : setSituationBonus(0)
+	const surviveToggle = (name, status) => status ? setSurviveBonus(2) : setSurviveBonus(0)
+	const sliderChange = event => setObjectiveBonus(parseInt(event.target.value))
 
 	return(
 		<Col className="KarmaModifiers col-12">
@@ -37,7 +25,21 @@ const KarmaSwitches = ({ updateState }) => {
 			</Row>
 			<Row>
 				<Col className='switches justify-items-center'>
-					<Switch key="survived" name="survived" description="Character survived" handleToggle={handleToggle} />
+					<Switch 
+						key="german" 
+						name="german" 
+						description="Use German ruleset" 
+						handleToggle={germanToggle} 
+					/>
+					<small>A karma is added for each of the Nuyen Situation Modifiers</small>
+				</Col>
+				<Col className='switches justify-items-center'>
+					<Switch 
+						key="survived" 
+						name="survived" 
+						description="Character survived" 
+						handleToggle={surviveToggle} 
+					/>
 				</Col>
 				<Col>
 					<Row className='justify-content-center'>
@@ -45,7 +47,15 @@ const KarmaSwitches = ({ updateState }) => {
 					</Row>
 					<Row className='slider justify-content-center'>
 						<label className='sr-only' htmlFor="completedObjectives">Choose objectives completed</label>
-						<input type="range" className="custom-range" min="0" max="2" id="completedObjectives" defaultValue='0' onChange={sliderChange} />
+						<input 
+							type="range" 
+							className="custom-range" 
+							min="0" 
+							max="2" 
+							id="completedObjectives" 
+							defaultValue='0' 
+							onChange={sliderChange} 
+						/>
 						<span>None</span>
 						<span>Some</span>
 						<span>All</span>
