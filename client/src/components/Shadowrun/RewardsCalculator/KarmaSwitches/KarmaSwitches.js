@@ -12,11 +12,18 @@ const KarmaSwitches = ({ updateState, nuyenSituationModifier }) => {
 		updateState('karmaModifier', parseInt(surviveBonus + objectiveBonus + situationBonus))
 	}
 
-	useEffect(() => updateKarmaTotal(), [surviveBonus, objectiveBonus, situationBonus])
+	useEffect(updateKarmaTotal, [surviveBonus, objectiveBonus, situationBonus])
 
 	const germanToggle = (name, status) => status ? setSituationBonus(nuyenSituationModifier) : setSituationBonus(0)
 	const surviveToggle = (name, status) => status ? setSurviveBonus(2) : setSurviveBonus(0)
 	const sliderChange = event => setObjectiveBonus(parseInt(event.target.value))
+
+	const germanToggleCheck = () => {
+		const status = document ? document.getElementById("german").checked : false
+		germanToggle('german', status)
+	}
+
+	useEffect(germanToggleCheck, [nuyenSituationModifier])
 
 	return(
 		<Col className="KarmaModifiers col-12">
@@ -26,9 +33,9 @@ const KarmaSwitches = ({ updateState, nuyenSituationModifier }) => {
 			<Row>
 				<Col className='switches justify-items-center'>
 					<Switch 
-						key="german" 
+						key="karmaSwitch-german" 
 						name="german" 
-						description="Use German ruleset" 
+						description="Use German ruleset"
 						handleToggle={germanToggle} 
 					/>
 					<small>A karma is added for each of the Nuyen Situation Modifiers</small>
