@@ -3,7 +3,7 @@ import { mount, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import RewardsGenerator from './RewardsGenerator'
 
-import data from './data/treasure_limits'
+import data from './data/treasure'
 
 configure({ adapter: new Adapter(), disableLifecycleMethods: true })
 

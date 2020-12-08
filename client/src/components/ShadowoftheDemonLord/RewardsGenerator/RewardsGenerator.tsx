@@ -5,15 +5,16 @@ import Header from '../RPGHeader/RPGHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'
 import SelectBuilder from '../../SelectBuilder/SelectBuilder'
 
-import data from './data/treasure_limits'
+import treasure from './data/treasure'
 
 const RewardsGenerator = () => {
-  const levels = data.map(element => element.name)
+  const levels = treasure.map(element => element.name)
   const [ goldPerLevel, setGoldPerLevel ] = useState(5)
 
-  const onSelectValueChange = level => {
-    const { gold } = data.find(element => element.name === level)
-    setGoldPerLevel(gold)
+  const onSelectValueChange = (level:string):void => {
+    const object = treasure.find(element => element.name === level)
+    const total = object && object.gold ? object.gold : 0
+    setGoldPerLevel(total)
   }
 
   return(
