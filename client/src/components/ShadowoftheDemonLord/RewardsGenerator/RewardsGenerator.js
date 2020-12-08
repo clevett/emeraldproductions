@@ -8,12 +8,12 @@ import SelectBuilder from '../../SelectBuilder/SelectBuilder'
 import data from './data/treasure_limits'
 
 const RewardsGenerator = () => {
-  const levels = ['starting', 'novice', 'expert', 'master']
-  const levelSelected = 'novice'
-  const goldPerLevel = 1
+  const levels = data.map(element => element.name)
+  const [ goldPerLevel, setGoldPerLevel ] = useState(5)
 
-  const onSelectValueChange = event => {
-    console.log(event)
+  const onSelectValueChange = level => {
+    const { gold } = data.find(element => element.name === level)
+    setGoldPerLevel(gold)
   }
 
   return(
@@ -31,7 +31,7 @@ const RewardsGenerator = () => {
             id="sodl-rewards-level"
             label="select character level"
             options={levels} 
-            selected={levelSelected} 
+            selected='novice'
             onSelectValueChange={onSelectValueChange} 
           />
         </Col>
