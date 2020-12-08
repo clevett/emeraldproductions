@@ -5,22 +5,24 @@ import Header from '../RPGHeader/RPGHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'
 import SelectBuilder from '../../SelectBuilder/SelectBuilder'
 
-import treasure from './data/treasure'
+import buildResultStringFrom from './helpers/buildResultString'
+
+import Treasure from './helpers/Treasure'
 
 const RewardsGenerator = () => {
-  const levels = treasure.map(element => element.name)
+  const levels = ['starting', 'novice', 'expert', 'master']
   const [ groupLevel, setLevel ] = useState('novice')
   const [ goldPerLevel, setGoldPerLevel ] = useState(5)
-  const [ result, setResult ] = useState(null)
+  const [ result, setResult ] = useState('')
 
   const onSelectValueChange = (level:string):void => {
-    const object = treasure.find(element => element.name === level)
-    const total = object && object.gold ? object.gold : 0
-    setGoldPerLevel(total)
+    const treasure = new Treasure(level)
     setLevel(level)
+    setGoldPerLevel(treasure.gold)
+    setResult( buildResultStringFrom(treasure.bits, treasure.coins) )
   }
 
-  const captalizeWord = () => groupLevel.charAt(0).toUpperCase() + groupLevel.slice(1)
+  const captalizeWord = () => `${groupLevel.charAt(0).toUpperCase()}${groupLevel.slice(1)}`
 
   return(
     <Container className='RewardsGenerator content text-white'>
