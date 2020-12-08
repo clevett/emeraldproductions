@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Card } from 'react-bootstrap'
 
-const TravelCard = ({title, result}) => {
+const DisplayCard = ({title, result}) => {
 	return (
 		<Card className='text-center w-100'>
 			<Card.Body>
@@ -13,4 +13,4 @@ const TravelCard = ({title, result}) => {
 	)
 }
 
-export default TravelCard
+export default DisplayCard

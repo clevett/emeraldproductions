@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Row, Col } from 'react-bootstrap'
 
-import TravelCard from '../TravelCard/TravelCard'
+import DisplayCard from '../../DisplayCard/DisplayCard'
 import Threat from './Threat/Threat'
 import AnimatedDie from '../../../AnimatedDie/AnimatedDie'
 
@@ -33,7 +33,7 @@ class RandomEncounters extends React.Component {
 		return (
 			<Col className='mr-3 RandomEncounters'>
 				<Row className='mb-3'>
-					<TravelCard title='Random Encounter' result={this.state.encounter} />
+					<DisplayCard title='Random Encounter' result={this.state.encounter} />
 				</Row>
 				<Row className='justify-content-center'>
 					<Threat onValueChange={this.onValueChange} />

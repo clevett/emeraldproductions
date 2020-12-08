@@ -3,7 +3,7 @@ import React from 'react'
 import { Container, Row, CardGroup, Col } from 'react-bootstrap'
 
 import RPGHeader from '../RPGHeader/RPGHeader'
-import TravelCard from './TravelCard/TravelCard'
+import DisplayCard from '../DisplayCard/DisplayCard'
 import Weather from './Weather/Weather'
 import Pace from './Pace/Pace'
 import Terrain from './Terrain/Terrain'
@@ -74,9 +74,9 @@ class TravelTool extends React.Component {
         <RPGHeader title='Travel Tool' />
         <Row className='content mb-5 w-100'>
 					<CardGroup className='mb-3 w-100'>
-						<TravelCard title='Miles per Hour' result={this.state.adjustedMilesPerHour} />
-						<TravelCard title='Miles per Day' result={this.state.adjustedMilesPerDay} />
-						<TravelCard title={`Time to Travel ${this.state.milesToTravel} Miles`} result={this.state.travelTime} />
+						<DisplayCard title='Miles per Hour' result={this.state.adjustedMilesPerHour} />
+						<DisplayCard title='Miles per Day' result={this.state.adjustedMilesPerDay} />
+						<DisplayCard title={`Time to Travel ${this.state.milesToTravel} Miles`} result={this.state.travelTime} />
 					</CardGroup>
 					<Row className='options w-100'>
 						<Terrain onValueChange={this.onValueChange} />
