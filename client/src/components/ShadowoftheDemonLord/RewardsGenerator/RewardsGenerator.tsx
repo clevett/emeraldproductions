@@ -9,20 +9,28 @@ import treasure from './data/treasure'
 
 const RewardsGenerator = () => {
   const levels = treasure.map(element => element.name)
+  const [ groupLevel, setLevel ] = useState('novice')
   const [ goldPerLevel, setGoldPerLevel ] = useState(5)
+  const [ result, setResult ] = useState(null)
 
   const onSelectValueChange = (level:string):void => {
     const object = treasure.find(element => element.name === level)
     const total = object && object.gold ? object.gold : 0
     setGoldPerLevel(total)
+    setLevel(level)
   }
+
+  const captalizeWord = () => groupLevel.charAt(0).toUpperCase() + groupLevel.slice(1)
 
   return(
     <Container className='RewardsGenerator content text-white'>
       <Header title='Rewards Generator' />
       <Row>
         <CardGroup className='mb-5 w-100'>
-          <DisplayCard title='Rewards' result={`${goldPerLevel} gc`} />
+          <DisplayCard 
+            title={`Treasure per Level for ${captalizeWord()} totals ${goldPerLevel} gc`} 
+            result={`${result}`} 
+          />
         </CardGroup>
       </Row>
       <Row>

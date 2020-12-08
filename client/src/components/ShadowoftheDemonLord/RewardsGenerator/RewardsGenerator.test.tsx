@@ -31,17 +31,28 @@ describe('Given RewardsGenerator is called', () => {
 			})
 		})
 
+		const text = component.find('div.card-title').text()
 
-		it('then the result card renders gold text', () => {
-			expect(component.find('p.card-text').text()).toEqual('5 gc')
+		it('then the result card displays novice for group level', () => {
+			expect(text.includes(`Novice`)).toBeTruthy()
+		})
+
+		it('then the result card title defaults gold for novice', () => {
+			expect(text.includes(`5 gc`)).toBeTruthy()
 		})
 	})
 
 	describe('when select is changed', () => {
 		data.forEach(({ name, gold }) => {
-			it(`then the ${gold} gold for ${name} renders on the result card`, () => {
-				select.simulate('change', {target: {value: name}})
-				expect(component.find('p.card-text').text()).toEqual(`${gold} gc`)
+			select.simulate('change', {target: {value: name}})
+			const text = component.find('div.card-title').text()
+
+			it(`then the ${gold} amount changes in the card title`, () => {
+				expect(text.includes(`${gold} gc`)).toBeTruthy()
+			})
+
+			it(`then the group level changes in the card title`, () => {
+				expect(text.toLowerCase().includes(`${name}`)).toBeTruthy()
 			})
 		})
 	})
