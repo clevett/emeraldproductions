@@ -22,13 +22,13 @@ class Coins {
   set sum(value) { return this.goldTotal = value }
 
   addAllCoins = (coins) => {
-    this.bit += coins.bit
-    this.copper += coins.copper
-    this.silver += coins.silver
-    this.gold += coins.gold
+    this.bit += coins.bit || 0
+    this.copper += coins.copper || 0
+    this.silver += coins.silver || 0
+    this.gold += coins.gold || 0
   }
 
-  addRemainder(remainder) {
+  convertToCoins(remainder) {
     let coinage = remainder
 
     const silver = Math.floor(coinage * 10)
@@ -39,12 +39,7 @@ class Coins {
 
     const bit = Math.ceil(coinage * 1000)
     
-    this.addAllCoins({
-      bit,
-      copper,
-      silver,
-      gold: 0
-    })
+    return { bit, copper, silver }
   }
 
   denomination = (divisor, result) => result / divisor
@@ -93,7 +88,8 @@ class Coins {
 
     const remainder = this.getRemainder(sum)
     if(remainder) {
-      this.addRemainder(remainder)
+      const remainingCoins = this.convertToCoins(remainder)
+      this.addAllCoins(remainingCoins)
     }
 
     return this.sum = Math.round(sum)

@@ -35,7 +35,6 @@ describe('Given a new Coins is created', () => {
       })
     })
 
-
     describe('with a a case of ss || silver', () => {
       it('then returns a 10', () => {
         expect(coins.goldDivisor('ss')).toEqual(10)
@@ -47,6 +46,21 @@ describe('Given a new Coins is created', () => {
   describe('when demonitation is called with a name and result', () => {
     it('then returns the gold demonination', () => {
       expect(coins.denomination(1000, 15)).toEqual(0.015)
+    })
+  })
+
+  describe('when convertToCoins is called with a value of < 1', () => {
+    const result = coins.convertToCoins(0.1267)
+    it('then returns an object with tenths converted to silver', () => {
+      expect(result.silver).toBe(1)
+    })
+
+    it('then returns an object with hundredth converted to copper', () => {
+      expect(result.copper).toBe(2)
+    })
+
+    it('then returns an object with thousandth converted to bits rounded up', () => {
+      expect(result.bit).toBe(7)
     })
   })
 })
