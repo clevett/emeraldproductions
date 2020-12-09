@@ -90,4 +90,52 @@ describe('Given a new Coins is created', () => {
       expect(coins.checkSumvsLimit(1000)).toBeFalsy()
     })
   })
+
+  describe('when goldRemainder is called with a number', () => {
+    it('then returns the decimal if the number hase one', () => {
+      expect(coins.getRemainder(1.5)).toEqual(0.5)
+    })
+
+    it('then returns 0 if the number does not have a decimanl', () => {
+      expect(coins.getRemainder(51)).toEqual(0)
+    })
+  })
+
+  describe('when setCoins is called', () => {
+    describe('with a name of bit and a value', () => {
+      it('then sets bit to the value', () => {
+        coins.setCoins('bit', 5)
+        expect(coins.bit).toEqual(5)
+      })
+    })
+
+    describe('with a name of cp || copper and a value', () => {
+      it('then sets copper to the value', () => {
+        coins.setCoins('cp', 12)
+        expect(coins.copper).toEqual(12)
+        coins.setCoins('copper', 15)
+        expect(coins.copper).toEqual(15)
+      })
+    })
+
+    describe('with a name of cp || copper and a value', () => {
+      it('then sets copper to the value', () => {
+        coins.setCoins('ss', 12)
+        expect(coins.silver).toEqual(12)
+        coins.setCoins('silver', 15)
+        expect(coins.silver).toEqual(15)
+      })
+    })
+
+    describe('with a name that does not match a case', () => {
+      it('then sets the gold value', () => {
+        coins.setCoins('gold', 15)
+        expect(coins.gold).toEqual(15)
+      })
+    })
+  })
+
+  describe('when handleRoll is called with an object of results', () => {
+
+  })
 })

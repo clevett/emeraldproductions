@@ -55,7 +55,7 @@ class Coins {
     }
   }
 
-  getRemainder = (number) => number % 1
+  getRemainder = number => number % 1
 
   goldDivisor = (name) => {
     switch(name) {
@@ -99,9 +99,11 @@ class Coins {
         this.bits = value
         break
       case 'cp':
+      case 'copper':
         this.cp = value
         break
       case 'ss':
+      case 'silver':
         this.ss = value
         break
       default:
