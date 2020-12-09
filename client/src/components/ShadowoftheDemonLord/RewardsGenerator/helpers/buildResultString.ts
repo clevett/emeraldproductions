@@ -6,21 +6,47 @@ interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|str
 
 const diceRoll = (dice:string) => new Roll().roll(dice).result
 
-const buildResultString = (bitsTotal: number, rolls:rolls) => {
+const buildResultString = (goldTotal: number, rolls:rolls) => {
   let treasure:coins = {bit: 1, copper: 1, silver: 10, gold: 0}
-  let total = bitsTotal
+  let total = goldTotal
 
-  console.log(rolls)
+  const getRolls = () => {
+    const bits = rolls.bit ? diceRoll(rolls.bit) : 0
+    const copper = rolls.cp ? diceRoll(rolls.cp) : 0
+    const silver = rolls.ss ? diceRoll(rolls.ss) : 0
+    const gold = rolls.gc ? diceRoll(rolls.gc) : 0
+    return {bits, copper, silver, gold}
+  }
 
-  const bits = rolls.bit ? diceRoll(rolls.bit) : 0
-  const copper = rolls.cp ? diceRoll(rolls.cp) : 0
-  const silver = rolls.ss ? diceRoll(rolls.ss) : 0
-  const gold = rolls.gc ? diceRoll(rolls.gc) : 0
+  const processRoll = () => {
+    const array = getRolls()
+    let sum = 0
 
-  console.log(bits)
-  console.log(copper)
-  console.log(silver)
-  console.log(gold)
+    for (const [key, value] of Object.entries(array) ) {
+      const divisor = key === 'bit' ? 1000 : key === 'copper' ? 100 : key === 'silver' ? 10 : 1
+      const chunkgold = value / divisor
+
+      if ((total - chunkgold) > 0) {
+        sum += chunkgold
+        //treasure[key] += value
+      } else {
+        return sum
+      }
+    }
+
+    //const decimal: number | boolean = sum % 1
+
+    return sum
+
+    console.log(array)
+  }
+
+  const rollTotal = processRoll()
+
+  console.table({
+    rollTotal,
+    total
+  })
 
   let string = createListOfCoinsWith(treasure)
   return string

@@ -19,7 +19,8 @@ const RewardsGenerator = () => {
     const treasure = new Treasure(level)
     setLevel(level)
     setGoldPerLevel(treasure.gold)
-    setResult( buildResultStringFrom(treasure.bits, treasure.coins) )
+
+    setResult( buildResultStringFrom(treasure.gold, treasure.deleteNullCoins()) )
   }
 
   const captalizeWord = () => `${groupLevel.charAt(0).toUpperCase()}${groupLevel.slice(1)}`

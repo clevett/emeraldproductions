@@ -3,13 +3,11 @@ class Treasure {
     this.groupLevel = name
     this.totalGold = this.determineTotalGold()
     this.coinRolls = this.determineCoins()
-    this.totalBits = this.getTotalBits()
   }
 
   get name() { return this.groupLevel }
   get gold() { return this.totalGold }
   get coins() { return this.coinRolls }
-  get bits() { return this.totalBits }
 
   determineTotalGold = () => {
     switch(this.name) {
@@ -66,7 +64,17 @@ class Treasure {
     }
   }
 
-  getTotalBits = () => this.gold * 1000
+  deleteNullCoins = () => {
+    const newCoins = {...this.coins}
+
+    for (const [key, value] of Object.entries(newCoins) ) {
+      if(value === null) {
+        delete newCoins[key]
+      }
+    }
+
+    return newCoins
+  }
 }
 
 export default Treasure
