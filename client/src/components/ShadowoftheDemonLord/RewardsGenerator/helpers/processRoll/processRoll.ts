@@ -1,5 +1,5 @@
 import getRolls from '../getRolls/getRolls'
-import Coins from '../Coins'
+import Coins from '../../Classes/Coins'
 
 interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|string} 
 
