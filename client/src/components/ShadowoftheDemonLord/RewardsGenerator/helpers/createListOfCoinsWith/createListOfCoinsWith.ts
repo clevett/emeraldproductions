@@ -1,6 +1,6 @@
-import getProperCoinName from '../createListOfCoinsWith/createListOfCoinsWith.test'
+import getProperCoinName from '../getProperCoinName/getProperCoinName'
 
-interface coins {bits:number, copper: number, silver: number, gold: number}
+interface coins {bit:number, copper: number, silver: number, gold: number}
 
 const createListOfCoinsWith = (treasure: coins) => {
   let string = ''
@@ -13,3 +13,5 @@ const createListOfCoinsWith = (treasure: coins) => {
 
   return string
 }
+
+export default createListOfCoinsWith

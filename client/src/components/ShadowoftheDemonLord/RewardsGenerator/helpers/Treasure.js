@@ -30,34 +30,39 @@ class Treasure {
     switch(this.name) {
       case 'starting':
         return {
-          bits: '6d6',
+          bit: '6d6',
           cp: '3d6',
           ss: '2d6',
           gc: null
         }
       case 'novice':
         return {
-          bits: '2d6',
+          bit: '2d6',
           cp: '2d6',
           ss: '6d6',
           gc: '3d6'
         }
       case 'expert':
         return {
-          bits: null,
+          bit: null,
           cp: null,
           ss: '4d6',
           gc: '5d6'
         }
       case 'master':
         return {
-          bits: null,
+          bit: null,
           cp: null,
           ss: '12d6',
           gc: '8d6'
         }
       default:
-        return {}
+        return {
+          bit: null,
+          cp: null,
+          ss: null,
+          gc: null
+        }
     }
   }
 
