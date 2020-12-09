@@ -1,30 +1,25 @@
 import createListOfCoinsWith from './createListOfCoinsWith/createListOfCoinsWith'
-import getRolls from './getRolls/getRolls'
 import Coins from './Coins'
+import processRoll from './processRoll/processRoll'
 
-interface coins {bit:number, copper: number, silver: number, gold: number}
 interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|string} 
 
 const buildResultString = (goldTotal: number, rollFormulas:rolls) => {
-  let treasure:coins = {bit: 1, copper: 1, silver: 10, gold: 0}
-  let total = goldTotal
+  let treasure = new Coins(goldTotal)
+  let total = treasure.total
 
-  const processRoll = () => {
-    const results = getRolls(rollFormulas)
-    const coins = new Coins(total, results).getAllCoins()
-    return coins
+  while (total > 1) {
+    const coinRoll = processRoll(total, rollFormulas)
+    treasure.addAllCoins(coinRoll)
+    total -= coinRoll.total
   }
 
-  console.log(processRoll())
+  const rewards = treasure.getAllCoins()
+  const rewardsTotal = rewards.bit / 1000 + rewards.copper / 100 + rewards.silver / 10 + rewards.gold
+  console.table({levelTotal: goldTotal, ...rewards, rewardsTotal})
 
-  const rollTotal = 0
 
-  console.table({
-    rollTotal,
-    total
-  })
-
-  let string = createListOfCoinsWith(treasure)
+  let string = createListOfCoinsWith(treasure.getAllCoins())
   return string
 }
 
