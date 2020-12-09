@@ -12,14 +12,14 @@ class Coins {
   get copper() { return this.cp }
   get silver() { return this.ss }
   get gold() { return this.gc }
-  get total() { return this.goldLimitPerLevel }
-  get sum() { return this.goldTotal }
+  get limit() { return this.goldLimitPerLevel }
+  get total() { return this.goldTotal }
 
   set bit(value) { return this.bits = value }
   set copper(value) { return this.cp = value }
   set silver(value) { return this.ss = value }
   set gold(value) { return this.gc = value }
-  set sum(value) { return this.goldTotal = value }
+  set total(value) { return this.goldTotal = value }
 
   addAllCoins = (coins) => {
     this.bit += coins.bit || 0
@@ -44,9 +44,7 @@ class Coins {
 
   denomination = (divisor, result) => result / divisor
 
-  checkTotalvsSum = (sum, gold) => {
-    return ((sum + gold) < this.total) ? true : false
-  }
+  checkSumvsLimit = sum => sum < this.limit ? true : false
 
   getAllCoins = () => {
     return {
@@ -80,7 +78,7 @@ class Coins {
     results.forEach(({name, result}) => {
       const divisor = this.goldDivisor(name)
       const convertedGold = this.denomination(divisor, result)
-      if (this.checkTotalvsSum(sum, convertedGold)) {
+      if (this.checkSumvsLimit(sum + convertedGold)) {
         sum += convertedGold
         this.setCoins(name, result)
       }

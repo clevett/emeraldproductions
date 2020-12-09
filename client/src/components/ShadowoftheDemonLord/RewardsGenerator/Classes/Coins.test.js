@@ -1,7 +1,9 @@
 import Coins from './Coins'
 
 describe('Given a new Coins is created', () => {
-  const coins = new Coins(5)
+  let coins = new Coins(5)
+
+  afterEach(() => coins = new Coins(5))
   //const rollFormulas = {bit: '2d6', cp: '2d6', ss: '6d6', gc: '3d6'}
 
   describe('when getAllCoins is called', () => {
@@ -61,6 +63,31 @@ describe('Given a new Coins is created', () => {
 
     it('then returns an object with thousandth converted to bits rounded up', () => {
       expect(result.bit).toBe(7)
+    })
+  })
+
+  describe('when addAllCoins is called with a coins object', () => {
+    it('then adds the values to the class coins', () => {
+      coins.addAllCoins({silver: 1, copper: 12, bit: 2, gold: 14})
+      expect(coins.silver).toEqual(1)
+      expect(coins.copper).toEqual(12)
+      expect(coins.bit).toEqual(2)
+      expect(coins.gold).toEqual(14)
+    })
+
+    it('then add a 0 if a key is undefined', () => {
+      coins.addAllCoins({silver: 1, copper: 12, bit: 2})
+      expect(coins.gold).toEqual(0)
+    })
+  })
+
+  describe('when checkSumvsLimit is called with a sum', () => {
+    it('then returns true if the sum is less than the limit', () => {
+      expect(coins.checkSumvsLimit(1)).toBeTruthy()
+    })
+
+    it('then returns false if the sum is greater than the limit', () => {
+      expect(coins.checkSumvsLimit(1000)).toBeFalsy()
     })
   })
 })
