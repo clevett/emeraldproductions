@@ -6,9 +6,11 @@ interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|str
 const processRoll = (total:number, rollFormulas:rolls) => {
   const results = getRolls(rollFormulas)
   const coins = new Coins(total)
-  coins.handleRoll(results)
+  const rolls = coins.handleRoll(results)
 
-  return {...coins.getAllCoins(), total: coins.sum }
+  console.table({...rolls, limit: total })
+
+  return rolls
 }
 
 export default processRoll

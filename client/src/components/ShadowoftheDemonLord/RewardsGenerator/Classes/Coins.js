@@ -72,25 +72,23 @@ class Coins {
     }
   }
 
+  sumCoins = (coins) => {
+    
+  }
+
   handleRoll = (results) => {
     let sum = 0
 
     results.forEach(({name, result}) => {
       const divisor = this.goldDivisor(name)
-      const convertedGold = this.denomination(divisor, result)
-      if (this.checkSumvsLimit(sum + convertedGold)) {
-        sum += convertedGold
-        this.setCoins(name, result)
-      }
+
+      sum += this.denomination(divisor, result)
+      this.setCoins(name, result)
     })
 
-    const remainder = this.getRemainder(sum)
-    if(remainder) {
-      const remainingCoins = this.convertToCoins(remainder)
-      this.addAllCoins(remainingCoins)
-    }
+    this.sum = sum
 
-    return this.sum = Math.round(sum)
+    return {...this.getAllCoins(), total: this.sum }
   }
 
   setCoins = (name, value) => {

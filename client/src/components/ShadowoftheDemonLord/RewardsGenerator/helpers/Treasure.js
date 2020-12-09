@@ -51,8 +51,8 @@ class Treasure {
         return {
           bit: null,
           cp: null,
-          ss: '12d6',
-          gc: '8d6'
+          ss: '8d6',
+          gc: '12d6'
         }
       default:
         return {

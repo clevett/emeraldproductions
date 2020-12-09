@@ -135,7 +135,19 @@ describe('Given a new Coins is created', () => {
     })
   })
 
-  describe('when handleRoll is called with an object of results', () => {
+  describe('when handleRoll is called with rolls', () => {
+    const samples = [ { name: 'bit', result: 11 }, { name: 'cp', result: 10 }, { name: 'ss', result: 22 }, { name: 'gc', result: 9 } ]
+    const result = coins.handleRoll(samples)
 
+    it('then returns the total of convertedGold', () => {
+      expect(result.total).toEqual(11.311)
+    })
+
+    it('then sets the coin values', () => {
+      expect(result.bit).toEqual(11)
+      expect(result.copper).toEqual(10)
+      expect(result.silver).toEqual(22)
+      expect(result.gold).toEqual(9)
+    })
   })
 })
