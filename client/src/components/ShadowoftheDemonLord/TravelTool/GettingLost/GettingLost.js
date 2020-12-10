@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 
 import AnimatedDie from '../../../AnimatedDie/AnimatedDie'
 import Switch from '../../../Switch/Switch'
-import TravelCard from '../TravelCard/TravelCard'
+import DisplayCard from '../../DisplayCard/DisplayCard'
 import determineBoonBaneModifier from './determineBoonBaneModifier/determineBoonBaneModifier'
 import calculateRollResult from './calculateRollResult/calculateRollResult'
 
@@ -78,7 +78,7 @@ class GettingLost extends React.Component {
 		return (
 			<Col>
 				<Row className='mb-3'>
-					<TravelCard title='Getting Lost' result={this.state.status} />
+					<DisplayCard title='Getting Lost' result={this.state.status} />
 				</Row>
 				<Row>
 					<Col className='GettingLost'>

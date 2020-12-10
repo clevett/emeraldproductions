@@ -12,6 +12,7 @@ import Footer from '../Footer/Footer'
 //SODL
 import ShadowoftheDemonLordEncounterBuilder from '../ShadowoftheDemonLord/EncounterBuilder/EncounterBuilder'
 import ShadowoftheDemonLordTravelTool from '../ShadowoftheDemonLord/TravelTool/TravelTool'
+import ShadowoftheDemonLordRewardsCalculator from '../ShadowoftheDemonLord/RewardsGenerator/RewardsGenerator'
 //Shadowrun
 import ShadowrunMissionCreation from '../Shadowrun/MissionCreation/MissionCreation'
 import ShadowrunRewardsCalculator from '../Shadowrun/RewardsCalculator/RewardsCalculator'
@@ -34,6 +35,7 @@ const App = () => {
               <Route path="/" exact component={About} />
               <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
               <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
+              <Route path="/shadow_of_the_demon_lord/rewards_generator" component={ShadowoftheDemonLordRewardsCalculator} />
               <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
               <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
               <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
