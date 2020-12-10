@@ -19,7 +19,6 @@ const generateCoinList = (limit:number, rollFormulas:rolls) => {
         if (difference > 0) {
           treasure.addAllCoins({[`${name}`]: value})
           total -= convertedToGold
-          console.log(`Repeat the loop`)
         }
       })
 
