@@ -5,6 +5,10 @@ interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|str
 
 const buildResultString = (goldTotal: number, rollFormulas:rolls) => {
   const rewards = generateCoinList(goldTotal, rollFormulas)
+
+  const rewardsTotal = rewards.bit / 1000 + rewards.copper / 100 + rewards.silver / 10 + rewards.gold
+  console.table({limit: goldTotal, ...rewards, rewardsTotal})
+
   return createListOfCoinsWith(rewards)
 }
 
