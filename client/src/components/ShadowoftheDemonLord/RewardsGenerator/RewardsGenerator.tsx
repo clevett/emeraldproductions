@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Col, Row, CardGroup } from 'react-bootstrap'
+import { Container, Col, Row, CardGroup, Button } from 'react-bootstrap'
 
 import Header from '../RPGHeader/RPGHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'
@@ -18,6 +18,11 @@ const RewardsGenerator = () => {
   useEffect(() => {
     onSelectValueChange('novice')
   }, [])
+
+  const handleClick = () => {
+    const treasure = new Treasure(groupLevel)
+    setResult( buildResultStringFrom(goldPerLevel, treasure.deleteNullCoins()) )
+  }
 
   const onSelectValueChange = (level:string):void => {
     const treasure = new Treasure(level)
@@ -52,6 +57,9 @@ const RewardsGenerator = () => {
           />
         </Col>
       </Row>
+      <Row className='d-grid justify-content-end'>
+				<Button onClick={() => handleClick()} type="button">Generate Treasure</Button>
+			</Row>
     </Container>
   )
 }
