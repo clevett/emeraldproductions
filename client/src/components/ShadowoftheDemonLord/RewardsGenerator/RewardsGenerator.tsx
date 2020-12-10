@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Col, Row, CardGroup, Button } from 'react-bootstrap'
+import './RewardsGenerator.scss'
 
 import Header from '../RPGHeader/RPGHeader'
 import DisplayCard from '../DisplayCard/DisplayCard'

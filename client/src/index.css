@@ -7192,15 +7192,7 @@ a {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 html h1 {
-  font-family: 'Merriweather', cursive; }
-
-html p {
-  font-family: 'Merriweather'; }
-
-html nav {
-  font-size: 1.25em; }
-
-html h1 {
+  font-family: "Merriweather", cursive;
   font-size: 2rem; }
 
 html h2 {
@@ -7214,6 +7206,12 @@ html h3 {
 html h4 {
   font-size: 1rem;
   font-weight: bolder; }
+
+html p {
+  font-family: "Merriweather"; }
+
+html nav {
+  font-size: 1.25em; }
 
 html input::placeholder {
   color: rgba(0, 0, 0, 0.4); }
