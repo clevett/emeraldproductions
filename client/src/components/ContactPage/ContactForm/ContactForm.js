@@ -2,8 +2,6 @@ import React from 'react'
 import { Col, Form, Button } from 'react-bootstrap'
 import axios from 'axios'
 
-import './ContactForm.scss'
-
 class ContactForm extends React.Component {
   constructor(props) {
     super(props)
@@ -60,7 +58,7 @@ class ContactForm extends React.Component {
             <Form.Control as="textarea" rows="3" value={this.state.message} onChange={this.onMessageChange} placeholder="Enter message" />
           </Form.Group>
         </Form.Row>
-        <Button variant="dark" type="submit">
+        <Button className='absorb-shadow' variant="dark" type="submit">
           Submit
         </Button>
       </Form>
