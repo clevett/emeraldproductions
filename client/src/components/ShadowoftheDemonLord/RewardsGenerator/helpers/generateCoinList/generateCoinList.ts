@@ -7,34 +7,37 @@ const generateCoinList = (limit:number, rollFormulas:rolls) => {
   const treasure = new Coins(limit)
   let total = limit
   let loop = true
-
+  let loopNumber = 0
 
   do {
-    const coins = processRoll(rollFormulas)
-    const difference = total - coins.total
+    const loot = processRoll(rollFormulas)
+    if (loot.total > 0) {
+      loot.coins.forEach(({name, value}) => {
+        const convertedToGold = value / treasure.goldDivisor(name)
+        const difference = total - convertedToGold
     
-    console.log(rollFormulas)
-    console.log(total)
+        if (difference > 0) {
+          treasure.addAllCoins({[`${name}`]: value})
+          total -= convertedToGold
+          console.log(`Repeat the loop`)
+        }
+      })
 
-    if (difference > 0 && coins.total > 0) {
-      treasure.addAllCoins(coins)
-      total -= coins.total
-      console.log(`Repeat the loop`)
+      //Break out of the loop if rolls can't subtract any more
+      loopNumber > 50 ? loop = false : loopNumber++
     } else {
-      let remaingCoins = {bit: 0, copper: 0, silver: 0, gold: 0}
-
-      const gold = Math.floor(total)
-      remaingCoins.gold = gold > 0 ? gold : 0
-
-      const remainder = treasure.getRemainder(total)
-      const remainingCoins = remainder ? treasure.convertToCoins(remainder) : {}
-
-      treasure.addAllCoins({...remainingCoins, gold})
-
       loop = false
     }
   }
   while (loop);
+
+  const goldRoundedDown = Math.floor(total)
+  const gold = goldRoundedDown > 0 ? goldRoundedDown : 0
+
+  const remainder = treasure.getRemainder(total)
+  const remainingCoins = remainder ? treasure.convertToCoins(remainder) : {}
+
+  treasure.addAllCoins({...remainingCoins, gold})
 
   return treasure.getAllCoins()
 }

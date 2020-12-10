@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, Col, Row, CardGroup } from 'react-bootstrap'
 
 import Header from '../RPGHeader/RPGHeader'
@@ -14,6 +14,10 @@ const RewardsGenerator = () => {
   const [ groupLevel, setLevel ] = useState('novice')
   const [ goldPerLevel, setGoldPerLevel ] = useState(5)
   const [ result, setResult ] = useState('')
+
+  useEffect(() => {
+    onSelectValueChange('novice')
+  }, [])
 
   const onSelectValueChange = (level:string):void => {
     const treasure = new Treasure(level)

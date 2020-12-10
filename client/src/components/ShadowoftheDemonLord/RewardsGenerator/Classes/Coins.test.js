@@ -140,14 +140,28 @@ describe('Given a new Coins is created', () => {
     const result = coins.handleRoll(samples)
 
     it('then returns the total of convertedGold', () => {
+      expect(result).toHaveProperty('total')
       expect(result.total).toEqual(11.311)
     })
 
     it('then sets the coin values', () => {
-      expect(result.bit).toEqual(11)
-      expect(result.copper).toEqual(10)
-      expect(result.silver).toEqual(22)
-      expect(result.gold).toEqual(9)
+      expect(result).toHaveProperty('coins')
+      expect(Array.isArray(result.coins)).toEqual(true)
+    })
+  })
+
+  describe('when getArrayCoins is called', () => {
+    coins.setCoins('copper', 5)
+    coins.setCoins('gold', 0)
+    const result = coins.getArrayCoins()
+
+    it('then returns an array', () => {
+      expect(Array.isArray(result)).toEqual(true)
+    })
+
+    it('then returns an array with the coin if value is not 0', () => {
+      expect(result).toContainEqual({name:'copper', value:5})
+      expect(result).not.toHaveProperty('gold')
     })
   })
 })

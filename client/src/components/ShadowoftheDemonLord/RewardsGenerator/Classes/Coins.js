@@ -55,6 +55,19 @@ class Coins {
     }
   }
 
+  getArrayCoins = () => {
+    let array = []
+    const coins = this.getAllCoins()
+
+    for(const [denomination, value] of Object.entries(coins)) {
+      if (value > 0) {
+        array.push({name: denomination, value})
+      }
+    }
+
+    return array
+  }
+
   getRemainder = number => number % 1
 
   goldDivisor = (name) => {
@@ -72,10 +85,6 @@ class Coins {
     }
   }
 
-  sumCoins = (coins) => {
-    
-  }
-
   handleRoll = (results) => {
     let sum = 0
 
@@ -87,7 +96,7 @@ class Coins {
 
     this.sum = sum
 
-    return {...this.getAllCoins(), total: this.sum }
+    return {coins: this.getArrayCoins(), total: this.sum }
   }
 
   setCoins = (name, value) => {
@@ -107,7 +116,6 @@ class Coins {
         this.gc = value
     }
   }
-
 }
 
 export default Coins

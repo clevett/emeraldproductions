@@ -8,10 +8,8 @@ describe('Given processRolls is called', () => {
     it('then returns an object with coin values', () => {
       const result = processRolls(total, rollFormulas)
 
-      expect(result).toHaveProperty('bit')
-      expect(result).toHaveProperty('copper')
-      expect(result).toHaveProperty('silver')
-      expect(result).toHaveProperty('gold')
+      expect(result).toHaveProperty('coins')
+      expect(result).toHaveProperty('total')
     })
   })
 })
