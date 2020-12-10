@@ -1,5 +1,3 @@
-// @version 1.1
-
 import React from 'react'
 import ReactGA from 'react-ga'
 
