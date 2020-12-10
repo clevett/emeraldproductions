@@ -1,6 +1,6 @@
 class Coins {
-  constructor(total) {
-    this.goldLimitPerLevel = total
+  constructor(limit) {
+    this.goldLimitPerLevel = limit
     this.bits = 0
     this.cp = 0
     this.ss = 0
@@ -81,8 +81,7 @@ class Coins {
 
     results.forEach(({name, result}) => {
       const divisor = this.goldDivisor(name)
-
-      sum += this.denomination(divisor, result)
+      sum += result / divisor
       this.setCoins(name, result)
     })
 

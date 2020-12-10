@@ -3,12 +3,10 @@ import Coins from '../../Classes/Coins'
 
 interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|string} 
 
-const processRoll = (total:number, rollFormulas:rolls) => {
+const processRoll = (rollFormulas:rolls) => {
   const results = getRolls(rollFormulas)
-  const coins = new Coins(total)
+  const coins = new Coins()
   const rolls = coins.handleRoll(results)
-
-  console.table({...rolls, limit: total })
 
   return rolls
 }

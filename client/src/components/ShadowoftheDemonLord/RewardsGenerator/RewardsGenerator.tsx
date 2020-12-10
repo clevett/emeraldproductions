@@ -7,7 +7,7 @@ import SelectBuilder from '../../SelectBuilder/SelectBuilder'
 
 import buildResultStringFrom from './helpers/buildResultString'
 
-import Treasure from './helpers/Treasure'
+import Treasure from './Classes/Treasure'
 
 const RewardsGenerator = () => {
   const levels = ['starting', 'novice', 'expert', 'master']

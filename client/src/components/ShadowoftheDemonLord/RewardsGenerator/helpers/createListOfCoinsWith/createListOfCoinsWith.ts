@@ -8,10 +8,10 @@ const createListOfCoinsWith = (treasure: coins) => {
   for (const [key, value] of Object.entries(treasure) ) {
     const longName = getProperCoinName(key)
     const name = value > 1 ? `${longName}s` : longName
-    string += value ? `${value} ${name}, ` : ''
+    string += value ? ` ${value} ${name},` : ''
   }
 
-  return string
+  return string.slice(0, -1)
 }
 
 export default createListOfCoinsWith
