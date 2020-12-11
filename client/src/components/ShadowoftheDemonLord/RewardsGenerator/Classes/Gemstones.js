@@ -1,45 +1,29 @@
-class Gemstones {
+import Valuable from './Vauable'
+
+class Gemstones extends Valuable {
   constructor() {
-    _name = null
-    _description = null
-    _value = null
+    super()
   }
 
-  get name() { return this._name }
-  get description() { return this._description }
-  get value() { return this._value }
-
-  set name(value) { this._name = value }
-  set description(value) { this._description = value }
-  set value(value) { this._value = value }
-
-  determineGems = () => {
+  determineGems = (value) => {
     //Value in gold
-    switch(this.value) {
-      case (5):
+    switch(value) {
+      case (0.2):
         return ['Azurite', 'Banded agate', 'Blue quartz', 'Eye agate', 'Hematite','Lapis lazuli', 'Malachite', 'Moss agate', 'Obsidian', 'Rhodochrosite', 'Tiger eye', 'Turquoise']
-      case (10):
+      case (1):
         return ['Bloodstone', 'Carnelian', 'Chalcedony', 'Chrysoprase', 'Citrine', 'Jasper', 'Moonstone', 'Onyx', 'Quartz', 'Sardonyx', 'Star rose quartz', 'Zircon']
-      case (20):
+      case (2):
         return ['Amber', 'Amethyst', 'Chrysoberyl', 'Coral', 'Garnet', 'Jade', 'Jet', 'Pearl', 'Spinel', 'Tourmaline']
-      case (50):
+      case (10):
         return ['Alexandrite', 'Aquamarine', 'Black pearl', 'Blue spinel', 'Peridot', 'Topaz']
-      case (100):
+      case (20):
         return ['Black opal', 'Blue sapphire', 'Emerald', 'Fire opal', 'Opal', 'Star ruby', 'Star sapphire', 'Yellow sapphire']
-      case (200):
+      case (100):
         return ['Black sapphire', 'Diamond', 'Jacinth', 'Ruby']
       default:
         return []
     }
   }
-
-  // twoSilverGems = () => {
-
-  // }
-
-  // oneGoldGems = () => {
-
-  // }
 }
 
 export default Gemstones

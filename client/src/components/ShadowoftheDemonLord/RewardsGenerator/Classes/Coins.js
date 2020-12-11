@@ -1,13 +1,13 @@
 import Treasure from './Treasure'
 class Coins extends Treasure {
-  constructor(name) {
-    super(name)
+  constructor(level) {
+    super(level)
     this.bits = 0
     this.cp = 0
     this.ss = 0
     this.gc = 0
     this.lootGoldTotal = 0
-    this.rollForumlas = this.determineCoins(name)
+    this.rollForumlas = this.determineCoins(level)
   }
 
   get bit() { return this.bits }
@@ -119,6 +119,7 @@ class Coins extends Treasure {
     }
   }
 
+  //No tests for this as it is subject to change
   determineCoins = (name) => {
     switch(name) {
       case 'starting':
