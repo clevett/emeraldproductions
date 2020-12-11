@@ -1,9 +1,9 @@
 import Coins from './Coins'
 
 describe('Given a new Coins is created', () => {
-  let coins = new Coins(5)
+  let coins = new Coins('novice')
 
-  afterEach(() => coins = new Coins(5))
+  afterEach(() => coins = new Coins('novice'))
   //const rollFormulas = {bit: '2d6', cp: '2d6', ss: '6d6', gc: '3d6'}
 
   describe('when getAllCoins is called', () => {

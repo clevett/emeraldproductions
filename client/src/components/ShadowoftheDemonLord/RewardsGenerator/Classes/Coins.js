@@ -1,25 +1,27 @@
-class Coins {
-  constructor(limit) {
-    this.goldLimitPerLevel = limit
+import Treasure from './Treasure'
+class Coins extends Treasure {
+  constructor(name) {
+    super(name)
     this.bits = 0
     this.cp = 0
     this.ss = 0
     this.gc = 0
-    this.goldTotal = 0
+    this.lootGoldTotal = 0
+    this.rollForumlas = this.determineCoins()
   }
 
   get bit() { return this.bits }
   get copper() { return this.cp }
   get silver() { return this.ss }
   get gold() { return this.gc }
-  get limit() { return this.goldLimitPerLevel }
-  get total() { return this.goldTotal }
+  get total() { return this.lootGoldTotal }
+  get rolls() { return this.rollForumlas }
 
   set bit(value) { return this.bits = value }
   set copper(value) { return this.cp = value }
   set silver(value) { return this.ss = value }
   set gold(value) { return this.gc = value }
-  set total(value) { return this.goldTotal = value }
+  set total(value) { return this.lootGoldTotal = value }
 
   addAllCoins = (coins) => {
     this.bit += coins.bit || 0
@@ -114,6 +116,69 @@ class Coins {
         break
       default:
         this.gc = value
+    }
+  }
+
+  determineCoins = () => {
+    switch(this.name) {
+      case 'starting':
+        return [
+          {
+            name: 'bit',
+            roll: '3d6'
+          },
+          {
+            name: 'copper',
+            roll: '6d6'
+          },
+          {
+            name: 'silver',
+            roll: '2d6'
+          }
+        ]
+      case 'novice':
+        return [
+          {
+            name: 'bit',
+            roll: '2d6'
+          },
+          {
+            name: 'copper',
+            roll: '2d6'
+          },
+          {
+            name: 'silver',
+            roll: '6d6'
+          },
+          {
+            name: 'gold',
+            roll: '3d6'
+          }
+        ]
+      case 'expert':
+        return [
+          {
+            name: 'silver',
+            roll: '8d6'
+          },
+          {
+            name: 'gold',
+            roll: '5d6'
+          }
+        ]
+      case 'master':
+        return [
+          {
+            name: 'silver',
+            roll: '12d6'
+          },
+          {
+            name: 'gold',
+            roll: '8d6'
+          }
+        ]
+      default:
+        return []
     }
   }
 }
