@@ -7,7 +7,7 @@ class Coins extends Treasure {
     this.ss = 0
     this.gc = 0
     this.lootGoldTotal = 0
-    this.rollForumlas = this.determineCoins()
+    this.rollForumlas = this.determineCoins(name)
   }
 
   get bit() { return this.bits }
@@ -119,8 +119,8 @@ class Coins extends Treasure {
     }
   }
 
-  determineCoins = () => {
-    switch(this.name) {
+  determineCoins = (name) => {
+    switch(name) {
       case 'starting':
         return [
           {

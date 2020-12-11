@@ -27,7 +27,6 @@ const RewardsGenerator = () => {
     const treasure = new Coins(level)
     setLevel(level)
     setGoldPerLevel(treasure.limit)
-
     setResult( buildResultStringFrom(level) )
   }
 
