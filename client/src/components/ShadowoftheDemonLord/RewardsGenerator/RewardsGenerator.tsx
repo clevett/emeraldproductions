@@ -7,7 +7,7 @@ import SelectBuilder from '../../SelectBuilder/SelectBuilder'
 
 import buildResultStringFrom from './helpers/buildResultString'
 
-import Treasure from './Classes/Treasure'
+import Coins from './Classes/Treasure'
 
 const RewardsGenerator = () => {
   const levels = ['starting', 'novice', 'expert', 'master']
@@ -20,16 +20,15 @@ const RewardsGenerator = () => {
   }, [])
 
   const handleClick = () => {
-    const treasure = new Treasure(groupLevel)
-    setResult( buildResultStringFrom(goldPerLevel, treasure.deleteNullCoins()) )
+    setResult( buildResultStringFrom(groupLevel) )
   }
 
   const onSelectValueChange = (level:string):void => {
-    const treasure = new Treasure(level)
+    const treasure = new Coins(level)
     setLevel(level)
-    setGoldPerLevel(treasure.gold)
+    setGoldPerLevel(treasure.limit)
 
-    setResult( buildResultStringFrom(treasure.gold, treasure.deleteNullCoins()) )
+    setResult( buildResultStringFrom(level) )
   }
 
   const captalizeWord = () => `${groupLevel.charAt(0).toUpperCase()}${groupLevel.slice(1)}`

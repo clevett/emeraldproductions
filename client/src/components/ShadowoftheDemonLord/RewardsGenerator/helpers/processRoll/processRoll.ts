@@ -1,7 +1,7 @@
 import getRolls from '../getRolls/getRolls'
 import Coins from '../../Classes/Coins'
 
-interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|string} 
+interface rolls {name:string, roll:string}[]
 
 const processRoll = (rollFormulas:rolls) => {
   const results = getRolls(rollFormulas)

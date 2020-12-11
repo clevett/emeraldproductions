@@ -1,16 +1,16 @@
 import processRoll from '../processRoll/processRoll'
 import Coins from '../../Classes/Coins'
 
-interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|string} 
+interface coins {bit: number, copper: number, silver: number, gold:number} 
 
-const generateCoinList = (limit:number, rollFormulas:rolls) => {
-  const treasure = new Coins(limit)
-  let total = limit
+const generateCoinList = (level:string):coins => {
+  const treasure = new Coins(level)
+  let total = treasure.limit
   let loop = true
   let loopNumber = 0
 
   do {
-    const loot = processRoll(rollFormulas)
+    const loot = processRoll(treasure.rolls)
     if (loot.total > 0) {
       loot.coins.forEach(({name, value}) => {
         const convertedToGold = value / treasure.goldDivisor(name)

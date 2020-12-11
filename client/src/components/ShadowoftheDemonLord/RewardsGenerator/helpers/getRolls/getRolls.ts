@@ -1,17 +1,13 @@
 import Roll from 'roll'
 
-interface rolls {bit: null|string, cp: null|string, ss: null|string, gc:null|string} 
+interface rolls {name:string, roll:string}[]
+interface formula {name:string, roll:string}
+interface results {name:string, result:number}[]
 
-const getRolls = (formulas:rolls) => {
+const getRolls = (formulas:rolls):results => {
   const diceRoll = (dice:string) => new Roll().roll(dice).result
-  let results: any[] = []
 
-  for (const [key, value] of Object.entries(formulas) ) {
-    const roll = diceRoll(value)
-    results = [...results, {name: key, result: roll}]
-  }
-
-  return results
+  return formulas.map(({name, roll}:formula):results => ({ name, result: diceRoll(roll) }) )
 }
 
 export default getRolls
