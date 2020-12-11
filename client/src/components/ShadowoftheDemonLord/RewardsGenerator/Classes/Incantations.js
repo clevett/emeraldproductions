@@ -1,4 +1,4 @@
-import Valuable from './Vauable'
+import Valuable from './Valuable'
 
 class Incantations extends Valuable {
   constructor() {
