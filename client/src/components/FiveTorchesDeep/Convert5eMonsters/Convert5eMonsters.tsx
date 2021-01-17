@@ -1,30 +1,42 @@
 import React, { useState, useEffect } from "react"
 import axios from 'axios'
 
+import { Card } from "react-bootstrap"
+
 import SearchBar from '../../SearchBar/SearchBar'
 
 import fuzzySearch from '../../SearchBar/fuzzySearch/fuzzySearch'
 
+import convertFifthToFTD from '../helpers/convertFifthToFTD'
+
 const Convert5eMonsters = () => {
+  const [fifthEditionData, setFifthEditionData] = useState<{}[] | undefined>(undefined)
   const [monsters] = useState(undefined)
 
   useEffect(() => {
-    loadData()
+    getDataFrom5eapi()
   }, [])
 
-  const loadData = async () => {
+  useEffect(() => {
+    if(fifthEditionData) {
+      convertFifthToFTD(fifthEditionData)
+    }
+  }, [fifthEditionData])
+
+  const getDataFrom5eapi = async () => {
     await axios.get('https://www.dnd5eapi.co/api/monsters/')
-    .then(response => {
+    .then(async (response) => {
       const monsterList = response.data.results
-      let monsters: any[] = []
-      monsterList.map(async (monster: { url: string }) => {
+      let monsterData: {}[] = []
+
+      await monsterList.forEach(async (monster: { url: string }) => {
         await axios.get(`https://www.dnd5eapi.co${monster.url}`)
-        .then(response => {
-          monsters.push(response.data)
+        .then((response):void => {
+          monsterData.push(response.data)
         })
       })
 
-      console.log(monsters)
+      setFifthEditionData(monsterData)
     })
     .catch(error => console.log(error)) 
 
