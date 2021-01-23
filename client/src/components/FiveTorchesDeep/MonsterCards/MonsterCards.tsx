@@ -4,9 +4,6 @@ import { Card } from "react-bootstrap"
 import { MonsterFTD } from "../types/types"
 
 const MonsterCards = ({ monsters }: {monsters: MonsterFTD[] | undefined}) => {
-  console.log("MONSTER LIST")
-  console.log(monsters)
-
   if (monsters) {
     monsters.map((monster: { name: any; size: any; type: any; hd: any }) => {
       const { name, size, type, hd } = monster
