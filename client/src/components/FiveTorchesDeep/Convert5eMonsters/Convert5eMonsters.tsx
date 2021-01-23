@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios'
 
 import { Container, Row } from "react-bootstrap"
-import MonsterCards from "../MonsterCards/MonsterCards"
+import MonsterCard from "../MonsterCard/MonsterCard"
+import NoMonsterFound from "../MonsterCard/NoMonsterFound"
 import { MonsterFTD } from "../types/types"
 
 import convertFifthMonsterToFTD from "../helpers/convertFifthMonsterToFTD"
@@ -10,7 +11,6 @@ import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 
 const Convert5eMonsters = () => {
   const [monsters, setMonsters] = useState<MonsterFTD[] | undefined>(undefined)
-  const [selectedMonsters, setSelectedMonsters] = useState(["goblin", "orc", "wolf"])
 
   useEffect(() => {
     console.log("Monsters")
@@ -18,25 +18,21 @@ const Convert5eMonsters = () => {
   }, [monsters])
 
   useEffect(() => {
-    getInitialMonstersFrom5eapi(selectedMonsters)
+    getInitialMonstersFrom5eapi()
   }, [])
 
-  const getInitialMonstersFrom5eapi = async (monsterList:string[]) => {
-    const monsterData: any[] = []
-    await monsterList.forEach(async (monster:string) => {
-      await axios.get(`https://www.dnd5eapi.co/api/monsters/${monster}`)
-      .then((response):void => {
-        monsterData.push(convertFifthMonsterToFTD(response.data))
-      })
+  const getInitialMonstersFrom5eapi = async () => {
+    await axios.get(`https://www.dnd5eapi.co/api/monsters/goblin`)
+    .then((response):void => {
+      setMonsters([convertFifthMonsterToFTD(response.data)])
     })
+  }
 
-    console.log("Monster Data")
-    console.log(monsterData)
-
-    if(monsterData.length > 0) {
-      setMonsters(monsterData)
+  const renderedList = () => {
+    if(monsters) {
+      return monsters.map(monster => <MonsterCard monster={monster} />)
     } else {
-      setMonsters(undefined)
+      return <NoMonsterFound />
     }
   }
 
@@ -48,7 +44,7 @@ const Convert5eMonsters = () => {
         {/* <img alt='bloody pentagram' src={pentagram}></img> */}
       </Row>
       <Row>
-        <MonsterCards monsters={monsters} />
+        {renderedList()}
       </Row>
     </Container>
   )
