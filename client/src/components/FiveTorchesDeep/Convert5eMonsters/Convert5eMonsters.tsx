@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react"
-import axios from 'axios'
 
 import { Container, Row } from "react-bootstrap"
 import MonsterCard from "../MonsterCard/MonsterCard"
 import NoMonsterFound from "../MonsterCard/NoMonsterFound"
 import { MonsterFTD } from "../types/types"
+
+import data from "./data/monsters"
+import './Convert5eMonsters.scss'
 
 import convertFifthMonsterToFTD from "../helpers/convertFifthMonsterToFTD"
 import DriveThruLink from '../../DriveThruLink/DriveThruLink'
@@ -22,10 +24,8 @@ const Convert5eMonsters = () => {
   }, [])
 
   const getInitialMonstersFrom5eapi = async () => {
-    await axios.get(`https://www.dnd5eapi.co/api/monsters/goblin`)
-    .then((response):void => {
-      setMonsters([convertFifthMonsterToFTD(response.data)])
-    })
+    const ftdMonsters = await data.map(monster => convertFifthMonsterToFTD(monster))
+    setMonsters(ftdMonsters)
   }
 
   const renderedList = () => {
