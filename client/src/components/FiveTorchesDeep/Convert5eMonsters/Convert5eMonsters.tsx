@@ -5,10 +5,6 @@ import { Container, Row } from "react-bootstrap"
 import MonsterCards from "../MonsterCards/MonsterCards"
 import { MonsterFTD } from "../types/types"
 
-// import SearchBar from '../../SearchBar/SearchBar'
-
-// import fuzzySearch from '../../SearchBar/fuzzySearch/fuzzySearch'
-
 import convertFifthMonsterToFTD from "../helpers/convertFifthMonsterToFTD"
 import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 
@@ -17,7 +13,7 @@ const Convert5eMonsters = () => {
   const [selectedMonsters, setSelectedMonsters] = useState(["goblin", "orc", "wolf"])
 
   useEffect(() => {
-    console.log("USE EFFECT MONSTERS")
+    console.log("Monsters")
     console.log(monsters)
   }, [monsters])
 
@@ -26,28 +22,22 @@ const Convert5eMonsters = () => {
   }, [])
 
   const getInitialMonstersFrom5eapi = async (monsterList:string[]) => {
-    // let monsterData: any[] = []
-
-    await axios.get(`https://www.dnd5eapi.co/api/monsters/goblin`)
+    const monsterData: any[] = []
+    await monsterList.forEach(async (monster:string) => {
+      await axios.get(`https://www.dnd5eapi.co/api/monsters/${monster}`)
       .then((response):void => {
-        setMonsters([convertFifthMonsterToFTD(response.data)])
+        monsterData.push(convertFifthMonsterToFTD(response.data))
       })
+    })
 
-    // await monsterList.forEach(async (monster:string) => {
-    //   await axios.get(`https://www.dnd5eapi.co/api/monsters/${monster}`)
-    //   .then((response):void => {
-    //     monsterData.push(convertFifthMonsterToFTD(response.data))
-    //   })
-    // })
+    console.log("Monster Data")
+    console.log(monsterData)
 
-    // console.log("MONSTER DATA")
-    // console.log(monsterData)
-
-    // if(monsterData.length > 0) {
-    //   setMonsters(monsterData)
-    // } else {
-    //   setMonsters(undefined)
-    // }
+    if(monsterData.length > 0) {
+      setMonsters(monsterData)
+    } else {
+      setMonsters(undefined)
+    }
   }
 
   return(
@@ -65,22 +55,3 @@ const Convert5eMonsters = () => {
 }
 
 export default Convert5eMonsters
-
-
-  //Get All Monsters but the API cuts them short
-  //This is probably toooooo much on intitial load
-  // const getDataFrom5eapi = async () => {
-  //   await axios.get('https://www.dnd5eapi.co/api/monsters/')
-  //   .then(async (response) => {
-  //     const monsterList = response.data.results
-  //     let monsterData: {}[] = []
-
-  //     await monsterList.forEach(async (monster: { url: string }) => {
-  //       await axios.get(`https://www.dnd5eapi.co${monster.url}`)
-  //       .then((response):void => {
-  //         monsterData.push(convertFifthMonsterToFTD(response.data))
-  //       })
-  //     })
-  //   })
-  //   .catch(error => console.log(error)) 
-  // }
