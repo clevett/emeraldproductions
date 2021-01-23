@@ -7,7 +7,6 @@ import Threat from './Threat/Threat'
 import AnimatedDie from '../../../AnimatedDie/AnimatedDie'
 
 import data from  './encounter_data.js'
-
 class RandomEncounters extends React.Component {
 	constructor(props) {
 		super(props)
