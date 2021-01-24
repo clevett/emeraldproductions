@@ -1,6 +1,24 @@
 .FTDFifthEditionMonsters {
+  h3 {
+    display: inline;
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
+
   .card {
-    min-width: 300px;
+    min-width: 350px;
     margin: 2px 10px;
+    text-align: left;
+  }
+
+  .card-title {
+    width: 100%;
+
+    .SelectBuilder {
+      display: inline;
+      float: right;
+    }
   }
 }
