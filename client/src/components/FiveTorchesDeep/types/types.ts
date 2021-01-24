@@ -16,6 +16,17 @@ export interface MonsterMath {
   damage: string,
 }
 
+export interface category {
+  attributes: string[] | [],
+  skills: string[] | []
+}
+
+export interface MonsterCategories   {
+  name: string,
+  weak: category,
+  strong: category
+}
+
 export interface MonsterFTD {
   name: string,
   size: string,
