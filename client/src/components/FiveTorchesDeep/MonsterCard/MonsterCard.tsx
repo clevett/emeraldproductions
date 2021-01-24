@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card } from "react-bootstrap"
 
 import { MonsterFTD } from "../types/types"
 
+import Description from "./Description/Description"
 import SelectBuilder from "../../SelectBuilder/SelectBuilder"
+
+import categories from "../data/categories"
+
+import displayModifier from "../helpers/displayModifier"
 
 const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
   const { 
@@ -19,13 +24,15 @@ const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
     type,
   } = monster
 
-  const monsterCategories = ['Brute', "Leader", "Predator", "Shaper", "Sniper", "Soldier"]
+  const monsterCategories = categories.map((category):string => category.name)
+  const [category, setCategory] = useState(categories[0])
 
-  const handleCategoryChange = (category: string) => {
-    console.log(category)
+  const handleCategoryChange = (value: string) => {
+    const findCategory = categories.find((element) => value === element.name)
+    if (findCategory) {
+      setCategory(findCategory)
+    }
   }
-
-  const displayModifier = (modifier: number):string => modifier > 0 ? `+${modifier}` : `${modifier}`
 
   return (
     <Card>
@@ -42,45 +49,20 @@ const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
         </Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{size}, {type}</Card.Subtitle>
         <Card.Text>
-          <p>
-            <strong>To Hit: </strong>{attack} <br />
-            <strong>Damage: </strong>{damage}
-          </p>
-          <p>
-            <strong>AC: </strong>{ac} <br />
-            <strong>HP: </strong>{hp}
-          </p>
-          <p>
-            <strong>Base mod: </strong>{displayModifier(modifiers.normal)} <br />
-            <strong>Speed: </strong>{speed}
-          </p>
-          
-          <hr />
+          <strong>To Hit: </strong>{attack} <br />
+          <strong>Damage: </strong>{damage} <br /><br />
 
-          <h4>Strong</h4>
-          <p>
-            <strong>Int: </strong>{displayModifier(modifiers.strong)} <br />
-            <strong>Stealth: </strong>{displayModifier(modifiers.strong)}
-          </p>
-          <p>
-            Patient, cunning, stealthy, aboreal...
-          </p>
+          <strong>AC: </strong>{ac}<br />
+          <strong>HP: </strong>{hp}<br /><br />
 
-          <hr />
-
-          <h4>Techniques</h4>
-
-          <hr />
-
-          <h4>Weak</h4>
-          <p>
-            <strong>Con: </strong>{displayModifier(modifiers.weak)} <br />
-            <strong>Morale: </strong>{displayModifier(modifiers.weak)}
-          </p>
-          <p>
-            Fearful, quick to run and hide...
-          </p>
+          <strong>Base mod: </strong>{displayModifier(modifiers.normal)} <br />
+          <strong>Speed: </strong>{speed}
         </Card.Text>
+        <Description title="Strong" category={category.strong} modifier={modifiers.strong} />
+        <Card.Text>
+          <strong className='text-uppercase'>Techniques</strong>
+        </Card.Text>
+        <Description title="Weak" category={category.weak} modifier={modifiers.weak} />
       </Card.Body>
     </Card>
   )
