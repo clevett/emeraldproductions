@@ -1,0 +1,21 @@
+import determineModifiers from './determineModifiers'
+import math from '../data/monsterMath'
+
+describe('Given determineModifirs is called', () => {
+  describe('when passed hd and monsterMath Object', () => {
+    const example = math[2]
+    const { normal, weak, strong } = example
+
+    const result = determineModifiers(1, example)
+
+    const expected = {
+      normal,
+      weak,
+      strong
+    }
+
+    it('then returns an object of modifiers', () => {
+      expect(result).toEqual(expected)
+    })
+  })
+})

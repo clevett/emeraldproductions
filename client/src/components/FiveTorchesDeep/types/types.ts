@@ -5,7 +5,15 @@ export interface FifthEditionMonster {
   type: string,
   challenge_rating: number,
   armor_class: number,
-  attack_bonus: number | undefined,
+  [key: string]: any;
+}
+export interface MonsterMath {
+  hd: number,
+  hp: number,
+  weak: number,
+  normal: number,
+  strong: number,
+  damage: string,
 }
 
 export interface MonsterFTD {
@@ -13,8 +21,14 @@ export interface MonsterFTD {
   size: string,
   type: string,
   hd: number,
-  modifier: number,
   ac: number,
-  hp: number,
+  hp: string,
   attack: number,
+  damage: string,
+  modifiers: {
+    normal: number,
+    weak: number,
+    strong: number,
+  },
+  speed: string | undefined
 }

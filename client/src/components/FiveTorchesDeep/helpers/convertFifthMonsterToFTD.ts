@@ -1,28 +1,41 @@
-import Roll from 'roll'
 import { FifthEditionMonster, MonsterFTD } from "../types/types"
+
+import convertHp from "./convertHP"
+import convertSpeed from './convertSpeed'
+import findMonsterMath from "./findMonsterMath"
+import determineModifiers from './determineModifiers'
 
 const convertFifthMonstersToFTD = (monster: FifthEditionMonster): MonsterFTD => {
   const {
     armor_class,
+    challenge_rating,
     name, 
-    size, 
-    type, 
-    challenge_rating 
-  } = monster
-
-  const modifier = Math.round(challenge_rating + 2) > 10 ? 10 : Math.round(challenge_rating + 2)
-
-  const diceRoll = ( quanity: number ): number => new Roll().roll(`${quanity}d8`).result
-  const hp = challenge_rating < 1 ? diceRoll(1) : diceRoll(challenge_rating)
-
-  return {
-    name,
     size,
     type,
-    hd: challenge_rating,
-    modifier,
+  } = monster
+
+  const attack = monster.attack_bonus ? monster.attack_bonus : 0
+
+  const monsterMath = findMonsterMath(challenge_rating)
+  
+  const damage = monsterMath ? monsterMath.damage : ""
+  const hp = convertHp(challenge_rating, monsterMath)
+
+  const modifiers = determineModifiers(challenge_rating, monsterMath)
+
+  const speed = monster.speed ? convertSpeed(monster.speed) : undefined
+
+  return {
     ac: armor_class,
+    attack,
+    damage,
+    hd: challenge_rating,
     hp,
+    name,
+    modifiers,
+    size,
+    speed,
+    type,
   }
 }
 
