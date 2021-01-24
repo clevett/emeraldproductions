@@ -50,7 +50,8 @@ class EncounterBuilder extends React.Component {
   }
 
   onTermSubmit = term => {
-    const results = fuzzySearch(this.state.beasts, term)
+    const keys = ["name", "difficulty", "descriptor", "source"]
+    const results = fuzzySearch(this.state.beasts, term, keys)
     this.setState({ searchResults: results })
   }
 

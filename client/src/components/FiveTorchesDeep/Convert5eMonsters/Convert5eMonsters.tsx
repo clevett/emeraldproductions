@@ -11,29 +11,40 @@ import './Convert5eMonsters.scss'
 import convertFifthMonsterToFTD from "../helpers/convertFifthMonsterToFTD"
 import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 
+import SearchBar from '../../SearchBar/SearchBar'
+import fuzzySearch from '../../SearchBar/fuzzySearch/fuzzySearch'
+
 const Convert5eMonsters = () => {
   const [monsters, setMonsters] = useState<MonsterFTD[] | undefined>(undefined)
+  const [filteredMonsters, setFilteredMonsters] = useState<any[] | null> (null)
 
   useEffect(() => {
-    console.log("Monsters")
-    console.log(monsters)
+    if(monsters) {
+      onTermSubmit("Goblin")
+    }
   }, [monsters])
 
   useEffect(() => {
-    getInitialMonstersFrom5eapi()
+    setAllMonsters()
   }, [])
 
-  const getInitialMonstersFrom5eapi = async () => {
+  const setAllMonsters = async () => {
     const ftdMonsters = await data.map(monster => convertFifthMonsterToFTD(monster))
     setMonsters(ftdMonsters)
   }
 
   const renderedList = () => {
-    if(monsters) {
-      return monsters.map(monster => <MonsterCard monster={monster} />)
+    if(filteredMonsters) {
+      return filteredMonsters.map(monster => <MonsterCard key={monster.name} monster={monster} />)
     } else {
       return <NoMonsterFound />
     }
+  }
+
+  const onTermSubmit = (term:string):void => {
+    const keys = ["name", "size", "type", "hd"]
+    const results = fuzzySearch(monsters, term, keys)
+    setFilteredMonsters(results)
   }
 
   return(
@@ -42,6 +53,9 @@ const Convert5eMonsters = () => {
         {/* <img alt='bloody pentagram' src={pentagram}></img> */}
         <DriveThruLink id='264584' name='Five Torches Deep Fifth Edition Bestiary' />
         {/* <img alt='bloody pentagram' src={pentagram}></img> */}
+      </Row>
+      <Row>
+        <SearchBar onTermSubmit={onTermSubmit} />
       </Row>
       <Row>
         {renderedList()}

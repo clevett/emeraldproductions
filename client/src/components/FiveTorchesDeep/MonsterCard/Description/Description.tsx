@@ -4,8 +4,8 @@ import { Card } from "react-bootstrap"
 import displayModifier from "../../helpers/displayModifier"
 import { category } from '../../types/types'
 
-const Description = ({ title, modifier, category }: {title: string, modifier: number, category: category}) => {
-  const { attributes, skills } = category
+const Description = ({ title, modifier, stats }: {title: string, modifier: number, stats: category}) => {
+  const { attributes, skills } = stats
 
   const skillDisplay = skills.length ? `${skills.join(', ')}` : ''
 

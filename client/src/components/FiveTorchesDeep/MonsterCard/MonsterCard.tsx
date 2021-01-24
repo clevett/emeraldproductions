@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap"
 import { MonsterFTD } from "../types/types"
 
 import Description from "./Description/Description"
+import Gold from './Rolls/Gold'
 import SelectBuilder from "../../SelectBuilder/SelectBuilder"
 
 import categories from "../data/categories"
@@ -58,11 +59,12 @@ const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
           <strong>Base mod: </strong>{displayModifier(modifiers.normal)} <br />
           <strong>Speed: </strong>{speed}
         </Card.Text>
-        <Description title="Strong" category={category.strong} modifier={modifiers.strong} />
-        <Card.Text>
+        <Description title="Strong" stats={category.strong} modifier={modifiers.strong} />
+        {/* <Card.Text>
           <strong className='text-uppercase'>Techniques</strong>
-        </Card.Text>
-        <Description title="Weak" category={category.weak} modifier={modifiers.weak} />
+        </Card.Text> */}
+        <Description title="Weak" stats={category.weak} modifier={modifiers.weak} />
+        <Gold hd={hd} />
       </Card.Body>
     </Card>
   )
