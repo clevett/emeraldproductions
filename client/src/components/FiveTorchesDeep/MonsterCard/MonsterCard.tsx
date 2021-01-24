@@ -50,7 +50,7 @@ const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
         </Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{size}, {type}</Card.Subtitle>
         <Card.Text>
-          <strong>To Hit: </strong>{attack} <br />
+          <strong>To Hit: </strong>{displayModifier(modifiers.normal)} <br />
           <strong>Damage: </strong>{damage} <br /><br />
 
           <strong>AC: </strong>{ac}<br />
