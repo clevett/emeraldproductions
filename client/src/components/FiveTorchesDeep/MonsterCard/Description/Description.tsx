@@ -1,8 +1,8 @@
 import React from 'react'
 import { Card } from "react-bootstrap"
 
-import displayModifier from "../../helpers/displayModifier"
-import { category } from '../../types/types'
+import displayModifier from "../../helpers/displayModifier/displayModifier"
+import { category } from '../../types/ftdTypes'
 
 const Description = ({ title, modifier, stats }: {title: string, modifier: number, stats: category}) => {
   const { attributes, skills } = stats

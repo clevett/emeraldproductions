@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
 import { Card } from "react-bootstrap"
 
-import { MonsterFTD } from "../types/types"
+import { MonsterFTD } from "../types/ftdTypes"
 
+import Abilities from "./Abilities/Abilities"
+import Actions from "./Actions/Actions"
 import Description from "./Description/Description"
 import Gold from './Rolls/Gold'
 import SelectBuilder from "../../SelectBuilder/SelectBuilder"
 
 import categories from "../data/categories"
 
-import displayModifier from "../helpers/displayModifier"
+import displayModifier from "../helpers/displayModifier/displayModifier"
 
 const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
-  const { 
+  const {
+    abilities,
     ac,
-    attack,
+    //attack,
+    actions,
     damage,
     hd,
     hp,
@@ -60,10 +64,9 @@ const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
           <strong>Speed: </strong>{speed}
         </Card.Text>
         <Description title="Strong" stats={category.strong} modifier={modifiers.strong} />
-        {/* <Card.Text>
-          <strong className='text-uppercase'>Techniques</strong>
-        </Card.Text> */}
         <Description title="Weak" stats={category.weak} modifier={modifiers.weak} />
+        <Abilities abilities={abilities} />
+        <Actions actions={actions} />
         <Gold hd={hd} />
       </Card.Body>
     </Card>

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import { Container, Row } from "react-bootstrap"
 import MonsterCard from "../MonsterCard/MonsterCard"
 import NoMonsterFound from "../MonsterCard/NoMonsterFound"
-import { MonsterFTD } from "../types/types"
+import { MonsterFTD } from "../types/ftdTypes"
 
 import data from "./data/monsters"
 import './Convert5eMonsters.scss'

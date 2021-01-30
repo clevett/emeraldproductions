@@ -1,7 +1,7 @@
 import Roll from 'roll'
-import { MonsterMath } from "../types/types"
+import { MonsterMath } from "../../types/ftdTypes"
 
-import challengeCheck from "./challengeCheck"
+import challengeCheck from "../challengeCheck/challengeCheck"
 
 export const rollD8s = ( quanity: number ): number => new Roll().roll(`${quanity}d8`).result
 
