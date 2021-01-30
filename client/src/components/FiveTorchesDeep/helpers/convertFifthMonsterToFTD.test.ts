@@ -24,7 +24,7 @@ describe("Given convertFifthMonstersToFTD is called", () => {
     }
 
     it("then returns an ftd object", () => {
-      expect(convertFifthMonsterToFTD(fifthMonster)).toEqual(ftdMonster)
+      expect(convertFifthMonsterToFTD(fifthMonster)).toMatchObject(ftdMonster)
     })
   })
 })
