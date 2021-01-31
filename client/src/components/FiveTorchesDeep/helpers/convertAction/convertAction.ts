@@ -10,11 +10,11 @@ const removeHumanoidWeapons = (actions:action[]) => {
 }
 
 const removeNaturalWeapons = (actions:action[]) => {
-  const weaponNames = ['Bite', 'Claw', "Claws"]
+  const weaponNames = ['Bite', 'Claw', "Claws", "Gore", "Hooves", "Ram"]
   return actions.filter(action => !weaponNames.includes(action.name))
 }
 
-const multiAttack = (hd: number) => `${Math.floor(hd / 3)} extra attacks`
+const multiAttack = (hd: number) => `${Math.max(Math.floor(hd / 3), 1)} extra attacks`
 
 const ifTargetCreature = 'If the target is a creature,'
 

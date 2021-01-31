@@ -23,7 +23,7 @@ const convertFifthMonstersToFTD = (monster: FifthEditionMonster): MonsterFTD => 
     type,
   } = monster
 
-  const joinArrayIntoList = (array:string[]):string => array.join(',')
+  const joinArrayIntoList = (array:string[]):string => array.join(', ')
 
   const abilities =  special_abilities ? convertAbility(special_abilities) : null
 
@@ -31,7 +31,8 @@ const convertFifthMonstersToFTD = (monster: FifthEditionMonster): MonsterFTD => 
 
   const attack = monster.attack_bonus ? monster.attack_bonus : 0
 
-  const immunitiesArray = [...condition_immunities, damage_immunities]
+  const conditionsImmunities = condition_immunities.map((condition:any) => condition.name.toLowerCase())
+  const immunitiesArray = [...conditionsImmunities, joinArrayIntoList(damage_immunities)]
   const immunities = immunitiesArray ? joinArrayIntoList(immunitiesArray) : null
 
   const monsterMath = findMonsterMath(challenge_rating)
