@@ -26,4 +26,18 @@
     border-bottom: 1px solid gray;
     padding-bottom: 20px;
   }
+
+  .mini-cards {
+    display: inline-grid;
+    grid-column-gap: 2%;
+    width: 100%;
+
+    &_2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &_3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
