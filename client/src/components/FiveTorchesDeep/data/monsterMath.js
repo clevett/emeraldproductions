@@ -6,15 +6,7 @@ export default [
     "normal": 2,
     "strong": 2,
     "damage": "1d4"
-  },  
-  {
-    "hd": 0.125,
-    "hp": 1,
-    "weak": -2,
-    "normal": 2,
-    "strong": 2,
-    "damage": "1d4"
-  },   
+  }, 
   {
     "hd": 0.5,
     "hp": 2,
