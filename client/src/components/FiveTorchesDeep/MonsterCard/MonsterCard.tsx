@@ -8,6 +8,7 @@ import Actions from "./Actions/Actions"
 import Description from "./Description/Description"
 import Gold from './Rolls/Gold'
 import SelectBuilder from "../../SelectBuilder/SelectBuilder"
+import Techniques from "./Techniques/Techniques"
 
 import categories from "../data/categories"
 
@@ -17,16 +18,18 @@ const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
   const {
     abilities,
     ac,
-    //attack,
     actions,
     damage,
     hd,
     hp,
+    immunities,
     name,
-    modifiers, 
+    modifiers,
+    resistances,
     size,
     speed,
     type,
+    vulnerabilities
   } = monster
 
   const monsterCategories = categories.map((category):string => category.name)
@@ -70,6 +73,9 @@ const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
             <strong>Speed: </strong>{speed}
           </span>
         </Card.Text>
+        {
+          immunities || resistances || vulnerabilities ? <Techniques monster={monster} /> : null
+        }
         <Card.Text className="mini-cards mini-cards_2">
           <Description title="Strong" stats={category.strong} modifier={modifiers.strong} />
           <Description title="Weak" stats={category.weak} modifier={modifiers.weak} />

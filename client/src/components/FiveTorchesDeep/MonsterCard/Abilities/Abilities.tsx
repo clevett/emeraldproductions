@@ -12,7 +12,7 @@ const Abilities = ({ abilities }: {abilities: ability[] | null }) => {
     }
   }
 
-  if (abilities) {
+  if (abilities && abilities.length > 0) {
     return (
       <Card.Text>
         <strong className='text-uppercase'>Special Abilities</strong><br />

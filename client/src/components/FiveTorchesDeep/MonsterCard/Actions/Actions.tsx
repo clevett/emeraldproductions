@@ -13,7 +13,7 @@ const Actions = ({ actions }: {actions: action[] | null }) => {
     }
   }
 
-  if (actions) {
+  if (actions && actions.length > 0) {
     return (
       <Card.Text>
         <strong className='text-uppercase'>Actions</strong><br />

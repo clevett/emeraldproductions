@@ -1,27 +1,20 @@
 import React, { useState } from 'react'
 import { Button, Card } from "react-bootstrap"
-import Roll from 'roll'
+
+import coinList from "./helpers/coinList"
+import goldRoll from "./helpers/goldRoll"
 
 const Gold = ({ hd }: { hd: number}) => {
-  const goldRoll = () => {
-    if (hd < 1) {
-       const roll = new Roll().roll(`1d20`).result
-       return hd * roll
-    } else {
-      return new Roll().roll(`${hd}d20`).result
-    }
-  }
-
-  const [ gold, setGold ] = useState(goldRoll())
+  const [ treasure, setTreasure ] = useState(coinList(goldRoll(hd)))
 
   const handleClick = () => {
-    setGold(goldRoll())
+    setTreasure(coinList(goldRoll(hd)))
   }
 
   return(
     <Card.Text>
       <Button variant="primary" onClick={handleClick}>Roll Gold</Button>
-      <span> {gold}</span>
+      <span> {treasure}</span>
     </Card.Text>
   )
 }
