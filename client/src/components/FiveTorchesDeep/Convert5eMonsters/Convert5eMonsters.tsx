@@ -14,6 +14,8 @@ import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 import SearchBar from '../../SearchBar/SearchBar'
 import fuzzySearch from '../../SearchBar/fuzzySearch/fuzzySearch'
 
+import logo from "../logo.jpg"
+
 const Convert5eMonsters = () => {
   const [monsters, setMonsters] = useState<MonsterFTD[] | undefined>(undefined)
   const [filteredMonsters, setFilteredMonsters] = useState<any[] | null> (null)
@@ -50,9 +52,9 @@ const Convert5eMonsters = () => {
   return(
     <Container className='FTDFifthEditionMonsters content text-white'>
       <Row className='header-row text-center mb-3 justify-content-center w-100'>
-        {/* <img alt='bloody pentagram' src={pentagram}></img> */}
+        <img alt='five with a torch flame' src={logo}></img>
         <DriveThruLink id='264584' name='Five Torches Deep Fifth Edition Bestiary' />
-        {/* <img alt='bloody pentagram' src={pentagram}></img> */}
+        <img alt='five with a torch flame' src={logo}></img>
       </Row>
       <Row>
         <SearchBar onTermSubmit={onTermSubmit} />
