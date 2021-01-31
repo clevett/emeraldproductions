@@ -1,0 +1,49 @@
+.FTDFifthEditionMonsters {
+  h3 {
+    display: inline;
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  .card {
+    min-width: 250px;
+    margin: 2px 10px;
+    text-align: left;
+    width: 500px;
+  }
+
+  .card-title {
+    width: 100%;
+
+    .SelectBuilder {
+      display: inline;
+      float: right;
+    }
+  }
+
+  .card-text {
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+  }
+
+  .mini-cards {
+    display: inline-grid;
+    grid-column-gap: 2%;
+    width: 100%;
+
+    span:nth-of-type(1n + 2) {
+      border-left: 1px solid gray;
+      padding: 2px 10px;
+    }
+
+    &_2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &_3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

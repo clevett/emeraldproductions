@@ -9,6 +9,8 @@ import ContactPage from '../ContactPage/ContactPage'
 import Roll20CharSheets from '../Roll20/Roll20CharSheets/Roll20CharSheets'
 import Footer from '../Footer/Footer'
 
+//Five Torches Deep
+import FiveTorchesDeepMonsters from '../FiveTorchesDeep/Convert5eMonsters/Convert5eMonsters'
 //SODL
 import ShadowoftheDemonLordEncounterBuilder from '../ShadowoftheDemonLord/EncounterBuilder/EncounterBuilder'
 import ShadowoftheDemonLordTravelTool from '../ShadowoftheDemonLord/TravelTool/TravelTool'
@@ -33,6 +35,7 @@ const App = () => {
           <div className='bg-overlay'>
             <Analytics id={'UA-181637915-1'}>
               <Route path="/" exact component={About} />
+              <Route path="/five_torches_deep/5e_monsters" component={FiveTorchesDeepMonsters} />
               <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
               <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
               <Route path="/shadow_of_the_demon_lord/rewards_generator" component={ShadowoftheDemonLordRewardsCalculator} />
