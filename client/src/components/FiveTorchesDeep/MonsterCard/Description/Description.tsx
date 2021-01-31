@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card } from "react-bootstrap"
 
 import displayModifier from "../../helpers/displayModifier/displayModifier"
 import { category } from '../../types/ftdTypes'
@@ -21,14 +20,14 @@ const Description = ({ title, modifier, stats }: {title: string, modifier: numbe
   }
 
   return (
-    <Card.Text>
+    <span>
       <strong className='text-uppercase'>{title}</strong><br /><br />
 
       {attributeDisplay()}
       <strong>Modifier: </strong>{displayModifier(modifier)}<br /><br />
 
       {skillDisplay}
-    </Card.Text>
+    </span>
   )
 }
 
