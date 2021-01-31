@@ -1,18 +1,13 @@
 import Fuse from 'fuse.js'
 
-const fuzzySearch = (list, term) => {
+const fuzzySearch = (list, term, keys) => {
   const options = {
     isCaseSensitive: false,
     shouldSort: true,
     threshold: 0.3,
     includeMatches: true,
     minMatchCharLength: 3,
-    keys: [
-      "name",
-      "difficulty",
-      "descriptor",
-      "source"
-    ]
+    keys,
   }
   
   const fuse = new Fuse(list, options)
