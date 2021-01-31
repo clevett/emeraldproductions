@@ -10,7 +10,7 @@ const removeHumanoidWeapons = (actions:action[]) => {
 }
 
 const removeNaturalWeapons = (actions:action[]) => {
-  const weaponNames = ['Bite', 'Claw']
+  const weaponNames = ['Bite', 'Claw', "Claws"]
   return actions.filter(action => !weaponNames.includes(action.name))
 }
 
@@ -38,7 +38,7 @@ const convertAction = (hd:number, actions: action[]):any[] => {
   return actions.map((monsterAction: action) => {
     let { name, desc } = monsterAction
 
-    if(name === 'Multi-Attack') {
+    if(name === 'Multiattack') {
       name = "Multi-attack"
       desc = multiAttack(hd)
     } else if (desc.includes(ifTargetCreature)) {
