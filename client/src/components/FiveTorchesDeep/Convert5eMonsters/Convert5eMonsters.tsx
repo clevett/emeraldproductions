@@ -56,7 +56,7 @@ const Convert5eMonsters = () => {
         <DriveThruLink id='264584' name='Five Torches Deep Fifth Edition Bestiary' />
         <img alt='five with a torch flame' src={logo}></img>
       </Row>
-      <Row>
+      <Row className='justify-content-center'>
         <SearchBar onTermSubmit={onTermSubmit} />
       </Row>
       <Row>
