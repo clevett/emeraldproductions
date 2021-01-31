@@ -5,6 +5,7 @@ import coinList from "./helpers/coinList"
 import goldRoll from "./helpers/goldRoll"
 
 const Gold = ({ hd }: { hd: number}) => {
+  hd = hd < 0.25 ? 0.25 : hd
   const [ treasure, setTreasure ] = useState(coinList(goldRoll(hd)))
 
   const handleClick = () => {
