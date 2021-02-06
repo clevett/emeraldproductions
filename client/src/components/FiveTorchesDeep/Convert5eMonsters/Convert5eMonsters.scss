@@ -1,18 +1,9 @@
 .FTDFifthEditionMonsters {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 49bc64b96adc2357f5a2dbbd842dd9ca47aa3966
   button {
     margin-left: 1%;
     padding: 0.375rem 0.2rem;
   }
 
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 49bc64b96adc2357f5a2dbbd842dd9ca47aa3966
   h3 {
     display: inline;
   }
@@ -49,15 +40,7 @@
 
     span:nth-of-type(1n + 2) {
       border-left: 1px solid gray;
-<<<<<<< HEAD
-<<<<<<< HEAD
       padding: 2px 7px;
-=======
-      padding: 2px 10px;
->>>>>>> master
-=======
-      padding: 2px 7px;
->>>>>>> 49bc64b96adc2357f5a2dbbd842dd9ca47aa3966
     }
 
     &_2 {
@@ -65,15 +48,7 @@
     }
 
     &_3 {
-<<<<<<< HEAD
-<<<<<<< HEAD
       grid-template-columns: 1fr 1fr 0.8fr;
-=======
-      grid-template-columns: 1fr 1fr 1fr;
->>>>>>> master
-=======
-      grid-template-columns: 1fr 1fr 0.8fr;
->>>>>>> 49bc64b96adc2357f5a2dbbd842dd9ca47aa3966
     }
   }
 }
