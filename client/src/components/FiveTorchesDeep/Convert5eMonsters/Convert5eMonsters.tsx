@@ -8,7 +8,7 @@ import { MonsterFTD } from "../types/ftdTypes"
 import data from "./data/monsters"
 import './Convert5eMonsters.scss'
 
-import convertFifthMonsterToFTD from "../helpers/convertFifthMonsterToFTD"
+import convertFifthMonsterToFTD from "./helpers/convertFifthMonsterToFTD"
 import DriveThruLink from '../../DriveThruLink/DriveThruLink'
 
 import SearchBar from '../../SearchBar/SearchBar'

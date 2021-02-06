@@ -1,6 +1,6 @@
 import convertFifthMonsterToFTD from './convertFifthMonsterToFTD'
 
-import data from "../Convert5eMonsters/data/monsters"
+import data from "../data/monsters"
 
 describe("Given convertFifthMonstersToFTD is called", () => {
   describe("when passed a fifth edition monster object", () => {

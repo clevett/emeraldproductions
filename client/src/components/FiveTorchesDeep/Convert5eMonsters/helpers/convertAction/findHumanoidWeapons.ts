@@ -1,6 +1,6 @@
-import equipment from "../../Convert5eMonsters/data/equipment"
-import { fifthEdWeapon } from "../../types/fifthEditionTypes"
-import { ftdWeapon } from "../../types/ftdTypes"
+import equipment from "../../data/equipment"
+import { fifthEdWeapon } from "../../../types/fifthEditionTypes"
+import { ftdWeapon } from "../../../types/ftdTypes"
 
 const weaponFactory = (weapon:fifthEdWeapon):ftdWeapon => {
   const { name, weapon_category, weapon_range } = weapon

@@ -14,7 +14,7 @@ import Techniques from "./Techniques/Techniques"
 
 import categories from "../data/categories"
 
-import displayModifier from "../helpers/displayModifier/displayModifier"
+import displayModifier from "../Convert5eMonsters/helpers/displayModifier/displayModifier"
 
 const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
   const {
