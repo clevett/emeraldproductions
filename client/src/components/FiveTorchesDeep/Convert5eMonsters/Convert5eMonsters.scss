@@ -1,4 +1,9 @@
 .FTDFifthEditionMonsters {
+  button {
+    margin-left: 1%;
+    padding: 0.375rem 0.2rem;
+  }
+
   h3 {
     display: inline;
   }
@@ -35,7 +40,7 @@
 
     span:nth-of-type(1n + 2) {
       border-left: 1px solid gray;
-      padding: 2px 10px;
+      padding: 2px 7px;
     }
 
     &_2 {
@@ -43,7 +48,7 @@
     }
 
     &_3 {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

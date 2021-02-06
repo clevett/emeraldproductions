@@ -28,6 +28,10 @@ export interface action {
   name: string,
   desc: string,
 }
+export interface hp {
+  total: number,
+  dice: string
+}
 
 export interface MonsterFTD {
   abilities: ability[] | null,
@@ -36,7 +40,7 @@ export interface MonsterFTD {
   type: string,
   hd: number,
   ac: number,
-  hp: string,
+  hp: hp,
   immunities: string | null,
   actions: action[] | null, 
   attack: number,

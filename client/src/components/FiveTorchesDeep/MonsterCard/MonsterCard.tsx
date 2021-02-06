@@ -5,8 +5,10 @@ import { MonsterFTD } from "../types/ftdTypes"
 
 import Abilities from "./Abilities/Abilities"
 import Actions from "./Actions/Actions"
+import Damage from "./Damage/Damage"
 import Description from "./Description/Description"
 import Gold from './Rolls/Gold'
+import HitPoints from './HitPoints/HitPoints'
 import SelectBuilder from "../../SelectBuilder/SelectBuilder"
 import Techniques from "./Techniques/Techniques"
 
@@ -59,13 +61,12 @@ const MonsterCard = ({ monster }: {monster: MonsterFTD}) => {
         <Card.Text className="mini-cards mini-cards_3">
           <span>
             <strong>To Hit: </strong>{displayModifier(modifiers.normal)} <br />
-            <strong>Damage: </strong>{damage} <br /><br />
-
+            <Damage damage={damage} />
           </span>
-
+          
           <span>
             <strong>AC: </strong>{ac}<br />
-            <strong>HP: </strong>{hp}<br /><br />
+            <HitPoints total={hp.total} dice={hp.dice} />
           </span>
 
           <span>
