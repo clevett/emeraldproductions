@@ -53,7 +53,8 @@ const Convert5eMonsters = () => {
     <Container className='FTDFifthEditionMonsters content text-white'>
       <Row className='header-row text-center mb-3 justify-content-center w-100'>
         <img alt='five with a torch flame' src={logo}></img>
-        <DriveThruLink id='264584' name='Five Torches Deep Fifth Edition Bestiary' />
+        <DriveThruLink id='264584' name='Five Torches Deep' />
+        <h1 className='mb-0'>Fifth Edition Bestiary</h1>
         <img alt='five with a torch flame' src={logo}></img>
       </Row>
       <Row className='justify-content-center'>
