@@ -24,6 +24,8 @@ const NavigationBar = () => {
 					<NavDropdown className='text-white font-weight-bold mr-5 rpg-tools' title="RPG Tools" id="basic-nav-dropdown-rpg-tools">
 						<label>Five Torches Deep</label>
 						<NavDropdown.Item href="/five_torches_deep/5e_monsters">5th Edition Monsters</NavDropdown.Item>
+						<NavDropdown.Item href="/five_torches_deep/random_map_generator">Random Map Generator</NavDropdown.Item>
+						<NavDropdown.Divider />
 						<label>Shadow of the Demon Lord</label>
 						<NavDropdown.Item href="/shadow_of_the_demon_lord/encounter_builder">Encounter Builder</NavDropdown.Item>
 						<NavDropdown.Item href="/shadow_of_the_demon_lord/rewards_generator">Rewards Generator</NavDropdown.Item>

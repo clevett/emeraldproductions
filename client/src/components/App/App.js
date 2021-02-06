@@ -11,6 +11,7 @@ import Footer from '../Footer/Footer'
 
 //Five Torches Deep
 import FiveTorchesDeepMonsters from '../FiveTorchesDeep/Convert5eMonsters/Convert5eMonsters'
+import FiveTorchesDeepRandomMapGenerator from '../FiveTorchesDeep/RandomMapGenerator/RandomMapGenerator'
 //SODL
 import ShadowoftheDemonLordEncounterBuilder from '../ShadowoftheDemonLord/EncounterBuilder/EncounterBuilder'
 import ShadowoftheDemonLordTravelTool from '../ShadowoftheDemonLord/TravelTool/TravelTool'
@@ -36,6 +37,7 @@ const App = () => {
             <Analytics id={'UA-181637915-1'}>
               <Route path="/" exact component={About} />
               <Route path="/five_torches_deep/5e_monsters" component={FiveTorchesDeepMonsters} />
+              <Route path="/five_torches_deep/random_map_generator" component={FiveTorchesDeepRandomMapGenerator} />
               <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />
               <Route path="/shadow_of_the_demon_lord/encounter_builder" component={ShadowoftheDemonLordEncounterBuilder} />
               <Route path="/shadow_of_the_demon_lord/rewards_generator" component={ShadowoftheDemonLordRewardsCalculator} />
