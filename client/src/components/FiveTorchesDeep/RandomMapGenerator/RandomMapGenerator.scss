@@ -1,0 +1,54 @@
+.RandomMapGeneator {
+  .Map {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(3, 200px);
+
+    &-box {
+      align-content: center;
+      background-color: white;
+      border: 3px solid black;
+      display: grid;
+      padding: 3px 5px;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        transform: translate(-2px, -2px);
+      }
+
+      &:active {
+        transform: translate(2px, 2px);
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      &-color-white {
+        background-color: var(--white);
+      }
+
+      &-color-blue {
+        background-color: var(--blue);
+      }
+
+      &-color-green {
+        background-color: var(--green);
+      }
+
+      &-color-yellow {
+        background-color: var(--yellow);
+      }
+
+      &-color-orange {
+        background-color: var(--orange);
+      }
+
+      &-color-red {
+        background-color: var(--red);
+      }
+    }
+  }
+}

@@ -60,3 +60,9 @@ export interface ftdWeapon {
   category:string | undefined, 
   range:string | undefined
 }
+
+export interface map {
+  number: number,
+  color: string,
+  description: string
+}
