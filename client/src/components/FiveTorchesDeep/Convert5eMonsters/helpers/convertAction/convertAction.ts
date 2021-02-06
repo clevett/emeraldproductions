@@ -1,4 +1,4 @@
-import { action } from "../../types/ftdTypes"
+import { action } from "../../../types/ftdTypes"
 
 import findHumanoidWeapons from "./findHumanoidWeapons"
 

@@ -1,4 +1,4 @@
-import math from "../data/monsterMath"
+import math from "../../data/monsterMath"
 import findMonsterMath from "./findMonsterMath"
 
 describe("Given math table has been desclared", () => {

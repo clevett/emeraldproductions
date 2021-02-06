@@ -1,5 +1,5 @@
 import Roll from 'roll'
-import { MonsterMath } from "../../types/ftdTypes"
+import { MonsterMath } from "../../../types/ftdTypes"
 
 import challengeCheck from "../challengeCheck/challengeCheck"
 

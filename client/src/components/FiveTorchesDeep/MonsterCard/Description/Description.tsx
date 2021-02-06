@@ -1,6 +1,6 @@
 import React from 'react'
 
-import displayModifier from "../../helpers/displayModifier/displayModifier"
+import displayModifier from "../../Convert5eMonsters/helpers/displayModifier/displayModifier"
 import { category } from '../../types/ftdTypes'
 
 const Description = ({ title, modifier, stats }: {title: string, modifier: number, stats: category}) => {
