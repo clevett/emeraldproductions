@@ -10,7 +10,11 @@ const removeHumanoidWeapons = (actions:action[]) => {
 }
 
 const removeNaturalWeapons = (actions:action[]) => {
+<<<<<<< HEAD
   const weaponNames = ["Beak", 'Bite', 'Claw', "Claws", "Fist", "Gore", "Hooves", "Ram", "Rock"]
+=======
+  const weaponNames = ['Bite', 'Claw', "Claws", "Fist", "Gore", "Hooves", "Ram", "Rock"]
+>>>>>>> master
   return actions.filter(action => !weaponNames.includes(action.name))
 }
 
