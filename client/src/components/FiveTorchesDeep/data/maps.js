@@ -27,6 +27,6 @@ export default [
   {
     number: 6,
     color: "red",
-    description: "blocked or locked, can't travel by any normal means (dorr, wall, etc)"
+    description: "blocked or locked, can't travel by any normal means (door, wall, etc)"
   }
 ]
