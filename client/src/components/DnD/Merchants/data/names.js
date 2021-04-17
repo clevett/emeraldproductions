@@ -680,9 +680,7 @@ export const names = {
 			"Trollbleeder",
 			"Trueanvil",
 			"Trueblood",
-			"Ungart"
-		],
-		"Clan (Duergar)": [
+			"Ungart",
 			"Ashlord",
 			"Battlegore",
 			"Doomfist",
@@ -4207,7 +4205,7 @@ export const names = {
 			"Takis",
 			"Zenon"
 		],
-		"Nicknames": [
+		"Nickname": [
 			"Bounder",
 			"Bristlechin",
 			"Clip-Clop",
@@ -4353,7 +4351,7 @@ export const names = {
 			"Rheteus",
 			"Thrasios"
 		],
-		"Surname": [
+		"Clan": [
 			"Ahlorsath",
 			"Pumanath",
 			"Vuuvaxath"

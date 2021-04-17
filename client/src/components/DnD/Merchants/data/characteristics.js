@@ -1,4 +1,4 @@
-export const personality = [
+export const personalities = [
   "I greet absolutely everyone with a warm hug.",
   "I have a much better head for numbers than people.",
   "I'm sometimes willing to barter in favors than coin.",
@@ -9,34 +9,16 @@ export const personality = [
   "I'm convinced my natural showmanship is what earns me customers."
 ]
 
-export const ideal = [
-  {
-    name:"Commerce",
-    note: "Free exchange is the world's greatest equializer. (Lawful)"
-  },
-  {
-    name: "Monopoly",
-    note: "Undercutting my rivals and price gouging are the only ways to get ahead. (Evil)"
-  },
-  {
-    name: "Salesmanship",
-    note: "I'll sell absolutely anything. MY horse, my mother, everything has a price. (Chaotic)"
-  },
-  {
-    name: "Charity",
-    note: "I try to give discounts or handouts to those that are truly in need. (Good)"
-  },
-  {
-    name: "Finality",
-    note: "No refunds. Ever. (Any)"
-  },
-  {
-    name: "Enjoyment",
-    note: "Buying and selling wares is all a big game to me, one that I love playing. (Any)"
-  }
+export const ideals = [
+  "Commerce. Free exchange is the world's greatest equializer. (Lawful)",
+  "Monopoly. Undercutting my rivals and price gouging are the only ways to get ahead. (Evil)",
+  "Salesmanship. I'll sell absolutely anything. MY horse, my mother, everything has a price. (Chaotic)",
+  "Charity. I try to give discounts or handouts to those that are truly in need. (Good)",
+  "Finality. No refunds. Ever. (Any)",
+  "Enjoyment. Buying and selling wares is all a big game to me, one that I love playing. (Any)",
 ]
 
-export const bond = [
+export const bonds = [
   "I have a sick relative that my busines supports.",
   "I owe a lot of money to organized crime, and they're threatening to collect with violently.",
   "I'm counting down the days to a peaceful retirement with my spouse or loved ones.",
@@ -45,8 +27,8 @@ export const bond = [
   "A large portion of my money is spent atoning from my shameful past."
 ]
 
-export const flaw = [
-  "Most of my money is spent eveyr night in the tavern.",
+export const flaws = [
+  "Most of my money is spent every night in the tavern.",
   "I have no real faith in the quality of my merchandise, whether or not it is actually good",
   "If some one undercuts my prices, I'll cut their throat.",
   "I counterfeit currency on the side, and slip it in with the change I give customers.",
@@ -54,7 +36,7 @@ export const flaw = [
   "It's hard for me to respect someone who doesn't know everything about what I'm selling."
 ]
 
-export const appearance =  [
+export const appearances =  [
   "Distinctive jewelry: earrings, necklace, circlet, bracelets",
   "Piercings",
   "Flamboyant or outlandish clothes",

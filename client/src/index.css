@@ -7217,14 +7217,20 @@ html input::placeholder {
   color: rgba(0, 0, 0, 0.4); }
 
 .content a {
-  font-size: 2rem;
   color: white;
   text-decoration: underline;
   margin-right: 0.5rem; }
   .content a:visited {
     color: white; }
 
-.content a, .content h1 {
+.content .header a,
+.content .header-row a {
+  font-size: 2rem;
+  margin-right: 0.5rem; }
+
+.content .header a,
+.content .header-row a,
+.content h1 {
   font-size: 2rem;
   display: inline-flex;
   align-items: center; }

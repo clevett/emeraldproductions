@@ -1,83 +1,91 @@
 export default [
   {
     name: "Alcohol and refreshment",
-    range: [1, 6]
+    range: [1, 5]
   },
   {
     name: "Animals (mounts and pets)",
-    range: [7, 10]
+    range: [6, 9]
   },
   {
     name: "Books and maps (mundane)",
-    range: [11, 15],
+    range: [10, 13],
   },
   {
     name: "Flowers and seeds",
-    range: [16, 19],
+    range: [14, 17],
   },
   {
     name: "Food and animal parts",
-    range: [20, 25],
+    range: [18, 22],
   },
   {
     name: "Furniture and interior decor",
-    range: [26, 29],
+    range: [23, 26],
   },
   {
     name: "High fashion",
-    range: [30, 34],
+    range: [27, 31],
   },
   {
     name: "Jewelry and gems",
-    range: [35, 38],
+    range: [32, 35],
   },
   {
     name: "Knick-knacks",
-    range: [39, 43],
+    range: [36, 40],
   },
   {
     name: "Leatherworking",
-    range: [44, 48],
+    range: [41, 45],
   },
   {
     name: "Mechanical contraptions",
-    range: [49, 52],
+    range: [46, 49],
   },
   {
-    name: "Medium and heavy armor (and shields)",
-    range: [53, 57],
+    name: "Medium and heavy armor",
+    range: [50, 54],
   },
   {
     name: "Potions, poisons, and herbs",
-    range: [58, 61],
+    range: [55, 58],
   },
   {
     name: "Religious idols and blessings",
-    range: [62, 66],
+    range: [59, 62],
   },
   {
     name: "Songs and instruments",
-    range: [67, 71],
+    range: [63, 66],
   },
   {
     name: "Spell tomes and scrolls",
-    range: [72, 75],
+    range: [67, 70],
+  },
+  {
+    name: "Tattoos",
+    range: [71, 74],
   },
   {
     name: "Thieving supplies",
-    range: [76, 80],
+    range: [75, 78],
   },
   {
     name: "Tools",
-    range: [81, 86],
+    range: [79, 83],
   },
   {
     name: "Vehicles and transportation",
-    range: [87, 91],
+    range: [84, 87],
   },
   {
     name: "Weapons",
-    range: [92, 96],
+    range: [88, 92],
+  },
+  {
+    name: "Witchcraft",
+    range: [93, 96],
   },
   {
     name: "Legendary merchant",
