@@ -9,6 +9,9 @@ import ContactPage from '../ContactPage/ContactPage'
 import Roll20CharSheets from '../Roll20/Roll20CharSheets/Roll20CharSheets'
 import Footer from '../Footer/Footer'
 
+//D&D
+import Merchants from "../DnD/Merchants/Merchants"
+
 //Five Torches Deep
 import FiveTorchesDeepMonsters from '../FiveTorchesDeep/Convert5eMonsters/Convert5eMonsters'
 import FiveTorchesDeepRandomMapGenerator from '../FiveTorchesDeep/RandomMapGenerator/RandomMapGenerator'
@@ -36,6 +39,7 @@ const App = () => {
           <div className='bg-overlay'>
             <Analytics id={'UA-181637915-1'}>
               <Route path="/" exact component={About} />
+              <Route path="/dungeons_and_dragons/merchants_traders" component={Merchants} />
               <Route path="/five_torches_deep/5e_monsters" component={FiveTorchesDeepMonsters} />
               <Route path="/five_torches_deep/random_map_generator" component={FiveTorchesDeepRandomMapGenerator} />
               <Route path="/roll_20_character_sheets" component={Roll20CharSheets} />

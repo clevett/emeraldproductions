@@ -22,6 +22,8 @@ const NavigationBar = () => {
 				<Nav className="text-white font-weight-bold" activeKey="/home">
 					<NavigationLink reference={{name: 'About', href:'/'}} />
 					<NavDropdown className='text-white font-weight-bold mr-5 rpg-tools' title="RPG Tools" id="basic-nav-dropdown-rpg-tools">
+						<label>Dungeons & Dragons</label>
+						<NavDropdown.Item href="/dungeons_and_dragons/merchants_traders">Merchants & Traders</NavDropdown.Item>
 						<label>Five Torches Deep</label>
 						<NavDropdown.Item href="/five_torches_deep/5e_monsters">5th Edition Monsters</NavDropdown.Item>
 						<NavDropdown.Item href="/five_torches_deep/random_map_generator">Random Map Generator</NavDropdown.Item>
