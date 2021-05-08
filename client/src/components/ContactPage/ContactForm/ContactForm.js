@@ -34,7 +34,7 @@ class ContactForm extends React.Component {
         alert("Message Sent."); 
         this.resetForm()
        } else if (response.data.msg === 'fail') {
-        alert("Message failed to send. You can send an email to support@emeraldproductionsllc.com")
+        alert("Message failed to send. You can send an email to cassielevett@gmail.com")
       }
     })
   }
