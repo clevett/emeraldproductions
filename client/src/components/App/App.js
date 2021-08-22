@@ -5,7 +5,6 @@ import { Row } from 'react-bootstrap'
 
 import NavigationBar from '../Navigation/NavigationBar/NavigationBar'
 import About from '../About/About'
-import ContactPage from '../ContactPage/ContactPage'
 import Roll20CharSheets from '../Roll20/Roll20CharSheets/Roll20CharSheets'
 import Footer from '../Footer/Footer'
 
@@ -44,7 +43,6 @@ const App = () => {
               <Route path="/shadow_of_the_demon_lord/travel_tool" component={ShadowoftheDemonLordTravelTool} />
               <Route path="/shadowrun/mission_creation" component={ShadowrunMissionCreation} />
               <Route path="/shadowrun/rewards_calculator" component={ShadowrunRewardsCalculator} />
-              <Route path="/contact" component={ContactPage} />
             </Analytics>
           </div>
         </Row>

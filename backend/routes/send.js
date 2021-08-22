@@ -9,15 +9,12 @@ const transporter = nodemailer.createTransport({
 		}
 });
 
-transporter.verify((error, success) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Server is ready to take messages');
-  }
+transporter.verify((error) => {
+	const message = error  ? error : 'Server is ready to take messages'
+  console.log(message)
 });
 
-router.route('/').post((req, res, next) => {
+router.route('/').post((req, res) => {
 	let name = req.body.name
 	let email = req.body.email
 	let message = req.body.message
@@ -31,15 +28,10 @@ router.route('/').post((req, res, next) => {
 	}
 
 	transporter.sendMail(mail, (err, data) => {
-		if (err) {
-			res.json({
-				msg: 'fail'
-			})
-		} else {
-			res.json({
-				msg: 'success'
-			})
-		}
+		const msg = err ? "Send mail generated an error" : 'Success'
+		res.json({
+			msg
+		})
 	})
 })
 

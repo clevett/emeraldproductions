@@ -38,7 +38,6 @@ const NavigationBar = () => {
 					<NavDropdown className='text-white font-weight-bold mr-5' title="Roll 20" id="basic-nav-dropdown-roll-20">
 						<NavDropdown.Item href="/roll_20_character_sheets">Character Sheets</NavDropdown.Item>
 					</NavDropdown>
-					<NavigationLink reference={{ name: 'Contact', href: '/contact' }} />
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
