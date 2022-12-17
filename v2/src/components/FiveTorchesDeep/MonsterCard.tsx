@@ -4,13 +4,13 @@ import {
   EuiFlexItem,
   EuiPanel,
   EuiSpacer,
+  EuiSuperSelect,
   EuiText,
   EuiTitle,
 } from "@elastic/eui";
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 import { useState } from "react";
 
-import Select from "../Select";
 import displayModifier from "./helpers/displayModifier/displayModifier";
 import { MonsterFTD } from "./types/ftdTypes";
 import { ftdCatagories as catagories } from "../../data/ftdCategories";
@@ -39,18 +39,14 @@ export const MonsterCard = ({
 }) => {
   const roll = (notation: string): number => new DiceRoll(notation).total;
 
-  const goldRoll = (hd: number) => {
-    return hd < 1 ? hd * roll(`1d20`) : roll(`${hd}d20`);
-  };
+  const goldRoll = (hd: number) =>
+    hd < 1 ? hd * roll(`1d20`) : roll(`${hd}d20`);
 
   const [category, setCategory] = useState(catagories[0]);
   const [hitPoints, setHitPoints] = useState(hp.total);
   const [damageTotal, setDamageTotal] = useState(roll(damage));
   const [treasure, setTreasure] = useState(coinList(goldRoll(hd)));
 
-  const monsterCategories = catagories.map(
-    ({ name }: { name: string }) => name
-  );
   const handleCategoryChange = (value: string) => {
     const findCategory = catagories.find(
       ({ name }: { name: string }) => value === name
@@ -70,6 +66,13 @@ export const MonsterCard = ({
 
   const showResist = immunities || resistances || vulnerabilities;
 
+  const cat = catagories.map(({ name }) => ({
+    inputDisplay: <EuiText style={{ lineHeight: "inherit" }}>{name}</EuiText>,
+    value: name,
+    "data-test-subj": `option-${name}`,
+  }));
+  console.table(cat);
+
   return (
     <EuiPanel hasBorder paddingSize="m">
       <EuiFlexGroup direction="column" gutterSize="s">
@@ -80,11 +83,11 @@ export const MonsterCard = ({
                 {name}, {hd} HD
               </h3>
             </EuiTitle>
-            <Select
-              label="Select monster category"
-              onSelectValueChange={handleCategoryChange}
-              options={monsterCategories}
-              selected={monsterCategories[0]}
+            <EuiSuperSelect
+              className="self-center"
+              onChange={(value) => handleCategoryChange(value)}
+              options={cat}
+              valueOfSelected={category.name}
             />
           </EuiFlexGroup>
         </EuiFlexItem>
