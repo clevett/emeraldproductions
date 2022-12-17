@@ -141,31 +141,21 @@ export const MonsterCard = ({
 
       <EuiSpacer />
       <hr />
+      <EuiSpacer />
 
       {/* immunities & resistances & vulnerabilities*/}
       {showResist && (
         <>
-          <EuiSpacer />
           <EuiFlexGroup direction="column" gutterSize="s">
             {immunities ? (
-              <EuiFlexItem>
-                <EuiText>
-                  <strong>Immunities</strong>: {immunities}
-                </EuiText>
-              </EuiFlexItem>
+              <EuiFlexItem>{subheader("Immunities", immunities)}</EuiFlexItem>
             ) : null}
             {resistances ? (
-              <EuiFlexItem>
-                <EuiText>
-                  <strong>Resistances</strong>: {resistances}
-                </EuiText>
-              </EuiFlexItem>
+              <EuiFlexItem>{subheader("Resistances", resistances)}</EuiFlexItem>
             ) : null}
             {vulnerabilities ? (
               <EuiFlexItem>
-                <EuiText>
-                  <strong>Vulnerabilities</strong>: {vulnerabilities}
-                </EuiText>
+                {subheader("Vulnerabilities", vulnerabilities)}
               </EuiFlexItem>
             ) : null}
           </EuiFlexGroup>
