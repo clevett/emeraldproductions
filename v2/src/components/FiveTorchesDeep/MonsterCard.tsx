@@ -104,7 +104,7 @@ export const MonsterCard = ({
           </EuiText>
         </EuiFlexItem>
       </EuiFlexGroup>
-
+      <hr className="mt-4 mb-4" />
       {/* dmg & ac & base */}
       <EuiFlexGroup gutterSize="s" alignItems="center" responsive={false} wrap>
         <EuiFlexItem>
@@ -117,7 +117,7 @@ export const MonsterCard = ({
               onClick={() => setDamageTotal(roll(damage))}
               size="m"
             >
-              {damageTotal}
+              {damageTotal} ({damage})
             </EuiButtonEmpty>
           </EuiText>
         </EuiFlexItem>
@@ -143,9 +143,7 @@ export const MonsterCard = ({
         </EuiFlexItem>
       </EuiFlexGroup>
 
-      <EuiSpacer />
-      <hr />
-      <EuiSpacer />
+      <hr className="mt-4 mb-4" />
 
       {/* immunities & resistances & vulnerabilities*/}
       {showResist && (
@@ -187,36 +185,37 @@ export const MonsterCard = ({
         </EuiFlexItem>
       </EuiFlexGroup>
 
-      <EuiSpacer />
-      <hr />
-      <EuiSpacer />
+      <hr className="mt-4 mb-4" />
 
       {/* abilities */}
       {abilities && abilities?.length > 0 ? (
-        <EuiFlexGroup direction="column">
-          <EuiFlexItem>
-            <EuiText size="m" className="text-uppercase">
-              <h4>Special Abilities</h4>
-            </EuiText>
-          </EuiFlexItem>
+        <>
+          <EuiFlexGroup direction="column">
+            <EuiFlexItem>
+              <EuiText size="m" className="text-uppercase">
+                <h4>Special Abilities</h4>
+              </EuiText>
+            </EuiFlexItem>
 
-          {abilities.map(({ name, desc }, index: number) => {
-            const description = desc.includes("saving throw")
-              ? desc.replace(/saving throw/g, "check")
-              : desc;
+            {abilities.map(({ name, desc }, index: number) => {
+              const description = desc.includes("saving throw")
+                ? desc.replace(/saving throw/g, "check")
+                : desc;
 
-            return (
-              <EuiFlexItem key={`ftd-${name}-${index}`}>
-                <EuiText>
-                  <strong>
-                    <em>{name}. </em>
-                  </strong>
-                  {description}
-                </EuiText>
-              </EuiFlexItem>
-            );
-          })}
-        </EuiFlexGroup>
+              return (
+                <EuiFlexItem key={`ftd-${name}-${index}`}>
+                  <EuiText>
+                    <strong>
+                      <em>{name}. </em>
+                    </strong>
+                    {description}
+                  </EuiText>
+                </EuiFlexItem>
+              );
+            })}
+          </EuiFlexGroup>
+          <hr className="mt-4 mb-4" />
+        </>
       ) : null}
 
       {/* actions */}
@@ -229,7 +228,6 @@ export const MonsterCard = ({
           </EuiFlexItem>
 
           {actions.map(({ name, desc }, index: number) => {
-            console.log(actions);
             return (
               <EuiFlexItem key={`ftd-${name}-${index}`}>
                 <EuiText>
@@ -244,9 +242,7 @@ export const MonsterCard = ({
         </EuiFlexGroup>
       ) : null}
 
-      <EuiSpacer />
-      <hr />
-      <EuiSpacer />
+      <hr className="mt-4 mb-4" />
 
       {/* gold */}
       <EuiFlexItem>
