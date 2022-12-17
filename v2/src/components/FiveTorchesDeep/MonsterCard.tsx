@@ -7,16 +7,15 @@ import {
   EuiSelect,
   EuiText,
   EuiTitle,
-  useGeneratedHtmlId,
 } from "@elastic/eui";
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
-import { ChangeEvent, useState } from "react";
 
 import displayModifier from "./helpers/displayModifier/displayModifier";
 import { MonsterFTD } from "./types/ftdTypes";
 import { ftdCatagories as catagories } from "../../data/ftdCategories";
 
 import { coinList } from "./helpers/coinList";
+import { useState } from "react";
 
 export const MonsterCard = ({
   monster: {
@@ -49,7 +48,6 @@ export const MonsterCard = ({
   const [treasure, setTreasure] = useState(coinList(goldRoll(hd)));
 
   const handleCategoryChange = (value: string) => {
-    console.log(value);
     const findCategory = catagories.find(
       ({ name }: { name: string }) => value === name
     );
@@ -69,7 +67,7 @@ export const MonsterCard = ({
   const showResist = immunities || resistances || vulnerabilities;
 
   return (
-    <EuiPanel hasBorder paddingSize="m">
+    <EuiPanel hasBorder paddingSize="m" color="subdued">
       <EuiFlexGroup direction="column" gutterSize="s">
         <EuiFlexItem className="items-start">
           <EuiFlexGroup className="items-start w-full" gutterSize="s">
@@ -220,29 +218,30 @@ export const MonsterCard = ({
 
       {/* actions */}
       {actions && actions?.length > 0 ? (
-        <EuiFlexGroup direction="column">
-          <EuiFlexItem>
-            <EuiText size="m" className="text-uppercase">
-              <h4>Actions</h4>
-            </EuiText>
-          </EuiFlexItem>
+        <>
+          <EuiFlexGroup direction="column">
+            <EuiFlexItem>
+              <EuiText size="m" className="text-uppercase">
+                <h4>Actions</h4>
+              </EuiText>
+            </EuiFlexItem>
 
-          {actions.map(({ name, desc }, index: number) => {
-            return (
-              <EuiFlexItem key={`ftd-${name}-${index}`}>
-                <EuiText>
-                  <strong>
-                    <em>{name}. </em>
-                  </strong>
-                  {desc}
-                </EuiText>
-              </EuiFlexItem>
-            );
-          })}
-        </EuiFlexGroup>
+            {actions.map(({ name, desc }, index: number) => {
+              return (
+                <EuiFlexItem key={`ftd-${name}-${index}`}>
+                  <EuiText>
+                    <strong>
+                      <em>{name}. </em>
+                    </strong>
+                    {desc}
+                  </EuiText>
+                </EuiFlexItem>
+              );
+            })}
+          </EuiFlexGroup>
+          <hr className="mt-4 mb-4" />
+        </>
       ) : null}
-
-      <hr className="mt-4 mb-4" />
 
       {/* gold */}
       <EuiFlexItem>
