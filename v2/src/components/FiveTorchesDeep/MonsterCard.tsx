@@ -75,9 +75,7 @@ export const MonsterCard = ({
           <EuiFlexGroup className="items-start w-full" gutterSize="s">
             <EuiFlexItem>
               <EuiTitle size="m" className="mr-4 grow">
-                <h3>
-                  {name}, {hd} HD
-                </h3>
+                <h3>{name}</h3>
               </EuiTitle>
             </EuiFlexItem>
             <EuiFlexItem className="self-end" style={{ maxWidth: "100px" }}>
@@ -93,7 +91,11 @@ export const MonsterCard = ({
             </EuiFlexItem>
           </EuiFlexGroup>
         </EuiFlexItem>
-        <EuiSpacer />
+        <EuiFlexItem>
+          <EuiText size="m">
+            <h4>{hd} HD</h4>
+          </EuiText>
+        </EuiFlexItem>
         <EuiFlexItem>
           <EuiText size="m">
             <h4>
