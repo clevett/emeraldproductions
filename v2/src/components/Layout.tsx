@@ -29,8 +29,9 @@ export const Layout = ({ children }: { children: JSX.Element }) => {
                 Emerald Productions
               </EuiHeaderLogo>,
               <EuiHeaderLinks aria-label="links">
-                <EuiHeaderLink isActive>About</EuiHeaderLink>
-                <EuiHeaderLink>Tools</EuiHeaderLink>
+                <EuiHeaderLink isActive href="/">
+                  About
+                </EuiHeaderLink>
               </EuiHeaderLinks>,
             ],
             borders: "right",

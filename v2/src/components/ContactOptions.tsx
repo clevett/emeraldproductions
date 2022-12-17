@@ -23,7 +23,12 @@ export const contacts = [
 ];
 
 export const ContactOptions = contacts.map((c, index) => (
-  <EuiLink href={c.href} key={`contacts-${index}`} className="mr-6">
+  <EuiLink
+    href={c.href}
+    key={`contacts-${index}`}
+    className="mr-6"
+    target="_blank"
+  >
     <EuiIcon type={c.src} size="l" />
   </EuiLink>
 ));
