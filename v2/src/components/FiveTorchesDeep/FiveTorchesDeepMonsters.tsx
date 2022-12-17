@@ -14,7 +14,7 @@ import convertFifthMonsterToFTD from "./helpers/convertFifthMonsterToFTD";
 import { FifthEditionMonster } from "../../data/5eMonsters";
 
 import { MonsterFTD } from "./types/ftdTypes";
-import { MonsterCard } from "./MonsterCard";
+import { MonsterCard } from "./components/MonsterCard";
 
 const ftdMonsters = FifthEditionMonster.map((monster) =>
   convertFifthMonsterToFTD(monster)

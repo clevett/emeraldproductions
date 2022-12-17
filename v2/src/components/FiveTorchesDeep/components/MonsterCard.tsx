@@ -10,11 +10,11 @@ import {
 } from "@elastic/eui";
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
-import displayModifier from "./helpers/displayModifier/displayModifier";
-import { MonsterFTD } from "./types/ftdTypes";
-import { ftdCatagories as catagories } from "../../data/ftdCategories";
+import displayModifier from "../helpers/displayModifier/displayModifier";
+import { MonsterFTD } from "../types/ftdTypes";
+import { ftdCatagories as catagories } from "../../../data/ftdCategories";
 
-import { coinList } from "./helpers/coinList";
+import { coinList } from "../helpers/coinList";
 import { useState } from "react";
 
 export const MonsterCard = ({

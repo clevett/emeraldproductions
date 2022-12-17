@@ -2,6 +2,7 @@ import fivetorchesdeep from "../imgs/ttrpgs/fivetorchesdeep.jpg";
 import sotdl from "../imgs/ttrpgs/sotdl.png";
 import shadowrun5e from "../imgs/ttrpgs/shadowrun5e.png";
 import { FiveTorchesDeepMonsters } from "../components/FiveTorchesDeep/FiveTorchesDeepMonsters";
+import { RandomMapGenerator } from "../components/FiveTorchesDeep/RandomMapGenerator";
 
 export const ftdList = [
   {
@@ -14,7 +15,7 @@ export const ftdList = [
     label: "Random Map Generator",
     href: "/five_torches_deep/random_map_generator",
     iconType: fivetorchesdeep,
-    element: null,
+    element: <RandomMapGenerator />,
   },
 ];
 
