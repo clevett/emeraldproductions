@@ -4,12 +4,13 @@ import {
   EuiFlexItem,
   EuiPanel,
   EuiSpacer,
-  EuiSuperSelect,
+  EuiSelect,
   EuiText,
   EuiTitle,
+  useGeneratedHtmlId,
 } from "@elastic/eui";
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import displayModifier from "./helpers/displayModifier/displayModifier";
 import { MonsterFTD } from "./types/ftdTypes";
@@ -48,6 +49,7 @@ export const MonsterCard = ({
   const [treasure, setTreasure] = useState(coinList(goldRoll(hd)));
 
   const handleCategoryChange = (value: string) => {
+    console.log(value);
     const findCategory = catagories.find(
       ({ name }: { name: string }) => value === name
     );
@@ -66,29 +68,29 @@ export const MonsterCard = ({
 
   const showResist = immunities || resistances || vulnerabilities;
 
-  const cat = catagories.map(({ name }) => ({
-    inputDisplay: <EuiText style={{ lineHeight: "inherit" }}>{name}</EuiText>,
-    value: name,
-    "data-test-subj": `option-${name}`,
-  }));
-  console.table(cat);
-
   return (
     <EuiPanel hasBorder paddingSize="m">
       <EuiFlexGroup direction="column" gutterSize="s">
-        <EuiFlexItem className="items-center">
-          <EuiFlexGroup gutterSize="s">
-            <EuiTitle size="m" className="mr-4">
-              <h3>
-                {name}, {hd} HD
-              </h3>
-            </EuiTitle>
-            <EuiSuperSelect
-              className="self-center"
-              onChange={(value) => handleCategoryChange(value)}
-              options={cat}
-              valueOfSelected={category.name}
-            />
+        <EuiFlexItem className="items-start">
+          <EuiFlexGroup className="items-start w-full" gutterSize="s">
+            <EuiFlexItem>
+              <EuiTitle size="m" className="mr-4 grow">
+                <h3>
+                  {name}, {hd} HD
+                </h3>
+              </EuiTitle>
+            </EuiFlexItem>
+            <EuiFlexItem className="self-end" style={{ maxWidth: "100px" }}>
+              <EuiSelect
+                className="self-end grow-0"
+                options={catagories.map(({ name }) => ({
+                  text: name,
+                  value: name,
+                }))}
+                onChange={(e) => handleCategoryChange(e.target.value)}
+                value={category.name}
+              />
+            </EuiFlexItem>
           </EuiFlexGroup>
         </EuiFlexItem>
         <EuiSpacer />
