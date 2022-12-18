@@ -7,6 +7,7 @@ import {
   EuiPageTemplate,
   EuiSpacer,
 } from "@elastic/eui";
+import { Link } from "react-router-dom";
 
 import logo from "../imgs/egIcon.png";
 import { ContactOptions } from "./ContactOptions";
@@ -29,8 +30,8 @@ export const Layout = ({ children }: { children: JSX.Element }) => {
                 Emerald Productions
               </EuiHeaderLogo>,
               <EuiHeaderLinks aria-label="links">
-                <EuiHeaderLink isActive href="/">
-                  About
+                <EuiHeaderLink isActive>
+                  <Link to="/">About</Link>
                 </EuiHeaderLink>
               </EuiHeaderLinks>,
             ],

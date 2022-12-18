@@ -1,9 +1,34 @@
-import { EuiImage, EuiListGroup, EuiSpacer, EuiTitle } from "@elastic/eui";
+import {
+  EuiImage,
+  EuiListGroup,
+  EuiListGroupItem,
+  EuiSpacer,
+  EuiTitle,
+} from "@elastic/eui";
 import { ftdList, sotdlList, shadowrunList } from "../routes";
 
 import logo from "../imgs/logoLarge.png";
+import { Link, useLocation } from "react-router-dom";
 
 export const Sidebar = () => {
+  const { pathname } = useLocation();
+
+  const getListItem = (list: typeof ftdList[0] | typeof shadowrunList[0]) => {
+    const { label, href, iconType } = list;
+    return (
+      <Link to={href}>
+        <EuiListGroupItem
+          label={label}
+          iconType={iconType}
+          key={`sidebar-${href}`}
+          isActive={pathname === href}
+        >
+          {label}
+        </EuiListGroupItem>
+      </Link>
+    );
+  };
+
   return (
     <>
       <EuiImage alt="Emerald Productions, LLC" src={logo} />
@@ -16,15 +41,21 @@ export const Sidebar = () => {
       <EuiTitle size="xs">
         <h2 key={1}>Five Torches Deep</h2>
       </EuiTitle>
-      <EuiListGroup listItems={ftdList} color="primary" size="s" />
+      <EuiListGroup color="primary" size="s">
+        {ftdList.map((l) => getListItem(l))}
+      </EuiListGroup>
       <EuiTitle size="xs">
         <h2 key={2}>Shadow of the Demon Lord</h2>
       </EuiTitle>
-      <EuiListGroup listItems={sotdlList} color="primary" size="s" />
+      <EuiListGroup color="primary" size="s">
+        {sotdlList.map((l) => getListItem(l))}
+      </EuiListGroup>
       <EuiTitle size="xs">
         <h2 key={2}>Shadowrun 5th Edition</h2>
       </EuiTitle>
-      <EuiListGroup listItems={shadowrunList} color="primary" size="s" />
+      <EuiListGroup color="primary" size="s">
+        {shadowrunList.map((l) => getListItem(l))}
+      </EuiListGroup>
     </>
   );
 };

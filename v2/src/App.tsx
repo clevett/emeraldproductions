@@ -2,12 +2,26 @@ import { RecoilRoot } from "recoil";
 
 import { EuiProvider } from "@elastic/eui";
 import "@elastic/eui/dist/eui_theme_dark.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 import { About } from "./components/About/About";
 import { Layout } from "./components/Layout";
 
 import { routes } from "./routes";
+
+const e = createRoutesFromElements(
+  routes.map(({ href, element }, index) => (
+    <Route path={href} element={element} key={`route-${href}-${index}`} />
+  ))
+);
+
+const router = createBrowserRouter(e);
 
 const App = () => {
   return (
@@ -24,10 +38,6 @@ const App = () => {
                   key={`route-${href}-${index}`}
                 />
               ))}
-              {/* <Route
-                path="/roll_20_character_sheets"
-                element={Roll20CharSheets}
-              /> */}
             </Routes>
           </Layout>
         </EuiProvider>
