@@ -3,6 +3,8 @@ import { useState } from "react";
 import { DriveThruLink } from "../DriveThruLink";
 import Box from "./components/Box";
 
+import styles from "./styles.module.css";
+
 export const RandomMapGenerator = () => {
   const [refresh, setRefresh] = useState(false);
 
@@ -23,8 +25,7 @@ export const RandomMapGenerator = () => {
       <EuiPanel hasShadow={false} paddingSize="none" className="w-full">
         <div
           key={`map-${refresh}`}
-          className="grid grid-cols-3 grid-rows-3 border-2 border-solid border-black"
-          style={{ width: "600px", height: "600px" }}
+          className={`grid grid-cols-3 grid-rows-3 border-2 border-solid border-black ${styles.map}`}
         >
           <Box name="Northwest" />
           <Box name="North" />

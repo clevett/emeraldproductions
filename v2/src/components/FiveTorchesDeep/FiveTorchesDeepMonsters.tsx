@@ -16,6 +16,8 @@ import { FifthEditionMonster } from "../../data/5eMonsters";
 import { MonsterFTD } from "./types/ftdTypes";
 import { MonsterCard } from "./components/MonsterCard";
 
+import styles from "./styles.module.css";
+
 const ftdMonsters = FifthEditionMonster.map((monster) =>
   convertFifthMonsterToFTD(monster)
 );
@@ -30,10 +32,7 @@ export const FiveTorchesDeepMonsters = () => {
   const cardNodes = (monsters: MonsterFTD[]) =>
     monsters.map((monster, index) => {
       return (
-        <EuiFlexItem
-          key={`ftd-monster-${index}`}
-          style={{ minWidth: "350px", maxWidth: "500px" }}
-        >
+        <EuiFlexItem key={`ftd-monster-${index}`} className={styles.card}>
           <MonsterCard key={monster.name} monster={monster} />
         </EuiFlexItem>
       );

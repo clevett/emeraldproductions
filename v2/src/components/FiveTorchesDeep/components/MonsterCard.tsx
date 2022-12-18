@@ -17,6 +17,8 @@ import { ftdCatagories as catagories } from "../../../data/ftdCategories";
 import { coinList } from "../helpers/coinList";
 import { useState } from "react";
 
+import styles from "../styles.module.css";
+
 export const MonsterCard = ({
   monster: {
     abilities,
@@ -76,7 +78,7 @@ export const MonsterCard = ({
                 <h3>{name}</h3>
               </EuiTitle>
             </EuiFlexItem>
-            <EuiFlexItem className="self-end" style={{ maxWidth: "100px" }}>
+            <EuiFlexItem className={`self-end ${styles.maxW100}`}>
               <EuiSelect
                 className="self-end grow-0"
                 options={catagories.map(({ name }) => ({
