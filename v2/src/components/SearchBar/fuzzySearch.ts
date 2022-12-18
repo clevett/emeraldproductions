@@ -1,6 +1,6 @@
 import Fuse from "fuse.js";
 
-export const fuzzySearch = (list: unknown[], term: string, keys: string[]) => {
+export const fuzzySearch = <T>(list: T[], term: string, keys: string[]) => {
   const options = {
     isCaseSensitive: false,
     shouldSort: true,
@@ -12,7 +12,5 @@ export const fuzzySearch = (list: unknown[], term: string, keys: string[]) => {
 
   const fuse = new Fuse(list, options);
   const results = fuse.search(term);
-  const filter = results.map((result: { item: any }) => result.item);
-
-  return filter;
+  return results.map((result: { item: T }) => result.item);
 };

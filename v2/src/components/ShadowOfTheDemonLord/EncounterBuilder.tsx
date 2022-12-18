@@ -1,12 +1,13 @@
 import {
   EuiFlexGroup,
   EuiFlexItem,
+  EuiLoadingSpinner,
   EuiSelect,
   EuiSpacer,
   EuiText,
   EuiTitle,
 } from "@elastic/eui";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { LayoutBody } from "../LayoutBody";
 
@@ -15,6 +16,7 @@ import { typeChecker, levelsChecker } from "./recoil/refine";
 import { useUpdateEffect } from "@elastic/eui/src/services/hooks/useUpdateEffect";
 import { fuzzySearch } from "../SearchBar/fuzzySearch";
 import { sotdl } from "../../routes/api";
+import { SearchBar } from "../SearchBar/SearchBar";
 
 const levels = Object.keys(danger) as Array<keyof typeof danger>;
 const difficultiesKeys = Object.keys(danger.starting) as Array<
@@ -22,35 +24,52 @@ const difficultiesKeys = Object.keys(danger.starting) as Array<
 >;
 const difficulties = [1, 5, 10, 25, 50, 100, 250, 500];
 
+interface Monster {
+  _id: string;
+  descriptor: string;
+  difficulty: number;
+  name: string;
+  source: string;
+}
+
 export const EncounterBuilder = () => {
   const [difficultyTotal, setDifficultyTotal] = useState(0);
   const [level, setLevel] = useState(levels[1]);
-  const [searchResults, setSearchResults] = useState([]);
-  const [data, setData] = useState<undefined | unknown[]>(undefined);
+  const [searchResults, setSearchResults] = useState<Monster[]>([]);
+  const [data, setData] = useState<Monster[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const onTermSubmit = useCallback(
+    (term: string) => {
+      const keys = ["name", "difficulty", "descriptor", "source"];
+      if (data) {
+        const results = fuzzySearch<Monster>(data, term, keys);
+        setSearchResults(results);
+      }
+    },
+    [data]
+  );
+
   useEffect(() => {
-    setIsLoading(true);
-    axios
-      .get(sotdl.ENCOUNTER_BUILDER)
-      .then((response) => {
-        setData(response.data);
-        setIsLoading(false);
-        onTermSubmit("human");
-
-        console.log(response);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
-  const onTermSubmit = (term: string) => {
-    const keys = ["name", "difficulty", "descriptor", "source"];
-    if (data) {
-      const results: any = fuzzySearch(data, term, keys);
-      console.log(results);
-      setSearchResults(results);
+    if (data && !searchResults) {
+      onTermSubmit("human");
     }
-  };
+  }, [data, onTermSubmit, searchResults]);
+
+  useEffect(() => {
+    if (!data) {
+      setIsLoading(true);
+      axios
+        .get(sotdl.ENCOUNTER_BUILDER)
+        .then((response) => {
+          if (!data || data !== response.data) {
+            setData(response.data);
+            setIsLoading(false);
+          }
+        })
+        .catch((error) => console.log(error));
+    }
+  }, [data, searchResults]);
 
   const getSmallTitles = (name: string) => {
     return (
@@ -102,17 +121,25 @@ export const EncounterBuilder = () => {
       <EuiSpacer />
 
       <EuiTitle className="text-center" size="s">
-        <h4>Encounter Difficulty ({difficultyTotal})</h4>
+        <h4>Encounter Opposition</h4>
       </EuiTitle>
 
       <EuiSpacer />
 
       <EuiFlexGroup gutterSize="l" wrap className="justify-start">
         <EuiFlexItem>
+          <EuiTitle className="text-center" size="s">
+            <h4>Encounter Difficulty ({difficultyTotal})</h4>
+          </EuiTitle>
+          <EuiSpacer />
           <div>Selected Monsters</div>
         </EuiFlexItem>
-        <EuiFlexItem>
-          <div>MonsterOptions</div>
+        <EuiFlexItem className="content-center">
+          <EuiTitle className="text-center mb-4" size="s">
+            <h4>Bestiary</h4>
+          </EuiTitle>
+          <SearchBar onTermSubmit={onTermSubmit} styles="flex justify-center" />
+          {isLoading ? <EuiLoadingSpinner size="l" /> : null}
         </EuiFlexItem>
       </EuiFlexGroup>
     </LayoutBody>

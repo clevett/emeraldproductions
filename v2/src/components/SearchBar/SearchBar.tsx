@@ -3,8 +3,10 @@ import { useState } from "react";
 
 export const SearchBar = ({
   onTermSubmit,
+  styles,
 }: {
   onTermSubmit: (term: string) => void;
+  styles?: string;
 }) => {
   const [term, setTerm] = useState("");
 
@@ -19,7 +21,7 @@ export const SearchBar = ({
 
   return (
     <div className="search-bar ui segment">
-      <form onSubmit={onFormSubmit}>
+      <form className={`w-full ${styles}`} onSubmit={onFormSubmit}>
         <EuiFieldText
           aria-label="Type in the name of a 5e monster the press enter"
           onChange={onChange}
