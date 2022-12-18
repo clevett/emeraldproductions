@@ -1,4 +1,5 @@
 import { EuiLink } from "@elastic/eui";
+import { driveThru } from "../../routes/external";
 
 export const DriveThruLink = ({
   id,
@@ -7,13 +8,12 @@ export const DriveThruLink = ({
   id: string;
   children: JSX.Element[] | JSX.Element;
 }) => {
-  const url = `https://www.drivethrurpg.com/product/${id}/?affiliate_id=879798`;
   return (
     <EuiLink
-      href={url}
-      target="_blank"
+      className="inline-flex"
+      href={driveThru(id)}
       rel="noopener noreferrer"
-      style={{ display: "inline-flex" }}
+      target="_blank"
     >
       {children}
     </EuiLink>

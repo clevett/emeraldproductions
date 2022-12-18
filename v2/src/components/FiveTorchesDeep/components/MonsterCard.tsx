@@ -2,7 +2,6 @@ import {
   EuiButtonEmpty,
   EuiFlexGroup,
   EuiFlexItem,
-  EuiPanel,
   EuiSpacer,
   EuiSelect,
   EuiText,
@@ -18,6 +17,7 @@ import { coinList } from "../helpers/coinList";
 import { useState } from "react";
 
 import styles from "../styles.module.css";
+import { CardPanel } from "../../CardPanel";
 
 export const MonsterCard = ({
   monster: {
@@ -69,7 +69,7 @@ export const MonsterCard = ({
   const showResist = immunities || resistances || vulnerabilities;
 
   return (
-    <EuiPanel hasBorder paddingSize="m" color="subdued">
+    <CardPanel>
       <EuiFlexGroup direction="column" gutterSize="s">
         <EuiFlexItem className="items-start">
           <EuiFlexGroup className="items-start w-full" gutterSize="s">
@@ -257,6 +257,6 @@ export const MonsterCard = ({
           </EuiButtonEmpty>
         </EuiText>
       </EuiFlexItem>
-    </EuiPanel>
+    </CardPanel>
   );
 };

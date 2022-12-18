@@ -1,5 +1,5 @@
 import { EuiTitle, EuiSpacer, EuiPanel } from "@elastic/eui";
-import { DriveThruLink } from "./DriveThruLink";
+import { DriveThruLink } from "./DriveThruLink/DriveThruLink";
 
 interface LayoutBodyProps {
   children: JSX.Element | (JSX.Element | null)[] | null;
