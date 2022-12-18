@@ -3,6 +3,9 @@ import sotdl from "../imgs/ttrpgs/sotdl.png";
 import shadowrun5e from "../imgs/ttrpgs/shadowrun5e.png";
 import { FiveTorchesDeepMonsters } from "../components/FiveTorchesDeep/FiveTorchesDeepMonsters";
 import { RandomMapGenerator } from "../components/FiveTorchesDeep/RandomMapGenerator";
+import { EncounterBuilder } from "../components/ShadowOfTheDemonLord/EncounterBuilder";
+import { RewardsGenerator } from "../components/ShadowOfTheDemonLord/RewardsGenerator";
+import { TravelTool } from "../components/ShadowOfTheDemonLord/TravelTool";
 
 export const ftdList = [
   {
@@ -24,19 +27,19 @@ export const sotdlList = [
     label: "Encounter Builder",
     href: "/shadow_of_the_demon_lord/encounter_builder",
     iconType: sotdl,
-    element: null,
+    element: <EncounterBuilder />,
   },
   {
     label: "Rewards Generator",
     href: "/shadow_of_the_demon_lord/rewards_generator",
     iconType: sotdl,
-    element: null,
+    element: <RewardsGenerator />,
   },
   {
     label: "Travel Tool",
     href: "/shadow_of_the_demon_lord/travel_tool",
     iconType: sotdl,
-    element: null,
+    element: <TravelTool />,
   },
 ];
 

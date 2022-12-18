@@ -1,6 +1,6 @@
-import { EuiButton, EuiPanel, EuiSpacer, EuiTitle } from "@elastic/eui";
+import { EuiButton } from "@elastic/eui";
 import { useState } from "react";
-import { DriveThruLink } from "../DriveThruLink";
+import { LayoutBody } from "../LayoutBody";
 import Box from "./components/Box";
 
 import styles from "./styles.module.css";
@@ -11,38 +11,30 @@ export const RandomMapGenerator = () => {
   const handleClick = () => setRefresh(!refresh);
 
   return (
-    <>
-      <DriveThruLink id="264584">
-        <EuiTitle size="l">
-          <h2>Five Torches Deep</h2>
-        </EuiTitle>
-      </DriveThruLink>
-      <EuiSpacer />
-      <EuiTitle size="s">
-        <h3>Random Map Generator</h3>
-      </EuiTitle>
-      <EuiSpacer />
-      <EuiPanel hasShadow={false} paddingSize="none" className="w-full">
-        <div
-          key={`map-${refresh}`}
-          className={`grid grid-cols-3 grid-rows-3 border-2 border-solid border-black ${styles.map}`}
-        >
-          <Box name="Northwest" />
-          <Box name="North" />
-          <Box name="Northeast" />
+    <LayoutBody
+      title="Five Torches Deep"
+      subtitle="Random Map Generator"
+      DriveThruId="264584"
+    >
+      <div
+        key={`map-${refresh}`}
+        className={`grid grid-cols-3 grid-rows-3 border-2 border-solid border-black ${styles.map}`}
+      >
+        <Box name="Northwest" />
+        <Box name="North" />
+        <Box name="Northeast" />
 
-          <Box name="West" />
-          <Box name="Center" />
-          <Box name="East" />
+        <Box name="West" />
+        <Box name="Center" />
+        <Box name="East" />
 
-          <Box name="Southwest" />
-          <Box name="South" />
-          <Box name="Southeast" />
-        </div>
-        <EuiButton className="mt-5" onClick={handleClick} fill>
-          Generator New Map
-        </EuiButton>
-      </EuiPanel>
-    </>
+        <Box name="Southwest" />
+        <Box name="South" />
+        <Box name="Southeast" />
+      </div>
+      <EuiButton className="mt-5" onClick={handleClick} fill>
+        Generator New Map
+      </EuiButton>
+    </LayoutBody>
   );
 };

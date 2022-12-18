@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { About } from "./components/About/About";
 import { Layout } from "./components/Layout";
 
-import { routes } from "./data/routes";
+import { routes } from "./routes";
 
 const App = () => {
   return (

@@ -1,12 +1,5 @@
-import {
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiPanel,
-  EuiSpacer,
-  EuiTitle,
-} from "@elastic/eui";
+import { EuiFlexGroup, EuiFlexItem, EuiSpacer } from "@elastic/eui";
 import { useState } from "react";
-import { DriveThruLink } from "../DriveThruLink";
 import { fuzzySearch } from "../SearchBar/fuzzySearch";
 import { SearchBar } from "../SearchBar/SearchBar";
 import convertFifthMonsterToFTD from "./helpers/convertFifthMonsterToFTD";
@@ -17,6 +10,7 @@ import { MonsterFTD } from "./types/ftdTypes";
 import { MonsterCard } from "./components/MonsterCard";
 
 import styles from "./styles.module.css";
+import { LayoutBody } from "../LayoutBody";
 
 const ftdMonsters = FifthEditionMonster.map((monster) =>
   convertFifthMonsterToFTD(monster)
@@ -54,24 +48,14 @@ export const FiveTorchesDeepMonsters = () => {
     setFilteredMonsters(getSearchResults(term));
 
   return (
-    <>
-      <DriveThruLink id="264584">
-        <EuiTitle size="l">
-          <h2>Five Torches Deep</h2>
-        </EuiTitle>
-      </DriveThruLink>
+    <LayoutBody
+      title="Five Torches Deep"
+      subtitle="Fifth Edition Bestiary"
+      DriveThruId="264584"
+    >
+      <SearchBar onTermSubmit={onTermSubmit} />
       <EuiSpacer />
-      <EuiTitle size="s">
-        <h3>Fifth Edition Bestiary</h3>
-      </EuiTitle>
-      <EuiSpacer />
-      <EuiPanel hasShadow={false} paddingSize="none">
-        <>
-          <SearchBar onTermSubmit={onTermSubmit} />
-          <EuiSpacer />
-          {renderedList()}
-        </>
-      </EuiPanel>
-    </>
+      {renderedList()}
+    </LayoutBody>
   );
 };

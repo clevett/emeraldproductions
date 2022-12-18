@@ -1,5 +1,5 @@
 import { EuiImage, EuiListGroup, EuiSpacer, EuiTitle } from "@elastic/eui";
-import { ftdList, sotdlList, shadowrunList } from "../data/routes";
+import { ftdList, sotdlList, shadowrunList } from "../routes";
 
 import logo from "../imgs/logoLarge.png";
 
