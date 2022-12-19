@@ -42,6 +42,7 @@ export const EncounterBuilder = () => {
   const [searchResults, setSearchResults] = useState<data>(undefined);
   const [data, setData] = useState<data>(undefined);
   const [isLoading, setIsLoading] = useState(false);
+  const [selected, setSelected] = useState<data>(undefined);
 
   const onTermSubmit = useCallback(
     (term: string) => {
@@ -73,7 +74,7 @@ export const EncounterBuilder = () => {
         })
         .catch((error) => console.log(error));
     }
-  }, []);
+  }, [data]);
 
   const getSmallTitles = (name: string) => {
     return (
@@ -82,6 +83,19 @@ export const EncounterBuilder = () => {
       </EuiTitle>
     );
   };
+
+  // const updateEncounter = (beast: Monster, buttonAction: "add" | "remove") => {
+  //   const selected =
+  //     buttonAction === "add"
+  //       ? addBeast(this.state.selected, beast)
+  //       : removeBeast(this.state.selected, beast);
+  //   const difficulty =
+  //     buttonAction === "add"
+  //       ? this.state.difficulty + beast.difficulty
+  //       : this.state.difficulty - beast.difficulty;
+  //   this.setState({ selected });
+  //   this.setState({ difficulty });
+  // };
 
   return (
     <LayoutBody
