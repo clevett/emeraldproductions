@@ -1,4 +1,5 @@
 import {
+  EuiBasicTable,
   EuiFlexGroup,
   EuiFlexItem,
   EuiLoadingSpinner,
@@ -17,6 +18,7 @@ import { useUpdateEffect } from "@elastic/eui/src/services/hooks/useUpdateEffect
 import { fuzzySearch } from "../SearchBar/fuzzySearch";
 import { sotdl } from "../../routes/api";
 import { SearchBar } from "../SearchBar/SearchBar";
+import { MonsterTable } from "./components/MonsterTable";
 
 const levels = Object.keys(danger) as Array<keyof typeof danger>;
 const difficultiesKeys = Object.keys(danger.starting) as Array<
@@ -24,7 +26,7 @@ const difficultiesKeys = Object.keys(danger.starting) as Array<
 >;
 const difficulties = [1, 5, 10, 25, 50, 100, 250, 500];
 
-interface Monster {
+export interface Monster {
   _id: string;
   descriptor: string;
   difficulty: number;
@@ -32,11 +34,13 @@ interface Monster {
   source: string;
 }
 
+type data = Monster[] | undefined;
+
 export const EncounterBuilder = () => {
   const [difficultyTotal, setDifficultyTotal] = useState(0);
   const [level, setLevel] = useState(levels[1]);
-  const [searchResults, setSearchResults] = useState<Monster[]>([]);
-  const [data, setData] = useState<Monster[]>([]);
+  const [searchResults, setSearchResults] = useState<data>(undefined);
+  const [data, setData] = useState<data>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const onTermSubmit = useCallback(
@@ -69,7 +73,7 @@ export const EncounterBuilder = () => {
         })
         .catch((error) => console.log(error));
     }
-  }, [data, searchResults]);
+  }, []);
 
   const getSmallTitles = (name: string) => {
     return (
@@ -139,7 +143,11 @@ export const EncounterBuilder = () => {
             <h4>Bestiary</h4>
           </EuiTitle>
           <SearchBar onTermSubmit={onTermSubmit} styles="flex justify-center" />
-          {isLoading ? <EuiLoadingSpinner size="l" /> : null}
+          {isLoading ? (
+            <EuiLoadingSpinner size="l" />
+          ) : (
+            <MonsterTable data={data ?? []} />
+          )}
         </EuiFlexItem>
       </EuiFlexGroup>
     </LayoutBody>
