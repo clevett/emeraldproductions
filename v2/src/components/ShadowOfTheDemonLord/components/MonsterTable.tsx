@@ -1,28 +1,29 @@
 import { EuiBasicTable, EuiButton, EuiTableSortingType } from "@elastic/eui";
 import { useState } from "react";
-import { Monster } from "../EncounterBuilder";
+import { Action, Monster } from "../EncounterBuilder";
 
-export const MonsterTable = ({ data }: { data: Monster[] }) => {
+export const MonsterTable = ({
+  data,
+  onSelect,
+}: {
+  data: Monster[];
+  onSelect: (arg: Monster, action: Action) => void;
+}) => {
+  const handleSelect = (monster: Monster) => {
+    onSelect(monster, "add");
+  };
+
   const columns = [
     {
       field: "name",
       name: "Name",
       truncateText: true,
-      render: (name: Monster["name"]) => (
-        <EuiButton
-          className="text-left"
-          size="s"
-          fill
-          onClick={() => console.log(name)}
-        >
-          {name}
-        </EuiButton>
-      ),
     },
     {
       field: "difficulty",
       name: "Difficulty",
       truncateText: true,
+      sortable: true,
     },
     {
       field: "descriptor",
@@ -33,6 +34,20 @@ export const MonsterTable = ({ data }: { data: Monster[] }) => {
       field: "source",
       name: "Source",
       truncateText: true,
+    },
+    {
+      name: "",
+      actions: [
+        {
+          render: (item: Monster) => {
+            return (
+              <EuiButton onClick={() => handleSelect(item)} color="primary">
+                Add
+              </EuiButton>
+            );
+          },
+        },
+      ],
     },
   ];
 
@@ -84,6 +99,7 @@ export const MonsterTable = ({ data }: { data: Monster[] }) => {
       pagination={pagination}
       sorting={sorting}
       tableCaption="Bestiary"
+      hasActions={true}
     />
   );
 };

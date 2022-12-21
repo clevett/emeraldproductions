@@ -36,13 +36,21 @@ export interface Monster {
 
 type data = Monster[] | undefined;
 
+export type Action = "add" | "remove";
+
+export const findIndex = (selected: Monster[], beast: Monster) =>
+  Array.isArray(selected) ? selected.indexOf(beast) : false;
+
 export const EncounterBuilder = () => {
-  const [difficultyTotal, setDifficultyTotal] = useState(0);
   const [level, setLevel] = useState(levels[1]);
   const [searchResults, setSearchResults] = useState<data>(undefined);
   const [data, setData] = useState<data>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [selected, setSelected] = useState<data>(undefined);
+
+  const difficultyTotal = selected
+    ?.map((s) => s.difficulty)
+    .reduce((a, b) => a + b, 0);
 
   const onTermSubmit = useCallback(
     (term: string) => {
@@ -84,18 +92,24 @@ export const EncounterBuilder = () => {
     );
   };
 
-  // const updateEncounter = (beast: Monster, buttonAction: "add" | "remove") => {
-  //   const selected =
-  //     buttonAction === "add"
-  //       ? addBeast(this.state.selected, beast)
-  //       : removeBeast(this.state.selected, beast);
-  //   const difficulty =
-  //     buttonAction === "add"
-  //       ? this.state.difficulty + beast.difficulty
-  //       : this.state.difficulty - beast.difficulty;
-  //   this.setState({ selected });
-  //   this.setState({ difficulty });
-  // };
+  const updateEncounter = (monster: Monster, action: Action) => {
+    console.log(monster);
+
+    if (selected && action === "add") {
+      setSelected([...selected, monster]);
+    }
+
+    if (!selected && action === "add") {
+      setSelected([monster]);
+    }
+
+    if (selected && action === "remove") {
+      const index = selected.indexOf(monster);
+
+      if (index >= 0) {
+      }
+    }
+  };
 
   return (
     <LayoutBody
@@ -160,7 +174,7 @@ export const EncounterBuilder = () => {
           {isLoading ? (
             <EuiLoadingSpinner size="l" />
           ) : (
-            <MonsterTable data={data ?? []} />
+            <MonsterTable data={data ?? []} onSelect={updateEncounter} />
           )}
         </EuiFlexItem>
       </EuiFlexGroup>
