@@ -91,10 +91,20 @@ export const MonsterTable = ({
     enableAllColumns: true,
   };
 
+  const sortData = () => {
+    const items = data.sort((a, b) => {
+      const keyA = a[sortField],
+        keyB = b[sortField];
+      return keyA < keyB ? -1 : keyA > keyB ? 1 : 0;
+    });
+
+    return sortDirection === "asc" ? items : items.reverse();
+  };
+
   return (
     <EuiBasicTable
       columns={columns}
-      items={data}
+      items={sortData()}
       onChange={onTableChange}
       pagination={pagination}
       sorting={sorting}
