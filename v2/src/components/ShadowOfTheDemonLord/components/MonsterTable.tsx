@@ -1,18 +1,21 @@
 import { EuiBasicTable, EuiButton, EuiTableSortingType } from "@elastic/eui";
 import { useState } from "react";
-import { Action, Monster } from "../EncounterBuilder";
+import { Action, Actions, Monster } from "../EncounterBuilder";
+
+enum Sort {
+  DESC = "desc",
+  ASC = "asc",
+}
 
 export const MonsterTable = ({
+  action,
   data,
   onSelect,
 }: {
   data: Monster[];
-  onSelect: (arg: Monster, action: Action) => void;
+  onSelect: (arg: Monster) => void;
+  action: Action;
 }) => {
-  const handleSelect = (monster: Monster) => {
-    onSelect(monster, "add");
-  };
-
   const columns = [
     {
       field: "name",
@@ -41,8 +44,12 @@ export const MonsterTable = ({
         {
           render: (item: Monster) => {
             return (
-              <EuiButton onClick={() => handleSelect(item)} color="primary">
-                Add
+              <EuiButton
+                className="capitalize"
+                onClick={() => onSelect(item)}
+                color={action === Actions.ADD ? "primary" : "warning"}
+              >
+                {action}
               </EuiButton>
             );
           },
@@ -54,7 +61,7 @@ export const MonsterTable = ({
   const [sortField, setSortField] = useState<keyof Monster>(
     columns[0].field as keyof Monster
   );
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+  const [sortDirection, setSortDirection] = useState<`${Sort}`>(Sort.ASC);
   const [pageIndex, setPageIndex] = useState(0);
   const [pageSize, setPageSize] = useState(10);
 
@@ -97,7 +104,6 @@ export const MonsterTable = ({
         keyB = b[sortField];
       return keyA < keyB ? -1 : keyA > keyB ? 1 : 0;
     });
-
     return sortDirection === "asc" ? items : items.reverse();
   };
 

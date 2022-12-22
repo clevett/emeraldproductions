@@ -1,5 +1,4 @@
 import {
-  EuiBasicTable,
   EuiFlexGroup,
   EuiFlexItem,
   EuiLoadingSpinner,
@@ -20,6 +19,8 @@ import { sotdl } from "../../routes/api";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { MonsterTable } from "./components/MonsterTable";
 
+import styles from "./styles.module.css";
+
 const levels = Object.keys(danger) as Array<keyof typeof danger>;
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
@@ -36,7 +37,12 @@ export interface Monster {
 
 type data = Monster[] | undefined;
 
-export type Action = "add" | "remove";
+export enum Actions {
+  ADD = "add",
+  REMOVE = "remove",
+}
+
+export type Action = `${Actions}`;
 
 export const findIndex = (selected: Monster[], beast: Monster) =>
   Array.isArray(selected) ? selected.indexOf(beast) : false;
@@ -95,18 +101,18 @@ export const EncounterBuilder = () => {
   const updateEncounter = (monster: Monster, action: Action) => {
     console.log(monster);
 
-    if (selected && action === "add") {
-      setSelected([...selected, monster]);
+    if (action === Actions.ADD) {
+      const array = !selected ? [monster] : [...selected, monster];
+      setSelected(array);
     }
 
-    if (!selected && action === "add") {
-      setSelected([monster]);
-    }
-
-    if (selected && action === "remove") {
+    if (selected && action === Actions.REMOVE) {
       const index = selected.indexOf(monster);
+      let monsters = selected;
 
       if (index >= 0) {
+        monsters.splice(index, 1);
+        setSelected(monsters);
       }
     }
   };
@@ -152,29 +158,39 @@ export const EncounterBuilder = () => {
 
       <EuiSpacer />
 
-      <EuiTitle className="text-center" size="s">
-        <h4>Encounter Opposition</h4>
-      </EuiTitle>
-
-      <EuiSpacer />
-
-      <EuiFlexGroup gutterSize="l" wrap className="justify-start">
+      <EuiFlexGroup gutterSize="l" wrap className={`justify-start gap-6`}>
         <EuiFlexItem>
           <EuiTitle className="text-center" size="s">
             <h4>Encounter Difficulty ({difficultyTotal})</h4>
           </EuiTitle>
-          <EuiSpacer />
-          <div>Selected Monsters</div>
+          <MonsterTable
+            action={Actions.REMOVE}
+            data={selected ?? []}
+            onSelect={(monster: Monster) =>
+              updateEncounter(monster, Actions.REMOVE)
+            }
+          />
         </EuiFlexItem>
         <EuiFlexItem className="content-center">
-          <EuiTitle className="text-center mb-4" size="s">
-            <h4>Bestiary</h4>
-          </EuiTitle>
-          <SearchBar onTermSubmit={onTermSubmit} styles="flex justify-center" />
+          <EuiFlexItem className={`grid ${styles.col}`}>
+            <EuiTitle className="text-center mb-4" size="s">
+              <h4>Bestiary</h4>
+            </EuiTitle>
+            <SearchBar
+              onTermSubmit={onTermSubmit}
+              styles="flex justify-center mb-4"
+            />
+          </EuiFlexItem>
           {isLoading ? (
             <EuiLoadingSpinner size="l" />
           ) : (
-            <MonsterTable data={data ?? []} onSelect={updateEncounter} />
+            <MonsterTable
+              action={Actions.ADD}
+              data={data ?? []}
+              onSelect={(monster: Monster) =>
+                updateEncounter(monster, Actions.ADD)
+              }
+            />
           )}
         </EuiFlexItem>
       </EuiFlexGroup>

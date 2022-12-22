@@ -1,0 +1,3 @@
+.col {
+  grid-template-columns: 1fr 20%;
+}
