@@ -99,8 +99,6 @@ export const EncounterBuilder = () => {
   };
 
   const updateEncounter = (monster: Monster, action: Action) => {
-    console.log(monster);
-
     if (action === Actions.ADD) {
       const array = !selected ? [monster] : [...selected, monster];
       setSelected(array);
@@ -112,7 +110,7 @@ export const EncounterBuilder = () => {
 
       if (index >= 0) {
         monsters.splice(index, 1);
-        setSelected(monsters);
+        setSelected([...monsters]);
       }
     }
   };
@@ -160,7 +158,7 @@ export const EncounterBuilder = () => {
 
       <EuiFlexGroup gutterSize="l" wrap className={`justify-start gap-6`}>
         <EuiFlexItem>
-          <EuiTitle className="text-center" size="s">
+          <EuiTitle className={`text-center ${styles.minTitle}`} size="s">
             <h4>Encounter Difficulty ({difficultyTotal})</h4>
           </EuiTitle>
           <MonsterTable
@@ -172,13 +170,13 @@ export const EncounterBuilder = () => {
           />
         </EuiFlexItem>
         <EuiFlexItem className="content-center">
-          <EuiFlexItem className={`grid ${styles.col}`}>
-            <EuiTitle className="text-center mb-4" size="s">
+          <EuiFlexItem className={`grid ${styles.col} mb-4`}>
+            <EuiTitle className="text-center" size="s">
               <h4>Bestiary</h4>
             </EuiTitle>
             <SearchBar
               onTermSubmit={onTermSubmit}
-              styles="flex justify-center mb-4"
+              styles="flex justify-center"
             />
           </EuiFlexItem>
           {isLoading ? (
@@ -186,7 +184,7 @@ export const EncounterBuilder = () => {
           ) : (
             <MonsterTable
               action={Actions.ADD}
-              data={data ?? []}
+              data={searchResults ?? []}
               onSelect={(monster: Monster) =>
                 updateEncounter(monster, Actions.ADD)
               }

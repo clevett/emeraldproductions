@@ -1,3 +1,7 @@
 .col {
   grid-template-columns: 1fr 20%;
 }
+
+.minTitle {
+  min-height: 55px;
+}
