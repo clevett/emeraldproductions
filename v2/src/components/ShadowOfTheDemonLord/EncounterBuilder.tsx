@@ -156,11 +156,8 @@ export const EncounterBuilder = () => {
 
       <EuiFlexGroup gutterSize="l" wrap className={`justify-start gap-6`}>
         <EuiFlexItem className="content-center">
-          <EuiFlexItem className={`grid ${styles.col} mb-4`}>
-            <EuiTitle
-              className={`col-start-2 text-center ${styles.max40}`}
-              size="s"
-            >
+          <EuiFlexItem className={`grid ${styles.col} mb-4 ${styles.max40}`}>
+            <EuiTitle className={`col-start-2 text-center`} size="s">
               <h4>Encounter Difficulty ({difficultyTotal})</h4>
             </EuiTitle>
           </EuiFlexItem>

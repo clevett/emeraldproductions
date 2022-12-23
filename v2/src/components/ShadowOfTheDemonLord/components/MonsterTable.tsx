@@ -46,8 +46,10 @@ export const MonsterTable = ({
             return (
               <EuiButton
                 className="capitalize"
+                color={action === Actions.ADD ? "success" : "danger"}
+                fill
                 onClick={() => onSelect(item)}
-                color={action === Actions.ADD ? "primary" : "warning"}
+                size="s"
               >
                 {action}
               </EuiButton>
