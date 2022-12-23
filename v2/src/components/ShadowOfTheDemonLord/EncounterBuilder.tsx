@@ -13,7 +13,6 @@ import { LayoutBody } from "../LayoutBody";
 
 import { danger } from "../../data/sotdlDangerLevels";
 import { typeChecker, levelsChecker } from "./recoil/refine";
-import { useUpdateEffect } from "@elastic/eui/src/services/hooks/useUpdateEffect";
 import { fuzzySearch } from "../SearchBar/fuzzySearch";
 import { sotdl } from "../../routes/api";
 import { SearchBar } from "../SearchBar/SearchBar";
@@ -25,7 +24,6 @@ const levels = Object.keys(danger) as Array<keyof typeof danger>;
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
 >;
-const difficulties = [1, 5, 10, 25, 50, 100, 250, 500];
 
 export interface Monster {
   _id: string;
@@ -157,10 +155,15 @@ export const EncounterBuilder = () => {
       <EuiSpacer />
 
       <EuiFlexGroup gutterSize="l" wrap className={`justify-start gap-6`}>
-        <EuiFlexItem>
-          <EuiTitle className={`text-center ${styles.minTitle}`} size="s">
-            <h4>Encounter Difficulty ({difficultyTotal})</h4>
-          </EuiTitle>
+        <EuiFlexItem className="content-center">
+          <EuiFlexItem className={`grid ${styles.col} mb-4`}>
+            <EuiTitle
+              className={`col-start-2 text-center ${styles.max40}`}
+              size="s"
+            >
+              <h4>Encounter Difficulty ({difficultyTotal})</h4>
+            </EuiTitle>
+          </EuiFlexItem>
           <MonsterTable
             action={Actions.REMOVE}
             data={selected ?? []}
@@ -171,7 +174,7 @@ export const EncounterBuilder = () => {
         </EuiFlexItem>
         <EuiFlexItem className="content-center">
           <EuiFlexItem className={`grid ${styles.col} mb-4`}>
-            <EuiTitle className="text-center" size="s">
+            <EuiTitle className="col-start-2 text-center" size="s">
               <h4>Bestiary</h4>
             </EuiTitle>
             <SearchBar
