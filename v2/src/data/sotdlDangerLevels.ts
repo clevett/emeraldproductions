@@ -28,3 +28,5 @@ export const danger = {
     max: "None",
   },
 };
+
+export const levels = Object.keys(danger) as Array<keyof typeof danger>;

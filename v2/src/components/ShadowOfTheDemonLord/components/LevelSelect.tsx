@@ -1,17 +1,15 @@
 import { EuiSelect } from "@elastic/eui";
 import { typeChecker, levelsChecker } from "../recoil/refine";
 import { SmallTitle } from "./SmallTitle";
-import { danger } from "../../../data/sotdlDangerLevels";
+import { levels, danger } from "../../../data/sotdlDangerLevels";
 
 export type Level = keyof typeof danger;
 
 export const LevelSelect = ({
   level,
-  levels,
   onChange,
 }: {
   level: Level;
-  levels: Level[];
   onChange: (arg: Level) => void;
 }) => {
   return (

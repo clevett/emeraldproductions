@@ -9,7 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { LayoutBody } from "../LayoutBody";
 
-import { danger } from "../../data/sotdlDangerLevels";
+import { danger, levels } from "../../data/sotdlDangerLevels";
 import { fuzzySearch } from "../SearchBar/fuzzySearch";
 import { sotdl } from "../../routes/api";
 import { SearchBar } from "../SearchBar/SearchBar";
@@ -21,7 +21,6 @@ import { LevelSelect } from "./components/LevelSelect";
 import { Difficulties } from "./components/Difficulties";
 import { EncounterTitle } from "./components/EncounterTitle";
 
-const levels = Object.keys(danger) as Array<keyof typeof danger>;
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
 >;
@@ -116,7 +115,7 @@ export const EncounterBuilder = () => {
 
       <EuiFlexGroup className="flex-row">
         <EuiFlexItem className="w-10">
-          <LevelSelect level={level} levels={levels} onChange={setLevel} />
+          <LevelSelect level={level} onChange={setLevel} />
         </EuiFlexItem>
         {difficultiesKeys.map((e) => (
           <Difficulties key={`level-${e}`} difficulty={e} level={level} />

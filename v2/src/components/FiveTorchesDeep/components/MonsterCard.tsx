@@ -13,7 +13,7 @@ import displayModifier from "../helpers/displayModifier/displayModifier";
 import { MonsterFTD } from "../types/ftdTypes";
 import { ftdCatagories as catagories } from "../../../data/ftdCategories";
 
-import { coinList } from "../helpers/coinList";
+import { coinList } from "../../ShadowOfTheDemonLord/helpers/coinList";
 import { useState } from "react";
 
 import styles from "../styles.module.css";
