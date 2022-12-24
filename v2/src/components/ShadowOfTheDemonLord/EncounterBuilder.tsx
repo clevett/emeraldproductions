@@ -19,6 +19,7 @@ import styles from "./styles.module.css";
 import { CardPanel } from "../CardPanel";
 import { LevelSelect } from "./components/LevelSelect";
 import { Difficulties } from "./components/Difficulties";
+import { EncounterTitle } from "./components/EncounterTitle";
 
 const levels = Object.keys(danger) as Array<keyof typeof danger>;
 const difficultiesKeys = Object.keys(danger.starting) as Array<
@@ -51,9 +52,6 @@ export const EncounterBuilder = () => {
   const [data, setData] = useState<data>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [selected, setSelected] = useState<data>(undefined);
-
-  const difficultyTotal =
-    selected?.map((s) => s.difficulty).reduce((a, b) => a + b, 0) ?? 0;
 
   const onTermSubmit = useCallback(
     (term: string) => {
@@ -120,9 +118,8 @@ export const EncounterBuilder = () => {
         <EuiFlexItem className="w-10">
           <LevelSelect level={level} levels={levels} onChange={setLevel} />
         </EuiFlexItem>
-
         {difficultiesKeys.map((e) => (
-          <Difficulties difficulty={e} level={level} />
+          <Difficulties key={`level-${e}`} difficulty={e} level={level} />
         ))}
       </EuiFlexGroup>
 
@@ -131,9 +128,13 @@ export const EncounterBuilder = () => {
       <EuiFlexGroup gutterSize="l" wrap className={`justify-start`}>
         <EuiFlexItem className="content-center">
           <EuiFlexItem className={`grid ${styles.col} mb-4 ${styles.max40}`}>
-            <EuiTitle className={`col-start-2 text-center`} size="s">
-              <h4>Encounter Difficulty ({difficultyTotal})</h4>
-            </EuiTitle>
+            <EncounterTitle
+              total={
+                selected?.map((s) => s.difficulty).reduce((a, b) => a + b, 0) ??
+                0
+              }
+              level={level}
+            />
           </EuiFlexItem>
           <CardPanel>
             <MonsterTable

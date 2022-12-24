@@ -3,7 +3,7 @@ import { danger } from "../../../data/sotdlDangerLevels";
 import { Level } from "./LevelSelect";
 import { SmallTitle } from "./SmallTitle";
 
-const color = (key: Difficulty) => {
+export const color = (key: Difficulty) => {
   switch (key) {
     case "easy":
       return "green";
@@ -18,7 +18,7 @@ const color = (key: Difficulty) => {
   }
 };
 
-type Difficulty = keyof typeof danger["starting"];
+export type Difficulty = keyof typeof danger["starting"];
 
 export const Difficulties = ({
   difficulty,
@@ -30,7 +30,7 @@ export const Difficulties = ({
   const title = difficulty === "max" ? "Max. Creature Difficulty" : difficulty;
 
   return (
-    <EuiFlexItem key={`level-${difficulty}`}>
+    <EuiFlexItem>
       <SmallTitle color={color(difficulty)} name={title} />
       <EuiText className="text-center">
         {danger[`${level}`][difficulty]}
