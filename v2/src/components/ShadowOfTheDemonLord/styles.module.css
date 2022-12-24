@@ -5,3 +5,7 @@
 .max40 {
   max-height: 40px;
 }
+
+.bgtransparent {
+  background-color: transparent;
+}

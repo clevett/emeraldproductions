@@ -2,9 +2,7 @@ import {
   EuiFlexGroup,
   EuiFlexItem,
   EuiLoadingSpinner,
-  EuiSelect,
   EuiSpacer,
-  EuiText,
   EuiTitle,
 } from "@elastic/eui";
 import { useCallback, useEffect, useState } from "react";
@@ -12,13 +10,15 @@ import axios from "axios";
 import { LayoutBody } from "../LayoutBody";
 
 import { danger } from "../../data/sotdlDangerLevels";
-import { typeChecker, levelsChecker } from "./recoil/refine";
 import { fuzzySearch } from "../SearchBar/fuzzySearch";
 import { sotdl } from "../../routes/api";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { MonsterTable } from "./components/MonsterTable";
 
 import styles from "./styles.module.css";
+import { CardPanel } from "../CardPanel";
+import { LevelSelect } from "./components/LevelSelect";
+import { Difficulties } from "./components/Difficulties";
 
 const levels = Object.keys(danger) as Array<keyof typeof danger>;
 const difficultiesKeys = Object.keys(danger.starting) as Array<
@@ -52,9 +52,8 @@ export const EncounterBuilder = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [selected, setSelected] = useState<data>(undefined);
 
-  const difficultyTotal = selected
-    ?.map((s) => s.difficulty)
-    .reduce((a, b) => a + b, 0);
+  const difficultyTotal =
+    selected?.map((s) => s.difficulty).reduce((a, b) => a + b, 0) ?? 0;
 
   const onTermSubmit = useCallback(
     (term: string) => {
@@ -88,14 +87,6 @@ export const EncounterBuilder = () => {
     }
   }, [data]);
 
-  const getSmallTitles = (name: string) => {
-    return (
-      <EuiTitle className="text-center capitalize" size="xs">
-        <h5>{name}</h5>
-      </EuiTitle>
-    );
-  };
-
   const updateEncounter = (monster: Monster, action: Action) => {
     if (action === Actions.ADD) {
       const array = !selected ? [monster] : [...selected, monster];
@@ -127,47 +118,32 @@ export const EncounterBuilder = () => {
 
       <EuiFlexGroup className="flex-row">
         <EuiFlexItem className="w-10">
-          {getSmallTitles("level")}
-          <EuiSelect
-            className="capitalize"
-            onChange={(e) => {
-              const result = typeChecker(levelsChecker(e.target.value));
-              if (result) {
-                setLevel(result);
-              }
-            }}
-            options={levels.map((l) => ({ text: l, name: l }))}
-            value={level}
-          />
+          <LevelSelect level={level} levels={levels} onChange={setLevel} />
         </EuiFlexItem>
 
-        {difficultiesKeys.map((d) => {
-          const title = d === "max" ? "Max. Creature Difficulty" : d;
-          return (
-            <EuiFlexItem key={`level-${d}`}>
-              {getSmallTitles(title)}
-              <EuiText className="text-center">{danger[`${level}`][d]}</EuiText>
-            </EuiFlexItem>
-          );
-        })}
+        {difficultiesKeys.map((e) => (
+          <Difficulties difficulty={e} level={level} />
+        ))}
       </EuiFlexGroup>
 
       <EuiSpacer />
 
-      <EuiFlexGroup gutterSize="l" wrap className={`justify-start gap-6`}>
+      <EuiFlexGroup gutterSize="l" wrap className={`justify-start`}>
         <EuiFlexItem className="content-center">
           <EuiFlexItem className={`grid ${styles.col} mb-4 ${styles.max40}`}>
             <EuiTitle className={`col-start-2 text-center`} size="s">
               <h4>Encounter Difficulty ({difficultyTotal})</h4>
             </EuiTitle>
           </EuiFlexItem>
-          <MonsterTable
-            action={Actions.REMOVE}
-            data={selected ?? []}
-            onSelect={(monster: Monster) =>
-              updateEncounter(monster, Actions.REMOVE)
-            }
-          />
+          <CardPanel>
+            <MonsterTable
+              action={Actions.REMOVE}
+              data={selected ?? []}
+              onSelect={(monster: Monster) =>
+                updateEncounter(monster, Actions.REMOVE)
+              }
+            />
+          </CardPanel>
         </EuiFlexItem>
         <EuiFlexItem className="content-center">
           <EuiFlexItem className={`grid ${styles.col} mb-4`}>
@@ -179,17 +155,19 @@ export const EncounterBuilder = () => {
               styles="flex justify-center"
             />
           </EuiFlexItem>
-          {isLoading ? (
-            <EuiLoadingSpinner size="l" />
-          ) : (
-            <MonsterTable
-              action={Actions.ADD}
-              data={searchResults ?? []}
-              onSelect={(monster: Monster) =>
-                updateEncounter(monster, Actions.ADD)
-              }
-            />
-          )}
+          <CardPanel>
+            {isLoading ? (
+              <EuiLoadingSpinner size="l" />
+            ) : (
+              <MonsterTable
+                action={Actions.ADD}
+                data={searchResults ?? []}
+                onSelect={(monster: Monster) =>
+                  updateEncounter(monster, Actions.ADD)
+                }
+              />
+            )}
+          </CardPanel>
         </EuiFlexItem>
       </EuiFlexGroup>
     </LayoutBody>

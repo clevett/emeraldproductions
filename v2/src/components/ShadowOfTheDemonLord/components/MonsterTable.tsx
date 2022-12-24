@@ -1,4 +1,9 @@
-import { EuiBasicTable, EuiButton, EuiTableSortingType } from "@elastic/eui";
+import {
+  EuiBasicTable,
+  EuiButton,
+  EuiTableSortingType,
+  EuiText,
+} from "@elastic/eui";
 import { useState } from "react";
 import { Action, Actions, Monster } from "../EncounterBuilder";
 
@@ -21,6 +26,9 @@ export const MonsterTable = ({
       field: "name",
       name: "Name",
       truncateText: true,
+      render: (name: Monster["name"]) => {
+        return <EuiText className="capitalize">{name}</EuiText>;
+      },
     },
     {
       field: "difficulty",
@@ -91,12 +99,14 @@ export const MonsterTable = ({
 
   return (
     <EuiBasicTable
+      className="bg-transparent"
       columns={columns}
       hasActions={true}
       items={sortData(data)}
       onChange={onTableChange}
       sorting={sorting}
       tableCaption="Bestiary"
+      tableLayout="auto"
     />
   );
 };
