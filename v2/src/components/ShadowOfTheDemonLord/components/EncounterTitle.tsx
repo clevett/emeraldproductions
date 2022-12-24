@@ -16,8 +16,8 @@ export const EncounterTitle = ({
   return (
     <EuiTitle className={`col-start-2 text-center`} size="s">
       <h4 className="inline">
-        Encounter Difficulty
-        <div className={`inline text-2xl ml-2 ${rangeColor}`}>( {total} )</div>
+        Encounter Difficulty (
+        <span className={`inline text-2xl ml-2 ${rangeColor}`}>{total}</span> )
       </h4>
     </EuiTitle>
   );
