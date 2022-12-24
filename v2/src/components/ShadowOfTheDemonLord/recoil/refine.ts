@@ -1,4 +1,12 @@
-import { CheckResult, asType, stringLiterals } from "@recoiljs/refine";
+import {
+  CheckResult,
+  asType,
+  stringLiterals,
+  object,
+  string,
+  number,
+  array,
+} from "@recoiljs/refine";
 import { danger } from "../../../data/sotdlDangerLevels";
 
 export const difficultiesChecker = asType(
@@ -21,6 +29,12 @@ export const levelsChecker = asType(
   }),
   (s) => s as keyof typeof danger
 );
+
+export const weatherChecker = object({
+  name: string(),
+  multiplier: number(),
+  result: array(number()),
+});
 
 export const typeChecker = <T>(checker: CheckResult<T>) => {
   if (checker.type === "success") {

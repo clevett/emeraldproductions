@@ -17,6 +17,7 @@ export const generateCoinList = (limit: number, rollFormulas: CoinRolls) => {
   do {
     const loot = processRoll(rollFormulas, limit);
     if (loot.total > 0) {
+      // eslint-disable-next-line no-loop-func
       loot.coins.forEach(({ name, value }) => {
         const convertedToGold = value / treasure.goldDivisor(name);
         const difference = total - convertedToGold;

@@ -18,9 +18,9 @@ const capitalize = (word: string) =>
   `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
 
 const getTreasure = (gold: number, level: Level) => {
-    const treasure = new Treasure(level);
-   return buildResultString(gold, treasure.deleteNullCoins()));
-}
+  const treasure = new Treasure(level);
+  return buildResultString(gold, treasure.deleteNullCoins());
+};
 
 export const RewardsGenerator = () => {
   const [level, setLevel] = useState<Level>(levels[1]);
