@@ -1,4 +1,5 @@
 import { EuiSelect } from "@elastic/eui";
+import { travelChecker, typeChecker } from "../recoil/refine";
 import { Pace, Threat, Weather } from "../TravelTool";
 import { SmallTitle } from "./SmallTitle";
 
@@ -19,9 +20,12 @@ export const TravelSelect = ({
       <EuiSelect
         className="capitalize text-center"
         onChange={(event) => {
-          const item = list.find((e) => e.name === event.target.value);
-          if (item) {
-            onChange(item);
+          const result = typeChecker(travelChecker(event.target.value));
+          if (result) {
+            const item = list.find((e) => e.name === result);
+            if (item) {
+              onChange(item);
+            }
           }
         }}
         options={list.map(({ name }) => ({ name, text: name }))}
