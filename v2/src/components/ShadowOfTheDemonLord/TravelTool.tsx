@@ -5,6 +5,7 @@ import {
   EuiFlexItem,
   EuiSelect,
   EuiFieldText,
+  EuiText,
 } from "@elastic/eui";
 import { CardPanel } from "../CardPanel";
 import { LayoutBody } from "../LayoutBody";
@@ -20,15 +21,32 @@ import { TerrainSwitch } from "./components/TerrainSwitch";
 
 export type TerrainType = { name: string; multiplier: number };
 
+export type Pace = typeof paceList[number];
+
+export type Weather = typeof weatherList[number];
+
+export type Threat = typeof threatList[number];
+
 export const TravelTool = () => {
-  const [weather, setWeather] = useState(weatherList[3].name);
-  const [pace, setPace] = useState(paceList[0].name);
+  const [weather, setWeather] = useState<Weather>(weatherList[3]);
+  const [pace, setPace] = useState<Pace>(paceList[0]);
   const [terrain, setTerrain] = useState<TerrainType[]>([]);
-  const [threat, setThreat] = useState(threatList[2].name);
-  const [miles, setMiles] = useState<number>();
+  const [threat, setThreat] = useState<Threat>(threatList[2]);
+  const [miles, setMiles] = useState<number>(30);
+
+  const multiplier = [...terrain, weather]
+    .map((t) => t.multiplier)
+    .reduce((a, b) => a + b, 0);
+
+  const roundMath = (num: number) =>
+    Math.round((num + Number.EPSILON) * 100) / 100;
+  const milesPerHour = roundMath(pace.hour / multiplier);
+  const milesPerDay = pace.day ? roundMath(pace.day / multiplier) : "-";
+  const distance =
+    typeof milesPerDay === "number" ? roundMath(miles / milesPerDay) : "-";
 
   const onTerrainChange = (t: TerrainType) => {
-    if (terrain.includes(t)) {
+    if (!terrain.includes(t)) {
       setTerrain([...terrain, t]);
     } else {
       const filtered = terrain.filter((e) => e !== t);
@@ -61,18 +79,30 @@ export const TravelTool = () => {
           <SmallTitle name="Pace" />
           <EuiSelect
             className="capitalize text-center"
-            onChange={(e) => setPace(e.target.value)}
+            onChange={(e) => {
+              const pace = paceList.find((w) => w.name === e.target.value);
+              if (pace) {
+                setPace(pace);
+              }
+            }}
             options={paceList.map(({ name }) => ({ name, text: name }))}
-            value={pace}
+            value={pace.name}
           />
         </EuiFlexItem>
         <EuiFlexItem className="max-w-xs">
           <SmallTitle name="Weather" />
           <EuiSelect
             className="capitalize text-center"
-            onChange={(e) => setWeather(e.target.value)}
+            onChange={(e) => {
+              const weather = weatherList.find(
+                (w) => w.name === e.target.value
+              );
+              if (weather) {
+                setWeather(weather);
+              }
+            }}
             options={weatherList.map(({ name }) => ({ name, text: name }))}
-            value={weather}
+            value={weather.name}
           />
         </EuiFlexItem>
         <EuiFlexItem className="max-w-xs">
@@ -92,6 +122,8 @@ export const TravelTool = () => {
           <EuiTitle className="text-center" size="s">
             <h4>Miles per Hour</h4>
           </EuiTitle>
+          <EuiSpacer />
+          <EuiText className="text-center">{milesPerHour}</EuiText>
         </CardPanel>
 
         <EuiSpacer />
@@ -100,14 +132,18 @@ export const TravelTool = () => {
           <EuiTitle className="text-center" size="s">
             <h4>Miles per Day</h4>
           </EuiTitle>
+          <EuiSpacer />
+          <EuiText className="text-center">{milesPerDay}</EuiText>
         </CardPanel>
 
         <EuiSpacer />
 
         <CardPanel>
           <EuiTitle className="text-center" size="s">
-            <h4>Time to Travel 30 Miles</h4>
+            <h4>Time to Travel {miles} Miles</h4>
           </EuiTitle>
+          <EuiSpacer />
+          <EuiText className="text-center">{distance}</EuiText>
         </CardPanel>
       </EuiFlexGroup>
 

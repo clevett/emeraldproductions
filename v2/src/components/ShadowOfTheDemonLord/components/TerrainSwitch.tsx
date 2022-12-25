@@ -20,7 +20,6 @@ export const TerrainSwitch = ({
     <EuiSwitch
       aria-describedby={terrain.name}
       checked={checked}
-      compressed
       label={terrain.name}
       onChange={handleChange}
     />
