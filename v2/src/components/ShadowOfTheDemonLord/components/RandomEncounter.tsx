@@ -6,12 +6,22 @@ import {
   EuiTitle,
 } from "@elastic/eui";
 import { useState } from "react";
-import { threat as threatList } from "../../../data";
+import {
+  threat as threatList,
+  encounter as encounterList,
+} from "../../../data";
 import { CardPanel } from "../../CardPanel";
 import { TravelSelect } from "./TravelSelect";
 
+import { AnimatedDie } from "../../AnimatedDie";
+
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
+  const [encounter, setEncounter] = useState("Roll for an encounter");
+
+  const handleRoll = () => {
+    console.log("roll");
+  };
 
   return (
     <EuiFlexGroup className="flex-col">
@@ -29,7 +39,12 @@ export const RandomEncounter = () => {
           <h4>Random Encounter</h4>
         </EuiTitle>
         <EuiSpacer />
-        <EuiText className="text-center">{threat.frequency}</EuiText>
+        <EuiText className="text-center italic">{threat.frequency}</EuiText>
+        <EuiSpacer />
+        <EuiText className="text-center">{encounter}</EuiText>
+        <EuiFlexItem className="self-center w-full">
+          <AnimatedDie dieSize="d20" onRoll={handleRoll} />
+        </EuiFlexItem>
       </CardPanel>
     </EuiFlexGroup>
   );

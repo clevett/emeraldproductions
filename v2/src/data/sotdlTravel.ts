@@ -88,19 +88,19 @@ export const weather = [
 
 export const threat = [
   {
-    name: "Extreme",
+    name: "extreme",
     frequency: "Hourly",
   },
   {
-    name: "Major",
+    name: "major",
     frequency: "Once per 4 hours",
   },
   {
-    name: "Moderate",
+    name: "moderate",
     frequency: "Once per 8 hours",
   },
   {
-    name: "Minor",
+    name: "minor",
     frequency: "Once per day and once per night",
   },
 ];

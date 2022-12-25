@@ -4,4 +4,5 @@ export * from "./ftdCategories";
 export * from "./ftdMaps";
 export * from "./ftdMonsters";
 export * from "./sotdlDangerLevels";
+export * from "./sotdlEnounter";
 export * from "./sotdlTravel";
