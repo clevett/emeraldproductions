@@ -1,16 +1,15 @@
 import {
-  CheckResult,
+  array,
   asType,
-  stringLiterals,
+  CheckResult,
+  nullable,
+  number,
   object,
   string,
-  number,
-  nullable,
+  stringLiterals,
   union,
-  array,
 } from "@recoiljs/refine";
-import { danger } from "../../../data/sotdlDangerLevels";
-import { pace, terrain, threat, weather } from "../../../data/sotdlTravel";
+import { danger, pace, terrain, threat, weather } from "../../../data";
 
 export const difficultiesChecker = asType(
   stringLiterals({
@@ -67,7 +66,7 @@ export const paceChecker = asType(
   (s) => s as typeof pace[number]
 );
 
-export const travelChecker = union(paceChecker, terrainChecker);
+export const travelChecker = union(paceChecker, threatChecker, weatherChecker);
 
 export const typeChecker = <T>(checker: CheckResult<T>) => {
   if (checker.type === "success") {

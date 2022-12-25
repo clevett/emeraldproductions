@@ -20,12 +20,10 @@ export const TravelSelect = ({
       <EuiSelect
         className="capitalize text-center"
         onChange={(event) => {
-          const result = typeChecker(travelChecker(event.target.value));
+          const item = list.find((e) => e.name === event.target.value);
+          const result = typeChecker(travelChecker(item));
           if (result) {
-            const item = list.find((e) => e.name === result);
-            if (item) {
-              onChange(item);
-            }
+            onChange(result);
           }
         }}
         options={list.map(({ name }) => ({ name, text: name }))}

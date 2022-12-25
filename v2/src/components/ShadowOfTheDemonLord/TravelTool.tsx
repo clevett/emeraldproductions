@@ -14,7 +14,7 @@ import {
   terrain as terrainList,
   threat as threatList,
   weather as weatherList,
-} from "../../data/sotdlTravel";
+} from "../../data";
 import { useState } from "react";
 import { TerrainSwitch } from "./components/TerrainSwitch";
 import { TravelSelect } from "./components/TravelSelect";
@@ -28,11 +28,11 @@ export type Weather = typeof weatherList[number];
 export type Threat = typeof threatList[number];
 
 export const TravelTool = () => {
-  const [weather, setWeather] = useState<Weather>(weatherList[3]);
+  const [miles, setMiles] = useState<number>(30);
   const [pace, setPace] = useState<Pace>(paceList[0]);
   const [terrain, setTerrain] = useState<TerrainType[]>([]);
   const [threat, setThreat] = useState<Threat>(threatList[2]);
-  const [miles, setMiles] = useState<number>(30);
+  const [weather, setWeather] = useState<Weather>(weatherList[3]);
 
   const multiplier = [...terrain, weather]
     .map((t) => t.multiplier)
