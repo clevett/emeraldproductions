@@ -5,3 +5,7 @@
 .max40 {
   max-height: 40px;
 }
+
+.min60 {
+  min-height: 60px;
+}

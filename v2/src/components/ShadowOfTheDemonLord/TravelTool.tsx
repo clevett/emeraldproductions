@@ -16,8 +16,13 @@ import {
   weather as weatherList,
 } from "../../data";
 import { useState } from "react";
+
+import { NavigatorSwitch } from "./components/NavigatorSwitch";
+import { RandomEncounter } from "./components/RandomEncounter";
 import { TerrainSwitch } from "./components/TerrainSwitch";
 import { TravelSelect } from "./components/TravelSelect";
+
+import styles from "./styles.module.css";
 
 export type TerrainType = { name: string; multiplier: number };
 
@@ -29,10 +34,12 @@ export type Threat = typeof threatList[number];
 
 export const TravelTool = () => {
   const [miles, setMiles] = useState<number>(30);
-  const [pace, setPace] = useState<Pace>(paceList[0]);
+  const [pace, setPace] = useState(paceList[0]);
   const [terrain, setTerrain] = useState<TerrainType[]>([]);
-  const [threat, setThreat] = useState<Threat>(threatList[2]);
-  const [weather, setWeather] = useState<Weather>(weatherList[3]);
+  const [weather, setWeather] = useState(weatherList[3]);
+  const [navigator, setNavigator] = useState(false);
+  const [boon, setBoon] = useState(0);
+  const [bane, setBane] = useState(0);
 
   const multiplier = [...terrain, weather]
     .map((t) => t.multiplier)
@@ -105,7 +112,7 @@ export const TravelTool = () => {
         </EuiFlexItem>
       </EuiFlexGroup>
 
-      <EuiFlexGroup className="flex-row justify-start gap-4">
+      <EuiFlexGroup className="flex-row justify-start gap-4 wrap">
         <CardPanel>
           <EuiTitle className="text-center" size="s">
             <h4>Miles per Hour</h4>
@@ -136,35 +143,28 @@ export const TravelTool = () => {
       </EuiFlexGroup>
 
       <EuiSpacer />
-      <hr />
+      <hr className="mt-4 mb-4" />
       <EuiSpacer />
 
-      <EuiFlexGroup className="flex-row justify-start gap-4 mb-6 wrap">
-        <EuiFlexItem className="max-w-xs">
-          <TravelSelect
-            list={threatList}
-            //@ts-expect-error ignore for now
-            onChange={setThreat}
-            title="Threat Level"
-            value={threat.name}
-          />
-        </EuiFlexItem>
-      </EuiFlexGroup>
-
       <EuiFlexGroup className="flex-row mb-2 justify-start gap-4 wrap">
-        <CardPanel>
-          <EuiTitle className="text-center" size="s">
-            <h4>Random Encounter</h4>
-          </EuiTitle>
-        </CardPanel>
+        <RandomEncounter />
 
         <EuiSpacer />
 
-        <CardPanel>
-          <EuiTitle className="text-center" size="s">
-            <h4>Getting Lost</h4>
-          </EuiTitle>
-        </CardPanel>
+        <EuiFlexGroup className="justify-center flex-col">
+          <EuiFlexItem
+            className={`grid grid-cols-3 center justify-items-center ${styles.min60} content-center`}
+          >
+            <NavigatorSwitch onChange={setNavigator} />
+            <EuiText>Boon: {boon}</EuiText>
+            <EuiText>Bane: {bane}</EuiText>
+          </EuiFlexItem>
+          <CardPanel>
+            <EuiTitle className="text-center" size="s">
+              <h4>Getting Lost</h4>
+            </EuiTitle>
+          </CardPanel>
+        </EuiFlexGroup>
       </EuiFlexGroup>
     </LayoutBody>
   );
