@@ -3,7 +3,6 @@ import {
   EuiSpacer,
   EuiFlexGroup,
   EuiFlexItem,
-  EuiSelect,
   EuiFieldText,
   EuiText,
 } from "@elastic/eui";
@@ -18,6 +17,7 @@ import {
 } from "../../data/sotdlTravel";
 import { useState } from "react";
 import { TerrainSwitch } from "./components/TerrainSwitch";
+import { TravelSelect } from "./components/TravelSelect";
 
 export type TerrainType = { name: string; multiplier: number };
 
@@ -76,32 +76,20 @@ export const TravelTool = () => {
           </EuiFlexGroup>
         </EuiFlexItem>
         <EuiFlexItem className="max-w-xs">
-          <SmallTitle name="Pace" />
-          <EuiSelect
-            className="capitalize text-center"
-            onChange={(e) => {
-              const pace = paceList.find((w) => w.name === e.target.value);
-              if (pace) {
-                setPace(pace);
-              }
-            }}
-            options={paceList.map(({ name }) => ({ name, text: name }))}
+          <TravelSelect
+            list={paceList}
+            //@ts-expect-error ignore for now
+            onChange={setPace}
+            title="Pace"
             value={pace.name}
           />
         </EuiFlexItem>
         <EuiFlexItem className="max-w-xs">
-          <SmallTitle name="Weather" />
-          <EuiSelect
-            className="capitalize text-center"
-            onChange={(e) => {
-              const weather = weatherList.find(
-                (w) => w.name === e.target.value
-              );
-              if (weather) {
-                setWeather(weather);
-              }
-            }}
-            options={weatherList.map(({ name }) => ({ name, text: name }))}
+          <TravelSelect
+            list={weatherList}
+            //@ts-expect-error ignore for now
+            onChange={setWeather}
+            title="Weather"
             value={weather.name}
           />
         </EuiFlexItem>
@@ -153,12 +141,12 @@ export const TravelTool = () => {
 
       <EuiFlexGroup className="flex-row justify-start gap-4 mb-6 wrap">
         <EuiFlexItem className="max-w-xs">
-          <SmallTitle name="Threat Level" />
-          <EuiSelect
-            className="capitalize"
-            onChange={(e) => setThreat(e.target.value)}
-            options={threatList.map(({ name }) => ({ name, text: name }))}
-            value={threat}
+          <TravelSelect
+            list={threatList}
+            //@ts-expect-error ignore for now
+            onChange={setThreat}
+            title="Threat Level"
+            value={threat.name}
           />
         </EuiFlexItem>
       </EuiFlexGroup>
