@@ -2,18 +2,21 @@ import {
   EuiButton,
   EuiFlexGroup,
   EuiFlexItem,
-  euiSelectableTemplateSitewideRenderOptions,
+  EuiSpacer,
   EuiText,
   EuiTitle,
 } from "@elastic/eui";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { DiceRoll } from "@dice-roller/rpg-dice-roller";
+
 import { CardPanel } from "../../CardPanel";
 import { TerrainType, Weather as WeatherType } from "../TravelTool";
 import { NavigatorSwitch } from "./NavigatorSwitch";
 
 import styles from "../styles.module.css";
-import { DiceRoll } from "@dice-roller/rpg-dice-roller";
-import { terrain, Terrain, Weather } from "../../../data";
+import { Terrain, Weather } from "../../../data";
+import { AnimatedDie } from "../../AnimatedDie/AnimatedDie";
+import { DiceTitle } from "./DiceTitle";
 
 type GettingLostProps = {
   terrain: TerrainType[];
@@ -42,32 +45,31 @@ const getBoons = (terrain: TerrainType[]) =>
   terrain.find((t) => t.name === Terrain.PLAINS) ? 1 : 0;
 
 const getBanes = (terrain: TerrainType[], weather: WeatherType) => {
-  const terrainBanes = terrain.map((t) => getBane(t.name));
-  return terrainBanes.reduce((a, b) => a + b, 0) + getBane(weather.name);
+  const terrainBanes = [...terrain, weather].map((t) => getBane(t.name));
+  return terrainBanes.reduce((a, b) => a + b, 0);
 };
 
 export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
-  const [navigator, setNavigator] = useState(false);
-  const [boon, setBoon] = useState(getBoons(terrain));
-  const [bane, setBanes] = useState(getBanes(terrain, weather));
-
-  useEffect(() => {
-    const banes = getBanes(terrain, weather);
-    const boons = getBoons(terrain);
-    setBoon(boons);
-    setBanes(banes);
-  }, [terrain, weather]);
-
   const roll = (notation: string) => new DiceRoll(notation).total;
+  const [navigator, setNavigator] = useState(false);
+  const [lost, setLost] = useState("Roll to see if you get lost...");
 
-  const handleRoll = (roll: number) => {
-    console.log(roll);
+  const banes = getBanes(terrain, weather);
+
+  const navigatorBonus = navigator ? 3 : 0;
+  const boons = getBoons(terrain) + navigatorBonus;
+
+  const handleRoll = (rollResult?: number) => {
+    const d20 = rollResult ? rollResult : roll("1d20");
+    const totalDice = boons - banes;
+    const d6 = totalDice ? roll(`${Math.abs(totalDice)}d6kh1`) : 0;
+    const result = totalDice > 0 ? d20 + d6 : totalDice < 0 ? d20 - d6 : d20;
+    const state =
+      result < 10 ? "You are lost" : "You move in the direction you intended";
+    setLost(state);
   };
 
-  const handleNavigator = () => {
-    !navigator ? setBoon(boon + 3) : setBoon(boon - 3);
-    setNavigator(!navigator);
-  };
+  const handleNavigator = () => setNavigator(!navigator);
 
   return (
     <EuiFlexGroup className="justify-center flex-col">
@@ -75,16 +77,15 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
         className={`grid grid-cols-3 center justify-items-center ${styles.min60} content-center`}
       >
         <NavigatorSwitch onChange={handleNavigator} />
-        <EuiText>Boon: {getBoons(terrain)}</EuiText>
-        <EuiText>Bane: {bane}</EuiText>
+        <EuiText>Boon: {boons}</EuiText>
+        <EuiText>Bane: {banes}</EuiText>
       </EuiFlexItem>
       <CardPanel>
         <EuiFlexGroup className="flex-col pt-2">
-          <EuiTitle className="text-center  w-fit self-center" size="s">
-            <EuiButton onClick={() => handleRoll(roll("1d20"))} fill>
-              <h4>Getting Lost</h4>
-            </EuiButton>
-          </EuiTitle>
+          <DiceTitle die="d20" onClick={handleRoll} title="Getting Lost" />
+          <EuiSpacer />
+          <EuiText className="text-center">{lost}</EuiText>
+          <EuiSpacer />
         </EuiFlexGroup>
       </CardPanel>
     </EuiFlexGroup>

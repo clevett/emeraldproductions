@@ -6,8 +6,10 @@ import d6 from "../../imgs/icons/perspective-dice-six-faces-six.svg";
 
 import styles from "./styles.module.css";
 
+export type Die = "d20" | "d6";
+
 type AnimatedDieType = {
-  dieSize: "d20" | "d6";
+  dieSize: Die;
   onRoll: (arg: number) => void;
   quantity?: number;
 };
