@@ -1,6 +1,5 @@
 import { EuiFlexGroup, EuiFlexItem, EuiText } from "@elastic/eui";
 import { useState } from "react";
-import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
 import { CardPanel } from "../../CardPanel";
 import { TerrainType, Weather as WeatherType } from "../TravelTool";
@@ -9,6 +8,7 @@ import { NavigatorSwitch } from "./NavigatorSwitch";
 import styles from "../styles.module.css";
 import { Terrain, Weather } from "../../../data";
 import { DiceTitle } from "./DiceTitle";
+import { useDiceRoller } from "../../../hooks/useDiceRoller";
 
 type GettingLostProps = {
   terrain: TerrainType[];
@@ -42,7 +42,7 @@ const getBanes = (terrain: TerrainType[], weather: WeatherType) => {
 };
 
 export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
-  const roll = (notation: string) => new DiceRoll(notation).total;
+  const roll = useDiceRoller();
   const [navigator, setNavigator] = useState(false);
   const [lost, setLost] = useState<string[]>([]);
 

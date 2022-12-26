@@ -13,9 +13,7 @@ import { Level, LevelSelect } from "./components/LevelSelect";
 import { Treasure } from "./helpers/Treasure";
 
 import { buildResultString } from "./helpers/buildResultString";
-
-const capitalize = (word: string) =>
-  `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+import { capitalize } from "../helpers/capitalize";
 
 const getTreasure = (gold: number, level: Level) => {
   const treasure = new Treasure(level);

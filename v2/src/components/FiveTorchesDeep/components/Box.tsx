@@ -1,11 +1,11 @@
-import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 import { EuiText, EuiTitle } from "@elastic/eui";
 import { useState } from "react";
 
 import { maps } from "../../../data/ftdMaps";
+import { useDiceRoller } from "../../../hooks/useDiceRoller";
 
 const Box = ({ name }: { name: string }) => {
-  const roll = (notation: string): number => new DiceRoll(notation).total;
+  const roll = useDiceRoller();
 
   const [number, setNumber] = useState(roll("1d6"));
   const { color, description } =

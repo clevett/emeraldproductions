@@ -7,7 +7,6 @@ import {
   EuiText,
   EuiTitle,
 } from "@elastic/eui";
-import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
 import displayModifier from "../helpers/displayModifier/displayModifier";
 import { MonsterFTD } from "../types/ftdTypes";
@@ -18,6 +17,7 @@ import { useState } from "react";
 
 import styles from "../styles.module.css";
 import { CardPanel } from "../../CardPanel";
+import { useDiceRoller } from "../../../hooks/useDiceRoller";
 
 export const MonsterCard = ({
   monster: {
@@ -39,7 +39,7 @@ export const MonsterCard = ({
 }: {
   monster: MonsterFTD;
 }) => {
-  const roll = (notation: string): number => new DiceRoll(notation).total;
+  const roll = useDiceRoller();
 
   const goldRoll = (hd: number) =>
     hd < 1 ? hd * roll(`1d20`) : roll(`${hd}d20`);

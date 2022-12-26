@@ -12,13 +12,7 @@ import { LayoutBody } from "../LayoutBody";
 
 import { MissionCard } from "./components/MissionCard";
 
-export enum Options {
-  EMPLOYER = "employer",
-  JOB = "job",
-  LOCATION = "location",
-  MACGUFFIN = "macguffin",
-  TWIST = "twist",
-}
+import { Options } from "../../data/srMissions";
 
 export const MissionGenerator = () => {
   const [employer, setEmployer] = useState("");

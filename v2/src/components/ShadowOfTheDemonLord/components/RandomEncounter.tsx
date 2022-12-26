@@ -7,15 +7,14 @@ import {
 import { CardPanel } from "../../CardPanel";
 import { TravelSelect } from "./TravelSelect";
 
-import { DiceRoll } from "@dice-roller/rpg-dice-roller";
-
 import { DiceTitle } from "./DiceTitle";
 import styles from "../styles.module.css";
+import { useDiceRoller } from "../../../hooks/useDiceRoller";
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
   const [encounter, setEncounter] = useState<string[]>([]);
 
-  const roll = (notation: string) => new DiceRoll(notation).total;
+  const roll = useDiceRoller();
 
   const handleRoll = (rollResult?: number) => {
     const d20 = rollResult ? rollResult : roll("1d20");

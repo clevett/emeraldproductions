@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DiceRoll } from "@dice-roller/rpg-dice-roller";
+import { useDiceRoller } from "../../hooks/useDiceRoller";
 
 import d20 from "../../imgs/icons/dice-twenty-faces-twenty.svg";
 import d6 from "../../imgs/icons/perspective-dice-six-faces-six.svg";
@@ -19,7 +19,7 @@ export const AnimatedDie = ({
   quantity = 1,
   onRoll,
 }: AnimatedDieType) => {
-  const rollDie = (notation: string) => new DiceRoll(notation).total;
+  const rollDie = useDiceRoller();
   const size = dieSize || "d6";
   const image = dieSize === "d20" ? d20 : d6;
 
