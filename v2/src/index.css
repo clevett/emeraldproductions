@@ -25,3 +25,7 @@ code {
   height: 1px;
   overflow: hidden;
 }
+
+.euiFlexGroup--gutterLarge {
+  margin: 0px !important;
+}

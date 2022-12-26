@@ -21,36 +21,53 @@ export const pace = [
   },
 ];
 
+export enum Terrain {
+  DESERT = "Desert",
+  FOREST = "Forest",
+  HILLS = "Hills",
+  MOUNTAINS = "Mountains",
+
+  PLAINS = "Plains/Roads",
+  SWAMP = "Swamp",
+}
+
 export const terrain = [
   {
-    name: "Desert",
+    name: Terrain.DESERT,
     multiplier: 1.5,
   },
   {
-    name: "Forest",
+    name: Terrain.FOREST,
     multiplier: 1.5,
   },
   {
-    name: "Hills",
+    name: Terrain.HILLS,
     multiplier: 1.5,
   },
   {
-    name: "Mountains",
+    name: Terrain.MOUNTAINS,
     multiplier: 3,
   },
   {
-    name: "Plains/Roads",
+    name: Terrain.PLAINS,
     multiplier: 1,
   },
   {
-    name: "Swamp",
+    name: Terrain.SWAMP,
     multiplier: 2,
   },
 ];
 
+export enum Weather {
+  POWERFUL_STORM = "Powerful storm",
+  PRECIPITATION = "Precipitation",
+
+  STORM = "Storm",
+}
+
 export const weather = [
   {
-    name: "Powerful storm",
+    name: Weather.POWERFUL_STORM,
     multiplier: 4,
     result: [3],
   },
@@ -75,12 +92,12 @@ export const weather = [
     result: [13, 14, 15],
   },
   {
-    name: "Precipitation",
+    name: Weather.PRECIPITATION,
     multiplier: 1.5,
     result: [16, 17],
   },
   {
-    name: "Storm",
+    name: Weather.STORM,
     multiplier: 2,
     result: [18],
   },

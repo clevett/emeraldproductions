@@ -17,12 +17,12 @@ import {
 } from "../../data";
 import { useState } from "react";
 
-import { NavigatorSwitch } from "./components/NavigatorSwitch";
 import { RandomEncounter } from "./components/RandomEncounter";
 import { TerrainSwitch } from "./components/TerrainSwitch";
 import { TravelSelect } from "./components/TravelSelect";
 
-import styles from "./styles.module.css";
+import { determineTravelTime } from "./helpers/determineTravelTime";
+import { GettingLost } from "./components/GettingLost";
 
 export type TerrainType = { name: string; multiplier: number };
 
@@ -37,20 +37,16 @@ export const TravelTool = () => {
   const [pace, setPace] = useState(paceList[0]);
   const [terrain, setTerrain] = useState<TerrainType[]>([]);
   const [weather, setWeather] = useState(weatherList[3]);
-  const [navigator, setNavigator] = useState(false);
-  const [boon, setBoon] = useState(0);
-  const [bane, setBane] = useState(0);
 
   const multiplier = [...terrain, weather]
     .map((t) => t.multiplier)
-    .reduce((a, b) => a + b, 0);
+    .reduce((a, b) => a * b);
 
   const roundMath = (num: number) =>
     Math.round((num + Number.EPSILON) * 100) / 100;
   const milesPerHour = roundMath(pace.hour / multiplier);
   const milesPerDay = pace.day ? roundMath(pace.day / multiplier) : "-";
-  const distance =
-    typeof milesPerDay === "number" ? roundMath(miles / milesPerDay) : "-";
+  const distance = determineTravelTime(milesPerHour, miles);
 
   const onTerrainChange = (t: TerrainType) => {
     if (!terrain.includes(t)) {
@@ -146,25 +142,10 @@ export const TravelTool = () => {
       <hr className="mt-4 mb-4" />
       <EuiSpacer />
 
-      <EuiFlexGroup className="flex-row mb-2 justify-start gap-4 wrap">
+      <EuiFlexGroup className="flex-row mb-2 justify-start gap-6 wrap">
         <RandomEncounter />
-
         <EuiSpacer />
-
-        <EuiFlexGroup className="justify-center flex-col">
-          <EuiFlexItem
-            className={`grid grid-cols-3 center justify-items-center ${styles.min60} content-center`}
-          >
-            <NavigatorSwitch onChange={setNavigator} />
-            <EuiText>Boon: {boon}</EuiText>
-            <EuiText>Bane: {bane}</EuiText>
-          </EuiFlexItem>
-          <CardPanel>
-            <EuiTitle className="text-center" size="s">
-              <h4>Getting Lost</h4>
-            </EuiTitle>
-          </CardPanel>
-        </EuiFlexGroup>
+        <GettingLost terrain={terrain} weather={weather} />
       </EuiFlexGroup>
     </LayoutBody>
   );

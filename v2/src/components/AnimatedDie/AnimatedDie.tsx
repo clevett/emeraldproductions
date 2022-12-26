@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
-import d20 from "../imgs/icons/dice-twenty-faces-twenty.svg";
-import d6 from "../imgs/icons/perspective-dice-six-faces-six.svg";
+import d20 from "../../imgs/icons/dice-twenty-faces-twenty.svg";
+import d6 from "../../imgs/icons/perspective-dice-six-faces-six.svg";
+
+import styles from "./styles.module.css";
 
 type AnimatedDieType = {
   dieSize: "d20" | "d6";
-  quantity?: number;
   onRoll: (arg: number) => void;
+  quantity?: number;
 };
 
 export const AnimatedDie = ({
@@ -52,9 +54,11 @@ export const AnimatedDie = ({
   return (
     <div>
       <button
-        className={animation ? "rollDie" : ""}
-        onClick={handleClick}
+        className={`w-10 h-10 bg-transparent ${
+          animation ? styles.rollDie : ""
+        }`}
         onAnimationEnd={animationEnd}
+        onClick={handleClick}
         type="button"
       >
         <img alt={altText()} src={image}></img>

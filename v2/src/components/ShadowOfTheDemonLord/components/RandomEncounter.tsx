@@ -1,4 +1,5 @@
 import {
+  EuiButton,
   EuiFlexGroup,
   EuiFlexItem,
   EuiSpacer,
@@ -13,14 +14,24 @@ import {
 import { CardPanel } from "../../CardPanel";
 import { TravelSelect } from "./TravelSelect";
 
-import { AnimatedDie } from "../../AnimatedDie";
+import { AnimatedDie } from "../../AnimatedDie/AnimatedDie";
+import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
   const [encounter, setEncounter] = useState("Roll for an encounter");
 
-  const handleRoll = () => {
-    console.log("roll");
+  const roll = (notation: string) => new DiceRoll(notation).total;
+
+  const handleRoll = (roll: number) => {
+    const key = threat.name as keyof typeof encounterList[number];
+    const list = encounterList.find(
+      //@ts-expect-error the keys will not be null
+      (e) => Array.isArray(e[key]) && e[key].includes(roll)
+    );
+    if (list?.encounter) {
+      setEncounter(list?.encounter);
+    }
   };
 
   return (
@@ -35,16 +46,20 @@ export const RandomEncounter = () => {
         />
       </EuiFlexItem>
       <CardPanel>
-        <EuiTitle className="text-center" size="s">
-          <h4>Random Encounter</h4>
-        </EuiTitle>
-        <EuiSpacer />
-        <EuiText className="text-center italic">{threat.frequency}</EuiText>
-        <EuiSpacer />
-        <EuiText className="text-center">{encounter}</EuiText>
-        <EuiFlexItem className="self-center w-full">
-          <AnimatedDie dieSize="d20" onRoll={handleRoll} />
-        </EuiFlexItem>
+        <EuiFlexGroup className="flex-col pt-2">
+          <EuiTitle className="text-center w-fit self-center" size="s">
+            <EuiButton onClick={() => handleRoll(roll("1d20"))} fill>
+              <h4>Random Encounter</h4>
+            </EuiButton>
+          </EuiTitle>
+          <EuiSpacer />
+          <EuiText className="text-center italic">{threat.frequency}</EuiText>
+          <EuiSpacer />
+          <EuiText className="text-center">{encounter}</EuiText>
+          <EuiFlexItem className="items-center w-full mt-4">
+            <AnimatedDie dieSize="d20" onRoll={handleRoll} />
+          </EuiFlexItem>
+        </EuiFlexGroup>
       </CardPanel>
     </EuiFlexGroup>
   );
