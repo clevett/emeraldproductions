@@ -15,12 +15,6 @@ import { MissionCard } from "./components/MissionCard";
 import { Options } from "../../data/srMissions";
 
 export const MissionGenerator = () => {
-  const [employer, setEmployer] = useState("");
-  const [location, setLocation] = useState("");
-  const [job, setJob] = useState("");
-  const [macguffin, setMaguffin] = useState("");
-  const [twist, setTwist] = useState("");
-
   const onChange = (option: string) => {
     console.table({
       option,
@@ -47,7 +41,9 @@ export const MissionGenerator = () => {
             Generate Mission
           </EuiButton>
         </CardPanel>
-        <EuiFlexGroup gutterSize="l">{cardNodes}</EuiFlexGroup>
+        <EuiFlexGroup className="flex-wrap" gutterSize="l">
+          {cardNodes}
+        </EuiFlexGroup>
       </EuiFlexGroup>
     </LayoutBody>
   );

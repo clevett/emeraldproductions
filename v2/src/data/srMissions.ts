@@ -6,6 +6,8 @@ export enum Options {
   TWIST = "twist",
 }
 
+export type Option = `${Options}`;
+
 export const mission = [
   {
     description: "Secret Society",

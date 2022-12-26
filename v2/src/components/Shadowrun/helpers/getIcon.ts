@@ -1,11 +1,10 @@
-import { Options } from "../../../data/srMissions";
+import { Options, Option } from "../../../data/srMissions";
 import user from "../../../imgs/icomoon/250-hipster.svg";
 import yen from "../../../imgs/icomoon/063-coin-yen.svg";
 import office from "../../../imgs/icomoon/004-office.svg";
 import gift from "../../../imgs/icomoon/160-gift.svg";
 import twist from "../../../imgs/icomoon/304-infinite.svg";
-
-type Option = `${Options}`;
+import cross from "../../../imgs/icomoon/272-cross.svg";
 
 export const getIcon = (option: Option) => {
   switch (option) {
@@ -20,6 +19,6 @@ export const getIcon = (option: Option) => {
     case Options.TWIST:
       return twist;
     default:
-      return undefined;
+      return cross;
   }
 };

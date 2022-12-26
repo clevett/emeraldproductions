@@ -11,14 +11,14 @@ import {
 
 import { mission } from "../../../data/srMissions";
 import { useDiceRoller } from "../../../hooks/useDiceRoller";
-import { Options } from "../../../data/srMissions";
+import { Options, Option } from "../../../data/srMissions";
 
 import styles from "../styles.module.css";
 import { capitalize } from "../../helpers";
 import { getIcon } from "../helpers/getIcon";
 
 type MissionCardProps = {
-  item: string;
+  item: Option;
   onChange: () => void;
 };
 
@@ -37,7 +37,7 @@ export const MissionCard = ({ item, onChange }: MissionCardProps) => {
   };
 
   return (
-    <EuiFlexItem className={`${styles.min250}`}>
+    <EuiFlexItem className={`${styles.min250} ${styles.minW250}`}>
       <EuiCard
         className="capitalize"
         icon={<EuiIcon size="xxl" type={getIcon(item)} />}
