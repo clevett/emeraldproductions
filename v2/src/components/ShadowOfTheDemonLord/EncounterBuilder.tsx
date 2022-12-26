@@ -20,6 +20,7 @@ import { CardPanel } from "../CardPanel";
 import { LevelSelect } from "./components/LevelSelect";
 import { Difficulties } from "./components/Difficulties";
 import { EncounterTitle } from "./components/EncounterTitle";
+import { Footer } from "./components/Footer";
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
@@ -170,6 +171,8 @@ export const EncounterBuilder = () => {
           </CardPanel>
         </EuiFlexItem>
       </EuiFlexGroup>
+
+      <Footer />
     </LayoutBody>
   );
 };

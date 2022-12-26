@@ -23,6 +23,7 @@ import { TravelSelect } from "./components/TravelSelect";
 
 import { determineTravelTime } from "./helpers/determineTravelTime";
 import { GettingLost } from "./components/GettingLost";
+import { Footer } from "./components/Footer";
 
 export type TerrainType = { name: string; multiplier: number };
 
@@ -152,6 +153,8 @@ export const TravelTool = () => {
           <GettingLost terrain={terrain} weather={weather} />
         </EuiFlexItem>
       </EuiFlexGroup>
+
+      <Footer />
     </LayoutBody>
   );
 };

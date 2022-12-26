@@ -3,7 +3,6 @@ import { useState } from "react";
 import {
   threat as threatList,
   encounter as encounterList,
-  Encounter,
 } from "../../../data";
 import { CardPanel } from "../../CardPanel";
 import { TravelSelect } from "./TravelSelect";

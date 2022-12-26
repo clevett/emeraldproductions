@@ -12,7 +12,9 @@ type DiceTitleProps = {
 
 export const DiceTitle = ({ onClick, onReset, title, die }: DiceTitleProps) => {
   return (
-    <EuiFlexItem className={`grid ${styles.colfit} gap-4 auto-cols-fr`}>
+    <EuiFlexItem
+      className={`grid ${styles.colfit} gap-4 auto-cols-fr items-center`}
+    >
       {onReset ? (
         <EuiButtonIcon
           className="justify-self-end"
