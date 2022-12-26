@@ -13,3 +13,11 @@
 .min60 {
   min-height: 60px;
 }
+
+.min100 {
+  min-height: 60px;
+}
+
+.min200 {
+  min-height: 250px;
+}

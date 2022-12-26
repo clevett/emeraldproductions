@@ -1,44 +1,61 @@
-import {
-  EuiButton,
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiSpacer,
-  EuiText,
-  EuiTitle,
-} from "@elastic/eui";
+import { EuiFlexGroup, EuiFlexItem, EuiSpacer, EuiText } from "@elastic/eui";
 import { useState } from "react";
 import {
   threat as threatList,
   encounter as encounterList,
+  Encounter,
 } from "../../../data";
 import { CardPanel } from "../../CardPanel";
 import { TravelSelect } from "./TravelSelect";
 
-import { AnimatedDie } from "../../AnimatedDie/AnimatedDie";
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
+import { DiceTitle } from "./DiceTitle";
 import styles from "../styles.module.css";
-
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
-  const [encounter, setEncounter] = useState("Roll for an encounter");
+  const [encounter, setEncounter] = useState<string[]>([]);
 
   const roll = (notation: string) => new DiceRoll(notation).total;
 
-  const handleRoll = (roll: number) => {
+  const handleRoll = (rollResult?: number) => {
+    const d20 = rollResult ? rollResult : roll("1d20");
     const key = threat.name as keyof typeof encounterList[number];
     const list = encounterList.find(
       //@ts-expect-error the keys will not be null
-      (e) => Array.isArray(e[key]) && e[key].includes(roll)
+      (e) => Array.isArray(e[key]) && e[key].includes(d20)
     );
     if (list?.encounter) {
-      setEncounter(list?.encounter);
+      setEncounter([...encounter, list.encounter]);
     }
   };
 
+  const renderList = () => {
+    return encounter.reverse().map((l, index) => {
+      return (
+        <EuiFlexItem key={`encounter-list-${index}`}>
+          <EuiText className={`text-center`}>
+            Encounter {index + 1}: {l}
+          </EuiText>
+        </EuiFlexItem>
+      );
+    });
+  };
+
+  const list =
+    encounter.length < 1 ? (
+      <EuiText className="text-center">Roll for an encounters</EuiText>
+    ) : (
+      renderList()
+    );
+
+  const onReset = () => {
+    setEncounter([]);
+  };
+
   return (
-    <EuiFlexGroup className="flex-col">
-      <EuiFlexItem className="max-w-xs self-center w-full">
+    <EuiFlexGroup className={`justify-center flex-col`}>
+      <EuiFlexItem className={`max-w-xs self-center w-full ${styles.min100}`}>
         <TravelSelect
           list={threatList}
           //@ts-expect-error ignore for now
@@ -47,31 +64,27 @@ export const RandomEncounter = () => {
           value={threat.name}
         />
       </EuiFlexItem>
-      <CardPanel>
-        <EuiFlexGroup className="flex-col pt-2">
-          <EuiFlexItem className={`grid ${styles.colfit} gap-x-1.5`}>
-            <EuiTitle className="text-center w-fit self-center" size="s">
-              <EuiButton
-                className="col-start-2 justify-self-center"
-                onClick={() => handleRoll(roll("1d20"))}
-                fill
-              >
-                <h4>Random Encounter</h4>
-              </EuiButton>
-            </EuiTitle>
-            <EuiFlexItem className="justify-self-start">
-              <AnimatedDie dieSize="d20" onRoll={handleRoll} />
-            </EuiFlexItem>
-          </EuiFlexItem>
+      <EuiFlexItem className={`flex-col ${styles.min200} content-start`}>
+        <CardPanel>
+          <EuiFlexGroup className={`flex-col pt-2 content-start`}>
+            <DiceTitle
+              die="d20"
+              onClick={() => handleRoll()}
+              onReset={onReset}
+              title="Random Encounter"
+            />
 
-          <EuiSpacer />
-          <EuiText className="text-center italic">{threat.frequency}</EuiText>
-          <EuiSpacer />
+            <EuiSpacer />
+            <EuiText className="text-center italic">
+              Frequency is {threat.frequency.toLowerCase()}
+            </EuiText>
+            <EuiSpacer />
 
-          <EuiText className="text-center">{encounter}</EuiText>
-          <EuiSpacer />
-        </EuiFlexGroup>
-      </CardPanel>
+            <EuiFlexGroup className="flex-col">{list}</EuiFlexGroup>
+            <EuiSpacer />
+          </EuiFlexGroup>
+        </CardPanel>
+      </EuiFlexItem>
     </EuiFlexGroup>
   );
 };

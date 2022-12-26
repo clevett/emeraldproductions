@@ -1,3 +1,5 @@
+export type Encounter = typeof encounter[number];
+
 export const encounter = [
   {
     encounter: "Helpful",

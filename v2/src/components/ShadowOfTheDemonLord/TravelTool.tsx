@@ -63,10 +63,10 @@ export const TravelTool = () => {
       subtitle="Travel Tool"
       title="Shadow of the Demon Lord"
     >
-      <EuiFlexGroup className="flex-row justify-start gap-4 mb-6 wrap">
-        <EuiFlexItem className="max-w-xs  pl-4">
+      <EuiFlexGroup className="flex-row justify-start gap-4 mb-6 flex-wrap">
+        <EuiFlexItem className="max-w-xs pl-4 min-w-fit">
           <SmallTitle name="Terrain" />
-          <EuiFlexGroup className="grid-cols-2 grid gap-4 mb-6 mt-4">
+          <EuiFlexGroup className="grid-cols-2 grid gap-4 mb-6 mt-4 flex-wrap">
             {terrainList.map((t: TerrainType) => {
               return (
                 <TerrainSwitch
@@ -78,7 +78,7 @@ export const TravelTool = () => {
             })}
           </EuiFlexGroup>
         </EuiFlexItem>
-        <EuiFlexItem className="max-w-xs">
+        <EuiFlexItem className="max-w-xs min-w-fit">
           <TravelSelect
             list={paceList}
             //@ts-expect-error ignore for now
@@ -87,7 +87,7 @@ export const TravelTool = () => {
             value={pace.name}
           />
         </EuiFlexItem>
-        <EuiFlexItem className="max-w-xs">
+        <EuiFlexItem className="max-w-xs min-w-fit">
           <TravelSelect
             list={weatherList}
             //@ts-expect-error ignore for now
@@ -110,7 +110,7 @@ export const TravelTool = () => {
 
       <EuiSpacer />
 
-      <EuiFlexGroup className="flex-row justify-start gap-4 wrap">
+      <EuiFlexGroup className="flex-row justify-start gap-4 flex-wrap">
         <CardPanel>
           <EuiTitle className="text-center" size="s">
             <h4>Miles per Hour</h4>
@@ -144,10 +144,13 @@ export const TravelTool = () => {
       <hr className="mt-4 mb-4" />
       <EuiSpacer />
 
-      <EuiFlexGroup className="flex-row mb-2 justify-start gap-6 wrap">
-        <RandomEncounter />
-        <EuiSpacer />
-        <GettingLost terrain={terrain} weather={weather} />
+      <EuiFlexGroup className="flex-row mb-2 justify-start gap-6 items-start flex-wrap">
+        <EuiFlexItem className="min-w-fit">
+          <RandomEncounter />
+        </EuiFlexItem>
+        <EuiFlexItem className="min-w-fit">
+          <GettingLost terrain={terrain} weather={weather} />
+        </EuiFlexItem>
       </EuiFlexGroup>
     </LayoutBody>
   );

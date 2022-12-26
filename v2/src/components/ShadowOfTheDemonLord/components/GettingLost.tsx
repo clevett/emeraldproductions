@@ -1,11 +1,4 @@
-import {
-  EuiButton,
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiSpacer,
-  EuiText,
-  EuiTitle,
-} from "@elastic/eui";
+import { EuiFlexGroup, EuiFlexItem, EuiText } from "@elastic/eui";
 import { useState } from "react";
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
@@ -15,7 +8,6 @@ import { NavigatorSwitch } from "./NavigatorSwitch";
 
 import styles from "../styles.module.css";
 import { Terrain, Weather } from "../../../data";
-import { AnimatedDie } from "../../AnimatedDie/AnimatedDie";
 import { DiceTitle } from "./DiceTitle";
 
 type GettingLostProps = {
@@ -52,7 +44,7 @@ const getBanes = (terrain: TerrainType[], weather: WeatherType) => {
 export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
   const roll = (notation: string) => new DiceRoll(notation).total;
   const [navigator, setNavigator] = useState(false);
-  const [lost, setLost] = useState("Roll to see if you get lost...");
+  const [lost, setLost] = useState<string[]>([]);
 
   const banes = getBanes(terrain, weather);
 
@@ -66,28 +58,56 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
     const result = totalDice > 0 ? d20 + d6 : totalDice < 0 ? d20 - d6 : d20;
     const state =
       result < 10 ? "You are lost" : "You move in the direction you intended";
-    setLost(state);
+    setLost([...lost, state]);
   };
 
   const handleNavigator = () => setNavigator(!navigator);
 
+  const renderList = () => {
+    return lost.reverse().map((l, index) => {
+      return (
+        <EuiFlexItem key={`lost-list-${index}`}>
+          <EuiText className={`text-center`}>
+            Day {index + 1}: {l}
+          </EuiText>
+        </EuiFlexItem>
+      );
+    });
+  };
+
+  const list =
+    lost.length < 1 ? (
+      <EuiText className="text-center">Roll to see if you get lost...</EuiText>
+    ) : (
+      renderList()
+    );
+
+  const onReset = () => {
+    setLost([]);
+  };
+
   return (
-    <EuiFlexGroup className="justify-center flex-col">
+    <EuiFlexGroup className={`flex-col justify-center  w-full`}>
       <EuiFlexItem
-        className={`grid grid-cols-3 center justify-items-center ${styles.min60} content-center`}
+        className={`grid grid-cols-3 center justify-items-center  ${styles.min100} content-center mb-4`}
       >
         <NavigatorSwitch onChange={handleNavigator} />
         <EuiText>Boon: {boons}</EuiText>
         <EuiText>Bane: {banes}</EuiText>
       </EuiFlexItem>
-      <CardPanel>
-        <EuiFlexGroup className="flex-col pt-2">
-          <DiceTitle die="d20" onClick={handleRoll} title="Getting Lost" />
-          <EuiSpacer />
-          <EuiText className="text-center">{lost}</EuiText>
-          <EuiSpacer />
-        </EuiFlexGroup>
-      </CardPanel>
+      <EuiFlexItem className={`flex-col ${styles.min200} content-start`}>
+        <CardPanel>
+          <EuiFlexGroup className="flex-col">
+            <DiceTitle
+              die="d20"
+              onClick={() => handleRoll()}
+              onReset={onReset}
+              title="Getting Lost"
+            />
+            {list}
+          </EuiFlexGroup>
+        </CardPanel>
+      </EuiFlexItem>
     </EuiFlexGroup>
   );
 };
