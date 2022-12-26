@@ -108,6 +108,8 @@ export const TravelTool = () => {
         </EuiFlexItem>
       </EuiFlexGroup>
 
+      <EuiSpacer />
+
       <EuiFlexGroup className="flex-row justify-start gap-4 wrap">
         <CardPanel>
           <EuiTitle className="text-center" size="s">

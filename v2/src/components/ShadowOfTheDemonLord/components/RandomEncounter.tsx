@@ -17,6 +17,8 @@ import { TravelSelect } from "./TravelSelect";
 import { AnimatedDie } from "../../AnimatedDie/AnimatedDie";
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
+import styles from "../styles.module.css";
+
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
   const [encounter, setEncounter] = useState("Roll for an encounter");
@@ -47,18 +49,27 @@ export const RandomEncounter = () => {
       </EuiFlexItem>
       <CardPanel>
         <EuiFlexGroup className="flex-col pt-2">
-          <EuiTitle className="text-center w-fit self-center" size="s">
-            <EuiButton onClick={() => handleRoll(roll("1d20"))} fill>
-              <h4>Random Encounter</h4>
-            </EuiButton>
-          </EuiTitle>
+          <EuiFlexItem className={`grid ${styles.colfit} gap-x-1.5`}>
+            <EuiTitle className="text-center w-fit self-center" size="s">
+              <EuiButton
+                className="col-start-2 justify-self-center"
+                onClick={() => handleRoll(roll("1d20"))}
+                fill
+              >
+                <h4>Random Encounter</h4>
+              </EuiButton>
+            </EuiTitle>
+            <EuiFlexItem className="justify-self-start">
+              <AnimatedDie dieSize="d20" onRoll={handleRoll} />
+            </EuiFlexItem>
+          </EuiFlexItem>
+
           <EuiSpacer />
           <EuiText className="text-center italic">{threat.frequency}</EuiText>
           <EuiSpacer />
+
           <EuiText className="text-center">{encounter}</EuiText>
-          <EuiFlexItem className="items-center w-full mt-4">
-            <AnimatedDie dieSize="d20" onRoll={handleRoll} />
-          </EuiFlexItem>
+          <EuiSpacer />
         </EuiFlexGroup>
       </CardPanel>
     </EuiFlexGroup>

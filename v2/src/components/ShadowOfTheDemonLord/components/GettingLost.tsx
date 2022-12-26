@@ -43,7 +43,6 @@ const getBoons = (terrain: TerrainType[]) =>
 
 const getBanes = (terrain: TerrainType[], weather: WeatherType) => {
   const terrainBanes = terrain.map((t) => getBane(t.name));
-
   return terrainBanes.reduce((a, b) => a + b, 0) + getBane(weather.name);
 };
 
@@ -66,7 +65,7 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
   };
 
   const handleNavigator = () => {
-    !navigator ? setBoon(3) : setBoon(0);
+    !navigator ? setBoon(boon + 3) : setBoon(boon - 3);
     setNavigator(!navigator);
   };
 
@@ -76,7 +75,7 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
         className={`grid grid-cols-3 center justify-items-center ${styles.min60} content-center`}
       >
         <NavigatorSwitch onChange={handleNavigator} />
-        <EuiText>Boon: {boon}</EuiText>
+        <EuiText>Boon: {getBoons(terrain)}</EuiText>
         <EuiText>Bane: {bane}</EuiText>
       </EuiFlexItem>
       <CardPanel>

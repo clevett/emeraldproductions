@@ -2,6 +2,10 @@
   grid-template-columns: 1fr 2fr 1fr;
 }
 
+.colfit {
+  grid-template-columns: 1fr min-content minmax(60px, min-content) 1fr;
+}
+
 .max40 {
   max-height: 40px;
 }
