@@ -1,27 +1,34 @@
 import { EuiFlexGroup, EuiButton } from "@elastic/eui";
-import { RecoilRoot, useRecoilCallback } from "recoil";
+import { RecoilRoot, useRecoilCallback, useResetRecoilState } from "recoil";
 
 import { CardPanel } from "../CardPanel";
 import { LayoutBody } from "../LayoutBody";
 import { MissionCard, NaturalLanguage } from "./components";
 import { Options } from "../../data/srMissions";
-import { missionAtomFamily } from "./recoil";
+import { missionAtomFamily, selectOperationFamily } from "./recoil";
+import { getOption } from "./helpers";
 
 export const MissionGenerator = () => {
   const cardNodes = Object.values(Options).map((item, index) => {
     return <MissionCard key={index} item={item} />;
   });
 
-  const resetOption = useRecoilCallback(
-    ({ reset }) =>
-      () => {
-        Object.values(Options).forEach((o) => {
-          console.log(o);
-          reset(missionAtomFamily(o));
-        });
-      },
-    []
-  );
+  const reset = useResetRecoilState(selectOperationFamily);
+
+  // const resetOptions = useRecoilCallback(
+  //   ({ set }) =>
+  //     () => {
+  //       Object.values(Options).forEach((o) => {
+  //         const value = getOption(o);
+  //         console.table({
+  //           o,
+  //           value: value?.description,
+  //         });
+  //         set(missionAtomFamily(o), value);
+  //       });
+  //     },
+  //   []
+  // );
 
   return (
     <LayoutBody
@@ -33,7 +40,7 @@ export const MissionGenerator = () => {
         <EuiFlexGroup className="flex-col justify-start gap-4 mb-6 flex-wrap">
           <CardPanel>
             <NaturalLanguage />
-            <EuiButton fill color="warning" onClick={resetOption}>
+            <EuiButton fill color="warning" onClick={() => reset()}>
               Generate Mission
             </EuiButton>
           </CardPanel>

@@ -13,7 +13,7 @@ import { Option } from "../../../data/srMissions";
 
 import styles from "../styles.module.css";
 import { capitalize } from "../../helpers";
-import { missionAtomFamily } from "../recoil";
+import { selectMission } from "../recoil";
 import { getIcon, getOption } from "../helpers";
 
 type MissionCardProps = {
@@ -21,7 +21,7 @@ type MissionCardProps = {
 };
 
 export const MissionCard = ({ item }: MissionCardProps) => {
-  const [selected, setSelected] = useRecoilState(missionAtomFamily(item));
+  const [selected, setSelected] = useRecoilState(selectMission(item));
 
   const handleClick = () => {
     const result = getOption(item);
