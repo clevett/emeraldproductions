@@ -1,10 +1,13 @@
 import { selector, DefaultValue, selectorFamily } from "recoil";
 import { MissionElement, Option } from "../../../data/srMissions";
+import { Nuyen } from "../../../data/srRewards";
 import { getOption } from "../helpers";
 import {
   diceKarmaAtom,
   missionAtomFamily,
   missionIdsAtom,
+  rewardsAtomFamily,
+  rewardsIdsAtom,
   runTypeAtom,
 } from "./atoms";
 
@@ -64,6 +67,43 @@ export const selectMission = selectorFamily<MissionElement | undefined, Option>(
       },
   }
 );
+
+//Rewards Calculator
+
+export const selectNuyenModifier = selectorFamily({
+  key: "SELECT_MISSION_OPTION",
+  get:
+    (id) =>
+    ({ get }) => {
+      const operation = get(rewardsAtomFamily(id));
+      return operation;
+    },
+  set:
+    (id: Nuyen["name"]) =>
+    ({ set, reset, get }, newValue) => {
+      const ids = get(rewardsIdsAtom);
+      const atom = rewardsAtomFamily(id);
+
+      if (newValue instanceof DefaultValue) {
+        const filterIds = ids.filter((e) => e !== id);
+        set(rewardsIdsAtom, () => filterIds ?? []);
+        reset(rewardsAtomFamily(id));
+        return;
+      }
+
+      if (newValue) {
+        set(atom, newValue);
+
+        if (ids.find((e) => e === id)) {
+          return;
+        }
+
+        if (ids && !ids.includes(id)) {
+          set(rewardsIdsAtom, (prev) => [...prev, id]);
+        }
+      }
+    },
+});
 
 export const selectKarma = selector({
   key: "SELECT_KARMA_TOTAL",

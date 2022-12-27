@@ -1,6 +1,6 @@
 import { atom, atomFamily } from "recoil";
 import { Option, Options } from "../../../data/srMissions";
-import { types } from "../../../data/srRewards";
+import { types, nuyen } from "../../../data/srRewards";
 import { getOption } from "../helpers/";
 
 // Mission Generator
@@ -28,4 +28,14 @@ export const diceKarmaAtom = atom({
 export const nuyenAtom = atom({
   key: "SHADOWRUN_NUYEN",
   default: 1000,
+});
+
+export const rewardsIdsAtom = atom({
+  key: "SHADOWRUN_REWARDS_IDS_ATOM",
+  default: nuyen.map((e) => e.name),
+});
+
+export const rewardsAtomFamily = atomFamily({
+  key: "SHADOWRUN_REWARDS_FAMILY",
+  default: false,
 });

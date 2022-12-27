@@ -1,6 +1,6 @@
 import { EuiFlexGroup, EuiSpacer, EuiTitle } from "@elastic/eui";
 import { nuyen, Nuyen } from "../../../data/srRewards";
-import { Switch } from "../../Switch";
+import { NuyenSwitch } from "./NuyenSwitch";
 
 export const NuyenSituationModifiers = () => {
   return (
@@ -14,10 +14,7 @@ export const NuyenSituationModifiers = () => {
       {nuyen.map((e: Nuyen) => (
         <>
           <EuiSpacer size="m" />
-          <Switch
-            name={e.description}
-            onChange={() => console.log(e.description)}
-          />
+          <NuyenSwitch {...e} />
         </>
       ))}
     </EuiFlexGroup>
