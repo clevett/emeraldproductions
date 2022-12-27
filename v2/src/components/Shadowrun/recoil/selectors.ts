@@ -1,10 +1,15 @@
 import { selector, DefaultValue, selectorFamily } from "recoil";
 import { MissionElement, Option } from "../../../data/srMissions";
 import { getOption } from "../helpers";
-import { missionAtomFamily, missionIdsAtom } from "./atoms";
+import {
+  diceKarmaAtom,
+  missionAtomFamily,
+  missionIdsAtom,
+  runTypeAtom,
+} from "./atoms";
 
-export const selectOperationFamily = selector({
-  key: "SELECT_OPERATION_FAMILY",
+export const selectMissionFamily = selector({
+  key: "SELECT_MISSION_FAMILY",
   get: ({ get }): MissionElement[] => {
     const ids = get(missionIdsAtom);
     const family = ids.map((id) => get(missionAtomFamily(id)));
@@ -59,3 +64,21 @@ export const selectMission = selectorFamily<MissionElement | undefined, Option>(
       },
   }
 );
+
+export const selectKarma = selector({
+  key: "SELECT_KARMA_TOTAL",
+  get: ({ get }) => {
+    const run = get(runTypeAtom).karma;
+    const dice = get(diceKarmaAtom);
+
+    const total = run + dice;
+
+    console.table({
+      run,
+      dice,
+      total,
+    });
+
+    return total;
+  },
+});
