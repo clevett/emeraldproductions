@@ -7,6 +7,7 @@ import {
   KarmaCard,
   NuyenCard,
 } from "./components/";
+import { NuyenSituationModifiers } from "./components/NuyenSituationModifiers";
 import styles from "./styles.module.css";
 
 export const RewardsCalculator = () => {
@@ -34,6 +35,10 @@ export const RewardsCalculator = () => {
 
             <EuiFlexItem className="max-w-xs min-w-fit">
               <MissionChallenge />
+            </EuiFlexItem>
+
+            <EuiFlexItem className="max-w-xs min-w-fit">
+              <NuyenSituationModifiers />
             </EuiFlexItem>
           </EuiFlexGroup>
         </EuiFlexGroup>

@@ -33,6 +33,7 @@ export const MissionChallenge = () => {
       </EuiTitle>
       <EuiSpacer size="m" />
       <EuiFieldText
+        className="text-center"
         aria-label="Enter the highest opposed dice pool"
         onChange={(e) => onChange(e.target.value)}
         placeholder="14"

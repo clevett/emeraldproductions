@@ -18,7 +18,7 @@ import {
 import { useState } from "react";
 
 import { RandomEncounter } from "./components/RandomEncounter";
-import { TerrainSwitch } from "./components/TerrainSwitch";
+import { Switch } from "../Switch";
 import { TravelSelect } from "./components/TravelSelect";
 
 import { determineTravelTime } from "./helpers/determineTravelTime";
@@ -70,10 +70,10 @@ export const TravelTool = () => {
           <EuiFlexGroup className="grid-cols-2 grid gap-4 mb-6 mt-4 flex-wrap">
             {terrainList.map((t: TerrainType) => {
               return (
-                <TerrainSwitch
+                <Switch
                   key={`terrain-list-${t.name}`}
                   onChange={() => onTerrainChange(t)}
-                  terrain={t}
+                  name={t.name}
                 />
               );
             })}

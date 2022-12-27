@@ -1,13 +1,12 @@
 import { EuiSwitch } from "@elastic/eui";
 import { useState } from "react";
-import { TerrainType } from "../TravelTool";
 
-export const TerrainSwitch = ({
+export const Switch = ({
   onChange,
-  terrain,
+  name,
 }: {
   onChange: () => void;
-  terrain: TerrainType;
+  name: string;
 }) => {
   const [checked, setChecked] = useState(false);
 
@@ -18,9 +17,9 @@ export const TerrainSwitch = ({
 
   return (
     <EuiSwitch
-      aria-describedby={terrain.name}
+      aria-describedby={name}
       checked={checked}
-      label={terrain.name}
+      label={name}
       onChange={handleChange}
     />
   );

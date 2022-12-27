@@ -16,6 +16,8 @@ export const karam = [
   },
 ];
 
+export type Nuyen = typeof nuyen[number];
+
 export const nuyen = [
   {
     name: "outnumbered3to1",
