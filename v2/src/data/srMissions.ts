@@ -8,6 +8,8 @@ export enum Options {
 
 export type Option = `${Options}`;
 
+export type MissionElement = typeof mission[number];
+
 export const mission = [
   {
     description: "Secret Society",

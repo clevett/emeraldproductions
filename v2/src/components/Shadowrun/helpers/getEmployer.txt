@@ -1,0 +1,42 @@
+import { randomArrayElement } from "./getRandomElement";
+import { isVowel } from "./isVowel";
+
+const splitEmployer = (string: string) => {
+  let array = string.split(" or ");
+
+  if (array[1].includes(" ")) {
+    array = [`${array.shift()} ${array[0].split(" ")[1]}`, ...array];
+  } else {
+    array = [`${array[0].split(" ")[0]} ${array.pop()}`, ...array];
+  }
+
+  return array;
+};
+
+export const getEmployer = (result: number, e: string) => {
+  let employer = e;
+  if (result === 12 || result === 3 || result === 4) {
+    employer = randomArrayElement(splitEmployer(employer));
+  }
+  const article = isVowel(employer) ? "An" : "A";
+  if (result === 5) {
+    return (
+      <span>
+        {article}
+        <a
+          href="https://rpgenerator.net/shadowrun/corporations"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {employer}
+        </a>
+      </span>
+    );
+  } else {
+    return (
+      <span>
+        {article} {employer}
+      </span>
+    );
+  }
+};

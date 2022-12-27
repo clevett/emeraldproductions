@@ -11,15 +11,15 @@ import {
 
 import { mission } from "../../../data/srMissions";
 import { useDiceRoller } from "../../../hooks/useDiceRoller";
-import { Options, Option } from "../../../data/srMissions";
+import { Options, Option, MissionElement } from "../../../data/srMissions";
 
 import styles from "../styles.module.css";
 import { capitalize } from "../../helpers";
-import { getIcon } from "../helpers/getIcon";
+import { getIcon } from "../helpers";
 
 type MissionCardProps = {
   item: Option;
-  onChange: () => void;
+  onChange: (arg: MissionElement) => void;
 };
 
 export const MissionCard = ({ item, onChange }: MissionCardProps) => {
@@ -33,7 +33,11 @@ export const MissionCard = ({ item, onChange }: MissionCardProps) => {
 
   const handleClick = () => {
     const newRoll = roll(dice);
-    setSelected(findResult(newRoll));
+    const result = findResult(newRoll);
+    if (result) {
+      onChange(result);
+      setSelected(findResult(newRoll));
+    }
   };
 
   return (
