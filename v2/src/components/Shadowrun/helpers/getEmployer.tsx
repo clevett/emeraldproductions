@@ -1,24 +1,26 @@
 import { randomArrayElement } from "./getRandomElement";
 import { isVowel } from "./isVowel";
 
+import { MissionElement } from "../../../data/srMissions";
+
 const splitEmployer = (string: string) => {
   let array = string.split(" or ");
 
   if (array[1].includes(" ")) {
-    array = [`${array.shift()} ${array[0].split(" ")[1]}`, ...array];
+    return [`${array.shift()} ${array[0].split(" ")[1]}`, ...array];
   } else {
-    array = [`${array[0].split(" ")[0]} ${array.pop()}`, ...array];
+    return [`${array[0].split(" ")[0]} ${array.pop()}`, ...array];
   }
-
-  return array;
 };
 
-export const getEmployer = (result: number, e: string) => {
-  let employer = e;
+export const getEmployer = (employer: MissionElement) => {
+  const result = employer.result[0];
+  let description = employer.description.toLowerCase();
+
   if (result === 12 || result === 3 || result === 4) {
-    employer = randomArrayElement(splitEmployer(employer));
+    description = randomArrayElement(splitEmployer(description));
   }
-  const article = isVowel(employer) ? "An" : "A";
+  const article = isVowel(description) ? "An " : "A ";
   if (result === 5) {
     return (
       <span>
@@ -28,14 +30,14 @@ export const getEmployer = (result: number, e: string) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {employer}
+          {description}
         </a>
       </span>
     );
   } else {
     return (
       <span>
-        {article} {employer}
+        {article} {description}
       </span>
     );
   }

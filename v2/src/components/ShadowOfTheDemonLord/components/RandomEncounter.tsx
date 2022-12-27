@@ -9,12 +9,12 @@ import { TravelSelect } from "./TravelSelect";
 
 import { DiceTitle } from "./DiceTitle";
 import styles from "../styles.module.css";
-import { useDiceRoller } from "../../../hooks/useDiceRoller";
+import { getDiceRollTotal } from "../../../helpers/getDiceRollTotal";
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
   const [encounter, setEncounter] = useState<string[]>([]);
 
-  const roll = useDiceRoller();
+  const roll = getDiceRollTotal();
 
   const handleRoll = (rollResult?: number) => {
     const d20 = rollResult ? rollResult : roll("1d20");

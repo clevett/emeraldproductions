@@ -8,7 +8,7 @@ import { NavigatorSwitch } from "./NavigatorSwitch";
 import styles from "../styles.module.css";
 import { Terrain, Weather } from "../../../data";
 import { DiceTitle } from "./DiceTitle";
-import { useDiceRoller } from "../../../hooks/useDiceRoller";
+import { getDiceRollTotal } from "../../../helpers/getDiceRollTotal";
 
 type GettingLostProps = {
   terrain: TerrainType[];
@@ -42,7 +42,7 @@ const getBanes = (terrain: TerrainType[], weather: WeatherType) => {
 };
 
 export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
-  const roll = useDiceRoller();
+  const roll = getDiceRollTotal();
   const [navigator, setNavigator] = useState(false);
   const [lost, setLost] = useState<string[]>([]);
 

@@ -2,10 +2,10 @@ import { EuiText, EuiTitle } from "@elastic/eui";
 import { useState } from "react";
 
 import { maps } from "../../../data/ftdMaps";
-import { useDiceRoller } from "../../../hooks/useDiceRoller";
+import { getDiceRollTotal } from "../../../helpers/getDiceRollTotal";
 
 const Box = ({ name }: { name: string }) => {
-  const roll = useDiceRoller();
+  const roll = getDiceRollTotal();
 
   const [number, setNumber] = useState(roll("1d6"));
   const { color, description } =

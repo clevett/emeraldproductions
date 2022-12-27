@@ -8,9 +8,15 @@ export enum Options {
 
 export type Option = `${Options}`;
 
-export type MissionElement = typeof mission[number];
+export type MissionElement = {
+  description: string;
+  note?: string;
+  result: number[];
+  source: string;
+  table: Option;
+};
 
-export const mission = [
+const employers = [
   {
     description: "Secret Society",
     result: [2],
@@ -72,78 +78,9 @@ export const mission = [
     table: Options.EMPLOYER,
     source: "Shadowrun 5th Edition",
   },
-  {
-    description: "Datasteal",
-    result: [1],
-    source: "Shadowrun 5th Edition",
-    table: Options.JOB,
-  },
-  {
-    description: "Assassination or Destruction",
-    result: [2],
-    source: "Shadowrun 5th Edition",
-    table: Options.JOB,
-  },
-  {
-    description: "Extraction or Insertion",
-    result: [3],
-    source: "Shadowrun 5th Edition",
-    table: Options.JOB,
-  },
-  {
-    description: "Misdirection",
-    result: [4],
-    source: "Shadowrun 5th Edition",
-    table: Options.JOB,
-  },
-  {
-    description: "Protection",
-    result: [5],
-    source: "Shadowrun 5th Edition",
-    table: Options.JOB,
-  },
-  {
-    description: "Delivery",
-    result: [6],
-    source: "Shadowrun 5th Edition",
-    table: Options.JOB,
-  },
-  {
-    description: "A key employee",
-    result: [1],
-    source: "Shadowrun 5th Edition",
-    table: Options.MACGUFFIN,
-  },
-  {
-    description: "A prototype product",
-    result: [2],
-    source: "Shadowrun 5th Edition",
-    table: Options.MACGUFFIN,
-  },
-  {
-    description: "Cutting-edge tech research",
-    result: [3],
-    source: "Shadowrun 5th Edition",
-    table: Options.MACGUFFIN,
-  },
-  {
-    description: "Bioengineered life form",
-    result: [4],
-    source: "Shadowrun 5th Edition",
-    table: Options.MACGUFFIN,
-  },
-  {
-    description: "Magical object",
-    result: [5],
-    source: "Shadowrun 5th Edition",
-    table: Options.MACGUFFIN,
-  },
-  {
-    description: "Urban building, rural location, or infrastructure object",
-    result: [6],
-    source: "Shadowrun 5th Edition",
-    table: Options.MACGUFFIN,
-  },
+];
+
+const locations = [
   {
     description: "Bar, Club, Restaurant",
     result: [1],
@@ -180,6 +117,87 @@ export const mission = [
     source: "Shadowrun 5th Edition",
     table: Options.LOCATION,
   },
+];
+
+const jobs = [
+  {
+    description: "Datasteal",
+    result: [1],
+    source: "Shadowrun 5th Edition",
+    table: Options.JOB,
+  },
+  {
+    description: "Assassination or Destruction",
+    result: [2],
+    source: "Shadowrun 5th Edition",
+    table: Options.JOB,
+  },
+  {
+    description: "Extraction or Insertion",
+    result: [3],
+    source: "Shadowrun 5th Edition",
+    table: Options.JOB,
+  },
+  {
+    description: "Misdirection",
+    result: [4],
+    source: "Shadowrun 5th Edition",
+    table: Options.JOB,
+  },
+  {
+    description: "Protection",
+    result: [5],
+    source: "Shadowrun 5th Edition",
+    table: Options.JOB,
+  },
+  {
+    description: "Delivery",
+    result: [6],
+    source: "Shadowrun 5th Edition",
+    table: Options.JOB,
+  },
+];
+
+const macguffin = [
+  {
+    description: "A key employee",
+    result: [1],
+    source: "Shadowrun 5th Edition",
+    table: Options.MACGUFFIN,
+  },
+  {
+    description: "A prototype product",
+    result: [2],
+    source: "Shadowrun 5th Edition",
+    table: Options.MACGUFFIN,
+  },
+  {
+    description: "Cutting-edge tech research",
+    result: [3],
+    source: "Shadowrun 5th Edition",
+    table: Options.MACGUFFIN,
+  },
+  {
+    description: "Bioengineered life form",
+    result: [4],
+    source: "Shadowrun 5th Edition",
+    table: Options.MACGUFFIN,
+  },
+  {
+    description: "Magical object",
+    result: [5],
+    source: "Shadowrun 5th Edition",
+    table: Options.MACGUFFIN,
+  },
+  {
+    description: "Urban building, rural location, or infrastructure object",
+    result: [6],
+    source: "Shadowrun 5th Edition",
+    table: Options.MACGUFFIN,
+  },
+];
+
+const twist = [
   {
     description: "Security is unexpectedly high",
     result: [1],
@@ -216,4 +234,12 @@ export const mission = [
     source: "Shadowrun 5th Edition",
     table: Options.TWIST,
   },
+];
+
+export const mission: MissionElement[] = [
+  ...employers,
+  ...locations,
+  ...jobs,
+  ...macguffin,
+  ...twist,
 ];

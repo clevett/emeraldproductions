@@ -17,7 +17,7 @@ import { useState } from "react";
 
 import styles from "../styles.module.css";
 import { CardPanel } from "../../CardPanel";
-import { useDiceRoller } from "../../../hooks/useDiceRoller";
+import { getDiceRollTotal } from "../../../helpers/getDiceRollTotal";
 
 export const MonsterCard = ({
   monster: {
@@ -39,7 +39,7 @@ export const MonsterCard = ({
 }: {
   monster: MonsterFTD;
 }) => {
-  const roll = useDiceRoller();
+  const roll = getDiceRollTotal();
 
   const goldRoll = (hd: number) =>
     hd < 1 ? hd * roll(`1d20`) : roll(`${hd}d20`);
