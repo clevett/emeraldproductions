@@ -1,5 +1,6 @@
 import { selector, DefaultValue, selectorFamily } from "recoil";
 import { MissionElement, Option } from "../../../data/srMissions";
+import { getOption } from "../helpers";
 import { missionAtomFamily, missionIdsAtom } from "./atoms";
 
 export const selectOperationFamily = selector({
@@ -14,7 +15,9 @@ export const selectOperationFamily = selector({
 
     if (newValue instanceof DefaultValue || newValue === undefined) {
       reset(missionIdsAtom);
-      ids.forEach((i) => reset(missionAtomFamily(i)));
+      ids.forEach((i) => {
+        set(selectMission(i), getOption(i));
+      });
       return;
     }
   },
