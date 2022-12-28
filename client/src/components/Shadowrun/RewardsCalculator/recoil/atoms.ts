@@ -1,6 +1,6 @@
 import { atom, atomFamily } from "recoil";
 import { types } from "../data/srRewards";
-import { getDicePoolKarma } from "../helpers";
+import { getDicePoolKarma, getDicePoolNuyen } from "../helpers";
 
 export const runTypeAtom = atom({
   key: "SHADOWRUN_RUN_TYPE_ATOM",
@@ -10,6 +10,11 @@ export const runTypeAtom = atom({
 export const diceKarmaAtom = atom({
   key: "SHADOWRUN_DICE_KARMA_ATOM",
   default: getDicePoolKarma(14),
+});
+
+export const diceNuyenAtom = atom({
+  key: "SHADOWRUN_DICE_NUYEN_ATOM",
+  default: getDicePoolNuyen(14),
 });
 
 export const nuyenAtom = atom({

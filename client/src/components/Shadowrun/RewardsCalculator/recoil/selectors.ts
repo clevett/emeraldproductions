@@ -7,6 +7,7 @@ import {
   nuyenModifiersAtomFamily,
   runTypeAtom,
   survivedAtom,
+  diceNuyenAtom,
 } from "./atoms";
 
 export const selectNuyenModifier = selectorFamily({
@@ -64,13 +65,27 @@ export const selectKarma = selector({
       total = total + 2;
     }
 
+    return total;
+  },
+});
+
+export const selectNuyen = selector({
+  key: "SELECT_NUYEN_TOTAL",
+  get: ({ get }) => {
+    const base = 3000;
+    const modifiers = get(selectNuyenModifiers);
+    const diceModifier = get(diceNuyenAtom);
+
+    const multiple = modifiers.length + diceModifier;
+
+    const total = base * multiple;
+
     console.table({
-      run,
-      dice,
-      objective,
+      base,
+      diceModifier,
+      modifiers,
+      multiple,
       total,
     });
-
-    return total;
   },
 });

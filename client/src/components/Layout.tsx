@@ -15,12 +15,10 @@ import { Sidebar } from "./Sidebar";
 
 export const Layout = ({ children }: { children: JSX.Element }) => {
   return (
-    <EuiPageTemplate
-      direction="row"
-      pageSideBar={<Sidebar />}
-      fullHeight={true}
-      restrictWidth={false}
-    >
+    <EuiPageTemplate panelled={true} bottomBorder={true} grow={true}>
+      <EuiPageTemplate.Sidebar>
+        <Sidebar />
+      </EuiPageTemplate.Sidebar>
       <EuiHeader
         theme="dark"
         sections={[

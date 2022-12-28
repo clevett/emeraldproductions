@@ -7,20 +7,21 @@ import {
 } from "@elastic/eui";
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
-import { diceKarmaAtom } from "../RewardsCalculator/recoil";
-import { getDicePoolKarma } from "./helpers";
+import { diceKarmaAtom, diceNuyenAtom } from "../RewardsCalculator/recoil";
+import { getDicePoolKarma, getDicePoolNuyen } from "./helpers";
 
 export const MissionChallenge = () => {
   const [dice, setDice] = useState("14");
   const setKarma = useSetRecoilState(diceKarmaAtom);
+  const setNuyen = useSetRecoilState(diceNuyenAtom);
 
   const onChange = (value: string) => {
     setDice(value);
 
     const num = parseInt(value);
     if (!isNaN(num)) {
-      const bySix = getDicePoolKarma(num);
-      setKarma(bySix);
+      setKarma(getDicePoolKarma(num));
+      setNuyen(getDicePoolNuyen(14));
     }
   };
 
