@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "react:build": "react-scripts build",
+    "build": "react-scripts build",
     "react:test": "react-scripts test",
     "react:eject": "react-scripts eject",
     "tailwind:watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
