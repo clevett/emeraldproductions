@@ -22,23 +22,17 @@ export const selectNuyenModifier = selectorFamily({
     ({ set, reset, get }, newValue) => {
       const atom = nuyenModifiersAtomFamily(id);
 
-      console.table({ id, newValue });
-
       if (newValue instanceof DefaultValue) {
         reset(nuyenModifiersAtomFamily(id));
         return;
       }
 
-      if (newValue) {
-        set(atom, newValue);
+      set(atom, newValue);
 
-        // if (id === Situations.THREE_TO_ONE || id === Situations.TWO_TO_ONE) {
-        //   const other =
-        //     id === Situations.THREE_TO_ONE
-        //       ? Situations.TWO_TO_ONE
-        //       : Situations.THREE_TO_ONE;
-        //   reset(nuyenModifiersAtomFamily(other));
-        // }
+      const { THREE_TO_ONE, TWO_TO_ONE } = Situations;
+      if (id === THREE_TO_ONE || id === TWO_TO_ONE) {
+        const other = id === THREE_TO_ONE ? TWO_TO_ONE : THREE_TO_ONE;
+        reset(nuyenModifiersAtomFamily(other));
       }
     },
 });
