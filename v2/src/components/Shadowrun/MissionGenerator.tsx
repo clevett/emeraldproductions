@@ -3,9 +3,9 @@ import { RecoilRoot } from "recoil";
 
 import { CardPanel } from "../CardPanel";
 import { LayoutBody } from "../LayoutBody";
-import { MissionCard, NaturalLanguage } from "./components";
+import { MissionCard, NaturalLanguage, ResetButton } from "./components";
 import { Options } from "../../data/srMissions";
-import { ResetButton } from "./components/ResetButton";
+import { FlexColGroup } from "../Styled/FlexColGroup";
 
 export const MissionGenerator = () => {
   const cardNodes = Object.values(Options).map((item, index) => {
@@ -19,7 +19,7 @@ export const MissionGenerator = () => {
       title="Shadowrun"
     >
       <RecoilRoot>
-        <EuiFlexGroup className="flex-col justify-start gap-4 mb-6 flex-wrap">
+        <FlexColGroup>
           <CardPanel>
             <NaturalLanguage />
             <ResetButton />
@@ -27,7 +27,7 @@ export const MissionGenerator = () => {
           <EuiFlexGroup className="flex-wrap" gutterSize="l">
             {cardNodes}
           </EuiFlexGroup>
-        </EuiFlexGroup>
+        </FlexColGroup>
       </RecoilRoot>
     </LayoutBody>
   );

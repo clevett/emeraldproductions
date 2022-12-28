@@ -1,11 +1,14 @@
 import { EuiFlexGroup, EuiFlexItem } from "@elastic/eui";
 import { RecoilRoot } from "recoil";
 import { LayoutBody } from "../LayoutBody";
+import { FlexColGroup } from "../Styled/FlexColGroup";
 import {
   MissionChallenge,
   RunTypeSlider,
   KarmaCard,
   NuyenCard,
+  GermanRulesSwitch,
+  SurvivedSwitch,
 } from "./components/";
 import { NuyenSituationModifiers } from "./components/NuyenSituationModifiers";
 import styles from "./styles.module.css";
@@ -18,7 +21,7 @@ export const RewardsCalculator = () => {
       title="Shadowrun"
     >
       <RecoilRoot>
-        <EuiFlexGroup className="flex-col justify-start gap-4 mb-6 flex-wrap">
+        <FlexColGroup>
           <EuiFlexGroup className="gap-4 text-center">
             <EuiFlexItem>
               <NuyenCard />
@@ -28,7 +31,7 @@ export const RewardsCalculator = () => {
             </EuiFlexItem>
           </EuiFlexGroup>
 
-          <EuiFlexGroup className="gap-4 text-center">
+          <EuiFlexGroup className="gap-4 text-center flex-wrap">
             <EuiFlexItem className={`max-w-xs ${styles.min350}`}>
               <RunTypeSlider />
             </EuiFlexItem>
@@ -40,8 +43,16 @@ export const RewardsCalculator = () => {
             <EuiFlexItem className="max-w-xs min-w-fit">
               <NuyenSituationModifiers />
             </EuiFlexItem>
+
+            <EuiFlexItem className="max-w-xs min-w-fit">
+              <GermanRulesSwitch />
+            </EuiFlexItem>
+
+            <EuiFlexItem className="max-w-xs min-w-fit">
+              <SurvivedSwitch />
+            </EuiFlexItem>
           </EuiFlexGroup>
-        </EuiFlexGroup>
+        </FlexColGroup>
       </RecoilRoot>
     </LayoutBody>
   );

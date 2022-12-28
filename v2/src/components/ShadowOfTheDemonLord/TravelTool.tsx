@@ -24,6 +24,7 @@ import { TravelSelect } from "./components/TravelSelect";
 import { determineTravelTime } from "./helpers/determineTravelTime";
 import { GettingLost } from "./components/GettingLost";
 import { Footer } from "./components/Footer";
+import { FlexRowGroup } from "../Styled/FlexRowGroup";
 
 export type TerrainType = { name: string; multiplier: number };
 
@@ -64,7 +65,7 @@ export const TravelTool = () => {
       subtitle="Travel Tool"
       title="Shadow of the Demon Lord"
     >
-      <EuiFlexGroup className="flex-row justify-start gap-4 mb-6 flex-wrap">
+      <FlexRowGroup>
         <EuiFlexItem className="max-w-xs pl-4 min-w-fit">
           <SmallTitle name="Terrain" />
           <EuiFlexGroup className="grid-cols-2 grid gap-4 mb-6 mt-4 flex-wrap">
@@ -107,11 +108,11 @@ export const TravelTool = () => {
             value={miles}
           />
         </EuiFlexItem>
-      </EuiFlexGroup>
+      </FlexRowGroup>
 
       <EuiSpacer />
 
-      <EuiFlexGroup className="flex-row justify-start gap-4 flex-wrap">
+      <FlexRowGroup>
         <CardPanel>
           <EuiTitle className="text-center" size="s">
             <h4>Miles per Hour</h4>
@@ -139,20 +140,20 @@ export const TravelTool = () => {
           <EuiSpacer />
           <EuiText className="text-center">{distance}</EuiText>
         </CardPanel>
-      </EuiFlexGroup>
+      </FlexRowGroup>
 
       <EuiSpacer />
       <hr className="mt-4 mb-4" />
       <EuiSpacer />
 
-      <EuiFlexGroup className="flex-row mb-2 justify-start gap-6 items-start flex-wrap">
+      <FlexRowGroup>
         <EuiFlexItem className="min-w-fit">
           <RandomEncounter />
         </EuiFlexItem>
         <EuiFlexItem className="min-w-fit">
           <GettingLost terrain={terrain} weather={weather} />
         </EuiFlexItem>
-      </EuiFlexGroup>
+      </FlexRowGroup>
 
       <Footer />
     </LayoutBody>

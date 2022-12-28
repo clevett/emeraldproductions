@@ -5,7 +5,6 @@ import { rewardsAtomFamily } from "../recoil";
 
 export const NuyenSwitch = ({ name, description }: Nuyen) => {
   const [flag, setFlag] = useRecoilState(rewardsAtomFamily(name));
-
   return (
     <EuiSwitch
       aria-describedby={name}

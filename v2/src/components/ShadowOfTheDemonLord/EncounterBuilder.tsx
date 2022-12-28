@@ -21,6 +21,7 @@ import { LevelSelect } from "./components/LevelSelect";
 import { Difficulties } from "./components/Difficulties";
 import { EncounterTitle } from "./components/EncounterTitle";
 import { Footer } from "./components/Footer";
+import { FlexRowGroup } from "../Styled/FlexRowGroup";
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
@@ -125,7 +126,7 @@ export const EncounterBuilder = () => {
 
       <EuiSpacer />
 
-      <EuiFlexGroup gutterSize="l" wrap className={`justify-start`}>
+      <FlexRowGroup>
         <EuiFlexItem className="content-center">
           <EuiFlexItem className={`grid ${styles.col} mb-4 ${styles.max40}`}>
             <EncounterTitle
@@ -170,7 +171,7 @@ export const EncounterBuilder = () => {
             )}
           </CardPanel>
         </EuiFlexItem>
-      </EuiFlexGroup>
+      </FlexRowGroup>
 
       <Footer />
     </LayoutBody>

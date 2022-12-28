@@ -6,3 +6,4 @@ export * from "./getMacGuffin";
 export * from "./getOption";
 export * from "./getRandomElement";
 export * from "./isVowel";
+export * from "./filterString";

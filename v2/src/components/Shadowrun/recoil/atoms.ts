@@ -1,6 +1,6 @@
 import { atom, atomFamily } from "recoil";
 import { Option, Options } from "../../../data/srMissions";
-import { types, nuyen } from "../../../data/srRewards";
+import { types, nuyen, Nuyen } from "../../../data/srRewards";
 import { getOption } from "../helpers/";
 
 // Mission Generator
@@ -30,12 +30,22 @@ export const nuyenAtom = atom({
   default: 1000,
 });
 
-export const rewardsIdsAtom = atom({
+export const rewardsIdsAtom = atom<Nuyen["name"][]>({
   key: "SHADOWRUN_REWARDS_IDS_ATOM",
   default: nuyen.map((e) => e.name),
 });
 
 export const rewardsAtomFamily = atomFamily({
   key: "SHADOWRUN_REWARDS_FAMILY",
+  default: false,
+});
+
+export const germanFlagAtom = atom({
+  key: "SHADOWRUN_GERMAN_FLAG",
+  default: false,
+});
+
+export const survivedAtom = atom({
+  key: "SHADOWRUN_SURVIVED_FLAG",
   default: false,
 });
