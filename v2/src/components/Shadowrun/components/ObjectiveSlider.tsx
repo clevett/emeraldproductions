@@ -12,10 +12,12 @@ import { types } from "../../../data/srRewards";
 import { capitalize } from "../../helpers";
 import { runTypeAtom } from "../recoil";
 
-export const RunTypeSlider = () => {
+export const ObjectiveSlider = () => {
   const [type, setType] = useRecoilState(runTypeAtom);
 
-  const rangeWithLevels = useGeneratedHtmlId({ prefix: "rangeWithLevels" });
+  const groupRangeWithLevels = useGeneratedHtmlId({
+    prefix: "groupRangeWithLevels",
+  });
 
   const onChange = (range: number) => {
     const run = types.find((t) => t.karma === range);
@@ -24,30 +26,36 @@ export const RunTypeSlider = () => {
     }
   };
 
+  const karmaObjectives = [
+    { label: "none", value: 0 },
+    { label: "some", value: 1 },
+    { label: "all", value: 2 },
+  ];
+
   return (
     <EuiFlexGroup
       className={`flex-col content-center flex-wrap w-fill`}
       gutterSize="l"
     >
       <EuiTitle className="text-center" size="s">
-        <h5 id={rangeWithLevels}>Run Type</h5>
+        <h5 id={groupRangeWithLevels}>Group Completed Objectives</h5>
       </EuiTitle>
       <EuiSpacer size="m" />
       <EuiRange
-        aria-describedby={rangeWithLevels}
+        aria-describedby={groupRangeWithLevels}
         aria-label="choose run type"
-        id={rangeWithLevels}
-        max={2}
-        min={-2}
+        id={groupRangeWithLevels}
+        max={0}
+        min={2}
         onChange={(e) => onChange(parseInt(e.currentTarget.value))}
         showTicks
         showRange
         showValue
         fullWidth
-        tickInterval={2}
-        ticks={types.map((r) => ({
-          label: capitalize(r.name),
-          value: r.karma,
+        tickInterval={1}
+        ticks={karmaObjectives.map(({ label, value }) => ({
+          label: capitalize(label),
+          value,
         }))}
         value={type.karma}
       />

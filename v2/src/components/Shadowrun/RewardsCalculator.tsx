@@ -9,8 +9,10 @@ import {
   NuyenCard,
   GermanRulesSwitch,
   SurvivedSwitch,
+  ObjectiveSlider,
+  NuyenSituationModifiers,
 } from "./components/";
-import { NuyenSituationModifiers } from "./components/NuyenSituationModifiers";
+
 import styles from "./styles.module.css";
 
 export const RewardsCalculator = () => {
@@ -31,7 +33,7 @@ export const RewardsCalculator = () => {
             </EuiFlexItem>
           </EuiFlexGroup>
 
-          <EuiFlexGroup className="gap-4 text-center flex-wrap">
+          <EuiFlexGroup className="gap-4 text-center flex-wrap min-w-fit">
             <EuiFlexItem className={`max-w-xs ${styles.min350}`}>
               <RunTypeSlider />
             </EuiFlexItem>
@@ -50,6 +52,10 @@ export const RewardsCalculator = () => {
 
             <EuiFlexItem className="max-w-xs min-w-fit">
               <SurvivedSwitch />
+            </EuiFlexItem>
+
+            <EuiFlexItem className="max-w-xs min-w-fit">
+              <ObjectiveSlider />
             </EuiFlexItem>
           </EuiFlexGroup>
         </FlexColGroup>
