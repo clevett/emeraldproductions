@@ -1,4 +1,4 @@
-import { EuiSelect } from "@elastic/eui";
+import { EuiSelect, EuiSpacer } from "@elastic/eui";
 import { travelChecker, typeChecker } from "../recoil/refine";
 import { Pace, Threat, Weather } from "../TravelTool";
 import { SmallTitle } from "./SmallTitle";
@@ -17,6 +17,7 @@ export const TravelSelect = ({
   return (
     <>
       <SmallTitle name={title} />
+      <EuiSpacer size="s" />
       <EuiSelect
         className="capitalize text-center"
         onChange={(event) => {

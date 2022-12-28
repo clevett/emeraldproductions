@@ -1,7 +1,6 @@
 import {
   EuiTitle,
   EuiSpacer,
-  EuiFlexGroup,
   EuiFlexItem,
   EuiFieldText,
   EuiText,
@@ -25,6 +24,8 @@ import { determineTravelTime } from "./helpers/determineTravelTime";
 import { GettingLost } from "./components/GettingLost";
 import { Footer } from "./components/Footer";
 import { FlexRowGroup } from "../Styled/FlexRowGroup";
+
+import styles from "./styles.module.css";
 
 export type TerrainType = { name: string; multiplier: number };
 
@@ -68,7 +69,8 @@ export const TravelTool = () => {
       <FlexRowGroup>
         <EuiFlexItem className="max-w-xs pl-4 min-w-fit">
           <SmallTitle name="Terrain" />
-          <EuiFlexGroup className="grid-cols-2 grid gap-4 mb-6 mt-4 flex-wrap">
+          <EuiSpacer size="s" />
+          <div className={`grid gap-y-2 gap-x-4 ${styles.terrainGrid}`}>
             {terrainList.map((t: TerrainType) => {
               return (
                 <Switch
@@ -78,8 +80,9 @@ export const TravelTool = () => {
                 />
               );
             })}
-          </EuiFlexGroup>
+          </div>
         </EuiFlexItem>
+
         <EuiFlexItem className="max-w-xs min-w-fit">
           <TravelSelect
             list={paceList}
@@ -89,6 +92,7 @@ export const TravelTool = () => {
             value={pace.name}
           />
         </EuiFlexItem>
+
         <EuiFlexItem className="max-w-xs min-w-fit">
           <TravelSelect
             list={weatherList}
@@ -98,8 +102,10 @@ export const TravelTool = () => {
             value={weather.name}
           />
         </EuiFlexItem>
-        <EuiFlexItem className="max-w-xs">
+
+        <EuiFlexItem className="max-w-xs min-w-fit">
           <SmallTitle name="Miles To Travel" />
+          <EuiSpacer size="s" />
           <EuiFieldText
             className="text-center"
             aria-label="miles to travel"
@@ -147,14 +153,15 @@ export const TravelTool = () => {
       <EuiSpacer />
 
       <FlexRowGroup>
-        <EuiFlexItem className="min-w-fit">
+        <EuiFlexItem className="max-w-l min-w-fit">
           <RandomEncounter />
         </EuiFlexItem>
-        <EuiFlexItem className="min-w-fit">
+        <EuiFlexItem className="max-w-l min-w-fit">
           <GettingLost terrain={terrain} weather={weather} />
         </EuiFlexItem>
       </FlexRowGroup>
 
+      <EuiSpacer size="xxl" />
       <Footer />
     </LayoutBody>
   );

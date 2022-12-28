@@ -3,7 +3,7 @@
 }
 
 .colfit {
-  grid-template-columns: 1fr min-content minmax(60px, min-content) 1fr;
+  grid-template-columns: 1fr min-content 1fr;
 }
 
 .max40 {
@@ -14,10 +14,31 @@
   min-height: 60px;
 }
 
+.min80 {
+  min-height: 80px;
+}
+
 .min100 {
   min-height: 60px;
 }
 
-.min200 {
+.minH200 {
   min-height: 250px;
+}
+
+.maxW500 {
+  max-width: 500px;
+}
+
+.minW500 {
+  min-width: 500px;
+}
+
+.terrainGrid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.encounterCard {
+  grid-template-rows: minmax(80px, auto) 1fr;
 }

@@ -42,7 +42,7 @@ export const Layout = ({ children }: { children: JSX.Element }) => {
         ]}
       />
       <EuiSpacer />
-      <EuiPageBody>{children}</EuiPageBody>
+      <EuiPageBody className="mr-6 ml-6 mb-4 mt-4">{children}</EuiPageBody>
     </EuiPageTemplate>
   );
 };

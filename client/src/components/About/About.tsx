@@ -15,7 +15,7 @@ import "./About.css";
 
 export const About = () => {
   return (
-    <EuiPanel>
+    <EuiPanel hasShadow={false}>
       <EuiFlexItem grow={false}>
         <EuiFlexGroup className="AboutCenter" justifyContent="spaceEvenly">
           <EuiFlexItem grow={false}>

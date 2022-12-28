@@ -1,7 +1,6 @@
-import { EuiFlexGroup, EuiFlexItem, EuiText } from "@elastic/eui";
+import { EuiFlexItem, EuiPanel, EuiSpacer, EuiText } from "@elastic/eui";
 import { useState } from "react";
 
-import { CardPanel } from "../../CardPanel";
 import { TerrainType, Weather as WeatherType } from "../TravelTool";
 import { NavigatorSwitch } from "./NavigatorSwitch";
 
@@ -87,27 +86,33 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
   };
 
   return (
-    <EuiFlexGroup className={`flex-col justify-center  w-full`}>
-      <EuiFlexItem
-        className={`grid grid-cols-3 center justify-items-center  ${styles.min100} content-center mb-4`}
+    <div
+      className={`grid gap-y-4 gap-x-4 justify-items-center ${styles.encounterCard}`}
+    >
+      <div
+        className={`grid grid-cols-3 gap-x-6 justify-items-center ${styles.min100} content-center mb-4 w-full`}
       >
         <NavigatorSwitch onChange={handleNavigator} />
         <EuiText>Boon: {boons}</EuiText>
         <EuiText>Bane: {banes}</EuiText>
-      </EuiFlexItem>
-      <EuiFlexItem className={`flex-col ${styles.min200} content-start`}>
-        <CardPanel>
-          <EuiFlexGroup className="flex-col">
+      </div>
+
+      <div className={`${styles.minH200} w-full`}>
+        <EuiPanel hasBorder paddingSize="m" color="subdued" className="h-full">
+          <div className={`grid text-center ${styles.minW500}}`}>
             <DiceTitle
               die="d20"
               onClick={() => handleRoll()}
               onReset={onReset}
               title="Getting Lost"
             />
+
+            <EuiSpacer />
+
             {list}
-          </EuiFlexGroup>
-        </CardPanel>
-      </EuiFlexItem>
-    </EuiFlexGroup>
+          </div>
+        </EuiPanel>
+      </div>
+    </div>
   );
 };

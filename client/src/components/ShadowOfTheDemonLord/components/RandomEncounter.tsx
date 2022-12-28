@@ -1,10 +1,9 @@
-import { EuiFlexGroup, EuiFlexItem, EuiSpacer, EuiText } from "@elastic/eui";
+import { EuiFlexItem, EuiPanel, EuiSpacer, EuiText } from "@elastic/eui";
 import { useState } from "react";
 import {
   threat as threatList,
   encounter as encounterList,
 } from "../../../data";
-import { CardPanel } from "../../CardPanel";
 import { TravelSelect } from "./TravelSelect";
 
 import { DiceTitle } from "./DiceTitle";
@@ -52,8 +51,10 @@ export const RandomEncounter = () => {
   };
 
   return (
-    <EuiFlexGroup className={`justify-center flex-col`}>
-      <EuiFlexItem className={`max-w-xs self-center w-full ${styles.min100}`}>
+    <div
+      className={`grid gap-y-4 gap-x-4 justify-items-center ${styles.encounterCard}`}
+    >
+      <div className={`max-w-xs w-full ${styles.min100}`}>
         <TravelSelect
           list={threatList}
           //@ts-expect-error ignore for now
@@ -61,10 +62,11 @@ export const RandomEncounter = () => {
           title="Threat Level"
           value={threat.name}
         />
-      </EuiFlexItem>
-      <EuiFlexItem className={`flex-col ${styles.min200} content-start`}>
-        <CardPanel>
-          <EuiFlexGroup className={`flex-col pt-2 content-start`}>
+      </div>
+
+      <div className={`${styles.minH200} w-full`}>
+        <EuiPanel hasBorder paddingSize="m" color="subdued" className="h-full">
+          <div className={`grid text-center ${styles.minW500}}`}>
             <DiceTitle
               die="d20"
               onClick={() => handleRoll()}
@@ -73,16 +75,17 @@ export const RandomEncounter = () => {
             />
 
             <EuiSpacer />
+
             <EuiText className="text-center italic">
               Frequency is {threat.frequency.toLowerCase()}
             </EuiText>
+
             <EuiSpacer />
 
-            <EuiFlexGroup className="flex-col">{list}</EuiFlexGroup>
-            <EuiSpacer />
-          </EuiFlexGroup>
-        </CardPanel>
-      </EuiFlexItem>
-    </EuiFlexGroup>
+            <div className="grid gap-y-4">{list}</div>
+          </div>
+        </EuiPanel>
+      </div>
+    </div>
   );
 };

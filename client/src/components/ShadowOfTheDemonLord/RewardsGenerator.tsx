@@ -2,6 +2,7 @@ import {
   EuiButton,
   EuiFlexGroup,
   EuiFlexItem,
+  EuiSpacer,
   EuiText,
   EuiTitle,
 } from "@elastic/eui";
@@ -14,6 +15,8 @@ import { Treasure } from "./helpers/Treasure";
 
 import { buildResultString } from "./helpers/buildResultString";
 import { capitalize } from "../helpers/capitalize";
+
+import styles from "./styles.module.css";
 
 const getTreasure = (gold: number, level: Level) => {
   const treasure = new Treasure(level);
@@ -42,26 +45,33 @@ export const RewardsGenerator = () => {
       subtitle="Rewards Generator"
       title="Shadow of the Demon Lord"
     >
-      <CardPanel>
-        <EuiTitle className="text-center mb-10" size="s">
-          <h4>
-            Treasure per level at {capitalize(level)} totals {gold} gc
-          </h4>
-        </EuiTitle>
-        <EuiFlexGroup className="center w-100 mb-10 justify-center">
-          <EuiText>{result}</EuiText>
-        </EuiFlexGroup>
-        <EuiFlexGroup className="flex-row mb-2 justify-start gap-4">
-          <EuiFlexItem className="max-w-xs">
-            <LevelSelect level={level} onChange={onChange} />
+      <div className={`${styles.maxW500}`}>
+        <CardPanel>
+          <EuiTitle className="text-center w-full" size="s">
+            <h4>
+              Treasure per level at {capitalize(level)} totals {gold} gc
+            </h4>
+          </EuiTitle>
+          <EuiSpacer size="xl" />
+
+          <EuiFlexItem className="w-full">
+            <EuiText className="text-center ">{result}</EuiText>
           </EuiFlexItem>
-          <EuiFlexItem className="max-w-xs justify-end">
-            <EuiButton onClick={handleClick} fill>
-              Generate Treasure
-            </EuiButton>
-          </EuiFlexItem>
-        </EuiFlexGroup>
-      </CardPanel>
+
+          <EuiSpacer size="xl" />
+
+          <EuiFlexGroup className="flex-row mb-2 justify-start gap-4">
+            <EuiFlexItem className="max-w-xs">
+              <LevelSelect level={level} onChange={onChange} />
+            </EuiFlexItem>
+            <EuiFlexItem className="max-w-xs justify-end">
+              <EuiButton onClick={handleClick} fill>
+                Generate Treasure
+              </EuiButton>
+            </EuiFlexItem>
+          </EuiFlexGroup>
+        </CardPanel>
+      </div>
     </LayoutBody>
   );
 };
