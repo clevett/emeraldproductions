@@ -1,6 +1,5 @@
 import { selector, DefaultValue, selectorFamily } from "recoil";
 import { Situation, Situations } from "../data/srRewards";
-import { filterString } from "../../helpers";
 import {
   diceKarmaAtom,
   germanFlagAtom,
