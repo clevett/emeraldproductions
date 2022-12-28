@@ -1,5 +1,5 @@
 import { atom, atomFamily } from "recoil";
-import { types, nuyen, Nuyen } from "../data/srRewards";
+import { types } from "../data/srRewards";
 import { getDicePoolKarma } from "../helpers";
 
 export const runTypeAtom = atom({
@@ -15,11 +15,6 @@ export const diceKarmaAtom = atom({
 export const nuyenAtom = atom({
   key: "SHADOWRUN_NUYEN_ATOM",
   default: 3000,
-});
-
-export const modifierIdsAtom = atom<Nuyen["name"][]>({
-  key: "SHADOWRUN_REWARDS_IDS_ATOM",
-  default: nuyen.map((e) => e.name),
 });
 
 export const nuyenModifiersAtomFamily = atomFamily({

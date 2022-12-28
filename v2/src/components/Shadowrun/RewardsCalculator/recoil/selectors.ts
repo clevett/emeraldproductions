@@ -1,12 +1,11 @@
 import { selector, DefaultValue, selectorFamily } from "recoil";
-import { Nuyen } from "../data/srRewards";
+import { Situation, Situations } from "../data/srRewards";
 import { filterString } from "../../helpers";
 import {
   diceKarmaAtom,
   germanFlagAtom,
   objectiveKarmaAtom,
   nuyenModifiersAtomFamily,
-  modifierIdsAtom,
   runTypeAtom,
   survivedAtom,
 } from "./atoms";
@@ -16,17 +15,16 @@ export const selectNuyenModifier = selectorFamily({
   get:
     (id) =>
     ({ get }) => {
-      const operation = get(nuyenModifiersAtomFamily(id));
-      return operation;
+      return get(nuyenModifiersAtomFamily(id));
     },
   set:
-    (id: Nuyen["name"]) =>
+    (id: Situation) =>
     ({ set, reset, get }, newValue) => {
-      const ids = get(modifierIdsAtom);
       const atom = nuyenModifiersAtomFamily(id);
 
+      console.table({ id, newValue });
+
       if (newValue instanceof DefaultValue) {
-        set(modifierIdsAtom, () => filterString(id, ids));
         reset(nuyenModifiersAtomFamily(id));
         return;
       }
@@ -34,13 +32,13 @@ export const selectNuyenModifier = selectorFamily({
       if (newValue) {
         set(atom, newValue);
 
-        if (ids.find((e) => e === id)) {
-          return;
-        }
-
-        if (ids && !ids.includes(id)) {
-          set(modifierIdsAtom, (prev) => [...prev, id]);
-        }
+        // if (id === Situations.THREE_TO_ONE || id === Situations.TWO_TO_ONE) {
+        //   const other =
+        //     id === Situations.THREE_TO_ONE
+        //       ? Situations.TWO_TO_ONE
+        //       : Situations.THREE_TO_ONE;
+        //   reset(nuyenModifiersAtomFamily(other));
+        // }
       }
     },
 });
@@ -48,7 +46,7 @@ export const selectNuyenModifier = selectorFamily({
 export const selectNuyenModifiers = selector({
   key: "SELECT_NUYEN_MODIFIERS_SELECTOR",
   get: ({ get }) => {
-    const ids = get(modifierIdsAtom);
+    const ids = Object.values(Situations);
     const family = ids.map((id) => get(selectNuyenModifier(id)));
     return family.filter((o) => !!o);
   },
