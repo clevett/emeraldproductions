@@ -81,17 +81,6 @@ export const selectNuyen = selector({
 
     const percent = get(nuyenModifierPercentAtom);
 
-    const total = sum + sum * percent;
-
-    console.table({
-      base,
-      diceModifier,
-      modifiers,
-      multiple,
-      percent,
-      total,
-    });
-
-    return total;
+    return sum + sum * percent;
   },
 });

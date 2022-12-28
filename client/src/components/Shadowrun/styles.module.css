@@ -10,6 +10,10 @@
   min-width: 350px;
 }
 
+.minW360 {
+  min-width: 360px;
+}
+
 .gridRow {
   grid-template-rows: repeat(3, 1fr);
 }

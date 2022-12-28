@@ -9,6 +9,9 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import { RunType } from "./data/srRewards";
 import { nuyenModifierPercentAtom, runTypeAtom } from "./recoil";
 
+import styles from "../styles.module.css";
+import { getCostModifier } from "./helpers";
+
 export const CostModifier = () => {
   const type = useRecoilValue(runTypeAtom);
   const [percent, setPercent] = useRecoilState(nuyenModifierPercentAtom);
@@ -20,31 +23,21 @@ export const CostModifier = () => {
   const description = () => {
     switch (type.name) {
       case RunType.COLD:
-        return "Run type set to cold-hearted.";
+        return "Run will make you a cold-hearted bastard +10-20%";
       case RunType.GOOD:
-        return "Run type set to good feels.";
+        return "Run has good feelings as part of its reward –10-20%";
       default:
-        return "Standard runs do not have a bonus.";
+        return "Standard run 0%";
     }
   };
 
   const onChange = (range: number) => {
-    const getPercent = () => {
-      const decimal = range / 100;
-      switch (type.name) {
-        case RunType.COLD:
-          return decimal;
-        case RunType.GOOD:
-          return -decimal;
-        default:
-          return 0;
-      }
-    };
-    setPercent(getPercent());
+    const percent = getCostModifier(type.name, range);
+    setPercent(percent);
   };
 
   return (
-    <div className={`grid w-fill`}>
+    <div className={`grid w-fill ${styles.minW360}`}>
       <EuiTitle className="text-center" size="s">
         <h5 id={costModifierSlider}>Nuyen Modifiers</h5>
       </EuiTitle>

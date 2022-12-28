@@ -7,12 +7,13 @@ import {
 } from "@elastic/eui";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
-import { RunType, types } from "./data/srRewards";
+import { types } from "./data/srRewards";
 import { capitalize } from "../../helpers";
 import {
   nuyenModifierPercentAtom,
   runTypeAtom,
 } from "../RewardsCalculator/recoil";
+import { getCostModifier } from "./helpers";
 
 export const RunTypeSlider = () => {
   const [type, setType] = useRecoilState(runTypeAtom);
@@ -24,19 +25,8 @@ export const RunTypeSlider = () => {
     const run = types.find((t) => t.karma === range);
     if (run) {
       setType(run);
-
-      const getPercent = () => {
-        const decimal = 10 / 100;
-        switch (run.name) {
-          case RunType.COLD:
-            return decimal;
-          case RunType.GOOD:
-            return -decimal;
-          default:
-            return 0;
-        }
-      };
-      setPercent(getPercent());
+      const percent = getCostModifier(run.name, 10);
+      setPercent(percent);
     }
   };
 

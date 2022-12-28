@@ -72,6 +72,8 @@ export enum RunType {
   STANDARD = "standard",
 }
 
+export type Run = `${RunType}`;
+
 export enum Karma {
   COLD = -2,
   GOOD = 2,
@@ -82,7 +84,7 @@ export const types = [
   {
     name: RunType.STANDARD,
     karma: Karma.STANDARD,
-    description: "",
+    description: "Nothing special, normal work for a runner",
   },
   {
     name: RunType.GOOD,
