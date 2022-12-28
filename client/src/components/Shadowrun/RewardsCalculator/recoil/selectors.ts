@@ -8,6 +8,7 @@ import {
   runTypeAtom,
   survivedAtom,
   diceNuyenAtom,
+  nuyenModifierPercentAtom,
 } from "./atoms";
 
 export const selectNuyenModifier = selectorFamily({
@@ -75,17 +76,22 @@ export const selectNuyen = selector({
     const base = 3000;
     const modifiers = get(selectNuyenModifiers);
     const diceModifier = get(diceNuyenAtom);
-
     const multiple = modifiers.length + diceModifier;
+    const sum = base * multiple;
 
-    const total = base * multiple;
+    const percent = get(nuyenModifierPercentAtom);
+
+    const total = sum + sum * percent;
 
     console.table({
       base,
       diceModifier,
       modifiers,
       multiple,
+      percent,
       total,
     });
+
+    return total;
   },
 });

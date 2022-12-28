@@ -82,7 +82,7 @@ export const RandomEncounter = () => {
 
             <EuiSpacer />
 
-            <div className="grid gap-y-4">{list}</div>
+            <div className="grid">{list}</div>
           </div>
         </EuiPanel>
       </div>

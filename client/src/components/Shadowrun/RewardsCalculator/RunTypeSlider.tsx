@@ -5,14 +5,18 @@ import {
   EuiRange,
   EuiText,
 } from "@elastic/eui";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
-import { types } from "./data/srRewards";
+import { RunType, types } from "./data/srRewards";
 import { capitalize } from "../../helpers";
-import { runTypeAtom } from "../RewardsCalculator/recoil";
+import {
+  nuyenModifierPercentAtom,
+  runTypeAtom,
+} from "../RewardsCalculator/recoil";
 
 export const RunTypeSlider = () => {
   const [type, setType] = useRecoilState(runTypeAtom);
+  const setPercent = useSetRecoilState(nuyenModifierPercentAtom);
 
   const rangeWithLevels = useGeneratedHtmlId({ prefix: "rangeWithLevels" });
 
@@ -20,6 +24,19 @@ export const RunTypeSlider = () => {
     const run = types.find((t) => t.karma === range);
     if (run) {
       setType(run);
+
+      const getPercent = () => {
+        const decimal = 10 / 100;
+        switch (run.name) {
+          case RunType.COLD:
+            return decimal;
+          case RunType.GOOD:
+            return -decimal;
+          default:
+            return 0;
+        }
+      };
+      setPercent(getPercent());
     }
   };
 

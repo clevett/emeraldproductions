@@ -12,6 +12,8 @@ import {
   ObjectiveSlider,
   NuyenSituationModifiers,
 } from "./RewardsCalculator/";
+import { CostModifier } from "./RewardsCalculator/CostModifier";
+import { NegotiationHits } from "./RewardsCalculator/NegotiationHits";
 
 import styles from "./styles.module.css";
 
@@ -56,6 +58,14 @@ export const RewardsCalculator = () => {
 
             <EuiFlexItem className="max-w-xs min-w-fit">
               <ObjectiveSlider />
+            </EuiFlexItem>
+
+            <EuiFlexItem className="max-w-xs min-w-fit">
+              <CostModifier />
+            </EuiFlexItem>
+
+            <EuiFlexItem className="max-w-xs min-w-fit">
+              <NegotiationHits />
             </EuiFlexItem>
           </EuiFlexGroup>
         </FlexColGroup>

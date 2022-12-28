@@ -15,8 +15,9 @@ export const GermanRulesSwitch = () => {
           "A karma is added for each of the Nuyen Situation Modifiers"
         }
         checked={flag}
-        label={"Use German ruleset"}
+        label="Use German ruleset"
         onChange={() => setFlag(!flag)}
+        title="A karma is added for each of the Nuyen Situation Modifiers"
       />
     </EuiFlexGroup>
   );

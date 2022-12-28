@@ -2,19 +2,26 @@ import { atom, atomFamily } from "recoil";
 import { types } from "../data/srRewards";
 import { getDicePoolKarma, getDicePoolNuyen } from "../helpers";
 
+const dicePoolDefault = 14;
+
 export const runTypeAtom = atom({
   key: "SHADOWRUN_RUN_TYPE_ATOM",
   default: types[0],
 });
 
+export const opposedDicePoolAtom = atom({
+  key: "SHADOWRUN_DICE_POOL_ATOM",
+  default: dicePoolDefault,
+});
+
 export const diceKarmaAtom = atom({
   key: "SHADOWRUN_DICE_KARMA_ATOM",
-  default: getDicePoolKarma(14),
+  default: getDicePoolKarma(dicePoolDefault),
 });
 
 export const diceNuyenAtom = atom({
   key: "SHADOWRUN_DICE_NUYEN_ATOM",
-  default: getDicePoolNuyen(14),
+  default: getDicePoolNuyen(dicePoolDefault),
 });
 
 export const nuyenAtom = atom({
@@ -44,10 +51,5 @@ export const objectiveKarmaAtom = atom({
 
 export const nuyenModifierPercentAtom = atom({
   key: "SHADOWRUN_NUYEN_PERCENT_MODIFIER_ATOM",
-  default: 0.1,
-});
-
-export const nuyenSituationModifierAtom = atom({
-  key: "SHADOWRUN_NUYEN_SITUATION_MODIFIER_ATOM",
-  default: 0.1,
+  default: 0,
 });

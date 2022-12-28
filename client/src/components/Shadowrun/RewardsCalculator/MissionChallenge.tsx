@@ -1,41 +1,44 @@
-import { EuiFieldText, EuiSpacer, EuiText, EuiTitle } from "@elastic/eui";
+import { EuiFieldText, EuiSpacer, EuiTitle } from "@elastic/eui";
 import { useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { diceKarmaAtom, diceNuyenAtom } from "../RewardsCalculator/recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import {
+  diceKarmaAtom,
+  diceNuyenAtom,
+  opposedDicePoolAtom,
+} from "../RewardsCalculator/recoil";
 import { getDicePoolKarma, getDicePoolNuyen } from "./helpers";
 
 export const MissionChallenge = () => {
-  const [dice, setDice] = useState("14");
+  const [value, setValue] = useState("14");
+  const [dice, setDice] = useRecoilState(opposedDicePoolAtom);
   const setKarma = useSetRecoilState(diceKarmaAtom);
   const setNuyen = useSetRecoilState(diceNuyenAtom);
 
-  const onChange = (value: string) => {
-    setDice(value);
-
+  const onBlur = () => {
     const num = parseInt(value);
-    if (!isNaN(num)) {
+    if (isNaN(num)) {
+      setValue(`${dice}`);
+    } else {
+      setDice(num);
       setKarma(getDicePoolKarma(num));
-      setNuyen(getDicePoolNuyen(14));
+      setNuyen(getDicePoolNuyen(num));
     }
   };
 
   return (
     <div className="grid w-fill">
       <EuiTitle className="text-center" size="s">
-        <h5>Highest Opposed Dicepool</h5>
+        <h5>Highest Opposing Dice Pool</h5>
       </EuiTitle>
       <EuiSpacer size="m" />
       <EuiFieldText
+        onBlur={onBlur}
         className="text-center"
         aria-label="Enter the highest opposed dice pool"
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => setValue(e.target.value)}
         placeholder="14"
-        value={dice}
+        value={value}
       />
-      <EuiSpacer size="m" />
-      <EuiText className="italic text-center">
-        This will be divided by six and rounded down.
-      </EuiText>
     </div>
   );
 };

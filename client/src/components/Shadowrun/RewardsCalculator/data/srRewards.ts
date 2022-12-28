@@ -38,7 +38,7 @@ export const nuyen = [
   {
     name: Situations.TWO_TO_ONE,
     description:
-      "Outnumbered 2:1 in combat by NPCs with Professiona Rating 4+ (not cumulative with above)",
+      "Outnumbered 2:1 in combat by NPCs with Professional Rating 4+",
   },
   {
     name: Situations.SPEED,
