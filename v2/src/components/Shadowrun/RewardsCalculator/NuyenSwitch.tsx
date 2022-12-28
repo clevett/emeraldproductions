@@ -1,10 +1,10 @@
 import { EuiSwitch } from "@elastic/eui";
 import { useRecoilState } from "recoil";
 import { Nuyen } from "./data/srRewards";
-import { rewardsAtomFamily } from "../RewardsCalculator/recoil";
+import { nuyenModifiersAtomFamily } from "../RewardsCalculator/recoil";
 
 export const NuyenSwitch = ({ name, description }: Nuyen) => {
-  const [flag, setFlag] = useRecoilState(rewardsAtomFamily(name));
+  const [flag, setFlag] = useRecoilState(nuyenModifiersAtomFamily(name));
   return (
     <EuiSwitch
       aria-describedby={name}

@@ -8,6 +8,7 @@ import {
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { diceKarmaAtom } from "../RewardsCalculator/recoil";
+import { getDicePoolKarma } from "./helpers";
 
 export const MissionChallenge = () => {
   const [dice, setDice] = useState("14");
@@ -18,7 +19,7 @@ export const MissionChallenge = () => {
 
     const num = parseInt(value);
     if (!isNaN(num)) {
-      const bySix = Math.floor(num / 4);
+      const bySix = getDicePoolKarma(num);
       setKarma(bySix);
     }
   };

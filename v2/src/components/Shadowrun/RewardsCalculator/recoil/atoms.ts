@@ -17,12 +17,12 @@ export const nuyenAtom = atom({
   default: 3000,
 });
 
-export const rewardsIdsAtom = atom<Nuyen["name"][]>({
+export const modifierIdsAtom = atom<Nuyen["name"][]>({
   key: "SHADOWRUN_REWARDS_IDS_ATOM",
   default: nuyen.map((e) => e.name),
 });
 
-export const rewardsAtomFamily = atomFamily({
+export const nuyenModifiersAtomFamily = atomFamily({
   key: "SHADOWRUN_REWARDS_FAMILY_ATOM",
   default: false,
 });
