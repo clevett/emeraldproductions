@@ -4,8 +4,6 @@ import {
   EuiCard,
   EuiIcon,
   EuiText,
-  EuiSpacer,
-  EuiFlexGroup,
   EuiButtonIcon,
 } from "@elastic/eui";
 
@@ -40,17 +38,20 @@ export const MissionCard = ({ item }: MissionCardProps) => {
         description={selected?.description}
         onClick={handleClick}
         display="subdued"
-      >
-        <EuiFlexGroup className="flex-col">
-          {note ? <EuiText>{note}</EuiText> : null}
-          <EuiSpacer size="m" />
+        footer={
           <EuiButtonIcon
             className="justify-self-end"
             onClick={handleClick}
             iconType="refresh"
             aria-label={`get a new ${item}`}
           />
-        </EuiFlexGroup>
+        }
+      >
+        {note ? (
+          <EuiFlexItem className="flex-col justify-center">
+            <EuiText className="text-center">{note}</EuiText>
+          </EuiFlexItem>
+        ) : null}
       </EuiCard>
     </EuiFlexItem>
   );
