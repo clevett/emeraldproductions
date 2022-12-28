@@ -1,14 +1,11 @@
-import { EuiFlexGroup, EuiSpacer, EuiTitle } from "@elastic/eui";
+import { EuiSpacer, EuiTitle } from "@elastic/eui";
 import React from "react";
 import { nuyen, Nuyen } from "./data/srRewards";
 import { NuyenSwitch } from "./NuyenSwitch";
 
 export const NuyenSituationModifiers = () => {
   return (
-    <EuiFlexGroup
-      className="flex-col content-center flex-wrap w-fill"
-      gutterSize="l"
-    >
+    <div className="grid">
       <EuiTitle className="text-center" size="s">
         <h5>Nuyen Situation Modifiers</h5>
       </EuiTitle>
@@ -18,6 +15,6 @@ export const NuyenSituationModifiers = () => {
           <NuyenSwitch {...e} />
         </React.Fragment>
       ))}
-    </EuiFlexGroup>
+    </div>
   );
 };

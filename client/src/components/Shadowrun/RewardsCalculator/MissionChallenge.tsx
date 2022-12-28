@@ -1,10 +1,4 @@
-import {
-  EuiFieldText,
-  EuiFlexGroup,
-  EuiSpacer,
-  EuiText,
-  EuiTitle,
-} from "@elastic/eui";
+import { EuiFieldText, EuiSpacer, EuiText, EuiTitle } from "@elastic/eui";
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { diceKarmaAtom, diceNuyenAtom } from "../RewardsCalculator/recoil";
@@ -26,10 +20,7 @@ export const MissionChallenge = () => {
   };
 
   return (
-    <EuiFlexGroup
-      className="flex-col content-center flex-wrap w-fill"
-      gutterSize="l"
-    >
+    <div className="grid w-fill">
       <EuiTitle className="text-center" size="s">
         <h5>Highest Opposed Dicepool</h5>
       </EuiTitle>
@@ -45,6 +36,6 @@ export const MissionChallenge = () => {
       <EuiText className="italic text-center">
         This will be divided by six and rounded down.
       </EuiText>
-    </EuiFlexGroup>
+    </div>
   );
 };

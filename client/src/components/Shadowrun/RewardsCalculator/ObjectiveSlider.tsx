@@ -1,6 +1,5 @@
 import {
   useGeneratedHtmlId,
-  EuiFlexGroup,
   EuiTitle,
   EuiSpacer,
   EuiRange,
@@ -26,10 +25,7 @@ export const ObjectiveSlider = () => {
   ];
 
   return (
-    <EuiFlexGroup
-      className={`flex-col content-center flex-wrap w-fill`}
-      gutterSize="l"
-    >
+    <div className={`grid w-fill`}>
       <EuiTitle className="text-center" size="s">
         <h5 id={groupRangeWithLevels}>Group Completed Objectives</h5>
       </EuiTitle>
@@ -53,6 +49,6 @@ export const ObjectiveSlider = () => {
         value={karma}
       />
       <EuiSpacer size="m" />
-    </EuiFlexGroup>
+    </div>
   );
 };

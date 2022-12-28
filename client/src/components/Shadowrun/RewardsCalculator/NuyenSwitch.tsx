@@ -6,8 +6,6 @@ import { selectNuyenModifier } from "./recoil";
 export const NuyenSwitch = ({ name, description }: Nuyen) => {
   const [flag, setFlag] = useRecoilState(selectNuyenModifier(name));
 
-  console.table({ flag });
-
   return (
     <EuiSwitch
       aria-describedby={name}

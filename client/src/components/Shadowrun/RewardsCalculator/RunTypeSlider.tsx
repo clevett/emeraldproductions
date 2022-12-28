@@ -1,6 +1,5 @@
 import {
   useGeneratedHtmlId,
-  EuiFlexGroup,
   EuiTitle,
   EuiSpacer,
   EuiRange,
@@ -25,10 +24,7 @@ export const RunTypeSlider = () => {
   };
 
   return (
-    <EuiFlexGroup
-      className={`flex-col content-center flex-wrap w-fill`}
-      gutterSize="l"
-    >
+    <div className={`grid w-fill`}>
       <EuiTitle className="text-center" size="s">
         <h5 id={rangeWithLevels}>Run Type</h5>
       </EuiTitle>
@@ -55,6 +51,6 @@ export const RunTypeSlider = () => {
       {type ? (
         <EuiText className="italic text-center">{type?.description}</EuiText>
       ) : null}
-    </EuiFlexGroup>
+    </div>
   );
 };
