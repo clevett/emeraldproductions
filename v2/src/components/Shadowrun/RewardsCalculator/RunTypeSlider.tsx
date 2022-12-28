@@ -8,9 +8,9 @@ import {
 } from "@elastic/eui";
 import { useRecoilState } from "recoil";
 
-import { types } from "../../../data/srRewards";
+import { types } from "./data/srRewards";
 import { capitalize } from "../../helpers";
-import { runTypeAtom } from "../recoil";
+import { runTypeAtom } from "../RewardsCalculator/recoil";
 
 export const RunTypeSlider = () => {
   const [type, setType] = useRecoilState(runTypeAtom);

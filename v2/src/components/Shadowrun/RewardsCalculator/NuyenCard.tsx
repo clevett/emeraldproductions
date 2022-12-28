@@ -1,7 +1,7 @@
 import { EuiTitle, EuiSpacer, EuiText } from "@elastic/eui";
 import { useRecoilValue } from "recoil";
 import { CardPanel } from "../../CardPanel";
-import { nuyenAtom } from "../recoil/";
+import { nuyenAtom } from "../RewardsCalculator/recoil";
 
 export const NuyenCard = () => {
   const nuyen = useRecoilValue(nuyenAtom);

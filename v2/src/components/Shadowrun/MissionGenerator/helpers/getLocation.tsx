@@ -1,4 +1,4 @@
-import { MissionElement } from "../../../data/srMissions";
+import { MissionElement } from "../data/srMissions";
 
 export const getLocation = (location: MissionElement) => {
   const result = location.result[0];

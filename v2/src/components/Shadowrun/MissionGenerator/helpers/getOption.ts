@@ -1,5 +1,5 @@
-import { Options, Option, mission } from "../../../data/srMissions";
-import { getDiceRollTotal } from "../../../helpers";
+import { Options, Option, mission } from "../data/srMissions";
+import { getDiceRollTotal } from "../../../../helpers";
 
 export const getOption = (item: Option) => {
   const roll = getDiceRollTotal();

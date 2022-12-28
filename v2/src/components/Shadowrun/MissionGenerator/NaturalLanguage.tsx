@@ -1,8 +1,8 @@
 import { useRecoilValue } from "recoil";
 
-import { getEmployer, getLocation, getMacGuffin, getJob } from "../helpers";
-import { Options } from "../../../data/srMissions";
-import { missionAtomFamily } from "../recoil";
+import { getEmployer, getLocation, getMacGuffin, getJob } from "./helpers";
+import { Options } from "./data/srMissions";
+import { missionAtomFamily } from "./recoil";
 
 export const NaturalLanguage = () => {
   const location = useRecoilValue(missionAtomFamily(Options.LOCATION));

@@ -1,9 +1,9 @@
 import { EuiFlexGroup, EuiSwitch } from "@elastic/eui";
 import { useRecoilState } from "recoil";
-import { survivedAtom } from "../recoil";
+import { germanFlagAtom } from "./recoil";
 
-export const SurvivedSwitch = () => {
-  const [flag, setFlag] = useRecoilState(survivedAtom);
+export const GermanRulesSwitch = () => {
+  const [flag, setFlag] = useRecoilState(germanFlagAtom);
 
   return (
     <EuiFlexGroup
@@ -11,9 +11,11 @@ export const SurvivedSwitch = () => {
       gutterSize="l"
     >
       <EuiSwitch
-        aria-describedby="character survived"
+        aria-describedby={
+          "A karma is added for each of the Nuyen Situation Modifiers"
+        }
         checked={flag}
-        label={"Character survived"}
+        label={"Use German ruleset"}
         onChange={() => setFlag(!flag)}
       />
     </EuiFlexGroup>

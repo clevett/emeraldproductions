@@ -1,6 +1,6 @@
-export * from "./MissionCard";
-export * from "./NaturalLanguage";
-export * from "./ResetButton";
+export * from "../MissionGenerator/MissionCard";
+export * from "../MissionGenerator/NaturalLanguage";
+export * from "../MissionGenerator/ResetButton";
 
 export * from "./RunTypeSlider";
 export * from "./MissionChallenge";

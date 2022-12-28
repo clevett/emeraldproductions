@@ -1,7 +1,7 @@
-import { randomArrayElement } from "./getRandomElement";
+import { getRandomArrayElement } from "../../../../helpers";
 import { isVowel } from "./isVowel";
 
-import { MissionElement } from "../../../data/srMissions";
+import { MissionElement } from "../data/srMissions";
 
 const splitEmployer = (string: string) => {
   let array = string.split(" or ");
@@ -18,7 +18,7 @@ export const getEmployer = (employer: MissionElement) => {
   let description = employer.description.toLowerCase();
 
   if (result === 12 || result === 3 || result === 4) {
-    description = randomArrayElement(splitEmployer(description));
+    description = getRandomArrayElement(splitEmployer(description));
   }
   const article = isVowel(description) ? "An " : "A ";
   if (result === 5) {

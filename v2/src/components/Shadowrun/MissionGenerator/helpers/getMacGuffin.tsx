@@ -1,6 +1,6 @@
 import { isVowel } from "./isVowel";
-import { randomArrayElement } from "./getRandomElement";
-import { MissionElement } from "../../../data/srMissions";
+import { MissionElement } from "../data/srMissions";
+import { getRandomArrayElement } from "../../../../helpers";
 
 const splitMacguffin = (description: string) => {
   const split = description.split(", ");
@@ -14,7 +14,7 @@ export const getMacGuffin = (macguffin: MissionElement) => {
   let description = macguffin.description.toLowerCase();
 
   if (result === 6) {
-    description = randomArrayElement(splitMacguffin(description));
+    description = getRandomArrayElement(splitMacguffin(description));
   }
 
   if (result === 1 || result === 2) {

@@ -1,6 +1,6 @@
 import { EuiButton } from "@elastic/eui";
 import { useRecoilCallback } from "recoil";
-import { selectMissionFamily } from "../recoil";
+import { selectMissionFamily } from "./recoil";
 
 export const ResetButton = () => {
   const resetOptions = useRecoilCallback(

@@ -1,5 +1,5 @@
 import { EuiFlexGroup, EuiSpacer, EuiTitle } from "@elastic/eui";
-import { nuyen, Nuyen } from "../../../data/srRewards";
+import { nuyen, Nuyen } from "./data/srRewards";
 import { NuyenSwitch } from "./NuyenSwitch";
 
 export const NuyenSituationModifiers = () => {

@@ -4,27 +4,20 @@ import {
   EuiTitle,
   EuiSpacer,
   EuiRange,
-  EuiText,
 } from "@elastic/eui";
 import { useRecoilState } from "recoil";
 
-import { types } from "../../../data/srRewards";
 import { capitalize } from "../../helpers";
-import { runTypeAtom } from "../recoil";
+import { objectiveKarmaAtom } from "../RewardsCalculator/recoil";
 
 export const ObjectiveSlider = () => {
-  const [type, setType] = useRecoilState(runTypeAtom);
+  const [karma, setKarma] = useRecoilState(objectiveKarmaAtom);
 
   const groupRangeWithLevels = useGeneratedHtmlId({
     prefix: "groupRangeWithLevels",
   });
 
-  const onChange = (range: number) => {
-    const run = types.find((t) => t.karma === range);
-    if (run) {
-      setType(run);
-    }
-  };
+  const onChange = (range: number) => setKarma(range);
 
   const karmaObjectives = [
     { label: "none", value: 0 },
@@ -45,8 +38,8 @@ export const ObjectiveSlider = () => {
         aria-describedby={groupRangeWithLevels}
         aria-label="choose run type"
         id={groupRangeWithLevels}
-        max={0}
-        min={2}
+        max={2}
+        min={0}
         onChange={(e) => onChange(parseInt(e.currentTarget.value))}
         showTicks
         showRange
@@ -57,12 +50,9 @@ export const ObjectiveSlider = () => {
           label: capitalize(label),
           value,
         }))}
-        value={type.karma}
+        value={karma}
       />
       <EuiSpacer size="m" />
-      {type ? (
-        <EuiText className="italic text-center">{type?.description}</EuiText>
-      ) : null}
     </EuiFlexGroup>
   );
 };

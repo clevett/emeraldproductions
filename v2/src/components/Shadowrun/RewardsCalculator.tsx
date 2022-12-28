@@ -11,7 +11,7 @@ import {
   SurvivedSwitch,
   ObjectiveSlider,
   NuyenSituationModifiers,
-} from "./components/";
+} from "./RewardsCalculator/";
 
 import styles from "./styles.module.css";
 

@@ -9,12 +9,12 @@ import {
   EuiButtonIcon,
 } from "@elastic/eui";
 
-import { Option } from "../../../data/srMissions";
+import { Option } from "./data/srMissions";
 
 import styles from "../styles.module.css";
 import { capitalize } from "../../helpers";
-import { selectMission } from "../recoil";
-import { getIcon, getOption } from "../helpers";
+import { selectMission } from "./recoil";
+import { getIcon, getOption } from "./helpers";
 
 type MissionCardProps = {
   item: Option;
