@@ -5,9 +5,9 @@ import {
   EuiSpacer,
   EuiTitle,
 } from "@elastic/eui";
-import { ftdList, sotdlList, shadowrunList } from "../routes";
+import { ftdList, sotdlList, shadowrunList } from "../../routes";
 
-import logo from "../imgs/logoLarge.png";
+import logo from "../../imgs/logoLarge.png";
 import { Link, useLocation } from "react-router-dom";
 
 export const Sidebar = () => {
@@ -18,9 +18,9 @@ export const Sidebar = () => {
     return (
       <Link to={href} key={`sidebar-${href}`}>
         <EuiListGroupItem
-          label={label}
           iconType={iconType}
           isActive={pathname === href}
+          label={label}
         >
           {label}
         </EuiListGroupItem>

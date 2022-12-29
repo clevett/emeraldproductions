@@ -11,16 +11,19 @@ import { Cards } from "./Cards";
 
 import portrait from "../../imgs/takedown.png";
 
-import "./About.css";
+import styles from "./styles.module.css";
 
 export const About = () => {
   return (
     <EuiPanel hasShadow={false}>
       <EuiFlexItem grow={false}>
-        <EuiFlexGroup className="AboutCenter" justifyContent="spaceEvenly">
+        <EuiFlexGroup
+          className={styles.AboutCenter}
+          justifyContent="spaceEvenly"
+        >
           <EuiFlexItem grow={false}>
             <EuiImage
-              className="portrait"
+              className={styles.portrait}
               allowFullScreen
               alt="A woman with short hair wearing a jacket over a super hero costume looks to the sky"
               hasShadow
@@ -29,7 +32,7 @@ export const About = () => {
               style={{ borderRadius: "2rem", border: "2px solid #131317" }}
             />
           </EuiFlexItem>
-          <EuiFlexItem grow={false} className="description">
+          <EuiFlexItem grow={false} className={styles.description}>
             <EuiPageHeader
               description="Front-end developer specializing in software for table role playing games. I have an interest in accessibility, user experience, and project management. As a member of a team of engineers, I use my well-developed information organization and communications skills to compliment team members with a passion for technological solutions."
               paddingSize="l"

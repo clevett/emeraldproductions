@@ -4,6 +4,8 @@ import iceland from "../../imgs/cards/iceland.jpg";
 import gamemaster from "../../imgs/cards/npcs.png";
 import dice from "../../imgs/cards/dice.png";
 
+import styles from "./styles.module.css";
+
 const cards = [
   {
     name: "Gamemaster",
@@ -39,7 +41,7 @@ const cardNodes = cards.map(function (c, index) {
 });
 
 export const Cards = () => (
-  <EuiFlexGroup className="cards" gutterSize="l">
+  <EuiFlexGroup className={styles.cards} gutterSize="l">
     {cardNodes}
   </EuiFlexGroup>
 );

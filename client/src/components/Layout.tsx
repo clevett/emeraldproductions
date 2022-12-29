@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../imgs/egIcon.png";
 import { ContactOptions } from "./ContactOptions";
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "./Sidebar/Sidebar";
 
 export const Layout = ({ children }: { children: JSX.Element }) => {
   return (
