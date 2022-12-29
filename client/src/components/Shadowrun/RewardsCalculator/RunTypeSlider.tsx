@@ -15,6 +15,8 @@ import {
 } from "../RewardsCalculator/recoil";
 import { getCostModifier } from "./helpers";
 
+import styles from "../styles.module.css";
+
 export const RunTypeSlider = () => {
   const [type, setType] = useRecoilState(runTypeAtom);
   const setPercent = useSetRecoilState(nuyenModifierPercentAtom);
@@ -37,6 +39,7 @@ export const RunTypeSlider = () => {
       </EuiTitle>
       <EuiSpacer size="m" />
       <EuiRange
+        className={`${styles.borderBlack}`}
         aria-describedby={rangeWithLevels}
         aria-label="choose run type"
         id={rangeWithLevels}

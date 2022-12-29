@@ -31,3 +31,8 @@
 .maxH100 {
   max-height: 100;
 }
+
+.borderBlack input {
+  border: 5px solid #141519;
+  border-radius: 15px;
+}

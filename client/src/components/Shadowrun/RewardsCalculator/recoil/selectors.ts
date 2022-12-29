@@ -85,15 +85,6 @@ export const selectNuyen = selector({
 
     const percent = get(nuyenModifierPercentAtom);
 
-    console.table({
-      base,
-      situational,
-      highestDicePool,
-      multiple,
-      sum,
-      percent,
-    });
-
     return sum + sum * percent;
   },
 });

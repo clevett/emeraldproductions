@@ -2,17 +2,17 @@ import { EuiFlexGroup, EuiSpacer } from "@elastic/eui";
 import { RecoilRoot } from "recoil";
 import { LayoutBody } from "../LayoutBody";
 import {
-  MissionChallenge,
-  RunTypeSlider,
-  KarmaCard,
-  NuyenCard,
   GermanRulesSwitch,
-  SurvivedSwitch,
-  ObjectiveSlider,
+  KarmaCard,
+  MissionChallenge,
+  NegotiationHits,
+  NuyenCard,
   NuyenSituationModifiers,
+  ObjectiveSlider,
+  PercentModifierSlider,
+  RunTypeSlider,
+  SurvivedSwitch,
 } from "./RewardsCalculator/";
-import { CostModifier } from "./RewardsCalculator/CostModifier";
-import { NegotiationHits } from "./RewardsCalculator/NegotiationHits";
 
 import styles from "./styles.module.css";
 
@@ -38,7 +38,7 @@ export const RewardsCalculator = () => {
 
             <EuiSpacer size="l" />
 
-            <CostModifier />
+            <PercentModifierSlider />
 
             <EuiSpacer size="l" />
 
@@ -58,7 +58,7 @@ export const RewardsCalculator = () => {
 
             <EuiSpacer size="l" />
 
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 justify-items-center">
               <GermanRulesSwitch />
               <SurvivedSwitch />
             </div>

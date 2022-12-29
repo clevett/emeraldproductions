@@ -10,8 +10,8 @@ import { RunType } from "./data/srRewards";
 import { nuyenModifierPercentAtom, runTypeAtom } from "./recoil";
 
 import { getCostModifier } from "./helpers";
-
-export const CostModifier = () => {
+import styles from "../styles.module.css";
+export const PercentModifierSlider = () => {
   const type = useRecoilValue(runTypeAtom);
   const [percent, setPercent] = useRecoilState(nuyenModifierPercentAtom);
 
@@ -43,7 +43,8 @@ export const CostModifier = () => {
       <EuiSpacer size="m" />
       <EuiRange
         aria-describedby={costModifierSlider}
-        aria-label="choose run type"
+        aria-label="choose nuyen modifier"
+        className={`${styles.borderBlack}`}
         disabled={type.name === RunType.STANDARD}
         fullWidth
         id={costModifierSlider}

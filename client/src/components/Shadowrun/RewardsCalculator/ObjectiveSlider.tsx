@@ -9,6 +9,8 @@ import { useRecoilState } from "recoil";
 import { capitalize } from "../../helpers";
 import { objectiveKarmaAtom } from "../RewardsCalculator/recoil";
 
+import styles from "../styles.module.css";
+
 export const ObjectiveSlider = () => {
   const [karma, setKarma] = useRecoilState(objectiveKarmaAtom);
 
@@ -33,14 +35,15 @@ export const ObjectiveSlider = () => {
       <EuiRange
         aria-describedby={groupRangeWithLevels}
         aria-label="choose run type"
+        className={`${styles.borderBlack}`}
+        fullWidth
         id={groupRangeWithLevels}
         max={2}
         min={0}
         onChange={(e) => onChange(parseInt(e.currentTarget.value))}
-        showTicks
         showRange
+        showTicks
         showValue
-        fullWidth
         tickInterval={1}
         ticks={karmaObjectives.map(({ label, value }) => ({
           label: capitalize(label),

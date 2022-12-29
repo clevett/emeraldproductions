@@ -10,3 +10,5 @@ export * from "./GermanRulesSwitch";
 export * from "./SurvivedSwitch";
 export * from "./ObjectiveSlider";
 export * from "./NuyenSituationModifiers";
+export * from "./PercentModifierSlider";
+export * from "./NegotiationHits";
