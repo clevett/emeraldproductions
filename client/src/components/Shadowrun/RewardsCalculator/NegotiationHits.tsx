@@ -13,7 +13,7 @@ export const NegotiationHits = () => {
   const onBlur = () => {
     const num = parseInt(value);
     if (isNaN(num)) {
-      setValue(`${base}`);
+      setValue(`${(base - 3000) / 100}`);
     } else {
       setBase(getBaseNuyen(num));
     }
