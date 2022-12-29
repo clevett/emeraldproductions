@@ -149,7 +149,7 @@ export const TravelTool = () => {
       </FlexRowGroup>
 
       <EuiSpacer />
-      <hr className="mt-4 mb-4 max-w-7xl min-w-fit" />
+      <hr className="mt-4 mb-4" />
       <EuiSpacer />
 
       <FlexRowGroup>
