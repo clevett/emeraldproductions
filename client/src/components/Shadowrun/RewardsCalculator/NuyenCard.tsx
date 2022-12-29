@@ -12,7 +12,7 @@ export const NuyenCard = () => {
         <h4>Nuyen Reward</h4>
       </EuiTitle>
       <EuiSpacer size="s" />
-      <EuiText>{nuyen}¥</EuiText>
+      <EuiText>{nuyen.toLocaleString()}¥</EuiText>
     </CardPanel>
   );
 };

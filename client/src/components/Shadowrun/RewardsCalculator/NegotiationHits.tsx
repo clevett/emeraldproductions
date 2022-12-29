@@ -36,7 +36,7 @@ export const NegotiationHits = () => {
       <EuiSpacer size="s" />
       <EuiText>
         Base cost may be increased by 100 nuyen per net hit on a Negotiation
-        Test at the start of the run. Current base is {base}.
+        Test at the start of the run. Current base is {base.toLocaleString()}¥.
       </EuiText>
     </div>
   );
