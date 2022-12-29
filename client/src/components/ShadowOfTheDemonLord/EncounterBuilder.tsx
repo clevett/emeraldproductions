@@ -115,14 +115,16 @@ export const EncounterBuilder = () => {
 
       <EuiSpacer />
 
-      <EuiFlexGroup className="flex-row">
+      <FlexRowGroup>
         <EuiFlexItem className="w-10">
           <LevelSelect level={level} onChange={setLevel} />
         </EuiFlexItem>
-        {difficultiesKeys.map((e) => (
-          <Difficulties key={`level-${e}`} difficulty={e} level={level} />
-        ))}
-      </EuiFlexGroup>
+        <>
+          {difficultiesKeys.map((e) => (
+            <Difficulties key={`level-${e}`} difficulty={e} level={level} />
+          ))}
+        </>
+      </FlexRowGroup>
 
       <EuiSpacer />
 

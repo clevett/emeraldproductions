@@ -12,7 +12,7 @@ export const ResetButton = () => {
   );
 
   return (
-    <EuiButton fill color="warning" onClick={() => resetOptions()}>
+    <EuiButton color="primary" onClick={() => resetOptions()}>
       Generate Mission
     </EuiButton>
   );

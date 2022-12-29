@@ -7,6 +7,8 @@ import {
 import { useState } from "react";
 import { Action, Actions, Monster } from "../EncounterBuilder";
 
+import styles from "../styles.module.css";
+
 enum Sort {
   DESC = "desc",
   ASC = "asc",
@@ -99,7 +101,6 @@ export const MonsterTable = ({
 
   return (
     <EuiBasicTable
-      className="bg-transparent"
       columns={columns}
       hasActions={true}
       items={sortData(data)}
