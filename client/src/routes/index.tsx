@@ -16,7 +16,7 @@ import { MissionGenerator, RewardsCalculator } from "../components/Shadowrun";
 
 export const ftdList = [
   {
-    label: "5th Edition Monsters",
+    label: "Fifth Edition Bestiary",
     href: "/five_torches_deep/5e_monsters",
     iconType: fivetorchesdeep,
     element: <FiveTorchesDeepMonsters />,
