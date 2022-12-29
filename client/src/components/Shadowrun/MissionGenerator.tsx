@@ -1,4 +1,4 @@
-import { EuiFlexGroup, EuiSpacer } from "@elastic/eui";
+import { EuiSpacer } from "@elastic/eui";
 import { RecoilRoot } from "recoil";
 
 import { CardPanel } from "../CardPanel";
@@ -7,6 +7,7 @@ import { Options } from "./MissionGenerator/data/srMissions";
 import { ResetButton } from "./MissionGenerator/ResetButton";
 import { NaturalLanguage } from "./MissionGenerator/NaturalLanguage";
 import { MissionCard } from "./MissionGenerator/MissionCard";
+import { FlexRowGroup } from "../Styled/FlexRowGroup";
 export const MissionGenerator = () => {
   const cardNodes = Object.values(Options).map((item, index) => {
     return <MissionCard key={index} item={item} />;
@@ -25,9 +26,7 @@ export const MissionGenerator = () => {
           <ResetButton />
         </CardPanel>
         <EuiSpacer size="m" />
-        <EuiFlexGroup className="flex-wrap wrap" gutterSize="l">
-          {cardNodes}
-        </EuiFlexGroup>
+        <FlexRowGroup>{cardNodes}</FlexRowGroup>
       </RecoilRoot>
     </LayoutBody>
   );

@@ -1,5 +1,5 @@
 import { EuiFieldText, EuiSpacer, EuiTitle } from "@elastic/eui";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   diceKarmaAtom,
@@ -13,6 +13,8 @@ export const MissionChallenge = () => {
   const [dice, setDice] = useRecoilState(opposedDicePoolAtom);
   const setKarma = useSetRecoilState(diceKarmaAtom);
   const setNuyen = useSetRecoilState(diceNuyenAtom);
+
+  useEffect(() => setValue(`${dice}`), [dice]);
 
   const onBlur = () => {
     const num = parseInt(value);

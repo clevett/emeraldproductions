@@ -6,7 +6,7 @@ export const FlexColGroup = ({
   children: JSX.Element | (JSX.Element | null)[];
 }) => {
   return (
-    <EuiFlexGroup className="flex-col justify-start gap-4 flex-wrap">
+    <EuiFlexGroup className="flex-col justify-center gap-4 flex-wrap">
       {children}
     </EuiFlexGroup>
   );

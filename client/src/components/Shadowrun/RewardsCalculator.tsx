@@ -1,6 +1,7 @@
-import { EuiFlexGroup, EuiSpacer } from "@elastic/eui";
+import { EuiSpacer } from "@elastic/eui";
 import { RecoilRoot } from "recoil";
 import { LayoutBody } from "../LayoutBody";
+import { FlexColGroup } from "../Styled/FlexColGroup";
 import {
   GermanRulesSwitch,
   KarmaCard,
@@ -10,6 +11,7 @@ import {
   NuyenSituationModifiers,
   ObjectiveSlider,
   PercentModifierSlider,
+  ResetButton,
   RunTypeSlider,
   SurvivedSwitch,
 } from "./RewardsCalculator/";
@@ -24,7 +26,7 @@ export const RewardsCalculator = () => {
       title="Shadowrun"
     >
       <RecoilRoot>
-        <EuiFlexGroup className="flex-col justify-center gap-4 flex-wrap">
+        <FlexColGroup>
           <div className={`grid text-center ${styles.rewardsColumns}`}>
             <NuyenCard />
 
@@ -62,8 +64,12 @@ export const RewardsCalculator = () => {
               <GermanRulesSwitch />
               <SurvivedSwitch />
             </div>
+
+            <EuiSpacer size="xxl" />
+
+            <ResetButton />
           </div>
-        </EuiFlexGroup>
+        </FlexColGroup>
       </RecoilRoot>
     </LayoutBody>
   );

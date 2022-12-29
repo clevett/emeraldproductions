@@ -4,7 +4,7 @@ import { selectMissionFamily } from "./recoil";
 
 export const ResetButton = () => {
   const resetOptions = useRecoilCallback(
-    ({ set, reset }) =>
+    ({ reset }) =>
       () => {
         reset(selectMissionFamily);
       },

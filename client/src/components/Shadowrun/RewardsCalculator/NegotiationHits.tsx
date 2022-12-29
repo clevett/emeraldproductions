@@ -1,5 +1,5 @@
 import { EuiTitle, EuiSpacer, EuiFieldText, EuiText } from "@elastic/eui";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
 import { getBaseNuyen } from "./helpers";
@@ -8,6 +8,8 @@ import { nuyenBaseAtom } from "./recoil";
 export const NegotiationHits = () => {
   const [value, setValue] = useState("0");
   const [base, setBase] = useRecoilState(nuyenBaseAtom);
+
+  useEffect(() => setValue(`${(base - 3000) / 100}`), [base]);
 
   const onBlur = () => {
     const num = parseInt(value);
