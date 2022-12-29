@@ -71,16 +71,28 @@ export const selectKarma = selector({
   },
 });
 
+const getMultiplier = (s: number, h: number) =>
+  s && h ? s + h : s ? s : h ? h : 1;
+
 export const selectNuyen = selector({
   key: "SELECT_NUYEN_TOTAL",
   get: ({ get }) => {
     const base = get(nuyenBaseAtom);
-    const situational = get(selectNuyenModifiers);
     const highestDicePool = get(diceNuyenAtom);
-    const multiple = situational.length + highestDicePool;
+    const situational = get(selectNuyenModifiers).length;
+    const multiple = getMultiplier(situational, highestDicePool);
     const sum = base * multiple;
 
     const percent = get(nuyenModifierPercentAtom);
+
+    console.table({
+      base,
+      situational,
+      highestDicePool,
+      multiple,
+      sum,
+      percent,
+    });
 
     return sum + sum * percent;
   },

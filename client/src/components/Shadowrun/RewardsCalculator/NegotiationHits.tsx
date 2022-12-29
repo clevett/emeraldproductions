@@ -19,7 +19,7 @@ export const NegotiationHits = () => {
   };
 
   return (
-    <div className="grid w-fill justify-center content-center">
+    <div className="grid w-fill justify-items-center content-center">
       <EuiTitle className="text-center" size="s">
         <h5>Negotiation Hits</h5>
       </EuiTitle>

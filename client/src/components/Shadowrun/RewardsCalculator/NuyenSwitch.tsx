@@ -8,6 +8,7 @@ export const NuyenSwitch = ({ name, description }: Nuyen) => {
 
   return (
     <EuiSwitch
+      className="text-left"
       aria-describedby={name}
       checked={flag}
       label={description}

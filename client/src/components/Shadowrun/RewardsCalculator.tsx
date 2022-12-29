@@ -25,18 +25,12 @@ export const RewardsCalculator = () => {
     >
       <RecoilRoot>
         <EuiFlexGroup className="flex-col justify-center gap-4 flex-wrap">
-          <div
-            className={`grid text-center max-w-xs min-w-fit justify-center ${styles.maxW800} ${styles.minW600}`}
-          >
+          <div className={`grid text-center ${styles.rewardsColumns}`}>
             <NuyenCard />
 
             <EuiSpacer size="l" />
 
             <RunTypeSlider />
-
-            <EuiSpacer size="l" />
-
-            <MissionChallenge />
 
             <EuiSpacer size="l" />
 
@@ -51,16 +45,23 @@ export const RewardsCalculator = () => {
             <NegotiationHits />
           </div>
 
-          <div
-            className={`grid text-center max-w-xs min-w-fit justify-content-center ${styles.maxW800} ${styles.minW600} ${styles.karmaGrid}`}
-          >
+          <div className={`grid text-center ${styles.rewardsColumns}`}>
             <KarmaCard />
 
-            <GermanRulesSwitch />
+            <EuiSpacer size="l" />
 
-            <SurvivedSwitch />
+            <MissionChallenge />
+
+            <EuiSpacer size="l" />
 
             <ObjectiveSlider />
+
+            <EuiSpacer size="l" />
+
+            <div className="grid grid-cols-2">
+              <GermanRulesSwitch />
+              <SurvivedSwitch />
+            </div>
           </div>
         </EuiFlexGroup>
       </RecoilRoot>
