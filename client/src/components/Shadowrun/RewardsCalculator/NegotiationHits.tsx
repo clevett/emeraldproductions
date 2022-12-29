@@ -2,7 +2,6 @@ import { EuiTitle, EuiSpacer, EuiFieldText, EuiText } from "@elastic/eui";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 
-import styles from "../styles.module.css";
 import { getBaseNuyen } from "./helpers";
 import { nuyenBaseAtom } from "./recoil";
 
@@ -20,7 +19,7 @@ export const NegotiationHits = () => {
   };
 
   return (
-    <div className={`grid w-fill ${styles.maxW350}`}>
+    <div className="grid w-fill justify-center content-center">
       <EuiTitle className="text-center" size="s">
         <h5>Negotiation Hits</h5>
       </EuiTitle>
@@ -30,7 +29,7 @@ export const NegotiationHits = () => {
         className="text-center"
         aria-label="Enter the highest opposed dice pool"
         onChange={(e) => setValue(e.target.value)}
-        placeholder="14"
+        placeholder="0"
         value={value}
       />
       <EuiSpacer size="s" />

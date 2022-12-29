@@ -18,6 +18,22 @@
   min-width: 360px;
 }
 
+.maxW800 {
+  max-width: 800px;
+}
+
+.minW600 {
+  min-width: 600px;
+}
+
 .gridRow {
   grid-template-rows: repeat(3, 1fr);
+}
+
+.karmaGrid {
+  grid-template-rows: repeat(3, minmax(0, fit-content)) 1fr;
+}
+
+.maxH100 {
+  max-height: 100;
 }

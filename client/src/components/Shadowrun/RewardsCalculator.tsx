@@ -1,7 +1,6 @@
-import { EuiFlexGroup, EuiFlexItem } from "@elastic/eui";
+import { EuiFlexGroup, EuiSpacer } from "@elastic/eui";
 import { RecoilRoot } from "recoil";
 import { LayoutBody } from "../LayoutBody";
-import { FlexColGroup } from "../Styled/FlexColGroup";
 import {
   MissionChallenge,
   RunTypeSlider,
@@ -25,50 +24,45 @@ export const RewardsCalculator = () => {
       title="Shadowrun"
     >
       <RecoilRoot>
-        <FlexColGroup>
-          <EuiFlexGroup className="gap-4 text-center">
-            <EuiFlexItem>
-              <NuyenCard />
-            </EuiFlexItem>
-            <EuiFlexItem>
-              <KarmaCard />
-            </EuiFlexItem>
-          </EuiFlexGroup>
+        <EuiFlexGroup className="flex-col justify-center gap-4 flex-wrap">
+          <div
+            className={`grid text-center max-w-xs min-w-fit justify-center ${styles.maxW800} ${styles.minW600}`}
+          >
+            <NuyenCard />
 
-          <EuiFlexGroup className="gap-4 text-center flex-wrap min-w-fit">
-            <EuiFlexItem className={`max-w-xs ${styles.min350}`}>
-              <RunTypeSlider />
-            </EuiFlexItem>
+            <EuiSpacer size="l" />
 
-            <EuiFlexItem className="max-w-xs min-w-fit">
-              <MissionChallenge />
-            </EuiFlexItem>
+            <RunTypeSlider />
 
-            <EuiFlexItem className="max-w-xs min-w-fit">
-              <NuyenSituationModifiers />
-            </EuiFlexItem>
+            <EuiSpacer size="l" />
 
-            <EuiFlexItem className="max-w-xs min-w-fit">
-              <GermanRulesSwitch />
-            </EuiFlexItem>
+            <MissionChallenge />
 
-            <EuiFlexItem className="max-w-xs min-w-fit">
-              <SurvivedSwitch />
-            </EuiFlexItem>
+            <EuiSpacer size="l" />
 
-            <EuiFlexItem className="max-w-xs min-w-fit">
-              <ObjectiveSlider />
-            </EuiFlexItem>
+            <NuyenSituationModifiers />
 
-            <EuiFlexItem className="max-w-xs min-w-fit">
-              <CostModifier />
-            </EuiFlexItem>
+            <EuiSpacer size="l" />
 
-            <EuiFlexItem className="max-w-xs min-w-fit">
-              <NegotiationHits />
-            </EuiFlexItem>
-          </EuiFlexGroup>
-        </FlexColGroup>
+            <CostModifier />
+
+            <EuiSpacer size="l" />
+
+            <NegotiationHits />
+          </div>
+
+          <div
+            className={`grid text-center max-w-xs min-w-fit justify-content-center ${styles.maxW800} ${styles.minW600} ${styles.karmaGrid}`}
+          >
+            <KarmaCard />
+
+            <GermanRulesSwitch />
+
+            <SurvivedSwitch />
+
+            <ObjectiveSlider />
+          </div>
+        </EuiFlexGroup>
       </RecoilRoot>
     </LayoutBody>
   );

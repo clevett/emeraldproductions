@@ -9,7 +9,6 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import { RunType } from "./data/srRewards";
 import { nuyenModifierPercentAtom, runTypeAtom } from "./recoil";
 
-import styles from "../styles.module.css";
 import { getCostModifier } from "./helpers";
 
 export const CostModifier = () => {
@@ -37,7 +36,7 @@ export const CostModifier = () => {
   };
 
   return (
-    <div className={`grid w-fill ${styles.minW360}`}>
+    <div className={`grid w-fill`}>
       <EuiTitle className="text-center" size="s">
         <h5 id={costModifierSlider}>Nuyen Modifiers</h5>
       </EuiTitle>

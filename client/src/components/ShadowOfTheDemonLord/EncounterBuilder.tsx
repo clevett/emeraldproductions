@@ -1,5 +1,4 @@
 import {
-  EuiFlexGroup,
   EuiFlexItem,
   EuiLoadingSpinner,
   EuiSpacer,

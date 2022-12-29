@@ -3,15 +3,20 @@ import { useRecoilValue } from "recoil";
 import { CardPanel } from "../../CardPanel";
 import { selectKarma } from "../RewardsCalculator/recoil";
 
+import styles from "../styles.module.css";
+
 export const KarmaCard = () => {
   const karma = useRecoilValue(selectKarma);
   return (
-    <CardPanel>
-      <EuiTitle size="s">
-        <h4>Karma Reward</h4>
-      </EuiTitle>
-      <EuiSpacer size="s" />
-      <EuiText>{karma}</EuiText>
-    </CardPanel>
+    <div className={`${styles.maxH100}`}>
+      {" "}
+      <CardPanel>
+        <EuiTitle size="s">
+          <h4>Karma Reward</h4>
+        </EuiTitle>
+        <EuiSpacer size="s" />
+        <EuiText>{karma}</EuiText>
+      </CardPanel>
+    </div>
   );
 };

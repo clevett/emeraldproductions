@@ -26,7 +26,7 @@ export const MissionChallenge = () => {
   };
 
   return (
-    <div className="grid w-fill">
+    <div className="grid w-fill justify-center content-center">
       <EuiTitle className="text-center" size="s">
         <h5>Highest Opposing Dice Pool</h5>
       </EuiTitle>
