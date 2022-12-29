@@ -4,6 +4,8 @@ export const getDicePoolKarma = (dice: number) => Math.floor(dice / 6);
 
 export const getDicePoolNuyen = (dice: number) => Math.floor(dice / 4);
 
+export const getBaseNuyen = (negotiation: number) => 3000 + negotiation * 100;
+
 export const getCostModifier = (type: Run, num: number) => {
   const decimal = num / 100;
   switch (type) {

@@ -9,6 +9,7 @@ import {
   survivedAtom,
   diceNuyenAtom,
   nuyenModifierPercentAtom,
+  nuyenBaseAtom,
 } from "./atoms";
 
 export const selectNuyenModifier = selectorFamily({
@@ -73,10 +74,10 @@ export const selectKarma = selector({
 export const selectNuyen = selector({
   key: "SELECT_NUYEN_TOTAL",
   get: ({ get }) => {
-    const base = 3000;
-    const modifiers = get(selectNuyenModifiers);
-    const diceModifier = get(diceNuyenAtom);
-    const multiple = modifiers.length + diceModifier;
+    const base = get(nuyenBaseAtom);
+    const situational = get(selectNuyenModifiers);
+    const highestDicePool = get(diceNuyenAtom);
+    const multiple = situational.length + highestDicePool;
     const sum = base * multiple;
 
     const percent = get(nuyenModifierPercentAtom);
