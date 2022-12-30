@@ -5,9 +5,22 @@ import { NPC } from "./data/npcs";
 
 import styles from "./styles.module.css";
 
-type CardProps = { npc: NPC; onClick: () => void };
+type CardProps = { npc: NPC; children: JSX.Element };
 
-const FrontCard = ({ npc, onClick }: CardProps) => {
+const Footer = ({ onClick }: { onClick: () => void }) => {
+  return (
+    <div className={`${styles.footer}`}>
+      <EuiButtonIcon
+        className="justify-self-end"
+        onClick={onClick}
+        iconType="refresh"
+        aria-label={`flip the card`}
+      />
+    </div>
+  );
+};
+
+const FrontCard = ({ npc, children }: CardProps) => {
   return (
     <div className={`${styles.card}`}>
       <div className={`${styles.header}`}>
@@ -19,35 +32,24 @@ const FrontCard = ({ npc, onClick }: CardProps) => {
           {npc.archtype}, {npc.tags.join(", ")}
         </p>
         <p className="text-lg">Connection: {npc.connection}</p>
-        <div className={`${styles.footer}`}>
-          <EuiButtonIcon
-            aria-label={`flip the card`}
-            className="justify-self-end"
-            iconType="refresh"
-            onClick={onClick}
-          />
-        </div>
+        {children}
       </div>
     </div>
   );
 };
 
-const BackCard = ({ onClick, npc }: CardProps) => {
+const BackCard = ({ npc, children }: CardProps) => {
   return (
     <div className={`${styles.card} ${styles.back} gap-2`}>
-      <h4 className="text-2xl font-semibold">Description</h4>
-      <p className={`text-lg italic ${styles.textEllipsis}`}>
-        {npc.alias.join(", ")}
-      </p>
-      <p className="text-lg">{npc.description}</p>
-      <div className={`${styles.footer}`}>
-        <EuiButtonIcon
-          className="justify-self-end"
-          onClick={onClick}
-          iconType="refresh"
-          aria-label={`flip the card`}
-        />
+      <div>Stats</div>
+      <div className={`${styles.description} gap-2`}>
+        <h4 className="text-2xl font-semibold">Description</h4>
+        <p className={`text-lg italic ${styles.textEllipsis}`}>
+          {npc.alias.join(", ")}
+        </p>
+        <p className="text-lg">{npc.description}</p>
       </div>
+      {children}
     </div>
   );
 };
@@ -58,8 +60,12 @@ export const Card = ({ npc }: { npc: NPC }) => {
   return (
     <EuiFlexItem grow={false} onClick={handleClick}>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-        <FrontCard npc={npc} onClick={handleClick} />
-        <BackCard npc={npc} onClick={handleClick} />
+        <FrontCard npc={npc}>
+          <Footer onClick={handleClick} />
+        </FrontCard>
+        <BackCard npc={npc}>
+          <Footer onClick={handleClick} />
+        </BackCard>
       </ReactCardFlip>
     </EuiFlexItem>
   );

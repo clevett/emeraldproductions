@@ -3,10 +3,15 @@ import bishada from "../imgs/bishada.png";
 
 enum Archtypes {
   FIXER = "Fixer",
+  JOHNSON = "Johnson",
+  SHADOWRUNNER = "Shadowrunner",
 }
 
 enum tags {
+  FIXER = "Fixer",
   GRAY_WOLVES = "Grey Wolves",
+  JOHNSON = "Johnson",
+  SHADOWRUNNER = "Shadowrunner",
   SHADOWRUNNERS = "Shadowrunners",
   TECHNOMANCER = "Technomancer",
   WUXING = "Wuxing",
@@ -28,8 +33,8 @@ export const npcs = [
   },
   {
     alias: [`Benjamin Lee`],
-    archtype: Archtypes.FIXER,
-    connection: 4,
+    archtype: Archtypes.SHADOWRUNNER,
+    connection: 3,
     description:
       "Bishada is the leader of the GKings (Grid Kings), a techonmancer tribe. They promote universal Matrix access, technomancer rights, and expose malicious acts against the technomancers by corporate interests.",
     img: bishada,
