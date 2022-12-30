@@ -45,12 +45,20 @@ export const npcs = [
     connection: 4,
     professional: 7,
     description:
-      "Retired Shadowrunner from Turkey. Married to Kamil with three adult children.",
+      "Ahmet was born in Istanbul were he was trained as a mercenary for the Grey Wolves. He married his husband, Kamil, young and raised three children together (Taskin, Said, Zhara). \n He entered the shadows as a augmented street samurai where the paycheck was bigger if no less dangerous than mercenary work. ",
     img: asad,
     name: "Asad",
     tags: [tags.GRAY_WOLVES, tags.SHADOWRUNNERS],
     type: Type.SERVICES,
-    flaws: "Adulterer",
+    flaws: ["Adulterer"],
+    virtues: ["Professional", "Protective"],
+    knowledge: [
+      "[Sprawl] Istanbul",
+      "Corporate Personalities",
+      "Mercenaries",
+      "Shadowrunner Tricks",
+    ],
+    language: ["Turkish", "Arabic", "English"],
   },
   {
     alias: [`Benjamin Lee (UCAS), Levy Bishop (Wuxing)`],
@@ -63,6 +71,14 @@ export const npcs = [
     name: "Bishada",
     tags: [tags.TECHNOMANCER, tags.WUXING],
     type: Type.LEGWORK,
-    flaws: "Vanity, Incompetent outside Matrix",
+    flaws: ["Vanity", "Incompetent outside Matrix"],
+    virtues: ["Empathetic", "Loyal"],
+    knowledge: [
+      "A.I.",
+      "Hacker Groups",
+      "Security Systems",
+      "Technomancer Tribes",
+    ],
+    language: ["English", "Cantonese"],
   },
 ];

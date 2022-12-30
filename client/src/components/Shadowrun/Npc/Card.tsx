@@ -16,9 +16,7 @@ const Footer = ({
 }) => {
   return (
     <div className={`${styles.footer}`}>
-      <EuiToolTip position="top" content="Here is some tooltip text">
-        <span>Type: {type}</span>
-      </EuiToolTip>
+      <span>Type: {type}</span>
       <EuiButtonIcon
         className="justify-self-end"
         onClick={onClick}
@@ -53,10 +51,12 @@ const BackCard = ({ npc, children }: CardProps) => {
     <div className={`${styles.card} ${styles.back} gap-2`}>
       <div className={`${styles.description} gap-2`}>
         <h4 className="text-2xl font-semibold">Description</h4>
-        <p className={`text-lg italic ${styles.textEllipsis}`}>
-          {npc.alias.join(", ")}
-        </p>
+        <p className={`text-lg italic`}>{npc.alias.join(", ")}</p>
         <p className="text-lg">{npc.description}</p>
+        <p className={`text-lg`}>Flaws: {npc.flaws.join(", ")}</p>
+        <p className={`text-lg`}>Virtues: {npc.virtues.join(", ")}</p>
+        <p className={`text-lg`}>Knowledge: {npc.knowledge.join(", ")}</p>
+        <p className={`text-lg`}>Language: {npc.language.join(", ")}</p>
       </div>
       {children}
     </div>
