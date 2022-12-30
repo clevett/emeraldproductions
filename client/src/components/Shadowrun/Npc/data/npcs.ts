@@ -50,7 +50,7 @@ export const npcs = [
     name: "Asad",
     tags: [tags.GRAY_WOLVES, tags.SHADOWRUNNERS],
     type: Type.SERVICES,
-    flaws: ["Adulterer"],
+    flaws: ["Adulterer", "Untreated PTSD"],
     virtues: ["Professional", "Protective"],
     knowledge: [
       "[Sprawl] Istanbul",
@@ -72,13 +72,8 @@ export const npcs = [
     tags: [tags.TECHNOMANCER, tags.WUXING],
     type: Type.LEGWORK,
     flaws: ["Vanity", "Incompetent outside Matrix"],
-    virtues: ["Empathetic", "Loyal"],
-    knowledge: [
-      "A.I.",
-      "Hacker Groups",
-      "Security Systems",
-      "Technomancer Tribes",
-    ],
+    virtues: ["Compassionate", "Loyal"],
+    knowledge: ["A.I.", "Hacker Groups", "Security Systems", "Resonance"],
     language: ["English", "Cantonese"],
   },
 ];

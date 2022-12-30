@@ -17,11 +17,11 @@ const App = () => {
           <Layout>
             <Routes>
               <Route path="/" element={<About />} />
-              {routes.map(({ href, element }, index) => (
+              {routes.map(({ path, element }, index) => (
                 <Route
-                  path={href}
                   element={element}
-                  key={`route-${href}-${index}`}
+                  key={`route-${path}-${index}`}
+                  path={path}
                 />
               ))}
             </Routes>

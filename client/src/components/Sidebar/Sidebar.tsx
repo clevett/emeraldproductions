@@ -14,12 +14,12 @@ export const Sidebar = () => {
   const { pathname } = useLocation();
 
   const getListItem = (list: typeof ftdList[0] | typeof shadowrunList[0]) => {
-    const { label, href, iconType } = list;
+    const { label, path, iconType } = list;
     return (
-      <Link to={href} key={`sidebar-${href}`}>
+      <Link to={path} key={`sidebar-${path}`}>
         <EuiListGroupItem
           iconType={iconType}
-          isActive={pathname === href}
+          isActive={pathname === path}
           label={label}
         >
           {label}

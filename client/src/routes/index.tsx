@@ -23,13 +23,13 @@ import {
 export const ftdList = [
   {
     label: "Fifth Edition Bestiary",
-    href: "/five_torches_deep/5e_monsters",
+    path: "/five_torches_deep/5e_monsters",
     iconType: fivetorchesdeep,
     element: <FiveTorchesDeepMonsters />,
   },
   {
     label: "Random Map Generator",
-    href: "/five_torches_deep/random_map_generator",
+    path: "/five_torches_deep/random_map_generator",
     iconType: fivetorchesdeep,
     element: <RandomMapGenerator />,
   },
@@ -38,19 +38,19 @@ export const ftdList = [
 export const sotdlList = [
   {
     label: "Encounter Builder",
-    href: "/shadow_of_the_demon_lord/encounter_builder",
+    path: "/shadow_of_the_demon_lord/encounter_builder",
     iconType: sotdl,
     element: <EncounterBuilder />,
   },
   {
     label: "Rewards Generator",
-    href: "/shadow_of_the_demon_lord/rewards_generator",
+    path: "/shadow_of_the_demon_lord/rewards_generator",
     iconType: sotdl,
     element: <RewardsGenerator />,
   },
   {
     label: "Travel Tool",
-    href: "/shadow_of_the_demon_lord/travel_tool",
+    path: "/shadow_of_the_demon_lord/travel_tool",
     iconType: sotdl,
     element: <TravelTool />,
   },
@@ -59,19 +59,19 @@ export const sotdlList = [
 export const shadowrunList = [
   {
     label: "Mission Generator",
-    href: "/shadowrun/mission_creation",
+    path: "/shadowrun/mission_creation",
     iconType: shadowrun5e,
     element: <MissionGenerator />,
   },
   {
     label: "Rewards Calculator",
-    href: "/shadowrun/rewards_calculator",
+    path: "/shadowrun/rewards_calculator",
     iconType: shadowrun5e,
     element: <RewardsCalculator />,
   },
   {
     label: "Npcs",
-    href: "/shadowrun/npcs",
+    path: "/shadowrun/npcs",
     iconType: shadowrun6e,
     element: <NpcCards />,
   },
