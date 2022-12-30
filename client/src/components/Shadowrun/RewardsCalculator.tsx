@@ -23,7 +23,7 @@ export const RewardsCalculator = () => {
     <LayoutBody
       DriveThruId="115985"
       subtitle="Rewards Calculator"
-      title="Shadowrun"
+      title="Shadowrun 5th Edition"
     >
       <RecoilRoot>
         <FlexColGroup>

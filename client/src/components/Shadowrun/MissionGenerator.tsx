@@ -17,7 +17,7 @@ export const MissionGenerator = () => {
     <LayoutBody
       DriveThruId="115985"
       subtitle="Mission Generator"
-      title="Shadowrun"
+      title="Shadowrun 5th Edition"
     >
       <RecoilRoot>
         <CardPanel>

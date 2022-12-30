@@ -1,6 +1,8 @@
 import fivetorchesdeep from "../imgs/ttrpgs/fivetorchesdeep.jpg";
 import sotdl from "../imgs/ttrpgs/sotdl.png";
 import shadowrun5e from "../imgs/ttrpgs/shadowrun5e.png";
+import shadowrun6e from "../imgs/ttrpgs/shadowrun6e.png";
+
 import {
   FiveTorchesDeepMonsters,
   RandomMapGenerator,
@@ -12,7 +14,11 @@ import {
   TravelTool,
 } from "../components/ShadowOfTheDemonLord";
 
-import { MissionGenerator, RewardsCalculator } from "../components/Shadowrun";
+import {
+  MissionGenerator,
+  NpcCards,
+  RewardsCalculator,
+} from "../components/Shadowrun";
 
 export const ftdList = [
   {
@@ -62,6 +68,12 @@ export const shadowrunList = [
     href: "/shadowrun/rewards_calculator",
     iconType: shadowrun5e,
     element: <RewardsCalculator />,
+  },
+  {
+    label: "Npcs",
+    href: "/shadowrun/npcs",
+    iconType: shadowrun6e,
+    element: <NpcCards />,
   },
 ];
 

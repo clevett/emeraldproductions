@@ -50,7 +50,7 @@ export const Sidebar = () => {
         {sotdlList.map((l) => getListItem(l))}
       </EuiListGroup>
       <EuiTitle size="xs">
-        <h2 key={2}>Shadowrun 5th Edition</h2>
+        <h2 key={2}>Shadowrun</h2>
       </EuiTitle>
       <EuiListGroup color="primary" size="s">
         {shadowrunList.map((l) => getListItem(l))}
