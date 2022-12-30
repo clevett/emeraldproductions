@@ -19,27 +19,50 @@ enum tags {
 
 export type NPC = typeof npcs[number];
 
+export enum Type {
+  FAVORS = "Personal Favors",
+  LEGWORK = "Legwork",
+  NETWORKING = "Networking",
+  SERVICES = "Shadow Service",
+  SUPPORT = "Support",
+  SWAG = "Swag",
+}
+
+export enum Descriptions {
+  FAVORS = "This also is a special kind of favor. These contacts have power, influence, or are in a position of  authority. You want them to use that power/influence/authority to bend the rules, turn a blind eye, or whisper in someone’s ear a suggestion.",
+
+  LEGWORK = "Legwork is chasing down the data trail and answering questions that may not be found on the Matrix.",
+  NETWORKING = "Networking is all about putting the right people in the  same room, getting them to talk, and hopefully launching  them on a mutually beneficial relationship.",
+  SERVICES = "This is a special kind of favor. Contacts who perform this kind of service have a job to do, and  they’re using their skills on your behalf for a form of payment besides the usual cash. ",
+  SUPPORT = "These contacts may not have power, a job that can be exploited, or money you can borrow, but dammit they’ve got your back. Some may have some talent, a cool toy that you don’t know how to use, or maybe they just have a place for you to crash. More often support contacts are the friends and minor contacts that are not necessarily a big part of the shadowrunner’s business, but play a role in the other aspects of his life.",
+  SWAG = "You want something, other people have it. With any  luck, your contact is one of these other people. You  also might be able to sell them some goods you picked up while on the job.",
+}
+
 export const npcs = [
   {
-    alias: [`Ahmet Ali Sezer`, `Volkan "Terminator" Galip`],
+    alias: [`Ahmet Ali Sezer (Turkey)`, `Volkan "Terminator" Galip (UCAS)`],
     archtype: Archtypes.FIXER,
     connection: 4,
+    professional: 7,
     description:
       "Retired Shadowrunner from Turkey. Married to Kamil with three adult children.",
     img: asad,
     name: "Asad",
     tags: [tags.GRAY_WOLVES, tags.SHADOWRUNNERS],
+    type: Type.SERVICES,
     flaws: "Adulterer",
   },
   {
-    alias: [`Benjamin Lee`],
+    alias: [`Benjamin Lee (UCAS), Levy Bishop (Wuxing)`],
     archtype: Archtypes.SHADOWRUNNER,
     connection: 3,
+    professional: 5,
     description:
-      "Bishada is the leader of the GKings (Grid Kings), a techonmancer tribe. They promote universal Matrix access, technomancer rights, and expose malicious acts against the technomancers by corporate interests.",
+      "Levy Bishop is a Wuxing security spider from Seattle, UCAS who turned to the shadows after his mother's death in a Wuxing factory explosion. As Bishada he established the GKings (Grid Kings), a techonmancer tribe. They promote universal Matrix access, technomancer rights, and expose malicious acts against the technomancers by corporate interests.",
     img: bishada,
     name: "Bishada",
     tags: [tags.TECHNOMANCER, tags.WUXING],
+    type: Type.LEGWORK,
     flaws: "Vanity, Incompetent outside Matrix",
   },
 ];

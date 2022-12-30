@@ -1,4 +1,4 @@
-import { EuiFlexItem, EuiButtonIcon } from "@elastic/eui";
+import { EuiFlexItem, EuiButtonIcon, EuiToolTip } from "@elastic/eui";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { NPC } from "./data/npcs";
@@ -7,9 +7,18 @@ import styles from "./styles.module.css";
 
 type CardProps = { npc: NPC; children: JSX.Element };
 
-const Footer = ({ onClick }: { onClick: () => void }) => {
+const Footer = ({
+  type,
+  onClick,
+}: {
+  type: NPC["type"];
+  onClick: () => void;
+}) => {
   return (
     <div className={`${styles.footer}`}>
+      <EuiToolTip position="top" content="Here is some tooltip text">
+        <span>Type: {type}</span>
+      </EuiToolTip>
       <EuiButtonIcon
         className="justify-self-end"
         onClick={onClick}
@@ -26,12 +35,13 @@ const FrontCard = ({ npc, children }: CardProps) => {
       <div className={`${styles.header}`}>
         <img src={npc.img} alt={npc.name} />
       </div>
-      <div className={`${styles.content} gap-2`}>
+      <div className={`${styles.front} gap-2`}>
         <h4 className="text-2xl font-semibold">{npc.name}</h4>
         <p className={`text-lg italic ${styles.textEllipsis}`}>
-          {npc.archtype}, {npc.tags.join(", ")}
+          {npc.archtype}, {npc.tags.sort().join(", ")}
         </p>
         <p className="text-lg">Connection: {npc.connection}</p>
+        <p className="text-lg">Professional Rating: {npc.professional}</p>
         {children}
       </div>
     </div>
@@ -41,7 +51,6 @@ const FrontCard = ({ npc, children }: CardProps) => {
 const BackCard = ({ npc, children }: CardProps) => {
   return (
     <div className={`${styles.card} ${styles.back} gap-2`}>
-      <div>Stats</div>
       <div className={`${styles.description} gap-2`}>
         <h4 className="text-2xl font-semibold">Description</h4>
         <p className={`text-lg italic ${styles.textEllipsis}`}>
@@ -61,10 +70,10 @@ export const Card = ({ npc }: { npc: NPC }) => {
     <EuiFlexItem grow={false} onClick={handleClick}>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
         <FrontCard npc={npc}>
-          <Footer onClick={handleClick} />
+          <Footer type={npc.type} onClick={handleClick} />
         </FrontCard>
         <BackCard npc={npc}>
-          <Footer onClick={handleClick} />
+          <Footer type={npc.type} onClick={handleClick} />
         </BackCard>
       </ReactCardFlip>
     </EuiFlexItem>

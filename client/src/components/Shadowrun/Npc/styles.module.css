@@ -23,7 +23,7 @@
   transform: scaleX(1.02);
 }
 
-.content {
+.front {
   display: grid;
   grid-template-rows: auto auto 1fr 24px;
   height: 100%;
@@ -39,11 +39,12 @@
 
 .footer {
   display: grid;
-  align-items: end;
+  grid-auto-flow: column;
+  align-items: center;
 }
 
 .back {
-  grid-template-rows: 50px 1fr 24px;
+  grid-template-rows: 1fr 24px;
   padding: 16px;
 }
 
