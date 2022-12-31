@@ -10,34 +10,24 @@ import { capitalize } from "../../helpers";
 export const ZoneCard = ({
   title,
   content,
+  onChange,
 }: {
   title: string;
   content: string;
+  onChange?: () => void;
 }) => {
-  //const [selected, setSelected] = useRecoilState(selectMission(item));
-
-  const handleClick = () => {
-    console.log("Sector");
-    // const result = getOption(item);
-    // if (result) {
-    //   setSelected(result);
-    // }
-  };
-
-  //const note = selected?.note;
-
   return (
     <EuiFlexItem className={`${styles.min250} ${styles.minW250}`}>
       <EuiCard
         icon={<EuiIcon size="xxl" type={"cross"} />}
         title={capitalize(title)}
         description={content}
-        onClick={handleClick}
+        onClick={onChange}
         display="subdued"
         footer={
           <EuiButtonIcon
             className="justify-self-end"
-            onClick={handleClick}
+            onClick={onChange}
             iconType="refresh"
             aria-label={`get a new ${title}`}
           />
