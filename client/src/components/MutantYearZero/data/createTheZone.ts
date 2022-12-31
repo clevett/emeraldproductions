@@ -16,6 +16,8 @@ export enum Environments {
 
 export type Environment = `${Environments}`;
 
+export type Sector = typeof sectorEnvironments[number];
+
 export const sectorEnvironments = [
   {
     result: [11, 12],

@@ -1,4 +1,3 @@
-import { useRecoilState } from "recoil";
 import { EuiFlexItem, EuiCard, EuiIcon, EuiButtonIcon } from "@elastic/eui";
 
 import styles from "../styles.module.css";
