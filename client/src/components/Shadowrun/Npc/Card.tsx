@@ -1,4 +1,4 @@
-import { EuiFlexItem, EuiButtonIcon, EuiToolTip } from "@elastic/eui";
+import { EuiFlexItem, EuiButtonIcon } from "@elastic/eui";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { NPC } from "./data/npcs";
@@ -6,6 +6,8 @@ import { NPC } from "./data/npcs";
 import styles from "./styles.module.css";
 
 type CardProps = { npc: NPC; children: JSX.Element };
+
+const joinList = (list: string[]) => list.sort().join(", ");
 
 const Footer = ({
   type,
@@ -36,7 +38,7 @@ const FrontCard = ({ npc, children }: CardProps) => {
       <div className={`${styles.front} gap-2`}>
         <h4 className="text-2xl font-semibold">{npc.name}</h4>
         <p className={`text-lg italic ${styles.textEllipsis}`}>
-          {npc.archtype}, {npc.tags.sort().join(", ")}
+          {joinList(npc.tags)}
         </p>
         <p className="text-lg">Connection: {npc.connection}</p>
         <p className="text-lg">Professional Rating: {npc.professional}</p>
@@ -51,12 +53,12 @@ const BackCard = ({ npc, children }: CardProps) => {
     <div className={`${styles.card} ${styles.back} gap-2`}>
       <div className={`${styles.description} gap-2`}>
         <h4 className="text-2xl font-semibold">Description</h4>
-        <p className={`text-lg italic`}>{npc.alias.join(", ")}</p>
+        <p className={`text-lg italic`}>{joinList(npc.alias)}</p>
         <p className="text-lg">{npc.description}</p>
-        <p className={`text-lg`}>Flaws: {npc.flaws.join(", ")}</p>
-        <p className={`text-lg`}>Virtues: {npc.virtues.join(", ")}</p>
-        <p className={`text-lg`}>Knowledge: {npc.knowledge.join(", ")}</p>
-        <p className={`text-lg`}>Language: {npc.language.join(", ")}</p>
+        <p className={`text-lg`}>Flaws: {joinList(npc.flaws)}</p>
+        <p className={`text-lg`}>Virtues: {joinList(npc.virtues)}</p>
+        <p className={`text-lg`}>Knowledge: {joinList(npc.knowledge)}</p>
+        <p className={`text-lg`}>Language: {joinList(npc.language)}</p>
       </div>
       {children}
     </div>

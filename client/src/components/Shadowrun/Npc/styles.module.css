@@ -16,6 +16,8 @@
 .header {
   border-radius: 8px 8px 0px 0px;
   overflow: hidden;
+  min-width: 373px;
+  min-height: 373px;
 }
 
 .header img {
