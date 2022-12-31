@@ -3,6 +3,7 @@ import { FlexColGroup } from "../../Styled/FlexColGroup";
 import { getSector } from "../helpers";
 import { sectorAtom } from "../recoil";
 import { Artifact } from "./Artifact";
+import { Mood } from "./Mood";
 import { Rot } from "./Rot";
 import { Ruin } from "./Ruin";
 import { Threat } from "./Threat";
@@ -18,10 +19,11 @@ export const Sector = () => {
         onChange={() => setSector(getSector())}
         title="Environment"
       />
-      <Ruin hasRuin={sector.ruin} environment={sector.environment} />
-      <Threat hasThreat={sector.threat} />
-      <Artifact hasArtifact={sector.artifact} />
+      <Ruin />
+      <Threat />
+      <Artifact />
       <Rot />
+      <Mood />
     </FlexColGroup>
   );
 };
