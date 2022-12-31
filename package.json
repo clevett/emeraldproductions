@@ -5,7 +5,7 @@
   "main": "index.js",
   "engines": {
     "node": "14.x",
-    "npm": "6.x"
+    "npm": "9.x"
   },
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -26,6 +26,7 @@
     "nodemailer": "^6.4.8",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
+    "react-card-flip": "^1.2.0",
     "react-ga": "^3.1.2"
   }
 }

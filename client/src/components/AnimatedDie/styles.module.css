@@ -1,0 +1,157 @@
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10rem);
+    transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10rem);
+    transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@-webkit-keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10rem);
+    transform: translateY(-10rem);
+  }
+  80% {
+    -webkit-transform: translateY(1rem);
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10rem);
+    transform: translateY(-10rem);
+  }
+  80% {
+    -webkit-transform: translateY(1rem);
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+    moz-transform: rotateY(0deg);
+    ms-transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+    moz-transform: rotateY(360deg);
+    ms-transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+
+.imageSpin {
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  -webkit-animation-name: spin;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 5s;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.rotate {
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.rollDie {
+  position: relative;
+  x-transition: all 1s ease-in-out;
+  animation: rollDie 1s ease-in-out;
+
+  /* @extend .rotate; */
+}
+
+@keyframes rollDie {
+  0% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    left: 100px;
+    transform: rotate(359deg) scale(0.9);
+  }
+  100% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+
+/* .absorb-shadow {
+  box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem #ffffff45;
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.3rem rgba(#17be5b, 0.2);
+    animation: absorb-shadow 5s;
+    @keyframes absorb-shadow {
+      0% {
+        background-color: black;
+      }
+      100% {
+        background-color: #086a31;
+        box-shadow: none;
+      }
+    }
+  }
+} */
