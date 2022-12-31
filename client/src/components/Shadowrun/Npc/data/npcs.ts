@@ -4,6 +4,9 @@ import remy from "../imgs/remy.png";
 import detective from "../imgs/detective.png";
 import micky from "../imgs/micky.png";
 import jac from "../imgs/jac.png";
+import yoriko from "../imgs/yoriko.png";
+import finch from "../imgs/finch.png";
+import gerald from "../imgs/gerald.png";
 
 enum tags {
   BIOTECH = "Biotech",
@@ -19,6 +22,9 @@ enum tags {
   ARES = "Ares",
 
   KNIGHT_ERRANT = "Knight Errant",
+
+  YAKUZA = "Yakuza",
+  FENCE = "Fence",
 }
 
 export type NPC = typeof npcs[number];
@@ -101,15 +107,10 @@ export const npcs = [
   {
     alias: ["Daniel Bronson McCarthy (England)"],
     connection: 5,
-    professional: 4,
     description:
       "Detective Daniel McCarthy is an Knight Errant SINNER investigating corporate crimes. Detectives are good at observation, and have access to old cases to go along with rap sheets and criminal SINs.",
-    img: detective,
-    name: "Detective McCarthy",
-    tags: [tags.KNIGHT_ERRANT, tags.ARES, tags.JOHNSON],
-    type: Type.FAVORS,
     flaws: ["Unquestionably Loyal to Ares", "Inflexible"],
-    virtues: ["Lawful", "Solid Reputation"],
+    img: detective,
     knowledge: [
       "Ares",
       "Knight Errant",
@@ -118,19 +119,19 @@ export const npcs = [
       "[Sprawl] London",
     ],
     language: ["English"],
+    name: "Detective McCarthy",
+    professional: 4,
+    tags: [tags.KNIGHT_ERRANT, tags.ARES, tags.JOHNSON],
+    type: Type.FAVORS,
+    virtues: ["Lawful", "Solid Reputation"],
   },
   {
     alias: ["Michael 'Mickey' Walsh (England)"],
     connection: 1,
-    professional: 2,
     description:
       "Mickey grew up in the East End of London to a poor family. He was a middle weight boxer until he took one too many hits. He now trains talented fighters to compete in amateur fights. His gym also serves as a place of mentoring for the neighborhood youth. They learn to defend themselves from neighborhood bullies. The best are recommended to corporate security recruiters. This recruitment program is how he pays for the gym.",
-    img: micky,
-    name: "Mickey Walsh",
-    tags: ["Boxer", "Physical Trainer"],
-    type: Type.SUPPORT,
     flaws: ["Parkinson", "Aged"],
-    virtues: ["Integrity", "Disciplined"],
+    img: micky,
     knowledge: [
       "[Sprawl] East End London",
       "Boxing",
@@ -138,20 +139,84 @@ export const npcs = [
       "Physical Training",
     ],
     language: ["English"],
+    name: "Mickey Walsh",
+    professional: 2,
+    tags: ["Boxer", "Physical Trainer"],
+    type: Type.SUPPORT,
+    virtues: ["Integrity", "Disciplined"],
   },
   {
     alias: ["Six", "Kayden Fisher (England)"],
     connection: 3,
-    professional: 3,
     description:
       "Jacquin was a sinnless street rat grew into a muscle bound enforcer. She has muscle replacements and a smuggling compartment installed in order to sneak contraband into prison. She earned the nickname Six due to the sixth finger on her right hand.",
-    img: jac,
-    name: "Jac",
-    tags: ["Go-gang Enforcer"],
-    type: Type.NETWORKING,
     flaws: ["Arrogant", "Bad Rep"],
-    virtues: ["Strong Willed", "Intimidating"],
+    img: jac,
     knowledge: ["Crime", "Go-Gangs", "Law Enforcement Corps"],
     language: ["English"],
+    name: "Jac",
+    professional: 3,
+    tags: ["Go-gang Enforcer"],
+    type: Type.NETWORKING,
+    virtues: ["Strong Willed", "Intimidating"],
+  },
+  {
+    alias: ["Asakura Yoriko"],
+    connection: 3,
+    description: "",
+    flaws: ["Unforgiving", "Vengeful"],
+    img: yoriko,
+    knowledge: ["Corporate Business", "Law", "Local Politics"],
+    language: ["English", "Japanese"],
+    name: "Yoriko",
+    professional: 3,
+    tags: [tags.YAKUZA, "Inagawa-kai kyodai"],
+    type: Type.NETWORKING,
+    virtues: ["Defender", "Forward thinking"],
+  },
+  {
+    alias: [],
+    connection: 2,
+    professional: 1,
+    description:
+      "Finch is a pawn broker sees people come in and out, hears their stories of hardship, and knows a few of their routines. He’s good at buying and selling goods but never reveal's his customer's secrets.",
+    img: finch,
+    name: "Finch",
+    tags: [tags.FENCE, "Pawn Broker"],
+    type: Type.SWAG,
+    flaws: ["Shady", "Untrustworthy"],
+    virtues: ["Shrewd", "Tight Lipped"],
+    knowledge: ["Item Appraisal", "Street Rumors"],
+    language: ["English"],
+  },
+  {
+    alias: ["James Conway Gerald (England)"],
+    connection: 2,
+    professional: 1,
+    description:
+      "Antique dealer who fences valuable collection items to sell to high end clients.",
+    img: gerald,
+    name: "James C. Gerald",
+    tags: [tags.FENCE, "Antique Dealer"],
+    type: Type.SWAG,
+    flaws: ["Snobbish", "Coward"],
+    virtues: ["Calculating", "Compromising"],
+    knowledge: ["Antique", "High Society", "Art"],
+    language: ["English", "Sperethiel"],
   },
 ];
+
+// {
+//   alias: [],
+//   connection: ,
+//   professional: ,
+//   description: "",
+//   img: ,
+//   name: "",
+//   tags: [],
+//   type: Type.,
+//   flaws: [],
+//   virtues: [],
+//   knowledge: [,],
+//   language: [],
+// },
