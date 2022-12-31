@@ -63,7 +63,7 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
   const handleNavigator = () => setNavigator(!navigator);
 
   const renderList = () => {
-    return lost.reverse().map((l, index) => {
+    return lost.map((l, index) => {
       return (
         <EuiFlexItem key={`lost-list-${index}`}>
           <EuiText className={`text-center`}>
