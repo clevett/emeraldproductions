@@ -103,7 +103,7 @@ export const npcs = [
     connection: 5,
     professional: 4,
     description:
-      "Detective Daniel McCarthy is an Knight Errant SINNER investigating corporate crimes.",
+      "Detective Daniel McCarthy is an Knight Errant SINNER investigating corporate crimes. Detectives are good at observation, and have access to old cases to go along with rap sheets and criminal SINs.",
     img: detective,
     name: "Detective McCarthy",
     tags: [tags.KNIGHT_ERRANT, tags.ARES, tags.JOHNSON],
