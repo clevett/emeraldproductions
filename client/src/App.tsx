@@ -1,5 +1,5 @@
 import { RecoilRoot } from "recoil";
-
+import ReactGA from "react-ga";
 import { EuiProvider } from "@elastic/eui";
 import "@elastic/eui/dist/eui_theme_dark.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -8,6 +8,9 @@ import { About } from "./components/About/About";
 import { Layout } from "./components/Layout";
 
 import { routes } from "./routes";
+
+ReactGA.initialize(`${process.env.GA}`);
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const App = () => {
   return (
