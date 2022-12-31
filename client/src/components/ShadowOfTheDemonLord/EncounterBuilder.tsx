@@ -149,7 +149,7 @@ export const EncounterBuilder = () => {
           </CardPanel>
         </EuiFlexItem>
         <EuiFlexItem className="content-center">
-          <EuiFlexItem className={`grid ${styles.col} mb-4`}>
+          <div className={`grid ${styles.col} mb-4`}>
             <EuiTitle className="col-start-2 text-center" size="s">
               <h4>Bestiary</h4>
             </EuiTitle>
@@ -157,7 +157,7 @@ export const EncounterBuilder = () => {
               onTermSubmit={onTermSubmit}
               styles="flex justify-center"
             />
-          </EuiFlexItem>
+          </div>
           <CardPanel>
             {isLoading ? (
               <EuiLoadingSpinner size="l" />
