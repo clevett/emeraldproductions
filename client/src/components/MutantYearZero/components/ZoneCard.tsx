@@ -17,7 +17,7 @@ export const ZoneCard = ({
   onChange?: () => void;
 }) => {
   return (
-    <EuiFlexItem className={`${styles.min250} ${styles.minW250}`}>
+    <EuiFlexItem className={`${styles.minH} ${styles.minW}`}>
       <EuiCard
         icon={<EuiIcon size="xxl" type={"cross"} />}
         title={capitalize(title)}

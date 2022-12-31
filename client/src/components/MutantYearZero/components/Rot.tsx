@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useRecoilState } from "recoil";
 import { getRot } from "../helpers";
+import { rotAtom } from "../recoil";
 import { ZoneCard } from "./ZoneCard";
 
 export const Rot = () => {
-  const [rot, setRot] = useState(getRot());
+  const [rot, setRot] = useRecoilState(rotAtom);
   return (
     <ZoneCard
       title="Rot Level"

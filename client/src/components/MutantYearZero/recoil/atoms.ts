@@ -1,4 +1,4 @@
-import { getD666, getSector, getThreat } from "../helpers";
+import { getD666, getRot, getSector, getThreat } from "../helpers";
 import { atom } from "recoil";
 import { getMood } from "../helpers/getMood";
 export const sectorAtom = atom({
@@ -18,4 +18,9 @@ export const artifactAtom = atom({
 export const moodAtom = atom({
   key: "MOOD_ATOM",
   default: getMood(),
+});
+
+export const rotAtom = atom({
+  key: "ROT_ATOM",
+  default: getRot(),
 });

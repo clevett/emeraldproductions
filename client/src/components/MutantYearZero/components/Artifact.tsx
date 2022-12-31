@@ -10,7 +10,7 @@ export const Artifact = () => {
   const content = isSettlement
     ? "-"
     : hasArtifact
-    ? `${artifact}`
+    ? `Artifact number ${artifact}`
     : "This sector has no artifacts.";
   return (
     <ZoneCard

@@ -1,7 +1,7 @@
-.minH250 {
-  min-height: 350px;
+.minH {
+  min-height: 200px;
 }
 
-.minW250 {
-  min-width: 350px;
+.minW {
+  min-width: 200px;
 }
