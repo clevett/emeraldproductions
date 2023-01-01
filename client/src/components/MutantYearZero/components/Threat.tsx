@@ -9,7 +9,13 @@ export const Threat = () => {
   const hasThreat = useRecoilValue(selectThreat);
   const count = useRecoilValue(selectSectorThreat);
   const [threat, setThreat] = useRecoilState(threatAtom);
-  const content = hasThreat && count ? `${threat}, danger level ${count}` : "-";
+  const isSettlement = hasThreat === null;
+
+  const content = isSettlement
+    ? "-"
+    : hasThreat && count
+    ? `${threat}, danger level ${count}`
+    : "This sector has no threats.";
 
   return (
     <ZoneCard

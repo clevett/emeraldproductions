@@ -1,6 +1,8 @@
 import { selector, DefaultValue } from "recoil";
+import { threat } from "../../../data";
+import { getSectorRoll } from "../helpers";
 import { getArtifacts } from "../helpers/getArtifacts";
-import { artifactsAtom, sectorAtom, sectorRollAtom } from "./atoms";
+import { sectorAtom, sectorRollAtom, threatLevelAtom } from "./atoms";
 
 export const selectEnvironment = selector({
   key: "SELECT_ENVIRONMENT",
@@ -26,24 +28,28 @@ export const selectRuin = selector({
 
 export const selectSectorThreat = selector({
   key: "SELECT_SECTOR_THREAT",
-  get: ({ get }) => get(sectorRollAtom).threat,
+  get: ({ get }) => {
+    const array = get(sectorRollAtom);
+    return array.filter((e: number) => e === 1).length;
+  },
 });
 
 export const selectArtifactCount = selector({
   key: "SELECT_SECTOR_ARTIFACT_COUNT",
-  get: ({ get }) => get(sectorRollAtom).artifacts,
+  get: ({ get }) => get(sectorRollAtom).filter((e: number) => e === 6).length,
 });
 
-export const selectArtifacts = selector({
-  key: "SELECT_ARTIFACTS",
-  get: ({ get }) => get(artifactsAtom),
-  set: ({ set, get }, newValue) => {
-    if (newValue instanceof DefaultValue) {
-      const count = get(selectArtifactCount);
-      set(artifactsAtom, getArtifacts(count));
+export const selectSectorRoll = selector({
+  key: "SELECT_SECTOR_ROLL",
+  get: ({ get }) => get(sectorRollAtom),
+  set: ({ get, set }, newValue) => {
+    const threatLevel = get(threatLevelAtom);
+
+    if (newValue instanceof DefaultValue || newValue === undefined) {
+      set(sectorRollAtom, getSectorRoll(`${threatLevel}d6`));
       return;
     }
 
-    set(artifactsAtom, newValue);
+    set(sectorRollAtom, newValue);
   },
 });

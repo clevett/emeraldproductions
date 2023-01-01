@@ -1,23 +1,32 @@
 import { EuiButton } from "@elastic/eui";
-import { useRecoilCallback } from "recoil";
-import { getMood, getRot, getSector, getThreat } from "../helpers";
+import { useRecoilCallback, useRecoilValue } from "recoil";
+import {
+  getMood,
+  getRot,
+  getSector,
+  getSectorRoll,
+  getThreat,
+} from "../helpers";
 import {
   threatAtom,
   moodAtom,
   sectorAtom,
   rotAtom,
-  selectArtifacts,
+  threatLevelAtom,
+  selectSectorRoll,
 } from "../recoil";
 
 export const ResetButton = () => {
+  const threat = useRecoilValue(threatLevelAtom);
+
   const resetOptions = useRecoilCallback(
-    ({ reset, set }) =>
+    ({ set }) =>
       () => {
         set(moodAtom, getMood());
         set(rotAtom, getRot());
         set(sectorAtom, getSector());
         set(threatAtom, getThreat());
-        reset(selectArtifacts);
+        set(selectSectorRoll, getSectorRoll(`${threat}d6`));
       },
     []
   );

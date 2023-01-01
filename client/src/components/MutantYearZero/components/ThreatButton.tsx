@@ -1,11 +1,11 @@
 import { EuiButton } from "@elastic/eui";
 import { useSetRecoilState, useRecoilValue } from "recoil";
 import { getSectorRoll } from "../helpers";
-import { sectorRollAtom, threatLevelAtom } from "../recoil";
+import { selectSectorRoll, threatLevelAtom } from "../recoil";
 
 export const ThreatButton = () => {
   const threatLevel = useRecoilValue(threatLevelAtom);
-  const setSectorRoll = useSetRecoilState(sectorRollAtom);
+  const setSectorRoll = useSetRecoilState(selectSectorRoll);
   return (
     <EuiButton
       color="primary"
