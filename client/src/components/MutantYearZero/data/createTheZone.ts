@@ -20,7 +20,7 @@ export enum Card {
   MOOD = "Mood",
   ROT = "Rot Level",
   RUIN = "Ruin",
-  THREAT = "Threat Level",
+  THREAT = "Threat",
 }
 
 export type Environment = `${Environments}`;

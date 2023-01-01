@@ -17,7 +17,6 @@ import { ThreatButton } from "./ThreatButton";
 
 export const Sector = () => {
   const [sector, setSector] = useRecoilState(sectorAtom);
-
   return (
     <div className="grid gap-6">
       <div className={`grid gap-4 ${styles.layout}`}>
@@ -38,7 +37,7 @@ export const Sector = () => {
           <Threat />
           <Artifact />
         </FlexColGroup>
-        <div className={`grid ${styles.threatGrid} gap-4`}>
+        <div className={`grid ${styles.threatGrid} gap-4 items-center`}>
           <ThreatButton />
           <ThreatInput />
         </div>

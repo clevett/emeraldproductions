@@ -7,6 +7,7 @@ import {
   getSectorRoll,
   getThreat,
 } from "../helpers";
+import { getArtifacts } from "../helpers/getArtifacts";
 
 export const sectorAtom = atom({
   key: "SECTOR_ATOM",
@@ -28,12 +29,20 @@ export const rotAtom = atom({
   default: getRot(),
 });
 
+const defaultThreatLevel = 3;
+const defaultEnterSector = getSectorRoll(`${defaultThreatLevel}d6`);
+
 export const threatLevelAtom = atom({
   key: "THREAT_LEVEL_ATOM",
-  default: 3,
+  default: defaultThreatLevel,
 });
 
 export const sectorRollAtom = atom({
   key: "SECTOR_ROLL_ATOM",
-  default: getSectorRoll("3d6"),
+  default: defaultEnterSector,
+});
+
+export const artifactsAtom = atom<number[]>({
+  key: "ARTIFACTS_ATOM",
+  default: getArtifacts(defaultEnterSector.artifacts),
 });
