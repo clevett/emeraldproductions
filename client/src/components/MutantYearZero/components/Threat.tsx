@@ -3,6 +3,7 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import { selectThreat, threatAtom } from "../recoil";
 import { getThreat } from "../helpers";
 import { ZoneCard } from "./ZoneCard";
+import { Card } from "../data/createTheZone";
 
 export const Threat = () => {
   const hasThreat = useRecoilValue(selectThreat);
@@ -11,7 +12,7 @@ export const Threat = () => {
 
   return (
     <ZoneCard
-      title="Threat"
+      title={Card.THREAT}
       content={content}
       onChange={() => setThreat(getThreat())}
     />

@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil";
 import { FlexColGroup } from "../../Styled/FlexColGroup";
+import { Card } from "../data/createTheZone";
 import { getSector } from "../helpers";
 import { sectorAtom } from "../recoil";
 import { Artifact } from "./Artifact";
@@ -20,7 +21,7 @@ export const Sector = () => {
           <ZoneCard
             content={sector.environment}
             onChange={() => setSector(getSector())}
-            title="Environment"
+            title={Card.ENVIRONMENT}
           />
           <Rot />
           <Mood />

@@ -3,6 +3,8 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import { ZoneCard } from "./ZoneCard";
 import { artifactAtom, selectArtifact } from "../recoil";
 import { getD666 } from "../helpers";
+import { Card } from "../data/createTheZone";
+
 export const Artifact = () => {
   const hasArtifact = useRecoilValue(selectArtifact);
   const [artifact, setArtifact] = useRecoilState(artifactAtom);
@@ -14,7 +16,7 @@ export const Artifact = () => {
     : "This sector has no artifacts.";
   return (
     <ZoneCard
-      title="Artifact"
+      title={Card.ARTIFACT}
       content={content}
       onChange={() => setArtifact(getD666())}
     />

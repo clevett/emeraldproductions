@@ -14,6 +14,15 @@ export enum Environments {
   UNSCATHED_RUINS = " Unscathed Ruins",
 }
 
+export enum Card {
+  ARTIFACT = "Artifact",
+  ENVIRONMENT = "Environment",
+  MOOD = "Mood",
+  ROT = "Rot Level",
+  RUIN = "Ruin",
+  THREAT = "Threat",
+}
+
 export type Environment = `${Environments}`;
 
 export type Sector = typeof sectorEnvironments[number];

@@ -4,6 +4,7 @@ import { useRecoilValue } from "recoil";
 import { getRuin } from "../helpers";
 import { ZoneCard } from "./ZoneCard";
 import { selectEnvironment, selectRuin } from "../recoil";
+import { Card } from "../data/createTheZone";
 
 export const Ruin = () => {
   const hasRuin = useRecoilValue(selectRuin);
@@ -20,7 +21,7 @@ export const Ruin = () => {
 
   return (
     <ZoneCard
-      title="Ruin"
+      title={Card.RUIN}
       content={content}
       onChange={() => setRuin(getRuin(environment))}
     />
