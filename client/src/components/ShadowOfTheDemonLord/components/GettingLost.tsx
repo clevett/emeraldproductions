@@ -7,7 +7,7 @@ import { NavigatorSwitch } from "./NavigatorSwitch";
 import styles from "../styles.module.css";
 import { Terrain, Weather } from "../../../data";
 import { DiceTitle } from "./DiceTitle";
-import { getDiceRollTotal } from "../../../helpers/getDiceRollTotal";
+import { getDiceRollTotal } from "../../../helpers/getDiceRoll";
 
 type GettingLostProps = {
   terrain: TerrainType[];

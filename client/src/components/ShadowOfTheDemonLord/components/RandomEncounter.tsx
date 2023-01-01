@@ -8,7 +8,7 @@ import { TravelSelect } from "./TravelSelect";
 
 import { DiceTitle } from "./DiceTitle";
 import styles from "../styles.module.css";
-import { getDiceRollTotal } from "../../../helpers/getDiceRollTotal";
+import { getDiceRollTotal } from "../../../helpers/getDiceRoll";
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
   const [encounter, setEncounter] = useState<string[]>([]);

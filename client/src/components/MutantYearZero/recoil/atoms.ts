@@ -1,6 +1,13 @@
-import { getD666, getRot, getSector, getThreat } from "../helpers";
 import { atom } from "recoil";
-import { getMood } from "../helpers/getMood";
+
+import {
+  getMood,
+  getRot,
+  getSector,
+  getSectorRoll,
+  getThreat,
+} from "../helpers";
+
 export const sectorAtom = atom({
   key: "SECTOR_ATOM",
   default: getSector(),
@@ -11,10 +18,6 @@ export const threatAtom = atom({
   default: getThreat(),
 });
 
-export const artifactAtom = atom({
-  key: "ARTIFACT_ATOM",
-  default: getD666(),
-});
 export const moodAtom = atom({
   key: "MOOD_ATOM",
   default: getMood(),
@@ -23,4 +26,14 @@ export const moodAtom = atom({
 export const rotAtom = atom({
   key: "ROT_ATOM",
   default: getRot(),
+});
+
+export const threatLevelAtom = atom({
+  key: "THREAT_LEVEL_ATOM",
+  default: 3,
+});
+
+export const sectorRollAtom = atom({
+  key: "SECTOR_ROLL_ATOM",
+  default: getSectorRoll("3d6"),
 });
