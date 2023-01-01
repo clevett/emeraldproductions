@@ -28,7 +28,7 @@ export const RandomEncounter = () => {
   };
 
   const renderList = () => {
-    return encounter.reverse().map((l, index) => {
+    return encounter.map((l, index) => {
       return (
         <EuiFlexItem key={`encounter-list-${index}`}>
           <EuiText className={`text-center`}>
