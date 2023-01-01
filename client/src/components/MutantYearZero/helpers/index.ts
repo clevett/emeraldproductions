@@ -1,3 +1,4 @@
+export * from "./getArtifacts";
 export * from "./getD66";
 export * from "./getD666";
 export * from "./getMood";

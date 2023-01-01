@@ -17,6 +17,7 @@ import { ThreatButton } from "./ThreatButton";
 
 export const Sector = () => {
   const [sector, setSector] = useRecoilState(sectorAtom);
+
   return (
     <div className="grid gap-6">
       <div className={`grid gap-4 ${styles.layout}`}>

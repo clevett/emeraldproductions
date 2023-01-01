@@ -7,6 +7,7 @@ import {
   getSectorRoll,
   getThreat,
 } from "../helpers";
+import { getArtifacts } from "../helpers/getArtifacts";
 
 export const sectorAtom = atom({
   key: "SECTOR_ATOM",
@@ -28,12 +29,20 @@ export const rotAtom = atom({
   default: getRot(),
 });
 
+const threatLevelDefault = 3;
+const sectorRollDefault = getSectorRoll(`${threatLevelDefault}d6`);
+const count = sectorRollDefault.filter((e: number) => e === 6).length;
 export const threatLevelAtom = atom({
   key: "THREAT_LEVEL_ATOM",
-  default: 3,
+  default: threatLevelDefault,
 });
 
 export const sectorRollAtom = atom({
   key: "SECTOR_ROLL_ATOM",
-  default: getSectorRoll("3d6"),
+  default: sectorRollDefault,
+});
+
+export const sectorArtifactAtom = atom<number[]>({
+  key: "SECTOR_ARTIFACT_ATOM",
+  default: getArtifacts(count),
 });

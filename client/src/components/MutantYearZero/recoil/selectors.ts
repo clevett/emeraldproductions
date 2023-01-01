@@ -1,7 +1,5 @@
 import { selector, DefaultValue } from "recoil";
-import { threat } from "../../../data";
 import { getSectorRoll } from "../helpers";
-import { getArtifacts } from "../helpers/getArtifacts";
 import { sectorAtom, sectorRollAtom, threatLevelAtom } from "./atoms";
 
 export const selectEnvironment = selector({
@@ -46,7 +44,8 @@ export const selectSectorRoll = selector({
     const threatLevel = get(threatLevelAtom);
 
     if (newValue instanceof DefaultValue || newValue === undefined) {
-      set(sectorRollAtom, getSectorRoll(`${threatLevel}d6`));
+      const newRoll = getSectorRoll(`${threatLevel}d6`);
+      set(sectorRollAtom, newRoll);
       return;
     }
 

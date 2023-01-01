@@ -7,6 +7,7 @@ import {
   getSectorRoll,
   getThreat,
 } from "../helpers";
+import { useRefreshArtifacts } from "../hook/useRefreshArtifacts";
 import {
   threatAtom,
   moodAtom,
@@ -17,6 +18,7 @@ import {
 } from "../recoil";
 
 export const ResetButton = () => {
+  const refreshArtifacts = useRefreshArtifacts();
   const threat = useRecoilValue(threatLevelAtom);
 
   const resetOptions = useRecoilCallback(
@@ -26,7 +28,10 @@ export const ResetButton = () => {
         set(rotAtom, getRot());
         set(sectorAtom, getSector());
         set(threatAtom, getThreat());
-        set(selectSectorRoll, getSectorRoll(`${threat}d6`));
+
+        const rolls = getSectorRoll(`${threat}d6`);
+        set(selectSectorRoll, rolls);
+        refreshArtifacts(rolls);
       },
     []
   );
