@@ -1,6 +1,7 @@
 {
   "name": "emeraldproductions",
-  "version": "1.0.0",
+  "author": "Cassie Levett",
+  "version": "2.2.0",
   "private": true,
   "dependencies": {
     "@dice-roller/rpg-dice-roller": "^5.2.1",
