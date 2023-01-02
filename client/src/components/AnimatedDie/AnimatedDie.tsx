@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getDiceRollTotal } from "../../helpers/getDiceRollTotal";
+import { getDiceRollTotal } from "../../helpers/getDiceRoll";
 
 import d20 from "../../imgs/icons/dice-twenty-faces-twenty.svg";
 import d6 from "../../imgs/icons/perspective-dice-six-faces-six.svg";

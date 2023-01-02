@@ -17,7 +17,7 @@ import { useState } from "react";
 
 import styles from "../styles.module.css";
 import { CardPanel } from "../../CardPanel";
-import { getDiceRollTotal } from "../../../helpers/getDiceRollTotal";
+import { getDiceRollTotal } from "../../../helpers/getDiceRoll";
 
 export const MonsterCard = ({
   monster: {

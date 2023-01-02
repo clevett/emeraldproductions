@@ -1,5 +1,5 @@
 .col {
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 30% 1fr 30%;
 }
 
 .colfit {

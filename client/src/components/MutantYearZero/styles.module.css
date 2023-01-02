@@ -1,0 +1,20 @@
+.minH {
+  min-height: 250px;
+}
+
+.minW {
+  min-width: 200px;
+}
+
+.layout {
+  grid-template-rows: auto min-content auto min-content;
+}
+
+.inputGrid {
+  grid-template-columns: 10em 100px;
+  align-items: center;
+}
+
+.threatGrid {
+  grid-template-columns: max-content 1fr;
+}

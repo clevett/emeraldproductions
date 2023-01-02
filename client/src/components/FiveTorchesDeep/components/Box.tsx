@@ -2,7 +2,7 @@ import { EuiText, EuiTitle } from "@elastic/eui";
 import { useState } from "react";
 
 import { maps } from "../../../data/ftdMaps";
-import { getDiceRollTotal } from "../../../helpers/getDiceRollTotal";
+import { getDiceRollTotal } from "../../../helpers/getDiceRoll";
 
 const Box = ({ name }: { name: string }) => {
   const roll = getDiceRollTotal();

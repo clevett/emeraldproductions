@@ -2,6 +2,7 @@ import fivetorchesdeep from "../imgs/ttrpgs/fivetorchesdeep.jpg";
 import sotdl from "../imgs/ttrpgs/sotdl.png";
 import shadowrun5e from "../imgs/ttrpgs/shadowrun5e.png";
 import shadowrun6e from "../imgs/ttrpgs/shadowrun6e.png";
+import myz from "../imgs/ttrpgs/myz.png";
 
 import {
   FiveTorchesDeepMonsters,
@@ -19,6 +20,8 @@ import {
   NpcCards,
   RewardsCalculator,
 } from "../components/Shadowrun";
+
+import { CreateTheZone } from "../components/MutantYearZero";
 
 export const ftdList = [
   {
@@ -77,4 +80,13 @@ export const shadowrunList = [
   },
 ];
 
-export const routes = [...ftdList, ...sotdlList, ...shadowrunList];
+export const myzList = [
+  {
+    label: "Create the Zone",
+    path: "/myz/create_the_zone",
+    iconType: myz,
+    element: <CreateTheZone />,
+  },
+];
+
+export const routes = [...ftdList, ...sotdlList, ...shadowrunList, ...myzList];
