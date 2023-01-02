@@ -11,8 +11,6 @@ import { SectorCard } from "./SectorCard";
 export const Sector = () => {
   const sectors = useRecoilValue(selectSectorFamily);
 
-  console.log(sectors);
-
   return (
     <div className="grid gap-6">
       <div className={`grid gap-4 `}>
