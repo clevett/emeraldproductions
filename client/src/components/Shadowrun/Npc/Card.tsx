@@ -1,6 +1,7 @@
 import { EuiFlexItem, EuiButtonIcon } from "@elastic/eui";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
+import { Card } from "../../Card/Card";
 import { NPC } from "./data/npcs";
 
 import styles from "./styles.module.css";
@@ -31,7 +32,7 @@ const Footer = ({
 
 const FrontCard = ({ npc, children }: CardProps) => {
   return (
-    <div className={`${styles.card}`}>
+    <Card>
       <div className={`${styles.header}`}>
         <img src={npc.img} alt={npc.name} />
       </div>
@@ -44,28 +45,30 @@ const FrontCard = ({ npc, children }: CardProps) => {
         <p className="text-lg">Professional Rating: {npc.professional}</p>
         {children}
       </div>
-    </div>
+    </Card>
   );
 };
 
 const BackCard = ({ npc, children }: CardProps) => {
   return (
-    <div className={`${styles.card} ${styles.back} gap-2`}>
-      <div className={`${styles.description} gap-2`}>
-        <h4 className="text-2xl font-semibold">Description</h4>
-        <p className={`text-lg italic`}>{joinList(npc.alias)}</p>
-        <p className="text-lg">{npc.description}</p>
-        <p className={`text-lg`}>Flaws: {joinList(npc.flaws)}</p>
-        <p className={`text-lg`}>Virtues: {joinList(npc.virtues)}</p>
-        <p className={`text-lg`}>Knowledge: {joinList(npc.knowledge)}</p>
-        <p className={`text-lg`}>Language: {joinList(npc.language)}</p>
+    <Card>
+      <div className={`grid ${styles.back} gap-2`}>
+        <div className={`${styles.description} gap-2`}>
+          <h4 className="text-2xl font-semibold">Description</h4>
+          <p className={`text-lg italic`}>{joinList(npc.alias)}</p>
+          <p className="text-lg">{npc.description}</p>
+          <p className={`text-lg`}>Flaws: {joinList(npc.flaws)}</p>
+          <p className={`text-lg`}>Virtues: {joinList(npc.virtues)}</p>
+          <p className={`text-lg`}>Knowledge: {joinList(npc.knowledge)}</p>
+          <p className={`text-lg`}>Language: {joinList(npc.language)}</p>
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+    </Card>
   );
 };
 
-export const Card = ({ npc }: { npc: NPC }) => {
+export const NpcCard = ({ npc }: { npc: NPC }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleClick = () => setIsFlipped(!isFlipped);
   return (

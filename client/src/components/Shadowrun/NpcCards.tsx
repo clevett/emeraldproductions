@@ -1,6 +1,6 @@
 import { EuiFlexGroup } from "@elastic/eui";
 import { LayoutBody } from "../LayoutBody";
-import { Card } from "./Npc/Card";
+import { NpcCard } from "./Npc/Card";
 import { npcs } from "./Npc/data/npcs";
 
 export const NpcCards = () => {
@@ -12,7 +12,7 @@ export const NpcCards = () => {
     >
       <EuiFlexGroup className="flex-col justify-center gap-4 flex-wrap">
         {npcs.map((e, index) => (
-          <Card key={`npc-card-${index}`} npc={e} />
+          <NpcCard key={`npc-card-${index}`} npc={e} />
         ))}
       </EuiFlexGroup>
     </LayoutBody>

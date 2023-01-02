@@ -1,54 +1,55 @@
-import { selector, DefaultValue } from "recoil";
-import { getSectorRoll } from "../helpers";
-import { sectorAtom, sectorRollAtom, threatLevelAtom } from "./atoms";
+import { selector, DefaultValue, selectorFamily } from "recoil";
+import { ZoneSector } from "../data/createTheZone";
+import { sectorFamily, sectorIdsAtom } from "./atoms";
 
-export const selectEnvironment = selector({
-  key: "SELECT_ENVIRONMENT",
-  get: ({ get }) => get(sectorAtom).environment,
+export const selectSectorById = selectorFamily<ZoneSector | undefined, string>({
+  key: "SELECT_OPERATION_BY_ID",
+  get:
+    (id) =>
+    ({ get }) => {
+      return get(sectorFamily(id));
+    },
+  set:
+    (id: string) =>
+    ({ set, reset, get }, newValue) => {
+      const ids = get(sectorIdsAtom);
+      const atom = sectorFamily(id);
+
+      if (newValue instanceof DefaultValue) {
+        const filterIds = ids.filter((e: string) => e !== id);
+        set(sectorIdsAtom, () => filterIds ?? []);
+        reset(sectorFamily(id));
+        return;
+      }
+
+      if (newValue) {
+        set(atom, newValue);
+
+        if (ids.find((i: string) => i === newValue.id)) {
+          return;
+        }
+
+        if (ids && !ids.includes(id)) {
+          set(sectorIdsAtom, (prev: any) => [...prev, id]);
+        }
+      }
+    },
 });
 
-export const selectThreat = selector({
-  key: "SELECT_THREAT",
-  get: ({ get }) => get(sectorAtom).threat,
-});
-
-export const selectArtifact = selector({
-  key: "SELECT_ARTIFACT",
-  get: ({ get }) => {
-    return get(sectorAtom).artifact;
+export const selectSectorFamily = selector({
+  key: "SELECT_OPERATION_FAMILY",
+  get: ({ get }): ZoneSector[] => {
+    const ids = get(sectorIdsAtom);
+    const family = ids.map((id) => get(selectSectorById(id)));
+    return family.filter((o): o is ZoneSector => !!o);
   },
-});
-
-export const selectRuin = selector({
-  key: "SELECT_RUIN",
-  get: ({ get }) => get(sectorAtom).ruin,
-});
-
-export const selectSectorThreat = selector({
-  key: "SELECT_SECTOR_THREAT",
-  get: ({ get }) => {
-    const array = get(sectorRollAtom);
-    return array.filter((e: number) => e === 1).length;
-  },
-});
-
-export const selectArtifactCount = selector({
-  key: "SELECT_SECTOR_ARTIFACT_COUNT",
-  get: ({ get }) => get(sectorRollAtom).filter((e: number) => e === 6).length,
-});
-
-export const selectSectorRoll = selector({
-  key: "SELECT_SECTOR_ROLL",
-  get: ({ get }) => get(sectorRollAtom),
-  set: ({ get, set }, newValue) => {
-    const threatLevel = get(threatLevelAtom);
+  set: ({ set, reset, get }, newValue) => {
+    const ids = get(sectorIdsAtom);
 
     if (newValue instanceof DefaultValue || newValue === undefined) {
-      const newRoll = getSectorRoll(`${threatLevel}d6`);
-      set(sectorRollAtom, newRoll);
+      reset(sectorIdsAtom);
+      ids.forEach((i) => reset(selectSectorById(i)));
       return;
     }
-
-    set(sectorRollAtom, newValue);
   },
 });

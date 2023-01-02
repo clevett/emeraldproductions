@@ -18,3 +18,21 @@
 .threatGrid {
   grid-template-columns: max-content 1fr;
 }
+
+.buttonsGrid {
+  grid-template-columns: min-content 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.footer {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.back {
+  grid-template-rows: 100px 1fr 24px;
+  height: 100%;
+  padding: 16px;
+}

@@ -1,3 +1,4 @@
+export type Mood = typeof moods[number];
 export const moods = [
   {
     result: [11],

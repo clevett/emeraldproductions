@@ -150,3 +150,19 @@ export const rotLevels = [
     value: 2,
   },
 ];
+
+export type ZoneSector = {
+  id: string;
+  rot: string;
+  sector: Sector;
+  mood: string;
+  threat: {
+    name: string;
+    count: number;
+  };
+  artifact: {
+    name: string;
+    count: number;
+  };
+  ruin: string;
+};

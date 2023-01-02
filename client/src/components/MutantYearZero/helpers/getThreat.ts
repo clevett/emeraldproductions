@@ -12,6 +12,9 @@ enum Types {
   MONSTER = "Monster",
 }
 
+export const getThreatCount = (rolls: number[]) =>
+  rolls.filter((e: number) => e === 1).length;
+
 const getType = (num: number) => {
   switch (num) {
     case 1:

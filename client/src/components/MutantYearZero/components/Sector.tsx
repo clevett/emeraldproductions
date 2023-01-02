@@ -1,48 +1,31 @@
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { FlexColGroup } from "../../Styled/FlexColGroup";
-import { Card } from "../data/createTheZone";
-import { getSector } from "../helpers";
-import { sectorAtom } from "../recoil";
-import { Artifact } from "./Artifact";
-import { Mood } from "./Mood";
-import { ResetButton } from "./ResetButton";
-import { Rot } from "./Rot";
-import { Ruin } from "./Ruin";
-import { Threat } from "./Threat";
-import { ZoneCard } from "./ZoneCard";
 
-import styles from "../styles.module.css";
+import { selectSectorFamily } from "../recoil";
+
 import { ThreatInput } from "./ThreatInput";
-import { ThreatButton } from "./ThreatButton";
+import { CreateSector } from "./CreateSector";
+
+import { SectorCard } from "./SectorCard";
 
 export const Sector = () => {
-  const [sector, setSector] = useRecoilState(sectorAtom);
+  const sectors = useRecoilValue(selectSectorFamily);
+
+  console.log(sectors);
 
   return (
     <div className="grid gap-6">
-      <div className={`grid gap-4 ${styles.layout}`}>
-        <FlexColGroup>
-          <ZoneCard
-            content={sector.environment}
-            onChange={() => setSector(getSector())}
-            title={Card.ENVIRONMENT}
-          />
-          <Ruin />
-          <Rot />
-          <Mood />
-        </FlexColGroup>
-        <div className="max-h-fit">
-          <ResetButton />
-        </div>
-        <FlexColGroup>
-          <Threat />
-          <Artifact />
-        </FlexColGroup>
-        <div className={`grid ${styles.threatGrid} gap-4 items-center`}>
-          <ThreatButton />
-          <ThreatInput />
-        </div>
+      <div className={`grid gap-4 `}>
+        <ThreatInput />
       </div>
+      <div className="max-h-fit">
+        <CreateSector />
+      </div>
+      <FlexColGroup>
+        {sectors.map((e) => (
+          <SectorCard key={e.id} sector={e} />
+        ))}
+      </FlexColGroup>
     </div>
   );
 };
