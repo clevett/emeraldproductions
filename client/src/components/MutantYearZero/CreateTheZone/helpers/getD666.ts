@@ -1,4 +1,4 @@
-import { getDiceRollTotal } from "../../../helpers";
+import { getDiceRollTotal } from "../../../../helpers";
 
 export const getD666 = () => {
   const roll = getDiceRollTotal();

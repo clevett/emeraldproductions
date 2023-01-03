@@ -21,10 +21,10 @@ const Footer = ({
     <div className={`${styles.footer}`}>
       <span>Type: {type}</span>
       <EuiButtonIcon
-        className="justify-self-end"
-        onClick={onClick}
-        iconType="refresh"
         aria-label={`flip the card`}
+        className={`justify-self-end`}
+        iconType="arrowRight"
+        onClick={onClick}
       />
     </div>
   );

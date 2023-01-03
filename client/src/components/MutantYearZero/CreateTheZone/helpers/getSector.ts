@@ -1,4 +1,4 @@
-import { getRandomArrayElement } from "../../../helpers";
+import { getRandomArrayElement } from "../../../../helpers";
 import { Environments, sectorEnvironments } from "../data/createTheZone";
 import { getArtifactCount, getArtifacts } from "./getArtifacts";
 import { getD66 } from "./getD66";
@@ -25,16 +25,18 @@ export const getSector = (id: string, threat: number) => {
 
   const rolls = getSectorRoll(`${threat}d6`);
   const threatCount = getThreatCount(rolls);
+  const hasThreats = sector.threat && threatCount;
   const opposition = isSettlement
     ? "-"
-    : sector.threat && threatCount
+    : hasThreats
     ? getThreat()
     : "This sector has no threats.";
 
   const artifactCount = getArtifactCount(rolls);
+  const hasArtifacts = sector.artifact && artifactCount;
   const artifacts = isSettlement
     ? "-"
-    : sector.artifact && artifactCount
+    : hasArtifacts
     ? getArtifacts(artifactCount).join(", ")
     : "This sector has no artifacts.";
 
@@ -49,7 +51,7 @@ export const getSector = (id: string, threat: number) => {
     },
     artifact: {
       name: artifacts,
-      count: artifactCount,
+      count: hasArtifacts ? artifactCount : 0,
     },
     ruin,
   };
