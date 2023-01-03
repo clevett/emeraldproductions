@@ -1,4 +1,4 @@
-import { getDiceRollTotal, getRandomArrayElement } from "../../../helpers";
+import { getDiceRollTotal, getRandomArrayElement } from "../../../../helpers";
 import {
   humanoidThreats,
   monsterThreats,

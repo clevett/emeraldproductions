@@ -1,12 +1,12 @@
 import { useRecoilValue } from "recoil";
 import { FlexColGroup } from "../../Styled/FlexColGroup";
 
-import { selectSectorFamily } from "../recoil";
+import { selectSectorFamily } from "./recoil";
 
-import { ThreatInput } from "./ThreatInput";
-import { CreateSector } from "./CreateSector";
+import { ThreatInput } from "./components/ThreatInput";
+import { CreateSector } from "./components/CreateSector";
 
-import { SectorCard } from "./SectorCard";
+import { SectorCard } from "./components/SectorCard";
 
 export const Sector = () => {
   const sectors = useRecoilValue(selectSectorFamily);
@@ -20,8 +20,8 @@ export const Sector = () => {
         <CreateSector />
       </div>
       <FlexColGroup>
-        {sectors.map((e) => (
-          <SectorCard key={e.id} sector={e} />
+        {sectors.map(({ id }) => (
+          <SectorCard key={id} id={id} />
         ))}
       </FlexColGroup>
     </div>

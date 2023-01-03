@@ -1,6 +1,6 @@
 import { RecoilRoot } from "recoil";
 import { LayoutBody } from "../LayoutBody";
-import { Sector } from "./components/Sector";
+import { Sector } from "./CreateTheZone/Sector";
 
 export const CreateTheZone = () => {
   return (

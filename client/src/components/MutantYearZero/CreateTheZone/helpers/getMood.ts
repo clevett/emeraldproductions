@@ -1,4 +1,4 @@
-import { getRandomArrayElement } from "../../../helpers";
+import { getRandomArrayElement } from "../../../../helpers";
 import { moods } from "../data/mood";
 import { getD66 } from "./getD66";
 

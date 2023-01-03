@@ -1,4 +1,4 @@
-import { getRandomArrayElement } from "../../../helpers";
+import { getRandomArrayElement } from "../../../../helpers";
 import { Environment, Environments } from "../data/createTheZone";
 import { industryRuins, normalRuins } from "../data/ruins";
 import { getD66 } from "./getD66";

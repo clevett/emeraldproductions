@@ -10,28 +10,26 @@ export const selectSectorById = selectorFamily<ZoneSector | undefined, string>({
       return get(sectorFamily(id));
     },
   set:
-    (id: string) =>
+    (id) =>
     ({ set, reset, get }, newValue) => {
       const ids = get(sectorIdsAtom);
       const atom = sectorFamily(id);
 
-      if (newValue instanceof DefaultValue) {
+      if (newValue instanceof DefaultValue || newValue === undefined) {
         const filterIds = ids.filter((e: string) => e !== id);
         set(sectorIdsAtom, () => filterIds ?? []);
         reset(sectorFamily(id));
         return;
       }
 
-      if (newValue) {
-        set(atom, newValue);
+      set(atom, newValue);
 
-        if (ids.find((i: string) => i === newValue.id)) {
-          return;
-        }
+      if (ids.find((i: string) => i === newValue.id)) {
+        return;
+      }
 
-        if (ids && !ids.includes(id)) {
-          set(sectorIdsAtom, (prev: any) => [...prev, id]);
-        }
+      if (ids && !ids.includes(id)) {
+        set(sectorIdsAtom, (prev: any) => [...prev, id]);
       }
     },
 });

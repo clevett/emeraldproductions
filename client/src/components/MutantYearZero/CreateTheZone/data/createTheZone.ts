@@ -1,7 +1,7 @@
 export enum Environments {
   ASH_DESERT = "Ash Desert",
   CRUMBLING_RUINS = "Crumbling Ruins",
-  DEAD_WOODS = " Dead Woods",
+  DEAD_WOODS = "Dead Woods",
   DECAYED_RUINS = "Decayed Ruins",
   DERELICT_INDUSTRIES = "Derelict Industries",
   GLASIFIED_FIELD = "Glasified Field",
@@ -11,7 +11,7 @@ export enum Environments {
   SCRUBLANDS = "Scrublands",
   SETTLEMENT = "Settlement",
   THICK_WOODS = "Thick Woods",
-  UNSCATHED_RUINS = " Unscathed Ruins",
+  UNSCATHED_RUINS = "Unscathed Ruins",
 }
 
 export enum Card {

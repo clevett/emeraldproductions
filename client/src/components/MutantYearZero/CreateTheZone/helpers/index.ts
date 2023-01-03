@@ -7,3 +7,4 @@ export * from "./getRuin";
 export * from "./getSector";
 export * from "./getSectorRoll";
 export * from "./getThreat";
+export * from "./getImg";

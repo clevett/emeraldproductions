@@ -1,4 +1,4 @@
-import { getRandomArrayElement } from "../../../helpers";
+import { getRandomArrayElement } from "../../../../helpers";
 import { rotLevels } from "../data/createTheZone";
 import { getD66 } from "./getD66";
 
