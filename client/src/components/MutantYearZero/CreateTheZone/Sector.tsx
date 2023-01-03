@@ -20,9 +20,7 @@ export const Sector = () => {
         <CreateSector />
       </div>
       <FlexColGroup>
-        {sectors.map(({ id }) => (
-          <SectorCard key={id} id={id} />
-        ))}
+        {sectors.map(({ id }) => <SectorCard key={id} id={id} />).reverse()}
       </FlexColGroup>
     </div>
   );

@@ -1,7 +1,7 @@
 import { EuiButton } from "@elastic/eui";
 import { nanoid } from "nanoid";
 import { useRecoilCallback, useRecoilValue } from "recoil";
-import { getSector } from "../helpers";
+import { getSector } from "../helpers/";
 import { threatLevelAtom, selectSectorById } from "../recoil";
 
 export const CreateSector = () => {
@@ -13,7 +13,7 @@ export const CreateSector = () => {
         const id = nanoid();
         set(selectSectorById(id), getSector(id, threat));
       },
-    []
+    [threat]
   );
 
   return (
