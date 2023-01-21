@@ -86,7 +86,6 @@ export const TravelTool = () => {
         <EuiFlexItem className="max-w-xs min-w-fit">
           <TravelSelect
             list={paceList}
-            //@ts-expect-error ignore for now
             onChange={setPace}
             title="Pace"
             value={pace.name}
@@ -96,7 +95,6 @@ export const TravelTool = () => {
         <EuiFlexItem className="max-w-xs min-w-fit">
           <TravelSelect
             list={weatherList}
-            //@ts-expect-error ignore for now
             onChange={setWeather}
             title="Weather"
             value={weather.name}
