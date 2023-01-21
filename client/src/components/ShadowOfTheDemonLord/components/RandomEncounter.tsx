@@ -57,7 +57,6 @@ export const RandomEncounter = () => {
       <div className={`max-w-xs w-full ${styles.min100}`}>
         <TravelSelect
           list={threatList}
-          //@ts-expect-error ignore for now
           onChange={setThreat}
           title="Threat Level"
           value={threat.name}

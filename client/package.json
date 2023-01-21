@@ -4,6 +4,9 @@
   "version": "2.3.3",
   "private": true,
   "dependencies": {
+    "react-card-flip": "^1.2.0",
+    "@3d-dice/dice-box": "^1.0.5",
+    "@3d-dice/dice-parser-interface": "^0.2.0",
     "@dice-roller/rpg-dice-roller": "^5.2.1",
     "@elastic/datemath": "^5.0.3",
     "@elastic/eui": "^72.0.0",
