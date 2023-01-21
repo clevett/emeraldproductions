@@ -1,5 +1,21 @@
 export const artifacts = [
   {
+    result: [111, 114],
+    name: "Air Mattress",
+  },
+  {
+    result: [115, 122],
+    name: "Antidepressants",
+  },
+  {
+    result: [123, 126],
+    name: "Assault Rifle",
+  },
+  {
+    result: [131, 134],
+    name: "Automobile",
+  },
+  {
     result: [135, 142],
     name: "Battery",
   },
