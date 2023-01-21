@@ -15,7 +15,12 @@ export const ThreatInput = () => {
     if (isNaN(num)) {
       setValue(`${base}`);
     } else {
-      setBase(parseInt(value));
+      const v = num < 1 ? 1 : num > 20 ? 20 : num;
+      setBase(v);
+
+      if (v !== num) {
+        setValue(`${v}`);
+      }
     }
   };
 
@@ -26,9 +31,11 @@ export const ThreatInput = () => {
           <h5>Threat Level</h5>
         </EuiTitle>
         <EuiFieldText
-          onBlur={onBlur}
-          className="text-center"
           aria-label="Enter threat level"
+          className="text-center"
+          max={20}
+          min={1}
+          onBlur={onBlur}
           onChange={(e) => setValue(e.target.value)}
           placeholder="2"
           value={value}

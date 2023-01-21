@@ -12,9 +12,14 @@ export const getArtifacts = (num: number) => {
   const a = [];
   for (let i = 0; i < num; i++) {
     let roll = getD666();
+    let i = 1;
 
-    if (betweenInt(roll, 432, 666)) {
-      roll = Math.floor(Math.random() * 642);
+    const reRoll = roll >= 643;
+    if (reRoll) {
+      do {
+        roll = getD666();
+        i++;
+      } while (!reRoll || i < 5);
     }
 
     const artifact = artifacts.find((e) => {

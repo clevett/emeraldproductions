@@ -153,7 +153,7 @@ export const npcs = [
     alias: ["Six", "Kayden Fisher (England)"],
     connection: 3,
     description:
-      "Jacquin was a sinnless street rat grew into a muscle bound enforcer. She has muscle replacements and a smuggling compartment installed in order to sneak contraband into prison. She earned the nickname Six due to the sixth finger on her right hand.",
+      "Jacquin was a sinnless street rat grew into a muscle bound enforcer. She has muscle replacements and a smuggling compartment installed in order to sneak contraband into prison. She earned the nickname Six due to the sixth finger on her right hand. Her loyalty is first to the Lost MC.",
     flaws: ["Arrogant", "Bad Rep"],
     img: jac,
     knowledge: ["Crime", "Go-Gangs", "Law Enforcement Corps"],
