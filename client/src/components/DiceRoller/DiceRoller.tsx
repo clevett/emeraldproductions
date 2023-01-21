@@ -2,7 +2,7 @@ import { LayoutBody } from "../LayoutBody";
 import { useEffect, useState } from "react";
 import { useDiceRoller } from "./useDiceBox";
 import { NotationInput } from "./NotationInput";
-import { EuiLoadingSpinner, EuiTextColor } from "@elastic/eui";
+import { EuiLoadingSpinner, EuiSpacer, EuiTextColor } from "@elastic/eui";
 
 export const DiceRoller = () => {
   const [canvasElement, setCanvasElement] = useState<
@@ -31,6 +31,7 @@ export const DiceRoller = () => {
       ) : (
         <>
           <NotationInput submit={roll} />
+          <EuiSpacer size="s" />
           <EuiTextColor color="subdued">{message}</EuiTextColor>
         </>
       )}
