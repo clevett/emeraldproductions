@@ -1,7 +1,8 @@
 import { LayoutBody } from "../LayoutBody";
 import { useEffect, useState } from "react";
 import { useDiceRoller } from "./useDiceBox";
-import { json } from "stream/consumers";
+import { NotationInput } from "./NotationInput";
+import { EuiLoadingSpinner, EuiTextColor } from "@elastic/eui";
 
 export const DiceRoller = () => {
   const [canvasElement, setCanvasElement] = useState<
@@ -21,9 +22,19 @@ export const DiceRoller = () => {
 
   console.log(result);
 
+  const message = "Enter the dice string and press Enter";
+
   return (
     <LayoutBody DriveThruId="155572" subtitle="" title="Dice Roller">
-      <button onClick={() => roll("8d6!")}>Exploding Roll</button>
+      {!dicebox ? (
+        <EuiLoadingSpinner size="s" />
+      ) : (
+        <>
+          <NotationInput submit={roll} />
+          <EuiTextColor color="subdued">{message}</EuiTextColor>
+        </>
+      )}
+
       <canvas
         id={canvasId}
         className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"

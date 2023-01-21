@@ -34,8 +34,6 @@ export const useDiceRoller = () => {
   if (dicebox) {
     // This method is triggered whenever dice are finished rolling
     dicebox.onRollComplete = (results: unknown) => {
-      console.log(results);
-
       // handle any rerolls
       const rerolls = DRP.handleRerolls(results);
       if (rerolls.length) {

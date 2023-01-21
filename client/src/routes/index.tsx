@@ -3,7 +3,7 @@ import sotdl from "../imgs/ttrpgs/sotdl.png";
 import shadowrun5e from "../imgs/ttrpgs/shadowrun5e.png";
 import shadowrun6e from "../imgs/ttrpgs/shadowrun6e.png";
 import myz from "../imgs/ttrpgs/myz.png";
-import d20 from "../imgs/icons/dice-twenty-faces-twenty.svg";
+import dice from "../imgs/icons/rolling-dices.svg";
 
 import {
   FiveTorchesDeepMonsters,
@@ -28,7 +28,7 @@ import { DiceRoller } from "../components/DiceRoller";
 export const tools = [
   {
     element: <DiceRoller />,
-    iconType: d20,
+    iconType: dice,
     label: "Dice Roller",
     path: "/diceroller",
   },
