@@ -1,33 +1,17 @@
+import { EuiImage, EuiListGroup, EuiSpacer, EuiTitle } from "@elastic/eui";
 import {
-  EuiImage,
-  EuiListGroup,
-  EuiListGroupItem,
-  EuiSpacer,
-  EuiTitle,
-} from "@elastic/eui";
-import { ftdList, sotdlList, shadowrunList, myzList } from "../../routes";
-
-import logo from "../../imgs/logoLarge.png";
+  ftdList,
+  sotdlList,
+  shadowrunList,
+  myzList,
+  tools,
+} from "../../routes";
+import { EuiListGroupItem } from "@elastic/eui";
 import { Link, useLocation } from "react-router-dom";
 
+import logo from "../../imgs/logoLarge.png";
+
 export const Sidebar = () => {
-  const { pathname } = useLocation();
-
-  const getListItem = (list: typeof ftdList[0]) => {
-    const { label, path, iconType } = list;
-    return (
-      <Link to={path} key={`sidebar-${path}`}>
-        <EuiListGroupItem
-          iconType={iconType}
-          isActive={pathname === path}
-          label={label}
-        >
-          {label}
-        </EuiListGroupItem>
-      </Link>
-    );
-  };
-
   return (
     <>
       <EuiImage alt="Emerald Productions, LLC" src={logo} />
@@ -38,33 +22,51 @@ export const Sidebar = () => {
       <hr />
 
       <EuiSpacer />
-      <EuiTitle size="xs">
-        <h2>Five Torches Deep</h2>
-      </EuiTitle>
-      <EuiListGroup color="primary" size="s">
-        {ftdList.map((l) => getListItem(l))}
-      </EuiListGroup>
 
-      <EuiTitle size="xs">
-        <h2>Mutant Year Zero</h2>
-      </EuiTitle>
-      <EuiListGroup color="primary" size="s">
-        {myzList.map((l) => getListItem(l))}
-      </EuiListGroup>
+      <List title="General" list={tools} />
+      <List title="Five Torches Deep" list={ftdList} />
+      <List title="Mutant Year Zero" list={myzList} />
+      <List title="Shadow of the Demon Lord" list={sotdlList} />
+      <List title="Shadowrun" list={shadowrunList} />
+    </>
+  );
+};
 
-      <EuiTitle size="xs">
-        <h2>Shadow of the Demon Lord</h2>
-      </EuiTitle>
-      <EuiListGroup color="primary" size="s">
-        {sotdlList.map((l) => getListItem(l))}
-      </EuiListGroup>
+export const List = ({
+  title,
+  list,
+}: {
+  title: string;
+  list: typeof ftdList;
+}) => {
+  const getList = (list: typeof ftdList) =>
+    list.map((e: typeof ftdList[0]) => <ListItem key={e.path} item={e} />);
 
+  return (
+    <>
       <EuiTitle size="xs">
-        <h2>Shadowrun</h2>
+        <h2>{title}</h2>
       </EuiTitle>
       <EuiListGroup color="primary" size="s">
-        {shadowrunList.map((l) => getListItem(l))}
+        {getList(list)}
       </EuiListGroup>
     </>
+  );
+};
+
+export const ListItem = ({ item }: { item: typeof ftdList[0] }) => {
+  const { pathname } = useLocation();
+  const { label, path, iconType } = item;
+
+  return (
+    <Link to={path} key={`sidebar-${path}`}>
+      <EuiListGroupItem
+        iconType={iconType}
+        isActive={pathname === path}
+        label={label}
+      >
+        {label}
+      </EuiListGroupItem>
+    </Link>
   );
 };
