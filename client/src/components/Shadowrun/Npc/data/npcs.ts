@@ -50,13 +50,17 @@ export enum Descriptions {
 
 export const npcs = [
   {
-    alias: [`Ahmet Ali Sezer (Turkey)`, `Volkan Galip (UCAS)`],
+    alias: [
+      `Ahmet Ali Sezer (Turkey)`,
+      `Volkan Galip (UCAS)`,
+      `Asad Awads (United Kingdom)`,
+    ],
     connection: 4,
     professional: 7,
     description:
-      "Ahmet was born in Istanbul were he was trained as a mercenary for the Grey Wolves. He married his husband, Kamil, young and raised three children together (Taskin, Said, Zhara). \n He entered the shadows as a augmented street samurai where the paycheck was bigger if no less dangerous than mercenary work. ",
+      "Ahmet was born in Istanbul were he was trained as a mercenary for the Grey Wolves. He married his husband, Kamil, young and raised three children together (Taskin, Said, Zhara). \n He entered the shadows as a augmented street samurai where the paycheck was bigger, if no less dangerous, than mercenary work. ",
     img: asad,
-    name: "Asad 'Terminator' Awads",
+    name: "Asad",
     tags: [tags.FIXER, tags.GRAY_WOLVES, tags.SHADOWRUNNERS],
     type: Type.SERVICES,
     flaws: ["Adulterer", "Untreated PTSD"],
@@ -100,7 +104,7 @@ export const npcs = [
       "Anatomy",
       "Augementations",
       "Organ Legging",
-      "[Sprawl] London",
+      "Sprawl (London)",
     ],
     language: ["English"],
   },
