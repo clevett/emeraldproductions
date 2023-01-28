@@ -20,7 +20,7 @@ export const NotationInput = ({
       onChange={(e) => setValue(e.target.value)}
       onKeyDown={handleKeyDown}
       onSubmit={() => submit(value)}
-      placeholder="8d6"
+      placeholder="8d6!"
       value={value}
     />
   );
