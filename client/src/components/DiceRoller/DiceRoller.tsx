@@ -7,12 +7,10 @@ import {
   EuiSpacer,
   EuiTextColor,
 } from "@elastic/eui";
+import { DiceButtons } from "./DiceButtons";
 
 export const DiceRoller = () => {
-  const { roll, result, isLoading, canvas, clear } = useDiceRoller();
-
-  console.log(result);
-
+  const { roll, isLoading, canvas, clear } = useDiceRoller();
   const message = "Type in the dice string and press Enter";
 
   return (
@@ -20,19 +18,21 @@ export const DiceRoller = () => {
       {isLoading ? (
         <EuiLoadingSpinner size="s" />
       ) : (
-        <>
+        <div className="grid">
+          <DiceButtons roll={roll} />
           <div className="w-full grid grid-cols-[400px_min-content] gap-6">
             <NotationInput submit={roll} />
             <EuiButtonIcon
               aria-label={`flip the card`}
               className="self-center"
-              iconType="refresh"
+              color="danger"
+              iconType="trash"
               onClick={clear}
             />
           </div>
           <EuiSpacer size="s" />
           <EuiTextColor color="subdued">{message}</EuiTextColor>
-        </>
+        </div>
       )}
       {canvas}
     </LayoutBody>
