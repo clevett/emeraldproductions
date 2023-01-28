@@ -1,46 +1,40 @@
 import { LayoutBody } from "../LayoutBody";
-import { useEffect, useState } from "react";
 import { useDiceRoller } from "./useDiceBox";
 import { NotationInput } from "./NotationInput";
-import { EuiLoadingSpinner, EuiSpacer, EuiTextColor } from "@elastic/eui";
+import {
+  EuiButtonIcon,
+  EuiLoadingSpinner,
+  EuiSpacer,
+  EuiTextColor,
+} from "@elastic/eui";
+import { DiceButtons } from "./DiceButtons";
 
 export const DiceRoller = () => {
-  const [canvasElement, setCanvasElement] = useState<
-    HTMLCanvasElement | HTMLDivElement | null
-  >(null);
-  const { init, roll, dicebox, canvasId, result } = useDiceRoller();
-
-  useEffect(() => {
-    if (canvasElement === null) {
-      return;
-    }
-
-    if (dicebox === undefined) {
-      init();
-    }
-  }, [canvasElement, dicebox, init, roll]);
-
-  console.log(result);
-
-  const message = "Enter the dice string and press Enter";
+  const { roll, isLoading, canvas, clear, add } = useDiceRoller();
+  const message = "Type in the dice string and press Enter";
 
   return (
     <LayoutBody DriveThruId="155572" subtitle="" title="Dice Roller">
-      {!dicebox ? (
+      {isLoading ? (
         <EuiLoadingSpinner size="s" />
       ) : (
-        <>
-          <NotationInput submit={roll} />
+        <div className="grid">
+          <DiceButtons roll={add} />
+          <div className="w-full grid grid-cols-[400px_min-content] gap-6">
+            <NotationInput submit={roll} />
+            <EuiButtonIcon
+              aria-label={`flip the card`}
+              className="self-center"
+              color="danger"
+              iconType="trash"
+              onClick={clear}
+            />
+          </div>
           <EuiSpacer size="s" />
           <EuiTextColor color="subdued">{message}</EuiTextColor>
-        </>
+        </div>
       )}
-
-      <canvas
-        id={canvasId}
-        className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
-        ref={setCanvasElement}
-      />
+      {canvas}
     </LayoutBody>
   );
 };

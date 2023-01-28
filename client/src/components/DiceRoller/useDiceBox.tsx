@@ -2,28 +2,40 @@
 import DiceParser from "@3d-dice/dice-parser-interface";
 //@ts-expect-error Not typed
 import DiceBox from "@3d-dice/dice-box";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useDiceRoller = () => {
-  const canvasId = "dice-canvas";
   const [dicebox, setDicebox] = useState<DiceBox>(undefined);
   const [result, setResult] = useState<unknown>(null);
+  const [canvasElement, setCanvasElement] = useState<
+    HTMLCanvasElement | HTMLDivElement | null
+  >(null);
+
+  useEffect(() => {
+    if (canvasElement === null) {
+      return;
+    }
+
+    if (canvasElement && dicebox === undefined) {
+      init();
+    }
+  }, [canvasElement, dicebox]);
 
   // create Dice Roll Parser to handle complex notations
   const DRP = new DiceParser();
 
-  const init = async () => {
+  const init = async (themeColor = "#10ae4c") => {
     const Dice = new DiceBox(
-      `#${canvasId}`, // target DOM element to inject the canvas for rendering
+      `#dice-canvas`, // target DOM element to inject the canvas for rendering
       {
         assetPath: "/assets/dice-box/",
-        startingHeight: 8,
-        throwForce: 6,
-        spinForce: 5,
-        lightIntensity: 0.9,
         delay: 2,
+        lightIntensity: 0.9,
         scale: 4,
-        themeColor: "#10ae4c",
+        spinForce: 5,
+        startingHeight: 8,
+        themeColor,
+        throwForce: 6,
       }
     );
 
@@ -52,11 +64,31 @@ export const useDiceRoller = () => {
   const roll = (notation: string) =>
     dicebox.show().roll(DRP.parseNotation(notation));
 
+  const add = (notation: string) =>
+    dicebox.show().add(DRP.parseNotation(notation));
+
+  const clear = () => {
+    setResult(null);
+    dicebox.clear();
+  };
+
+  const canvas = (
+    <canvas
+      id="dice-canvas"
+      className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
+      ref={setCanvasElement}
+    />
+  );
+
+  const isLoading = dicebox ? false : true;
+
   return {
-    init,
+    add,
     roll,
+    clear,
     dicebox,
-    canvasId,
     result,
+    canvas,
+    isLoading,
   };
 };
