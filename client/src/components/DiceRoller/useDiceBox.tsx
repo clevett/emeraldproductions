@@ -64,6 +64,9 @@ export const useDiceRoller = () => {
   const roll = (notation: string) =>
     dicebox.show().roll(DRP.parseNotation(notation));
 
+  const add = (notation: string) =>
+    dicebox.show().add(DRP.parseNotation(notation));
+
   const clear = () => {
     setResult(null);
     dicebox.clear();
@@ -80,6 +83,7 @@ export const useDiceRoller = () => {
   const isLoading = dicebox ? false : true;
 
   return {
+    add,
     roll,
     clear,
     dicebox,

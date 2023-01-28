@@ -10,7 +10,7 @@ import {
 import { DiceButtons } from "./DiceButtons";
 
 export const DiceRoller = () => {
-  const { roll, isLoading, canvas, clear } = useDiceRoller();
+  const { roll, isLoading, canvas, clear, add } = useDiceRoller();
   const message = "Type in the dice string and press Enter";
 
   return (
@@ -19,7 +19,7 @@ export const DiceRoller = () => {
         <EuiLoadingSpinner size="s" />
       ) : (
         <div className="grid">
-          <DiceButtons roll={roll} />
+          <DiceButtons roll={add} />
           <div className="w-full grid grid-cols-[400px_min-content] gap-6">
             <NotationInput submit={roll} />
             <EuiButtonIcon
