@@ -64,6 +64,11 @@ export const useDiceRoller = () => {
   const roll = (notation: string) =>
     dicebox.show().roll(DRP.parseNotation(notation));
 
+  const clear = () => {
+    setResult(null);
+    dicebox.clear();
+  };
+
   const canvas = (
     <canvas
       id="dice-canvas"
@@ -76,6 +81,7 @@ export const useDiceRoller = () => {
 
   return {
     roll,
+    clear,
     dicebox,
     result,
     canvas,

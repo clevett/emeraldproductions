@@ -1,10 +1,15 @@
 import { LayoutBody } from "../LayoutBody";
 import { useDiceRoller } from "./useDiceBox";
 import { NotationInput } from "./NotationInput";
-import { EuiLoadingSpinner, EuiSpacer, EuiTextColor } from "@elastic/eui";
+import {
+  EuiButtonIcon,
+  EuiLoadingSpinner,
+  EuiSpacer,
+  EuiTextColor,
+} from "@elastic/eui";
 
 export const DiceRoller = () => {
-  const { roll, result, dicebox, canvas } = useDiceRoller();
+  const { roll, result, isLoading, canvas, clear } = useDiceRoller();
 
   console.log(result);
 
@@ -12,11 +17,19 @@ export const DiceRoller = () => {
 
   return (
     <LayoutBody DriveThruId="155572" subtitle="" title="Dice Roller">
-      {!dicebox ? (
+      {isLoading ? (
         <EuiLoadingSpinner size="s" />
       ) : (
         <>
-          <NotationInput submit={roll} />
+          <div className="w-full grid grid-cols-[400px_min-content] gap-6">
+            <NotationInput submit={roll} />
+            <EuiButtonIcon
+              aria-label={`flip the card`}
+              className="self-center"
+              iconType="refresh"
+              onClick={clear}
+            />
+          </div>
           <EuiSpacer size="s" />
           <EuiTextColor color="subdued">{message}</EuiTextColor>
         </>
