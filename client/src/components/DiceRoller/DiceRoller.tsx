@@ -4,7 +4,7 @@ import { NotationInput } from "./NotationInput";
 import { EuiLoadingSpinner, EuiSpacer, EuiTextColor } from "@elastic/eui";
 
 export const DiceRoller = () => {
-  const { roll, dicebox, canvas, result } = useDiceRoller();
+  const { roll, result, dicebox, canvas } = useDiceRoller();
 
   console.log(result);
 
@@ -21,7 +21,6 @@ export const DiceRoller = () => {
           <EuiTextColor color="subdued">{message}</EuiTextColor>
         </>
       )}
-
       {canvas}
     </LayoutBody>
   );

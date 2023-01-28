@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 export const useDiceRoller = () => {
   const [dicebox, setDicebox] = useState<DiceBox>(undefined);
   const [result, setResult] = useState<unknown>(null);
-  const canvasId = "dice-canvas";
-
   const [canvasElement, setCanvasElement] = useState<
     HTMLCanvasElement | HTMLDivElement | null
   >(null);
@@ -18,7 +16,7 @@ export const useDiceRoller = () => {
       return;
     }
 
-    if (dicebox === undefined) {
+    if (canvasElement && dicebox === undefined) {
       init();
     }
   }, [canvasElement, dicebox]);
@@ -28,7 +26,7 @@ export const useDiceRoller = () => {
 
   const init = async (themeColor = "#10ae4c") => {
     const Dice = new DiceBox(
-      `#${canvasId}`, // target DOM element to inject the canvas for rendering
+      `#dice-canvas`, // target DOM element to inject the canvas for rendering
       {
         assetPath: "/assets/dice-box/",
         delay: 2,
@@ -68,18 +66,19 @@ export const useDiceRoller = () => {
 
   const canvas = (
     <canvas
-      id={canvasId}
+      id="dice-canvas"
       className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
       ref={setCanvasElement}
     />
   );
 
+  const isLoading = dicebox ? false : true;
+
   return {
-    init,
     roll,
     dicebox,
-    canvasId,
     result,
     canvas,
+    isLoading,
   };
 };
