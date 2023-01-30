@@ -1,7 +1,7 @@
 {
   "name": "emeraldproductions",
   "author": "Cassie Levett",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "private": true,
   "dependencies": {
     "@3d-dice/dice-box": "^1.0.5",
