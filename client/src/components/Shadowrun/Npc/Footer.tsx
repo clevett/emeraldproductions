@@ -1,5 +1,4 @@
 import { EuiButtonIcon } from "@elastic/eui";
-import { ToolTip } from "../../ToolTip/ToolTip";
 import { Descriptions, NPC, Type } from "./data/npcs";
 import styles from "./styles.module.css";
 
@@ -31,11 +30,9 @@ export const Footer = ({
 }) => {
   return (
     <div className={`${styles.footer}`}>
-      <ToolTip content={getToolTip(type)}>
-        <span>
-          Type: <u>{type}</u>
-        </span>
-      </ToolTip>
+      <span>
+        Type: <u>{type}</u>
+      </span>
       <EuiButtonIcon
         aria-label={`flip the card`}
         className={`justify-self-end`}
