@@ -32,7 +32,9 @@ export const Footer = ({
   return (
     <div className={`${styles.footer}`}>
       <ToolTip content={getToolTip(type)}>
-        <span>Type: {type}</span>
+        <span>
+          Type: <u>{type}</u>
+        </span>
       </ToolTip>
       <EuiButtonIcon
         aria-label={`flip the card`}
