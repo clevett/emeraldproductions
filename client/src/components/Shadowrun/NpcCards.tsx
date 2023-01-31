@@ -6,7 +6,7 @@ import { npcs } from "./Npc/data/npcs";
 export const NpcCards = () => {
   return (
     <LayoutBody
-      DriveThruId="115985"
+      DriveThruId="286850"
       subtitle="Npcs"
       title="Shadowrun 6th Edition"
     >
