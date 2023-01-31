@@ -24,6 +24,7 @@ import {
 
 import { CreateTheZone } from "../components/MutantYearZero";
 import { DiceRoller } from "../components/DiceRoller";
+import { Heat } from "../components/Shadowrun/Heat";
 
 export const tools = [
   {
@@ -88,6 +89,12 @@ export const shadowrunList = [
     iconType: shadowrun6e,
     label: "Npcs",
     path: "/shadowrun/npcs",
+  },
+  {
+    element: <Heat />,
+    iconType: shadowrun6e,
+    label: "Heat",
+    path: "/shadowrun/heat",
   },
 ];
 
