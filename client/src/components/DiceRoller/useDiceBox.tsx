@@ -61,9 +61,19 @@ export const useDiceRoller = () => {
   }
 
   // trigger dice roll
-  const roll = (notation: string) =>
-    dicebox.show().roll(DRP.parseNotation(notation));
+  const roll = (notation: string, color?: string) => {
+    const parsedNotation = DRP.parseNotation(notation);
+    const diceBoxNotation = color
+      ? { ...parsedNotation[0], themeColor: color }
+      : parsedNotation;
 
+    console.table({
+      notation,
+      color,
+    });
+    console.log(diceBoxNotation);
+    dicebox.show().roll(diceBoxNotation);
+  };
   const add = (notation: string) =>
     dicebox.show().add(DRP.parseNotation(notation));
 
