@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export const useDiceRoller = () => {
   const [dicebox, setDicebox] = useState<DiceBox>(undefined);
-  const [result, setResult] = useState<unknown>(null);
+  const [result, setResult] = useState<{ value: number } | null>(null);
   const [canvasElement, setCanvasElement] = useState<
     HTMLCanvasElement | HTMLDivElement | null
   >(null);
@@ -24,7 +24,7 @@ export const useDiceRoller = () => {
   // create Dice Roll Parser to handle complex notations
   const DRP = new DiceParser();
 
-  const init = async (themeColor = "#10ae4c") => {
+  const init = async (themeColor = "#086931") => {
     const Dice = new DiceBox(
       `#dice-canvas`, // target DOM element to inject the canvas for rendering
       {

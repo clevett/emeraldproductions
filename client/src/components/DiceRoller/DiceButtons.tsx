@@ -30,10 +30,16 @@ const getIcon = (sides: number) => {
   }
 };
 
-export const DiceButtons = ({ roll }: { roll: (arg: string) => void }) => {
-  const buttons = dice.map((d) => (
+export const DiceButtons = ({
+  models = dice,
+  roll,
+}: {
+  models?: typeof dice;
+  roll: (arg: string) => void;
+}) => {
+  const buttons = models.map((d) => (
     <EuiButtonIcon
-      aria-label={`flip the card`}
+      aria-label="flip the card"
       className="self-center min-h-[50px] min-w-[50px] w-full h-full"
       iconType={getIcon(d)}
       key={`d-${d}-dice`}
