@@ -5,7 +5,9 @@ import DiceBox from "@3d-dice/dice-box";
 import { useEffect, useState } from "react";
 
 export const useDiceRoller = () => {
+  const [color, setColor] = useState("#086931");
   const [dicebox, setDicebox] = useState<DiceBox>(undefined);
+  const [hasRolled, setHasRolled] = useState(false);
   const [result, setResult] = useState<{ value: number } | null>(null);
   const [canvasElement, setCanvasElement] = useState<
     HTMLCanvasElement | HTMLDivElement | null
@@ -60,32 +62,30 @@ export const useDiceRoller = () => {
     };
   }
 
-  // trigger dice roll
   const roll = (notation: string, color?: string) => {
     const parsedNotation = DRP.parseNotation(notation);
     const diceBoxNotation = color
-      ? { ...parsedNotation[0], themeColor: color }
+      ? parsedNotation.map((n: any) => ({ ...n, themeColor: color }))
       : parsedNotation;
 
-    console.table({
-      notation,
-      color,
-    });
-    console.log(diceBoxNotation);
-    dicebox.show().roll(diceBoxNotation);
+    if (hasRolled) {
+      dicebox.show().add(diceBoxNotation);
+    } else {
+      dicebox.show().roll(diceBoxNotation);
+      setHasRolled(true);
+    }
   };
-  const add = (notation: string) =>
-    dicebox.show().add(DRP.parseNotation(notation));
 
   const clear = () => {
     setResult(null);
+    setHasRolled(false);
     dicebox.clear();
   };
 
   const canvas = (
     <canvas
-      id="dice-canvas"
       className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
+      id="dice-canvas"
       ref={setCanvasElement}
     />
   );
@@ -93,8 +93,9 @@ export const useDiceRoller = () => {
   const isLoading = dicebox ? false : true;
 
   return {
-    add,
     roll,
+    color,
+    setColor,
     clear,
     dicebox,
     result,

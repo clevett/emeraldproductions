@@ -1,6 +1,5 @@
 import { EuiFieldText } from "@elastic/eui";
 import { useState } from "react";
-import { EuiColorPicker, EuiFormRow, useColorPickerState } from "@elastic/eui";
 
 export const NotationInput = ({
   submit,
@@ -9,11 +8,10 @@ export const NotationInput = ({
 }) => {
   const defaultRoll = "8d6!";
   const [value, setValue] = useState(defaultRoll);
-  const [color, setColor, errors] = useColorPickerState("#D36086");
 
   const handleKeyDown = (event: { key: string }) => {
     if (event.key === "Enter") {
-      submit(value, color);
+      submit(value);
     }
   };
   return (
@@ -23,17 +21,10 @@ export const NotationInput = ({
         className="w-full"
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={handleKeyDown}
-        onSubmit={() => submit(value, color)}
+        onSubmit={() => submit(value)}
         placeholder={defaultRoll}
         value={value}
       />
-      <EuiFormRow label="Pick a color" isInvalid={!!errors} error={errors}>
-        <EuiColorPicker
-          onChange={setColor}
-          color={color}
-          isInvalid={!!errors}
-        />
-      </EuiFormRow>
     </>
   );
 };
