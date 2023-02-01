@@ -1,12 +1,15 @@
-import { EuiFieldText } from "@elastic/eui";
+import { EuiFieldText, EuiTextColor } from "@elastic/eui";
 import { useState } from "react";
 
 export const NotationInput = ({
   submit,
 }: {
-  submit: (arg: string) => void;
+  submit: (arg: string, color?: string) => void;
 }) => {
-  const [value, setValue] = useState("8d6");
+  const defaultRoll = "8d6!";
+  const [value, setValue] = useState(defaultRoll);
+
+  const message = "Type in the dice string and press Enter";
 
   const handleKeyDown = (event: { key: string }) => {
     if (event.key === "Enter") {
@@ -14,14 +17,17 @@ export const NotationInput = ({
     }
   };
   return (
-    <EuiFieldText
-      aria-label="Enter dice notation"
-      className="w-full"
-      onChange={(e) => setValue(e.target.value)}
-      onKeyDown={handleKeyDown}
-      onSubmit={() => submit(value)}
-      placeholder="8d6!"
-      value={value}
-    />
+    <div className="grid gap-4">
+      <EuiFieldText
+        aria-label="Enter dice notation"
+        className="w-full"
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={handleKeyDown}
+        onSubmit={() => submit(value)}
+        placeholder={defaultRoll}
+        value={value}
+      />
+      <EuiTextColor color="subdued">{message}</EuiTextColor>
+    </div>
   );
 };
