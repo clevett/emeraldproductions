@@ -36,7 +36,7 @@ export const About = () => {
             <EuiPageHeader
               description="Front-end developer specializing in software for table role playing games. I have an interest in accessibility, user experience, and project management. As a member of a team of engineers, I use my well-developed information organization and communications skills to compliment team members with a passion for technological solutions."
               paddingSize="l"
-              pageTitle="Caden (CJ) Levett"
+              pageTitle="Caden Levett"
             />
           </EuiFlexItem>
         </EuiFlexGroup>
