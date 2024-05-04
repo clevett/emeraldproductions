@@ -1,6 +1,6 @@
 # Emerald Productions
 
-Greetings traveller! This repository is the home of practical application examples for my continual learning. The components inside were created to practice lessons learned in React, UI/UX Design, Responsive Web Development, Accessibility, and Full Stack Web Development. The site is designed using Figma followed by development with Jest testing. Responsive and accessibility improvements continue to take place through regular audits.
+Greetings traveller! This repository is the home of practical application examples for my continual learning. The components inside were created to practice lessons learned in React, UI/UX Design, Responsive Web Development, Accessibility, and Full Stack Web Development. The site is designed using Figma followed by development with Jest testing. 
 
 ## RPG Tools
 
