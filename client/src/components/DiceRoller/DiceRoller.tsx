@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EuiButtonIcon, EuiLoadingSpinner, EuiTextColor } from "@elastic/eui";
+import { EuiButtonIcon, EuiLoadingSpinner } from "@elastic/eui";
 import { SketchPicker } from "react-color";
 import { LayoutBody } from "../LayoutBody";
 import { DiceButtons } from "./DiceButtons";

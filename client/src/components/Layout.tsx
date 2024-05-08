@@ -7,18 +7,23 @@ import {
   EuiPageTemplate,
   EuiSpacer,
 } from "@elastic/eui";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import logo from "../imgs/egIcon.png";
 import { ContactOptions } from "./ContactOptions";
 import { Sidebar } from "./Sidebar/Sidebar";
 
-export const Layout = ({ children }: { children: JSX.Element }) => {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
+  const { pathname } = useLocation();
+  const hasSidebar = pathname !== "/vocab";
+
   return (
     <EuiPageTemplate panelled={true} bottomBorder={true} grow={true}>
-      <EuiPageTemplate.Sidebar>
-        <Sidebar />
-      </EuiPageTemplate.Sidebar>
+      {hasSidebar && (
+        <EuiPageTemplate.Sidebar>
+          <Sidebar />
+        </EuiPageTemplate.Sidebar>
+      )}
       <EuiHeader
         theme="dark"
         sections={[
@@ -30,6 +35,12 @@ export const Layout = ({ children }: { children: JSX.Element }) => {
               <EuiHeaderLinks aria-label="links">
                 <EuiHeaderLink isActive>
                   <Link to="/">About</Link>
+                </EuiHeaderLink>
+                <EuiHeaderLink>
+                  <Link to="/diceroller">TTRPG Tools</Link>
+                </EuiHeaderLink>
+                <EuiHeaderLink>
+                  <Link to="/vocab">Vocabulary Builder</Link>
                 </EuiHeaderLink>
               </EuiHeaderLinks>,
             ],
