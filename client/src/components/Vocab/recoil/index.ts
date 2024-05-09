@@ -6,11 +6,11 @@ import {
   selectorFamily,
 } from "recoil";
 import { Card, Word } from "../types";
-import { getCardDefault } from "../helpers";
+import { getCardDefault, getWordList } from "../helpers";
 
 export const cardIdsAtom = atom<string[] | undefined>({
   key: "cardIdsAtom",
-  default: undefined,
+  default: getWordList(),
 });
 
 export const selectedCardIdAtom = atom<Word | undefined>({

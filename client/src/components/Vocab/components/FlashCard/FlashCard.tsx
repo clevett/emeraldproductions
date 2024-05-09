@@ -13,17 +13,15 @@ export const FlashCard = ({
   const [card, setCard] = useRecoilState(cardSelector(word));
   const { isMatched, isRevealed } = card;
 
-  if (card.word === "azul") console.log(card);
-
   const onFlip = () => {
-    cardChecker();
     setCard((card) => ({ ...card, isRevealed: !isRevealed }));
+    cardChecker();
   };
 
   return (
     <div onClick={onFlip}>
       <ReactCardFlip
-        isFlipped={isRevealed}
+        isFlipped={isRevealed || isMatched}
         flipDirection="horizontal"
         flipSpeedFrontToBack={0.3}
       >

@@ -1,0 +1,13 @@
+{
+  "le prénom": "etunimi",
+  "le nom de famille": "sukunimi",
+  "l’adresse": "osoite",
+  "le pays": "maa",
+  "le lieu de naissance": "syntymäpaikka",
+  "la date de naissance": "syntymäaika",
+  "la profession": "ammatti",
+  "l’homme": "mies",
+  "la femme": "nainen",
+  "l’adulte": "aikuinen",
+  "l’enfant": "lapsi"
+}

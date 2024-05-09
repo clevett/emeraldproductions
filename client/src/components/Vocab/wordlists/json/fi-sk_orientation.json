@@ -1,0 +1,12 @@
+{
+  "smer": "suunta",
+  "vchod": "sisäänkäynti",
+  "východ": "uloskäynti",
+  "ulica": "katu",
+  "cesta": "tie",
+  "námestie": "tori",
+  "vpravo": "oikealla",
+  "vľavo": "vasemmalla",
+  "rovno": "suoraan eteenpäin",
+  "späť": "takaisin"
+}

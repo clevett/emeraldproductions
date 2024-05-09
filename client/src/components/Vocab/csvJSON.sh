@@ -1,6 +1,3 @@
-#!/bin/bash
-
-# sh ./csvJSON.sh ./wordlists
 # Check if input folder is provided
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <input_folder>"
@@ -15,15 +12,19 @@ if [ ! -d "$input_folder" ]; then
     exit 1
 fi
 
-# Loop through each CSV file in the folder
-for input_file in "$input_folder"/*.csv; do
+# Create wordlists/json directory if it doesn't exist
+json_folder="wordlists/json"
+mkdir -p $json_folder
+
+# Loop through each CSV file in the folder and its subfolders
+find "$input_folder" -name '*.csv' | while read -r input_file; do
     if [ -f "$input_file" ]; then
         # Get file name without extension
         filename=$(basename -- "$input_file")
         filename_no_ext="${filename%.*}"
 
         # Prepare output file
-        output_file="$input_folder/$filename_no_ext.json"
+        output_file="${json_folder}/${filename_no_ext}.json"
 
         echo "{" > "$output_file"
 

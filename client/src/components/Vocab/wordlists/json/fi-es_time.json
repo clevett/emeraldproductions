@@ -1,0 +1,22 @@
+{
+  "el tiempo": "aika",
+  "el día": "päivä",
+  "la semana": "viikko",
+  "el mes": "kuukausi",
+  "el año": "vuosi",
+  "lunes": "maanantai",
+  "martes": "tiistai",
+  "miércoles": "keskiviikko",
+  "jueves": "torstai",
+  "viernes": "perjantai",
+  "sábado": "lauantai",
+  "domingo": "sunnuntai",
+  "por la mañana": "aamu",
+  "por la tarde": "iltapäivä",
+  "por la tarde": "illalla",
+  "por la noche": "yöllä",
+  "antes": "aiemmin",
+  "más tarde": "myöhemmin",
+  "a tiempo": "ajallaan",
+  "con retraso": "viivästynyt"
+}

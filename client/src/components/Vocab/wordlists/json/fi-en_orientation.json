@@ -1,0 +1,12 @@
+{
+  "direction": "suunta",
+  "entrance": "sisäänkäynti",
+  "exit": "uloskäynti",
+  "street": "katu",
+  "way": "tie",
+  "square": "tori",
+  "right": "oikealla",
+  "left": "vasemmalla",
+  "straight ahead": "suoraan eteenpäin",
+  "back": "takaisin"
+}
