@@ -15,7 +15,7 @@ import { Sidebar } from "./Sidebar/Sidebar";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const { pathname } = useLocation();
-  const hasSidebar = pathname !== "/vocab";
+  const hasSidebar = pathname !== "/vocabulary-game";
 
   return (
     <EuiPageTemplate panelled={true} bottomBorder={true} grow={true}>
@@ -40,7 +40,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                   <Link to="/diceroller">TTRPG Tools</Link>
                 </EuiHeaderLink>
                 <EuiHeaderLink>
-                  <Link to="/vocab">Vocabulary Builder</Link>
+                  <Link to="/vocabulary-game">Vocabulary Builder</Link>
                 </EuiHeaderLink>
               </EuiHeaderLinks>,
             ],

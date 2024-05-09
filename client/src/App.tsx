@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { About } from "./components/About/About";
 import { Layout } from "./components/Layout";
-import { Vocab } from "./components/Vocab/Vocab";
+import { VocabularyGame } from "./components/Vocab/VocabularyGame";
 
 import { routes, tools } from "./routes";
 
@@ -29,7 +29,7 @@ const App = () => {
                 />
               ))}
               <Route path={tools[0].path} element={tools[0].element} />
-              <Route path="/vocab" element={<Vocab />} />
+              <Route path="/vocabulary-game" element={<VocabularyGame />} />
             </Routes>
           </Layout>
         </EuiProvider>
