@@ -1,5 +1,5 @@
-import { Word } from "../types";
-import list from "../wordlists/fi-es_color.json";
+import { Language, List, Word } from "../types";
+import { list } from "../wordlists";
 
 const shuffle = (array: Word[]) => {
   let currentIndex = array.length;
@@ -20,7 +20,13 @@ const shuffle = (array: Word[]) => {
   return array;
 };
 
-export const getWordList = () => {
+export const getRandomCategory = (lang: Language = "fi-es") => {
+  const wordList = list[lang];
+  const randomIndex = Math.floor(Math.random() * wordList.length);
+  return wordList[randomIndex];
+};
+
+export const getWordList = (list: List) => {
   let arr: Word[] = [];
 
   Object.entries(list).forEach(([key, value]) => {
@@ -31,7 +37,7 @@ export const getWordList = () => {
   return shuffle(arr);
 };
 
-export const getMatch = (word: string) => {
+export const getMatch = (word: string, list: List) => {
   for (const [key, value] of Object.entries(list)) {
     if (key === word) {
       return value;
@@ -46,9 +52,9 @@ export const getMatch = (word: string) => {
   return undefined;
 };
 
-export const getCardDefault = (word: Word) => ({
+export const getCardDefault = (word: Word, list: List) => ({
   isMatched: false,
   isRevealed: false,
-  match: getMatch(word),
+  match: getMatch(word, list),
   word,
 });

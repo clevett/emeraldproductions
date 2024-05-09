@@ -5,12 +5,20 @@ import {
   selector,
   selectorFamily,
 } from "recoil";
-import { Card, Word } from "../types";
-import { getCardDefault, getWordList } from "../helpers";
+import { Card, Language, Word } from "../types";
+import { getCardDefault, getWordList, getRandomCategory } from "../helpers";
+
+const defaultLanguage = "fi-es";
+const defaultCategory = getRandomCategory(defaultLanguage);
+
+export const languageAtom = atom<Language>({
+  key: "languageAtom",
+  default: defaultLanguage,
+});
 
 export const cardIdsAtom = atom<string[] | undefined>({
   key: "cardIdsAtom",
-  default: getWordList(),
+  default: getWordList(defaultCategory.list),
 });
 
 export const selectedCardIdAtom = atom<Word | undefined>({
@@ -20,7 +28,7 @@ export const selectedCardIdAtom = atom<Word | undefined>({
 
 export const cardAtomFamily = atomFamily<Card, Word>({
   key: "cardAtomFamily",
-  default: (param) => getCardDefault(param),
+  default: (param) => getCardDefault(param, defaultCategory.list),
 });
 
 export const cardSelector = selectorFamily({

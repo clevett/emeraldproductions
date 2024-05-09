@@ -12,8 +12,8 @@ if [ ! -d "$input_folder" ]; then
     exit 1
 fi
 
-# Create wordlists/json directory if it doesn't exist
-json_folder="wordlists/json"
+# Create wordlists directory if it doesn't exist
+json_folder="wordlists/"
 mkdir -p $json_folder
 
 # Loop through each CSV file in the folder and its subfolders

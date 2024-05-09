@@ -1,4 +1,4 @@
-import { Card } from "./Card";
+import { Card } from "../Card/Card";
 import { cardSelector } from "../../recoil";
 import { useRecoilState } from "recoil";
 import { Word } from "../../types";
@@ -17,6 +17,8 @@ export const FlashCard = ({
     setCard((card) => ({ ...card, isRevealed: !isRevealed }));
     cardChecker();
   };
+
+  console.log(card);
 
   return (
     <div onClick={onFlip}>

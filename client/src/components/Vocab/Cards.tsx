@@ -1,13 +1,13 @@
 import { wordListSelector } from "./recoil";
 import { FlashCard } from "./components/FlashCard/FlashCard";
-import { useHideCards } from "./hooks/useHideCards";
+import { useCardChecker } from "./hooks/useCardChecker";
 import { useRecoilValue } from "recoil";
 
 import styles from "./styles.module.css";
 
 export const Cards = () => {
   const list = useRecoilValue(wordListSelector);
-  const hideCards = useHideCards();
+  const hideCards = useCardChecker();
 
   return (
     <div className={styles.layout}>
