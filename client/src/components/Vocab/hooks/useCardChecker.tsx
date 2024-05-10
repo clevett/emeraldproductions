@@ -1,6 +1,7 @@
-import { useRecoilCallback, useRecoilValue } from "recoil";
-import { cardAtomFamily, inPlayCardSelector } from "../recoil";
 import { Card } from "../types";
+import { cardAtomFamily } from "../recoil/atoms";
+import { inPlayCardSelector } from "../recoil/selectors";
+import { useRecoilCallback, useRecoilValue } from "recoil";
 
 export const useCardChecker = () => {
   const inPlayCards = useRecoilValue(inPlayCardSelector);

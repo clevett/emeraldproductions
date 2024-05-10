@@ -1,7 +1,7 @@
-export const list = {
+export const wordLists = {
   "fi-de": [
     {
-      category: "adjective",
+      name: "adjective",
       list: {
         gut: "hyvä",
         schlecht: "huono",
@@ -22,7 +22,7 @@ export const list = {
       },
     },
     {
-      category: "color",
+      name: "color",
       list: {
         weiß: "valkoinen",
         schwarz: "musta",
@@ -34,7 +34,7 @@ export const list = {
       },
     },
     {
-      category: "communication",
+      name: "communication",
       list: {
         "Hallo!": "Hei!",
         "Guten Tag!": "Hei!",
@@ -49,7 +49,7 @@ export const list = {
       },
     },
     {
-      category: "food",
+      name: "food",
       list: {
         "das Essen": "ruoka",
         "das Restaurant": "ravintola",
@@ -81,7 +81,7 @@ export const list = {
       },
     },
     {
-      category: "health",
+      name: "health",
       list: {
         "der Arzt / die Ärztin": "lääkäri",
         "das Krankenhaus": "sairaala",
@@ -99,7 +99,7 @@ export const list = {
       },
     },
     {
-      category: "numbers",
+      name: "numbers",
       list: {
         eins: "yksi",
         zwei: "kaksi",
@@ -118,7 +118,7 @@ export const list = {
       },
     },
     {
-      category: "orientation",
+      name: "orientation",
       list: {
         "die Richtung": "suunta",
         "der Eingang": "sisäänkäynti",
@@ -133,7 +133,7 @@ export const list = {
       },
     },
     {
-      category: "personal-information",
+      name: "personal-information",
       list: {
         "der Vorname": "etunimi",
         "der Nachname": "sukunimi",
@@ -149,7 +149,7 @@ export const list = {
       },
     },
     {
-      category: "sentences",
+      name: "sentences",
       list: {
         "Was ist…?": "Mikä ...?",
         "Wo ist …?": "Missä on ...?",
@@ -163,7 +163,7 @@ export const list = {
       },
     },
     {
-      category: "shopping",
+      name: "shopping",
       list: {
         "der Supermarkt": "supermarketti",
         "das Geld": "raha",
@@ -178,7 +178,7 @@ export const list = {
       },
     },
     {
-      category: "surrounding",
+      name: "surrounding",
       list: {
         "das Haus": "talo",
         "die Wohnung": "asunto",
@@ -199,7 +199,7 @@ export const list = {
       },
     },
     {
-      category: "technology",
+      name: "technology",
       list: {
         "das Internet": "internet",
         "das Passwort": "salasana",
@@ -209,7 +209,7 @@ export const list = {
       },
     },
     {
-      category: "time",
+      name: "time",
       list: {
         Zeit: "aika",
         "der Tag": "päivä",
@@ -234,7 +234,7 @@ export const list = {
       },
     },
     {
-      category: "transport",
+      name: "transport",
       list: {
         "der Zug": "juna",
         "der Bus": "bussi",
@@ -249,7 +249,7 @@ export const list = {
       },
     },
     {
-      category: "verb",
+      name: "verb",
       list: {
         arbeiten: "työskennellä",
         besuchen: "käydä",
@@ -280,7 +280,7 @@ export const list = {
   ],
   "fi-en": [
     {
-      category: "adjective",
+      name: "adjective",
       list: {
         good: "hyvä",
         bad: "huono",
@@ -301,7 +301,7 @@ export const list = {
       },
     },
     {
-      category: "color",
+      name: "color",
       list: {
         color: "väri",
         white: "valkoinen",
@@ -314,7 +314,7 @@ export const list = {
       },
     },
     {
-      category: "communication",
+      name: "communication",
       list: {
         "Hi!": "Hei!",
         "Hello!": "Hei!",
@@ -329,7 +329,7 @@ export const list = {
       },
     },
     {
-      category: "food",
+      name: "food",
       list: {
         food: "ruoka",
         restaurant: "ravintola",
@@ -361,7 +361,7 @@ export const list = {
       },
     },
     {
-      category: "health",
+      name: "health",
       list: {
         doctor: "lääkäri",
         hospital: "sairaala",
@@ -379,7 +379,7 @@ export const list = {
       },
     },
     {
-      category: "numbers",
+      name: "numbers",
       list: {
         one: "yksi",
         two: "kaksi",
@@ -398,7 +398,7 @@ export const list = {
       },
     },
     {
-      category: "orientation",
+      name: "orientation",
       list: {
         direction: "suunta",
         entrance: "sisäänkäynti",
@@ -413,7 +413,7 @@ export const list = {
       },
     },
     {
-      category: "personal-information",
+      name: "personal-information",
       list: {
         "first name": "etunimi",
         "last name": "sukunimi",
@@ -429,7 +429,7 @@ export const list = {
       },
     },
     {
-      category: "sentences",
+      name: "sentences",
       list: {
         "What is …?": "Mikä ...?",
         "Where is …?": "Missä on ...?",
@@ -443,7 +443,7 @@ export const list = {
       },
     },
     {
-      category: "shopping",
+      name: "shopping",
       list: {
         supermarket: "supermarketti",
         cash: "raha",
@@ -458,7 +458,7 @@ export const list = {
       },
     },
     {
-      category: "surrounding",
+      name: "surrounding",
       list: {
         house: "talo",
         apartment: "asunto",
@@ -479,7 +479,7 @@ export const list = {
       },
     },
     {
-      category: "technology",
+      name: "technology",
       list: {
         internet: "internet",
         password: "salasana",
@@ -489,7 +489,7 @@ export const list = {
       },
     },
     {
-      category: "time",
+      name: "time",
       list: {
         time: "aika",
         day: "päivä",
@@ -514,7 +514,7 @@ export const list = {
       },
     },
     {
-      category: "transport",
+      name: "transport",
       list: {
         train: "juna",
         bus: "bussi",
@@ -529,7 +529,7 @@ export const list = {
       },
     },
     {
-      category: "verb",
+      name: "verb",
       list: {
         "to work": "työskennellä",
         "to visit": "käydä",
@@ -560,7 +560,7 @@ export const list = {
   ],
   "fi-es": [
     {
-      category: "adjective",
+      name: "adjective",
       list: {
         "bueno/a": "hyvä",
         "malo/a": "huono",
@@ -581,7 +581,7 @@ export const list = {
       },
     },
     {
-      category: "color",
+      name: "color",
       list: {
         "el color": "väri",
         "blanco/a": "valkoinen",
@@ -594,7 +594,7 @@ export const list = {
       },
     },
     {
-      category: "communication",
+      name: "communication",
       list: {
         "¡Hola!": "Hei!",
         "¡Adiós!": "Näkemiin!",
@@ -608,7 +608,7 @@ export const list = {
       },
     },
     {
-      category: "food",
+      name: "food",
       list: {
         "la comida": "ruoka",
         "el restaurante": "ravintola",
@@ -639,7 +639,7 @@ export const list = {
       },
     },
     {
-      category: "health",
+      name: "health",
       list: {
         "el/la médico/a": "lääkäri",
         "el hospital": "sairaala",
@@ -657,7 +657,7 @@ export const list = {
       },
     },
     {
-      category: "numbers",
+      name: "numbers",
       list: {
         un: "yksi",
         dos: "kaksi",
@@ -676,7 +676,7 @@ export const list = {
       },
     },
     {
-      category: "orientation",
+      name: "orientation",
       list: {
         "la dirección": "suunta",
         "la entrada": "sisäänkäynti",
@@ -691,7 +691,7 @@ export const list = {
       },
     },
     {
-      category: "personal-information",
+      name: "personal-information",
       list: {
         nombre: "etunimi",
         apellido: "sukunimi",
@@ -707,7 +707,7 @@ export const list = {
       },
     },
     {
-      category: "sentences",
+      name: "sentences",
       list: {
         "¿Qué es ...?": "Mikä ...?",
         "¿Dónde está ...?": "Missä on ...?",
@@ -721,7 +721,7 @@ export const list = {
       },
     },
     {
-      category: "shopping",
+      name: "shopping",
       list: {
         "el supermercado": "supermarketti",
         "el dinero": "raha",
@@ -736,7 +736,7 @@ export const list = {
       },
     },
     {
-      category: "surrounding",
+      name: "surrounding",
       list: {
         "la casa": "talo",
         "el apartamento": "asunto",
@@ -757,7 +757,7 @@ export const list = {
       },
     },
     {
-      category: "technology",
+      name: "technology",
       list: {
         "el internet": "internet",
         "la contraseña": "salasana",
@@ -767,7 +767,7 @@ export const list = {
       },
     },
     {
-      category: "time",
+      name: "time",
       list: {
         "el tiempo": "aika",
         "el día": "päivä",
@@ -791,7 +791,7 @@ export const list = {
       },
     },
     {
-      category: "transport",
+      name: "transport",
       list: {
         "el tren": "juna",
         "el autobús": "bussi",
@@ -806,7 +806,7 @@ export const list = {
       },
     },
     {
-      category: "verb",
+      name: "verb",
       list: {
         trabajar: "työskennellä",
         visitar: "käydä",
@@ -837,7 +837,7 @@ export const list = {
   ],
   "fi-fr": [
     {
-      category: "adjective",
+      name: "adjective",
       list: {
         "bon(ne)": "hyvä",
         "mauvais(e)": "huono",
@@ -858,7 +858,7 @@ export const list = {
       },
     },
     {
-      category: "color",
+      name: "color",
       list: {
         "la couleur": "väri",
         "blanc/blanche": "valkoinen",
@@ -871,7 +871,7 @@ export const list = {
       },
     },
     {
-      category: "communication",
+      name: "communication",
       list: {
         "Salut !": "Hei!",
         "Bonjour !": "Hei!",
@@ -886,7 +886,7 @@ export const list = {
       },
     },
     {
-      category: "food",
+      name: "food",
       list: {
         "le repas": "ruoka",
         "le restaurant": "ravintola",
@@ -917,7 +917,7 @@ export const list = {
       },
     },
     {
-      category: "health",
+      name: "health",
       list: {
         "le/la médecin": "lääkäri",
         "l’hôpital": "sairaala",
@@ -935,7 +935,7 @@ export const list = {
       },
     },
     {
-      category: "numbers",
+      name: "numbers",
       list: {
         un: "yksi",
         deux: "kaksi",
@@ -954,7 +954,7 @@ export const list = {
       },
     },
     {
-      category: "orientation",
+      name: "orientation",
       list: {
         "la direction": "suunta",
         "l’entrée (f.)": "sisäänkäynti",
@@ -969,7 +969,7 @@ export const list = {
       },
     },
     {
-      category: "personal-information",
+      name: "personal-information",
       list: {
         "le prénom": "etunimi",
         "le nom de famille": "sukunimi",
@@ -985,7 +985,7 @@ export const list = {
       },
     },
     {
-      category: "sentences",
+      name: "sentences",
       list: {
         "Qu’est-ce que c’est ... ?": "Mikä ...?",
         "Où est ... ?": "Missä on ...?",
@@ -999,7 +999,7 @@ export const list = {
       },
     },
     {
-      category: "shopping",
+      name: "shopping",
       list: {
         "le supermarché": "supermarketti",
         "l’argent": "raha",
@@ -1014,7 +1014,7 @@ export const list = {
       },
     },
     {
-      category: "surrounding",
+      name: "surrounding",
       list: {
         "la maison": "talo",
         "l’appartement": "asunto",
@@ -1035,7 +1035,7 @@ export const list = {
       },
     },
     {
-      category: "technology",
+      name: "technology",
       list: {
         "l’internet": "internet",
         "le mot de passe": "salasana",
@@ -1045,7 +1045,7 @@ export const list = {
       },
     },
     {
-      category: "time",
+      name: "time",
       list: {
         "le temps": "aika",
         "le jour": "päivä",
@@ -1070,7 +1070,7 @@ export const list = {
       },
     },
     {
-      category: "transport",
+      name: "transport",
       list: {
         "le train": "juna",
         "le bus": "bussi",
@@ -1085,7 +1085,7 @@ export const list = {
       },
     },
     {
-      category: "verb",
+      name: "verb",
       list: {
         travailler: "työskennellä",
         visiter: "käydä",
@@ -1116,7 +1116,7 @@ export const list = {
   ],
   "fi-ja": [
     {
-      category: "adjective",
+      name: "adjective",
       list: {
         いい: "hyvä",
         悪い: "huono",
@@ -1137,7 +1137,7 @@ export const list = {
       },
     },
     {
-      category: "color",
+      name: "color",
       list: {
         色: "väri",
         白い: "valkoinen",
@@ -1150,7 +1150,7 @@ export const list = {
       },
     },
     {
-      category: "communication",
+      name: "communication",
       list: {
         "こんにちわ！": "Hei!",
         "バイバイ！": "Näkemiin!",
@@ -1164,7 +1164,7 @@ export const list = {
       },
     },
     {
-      category: "food",
+      name: "food",
       list: {
         食べ物: "ruoka",
         レストラン: "ravintola",
@@ -1196,7 +1196,7 @@ export const list = {
       },
     },
     {
-      category: "health",
+      name: "health",
       list: {
         医者: "lääkäri",
         病院: "sairaala",
@@ -1214,7 +1214,7 @@ export const list = {
       },
     },
     {
-      category: "numbers",
+      name: "numbers",
       list: {
         一: "yksi",
         二: "kaksi",
@@ -1233,7 +1233,7 @@ export const list = {
       },
     },
     {
-      category: "orientation",
+      name: "orientation",
       list: {
         方向: "suunta",
         入口: "sisäänkäynti",
@@ -1248,7 +1248,7 @@ export const list = {
       },
     },
     {
-      category: "personal-information",
+      name: "personal-information",
       list: {
         名前: "etunimi",
         苗字: "sukunimi",
@@ -1264,7 +1264,7 @@ export const list = {
       },
     },
     {
-      category: "sentences",
+      name: "sentences",
       list: {
         "…なんですか？": "Mikä ...?",
         "…どこですか？": "Missä on ...?",
@@ -1278,7 +1278,7 @@ export const list = {
       },
     },
     {
-      category: "shopping",
+      name: "shopping",
       list: {
         スーパー: "supermarketti",
         現金: "raha",
@@ -1293,7 +1293,7 @@ export const list = {
       },
     },
     {
-      category: "surrounding",
+      name: "surrounding",
       list: {
         家: "talo",
         アパート: "asunto",
@@ -1314,7 +1314,7 @@ export const list = {
       },
     },
     {
-      category: "technology",
+      name: "technology",
       list: {
         インターネット: "internet",
         パスワード: "salasana",
@@ -1324,7 +1324,7 @@ export const list = {
       },
     },
     {
-      category: "time",
+      name: "time",
       list: {
         時間: "aika",
         日: "päivä",
@@ -1349,7 +1349,7 @@ export const list = {
       },
     },
     {
-      category: "transport",
+      name: "transport",
       list: {
         電車: "juna",
         バス: "bussi",
@@ -1364,7 +1364,7 @@ export const list = {
       },
     },
     {
-      category: "verb",
+      name: "verb",
       list: {
         働く: "työskennellä",
         訪れる: "käydä",
@@ -1395,7 +1395,7 @@ export const list = {
   ],
   "fi-ko": [
     {
-      category: "adjective",
+      name: "adjective",
       list: {
         좋은: "hyvä",
         나쁜: "huono",
@@ -1416,7 +1416,7 @@ export const list = {
       },
     },
     {
-      category: "color",
+      name: "color",
       list: {
         색깔: "väri",
         흰색: "valkoinen",
@@ -1429,7 +1429,7 @@ export const list = {
       },
     },
     {
-      category: "communication",
+      name: "communication",
       list: {
         "안녕!": "Hei!",
         "안녕하세요!": "Hei!",
@@ -1444,7 +1444,7 @@ export const list = {
       },
     },
     {
-      category: "food",
+      name: "food",
       list: {
         음식: "ruoka",
         식당: "ravintola",
@@ -1476,7 +1476,7 @@ export const list = {
       },
     },
     {
-      category: "health",
+      name: "health",
       list: {
         의사: "lääkäri",
         병원: "sairaala",
@@ -1494,7 +1494,7 @@ export const list = {
       },
     },
     {
-      category: "numbers",
+      name: "numbers",
       list: {
         "일 / 하나": "yksi",
         "이 / 둘": "kaksi",
@@ -1513,7 +1513,7 @@ export const list = {
       },
     },
     {
-      category: "orientation",
+      name: "orientation",
       list: {
         방향: "suunta",
         입구: "sisäänkäynti",
@@ -1528,7 +1528,7 @@ export const list = {
       },
     },
     {
-      category: "personal-information",
+      name: "personal-information",
       list: {
         이름: "etunimi",
         성: "sukunimi",
@@ -1544,7 +1544,7 @@ export const list = {
       },
     },
     {
-      category: "sentences",
+      name: "sentences",
       list: {
         "… 뭐예요?": "Mikä ...?",
         "… 어디예요?": "Missä on ...?",
@@ -1558,7 +1558,7 @@ export const list = {
       },
     },
     {
-      category: "shopping",
+      name: "shopping",
       list: {
         슈퍼마켓: "supermarketti",
         현금: "raha",
@@ -1573,7 +1573,7 @@ export const list = {
       },
     },
     {
-      category: "surrounding",
+      name: "surrounding",
       list: {
         집: "talo",
         아파트: "asunto",
@@ -1594,7 +1594,7 @@ export const list = {
       },
     },
     {
-      category: "technology",
+      name: "technology",
       list: {
         인터넷: "internet",
         암호: "salasana",
@@ -1604,7 +1604,7 @@ export const list = {
       },
     },
     {
-      category: "time",
+      name: "time",
       list: {
         시간: "aika",
         날: "päivä",
@@ -1629,7 +1629,7 @@ export const list = {
       },
     },
     {
-      category: "transport",
+      name: "transport",
       list: {
         기차: "juna",
         버스: "bussi",
@@ -1644,7 +1644,7 @@ export const list = {
       },
     },
     {
-      category: "verb",
+      name: "verb",
       list: {
         일하다: "työskennellä",
         방문하다: "käydä",
@@ -1675,7 +1675,7 @@ export const list = {
   ],
   "fi-sk": [
     {
-      category: "adjective",
+      name: "adjective",
       list: {
         dobré: "hyvä",
         zlé: "huono",
@@ -1696,7 +1696,7 @@ export const list = {
       },
     },
     {
-      category: "color",
+      name: "color",
       list: {
         farba: "väri",
         biela: "valkoinen",
@@ -1709,7 +1709,7 @@ export const list = {
       },
     },
     {
-      category: "communication",
+      name: "communication",
       list: {
         "Ahoj!": "Näkemiin!",
         "Dobrý deň!": "Hei!",
@@ -1723,7 +1723,7 @@ export const list = {
       },
     },
     {
-      category: "food",
+      name: "food",
       list: {
         potraviny: "ruoka",
         reštaurácia: "ravintola",
@@ -1755,7 +1755,7 @@ export const list = {
       },
     },
     {
-      category: "health",
+      name: "health",
       list: {
         "lekár / lekarka": "lääkäri",
         nemocnica: "sairaala",
@@ -1772,7 +1772,7 @@ export const list = {
       },
     },
     {
-      category: "numbers",
+      name: "numbers",
       list: {
         jeden: "yksi",
         dva: "kaksi",
@@ -1791,7 +1791,7 @@ export const list = {
       },
     },
     {
-      category: "orientation",
+      name: "orientation",
       list: {
         smer: "suunta",
         vchod: "sisäänkäynti",
@@ -1806,7 +1806,7 @@ export const list = {
       },
     },
     {
-      category: "personal-information",
+      name: "personal-information",
       list: {
         "(krstné) meno": "etunimi",
         priezvisko: "sukunimi",
@@ -1822,7 +1822,7 @@ export const list = {
       },
     },
     {
-      category: "sentences",
+      name: "sentences",
       list: {
         "Kde...?": "Mikä ...?",
         "Kde je ...?": "Missä on ...?",
@@ -1836,7 +1836,7 @@ export const list = {
       },
     },
     {
-      category: "shopping",
+      name: "shopping",
       list: {
         supermarket: "supermarketti",
         peniaze: "raha",
@@ -1851,7 +1851,7 @@ export const list = {
       },
     },
     {
-      category: "surrounding",
+      name: "surrounding",
       list: {
         dom: "talo",
         byt: "asunto",
@@ -1872,7 +1872,7 @@ export const list = {
       },
     },
     {
-      category: "technology",
+      name: "technology",
       list: {
         internet: "internet",
         heslo: "salasana",
@@ -1882,7 +1882,7 @@ export const list = {
       },
     },
     {
-      category: "time",
+      name: "time",
       list: {
         čas: "aika",
         deň: "päivä",
@@ -1907,7 +1907,7 @@ export const list = {
       },
     },
     {
-      category: "transport",
+      name: "transport",
       list: {
         vlak: "juna",
         autobus: "bussi",
@@ -1922,7 +1922,7 @@ export const list = {
       },
     },
     {
-      category: "verb",
+      name: "verb",
       list: {
         pracovať: "työskennellä",
         navštíviť: "käydä",

@@ -1,5 +1,5 @@
 import { Card } from "../Card/Card";
-import { cardSelector } from "../../recoil";
+import { cardSelector } from "../../recoil/selectors";
 import { useRecoilState } from "recoil";
 import { Word } from "../../types";
 import ReactCardFlip from "react-card-flip";

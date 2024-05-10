@@ -10,8 +10,9 @@
   min-width: 300px;
   overflow: hidden;
   text-align: center;
+  white-space: break-spaces;
   width: 100%;
-  word-break: break-all;
+  word-break: break-word;
   box-shadow: 0 0.9px 4px rgb(0 0 0 / 28%), 0 2.6px 8px rgb(0 0 0 / 21%),
     0 5.7px 12px rgb(0 0 0 / 18%), 0 15px 15px rgb(0 0 0 / 14%);
 }

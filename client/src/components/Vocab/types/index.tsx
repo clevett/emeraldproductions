@@ -1,8 +1,10 @@
-import { list } from "../wordlists";
+import { wordLists } from "../wordlists";
 
-export type Language = keyof typeof list;
+export type Language = keyof typeof wordLists;
 
-export type List = (typeof list)[Language][number]["list"];
+export type Category = (typeof wordLists)[Language][number];
+
+export type List = (typeof wordLists)[Language][number]["list"];
 
 export type Word = string;
 

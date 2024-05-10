@@ -11,7 +11,7 @@ files.forEach((file) => {
   const [lang, category] = file.split("_");
 
   const data = {
-    category: category.split(".")[0],
+    name: category.split(".")[0],
     list: content,
   };
 

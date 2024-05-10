@@ -1,5 +1,5 @@
-import { Language, List, Word } from "../types";
-import { list } from "../wordlists";
+import { Category, Language, List, Word } from "../types";
+import { wordLists } from "../wordlists";
 
 const shuffle = (array: Word[]) => {
   let currentIndex = array.length;
@@ -20,13 +20,19 @@ const shuffle = (array: Word[]) => {
   return array;
 };
 
-export const getRandomCategory = (lang: Language = "fi-es") => {
-  const wordList = list[lang];
+export const getRandomCategory = (lang: Language) => {
+  const wordList = wordLists[lang];
   const randomIndex = Math.floor(Math.random() * wordList.length);
   return wordList[randomIndex];
 };
 
-export const getWordList = (list: List) => {
+export const getCategoryList = (lang: Language, category: Category["name"]) => {
+  const languageArray = wordLists[lang];
+  const index = languageArray.findIndex((e) => e.name === category);
+  return languageArray[index].list;
+};
+
+export const flattenWordList = (list: List) => {
   let arr: Word[] = [];
 
   Object.entries(list).forEach(([key, value]) => {
@@ -52,9 +58,31 @@ export const getMatch = (word: string, list: List) => {
   return undefined;
 };
 
-export const getCardDefault = (word: Word, list: List) => ({
-  isMatched: false,
-  isRevealed: false,
-  match: getMatch(word, list),
-  word,
-});
+export const getLanguageName = (abbreviation: string) => {
+  switch (abbreviation) {
+    case "de":
+      return "Deutsch";
+    case "en":
+      return "English";
+    case "es":
+      return "Español";
+    case "fi":
+      return "Suomea";
+    case "fr":
+      return "Français";
+    case "it":
+      return "Italiano";
+    default:
+      return "Unknown";
+  }
+};
+
+export enum LanguageEnum {
+  de = "Deutsch",
+  en = "English",
+  es = "Español",
+  fi = "Suomea",
+  fr = "Français",
+  it = "Italiano",
+  Unknown = "Unknown",
+}
