@@ -9,7 +9,4 @@ export const getMatch = (word: string, list: List) => {
     const [key, value] = match;
     return key === word ? value : key;
   }
-
-  console.error(`No match found for ${word}`);
-  return undefined;
 };
