@@ -31,11 +31,6 @@ export const useCardChecker = () => {
     if (inPlayCount === 2) {
       const [first, second] = inPlayCards;
 
-      console.table({
-        first,
-        second,
-      });
-
       if (first.match === second.word && second.match === first.word) {
         return true;
       }
