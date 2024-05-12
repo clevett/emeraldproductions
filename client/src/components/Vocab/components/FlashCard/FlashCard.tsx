@@ -18,8 +18,6 @@ export const FlashCard = ({
     cardChecker();
   };
 
-  console.log(card);
-
   return (
     <div onClick={onFlip}>
       <ReactCardFlip

@@ -1,20 +1,16 @@
 import { atom, atomFamily } from "recoil";
-import { Card, Language, List, Word } from "../types";
-import { flattenWordList, getRandomCategory, getMatch } from "../helpers";
-
-const defaultLanguage = "fi-es";
-const defaultCategory = getRandomCategory(defaultLanguage);
-
-const getCardDefault = (word: Word, list: List) => ({
-  isMatched: false,
-  isRevealed: false,
-  match: getMatch(word, list),
-  word,
-});
+import { Card, Category, Language, Word } from "../types";
+import { flattenWordList } from "../helpers";
+import { defaultLanguage, defaultCategory, getCardDefault } from "./defaults";
 
 export const languageAtom = atom<Language>({
   key: "languageAtom",
   default: defaultLanguage,
+});
+
+export const categoryAtom = atom<Category>({
+  key: "categoryAtom",
+  default: defaultCategory,
 });
 
 export const cardIdsAtom = atom<string[] | undefined>({

@@ -29,6 +29,11 @@ export const useCardChecker = () => {
     if (inPlayCount === 2) {
       const [first, second] = inPlayCards;
 
+      console.table({
+        first,
+        second,
+      });
+
       if (first.match === second.word && second.match === first.word) {
         return true;
       }
@@ -36,10 +41,8 @@ export const useCardChecker = () => {
     return false;
   };
 
-  return () => {
+  const cardCheck = () => {
     const isMatch = matchCheck();
-
-    console.table(isMatch);
 
     if (isMatch) {
       matchCard(inPlayCards);
@@ -49,5 +52,12 @@ export const useCardChecker = () => {
     if (inPlayCount === 2) {
       resetCard(inPlayCards);
     }
+  };
+
+  const resetCards = () => resetCard(inPlayCards);
+
+  return {
+    cardCheck,
+    resetCards,
   };
 };

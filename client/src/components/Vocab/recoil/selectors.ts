@@ -7,9 +7,9 @@ import {
   cardIdsAtom,
   languageAtom,
   categoryAtom,
-  defaultLanguage,
 } from "./atoms";
 import { flattenWordList, getCategoryList } from "../helpers";
+import { defaultLanguage } from "./defaults";
 
 export const cardSelector = selectorFamily({
   key: "cardSelector",
@@ -57,6 +57,22 @@ export const languageSelector = selector({
 
     const category = get(categoryAtom);
     const wordList = getCategoryList(newValue, category.name);
+    set(cardIdsAtom, flattenWordList(wordList));
+  },
+});
+
+export const categorySelector = selector({
+  key: "categorySelector",
+  get: ({ get }) => get(categoryAtom),
+  set: ({ set, get }, newValue) => {
+    set(categoryAtom, newValue);
+
+    if (newValue instanceof DefaultValue) {
+      newValue = get(categoryAtom);
+    }
+
+    const language = get(languageAtom);
+    const wordList = getCategoryList(language, newValue.name);
     set(cardIdsAtom, flattenWordList(wordList));
   },
 });
