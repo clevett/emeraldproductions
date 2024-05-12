@@ -6,8 +6,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { About } from "./components/About/About";
 import { Layout } from "./components/Layout";
+import { VocabularyGame } from "./components/Vocab/VocabularyGame";
 
-import { routes } from "./routes";
+import { routes, tools } from "./routes";
 
 ReactGA.initialize(`${process.env.GA}`);
 ReactGA.pageview(window.location.pathname + window.location.search);
@@ -27,6 +28,8 @@ const App = () => {
                   path={path}
                 />
               ))}
+              <Route path={tools[0].path} element={tools[0].element} />
+              <Route path="/vocabulary-game" element={<VocabularyGame />} />
             </Routes>
           </Layout>
         </EuiProvider>

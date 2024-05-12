@@ -1,0 +1,22 @@
+{
+  "시간": "aika",
+  "날": "päivä",
+  "주": "viikko",
+  "월": "kuukausi",
+  "년": "vuosi",
+  "월요일": "maanantai",
+  "화요일": "tiistai",
+  "수요일": "keskiviikko",
+  "목요일": "torstai",
+  "금요일": "perjantai",
+  "토요일": "lauantai",
+  "일요일": "sunnuntai",
+  "아침에": "aamu",
+  "오후에": "iltapäivä",
+  "저녁에": "illalla",
+  "밤에": "yöllä",
+  "이전에": "aiemmin",
+  "나중에": "myöhemmin",
+  "정확한": "ajallaan",
+  "늦어진": "viivästynyt"
+}
