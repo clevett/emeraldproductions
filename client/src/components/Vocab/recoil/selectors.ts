@@ -35,8 +35,7 @@ export const cardListSelector = selector({
   key: "cardListSelector",
   get: ({ get }) => {
     const ids = get(cardIdsAtom) ?? [];
-    const list = ids.map((id) => get(cardAtomFamily(id)));
-    return list;
+    return ids.map((id) => get(cardAtomFamily(id)));
   },
 });
 
@@ -81,9 +80,14 @@ export const inPlayCardSelector = selector({
   key: "inPlayCardSelector",
   get: ({ get }) => {
     const list = get(cardListSelector);
-    const revealedList = list.filter(
-      (card) => card.isRevealed && !card.isMatched
-    );
-    return revealedList;
+    return list.filter((card) => card.isRevealed && !card.isMatched);
+  },
+});
+
+export const activeCardSelector = selector({
+  key: "activeCardSelector",
+  get: ({ get }) => {
+    const list = get(cardListSelector);
+    return list.filter((card) => card.isRevealed || card.isMatched);
   },
 });

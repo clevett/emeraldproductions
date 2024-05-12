@@ -1,4 +1,5 @@
 import {
+  activeCardSelector,
   categorySelector,
   languageSelector,
   wordListSelector,
@@ -12,14 +13,16 @@ import { wordLists } from "./wordlists";
 import { createLanguageDisplayName, getAllCategories } from "./helpers";
 import { Category, Language } from "./types";
 import { ResetIcon } from "@radix-ui/react-icons";
+import { useResetCards } from "./hooks/useResetCards";
 
 export const Cards = () => {
   const [language, setLanguage] = useRecoilState<Language>(languageSelector);
   const [category, setCategory] = useRecoilState<Category>(categorySelector);
   const list = useRecoilValue(wordListSelector);
-  const { cardCheck, resetCards } = useCardChecker();
+  const cardChecker = useCardChecker();
+  const resetCards = useResetCards();
 
-  const createLanguageOptionsList = (lang: Language) => {
+  const createLanguageOptionsList = () => {
     return Object.keys(wordLists).map((langAbbr) => (
       <option key={langAbbr} value={langAbbr}>
         {createLanguageDisplayName(langAbbr)}
@@ -62,7 +65,7 @@ export const Cards = () => {
             setLanguage(event.target.value as Language)
           }
         >
-          {createLanguageOptionsList(language)}
+          {createLanguageOptionsList()}
         </select>
         <select
           className="bg-neutral-900 w-fit capitalize"
@@ -79,7 +82,7 @@ export const Cards = () => {
       </div>
       <div className={styles.layout}>
         {list?.map((word) => (
-          <FlashCard key={word} word={word} cardChecker={cardCheck} />
+          <FlashCard key={word} word={word} cardChecker={cardChecker} />
         ))}
       </div>
     </div>

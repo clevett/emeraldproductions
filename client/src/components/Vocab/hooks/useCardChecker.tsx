@@ -22,8 +22,10 @@ export const useCardChecker = () => {
     []
   );
 
-  const resetCard = (list: Card[]) => updateCards(list, { isRevealed: false });
-  const matchCard = (list: Card[]) => updateCards(list, { isMatched: true });
+  const setRevealedFalse = (list: Card[]) =>
+    updateCards(list, { isRevealed: false });
+  const setIsMatchTrue = (list: Card[]) =>
+    updateCards(list, { isMatched: true });
 
   const matchCheck = () => {
     if (inPlayCount === 2) {
@@ -41,23 +43,16 @@ export const useCardChecker = () => {
     return false;
   };
 
-  const cardCheck = () => {
+  return () => {
     const isMatch = matchCheck();
 
     if (isMatch) {
-      matchCard(inPlayCards);
+      setIsMatchTrue(inPlayCards);
       return;
     }
 
     if (inPlayCount === 2) {
-      resetCard(inPlayCards);
+      setRevealedFalse(inPlayCards);
     }
-  };
-
-  const resetCards = () => resetCard(inPlayCards);
-
-  return {
-    cardCheck,
-    resetCards,
   };
 };
