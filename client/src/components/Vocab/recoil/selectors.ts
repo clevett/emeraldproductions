@@ -42,6 +42,14 @@ export const cardListSelector = selector({
 export const wordListSelector = selector({
   key: "wordListSelector",
   get: ({ get }) => get(cardIdsAtom),
+  set: ({ set }, newValue) => {
+    if (newValue instanceof DefaultValue) {
+      set(cardIdsAtom, newValue);
+      return;
+    }
+
+    set(cardIdsAtom, newValue);
+  },
 });
 
 export const languageSelector = selector({

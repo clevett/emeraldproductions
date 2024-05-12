@@ -1,19 +1,17 @@
 import {
-  activeCardSelector,
   categorySelector,
   languageSelector,
   wordListSelector,
 } from "./recoil/selectors";
+import { Category, Language } from "./types";
+import { createLanguageDisplayName, getAllCategories } from "./helpers";
 import { FlashCard } from "./components/FlashCard/FlashCard";
+import { ResetIcon } from "@radix-ui/react-icons";
 import { useCardChecker } from "./hooks/useCardChecker";
 import { useRecoilState, useRecoilValue } from "recoil";
-
-import styles from "./styles.module.css";
-import { wordLists } from "./wordlists";
-import { createLanguageDisplayName, getAllCategories } from "./helpers";
-import { Category, Language } from "./types";
-import { ResetIcon } from "@radix-ui/react-icons";
 import { useResetCards } from "./hooks/useResetCards";
+import { wordLists } from "./wordlists";
+import styles from "./styles.module.css";
 
 export const Cards = () => {
   const [language, setLanguage] = useRecoilState<Language>(languageSelector);

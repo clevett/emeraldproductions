@@ -5,8 +5,10 @@ import { getLanguageName } from "./get-language-name";
 import { getMatch } from "./get-match";
 import { getRandomCategory } from "./get-random-category";
 import { createLanguageDisplayName } from "./get-language-display-name";
+import { shuffle } from "./shuffle";
 
 export {
+  shuffle,
   flattenWordList,
   getAllCategories,
   getCategoryList,
