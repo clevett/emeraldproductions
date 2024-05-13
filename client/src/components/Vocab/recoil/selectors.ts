@@ -8,8 +8,6 @@ import {
   languageAtom,
   categoryAtom,
 } from "./atoms";
-import { flattenWordList, getCategoryList } from "../helpers";
-import { defaultLanguage } from "./defaults";
 
 export const cardSelector = selectorFamily({
   key: "cardSelector",
@@ -19,9 +17,9 @@ export const cardSelector = selectorFamily({
       get(cardAtomFamily(word)),
   set:
     () =>
-    ({ set }, newValue) => {
+    ({ set, reset }, newValue) => {
       if (newValue instanceof DefaultValue) {
-        set(selectedCardIdAtom, newValue);
+        reset(selectedCardIdAtom);
         return;
       }
 
@@ -42,9 +40,9 @@ export const cardListSelector = selector({
 export const wordListSelector = selector({
   key: "wordListSelector",
   get: ({ get }) => get(cardIdsAtom),
-  set: ({ set }, newValue) => {
+  set: ({ set, reset }, newValue) => {
     if (newValue instanceof DefaultValue) {
-      set(cardIdsAtom, newValue);
+      reset(cardIdsAtom);
       return;
     }
 
@@ -55,32 +53,34 @@ export const wordListSelector = selector({
 export const languageSelector = selector({
   key: "languageSelector",
   get: ({ get }) => get(languageAtom),
-  set: ({ set, get }, newValue) => {
-    set(languageAtom, newValue);
-
+  set: ({ set, get, reset }, newValue) => {
     if (newValue instanceof DefaultValue) {
-      newValue = defaultLanguage;
+      reset(languageAtom);
     }
 
-    const category = get(categoryAtom);
-    const wordList = getCategoryList(newValue, category.name);
-    set(cardIdsAtom, flattenWordList(wordList));
+    const activeCards = get(activeCardSelector);
+    activeCards.forEach((card) => {
+      reset(cardAtomFamily(card.word));
+    });
+
+    set(languageAtom, newValue);
   },
 });
 
 export const categorySelector = selector({
   key: "categorySelector",
   get: ({ get }) => get(categoryAtom),
-  set: ({ set, get }, newValue) => {
-    set(categoryAtom, newValue);
-
+  set: ({ set, get, reset }, newValue) => {
     if (newValue instanceof DefaultValue) {
-      newValue = get(categoryAtom);
+      reset(categoryAtom);
     }
 
-    const language = get(languageAtom);
-    const wordList = getCategoryList(language, newValue.name);
-    set(cardIdsAtom, flattenWordList(wordList));
+    const activeCards = get(activeCardSelector);
+    activeCards.forEach((card) => {
+      reset(cardAtomFamily(card.word));
+    });
+
+    set(categoryAtom, newValue);
   },
 });
 
