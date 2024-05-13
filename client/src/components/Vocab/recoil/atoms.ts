@@ -1,4 +1,4 @@
-import { atom, atomFamily, selectorFamily } from "recoil";
+import { atom, atomFamily, selectorFamily, selector } from "recoil";
 import { Card, Category, Language, Word } from "../types";
 import { flattenWordList } from "../helpers";
 import { defaultLanguage, defaultCategory, getCardDefault } from "./defaults";
@@ -15,7 +15,13 @@ export const categoryAtom = atom<Category>({
 
 export const cardIdsAtom = atom<string[] | undefined>({
   key: "cardIdsAtom",
-  default: flattenWordList(defaultCategory.list),
+  default: selector({
+    key: "cardIdsAtomDefault",
+    get: ({ get }) => {
+      const list = get(categoryAtom).list;
+      return flattenWordList(list);
+    },
+  }),
 });
 
 export const selectedCardIdAtom = atom<Word | undefined>({

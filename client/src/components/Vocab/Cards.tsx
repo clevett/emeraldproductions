@@ -4,7 +4,11 @@ import {
   wordListSelector,
 } from "./recoil/selectors";
 import { Category, Language } from "./types";
-import { createLanguageDisplayName, getAllCategories } from "./helpers";
+import {
+  createLanguageDisplayName,
+  getAllCategories,
+  getCategory,
+} from "./helpers";
 import { FlashCard } from "./components/FlashCard/FlashCard";
 import { ResetIcon } from "@radix-ui/react-icons";
 import { useCardChecker } from "./hooks/useCardChecker";
@@ -28,6 +32,16 @@ export const Cards = () => {
     ));
   };
 
+  const warn = (c: string, l: string) =>
+    console.warn(`Category ${c} not found in ${l}`);
+
+  const onLanguageChange = (newLanguage: Language) => {
+    setLanguage(newLanguage);
+
+    const newCategory = getCategory(newLanguage, category.name);
+    newCategory ? setCategory(newCategory) : warn(category.name, newLanguage);
+  };
+
   const createCategoryOptionsList = (lang: Language) => {
     const categories = getAllCategories(lang);
     return categories.map((category) => (
@@ -37,20 +51,12 @@ export const Cards = () => {
     ));
   };
 
-  const onCategoryChange = (
+  const onCategoryChange = async (
     newCategoryName: Category["name"],
     language: Language
   ) => {
-    const languageCategories: Category[] = wordLists[language];
-    const newCategory = languageCategories.find(
-      ({ name }: Category) => name === newCategoryName
-    );
-
-    if (newCategory) {
-      setCategory(newCategory);
-    } else {
-      console.warn(`Category ${newCategoryName} not found in ${language}`);
-    }
+    const newCategory = getCategory(language, newCategoryName);
+    newCategory ? setCategory(newCategory) : warn(newCategoryName, language);
   };
 
   return (
@@ -60,7 +66,7 @@ export const Cards = () => {
           className="bg-neutral-900 w-fit"
           value={language}
           onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-            setLanguage(event.target.value as Language)
+            onLanguageChange(event.target.value as Language)
           }
         >
           {createLanguageOptionsList()}

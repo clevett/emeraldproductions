@@ -1,19 +1,21 @@
+import { createLanguageDisplayName } from "./get-language-display-name";
 import { flattenWordList } from "./flatten-word-list";
 import { getAllCategories } from "./get-all-categories";
+import { getCategory } from "./get-category";
 import { getCategoryList } from "./get-category-list";
 import { getLanguageName } from "./get-language-name";
 import { getMatch } from "./get-match";
 import { getRandomCategory } from "./get-random-category";
-import { createLanguageDisplayName } from "./get-language-display-name";
 import { shuffle } from "./shuffle";
 
 export {
-  shuffle,
+  createLanguageDisplayName,
   flattenWordList,
   getAllCategories,
+  getCategory,
   getCategoryList,
-  createLanguageDisplayName,
   getLanguageName,
   getMatch,
   getRandomCategory,
+  shuffle,
 };
