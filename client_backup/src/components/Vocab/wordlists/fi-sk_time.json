@@ -1,0 +1,22 @@
+{
+  "čas": "aika",
+  "deň": "päivä",
+  "týždeň": "viikko",
+  "mesiac": "kuukausi",
+  "rok": "vuosi",
+  "Pondelok": "maanantai",
+  "Utorok": "tiistai",
+  "Streda": "keskiviikko",
+  "Štvrtok": "torstai",
+  "Piatok": "perjantai",
+  "Sobota": "lauantai",
+  "Nedeľa": "sunnuntai",
+  "ráno": "aamu",
+  "popoludnie": "iltapäivä",
+  "večer": "illalla",
+  "v noci": "yöllä",
+  "skôr": "aiemmin",
+  "neskôr": "myöhemmin",
+  "v čase": "ajallaan",
+  "mešká": "viivästynyt"
+}
