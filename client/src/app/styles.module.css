@@ -1,0 +1,62 @@
+.AboutCenter {
+  backface-visibility: hidden;
+  margin: 0 auto;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+
+  80% {
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.portrait {
+  animation: moveInLeft 3s ease-in;
+  border-radius: var(--space-4);
+  border: 2px solid var(--color-primary);
+  box-shadow: rgba(0, 0, 0, 0.243) 0px 0.7px 1.4px,
+    rgba(0, 0, 0, 0.176) 0px 1.9px 4px, rgba(0, 0, 0, 0.176) 0px 4.5px 10px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.description {
+  animation: moveFromTop 2s ease-in;
+}
+
+.cards {
+  animation: moveFromBottom 2s ease-in;
+}
