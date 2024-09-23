@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Box, Flex, Grid, Text } from "@radix-ui/themes";
 import { Card } from "../components/Card";
-import { Contact } from "../components/Contact";
 
 import portrait from "../imgs/takedown.png";
 import styles from "./styles.module.css";

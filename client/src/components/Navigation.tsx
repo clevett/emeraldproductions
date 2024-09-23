@@ -16,7 +16,7 @@ export const Navigation = () => {
           <TabNav.Link href="#" active>
             About
           </TabNav.Link>
-          <TabNav.Link href="#">TTRPG Tools</TabNav.Link>
+          <TabNav.Link href="/diceroller">TTRPG Tools</TabNav.Link>
           <TabNav.Link href="#">Vocabulary Builder</TabNav.Link>
         </TabNav.Root>
       </div>
