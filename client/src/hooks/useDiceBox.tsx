@@ -1,3 +1,4 @@
+"use client";
 //@ts-expect-error Not typed
 import DiceParser from "@3d-dice/dice-parser-interface";
 //@ts-expect-error Not typed
@@ -26,20 +27,19 @@ export const useDiceRoller = () => {
   // create Dice Roll Parser to handle complex notations
   const DRP = new DiceParser();
 
+  const id = "dice-canvas";
   const init = async (themeColor = "#086931") => {
-    const Dice = new DiceBox(
-      `#dice-canvas`, // target DOM element to inject the canvas for rendering
-      {
-        assetPath: "/assets/dice-box/",
-        delay: 2,
-        lightIntensity: 0.9,
-        scale: 4,
-        spinForce: 5,
-        startingHeight: 8,
-        themeColor,
-        throwForce: 6,
-      }
-    );
+    const Dice = new DiceBox({
+      id,
+      assetPath: "/assets/",
+      delay: 2,
+      lightIntensity: 0.9,
+      scale: 4,
+      spinForce: 5,
+      startingHeight: 8,
+      themeColor,
+      throwForce: 6,
+    });
 
     // initialize the Dice Box outside of the component
     await Dice.init().then(() => setDicebox(Dice));
@@ -58,6 +58,7 @@ export const useDiceRoller = () => {
       }
       // if no rerolls needed then parse the final results
       const finalResults = DRP.parseFinalResults(results);
+
       setResult(finalResults);
     };
   }
@@ -65,8 +66,13 @@ export const useDiceRoller = () => {
   const roll = (notation: string, color?: string) => {
     const parsedNotation = DRP.parseNotation(notation);
     const diceBoxNotation = color
-      ? parsedNotation.map((n: any) => ({ ...n, themeColor: color }))
+      ? parsedNotation.map((n: { [key: string]: unknown }) => ({
+          ...n,
+          themeColor: color,
+        }))
       : parsedNotation;
+
+    console.log(dicebox);
 
     if (hasRolled) {
       dicebox.show().add(diceBoxNotation);
@@ -85,7 +91,7 @@ export const useDiceRoller = () => {
   const canvas = (
     <canvas
       className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
-      id="dice-canvas"
+      id={id}
       ref={setCanvasElement}
     />
   );

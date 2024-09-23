@@ -10,6 +10,7 @@ export const Navigation = () => {
         alt="Emerald Productions logo"
         className="scale-50 grow-0"
         src={logo}
+        priority
       />
       <div className="grow self-center w-full">
         <TabNav.Root>
