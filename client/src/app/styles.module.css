@@ -51,15 +51,17 @@
     rgba(0, 0, 0, 0.176) 0px 1.9px 4px, rgba(0, 0, 0, 0.176) 0px 4.5px 10px;
   max-width: 200px;
   max-height: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .title {
-  word-break: break-word;
-  font-size: 2.4286rem;
-  line-height: 2.8571rem;
-  font-weight: 700;
   color: rgb(223, 229, 239);
+  font-size: 2.4286rem;
+  font-weight: 700;
+  line-height: 2.8571rem;
   overflow-wrap: break-word !important;
+  word-break: break-word;
 }
 
 .description {
