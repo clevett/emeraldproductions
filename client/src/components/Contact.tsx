@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Link } from "@radix-ui/themes";
 
 import { LinkedInLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";

@@ -1,4 +1,4 @@
-import { ToolLayout } from "@/components/ToolLayout";
+import { ToolLayout } from "@/components/toollayout/ToolLayout";
 
 export default function Layout({ children }: { children: JSX.Element }) {
   return (

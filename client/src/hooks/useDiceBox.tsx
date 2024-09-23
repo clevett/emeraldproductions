@@ -72,8 +72,6 @@ export const useDiceRoller = () => {
         }))
       : parsedNotation;
 
-    console.log(dicebox);
-
     if (hasRolled) {
       dicebox.show().add(diceBoxNotation);
     } else {
