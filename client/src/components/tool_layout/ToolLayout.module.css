@@ -1,0 +1,22 @@
+.layout {
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  height: 100%;
+  grid-auto-rows: max-content;
+}
+
+.menu {
+  display: grid;
+  gap: var(--space-4);
+  grid-auto-flow: column;
+  min-inline-size: 248px;
+  padding: var(--space-5);
+}
+
+.panel {
+  display: grid;
+  gap: var(--space-5);
+  grid-auto-rows: max-content;
+  padding: var(--space-5);
+  width: 100%;
+}

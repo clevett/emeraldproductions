@@ -1,15 +1,17 @@
 "use client";
-import { Heading, Separator, Text } from "@radix-ui/themes";
+import { Heading, Text } from "@radix-ui/themes";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+
+import styles from "./Sidebar.module.css";
 
 import { ftdList, sotdlList, shadowrunList, myzList, tools } from "./routes";
 
 export const Sidebar = () => {
   return (
-    <div className="grid gap-4 px-4">
-      <div className="border-b-2 w-full">
+    <div className={styles.sidebar}>
+      <div className="border-b w-full">
         <Heading size="4">RPG Tools</Heading>
       </div>
 
@@ -64,12 +66,3 @@ export const ListItem = ({ item }: { item: (typeof ftdList)[0] }) => {
     </Link>
   );
 };
-
-// <Link
-//   className="inline-flex"
-//   href={driveThru(id)}
-//   rel="noopener noreferrer"
-//   target="_blank"
-// >
-//   {children}
-// </Link>;

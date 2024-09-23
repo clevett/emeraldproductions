@@ -1,0 +1,8 @@
+.link {
+  display: inline-flex;
+}
+
+.link:hover {
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent-9);
+}

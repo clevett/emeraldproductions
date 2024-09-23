@@ -10,12 +10,14 @@ export const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <div className="px-2 py-2 flex flex-wrap md:flex-nowrap">
+    <div className="flex flex-wrap md:flex-nowrap gap-4">
       <Image
         alt="Emerald Productions logo"
-        className="scale-50 grow-0"
+        className="scale-70 grow-0"
         src={logo}
         priority
+        height={84}
+        width={200}
       />
       <div className="grow self-center w-full">
         <TabNav.Root>

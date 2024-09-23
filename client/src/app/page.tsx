@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Box, Flex, Grid, Text } from "@radix-ui/themes";
+import { Box, Flex, Grid, Text, Container } from "@radix-ui/themes";
 import { Card } from "../components/Card";
 
 import portrait from "../imgs/takedown.png";
@@ -34,14 +34,14 @@ const cardNodes = cards.map((props, index) => {
 
 export default function Home() {
   return (
-    <Grid gap="6" className="p-4">
-      <Flex gap="4" className="flex-row flex-wrap md:flex-nowrap">
+    <Grid gap="8" className="p-8">
+      <div className="flex flex-row flex-wrap md:flex-nowrap justify-center gap-4">
         <Image
           alt="A person with short hair wearing a jacket over a super hero costume looks to the sky"
           className={styles.portrait}
           src={portrait}
         />
-        <Box className="grow">
+        <Box className="grow max-w-md">
           <h2 className={styles.title}>Caden Levett</h2>
           <Text as="p" size="3">
             Front-end developer specializing in software for table role playing
@@ -51,10 +51,8 @@ export default function Home() {
             compliment team members with a passion for technological solutions.
           </Text>
         </Box>
-      </Flex>
-      <div className="flex justify-center lg:justify-between flex-wrap gap-4">
-        {cardNodes}
       </div>
+      <div className="flex justify-center flex-wrap gap-4">{cardNodes}</div>
     </Grid>
   );
 }

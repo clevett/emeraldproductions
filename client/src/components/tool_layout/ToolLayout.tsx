@@ -1,5 +1,5 @@
 import { Heading } from "@radix-ui/themes";
-import { DriveThruLink } from "../DriveThruLink";
+import { DriveThruLink } from "../drive_thru_link/DriveThruLink";
 import { OpenInNewWindowIcon } from "@radix-ui/react-icons";
 
 import { Sidebar } from "./Sidebar";
@@ -9,7 +9,7 @@ import styles from "./ToolLayout.module.css";
 interface LayoutBodyProps {
   children: JSX.Element | (JSX.Element | null)[] | null;
   DriveThruId: string;
-  subtitle: string;
+  subtitle?: string;
   title: string;
 }
 
@@ -29,7 +29,7 @@ export const ToolLayout = ({
           </Heading>
           <OpenInNewWindowIcon />
         </DriveThruLink>
-        <Heading as="h2">{subtitle}</Heading>
+        {subtitle && <Heading as="h2">{subtitle}</Heading>}
         <div className="w-full">{children}</div>
       </section>
     </div>

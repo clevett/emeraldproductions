@@ -35,7 +35,7 @@ export default function RootLayout({
         <Theme appearance="dark">
           <div className="grid grid-rows-[auto_1fr_auto] h-full w-full min-h-dvh">
             <Navigation />
-            <main className="h-full w-full p-8">{children}</main>
+            <main className="h-full w-full">{children}</main>
             <footer className="flex w-full p-8 flex-col">
               <Contact />
             </footer>

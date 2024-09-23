@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import styles from "./DriveThruLink.module.css";
+
 const driveThru = (id: string) =>
   `https://www.drivethrurpg.com/product/${id}/?affiliate_id=879798`;
 
@@ -12,7 +14,7 @@ export const DriveThruLink = ({
 }) => {
   return (
     <Link
-      className="inline-flex"
+      className={styles.link}
       href={driveThru(id)}
       rel="noopener noreferrer"
       target="_blank"

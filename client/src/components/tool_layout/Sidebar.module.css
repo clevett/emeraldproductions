@@ -1,0 +1,30 @@
+.sidebar {
+  display: grid;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-6);
+  overflow: hidden;
+}
+
+.sidebar li {
+  -webkit-box-align: center;
+  -webkit-box-flex: 1;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  max-inline-size: 100%;
+  overflow: hidden;
+  padding-block: 4px;
+  padding-inline: 8px;
+}
+
+.sidebar span {
+  max-inline-size: 100%;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.sidebar a {
+  overflow: hidden;
+}
