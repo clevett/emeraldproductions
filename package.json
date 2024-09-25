@@ -21,7 +21,7 @@
     "@types/roll": "^1.2.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.21.0",
     "mongoose": "^5.10.2",
     "nodemailer": "^6.4.8",
     "nodemon": "^2.0.4",
