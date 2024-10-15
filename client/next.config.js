@@ -8,7 +8,7 @@ module.exports = {
       },
       {
         source: "/five_torches_deep/5e_monsters",
-        destination: "/tools/five_torches_deep/5e_monsters",
+        destination: "/tools/five_torches_deep/fifth_edition_bestiary",
         permanent: true,
       },
       {

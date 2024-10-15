@@ -4,3 +4,5 @@ export { Loading } from "@/app/components/Loading";
 export { DriveThruLink } from "@/app/components/drive_thru_link/DriveThruLink";
 export { ToolLayout } from "@/app/components/tool_layout/ToolLayout";
 export { Sidebar } from "@/app/components/sidebar/Sidebar";
+export { Title } from "@/app/components/Title";
+export { Subtitle } from "@/app/components/Subtitle";

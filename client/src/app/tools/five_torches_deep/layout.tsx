@@ -1,9 +1,11 @@
 import { ToolLayout } from "@/app/components";
-import { driveThru } from "@/app/resources";
+import { systems } from "@/app/resources";
 
 export default function Layout({ children }: { children: JSX.Element }) {
+  const { driveThruId, title } = systems.ftd;
+
   return (
-    <ToolLayout DriveThruId={driveThru.ftd} title="Five Torches Deep">
+    <ToolLayout DriveThruId={driveThruId} title={title}>
       {children}
     </ToolLayout>
   );

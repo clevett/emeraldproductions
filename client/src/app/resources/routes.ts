@@ -41,67 +41,123 @@ export const tools = [
   },
 ];
 
-export const ftdList = [
-  {
-    icon: ftdIcon,
-    label: "Fifth Edition Bestiary",
-    path: "/five_torches_deep/5e_monsters",
-  },
-  {
-    icon: ftdIcon,
-    label: "Random Map Generator",
-    path: "/five_torches_deep/random_map_generator",
-  },
-];
+const ftdMonsters = {
+  description: `A list of monsters from the 5th edition of the world's greatest roleplaying game.`,
+  label: "Fifth Edition Bestiary",
+  path: "/five_torches_deep/fifth_edition_bestiary",
+  icon: ftdIcon,
+};
 
-export const sotdlList = [
-  {
-    icon: sotdlIcon,
-    label: "Encounter Builder",
-    path: "/shadow_of_the_demon_lord/encounter_builder",
-  },
-  {
-    icon: sotdlIcon,
-    label: "Rewards Generator",
-    path: "/shadow_of_the_demon_lord/rewards_generator",
-  },
-  {
-    icon: sotdlIcon,
-    label: "Travel Tool",
-    path: "/shadow_of_the_demon_lord/travel_tool",
-  },
-];
+const ftdMaps = {
+  description: `A random map generator for the using color schemes.`,
+  label: "Random Map Generator",
+  path: "/five_torches_deep/random_map_generator",
+  icon: ftdIcon,
+};
 
-export const shadowrunList = [
-  {
-    icon: sr5eIcon,
-    label: "Mission Generator",
-    path: "/shadowrun/mission_creation",
-  },
-  {
-    icon: sr5eIcon,
-    label: "Rewards Calculator",
-    path: "/shadowrun/rewards_calculator",
-  },
-  {
-    icon: sr6eIcon,
-    label: "Npcs",
-    path: "/shadowrun/npcs",
-  },
-  {
-    icon: sr6eIcon,
-    label: "Heat",
-    path: "/shadowrun/heat",
-  },
-];
+const myzCreateTheZone = {
+  description: `A tool to help you create the zone for your Mutant Year Zero campaign.`,
+  label: "Create the Zone",
+  path: "/myz/create_the_zone",
+  icon: myzIcon,
+};
 
-export const myzList = [
-  {
-    icon: myzIcon,
-    label: "Create the Zone",
-    path: "/myz/create_the_zone",
+const sotdlEncounterBuilder = {
+  description: `A tool to help you create encounters for your Shadow of the Demon Lord campaign.`,
+  label: "Encounter Builder",
+  path: "/shadow_of_the_demon_lord/encounter_builder",
+  icon: sotdlIcon,
+};
+
+const sotdlRewardsGenerator = {
+  description: `A tool to help you generate rewards for your Shadow of the Demon Lord campaign.`,
+  label: "Rewards Generator",
+  path: "/shadow_of_the_demon_lord/rewards_generator",
+  icon: sotdlIcon,
+};
+
+const sotdlTravelTool = {
+  description: `A tool to help you manage travel in your Shadow of the Demon Lord campaign.`,
+  label: "Travel Tool",
+  path: "/shadow_of_the_demon_lord/travel_tool",
+  icon: sotdlIcon,
+};
+
+const shadowrunMissionGenerator = {
+  description: `A tool to help you create missions for your Shadowrun campaign.`,
+  label: "Mission Generator",
+  path: "/shadowrun/mission_creation",
+  icon: sr5eIcon,
+};
+
+const shadowrunRewardsCalculator = {
+  description: `A tool to help you calculate rewards for your Shadowrun campaign.`,
+  label: "Rewards Calculator",
+  path: "/shadowrun/rewards_calculator",
+  icon: sr5eIcon,
+};
+
+const shadowrunNpcs = {
+  description: `A tool to help you create NPCs for your Shadowrun campaign.`,
+  label: "NPCs",
+  path: "/shadowrun/npcs",
+  icon: sr6eIcon,
+};
+
+const shadowrunHeat = {
+  description: `A tool to help you manage heat in your Shadowrun campaign.`,
+  label: "Heat",
+  path: "/shadowrun/heat",
+  icon: sr6eIcon,
+};
+
+export const systems = {
+  ftd: {
+    title: "Five Torches Deep",
+    driveThruId: "264584",
+    tools: {
+      ftdMonsters,
+      ftdMaps,
+    },
+    list: [ftdMonsters, ftdMaps],
   },
-];
+  myz: {
+    title: "Mutant Year Zero",
+    driveThruId: "139453",
+    tools: {
+      createTheZone: myzCreateTheZone,
+    },
+    list: [myzCreateTheZone],
+  },
+  sotdl: {
+    title: "Shadow of the Demon Lord",
+    driveThruId: "155572",
+    tools: {
+      sotdlEncounterBuilder,
+      sotdlRewardsGenerator,
+      sotdlTravelTool,
+    },
+    list: [sotdlEncounterBuilder, sotdlRewardsGenerator, sotdlTravelTool],
+  },
+  sr5e: {
+    title: "Shadowrun 5th Edition",
+    driveThruId: "115985",
+    tools: {
+      shadowrunMissionGenerator,
+      shadowrunRewardsCalculator,
+    },
+    list: [shadowrunMissionGenerator, shadowrunRewardsCalculator],
+  },
+  sr6e: {
+    title: "Shadowrun 6th Edition",
+    driveThruId: "286850",
+    tools: {
+      shadowrunNpcs,
+      shadowrunHeat,
+    },
+    list: [shadowrunNpcs, shadowrunHeat],
+  },
+};
 
 export const rpgTools = [
   {
@@ -109,19 +165,19 @@ export const rpgTools = [
     list: tools,
   },
   {
-    label: "Five Torches Deep",
-    list: ftdList,
+    label: systems.ftd.title,
+    list: systems.ftd.list,
   },
   {
-    label: "Mutant Year Zero",
-    list: myzList,
+    label: systems.myz.title,
+    list: systems.myz.list,
   },
   {
-    label: "Shadow of the Demon Lord",
-    list: sotdlList,
+    label: systems.sotdl.title,
+    list: systems.sotdl.list,
   },
   {
     label: "Shadowrun",
-    list: shadowrunList,
+    list: [...systems.sr5e.list, ...systems.sr6e.list],
   },
 ];

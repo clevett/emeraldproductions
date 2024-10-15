@@ -1,7 +1,5 @@
 import { Box, Card as RadixCard, Inset, Text, Strong } from "@radix-ui/themes";
-import image from "next/image";
 import Image, { StaticImageData } from "next/image";
-import { title } from "process";
 
 type CardProps = {
   description: string;
