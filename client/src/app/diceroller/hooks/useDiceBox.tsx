@@ -1,30 +1,17 @@
-"use client";
 //@ts-expect-error Not typed
 import DiceParser from "@3d-dice/dice-parser-interface";
-
-// import DiceBox from "@3d-dice/dice-box";
+//@ts-expect-error Not typed
+import DiceBox from "@3d-dice/dice-box";
 import { useEffect, useState } from "react";
-
-interface DiceBoxType {
-  onRollComplete: (results: unknown) => void;
-  add: (roll: unknown, groupId: unknown) => void;
-  show: () => {
-    add: (notation: unknown) => void;
-    roll: (notation: unknown) => void;
-  };
-  clear: () => void;
-}
 
 export const useDiceRoller = () => {
   const [color, setColor] = useState("#086931");
-  const [dicebox, setDicebox] = useState<DiceBoxType | undefined>(undefined);
+  const [dicebox, setDicebox] = useState<DiceBox>(undefined);
   const [hasRolled, setHasRolled] = useState(false);
   const [result, setResult] = useState<{ value: number } | null>(null);
   const [canvasElement, setCanvasElement] = useState<
     HTMLCanvasElement | HTMLDivElement | null
   >(null);
-
-  const id = "dice-canvas";
 
   useEffect(() => {
     if (canvasElement === null) {
@@ -32,32 +19,31 @@ export const useDiceRoller = () => {
     }
 
     if (canvasElement && dicebox === undefined) {
-      const init = async (themeColor = "#086931") => {
-        //@ts-expect-error Not typed
-        const DiceBox = (await import("@3d-dice/dice-box")).default;
-
-        const Dice = new DiceBox({
-          id,
-          assetPath: "/assets/",
-          delay: 2,
-          lightIntensity: 0.9,
-          scale: 4,
-          spinForce: 5,
-          startingHeight: 8,
-          themeColor,
-          throwForce: 6,
-        });
-
-        // initialize the Dice Box outside of the component
-        await Dice.init().then(() => setDicebox(Dice));
-      };
-
       init();
     }
   }, [canvasElement, dicebox]);
 
   // create Dice Roll Parser to handle complex notations
   const DRP = new DiceParser();
+
+  const init = async (themeColor = "#086931") => {
+    const Dice = new DiceBox(
+      `#dice-canvas`, // target DOM element to inject the canvas for rendering
+      {
+        assetPath: "/assets/dice-box/",
+        delay: 2,
+        lightIntensity: 0.9,
+        scale: 4,
+        spinForce: 5,
+        startingHeight: 8,
+        themeColor,
+        throwForce: 6,
+      }
+    );
+
+    // initialize the Dice Box outside of the component
+    await Dice.init().then(() => setDicebox(Dice));
+  };
 
   if (dicebox) {
     // This method is triggered whenever dice are finished rolling
@@ -72,7 +58,6 @@ export const useDiceRoller = () => {
       }
       // if no rerolls needed then parse the final results
       const finalResults = DRP.parseFinalResults(results);
-
       setResult(finalResults);
     };
   }
@@ -80,16 +65,13 @@ export const useDiceRoller = () => {
   const roll = (notation: string, color?: string) => {
     const parsedNotation = DRP.parseNotation(notation);
     const diceBoxNotation = color
-      ? parsedNotation.map((n: { [key: string]: unknown }) => ({
-          ...n,
-          themeColor: color,
-        }))
+      ? parsedNotation.map((n: any) => ({ ...n, themeColor: color }))
       : parsedNotation;
 
     if (hasRolled) {
-      dicebox?.show().add(diceBoxNotation);
+      dicebox.show().add(diceBoxNotation);
     } else {
-      dicebox?.show().roll(diceBoxNotation);
+      dicebox.show().roll(diceBoxNotation);
       setHasRolled(true);
     }
   };
@@ -97,13 +79,13 @@ export const useDiceRoller = () => {
   const clear = () => {
     setResult(null);
     setHasRolled(false);
-    dicebox?.clear();
+    dicebox.clear();
   };
 
   const canvas = (
     <canvas
       className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
-      id={id}
+      id="dice-canvas"
       ref={setCanvasElement}
     />
   );
