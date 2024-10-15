@@ -14,3 +14,8 @@ export const contacts = [
     alt: 'linked in logo of letters "i" "n" inside a box',
   },
 ];
+
+export const driveThru = {
+  sotdl: "155572",
+  ftd: "264584",
+};

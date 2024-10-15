@@ -23,3 +23,5 @@ export const DriveThruLink = ({
     </Link>
   );
 };
+
+export default DriveThruLink;

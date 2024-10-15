@@ -1,14 +1,41 @@
-import fivetorchesdeep from "../../imgs/ttrpgs/fivetorchesdeep.jpg";
-import sotdl from "../../imgs/ttrpgs/sotdl.png";
-import shadowrun5e from "../../imgs/ttrpgs/shadowrun5e.png";
-import shadowrun6e from "../../imgs/ttrpgs/shadowrun6e.png";
-import myz from "../../imgs/ttrpgs/myz.png";
-import dice from "../../imgs/icons/rolling-dices.svg";
+import {
+  sotdlIcon,
+  ftdIcon,
+  diceIcon,
+  myzIcon,
+  sr5eIcon,
+  sr6eIcon,
+} from "@/app/images";
+import { StaticImageData } from "next/image";
+
+export type Link = {
+  label: string;
+  path: string;
+  icon?: StaticImageData;
+};
+
+export const navigation = {
+  about: {
+    label: "About",
+    path: "/",
+  },
+  tools: {
+    label: "TTRPG Tools",
+    path: "/tools/diceroller",
+  },
+  diceroller: {
+    label: "Dice Roller",
+    path: "/tools/diceroller",
+  },
+  games: {
+    label: "Vocabulary Builder",
+    path: "/games",
+  },
+};
 
 export const tools = [
   {
-    // element: <DiceRoller />,
-    iconType: dice,
+    icon: diceIcon,
     label: "Dice Roller",
     path: "/diceroller",
   },
@@ -16,14 +43,12 @@ export const tools = [
 
 export const ftdList = [
   {
-    // element: <FiveTorchesDeepMonsters />,
-    iconType: fivetorchesdeep,
+    icon: ftdIcon,
     label: "Fifth Edition Bestiary",
     path: "/five_torches_deep/5e_monsters",
   },
   {
-    // element: <RandomMapGenerator />,
-    iconType: fivetorchesdeep,
+    icon: ftdIcon,
     label: "Random Map Generator",
     path: "/five_torches_deep/random_map_generator",
   },
@@ -32,19 +57,19 @@ export const ftdList = [
 export const sotdlList = [
   {
     // element: <EncounterBuilder />,
-    iconType: sotdl,
+    icon: sotdlIcon,
     label: "Encounter Builder",
     path: "/shadow_of_the_demon_lord/encounter_builder",
   },
   {
     // element: <RewardsGenerator />,
-    iconType: sotdl,
+    icon: sotdlIcon,
     label: "Rewards Generator",
     path: "/shadow_of_the_demon_lord/rewards_generator",
   },
   {
     // element: <TravelTool />,
-    iconType: sotdl,
+    icon: sotdlIcon,
     label: "Travel Tool",
     path: "/shadow_of_the_demon_lord/travel_tool",
   },
@@ -52,26 +77,22 @@ export const sotdlList = [
 
 export const shadowrunList = [
   {
-    // element: <MissionGenerator />,
-    iconType: shadowrun5e,
+    icon: sr5eIcon,
     label: "Mission Generator",
     path: "/shadowrun/mission_creation",
   },
   {
-    // element: <RewardsCalculator />,
-    iconType: shadowrun5e,
+    icon: sr5eIcon,
     label: "Rewards Calculator",
     path: "/shadowrun/rewards_calculator",
   },
   {
-    // element: <NpcCards />,
-    iconType: shadowrun6e,
+    icon: sr6eIcon,
     label: "Npcs",
     path: "/shadowrun/npcs",
   },
   {
-    // element: <Heat />,
-    iconType: shadowrun6e,
+    icon: sr6eIcon,
     label: "Heat",
     path: "/shadowrun/heat",
   },
@@ -79,17 +100,31 @@ export const shadowrunList = [
 
 export const myzList = [
   {
-    // element: <CreateTheZone />,
-    iconType: myz,
+    icon: myzIcon,
     label: "Create the Zone",
     path: "/myz/create_the_zone",
   },
 ];
 
-export const routes = [
-  ...tools,
-  ...ftdList,
-  ...sotdlList,
-  ...shadowrunList,
-  ...myzList,
+export const rpgTools = [
+  {
+    label: "General",
+    list: tools,
+  },
+  {
+    label: "Five Torches Deep",
+    list: ftdList,
+  },
+  {
+    label: "Mutant Year Zero",
+    list: myzList,
+  },
+  {
+    label: "Shadow of the Demon Lord",
+    list: sotdlList,
+  },
+  {
+    label: "Shadowrun",
+    list: shadowrunList,
+  },
 ];

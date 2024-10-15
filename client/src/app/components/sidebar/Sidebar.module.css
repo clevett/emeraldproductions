@@ -28,3 +28,7 @@
 .sidebar a {
   overflow: hidden;
 }
+
+.active {
+  background-color: rgba(52, 55, 65, 0.4);
+}
