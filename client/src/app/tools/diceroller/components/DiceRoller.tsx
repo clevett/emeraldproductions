@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useDiceRoller } from "@/app/tools/diceroller/hooks/useDiceBox";
 import { DiceButtons, NotationInput } from "@/app/tools/diceroller/components";
 import { SketchPicker } from "react-color";
-import { IconButton, Spinner } from "@radix-ui/themes";
-import { TrashIcon } from "@radix-ui/react-icons";
+import { Spinner } from "@radix-ui/themes";
+import { TrashIcon } from "@/app/components/";
 
 export const DiceRoller = () => {
   const { roll, isLoading, canvas, clear, setColor, color } = useDiceRoller();
@@ -18,14 +18,7 @@ export const DiceRoller = () => {
       ) : (
         <div className="w-full grid grid-cols-[400px_min-content] gap-4">
           <DiceButtons roll={rollDice} />
-          <IconButton
-            aria-label="clear dice results"
-            className="self-center"
-            onClick={clear}
-            variant="ghost"
-          >
-            <TrashIcon width="18" height="18" />
-          </IconButton>
+          <TrashIcon onClick={clear} />
           <div className="w-full grid gap-2">
             <div className="grid gap-4 grid-flow-col">
               <NotationInput submit={rollDice} />

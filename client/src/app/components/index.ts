@@ -8,3 +8,4 @@ export { Title } from "@/app/components/Title";
 export { Subtitle } from "@/app/components/Subtitle";
 export { fuzzySearch } from "@/app/components/search_bar/fuzzySearch";
 export { SearchBar } from "@/app/components/search_bar/SearchBar";
+export { TrashIcon } from "@/app/components/radix/TrashIcon";
