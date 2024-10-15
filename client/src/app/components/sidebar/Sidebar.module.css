@@ -31,4 +31,6 @@
 
 .active {
   background-color: rgba(52, 55, 65, 0.4);
+  border-radius: 6px;
+  transition: background-color 150ms;
 }

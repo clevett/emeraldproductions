@@ -44,11 +44,12 @@ export const List = ({ title, list }: { title: string; list: List }) => {
 export const ListItem = ({ item }: { item: LinkType }) => {
   const pathname = usePathname();
   const { label, path, icon } = item;
+  const href = `/tools${path}`;
 
-  const isActive = (path: string) => (pathname === path ? "active" : "");
+  const isActive = pathname === href ? styles.active : "";
 
   return (
-    <Link href={`/tools/${path}`} key={`sidebar-${path}`}>
+    <Link href={href} key={`sidebar-${path}`}>
       <li className={`grid grid-flow-col auto-cols-max gap-2 ml-2 ${isActive}`}>
         {icon && <Image src={icon} alt={label} width={24} height={24} />}
         <Text>{label}</Text>

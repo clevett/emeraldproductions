@@ -56,19 +56,16 @@ export const ftdList = [
 
 export const sotdlList = [
   {
-    // element: <EncounterBuilder />,
     icon: sotdlIcon,
     label: "Encounter Builder",
     path: "/shadow_of_the_demon_lord/encounter_builder",
   },
   {
-    // element: <RewardsGenerator />,
     icon: sotdlIcon,
     label: "Rewards Generator",
     path: "/shadow_of_the_demon_lord/rewards_generator",
   },
   {
-    // element: <TravelTool />,
     icon: sotdlIcon,
     label: "Travel Tool",
     path: "/shadow_of_the_demon_lord/travel_tool",
