@@ -6,3 +6,5 @@ export { ToolLayout } from "@/app/components/tool_layout/ToolLayout";
 export { Sidebar } from "@/app/components/sidebar/Sidebar";
 export { Title } from "@/app/components/Title";
 export { Subtitle } from "@/app/components/Subtitle";
+export { fuzzySearch } from "@/app/components/search_bar/fuzzySearch";
+export { SearchBar } from "@/app/components/search_bar/SearchBar";
