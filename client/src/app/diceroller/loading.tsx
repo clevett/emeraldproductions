@@ -1,9 +1,5 @@
-import { Spinner } from "@radix-ui/themes";
+import { Loading } from "@/app/components/Loading";
 
-export default function DiceRoller() {
-  return (
-    <div className="flex justify-center items-center">
-      <Spinner size="3" />
-    </div>
-  );
+export default function DiceRollerLoading() {
+  return <Loading />;
 }

@@ -1,7 +1,7 @@
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
-import { Contact } from "../components/Contact";
-import { Navigation } from "@/components/Navigation";
+import { Contact } from "./components/Contact";
+import { Navigation } from "@/app/components/Navigation";
 import { Theme } from "@radix-ui/themes";
 import localFont from "next/font/local";
 import type { Metadata } from "next";

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import d20 from "../../imgs/icons/dice-twenty-faces-twenty.svg";
+import d20 from "../../imgs/icons/d20.svg";
 import d12 from "../../imgs/icons/d12.svg";
 import d10 from "../../imgs/icons/d10.svg";
-import d8 from "../../imgs/icons/dice-eight-faces-eight.svg";
-import d6 from "../../imgs/icons/perspective-dice-six.svg";
+import d8 from "../../imgs/icons/d8.svg";
+import d6 from "../../imgs/icons/d6-2.svg";
 import d4 from "../../imgs/icons/d4.svg";
 import { IconButton } from "@radix-ui/themes";
 

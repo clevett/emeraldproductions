@@ -1,13 +1,16 @@
 "use client";
 //@ts-expect-error Not typed
 import DiceParser from "@3d-dice/dice-parser-interface";
-//@ts-expect-error Not typed
-import DiceBox from "@3d-dice/dice-box";
+
+// import DiceBox from "@3d-dice/dice-box";
 import { useEffect, useState } from "react";
 
-export const useDiceRoller = () => {
+export const useDiceRoller = async () => {
+  //@ts-expect-error Not typed
+  const DiceBox = (await import("@3d-dice/dice-box")).default;
+
   const [color, setColor] = useState("#086931");
-  const [dicebox, setDicebox] = useState<DiceBox>(undefined);
+  const [dicebox, setDicebox] = useState<typeof DiceBox>(undefined);
   const [hasRolled, setHasRolled] = useState(false);
   const [result, setResult] = useState<{ value: number } | null>(null);
   const [canvasElement, setCanvasElement] = useState<

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { useDiceRoller } from "@/hooks/useDiceBox";
-import { DiceButtons, NotationInput } from "@/components/dice_roller";
+import { useDiceRoller } from "@/app/diceroller/hooks/useDiceBox";
+import { DiceButtons, NotationInput } from "@/app/diceroller/components";
 import { SketchPicker } from "react-color";
 import { IconButton, Spinner } from "@radix-ui/themes";
 import { TrashIcon } from "@radix-ui/react-icons";

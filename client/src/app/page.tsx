@@ -1,13 +1,18 @@
 import Image from "next/image";
-import { Box, Flex, Grid, Text, Container } from "@radix-ui/themes";
-import { Card } from "../components/Card";
+import { Box, Grid, Text } from "@radix-ui/themes";
+import { Card } from "@/app/components";
+import { about } from "@/app/resources";
 
-import portrait from "../imgs/takedown.png";
 import styles from "./styles.module.css";
 
-import iceland from "../imgs/cards/iceland.jpg";
-import gamemaster from "../imgs/cards/npcs.png";
-import dice from "../imgs/cards/dice.png";
+import portrait from "./imgs/takedown.png";
+import iceland from "./imgs/cards/iceland.jpg";
+import gamemaster from "./imgs/cards/npcs.png";
+import dice from "./imgs/cards/dice.png";
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = about;
 
 const cards = [
   {
