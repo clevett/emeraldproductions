@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Box } from "./box";
+import { Box } from "./Box";
 import { Button } from "@/app/components";
 
-import styles from "./styles.module.css";
+import styles from "./RandomMapGenerator.module.css";
 
 export const RandomMapGenerator = () => {
   const [refresh, setRefresh] = useState(false);

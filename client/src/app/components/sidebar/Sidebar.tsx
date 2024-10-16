@@ -36,7 +36,7 @@ export const List = ({ title, list }: { title: string; list: List }) => {
       <Heading as="h2" size="2">
         {title}
       </Heading>
-      <ul className="grid gap-2">{getList(list)}</ul>
+      <menu className="grid gap-2">{getList(list)}</menu>
     </>
   );
 };
@@ -49,11 +49,15 @@ export const ListItem = ({ item }: { item: LinkType }) => {
   const isActive = pathname === href ? styles.active : "";
 
   return (
-    <Link href={href} key={`sidebar-${path}`}>
-      <li className={`grid grid-flow-col auto-cols-max gap-2 ml-2 ${isActive}`}>
-        {icon && <Image src={icon} alt={label} width={24} height={24} />}
+    <li className={`${isActive}`}>
+      <Link
+        className={`grid grid-flow-col auto-cols-max gap-2 ml-2`}
+        href={href}
+        key={`sidebar-${path}`}
+      >
+        {icon && <Image src={icon} alt="" width={24} height={24} />}
         <Text>{label}</Text>
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 };

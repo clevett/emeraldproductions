@@ -1,20 +1,21 @@
 import buttonStyles from "./Button.module.css";
 
 export const Button = ({
-  children,
+  name,
   onClick,
   styles,
 }: {
-  children: React.ReactNode;
+  name: string;
   onClick: () => void;
   styles?: string;
 }) => {
   return (
     <button
+      aria-label={name}
       className={`cursor-pointer bg-green-800 rounded p-2 ${buttonStyles.button} ${styles}`}
       onClick={onClick}
     >
-      {children}
+      {name}
     </button>
   );
 };

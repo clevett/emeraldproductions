@@ -1,6 +1,6 @@
 .layout {
   display: grid;
+  grid-auto-rows: max-content;
   grid-template-columns: 248px 1fr;
   height: 100%;
-  grid-auto-rows: max-content;
 }

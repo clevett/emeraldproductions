@@ -24,6 +24,7 @@ export const DiceRoller = () => {
               <NotationInput submit={rollDice} />
               <div className="grid gap-2">
                 <button
+                  aria-label="color-picker"
                   className={`rounded-full bg-[${color}] border-[${color}] border-2 border-solid h-8 w-8 relative`}
                   onClick={() => setIsOpen(!isOpen)}
                   style={{

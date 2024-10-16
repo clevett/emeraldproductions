@@ -1,6 +1,6 @@
 import { Sidebar } from "@/app/components";
 
-import styles from "./styles.module.css";
+import styles from "./layout.module.css";
 
 export default function ToolLayout({ children }: { children: JSX.Element }) {
   return (
