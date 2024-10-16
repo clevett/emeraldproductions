@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 import { maps } from "@/app/data/ftdMaps";
-import { getDiceRollTotal } from "../../../helpers/getDiceRoll";
+import { getDiceRollTotal } from "@/app/tools/utils";
 
-const Box = ({ name }: { name: string }) => {
+export const Box = ({ name }: { name: string }) => {
   const roll = getDiceRollTotal();
 
   const [number, setNumber] = useState(roll("1d6"));

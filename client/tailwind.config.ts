@@ -15,5 +15,12 @@ const config: Config = {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern:
+        /(bg|text|border)-(purple|pink|orange|yellow|green|black|gray|neutral|red|blue|white)/,
+    },
+  ],
 };
+
 export default config;

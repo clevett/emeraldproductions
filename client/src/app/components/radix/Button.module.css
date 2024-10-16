@@ -1,0 +1,12 @@
+.button {
+  border-radius: 5px;
+  border-bottom: 4px solid lighten(gray, 70%);
+}
+
+.button:hover {
+  transform: scale(1.03);
+}
+
+.button:active {
+  transform: scale(0.98);
+}

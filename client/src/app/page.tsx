@@ -5,10 +5,12 @@ import { about } from "@/app/resources";
 
 import styles from "./styles.module.css";
 
-import portrait from "./imgs/takedown.png";
-import iceland from "./imgs/cards/iceland.jpg";
-import gamemaster from "./imgs/cards/npcs.png";
-import dice from "./imgs/cards/dice.png";
+import {
+  takedown as portrait,
+  iceland,
+  npcs as gamemaster,
+  dice,
+} from "@/app/images";
 
 import type { Metadata } from "next";
 

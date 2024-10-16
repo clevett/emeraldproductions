@@ -9,8 +9,8 @@ import {
 } from "@elastic/eui";
 
 import displayModifier from "../helpers/displayModifier/displayModifier";
-import { MonsterFTD } from "../types/ftdTypes";
-import { ftdCatagories as catagories } from "../../../data/ftdCategories";
+import { MonsterFTD } from "../../types/ftdTypes";
+import { ftdCatagories as catagories } from "@/app/data/ftdCategories";
 
 import { coinList } from "../../ShadowOfTheDemonLord/helpers/coinList";
 import { useState } from "react";
