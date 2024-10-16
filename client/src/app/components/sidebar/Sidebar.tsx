@@ -49,9 +49,9 @@ export const ListItem = ({ item }: { item: LinkType }) => {
   const isActive = pathname === href ? styles.active : "";
 
   return (
-    <li className={`${isActive}`}>
+    <li className={`ml-1 ${isActive}`}>
       <Link
-        className={`grid grid-flow-col auto-cols-max gap-2 ml-2`}
+        className={`grid grid-flow-col gap-2`}
         href={href}
         key={`sidebar-${path}`}
       >

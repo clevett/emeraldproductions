@@ -8,6 +8,10 @@
 
 .panel {
   display: grid;
+  background-color: var(--active);
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 0.9px 4px,
+    rgba(0, 0, 0, 0.21) 0px 2.6px 8px, rgba(0, 0, 0, 0.176) 0px 5.7px 12px,
+    rgba(0, 0, 0, 0.14) 0px 15px 15px;
   gap: var(--space-5);
   grid-auto-rows: max-content;
   padding: var(--space-5);

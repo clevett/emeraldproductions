@@ -29,9 +29,7 @@ export const RandomMapGenerator = () => {
         <Box name="South" />
         <Box name="Southeast" />
       </div>
-      <Button styles="mt-5" onClick={handleClick}>
-        Generator New Map
-      </Button>
+      <Button styles="mt-5" onClick={handleClick} name="Generator New Map" />
     </div>
   );
 };
