@@ -1,0 +1,39 @@
+.cardLayout {
+  align-items: center;
+  border-radius: 8px 8px 0px 0px;
+  border: 1px solid transparent;
+  display: grid;
+  grid-template-rows: 120px 1fr;
+  height: 100%;
+  justify-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.header {
+  display: grid;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h4 {
+  grid-row: 1/2;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+  color: black;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+.header image {
+  grid-row: 1/2;
+}
+
+.content {
+  grid-template-rows: 1fr 24px;
+  padding: 16px;
+  height: 100%;
+}

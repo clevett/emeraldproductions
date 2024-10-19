@@ -6,7 +6,5 @@ export { fuzzySearch } from "@/app/components/search_bar/fuzzySearch";
 export { Loading } from "@/app/components/Loading";
 export { SearchBar } from "@/app/components/search_bar/SearchBar";
 export { Sidebar } from "@/app/components/sidebar/Sidebar";
-export { Subtitle } from "@/app/components/radix/Subtitle";
-export { Title } from "@/app/components/radix/Title";
 export { ToolLayout } from "@/app/components/tool_layout/ToolLayout";
-export { TrashIcon } from "@/app/components/radix/TrashIcon";
+export * from "@/app/components/radix";

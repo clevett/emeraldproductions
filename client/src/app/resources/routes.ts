@@ -58,7 +58,7 @@ const ftdMaps = {
 const myzCreateTheZone = {
   description: `A tool to help you create the zone for your Mutant Year Zero campaign.`,
   label: "Create the Zone",
-  path: "/myz/create_the_zone",
+  path: "/mutant_year_zero/create_the_zone",
   icon: myzIcon,
 };
 

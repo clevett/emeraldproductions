@@ -6,7 +6,7 @@ import d10 from "@/app/images/dice/d10.svg";
 import d8 from "@/app/images/dice/d8.svg";
 import d6 from "@/app/images/dice/d6-2.svg";
 import d4 from "@/app/images/dice/d4.svg";
-import { IconButton } from "@radix-ui/themes";
+import { IconButton } from "@/app/components";
 
 const dice = [20, 12, 10, 8, 6, 4];
 
@@ -38,9 +38,10 @@ export const DiceButtons = ({
 }) => {
   const buttons = models.map((d) => (
     <IconButton
-      className="self-center min-h-[50px] min-w-[50px] w-full h-full"
       key={`d-${d}-dice`}
+      label={`roll a d${d}`}
       onClick={() => roll(`1d${d}`)}
+      styles="self-center min-h-[50px] min-w-[50px] w-full h-full"
       variant="ghost"
     >
       <Image src={getIcon(d)} alt={`d ${d} icon`} />

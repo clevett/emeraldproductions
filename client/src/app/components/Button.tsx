@@ -1,10 +1,12 @@
 import buttonStyles from "./Button.module.css";
 
 export const Button = ({
+  color = "bg-green-800",
   name,
   onClick,
   styles,
 }: {
+  color?: string;
   name: string;
   onClick: () => void;
   styles?: string;
@@ -12,7 +14,7 @@ export const Button = ({
   return (
     <button
       aria-label={name}
-      className={`cursor-pointer bg-green-800 rounded p-2 ${buttonStyles.button} ${styles}`}
+      className={`cursor-pointer ${color} rounded p-2 ${buttonStyles.button} ${styles}`}
       onClick={onClick}
     >
       {name}

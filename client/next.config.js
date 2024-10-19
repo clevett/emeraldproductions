@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         source: "/myz/create_the_zone",
-        destination: "/tools/myz/create_the_zone",
+        destination: "/tools/mutant_year_zero/create_the_zone",
         permanent: true,
       },
       {
