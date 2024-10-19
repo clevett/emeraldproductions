@@ -15,7 +15,7 @@ export const RandomMapGenerator = () => {
     <div>
       <div
         key={`map-${refresh}`}
-        className={`grid grid-cols-3 grid-rows-3 border-2 border-solid border-black ${styles.map}`}
+        className={`grid grid-cols-3 grid-rows-3 border-2 border-solid border-black shadow-2xl ${styles.map}`}
       >
         <Box name="Northwest" />
         <Box name="North" />

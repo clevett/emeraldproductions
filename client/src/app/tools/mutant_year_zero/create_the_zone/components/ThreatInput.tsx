@@ -2,41 +2,27 @@
 import { useRecoilState } from "recoil";
 import { useState } from "react";
 
+import { Input } from "@/app/components";
+
 import { threatLevelAtom } from "../recoil";
 
 import styles from "./ThreatInput.module.css";
 
 export const ThreatInput = () => {
-  const [value, setValue] = useState("3");
   const [base, setBase] = useRecoilState(threatLevelAtom);
-
-  const onBlur = () => {
-    const num = parseInt(value);
-    if (isNaN(num)) {
-      setValue(`${base}`);
-    } else {
-      const v = num < 1 ? 1 : num > 20 ? 20 : num;
-      setBase(v);
-
-      if (v !== num) {
-        setValue(`${v}`);
-      }
-    }
-  };
 
   return (
     <div className="grid gap-4">
       <div className={`grid ${styles.inputGrid} gap-4`}>
         <h3>Threat Level</h3>
-        <input
-          aria-label="Enter threat level"
-          className="text-center rounded"
+        <Input
+          defaultValue={`${base}`}
+          label="Enter threat level"
           max={20}
           min={1}
-          onBlur={onBlur}
-          onChange={(e) => setValue(e.target.value)}
           placeholder="2"
-          value={value}
+          styles="text-center"
+          submit={(value: string) => setBase(parseInt(value))}
         />
       </div>
       <p>

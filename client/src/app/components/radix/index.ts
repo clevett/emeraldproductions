@@ -5,3 +5,4 @@ export { ReloadIcon } from "@/app/components/radix/ReloadIcon";
 export { Subtitle } from "@/app/components/radix/Subtitle";
 export { Title } from "@/app/components/radix/Title";
 export { TrashIcon } from "@/app/components/radix/TrashIcon";
+export { Input } from "@/app/components/radix/Input";

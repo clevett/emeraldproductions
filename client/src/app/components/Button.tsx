@@ -14,7 +14,7 @@ export const Button = ({
   return (
     <button
       aria-label={name}
-      className={`cursor-pointer ${color} rounded p-2 ${buttonStyles.button} ${styles}`}
+      className={`cursor-pointer ${color} shadow-lg rounded p-2 ${buttonStyles.button} ${styles}`}
       onClick={onClick}
     >
       {name}

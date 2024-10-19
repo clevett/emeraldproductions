@@ -1,32 +1,24 @@
-import { TextField, Text } from "@radix-ui/themes";
-import { useState } from "react";
+import { Text } from "@radix-ui/themes";
+
+import { Input } from "@/app/components";
 
 export const NotationInput = ({
   submit,
 }: {
-  submit: (arg: string, color?: string) => void;
+  submit: (arg: string) => void;
 }) => {
   const defaultRoll = "8d6!";
-  const [value, setValue] = useState(defaultRoll);
-
   const message = "Type in the dice string and press Enter";
 
-  const handleKeyDown = (event: { key: string }) => {
-    if (event.key === "Enter") {
-      submit(value);
-    }
-  };
   return (
     <div className="grid gap-4">
-      <TextField.Root
+      <Input
+        defaultValue={defaultRoll}
+        label="Enter dice notation"
         placeholder={defaultRoll}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onKeyDown={handleKeyDown}
-        onSubmit={() => submit(value)}
-        aria-label="Enter dice notation"
-        className="w-full"
+        submit={submit}
       />
+
       <Text as="label" size="3">
         {message}
       </Text>
