@@ -20,34 +20,23 @@ export const FiveTorchesDeepMonsters = () => {
     getSearchResults("Goblin")
   );
 
-  const cardNodes = (monsters: MonsterFTD[]) =>
-    monsters.map((monster, index) => {
-      return (
-        <div key={`ftd-monster-${index}`} className={styles.card}>
-          <MonsterCard key={monster.name} monster={monster} />
-        </div>
-      );
-    });
-
-  const renderedList = () => {
-    if (filteredMonsters) {
-      return (
-        <div className="justify-start gap-1 flex-wrap">
-          {cardNodes(filteredMonsters)}
-        </div>
-      );
-    }
-
-    return null;
-  };
-
   const onTermSubmit = (term: string) =>
     setFilteredMonsters(getSearchResults(term));
 
   return (
-    <div>
+    <div className="grid gap-4">
       <SearchBar onTermSubmit={onTermSubmit} />
-      {renderedList()}
+      {filteredMonsters && (
+        <div className="flex flex-row justify-start gap-4 flex-wrap">
+          {filteredMonsters.map((monster, index) => {
+            return (
+              <div key={`ftd-monster-${index}`} className={styles.card}>
+                <MonsterCard key={monster.name} monster={monster} />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

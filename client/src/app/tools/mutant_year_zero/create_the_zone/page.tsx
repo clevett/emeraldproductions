@@ -2,7 +2,7 @@
 import { RecoilRoot } from "recoil";
 import { Subtitle } from "@/app/components";
 import { systems } from "@/app/resources";
-import { Sector } from "./Sector";
+import { Sector } from "./components/Sector";
 
 export default function CreateTheZone() {
   const { label } = systems.myz.tools.createTheZone;

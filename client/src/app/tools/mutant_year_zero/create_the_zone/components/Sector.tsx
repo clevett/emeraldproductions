@@ -1,8 +1,8 @@
 import { useRecoilValue } from "recoil";
 
-import { selectSectorFamily } from "./recoil";
+import { selectSectorFamily } from "../recoil";
 
-import { ThreatInput, CreateSector, SectorCard } from "./components";
+import { ThreatInput, CreateSector, SectorCard } from "./";
 
 export const Sector = () => {
   const sectors = useRecoilValue(selectSectorFamily);
