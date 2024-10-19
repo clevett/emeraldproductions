@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
-import { fuzzySearch, SearchBar } from "@/app/components";
-import convertFifthMonsterToFTD from "../helpers/convertFifthMonsterToFTD";
 
+import { fuzzySearch, SearchBar } from "@/app/components";
 import { FifthEditionMonster } from "@/app/data/5eMonsters";
 
-import { MonsterFTD } from "../../types/ftdTypes";
 import { MonsterCard } from "./MonsterCard";
-
+import { MonsterFTD } from "../../types/ftdTypes";
+import convertFifthMonsterToFTD from "../helpers/convertFifthMonsterToFTD";
 import styles from "./styles.module.css";
 
 const ftdMonsters = FifthEditionMonster.map((monster) =>

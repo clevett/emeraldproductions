@@ -1,23 +1,11 @@
-import {
-  EuiButtonEmpty,
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiSpacer,
-  EuiSelect,
-  EuiText,
-  EuiTitle,
-} from "@elastic/eui";
+"use client";
+import { useState } from "react";
+import { ftdCatagories as catagories } from "@/app/data/ftdCategories";
+import { getCoinList, getDiceRollTotal } from "@/app/tools/utils";
+import { Button, Card } from "@/app/components";
 
 import displayModifier from "../helpers/displayModifier/displayModifier";
 import { MonsterFTD } from "../../types/ftdTypes";
-import { ftdCatagories as catagories } from "@/app/data/ftdCategories";
-
-import { coinList } from "../../ShadowOfTheDemonLord/helpers/coinList";
-import { useState } from "react";
-
-import styles from "../styles.module.css";
-import { CardPanel } from "../../CardPanel";
-import { getDiceRollTotal } from "../../../helpers/getDiceRoll";
 
 export const MonsterCard = ({
   monster: {
@@ -44,10 +32,12 @@ export const MonsterCard = ({
   const goldRoll = (hd: number) =>
     hd < 1 ? hd * roll(`1d20`) : roll(`${hd}d20`);
 
+  const coinList = getCoinList(goldRoll(hd));
+
   const [category, setCategory] = useState(catagories[0]);
   const [hitPoints, setHitPoints] = useState(hp.total);
   const [damageTotal, setDamageTotal] = useState(roll(damage));
-  const [treasure, setTreasure] = useState(coinList(goldRoll(hd)));
+  const [treasure, setTreasure] = useState(coinList);
 
   const handleCategoryChange = (value: string) => {
     const findCategory = catagories.find(
@@ -60,203 +50,178 @@ export const MonsterCard = ({
 
   const subheader = (title: string, value: string | number | null) => {
     return (
-      <EuiText>
+      <p>
         <strong>{title}: </strong> {value}
-      </EuiText>
+      </p>
     );
   };
 
   const showResist = immunities || resistances || vulnerabilities;
 
   return (
-    <CardPanel>
-      <EuiFlexGroup direction="column" gutterSize="s">
-        <EuiFlexItem className="items-start">
-          <EuiFlexGroup className="items-start w-full" gutterSize="s">
-            <EuiFlexItem>
-              <EuiTitle size="m" className="mr-4 grow">
+    <Card>
+      <div>
+        <div>
+          <div className="items-start">
+            <div className="items-start w-full">
+              <div>
                 <h3>{name}</h3>
-              </EuiTitle>
-            </EuiFlexItem>
-            <EuiFlexItem className={`self-end ${styles.maxW100}`}>
-              <EuiSelect
-                className="self-end grow-0"
-                options={catagories.map(({ name }) => ({
-                  text: name,
-                  value: name,
-                }))}
-                onChange={(e) => handleCategoryChange(e.target.value)}
-                value={category.name}
-              />
-            </EuiFlexItem>
-          </EuiFlexGroup>
-        </EuiFlexItem>
-        <EuiFlexItem>
-          <EuiText size="m">
+              </div>
+              <div className={`self-end`}>
+                <select
+                  className="self-end grow-0"
+                  onChange={(e) => handleCategoryChange(e.target.value)}
+                  value={category.name}
+                >
+                  {catagories.map(({ name }) => (
+                    <option key={name} value={name}>
+                      {name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+          <div>
             <h4>{hd} HD</h4>
-          </EuiText>
-        </EuiFlexItem>
-        <EuiFlexItem>
-          <EuiText size="m">
+          </div>
+          <div>
             <h4>
               {size}, {type}
             </h4>
-          </EuiText>
-        </EuiFlexItem>
-      </EuiFlexGroup>
-      <hr className="mt-4 mb-4" />
-      {/* dmg & ac & base */}
-      <EuiFlexGroup gutterSize="s" alignItems="center" responsive={false} wrap>
-        <EuiFlexItem>
-          <EuiText>
-            {subheader("To Hit", displayModifier(modifiers.normal))}
-          </EuiText>
-          <EuiText>
-            <strong>Damage: </strong>
-            <EuiButtonEmpty
-              onClick={() => setDamageTotal(roll(damage))}
-              size="m"
-            >
-              {damageTotal} ({damage})
-            </EuiButtonEmpty>
-          </EuiText>
-        </EuiFlexItem>
-        <EuiFlexItem>
-          <EuiText>{subheader("AC", ac)}</EuiText>
-          <EuiText>
-            <strong>HP: </strong>
-            <EuiButtonEmpty
-              onClick={() => setHitPoints(roll(hp.dice))}
-              size="m"
-            >
-              {hitPoints} ({hp.dice})
-            </EuiButtonEmpty>
-          </EuiText>
-        </EuiFlexItem>
-        <EuiFlexItem>
-          <EuiText>
-            {subheader("Base mod", displayModifier(modifiers.normal))}
-          </EuiText>
-          <EuiFlexItem>
-            <EuiText>{subheader("Speed", speed)}</EuiText>
-          </EuiFlexItem>
-        </EuiFlexItem>
-      </EuiFlexGroup>
+          </div>
+        </div>
+        <hr className="mt-4 mb-4" />
+        {/* dmg & ac & base */}
+        <div>
+          <div>
+            <p>{subheader("To Hit", displayModifier(modifiers.normal))}</p>
+            <p>
+              <strong>Damage: </strong>
+              <Button
+                onClick={() => setDamageTotal(roll(damage))}
+                name={`${damageTotal} (${damage})`}
+              />
+            </p>
+          </div>
+          <div>
+            <p>{subheader("AC", ac)}</p>
+            <p>
+              <strong>HP: </strong>
+              <Button
+                onClick={() => setHitPoints(roll(hp.dice))}
+                name={`${hitPoints} (${hp.dice})`}
+              />
+            </p>
+          </div>
+          <div>
+            <p>{subheader("Base mod", displayModifier(modifiers.normal))}</p>
+            <div>
+              <p>{subheader("Speed", speed)}</p>
+            </div>
+          </div>
+        </div>
 
-      <hr className="mt-4 mb-4" />
+        <hr className="mt-4 mb-4" />
 
-      {/* immunities & resistances & vulnerabilities*/}
-      {showResist && (
-        <>
-          <EuiFlexGroup direction="column" gutterSize="s">
-            {immunities ? (
-              <EuiFlexItem>{subheader("Immunities", immunities)}</EuiFlexItem>
-            ) : null}
-            {resistances ? (
-              <EuiFlexItem>{subheader("Resistances", resistances)}</EuiFlexItem>
-            ) : null}
-            {vulnerabilities ? (
-              <EuiFlexItem>
-                {subheader("Vulnerabilities", vulnerabilities)}
-              </EuiFlexItem>
-            ) : null}
-          </EuiFlexGroup>
-          <EuiSpacer />
-        </>
-      )}
+        {/* immunities & resistances & vulnerabilities*/}
+        {showResist && (
+          <>
+            <div>
+              {immunities ? (
+                <div>{subheader("Immunities", immunities)}</div>
+              ) : null}
+              {resistances ? (
+                <div>{subheader("Resistances", resistances)}</div>
+              ) : null}
+              {vulnerabilities ? (
+                <div>{subheader("Vulnerabilities", vulnerabilities)}</div>
+              ) : null}
+            </div>
+          </>
+        )}
 
-      {/* strong & weak */}
-      <EuiFlexGroup>
-        <EuiFlexItem>
-          <EuiText size="m" className="text-uppercase">
-            <h4>Strong</h4>
-          </EuiText>
-          {subheader(category.strong.attributes.join("/"), modifiers.strong)}
-          {subheader("Modifier", displayModifier(modifiers.strong))}
-          {category.strong.skills.join(", ")}
-        </EuiFlexItem>
-        <EuiFlexItem>
-          <EuiText size="m" className="text-uppercase">
-            <h4>Weak</h4>
-          </EuiText>
-          {subheader(category.weak.attributes.join("/"), modifiers.weak)}
-          {subheader("Modifier", displayModifier(modifiers.weak))}
-          {category.weak.skills.join(", ")}
-        </EuiFlexItem>
-      </EuiFlexGroup>
+        {/* strong & weak */}
+        <div>
+          <div>
+            <h4 className="text-uppercase">Strong</h4>
+            {subheader(category.strong.attributes.join("/"), modifiers.strong)}
+            {subheader("Modifier", displayModifier(modifiers.strong))}
+            {category.strong.skills.join(", ")}
+          </div>
+          <div>
+            <h4 className="text-uppercase">Weak</h4>
+            {subheader(category.weak.attributes.join("/"), modifiers.weak)}
+            {subheader("Modifier", displayModifier(modifiers.weak))}
+            {category.weak.skills.join(", ")}
+          </div>
+        </div>
 
-      <hr className="mt-4 mb-4" />
+        <hr className="mt-4 mb-4" />
 
-      {/* abilities */}
-      {abilities && abilities?.length > 0 ? (
-        <>
-          <EuiFlexGroup direction="column">
-            <EuiFlexItem>
-              <EuiText size="m" className="text-uppercase">
-                <h4>Special Abilities</h4>
-              </EuiText>
-            </EuiFlexItem>
+        {/* abilities */}
+        {abilities && abilities?.length > 0 ? (
+          <>
+            <div>
+              <div>
+                <h4 className="text-uppercase">Special Abilities</h4>
+              </div>
 
-            {abilities.map(({ name, desc }, index: number) => {
-              const description = desc.includes("saving throw")
-                ? desc.replace(/saving throw/g, "check")
-                : desc;
+              {abilities.map(({ name, desc }, index: number) => {
+                const description = desc.includes("saving throw")
+                  ? desc.replace(/saving throw/g, "check")
+                  : desc;
 
-              return (
-                <EuiFlexItem key={`ftd-${name}-${index}`}>
-                  <EuiText>
-                    <strong>
-                      <em>{name}. </em>
-                    </strong>
-                    {description}
-                  </EuiText>
-                </EuiFlexItem>
-              );
-            })}
-          </EuiFlexGroup>
-          <hr className="mt-4 mb-4" />
-        </>
-      ) : null}
+                return (
+                  <div key={`ftd-${name}-${index}`}>
+                    <p>
+                      <strong>
+                        <em>{name}. </em>
+                      </strong>
+                      {description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+            <hr className="mt-4 mb-4" />
+          </>
+        ) : null}
 
-      {/* actions */}
-      {actions && actions?.length > 0 ? (
-        <>
-          <EuiFlexGroup direction="column">
-            <EuiFlexItem>
-              <EuiText size="m" className="text-uppercase">
-                <h4>Actions</h4>
-              </EuiText>
-            </EuiFlexItem>
+        {/* actions */}
+        {actions && actions?.length > 0 ? (
+          <>
+            <div>
+              <div>
+                <h4 className="text-uppercase">Actions</h4>
+              </div>
 
-            {actions.map(({ name, desc }, index: number) => {
-              return (
-                <EuiFlexItem key={`ftd-${name}-${index}`}>
-                  <EuiText>
-                    <strong>
-                      <em>{name}. </em>
-                    </strong>
-                    {desc}
-                  </EuiText>
-                </EuiFlexItem>
-              );
-            })}
-          </EuiFlexGroup>
-          <hr className="mt-4 mb-4" />
-        </>
-      ) : null}
+              {actions.map(({ name, desc }, index: number) => {
+                return (
+                  <div key={`ftd-${name}-${index}`}>
+                    <p>
+                      <strong>
+                        <em>{name}. </em>
+                      </strong>
+                      {desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+            <hr className="mt-4 mb-4" />
+          </>
+        ) : null}
 
-      {/* gold */}
-      <EuiFlexItem>
-        <EuiText>
+        {/* gold */}
+        <div>
           <strong>Gold: </strong>
-          <EuiButtonEmpty
-            onClick={() => setTreasure(coinList(goldRoll(hd)))}
-            size="m"
-          >
-            {treasure}
-          </EuiButtonEmpty>
-        </EuiText>
-      </EuiFlexItem>
-    </CardPanel>
+          <Button
+            onClick={() => setTreasure(getCoinList(goldRoll(hd)))}
+            name={treasure}
+          />
+        </div>
+      </div>
+    </Card>
   );
 };

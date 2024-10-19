@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Box, Grid, Text } from "@radix-ui/themes";
-import { Card } from "@/app/components";
+import { AboutCard } from "@/app/components";
 import { about } from "@/app/resources";
 
 import styles from "./styles.module.css";
@@ -36,7 +36,9 @@ const cards = [
 ];
 
 const cardNodes = cards.map((props, index) => {
-  return <Card key={`skill-card-${index}`} {...props} styles={styles.cards} />;
+  return (
+    <AboutCard key={`skill-card-${index}`} {...props} styles={styles.cards} />
+  );
 });
 
 export default function Home() {

@@ -6,7 +6,7 @@ export interface CoinValue {
 }
 
 class Coins {
-  goldLimitPerLevel: any;
+  goldLimitPerLevel: number | null;
   bits: number;
   cp: number;
   ss: number;
@@ -80,7 +80,8 @@ class Coins {
 
   denomination = (divisor: number, result: number) => result / divisor;
 
-  checkSumvsLimit = (sum: number) => (sum < this.limit ? true : false);
+  checkSumvsLimit = (sum: number) =>
+    this.limit && sum < this.limit ? true : false;
 
   getAllCoins = () => {
     return {
@@ -92,7 +93,7 @@ class Coins {
   };
 
   getArrayCoins = () => {
-    let array = [];
+    const array = [];
     const coins = this.getAllCoins();
 
     for (const [denomination, value] of Object.entries(coins)) {
@@ -121,7 +122,7 @@ class Coins {
     }
   };
 
-  handleRoll = (results: { name: any; result: any }[]) => {
+  handleRoll = (results: { name: string; result: number }[]) => {
     let sum = 0;
 
     results.forEach(({ name, result }) => {

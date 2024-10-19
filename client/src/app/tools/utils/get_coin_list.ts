@@ -1,6 +1,6 @@
-import Coins from "../../../utils/Coins";
+import Coins from "./Coins";
 
-export const coinList = (total: number) => {
+export const getCoinList = (total: number) => {
   const treasure = new Coins(null);
 
   const goldRoundedDown = Math.floor(total);

@@ -1,5 +1,5 @@
 import getRolls from "../getRolls/getRolls";
-import Coins from "../Coins";
+import Coins from "../../../../utils/Coins";
 import { CoinRolls } from "../generateCoinList/generateCoinList";
 
 export const processRoll = (rollFormulas: CoinRolls, limit: number) => {

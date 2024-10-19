@@ -1,43 +1,24 @@
-import { Box, Card as RadixCard, Inset, Text, Strong } from "@radix-ui/themes";
-import Image, { StaticImageData } from "next/image";
-
-type CardProps = {
-  description: string;
-  src: StaticImageData;
+import cardStyles from "./Card.module.css";
+export const Card = ({
+  children,
+  styles,
+  height = "560px",
+  width = "375px",
+}: {
+  children: JSX.Element | null | (JSX.Element | null)[];
   styles?: string;
-  title: string;
-};
-
-export const Card = ({ src, title, description, styles }: CardProps) => {
+  height?: string;
+  width?: string;
+}) => {
   return (
-    <Box
-      className={`shadow-lg rounded-md grow ${styles}`}
-      maxWidth="500px"
-      minHeight="300px"
+    <div
+      className={`${cardStyles.card} ${styles ? styles : ""}`}
+      style={{
+        height: height,
+        width: width,
+      }}
     >
-      <RadixCard className="h-full w-full" size="2">
-        <Inset clip="padding-box" side="top" pb="current">
-          <Image
-            src={src}
-            alt="A person with short hair wearing a jacket over a super hero costume looks to the sky"
-            style={{
-              backgroundColor: "var(--gray-5)",
-              display: "block",
-              height: 200,
-              objectFit: "cover",
-              width: "100%",
-            }}
-          />
-        </Inset>
-        <Box>
-          <Text as="label" size="4">
-            <Strong>{title}</Strong>
-          </Text>
-        </Box>
-        <Text as="p" size="3">
-          {description}
-        </Text>
-      </RadixCard>
-    </Box>
+      {children}
+    </div>
   );
 };

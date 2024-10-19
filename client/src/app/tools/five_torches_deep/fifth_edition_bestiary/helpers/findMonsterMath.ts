@@ -1,4 +1,4 @@
-import { ftdMonsters } from "../../../data/ftdMonsters";
+import { ftdMonsters } from "@/app/data/ftdMonsters";
 
 const findMonsterMath = (hd: number) => {
   const monsterMath = ftdMonsters.find((element) => element["hd"] === hd);

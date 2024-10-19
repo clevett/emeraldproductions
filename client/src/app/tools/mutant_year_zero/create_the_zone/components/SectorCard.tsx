@@ -4,7 +4,8 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { useRef, useCallback } from "react";
 import Image from "next/image";
 
-import { Card } from "./Card";
+import { Card } from "@/app/components";
+
 import { Footer } from "./Footer";
 import { getImg, getSector } from "../helpers";
 import { selectSectorById, threatLevelAtom } from "../recoil";
