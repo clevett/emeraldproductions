@@ -6,3 +6,5 @@ export { Subtitle } from "@/app/components/radix/Subtitle";
 export { Title } from "@/app/components/radix/Title";
 export { TrashIcon } from "@/app/components/radix/TrashIcon";
 export { Input } from "@/app/components/radix/Input";
+export { Select } from "@/app/components/radix/Select";
+export { Switch } from "@/app/components/radix/Switch";
