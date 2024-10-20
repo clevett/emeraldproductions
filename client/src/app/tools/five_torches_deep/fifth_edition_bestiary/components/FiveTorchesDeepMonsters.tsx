@@ -25,7 +25,11 @@ export const FiveTorchesDeepMonsters = () => {
 
   return (
     <div className="grid gap-4">
-      <SearchBar onTermSubmit={onTermSubmit} />
+      <SearchBar
+        onSubmit={onTermSubmit}
+        placeholder="Enter monster name"
+        label="Type in the name of a 5e monster the press enter"
+      />
       {filteredMonsters && (
         <div className="flex flex-row justify-start gap-4 flex-wrap">
           {filteredMonsters.map((monster, index) => {

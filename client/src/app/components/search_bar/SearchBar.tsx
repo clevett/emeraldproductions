@@ -1,18 +1,19 @@
 import { Input } from "@/app/components";
 
 export const SearchBar = ({
-  onTermSubmit,
+  label,
+  placeholder,
+  onSubmit,
+  styles,
 }: {
-  onTermSubmit: (term: string) => void;
+  onSubmit: (term: string) => void;
   styles?: string;
+  placeholder: string;
+  label: string;
 }) => {
   return (
-    <div className="search-bar ui segment">
-      <Input
-        label="Type in the name of a 5e monster the press enter"
-        placeholder="Search monsters"
-        submit={onTermSubmit}
-      />
+    <div className={`search-bar ui segment max-w-[300px] ${styles}`}>
+      <Input label={label} placeholder={placeholder} submit={onSubmit} />
     </div>
   );
 };
