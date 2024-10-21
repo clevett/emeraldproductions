@@ -1,3 +1,4 @@
+import { Heading, Select } from "@/app/components";
 import { levels, danger } from "@/app/data";
 
 import { typeChecker, levelsChecker } from "../recoil/refine";
@@ -11,25 +12,25 @@ export const LevelSelect = ({
   level: Level;
   onChange: (arg: Level) => void;
 }) => {
+  const handleChange = (value: string) => {
+    const result = typeChecker(levelsChecker(value));
+    if (result) {
+      onChange(result);
+    }
+  };
+
   return (
     <div className="grid grid-flow-col gap-4 items-center">
-      <h5 className="capitalize text-center font-bold">Level</h5>
-      <select
-        className="capitalize px-4 py-2 rounded"
-        onChange={(e) => {
-          const result = typeChecker(levelsChecker(e.target.value));
-          if (result) {
-            onChange(result);
-          }
-        }}
-        value={level}
-      >
-        {levels.map((l) => (
-          <option key={l} value={l}>
-            {l}
-          </option>
-        ))}
-      </select>
+      <Heading as="h5" className="capitalize text-center">
+        Level
+      </Heading>
+      <Select
+        title="Level"
+        className="px-4 py-2 rounded capitalize"
+        onChange={handleChange}
+        defaultValue={level}
+        list={levels.map((l) => l.toString())}
+      />
     </div>
   );
 };

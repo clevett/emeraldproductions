@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Button } from "@/app/components";
+import { Button, Card, Heading } from "@/app/components";
 import { levels } from "@/app/data";
 import { capitalize } from "@/app/tools/utils";
 
@@ -32,10 +32,10 @@ export const RewardsGenerator = () => {
   };
 
   return (
-    <div className={`grid gap-4 py-8 px-4 ${styles.card}`}>
-      <h4 className="text-lg text-center w-full font-bold">
+    <Card height="230px" styles="grid gap-4 py-8 px-4" width="500px">
+      <Heading as="h3" className="text-center w-full">
         Treasure per level at {capitalize(level)} totals {gold} gc
-      </h4>
+      </Heading>
 
       <div className="w-full text-center">
         <p>{result}</p>
@@ -49,6 +49,6 @@ export const RewardsGenerator = () => {
           <Button onClick={handleClick} name=" Generate Treasure" />
         </div>
       </div>
-    </div>
+    </Card>
   );
 };

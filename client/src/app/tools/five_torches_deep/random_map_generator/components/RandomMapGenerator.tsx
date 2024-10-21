@@ -12,7 +12,7 @@ export const RandomMapGenerator = () => {
   const handleClick = () => setRefresh(!refresh);
 
   return (
-    <div>
+    <div className="grid gap-4 auto-rows-max items-start">
       <div
         key={`map-${refresh}`}
         className={`grid grid-cols-3 grid-rows-3 border-2 border-solid border-black shadow-2xl ${styles.map}`}
@@ -29,7 +29,11 @@ export const RandomMapGenerator = () => {
         <Box name="South" />
         <Box name="Southeast" />
       </div>
-      <Button styles="mt-5" onClick={handleClick} name="Generator New Map" />
+      <Button
+        styles="mt-5 max-w-fit"
+        onClick={handleClick}
+        name="Generator New Map"
+      />
     </div>
   );
 };

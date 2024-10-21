@@ -1,7 +1,4 @@
 .card {
-  background: var(--card);
-  border-radius: 0.5rem;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  color: var(--foreground);
-  max-width: 500px;
+  max-height: 300px;
+  max-width: 230px;
 }

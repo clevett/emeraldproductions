@@ -13,14 +13,16 @@ export const ToolLayout = ({
   children,
   DriveThruId,
   title,
-}: LayoutBodyProps) => {
+  footer,
+}: LayoutBodyProps & { footer?: string }) => {
   return (
-    <section className={`grid gap-6 p-4 ${styles.panel}`}>
+    <section className={`grid gap-6 p-4 ${styles.panel} h-full w-full`}>
       <DriveThruLink id={DriveThruId}>
         <Title className="mr-2">{title}</Title>
         <OpenInNewWindowIcon />
       </DriveThruLink>
       {children}
+      {footer && <footer className="italic text-center">{footer}</footer>}
     </section>
   );
 };

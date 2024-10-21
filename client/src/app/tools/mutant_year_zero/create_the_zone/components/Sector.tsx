@@ -8,7 +8,7 @@ export const Sector = () => {
   const sectors = useRecoilValue(selectSectorFamily);
 
   return (
-    <div className="grid gap-6">
+    <div className="grid gap-4 auto-rows-max items-start">
       <div className="grid gap-4">
         <ThreatInput />
       </div>

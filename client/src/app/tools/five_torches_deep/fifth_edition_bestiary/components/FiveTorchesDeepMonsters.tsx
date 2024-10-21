@@ -24,7 +24,7 @@ export const FiveTorchesDeepMonsters = () => {
     setFilteredMonsters(getSearchResults(term));
 
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-4 auto-rows-max items-start">
       <SearchBar
         onSubmit={onTermSubmit}
         placeholder="Enter monster name"

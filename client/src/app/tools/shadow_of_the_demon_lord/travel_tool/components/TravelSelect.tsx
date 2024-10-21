@@ -26,7 +26,7 @@ export const TravelSelect = <T extends Option>({
         }}
         list={list.map(({ name }) => name)}
         defaultValue={value}
-        styles="text-center capitalize"
+        className="text-center capitalize"
       />
     </>
   );

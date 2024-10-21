@@ -9,3 +9,5 @@ export { SearchBar } from "@/app/components/search_bar/SearchBar";
 export { Sidebar } from "@/app/components/sidebar/Sidebar";
 export { ToolLayout } from "@/app/components/tool_layout/ToolLayout";
 export * from "@/app/components/radix";
+
+export type { Die } from "@/app/components/AnimatedDie";
