@@ -1,4 +1,4 @@
-import { Select } from "@/app/components";
+import { Heading, Select } from "@/app/components";
 import { Pace, Threat, Weather } from "../types";
 type Option = Pace | Weather | Threat;
 
@@ -15,7 +15,9 @@ export const TravelSelect = <T extends Option>({
 }) => {
   return (
     <>
-      <h3>{title}</h3>
+      <Heading as="h3" className="text-center">
+        Miles To Travel
+      </Heading>
       <Select
         title={title}
         onChange={(name: string) => {

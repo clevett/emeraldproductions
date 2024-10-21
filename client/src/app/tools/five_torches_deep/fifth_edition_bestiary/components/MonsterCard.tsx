@@ -76,7 +76,7 @@ export const MonsterCard = ({
 
   return (
     <div className="w-fit">
-      <Card height="auto" width="auto">
+      <Card type="auto">
         <div className="px-4 py-2">
           <div className="grid gap-2">
             <div className="grid grid-flow-col items-start w-full">
@@ -129,7 +129,7 @@ export const MonsterCard = ({
           {/* immunities & resistances & vulnerabilities*/}
           {showResist && (
             <>
-              <div className="grid gap-2">
+              <div className="grid gap-4">
                 {immunities ? (
                   <div>{subheader("Immunities", immunities)}</div>
                 ) : null}

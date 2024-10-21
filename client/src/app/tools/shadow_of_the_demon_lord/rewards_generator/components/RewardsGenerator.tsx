@@ -32,7 +32,7 @@ export const RewardsGenerator = () => {
   };
 
   return (
-    <Card height="230px" styles="grid gap-4 py-8 px-4" width="500px">
+    <Card styles="grid gap-4 py-8 px-4" type="business">
       <Heading as="h3" className="text-center w-full">
         Treasure per level at {capitalize(level)} totals {gold} gc
       </Heading>

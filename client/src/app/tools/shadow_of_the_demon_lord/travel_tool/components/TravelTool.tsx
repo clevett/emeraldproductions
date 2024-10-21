@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { Card, Input, Switch } from "@/app/components";
+import { Callout, Card, Heading, Input, Switch } from "@/app/components";
 import {
   pace as paceList,
   terrain as terrainList,
@@ -13,7 +13,6 @@ import { TravelSelect } from "./TravelSelect";
 
 import { determineTravelTime } from "../utils/determine_travel_time";
 import { GettingLost } from "./GettingLost";
-import { Footer } from "./Footer";
 
 import { TerrainType } from "../types";
 
@@ -43,69 +42,80 @@ export const TravelTool = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-row flex-wrap">
-        <div className="max-w-xs pl-4 min-w-fit">
-          <h3>Terrain</h3>
-          <div className={`grid gap-y-2 gap-x-4`}>
+    <div className="grid gap-6 auto-rows-max items-start">
+      <div className="flex flex-row flex-wrap gap-6">
+        <div className="grid gap-4 auto-rows-max">
+          <div className="max-w-xs min-w-fit">
+            <Heading as="h3" className="text-center">
+              Miles To Travel
+            </Heading>
+            <Input
+              styles="text-center"
+              label="miles to travel"
+              submit={(value: string) => setMiles(parseInt(value))}
+              placeholder="0"
+              min={1}
+              defaultValue="30"
+            />
+          </div>
+
+          <div className="grid gap-4 grid-flow-col auto-cols-max">
+            <div className="grid gap-4 max-w-xs min-w-fit">
+              <TravelSelect
+                list={paceList}
+                onChange={setPace}
+                title="Pace"
+                value={pace.name}
+              />
+              <Callout>
+                <Heading as="h4" size="2">
+                  Miles per Hour:
+                </Heading>
+                <p className="text-center">{milesPerHour}</p>
+              </Callout>
+            </div>
+
+            <div className="grid gap-4 max-w-xs min-w-fit">
+              <TravelSelect
+                list={weatherList}
+                onChange={setWeather}
+                title="Weather"
+                value={weather.name}
+              />
+              <Callout>
+                <Heading as="h4" size="2">
+                  Miles per Day:
+                </Heading>
+                <p className="text-center">{milesPerDay}</p>
+              </Callout>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-2 items-start auto-rows-max">
+          <Heading as="h3">Terrain</Heading>
+          <div className={`grid gap-2 items-start`}>
             {terrainList.map((t: TerrainType) => {
               return (
                 <Switch
                   key={`terrain-list-${t.name}`}
-                  onChange={() => onTerrainChange(t)}
                   label={t.name}
+                  onChange={() => onTerrainChange(t)}
+                  size="3"
+                  textSize="3"
                 />
               );
             })}
           </div>
         </div>
-
-        <div className="max-w-xs min-w-fit">
-          <TravelSelect
-            list={paceList}
-            onChange={setPace}
-            title="Pace"
-            value={pace.name}
-          />
-        </div>
-
-        <div className="max-w-xs min-w-fit">
-          <TravelSelect
-            list={weatherList}
-            onChange={setWeather}
-            title="Weather"
-            value={weather.name}
-          />
-        </div>
-
-        <div className="max-w-xs min-w-fit">
-          <h3>Miles To Travel</h3>
-          <Input
-            styles="text-center"
-            label="miles to travel"
-            submit={(value: string) => setMiles(parseInt(value))}
-            placeholder="0"
-            min={1}
-          />
-        </div>
       </div>
 
-      <div className="flex flex-row flex-wrap">
-        <Card>
-          <h4>Miles per Hour</h4>
-          <p className="text-center">{milesPerHour}</p>
-        </Card>
-
-        <Card>
-          <h4>Miles per Day</h4>
-          <p className="text-center">{milesPerDay}</p>
-        </Card>
-
-        <Card>
-          <h4>Time to Travel {miles} Miles</h4>
-          <p className="text-center">{distance}</p>
-        </Card>
-      </div>
+      <Card type="business" styles="grid gap-6 content-center text-center">
+        <Heading as="h4" size="5">
+          Time to Travel {miles} Miles
+        </Heading>
+        <p>{distance}</p>
+      </Card>
 
       <hr className="mt-4 mb-4" />
 
@@ -117,8 +127,6 @@ export const TravelTool = () => {
           <GettingLost terrain={terrain} weather={weather} />
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

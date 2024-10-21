@@ -49,7 +49,7 @@ export const SectorCard = ({ id }: { id: ZoneSector["id"] }) => {
 
   return (
     <div className="w-fit" ref={ref}>
-      <Card>
+      <Card type="long">
         <div className={`${styles.cardLayout} gap-2`}>
           <div className={styles.header}>
             <h4 className="text-2xl font-semibold">{environment}</h4>
