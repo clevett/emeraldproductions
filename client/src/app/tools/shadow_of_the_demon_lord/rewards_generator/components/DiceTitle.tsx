@@ -2,6 +2,7 @@ import { EuiFlexItem, EuiTitle, EuiButton, EuiButtonIcon } from "@elastic/eui";
 import { AnimatedDie, Die } from "../../AnimatedDie/AnimatedDie";
 
 import styles from "../styles.module.css";
+import { Heading } from "@/app/components";
 
 type DiceTitleProps = {
   die: Die;
@@ -26,7 +27,7 @@ export const DiceTitle = ({ onClick, onReset, title, die }: DiceTitleProps) => {
           className="col-start-2 justify-self-center"
           onClick={onClick}
         >
-          <h4>{title}</h4>
+          <Heading as="h4">{title}</Heading>
         </EuiButton>
       </EuiTitle>
       <EuiFlexItem className="justify-self-start">

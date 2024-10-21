@@ -1,5 +1,4 @@
-import { DriveThruLink, Title } from "@/app/components";
-import { OpenInNewWindowIcon } from "@radix-ui/react-icons";
+import { DriveThruLink, Title, OpenInNewWindowIcon } from "@/app/components";
 
 import styles from "./ToolLayout.module.css";
 
@@ -16,12 +15,12 @@ export const ToolLayout = ({
   title,
 }: LayoutBodyProps) => {
   return (
-    <section className={styles.panel}>
+    <section className={`grid gap-6 p-4 ${styles.panel}`}>
       <DriveThruLink id={DriveThruId}>
-        <Title mr="2">{title}</Title>
+        <Title className="mr-2">{title}</Title>
         <OpenInNewWindowIcon />
       </DriveThruLink>
-      <div className="w-full">{children}</div>
+      {children}
     </section>
   );
 };

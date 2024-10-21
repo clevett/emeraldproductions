@@ -1,8 +1,7 @@
 "use client";
 import { useRecoilState } from "recoil";
-import { useState } from "react";
 
-import { Input } from "@/app/components";
+import { Heading, Input } from "@/app/components";
 
 import { threatLevelAtom } from "../recoil";
 
@@ -14,7 +13,7 @@ export const ThreatInput = () => {
   return (
     <div className="grid gap-4">
       <div className={`grid ${styles.inputGrid} gap-4`}>
-        <h3>Threat Level</h3>
+        <Heading as="h3">Threat Level</Heading>
         <Input
           defaultValue={`${base}`}
           label="Enter threat level"

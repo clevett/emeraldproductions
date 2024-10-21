@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { ftdCatagories as catagories } from "@/app/data/ftdCategories";
-import { getCoinList, getDiceRollTotal } from "@/app/tools/utils";
-import { Button, Card } from "@/app/components";
+import { capitalize, getCoinList, getDiceRollTotal } from "@/app/tools/utils";
+import { Button, Card, Heading, ReloadIcon } from "@/app/components";
 
 import displayModifier from "../helpers/displayModifier/displayModifier";
 import { MonsterFTD } from "../../types/ftdTypes";
@@ -58,13 +58,29 @@ export const MonsterCard = ({
 
   const showResist = immunities || resistances || vulnerabilities;
 
+  const getRerollButton = ({
+    onClick,
+    name,
+  }: {
+    name: string;
+    onClick: () => void;
+  }) => {
+    return (
+      <Button
+        onClick={onClick}
+        name={`${name}`}
+        icon={<ReloadIcon height="10px" width="10px" />}
+      />
+    );
+  };
+
   return (
     <div className="w-fit">
       <Card height="auto" width="auto">
         <div className="px-4 py-2">
           <div className="grid gap-2">
             <div className="grid grid-flow-col items-start w-full">
-              <h3 className="text-2xl">{name}</h3>
+              <Heading as="h3">{name}</Heading>
               <select
                 className="justify-self-end w-fit"
                 onChange={(e) => handleCategoryChange(e.target.value)}
@@ -77,10 +93,9 @@ export const MonsterCard = ({
                 ))}
               </select>
             </div>
-            <h4 className="font-bold">{hd} HD</h4>
-            <h4 className="font-bold">
-              {size}, {type}
-            </h4>
+            <Heading as="h4" size="3" weight="regular">
+              {hd} HD, {size}, {capitalize(type)}
+            </Heading>
           </div>
           <hr className="mt-4 mb-4" />
           {/* dmg & ac & base */}
@@ -93,17 +108,17 @@ export const MonsterCard = ({
             <div className="grid gap-4 grid-flow-col items-center">
               <div>
                 <strong>Damage: </strong>
-                <Button
-                  onClick={() => setDamageTotal(roll(damage))}
-                  name={`${damageTotal} (${damage})`}
-                />
+                {getRerollButton({
+                  onClick: () => setDamageTotal(roll(damage)),
+                  name: `${damageTotal} (${damage})`,
+                })}
               </div>
               <div>
                 <strong>HP: </strong>
-                <Button
-                  onClick={() => setHitPoints(roll(hp.dice))}
-                  name={`${hitPoints} (${hp.dice})`}
-                />
+                {getRerollButton({
+                  onClick: () => setHitPoints(roll(hp.dice)),
+                  name: `${hitPoints} (${hp.dice})`,
+                })}
               </div>
             </div>
             <div>{subheader("Speed", speed)}</div>
@@ -130,8 +145,10 @@ export const MonsterCard = ({
 
           {/* strong & weak */}
           <div className="grid gap-4 grid-flow-col">
-            <div>
-              <h4 className="text-uppercase font-bold">Strong</h4>
+            <div className="grid gap-2">
+              <Heading as="h4" size="3" className="underline uppercase">
+                Strong
+              </Heading>
               {subheader(
                 category.strong.attributes.join("/"),
                 modifiers.strong
@@ -139,8 +156,10 @@ export const MonsterCard = ({
               {subheader("Modifier", displayModifier(modifiers.strong))}
               {category.strong.skills.join(", ")}
             </div>
-            <div>
-              <h4 className="text-uppercase font-bold">Weak</h4>
+            <div className="grid gap-2">
+              <Heading as="h4" size="3" className="underline uppercase">
+                Weak
+              </Heading>
               {subheader(category.weak.attributes.join("/"), modifiers.weak)}
               {subheader("Modifier", displayModifier(modifiers.weak))}
               {category.weak.skills.join(", ")}
@@ -153,7 +172,9 @@ export const MonsterCard = ({
           {abilities && abilities?.length > 0 ? (
             <>
               <div className="grid gap-4">
-                <h4 className="text-uppercase font-bold">Special Abilities</h4>
+                <Heading as="h4" size="3" className="underline uppercase">
+                  Special Abilities
+                </Heading>
 
                 {abilities.map(({ name, desc }, index: number) => {
                   const description = desc.includes("saving throw")
@@ -180,7 +201,9 @@ export const MonsterCard = ({
           {actions && actions?.length > 0 ? (
             <>
               <div className="grid gap-4">
-                <h4 className="text-uppercase font-bold">Actions</h4>
+                <Heading as="h4" size="3" className="underline uppercase">
+                  Actions
+                </Heading>
 
                 {actions.map(({ name, desc }, index: number) => {
                   return (
@@ -202,10 +225,10 @@ export const MonsterCard = ({
           {/* gold */}
           <div>
             <strong>Gold: </strong>
-            <Button
-              onClick={() => setTreasure(getCoinList(goldRoll(hd)))}
-              name={treasure}
-            />
+            {getRerollButton({
+              onClick: () => setTreasure(getCoinList(goldRoll(hd))),
+              name: `${treasure}`,
+            })}
           </div>
         </div>
       </Card>

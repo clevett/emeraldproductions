@@ -9,9 +9,9 @@ export const metadata: Metadata = ftdMapGenerator;
 export default function FiveTorchesRandomMapGenerator() {
   const { label } = systems.ftd.tools.ftdMaps;
   return (
-    <div>
+    <>
       <Subtitle mb="4">{label}</Subtitle>
       <RandomMapGenerator />
-    </div>
+    </>
   );
 }

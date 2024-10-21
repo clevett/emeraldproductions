@@ -1,11 +1,11 @@
 "use client";
-import { Heading, Text } from "@radix-ui/themes";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./Sidebar.module.css";
 
+import { Heading } from "@/app/components";
 import { rpgTools, Link as LinkType } from "@/app/resources";
 
 type List = LinkType[];
@@ -56,7 +56,7 @@ export const ListItem = ({ item }: { item: LinkType }) => {
         key={`sidebar-${path}`}
       >
         {icon && <Image src={icon} alt="" width={24} height={24} />}
-        <Text>{label}</Text>
+        <span>{label}</span>
       </Link>
     </li>
   );

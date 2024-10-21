@@ -7,11 +7,11 @@ import { Sector } from "./components/Sector";
 export default function CreateTheZone() {
   const { label } = systems.myz.tools.createTheZone;
   return (
-    <div>
-      <Subtitle mb="4">{label}</Subtitle>
+    <>
+      <Subtitle>{label}</Subtitle>
       <RecoilRoot>
         <Sector />
       </RecoilRoot>
-    </div>
+    </>
   );
 }

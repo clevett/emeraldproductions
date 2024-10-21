@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Box, Grid, Text } from "@radix-ui/themes";
-import { AboutCard } from "@/app/components";
+import { Text } from "@radix-ui/themes";
+import { AboutCard, Heading } from "@/app/components";
 import { about } from "@/app/resources";
 
 import styles from "./styles.module.css";
@@ -43,15 +43,15 @@ const cardNodes = cards.map((props, index) => {
 
 export default function Home() {
   return (
-    <Grid gap="8" className="p-8">
+    <div className="grid gap-8 p-8">
       <div className="flex flex-row flex-wrap md:flex-nowrap justify-center gap-4">
         <Image
           alt="A person with short hair wearing a jacket over a super hero costume looks to the sky"
           className={styles.portrait}
           src={portrait}
         />
-        <Box className="grow max-w-md">
-          <h2 className={styles.title}>Caden Levett</h2>
+        <div className="grid content-center  gap-4 max-w-md">
+          <Heading as="h2">Caden Levett</Heading>
           <Text as="p" size="3">
             Front-end developer specializing in software for table role playing
             games. I have an interest in accessibility, user experience, and
@@ -59,9 +59,9 @@ export default function Home() {
             well-developed information organization and communications skills to
             compliment team members with a passion for technological solutions.
           </Text>
-        </Box>
+        </div>
       </div>
       <div className="flex justify-center flex-wrap gap-4">{cardNodes}</div>
-    </Grid>
+    </div>
   );
 }

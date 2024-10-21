@@ -4,7 +4,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { useRef, useCallback } from "react";
 import Image from "next/image";
 
-import { Card } from "@/app/components";
+import { Card, Heading } from "@/app/components";
 
 import { Footer } from "./Footer";
 import { getImg, getSector } from "../helpers";
@@ -59,27 +59,27 @@ export const SectorCard = ({ id }: { id: ZoneSector["id"] }) => {
           <div className={`grid ${styles.content} gap-1 content-start`}>
             <div className="grid gap-1">
               <div>
-                <h5 className="text-lg font-semibold">Rot Level</h5>
+                <Heading as="h5">Rot Level</Heading>
                 <p className="text-m">{rot}</p>
               </div>
               <div>
-                <h5 className="text-lg font-semibold">Ruin</h5>
+                <Heading as="h5">Ruin</Heading>
                 <p className="text-m">{ruin}</p>
               </div>
               <div>
-                <h5 className="text-lg font-semibold">
+                <Heading as="h5">
                   Threat {threat.count ? `(danger ${threat.count})` : null}
-                </h5>
+                </Heading>
                 <p className="text-m">{threat.name}</p>
               </div>
               <div>
-                <h5 className="text-lg font-semibold">
+                <Heading as="h5">
                   Artifacts {artifact.count ? `(${artifact.count})` : null}
-                </h5>
+                </Heading>
                 <p className="text-m">{artifact.name}</p>
               </div>
               <div>
-                <h5 className="text-lg font-semibold">Mood</h5>
+                <Heading as="h5">Mood</Heading>
                 <p className={`text-m`}>{mood}</p>
               </div>
             </div>

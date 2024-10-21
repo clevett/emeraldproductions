@@ -50,15 +50,6 @@
   flex-shrink: 0;
 }
 
-.title {
-  color: rgb(223, 229, 239);
-  font-size: 2.4286rem;
-  font-weight: 700;
-  line-height: 2.8571rem;
-  overflow-wrap: break-word !important;
-  word-break: break-word;
-}
-
 .description {
   animation: moveFromTop 2s ease-in;
 }
