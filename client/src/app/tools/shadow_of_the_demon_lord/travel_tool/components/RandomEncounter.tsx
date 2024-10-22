@@ -50,17 +50,15 @@ export const RandomEncounter = () => {
 
   return (
     <div className={`grid gap-4 justify-items-center`}>
-      <div className={`max-w-xs w-full`}>
-        <TravelSelect
-          list={threatList}
-          onChange={setThreat}
-          title="Threat Level"
-          value={threat.name}
-        />
-      </div>
+      <TravelSelect
+        list={threatList}
+        onChange={setThreat}
+        title="Threat Level"
+        value={threat.name}
+      />
 
-      <div className={`w-full`}>
-        <Card styles="h-full">
+      <div className="grid gap-4 grid-flow-col">
+        <Card type="auto">
           <div className={`grid text-center gap-4`}>
             <DiceTitle
               die="d20"

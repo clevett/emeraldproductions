@@ -16,7 +16,7 @@ export const TravelSelect = <T extends Option>({
   return (
     <>
       <Heading as="h3" className="text-center">
-        Miles To Travel
+        {title}
       </Heading>
       <Select
         title={title}

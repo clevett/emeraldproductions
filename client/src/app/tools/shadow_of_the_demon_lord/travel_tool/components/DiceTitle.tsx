@@ -10,26 +10,16 @@ type DiceTitleProps = {
 
 export const DiceTitle = ({ onClick, onReset, title, die }: DiceTitleProps) => {
   return (
-    <div className={`grid gap-2 auto-cols-fr items-center`}>
+    <div className={`grid gap-4 grid-flow-col content-center items-center`}>
       {onReset && (
-        <IconButton
-          label="Clear days"
-          onClick={onReset}
-          styles="justify-self-end"
-        >
+        <IconButton label={title} onClick={onReset}>
           <ReloadIcon />
         </IconButton>
       )}
-      <p className="text-center w-fit self-center">
-        <Button
-          styles="col-start-2 justify-self-center"
-          onClick={onClick}
-          name={title}
-        />
-      </p>
-      <div className="justify-self-start">
-        <AnimatedDie dieSize={die} onRoll={onClick} />
-      </div>
+
+      <Button onClick={onClick} name={title} />
+
+      <AnimatedDie dieSize={die} onRoll={onClick} />
     </div>
   );
 };
