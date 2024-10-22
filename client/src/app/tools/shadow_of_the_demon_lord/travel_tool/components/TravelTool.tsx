@@ -33,6 +33,8 @@ export const TravelTool = () => {
   const distance = determineTravelTime(milesPerHour, miles);
 
   const onTerrainChange = (t: TerrainType) => {
+    console.log(t);
+
     if (!terrain.includes(t)) {
       setTerrain([...terrain, t]);
     } else {
@@ -45,6 +47,12 @@ export const TravelTool = () => {
     <div className="grid gap-6 auto-rows-max items-start">
       <div className="flex flex-row flex-wrap gap-6">
         <div className="flex flex-row flex-wrap gap-6">
+          <Card type="business" styles="grid gap-6 content-center text-center">
+            <Heading as="h4" size="5">
+              Time to Travel {miles} Miles
+            </Heading>
+            <p>{distance}</p>
+          </Card>
           <div className="grid gap-4 auto-rows-max">
             <div className="max-w-xs min-w-fit">
               <Heading as="h3" className="text-center">
@@ -110,24 +118,11 @@ export const TravelTool = () => {
             </div>
           </div>
         </div>
-
-        <Card type="business" styles="grid gap-6 content-center text-center">
-          <Heading as="h4" size="5">
-            Time to Travel {miles} Miles
-          </Heading>
-          <p>{distance}</p>
-        </Card>
       </div>
 
-      <hr className="mt-4 mb-4" />
-
-      <div className="flex flex-wap gap-4">
-        <div>
-          <RandomEncounter />
-        </div>
-        <div>
-          <GettingLost terrain={terrain} weather={weather} />
-        </div>
+      <div className="flex flex-wap gap-4 items-start">
+        <RandomEncounter />
+        <GettingLost terrain={terrain} weather={weather} />
       </div>
     </div>
   );

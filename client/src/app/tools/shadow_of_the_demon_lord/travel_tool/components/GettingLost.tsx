@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { Card, Switch } from "@/app/components";
+import { Callout, Card, Heading, Switch } from "@/app/components";
 import { getDiceRollTotal } from "@/app/tools/utils";
 import { Terrain, Weather } from "@/app/data";
 
@@ -85,33 +85,43 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
     setLost([]);
   };
 
+  const terrainCallout =
+    terrain.length > 0
+      ? `${terrain.map((t) => t.name).join(", ")}`
+      : "Toggle terrain to see the effects of getting lost.";
+
   return (
     <div className={`grid gap-y-4 gap-x-4 justify-items-center`}>
-      <div
-        className={`grid grid-cols-3 gap-x-6 justify-items-center content-center mb-4 w-full`}
-      >
-        <Switch
-          defaultChecked={navigator}
-          label="Navigator"
-          onChange={handleNavigator}
+      <Heading as="h3" className="text-center">
+        Getting Lost
+      </Heading>
+
+      <div className="grid gap-4 items-start">
+        <div className="grid grid-flow-col gap-x-6 justify-items-center content-center w-full">
+          <Switch
+            defaultChecked={navigator}
+            label="Navigator"
+            onChange={handleNavigator}
+          />
+          <p>Boon: {boons}</p>
+          <p>Bane: {banes}</p>
+        </div>
+
+        <Callout>
+          <span>{terrainCallout}</span>
+        </Callout>
+
+        <DiceTitle
+          die="d20"
+          onClick={() => handleRoll()}
+          onReset={onReset}
+          title="Roll Navigation"
         />
-        <p>Boon: {boons}</p>
-        <p>Bane: {banes}</p>
       </div>
 
-      <div className={` w-full`}>
-        <Card>
-          <div className={`grid text-center`}>
-            <DiceTitle
-              die="d20"
-              onClick={() => handleRoll()}
-              onReset={onReset}
-              title="Getting Lost"
-            />
-            {list}
-          </div>
-        </Card>
-      </div>
+      <Card type="business" height="auto">
+        <div className={`grid text-center`}>{list}</div>
+      </Card>
     </div>
   );
 };

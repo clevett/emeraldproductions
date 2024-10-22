@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
 
-import { Card } from "@/app/components";
+import { Callout, Card } from "@/app/components";
 import { getDiceRollTotal } from "@/app/tools/utils";
 import { threat as threatList, encounter as encounterList } from "@/app/data";
 
 import { DiceTitle } from "./DiceTitle";
 import { TravelSelect } from "./TravelSelect";
+import { Heading } from "@radix-ui/themes";
 
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
@@ -50,31 +51,36 @@ export const RandomEncounter = () => {
 
   return (
     <div className={`grid gap-4 justify-items-center`}>
-      <TravelSelect
-        list={threatList}
-        onChange={setThreat}
-        title="Threat Level"
-        value={threat.name}
-      />
+      <Heading as="h3" className="text-center">
+        Random Encounters
+      </Heading>
 
-      <div className="grid gap-4 grid-flow-col">
-        <Card type="auto">
-          <div className={`grid text-center gap-4`}>
-            <DiceTitle
-              die="d20"
-              onClick={() => handleRoll()}
-              onReset={onReset}
-              title="Random Encounter"
-            />
+      <div className="grid gap-4 items-start">
+        <div className="grid gap-4 grid-flow-col items-start  ">
+          <TravelSelect
+            list={threatList}
+            onChange={setThreat}
+            title="Threat Level"
+            value={threat.name}
+          />
+        </div>
+        <Callout>
+          <span>Frequency is {threat.frequency.toLowerCase()}</span>
+        </Callout>
 
-            <p className="text-center italic">
-              Frequency is {threat.frequency.toLowerCase()}
-            </p>
-
-            <div className="grid">{list}</div>
-          </div>
-        </Card>
+        <DiceTitle
+          die="d20"
+          onClick={() => handleRoll()}
+          onReset={onReset}
+          title="Roll Encounter"
+        />
       </div>
+
+      <Card type="business" height="auto">
+        <div className="grid text-center gap-4">
+          <div className="grid">{list}</div>
+        </div>
+      </Card>
     </div>
   );
 };

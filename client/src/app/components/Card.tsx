@@ -23,6 +23,8 @@ export const Card = ({
   children,
   styles,
   type = "auto",
+  height = types[type].height,
+  width = types[type].width,
 }: {
   children: JSX.Element | null | (JSX.Element | null)[];
   styles?: string;
@@ -30,8 +32,6 @@ export const Card = ({
   width?: string;
   type?: keyof typeof types;
 }) => {
-  const { width, height } = types[type];
-
   return (
     <div
       className={`rounded ${cardStyles.card} ${styles ? styles : ""}  `}

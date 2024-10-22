@@ -25,7 +25,7 @@ export const Switch = ({
       <Flex gap="2">
         <RadixSwitch
           defaultChecked={defaultChecked}
-          onChange={onChange}
+          onCheckedChange={onChange}
           size={size}
         />
         {label}
