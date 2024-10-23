@@ -86,9 +86,9 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
   };
 
   const terrainCallout =
-    terrain.length > 0
-      ? `${terrain.map((t) => t.name).join(", ")}`
-      : "Toggle terrain to see the effects of getting lost.";
+    terrain.length > 0 || weather.name !== WEATHER.N
+      ? `${weather.name} ${terrain.map((t) => t.name).join(", ")}`
+      : "Toggle terrain and change weather to see the effects of getting lost.";
 
   return (
     <div className={`grid gap-y-4 gap-x-4 justify-items-center`}>

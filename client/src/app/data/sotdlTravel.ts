@@ -63,6 +63,8 @@ export enum Weather {
   PRECIPITATION = "Precipitation",
 
   STORM = "Storm",
+
+  NORMAL = "Normal conditions",
 }
 
 export const weather = [
@@ -82,7 +84,7 @@ export const weather = [
     result: [6, 7, 8],
   },
   {
-    name: "Normal conditions",
+    name: Weather.NORMAL,
     multiplier: 1,
     result: [9, 10, 11, 12],
   },
