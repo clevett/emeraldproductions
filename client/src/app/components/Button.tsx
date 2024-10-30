@@ -2,17 +2,19 @@ import { Button as RadixButton } from "@radix-ui/themes";
 import buttonStyles from "./Button.module.css";
 
 export const Button = ({
+  children,
   color = "bg-green-800",
+  icon,
   name,
   onClick,
   styles,
-  icon,
 }: {
+  children?: React.ReactNode;
   color?: string;
-  name: string;
+  icon?: React.ReactNode;
+  name?: string;
   onClick: () => void;
   styles?: string;
-  icon?: React.ReactNode;
 }) => {
   return (
     <RadixButton
@@ -24,6 +26,7 @@ export const Button = ({
     >
       {icon}
       {name}
+      {children}
     </RadixButton>
   );
 };

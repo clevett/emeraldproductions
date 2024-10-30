@@ -1,8 +1,8 @@
 import { getRandomArrayElement } from "@/app/tools/utils";
 
-import { Environment, Environments } from "../data/myz_environments";
+import { Environment, Environments } from "../../../../data/myz_environments";
 import { getD66 } from "./getD66";
-import { industryRuins, normalRuins } from "../data/myz_ruins";
+import { industryRuins, normalRuins } from "../../../../data/myz_ruins";
 
 export const getRuin = (environment: Environment) => {
   const isIndustry = environment === Environments.DERELICT_INDUSTRIES;

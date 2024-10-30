@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
-import { useDiceRoller } from "@/app/tools/diceroller/hooks/useDiceBox";
-import { DiceButtons, NotationInput } from "@/app/tools/diceroller/components";
+
 import { SketchPicker } from "react-color";
 import { Spinner } from "@radix-ui/themes";
 import { IconButton, ReloadIcon } from "@/app/components/";
+
+import { useDiceRoller } from "../hooks/useDiceBox";
+import { DiceButtons, NotationInput } from "./";
 
 export const DiceRoller = () => {
   const { roll, isLoading, canvas, clear, setColor, color } = useDiceRoller();

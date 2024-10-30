@@ -17,3 +17,10 @@ export { default as iceland } from "@/app/images/cards/iceland.jpg";
 export { default as npcs } from "@/app/images/cards/npcs.png";
 export { default as dice } from "@/app/images/cards/dice.png";
 export { default as deltaGreen } from "@/app/images/cards/delta_green.jpg";
+
+export { default as cross } from "@/app/images/icomoon/272-cross.svg";
+export { default as gift } from "@/app/images/icomoon/160-gift.svg";
+export { default as hipster } from "@/app/images/icomoon/250-hipster.svg";
+export { default as infinity } from "@/app/images/icomoon/304-infinite.svg";
+export { default as office } from "@/app/images/icomoon/004-office.svg";
+export { default as yen } from "@/app/images/icomoon/063-coin-yen.svg";

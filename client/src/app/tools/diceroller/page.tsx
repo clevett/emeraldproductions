@@ -1,8 +1,9 @@
-import { diceroller } from "@/app/resources/metadata";
-import { Loading } from "@/app/components";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+
+import { diceroller } from "@/app/resources/metadata";
+import { Loading } from "@/app/components";
 
 export const metadata: Metadata = diceroller;
 

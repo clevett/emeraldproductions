@@ -31,7 +31,7 @@ export const Navigation = () => {
         width={200}
       />
       <div className="grow self-center w-full">
-        <TabNav.Root>
+        <TabNav.Root highContrast>
           <NavLink {...about} isActive={pathname === about.path} />
           <NavLink {...tools} isActive={pathname === tools.path} />
           <NavLink {...games} isActive={pathname === games.path} />

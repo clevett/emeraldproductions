@@ -65,7 +65,10 @@ export const useDiceRoller = () => {
   const roll = (notation: string, color?: string) => {
     const parsedNotation = DRP.parseNotation(notation);
     const diceBoxNotation = color
-      ? parsedNotation.map((n: any) => ({ ...n, themeColor: color }))
+      ? parsedNotation.map((n: { [key: string]: unknown }) => ({
+          ...n,
+          themeColor: color,
+        }))
       : parsedNotation;
 
     if (hasRolled) {

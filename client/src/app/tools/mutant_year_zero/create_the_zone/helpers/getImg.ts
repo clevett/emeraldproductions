@@ -1,4 +1,4 @@
-import { Environment, Environments } from "../data/myz_environments";
+import { Environment, Environments } from "../../../../data/myz_environments";
 
 import deadWood from "../imgs/dead_woods.png";
 import derelict from "../imgs/industry.png";

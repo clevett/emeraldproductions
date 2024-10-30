@@ -1,6 +1,6 @@
 import { getD666 } from "./getD666";
 
-import { artifacts } from "../data/myz_artifacts";
+import { artifacts } from "../../../../data/myz_artifacts";
 
 export const getArtifactCount = (roll: number[]) =>
   roll.filter((e: number) => e === 6).length;
