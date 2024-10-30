@@ -18,3 +18,4 @@ export * from "./myz_threats";
 
 export * from "./srRewards";
 export * from "./srMissions";
+export * from "./srNpcs";

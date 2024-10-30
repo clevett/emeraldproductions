@@ -24,3 +24,5 @@ export { default as hipster } from "@/app/images/icomoon/250-hipster.svg";
 export { default as infinity } from "@/app/images/icomoon/304-infinite.svg";
 export { default as office } from "@/app/images/icomoon/004-office.svg";
 export { default as yen } from "@/app/images/icomoon/063-coin-yen.svg";
+
+export * from "@/app/images/shadowrun";

@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 
 import { Option, Options } from "@/app/data";
 import { capitalize } from "@/app/tools/utils";
-import { Button, Card, Heading, ReloadIcon } from "@/app/components";
+import { IconButton, Card, Heading, ReloadIcon } from "@/app/components";
 import { cross, gift, office, infinity, hipster, yen } from "@/app/images";
 
 import { selectMission } from "../recoil";
@@ -59,9 +59,9 @@ export const MissionCard = ({ item }: MissionCardProps) => {
         <Heading as="h3">{capitalize(item)}</Heading>
         <p>{selected?.description}</p>
         <span>{note}</span>
-        <Button onClick={handleClick}>
+        <IconButton onClick={handleClick} label={`roll for a new ${item}`}>
           <ReloadIcon />
-        </Button>
+        </IconButton>
       </div>
     </Card>
   );

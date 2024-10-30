@@ -1,14 +1,16 @@
-import asad from "../imgs/asad.png";
-import bishada from "../imgs/bishada.png";
-import remy from "../imgs/remy.png";
-import detective from "../imgs/detective.png";
-import micky from "../imgs/micky.png";
-import jac from "../imgs/jac.png";
-import yoriko from "../imgs/yoriko.png";
-import finch from "../imgs/finch.png";
-import gerald from "../imgs/gerald.png";
-import caine from "../imgs/caine.png";
-import longfeather from "../imgs/longfeather.png";
+import {
+  asad,
+  bishada,
+  remy,
+  detective,
+  micky,
+  jac,
+  yoriko,
+  finch,
+  gerald,
+  caine,
+  longfeather,
+} from "@/app/images";
 
 enum tags {
   ARES = "Ares",
@@ -30,7 +32,7 @@ enum tags {
   SEATTLE = "Seattle",
 }
 
-export type NPC = typeof npcs[number];
+export type NPC = (typeof npcs)[number];
 
 export enum Type {
   FAVORS = "Personal Favors",

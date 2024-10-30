@@ -1,0 +1,14 @@
+.back {
+  grid-template-rows: 1fr 24px;
+  height: 100%;
+  padding: 16px;
+}
+
+.back:hover {
+  cursor: pointer;
+}
+
+.description {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
