@@ -21,7 +21,7 @@ export const selectNuyenModifier = selectorFamily({
     },
   set:
     (id: Situation) =>
-    ({ set, reset, get }, newValue) => {
+    ({ set, reset }, newValue) => {
       const atom = nuyenModifiersAtomFamily(id);
 
       if (newValue instanceof DefaultValue) {

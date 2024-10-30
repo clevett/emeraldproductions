@@ -8,6 +8,7 @@ export { NavigationPills } from "@/app/components/radix/NavigationPills";
 export { RadioCards } from "@/app/components/radix/RadioCards";
 export { ReloadIcon } from "@/app/components/radix/icons/ReloadIcon";
 export { Select } from "@/app/components/radix/Select";
+export { Slider } from "@/app/components/radix/Slider";
 export { Subtitle } from "@/app/components/radix/Subtitle";
 export { Switch } from "@/app/components/radix/Switch";
 export { Title } from "@/app/components/radix/Title";

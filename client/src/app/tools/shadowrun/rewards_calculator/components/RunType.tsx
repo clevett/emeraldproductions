@@ -21,9 +21,9 @@ export const RunType = () => {
 
   const getDescription = (str: string) =>
     str === Runs.COLD
-      ? "(-2 karma, +10% nuyen)"
+      ? "(-2 karma, +10-20% nuyen)"
       : str === Runs.GOOD
-      ? "(+2 karma, -10% nuyen)"
+      ? "(+2 karma, –10-20% nuyen)"
       : "Nothing special";
 
   const list = types.map(({ name }) => ({

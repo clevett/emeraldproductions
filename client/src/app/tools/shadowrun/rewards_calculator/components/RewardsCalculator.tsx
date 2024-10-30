@@ -4,7 +4,10 @@ import { Heading } from "@/app/components";
 
 import { GermanRulesSwitch } from "./GermanRulesSwitch";
 import { HighestOpposingDicePool } from "./HighestOpposingDicePool";
+import { NegotiationHits } from "./NegotiationHits";
+import { NuyenSituationModifiers } from "./NuyenSituationModifiers";
 import { ObjectivesCompleted } from "./ObjectivesCompleted";
+import { PercentModifierSlider } from "./PercentModifierSlider";
 import { RewardCard } from "./RewardCard";
 import { RunType } from "./RunType";
 import { SurvivedSwitch } from "./SurvivedSwitch";
@@ -31,26 +34,17 @@ export const RewardsCalculator = () => {
             <SurvivedSwitch />
             <GermanRulesSwitch />
           </div>
+
+          <div className="grid gap-4 justify-start auto-cols-fit">
+            <Heading as="h3" className="text-center">
+              Nuyen Modifiers
+            </Heading>
+            <PercentModifierSlider />
+            <NuyenSituationModifiers />
+            <NegotiationHits />
+          </div>
         </div>
         {/* <div className={`grid text-center ${styles.rewardsColumns}`}>
-          <RunTypeSlider />
-
-          <NuyenSituationModifiers />
-
-          <PercentModifierSlider />
-
-          <NegotiationHits />
-        </div>
-
-        <div className={`grid text-center ${styles.rewardsColumns}`}>
-          <MissionChallenge />
-
-          <ObjectiveSlider />
-
-          <div className="grid grid-cols-2 justify-items-center">
-            <GermanRulesSwitch />
-            <SurvivedSwitch />
-          </div>
 
           <ResetButton />
         </div> */}

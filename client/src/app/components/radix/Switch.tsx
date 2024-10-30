@@ -8,12 +8,14 @@ type TextSize =
 type Size = Responsive<"2" | "3" | "1"> | undefined;
 
 export const Switch = ({
+  checked,
   defaultChecked = false,
   label,
   onChange,
   size = "2",
   textSize = "3",
 }: {
+  checked?: boolean;
   defaultChecked?: boolean;
   label: string;
   onChange?: () => void;
@@ -27,6 +29,8 @@ export const Switch = ({
           defaultChecked={defaultChecked}
           onCheckedChange={onChange}
           size={size}
+          checked={!!checked}
+          highContrast
         />
         {label}
       </Flex>

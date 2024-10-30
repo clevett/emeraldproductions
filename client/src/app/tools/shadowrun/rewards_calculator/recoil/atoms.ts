@@ -6,7 +6,7 @@ const dicePoolDefault = 14;
 
 export const runTypeAtom = atom({
   key: "SHADOWRUN_RUN_TYPE_ATOM",
-  default: types[0],
+  default: types[1],
 });
 
 export const opposedDicePoolAtom = atom({
@@ -41,7 +41,7 @@ export const germanFlagAtom = atom({
 
 export const survivedAtom = atom({
   key: "SHADOWRUN_SURVIVED_FLAG_ATOM",
-  default: false,
+  default: true,
 });
 
 export const objectiveKarmaAtom = atom({
