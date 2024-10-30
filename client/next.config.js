@@ -38,7 +38,7 @@ module.exports = {
       },
       {
         source: "/shadowrun/mission_creation",
-        destination: "/tools/shadowrun/mission_creation",
+        destination: "/tools/shadowrun/mission_generator",
         permanent: true,
       },
       {

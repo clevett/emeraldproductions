@@ -97,6 +97,10 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
       </Heading>
 
       <div className="grid gap-4 items-start w-full ">
+        <Callout>
+          <span>{terrainCallout}</span>
+        </Callout>
+
         <div className="grid grid-flow-col gap-x-6 justify-items-center content-center w-full min-h-8">
           <Switch
             defaultChecked={navigator}
@@ -106,10 +110,6 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
           <p>Boon: {boons}</p>
           <p>Bane: {banes}</p>
         </div>
-
-        <Callout>
-          <span>{terrainCallout}</span>
-        </Callout>
 
         <DiceTitle
           die="d20"

@@ -86,7 +86,7 @@ const sotdlTravelTool = {
 const shadowrunMissionGenerator = {
   description: `A tool to help you create missions for your Shadowrun campaign.`,
   label: "Mission Generator",
-  path: "/shadowrun/mission_creation",
+  path: "/shadowrun/mission_generator",
   icon: sr5eIcon,
 };
 
@@ -150,7 +150,7 @@ export const systems = {
   },
   sr6e: {
     title: "Shadowrun 6th Edition",
-    driveThruId: "286850",
+    driveThruId: "442031",
     tools: {
       shadowrunNpcs,
       shadowrunHeat,

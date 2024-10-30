@@ -10,9 +10,9 @@ import {
 
 import { RandomEncounter } from "./RandomEncounter";
 import { TravelSelect } from "./TravelSelect";
+import { GettingLost } from "./GettingLost";
 
 import { determineTravelTime } from "../utils/determine_travel_time";
-import { GettingLost } from "./GettingLost";
 
 import { TerrainType } from "../types";
 
@@ -46,11 +46,45 @@ export const TravelTool = () => {
       <div className="flex flex-row flex-wrap gap-6">
         <div className="flex flex-row flex-wrap gap-6">
           <Card type="business" styles="grid gap-6 content-center text-center">
-            <Heading as="h4" size="5">
-              Time to Travel {miles} Miles
-            </Heading>
-            <p>{distance}</p>
+            <div className="grid gap-6">
+              <Heading as="h4" size="5">
+                Time to Travel {miles} Miles
+              </Heading>
+              <p>{distance}</p>
+            </div>
+            <div className="grid grid-flow-col gap-6">
+              <div>
+                <Heading as="h5" size="2">
+                  Miles per Hour:
+                </Heading>
+                <p className="text-center">{milesPerHour}</p>
+              </div>
+              <div>
+                <Heading as="h5" size="2">
+                  Miles per Day:
+                </Heading>
+                <p className="text-center">{milesPerDay}</p>
+              </div>
+            </div>
           </Card>
+
+          <div className="grid gap-2 items-start auto-rows-max">
+            <Heading as="h3">Terrain</Heading>
+            <div className={`grid gap-2 items-start`}>
+              {terrainList.map((t: TerrainType) => {
+                return (
+                  <Switch
+                    key={`terrain-list-${t.name}`}
+                    label={t.name}
+                    onChange={() => onTerrainChange(t)}
+                    size="3"
+                    textSize="3"
+                  />
+                );
+              })}
+            </div>
+          </div>
+
           <div className="grid gap-4 auto-rows-max">
             <div className="max-w-xs min-w-fit">
               <Heading as="h3" className="text-center">
@@ -74,12 +108,6 @@ export const TravelTool = () => {
                   title="Pace"
                   value={pace.name}
                 />
-                <Callout>
-                  <Heading as="h4" size="2">
-                    Miles per Hour:
-                  </Heading>
-                  <p className="text-center">{milesPerHour}</p>
-                </Callout>
               </div>
 
               <div className="grid gap-4 max-w-xs min-w-fit">
@@ -89,30 +117,7 @@ export const TravelTool = () => {
                   title="Weather"
                   value={weather.name}
                 />
-                <Callout>
-                  <Heading as="h4" size="2">
-                    Miles per Day:
-                  </Heading>
-                  <p className="text-center">{milesPerDay}</p>
-                </Callout>
               </div>
-            </div>
-          </div>
-
-          <div className="grid gap-2 items-start auto-rows-max">
-            <Heading as="h3">Terrain</Heading>
-            <div className={`grid gap-2 items-start`}>
-              {terrainList.map((t: TerrainType) => {
-                return (
-                  <Switch
-                    key={`terrain-list-${t.name}`}
-                    label={t.name}
-                    onChange={() => onTerrainChange(t)}
-                    size="3"
-                    textSize="3"
-                  />
-                );
-              })}
             </div>
           </div>
         </div>

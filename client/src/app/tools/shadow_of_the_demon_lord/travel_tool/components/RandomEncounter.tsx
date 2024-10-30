@@ -53,7 +53,11 @@ export const RandomEncounter = () => {
       </Heading>
 
       <div className="grid gap-4 items-start w-full">
-        <div className="grid gap-4 grid-flow-col items-start">
+        <Callout>
+          <span>Frequency is {threat.frequency.toLowerCase()}</span>
+        </Callout>
+
+        <div className="grid gap-4 grid-flow-col">
           <TravelSelect
             list={threatList}
             onChange={setThreat}
@@ -61,10 +65,6 @@ export const RandomEncounter = () => {
             value={threat.name}
           />
         </div>
-
-        <Callout>
-          <span>Frequency is {threat.frequency.toLowerCase()}</span>
-        </Callout>
 
         <DiceTitle
           die="d20"
