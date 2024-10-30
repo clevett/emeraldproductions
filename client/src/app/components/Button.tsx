@@ -17,7 +17,9 @@ export const Button = ({
   return (
     <RadixButton
       aria-label={name}
-      className={`cursor-pointer ${color} shadow-lg rounded py-1 px-2 ${buttonStyles.button} ${styles}`}
+      className={`cursor-pointer ${color} shadow-lg rounded py-1 px-2 ${
+        buttonStyles.button
+      } ${styles ?? ""}`}
       onClick={onClick}
     >
       {icon}

@@ -16,3 +16,4 @@ export { default as takedown } from "@/app/images/takedown.png";
 export { default as iceland } from "@/app/images/cards/iceland.jpg";
 export { default as npcs } from "@/app/images/cards/npcs.png";
 export { default as dice } from "@/app/images/cards/dice.png";
+export { default as deltaGreen } from "@/app/images/cards/delta_green.jpg";

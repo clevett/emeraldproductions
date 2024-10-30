@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
 
-import { Callout, Card } from "@/app/components";
+import { Callout, Card, Heading } from "@/app/components";
 import { getDiceRollTotal } from "@/app/tools/utils";
 import { threat as threatList, encounter as encounterList } from "@/app/data";
 
 import { DiceTitle } from "./DiceTitle";
 import { TravelSelect } from "./TravelSelect";
-import { Heading } from "@radix-ui/themes";
 
 export const RandomEncounter = () => {
   const [threat, setThreat] = useState(threatList[2]);
@@ -17,10 +16,8 @@ export const RandomEncounter = () => {
 
   const handleRoll = (rollResult?: number) => {
     const d20 = rollResult ? rollResult : roll("1d20");
-    const key = threat.name as keyof (typeof encounterList)[number];
-    const list = encounterList.find(
-      (e) => Array.isArray(e[key]) && e[key].includes(d20)
-    );
+    const { name } = threat;
+    const list = encounterList.find((e) => e[name]?.includes(d20));
     if (list?.encounter) {
       setEncounter([...encounter, list.encounter]);
     }
@@ -55,8 +52,8 @@ export const RandomEncounter = () => {
         Random Encounters
       </Heading>
 
-      <div className="grid gap-4 items-start">
-        <div className="grid gap-4 grid-flow-col items-start  ">
+      <div className="grid gap-4 items-start w-full">
+        <div className="grid gap-4 grid-flow-col items-start">
           <TravelSelect
             list={threatList}
             onChange={setThreat}
@@ -64,6 +61,7 @@ export const RandomEncounter = () => {
             value={threat.name}
           />
         </div>
+
         <Callout>
           <span>Frequency is {threat.frequency.toLowerCase()}</span>
         </Callout>
@@ -77,9 +75,7 @@ export const RandomEncounter = () => {
       </div>
 
       <Card type="business" height="auto">
-        <div className="grid text-center gap-4">
-          <div className="grid">{list}</div>
-        </div>
+        <div className="py-4 px-2">{list}</div>
       </Card>
     </div>
   );

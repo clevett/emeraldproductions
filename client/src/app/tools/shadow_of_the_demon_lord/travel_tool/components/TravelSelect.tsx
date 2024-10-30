@@ -19,6 +19,7 @@ export const TravelSelect = <T extends Option>({
         {title}
       </Heading>
       <Select
+        className="text-center capitalize"
         title={title}
         onChange={(name: string) => {
           const item = list.find((e) => e.name === name);
@@ -28,7 +29,6 @@ export const TravelSelect = <T extends Option>({
         }}
         list={list.map(({ name }) => name)}
         defaultValue={value}
-        className="text-center capitalize"
       />
     </>
   );

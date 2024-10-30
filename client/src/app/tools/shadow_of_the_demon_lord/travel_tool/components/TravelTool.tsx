@@ -33,8 +33,6 @@ export const TravelTool = () => {
   const distance = determineTravelTime(milesPerHour, miles);
 
   const onTerrainChange = (t: TerrainType) => {
-    console.log(t);
-
     if (!terrain.includes(t)) {
       setTerrain([...terrain, t]);
     } else {

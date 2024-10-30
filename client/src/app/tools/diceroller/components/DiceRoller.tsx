@@ -4,7 +4,7 @@ import { useDiceRoller } from "@/app/tools/diceroller/hooks/useDiceBox";
 import { DiceButtons, NotationInput } from "@/app/tools/diceroller/components";
 import { SketchPicker } from "react-color";
 import { Spinner } from "@radix-ui/themes";
-import { IconButton, TrashIcon } from "@/app/components/";
+import { IconButton, ReloadIcon } from "@/app/components/";
 
 export const DiceRoller = () => {
   const { roll, isLoading, canvas, clear, setColor, color } = useDiceRoller();
@@ -24,7 +24,7 @@ export const DiceRoller = () => {
             styles="self-center"
             variant="ghost"
           >
-            <TrashIcon />
+            <ReloadIcon />
           </IconButton>
           <div className="w-full grid gap-2">
             <div className="grid gap-4 grid-flow-col">

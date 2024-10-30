@@ -1,60 +1,87 @@
-export type Encounter = typeof encounter[number];
+export type Encounter = (typeof encounter)[number];
+
+export enum Threats {
+  EXTREME = "Extreme",
+  MAJOR = "Major",
+
+  MODERATE = "Moderate",
+
+  MINOR = "Minor",
+}
+export const threat = [
+  {
+    name: Threats.EXTREME,
+    frequency: "Hourly",
+  },
+  {
+    name: Threats.MAJOR,
+    frequency: "Once per 4 hours",
+  },
+  {
+    name: Threats.MODERATE,
+    frequency: "Once per 8 hours",
+  },
+  {
+    name: Threats.MINOR,
+    frequency: "Once per day and once per night",
+  },
+];
 
 export const encounter = [
   {
     encounter: "Helpful",
-    minor: [20],
-    moderate: [20],
-    major: null,
-    extreme: null,
+    [Threats.MINOR]: [20],
+    [Threats.MODERATE]: [20],
+    [Threats.MAJOR]: null,
+    [Threats.EXTREME]: null,
   },
   {
     encounter: "Harmless",
-    minor: [18, 19],
-    moderate: [18, 19],
-    major: [20],
-    extreme: null,
+    [Threats.MINOR]: [18, 19],
+    [Threats.MODERATE]: [18, 19],
+    [Threats.MAJOR]: [20],
+    [Threats.EXTREME]: null,
   },
   {
     encounter: "Environment",
-    minor: [14, 15, 16, 17],
-    moderate: [14, 15, 16, 17],
-    major: [18, 19],
-    extreme: [19, 20],
+    [Threats.MINOR]: [14, 15, 16, 17],
+    [Threats.MODERATE]: [14, 15, 16, 17],
+    [Threats.MAJOR]: [18, 19],
+    [Threats.EXTREME]: [19, 20],
   },
   {
     encounter: "Nothing",
-    minor: [6, 7, 8, 9, 10, 11, 12, 13],
-    moderate: [8, 9, 10, 11, 12, 13],
-    major: [14, 15, 16, 17],
-    extreme: [17, 18],
+    [Threats.MINOR]: [6, 7, 8, 9, 10, 11, 12, 13],
+    [Threats.MODERATE]: [8, 9, 10, 11, 12, 13],
+    [Threats.MAJOR]: [14, 15, 16, 17],
+    [Threats.EXTREME]: [17, 18],
   },
   {
     encounter: "Easy combat",
-    minor: [2, 3, 4, 5],
-    moderate: [4, 5, 6, 7],
-    major: [8, 9, 10, 11, 12, 13],
-    extreme: [13, 14, 15, 16],
+    [Threats.MINOR]: [2, 3, 4, 5],
+    [Threats.MODERATE]: [4, 5, 6, 7],
+    [Threats.MAJOR]: [8, 9, 10, 11, 12, 13],
+    [Threats.EXTREME]: [13, 14, 15, 16],
   },
   {
     encounter: "Average combat",
-    minor: [1],
-    moderate: [2, 3],
-    major: [4, 5, 6, 7],
-    extreme: [7, 8, 9, 10, 11, 12],
+    [Threats.MINOR]: [1],
+    [Threats.MODERATE]: [2, 3],
+    [Threats.MAJOR]: [4, 5, 6, 7],
+    [Threats.EXTREME]: [7, 8, 9, 10, 11, 12],
   },
   {
     encounter: "Challenging combat",
-    minor: null,
-    moderate: [1],
-    major: [2, 3],
-    extreme: [3, 4, 5, 6],
+    [Threats.MINOR]: null,
+    [Threats.MODERATE]: [1],
+    [Threats.MAJOR]: [2, 3],
+    [Threats.EXTREME]: [3, 4, 5, 6],
   },
   {
     encounter: "Hard combat",
-    minor: null,
-    moderate: null,
-    major: [1],
-    extreme: [1, 2],
+    [Threats.MINOR]: null,
+    [Threats.MODERATE]: null,
+    [Threats.MAJOR]: [1],
+    [Threats.EXTREME]: [1, 2],
   },
 ];

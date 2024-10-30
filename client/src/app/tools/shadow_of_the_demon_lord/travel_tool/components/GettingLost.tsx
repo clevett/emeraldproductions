@@ -86,7 +86,7 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
   };
 
   const terrainCallout =
-    terrain.length > 0 || weather.name !== WEATHER.N
+    terrain.length > 0 || weather.name !== Weather.NORMAL
       ? `${weather.name} ${terrain.map((t) => t.name).join(", ")}`
       : "Toggle terrain and change weather to see the effects of getting lost.";
 
@@ -96,8 +96,8 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
         Getting Lost
       </Heading>
 
-      <div className="grid gap-4 items-start">
-        <div className="grid grid-flow-col gap-x-6 justify-items-center content-center w-full">
+      <div className="grid gap-4 items-start w-full ">
+        <div className="grid grid-flow-col gap-x-6 justify-items-center content-center w-full min-h-8">
           <Switch
             defaultChecked={navigator}
             label="Navigator"
@@ -120,7 +120,7 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
       </div>
 
       <Card type="business" height="auto">
-        <div className={`grid text-center`}>{list}</div>
+        <div className="py-4 px-2">{list}</div>
       </Card>
     </div>
   );

@@ -1,21 +1,21 @@
 export const pace = [
   {
-    name: "walk",
+    name: "Walk",
     hour: 3,
     day: 24,
   },
   {
-    name: "cautious",
+    name: "Cautious",
     hour: 1,
     day: 8,
   },
   {
-    name: "jog",
+    name: "Jog",
     hour: 4,
     day: 32,
   },
   {
-    name: "run",
+    name: "Run",
     hour: 8,
     day: null,
   },
@@ -102,24 +102,5 @@ export const weather = [
     name: Weather.STORM,
     multiplier: 2,
     result: [18],
-  },
-];
-
-export const threat = [
-  {
-    name: "extreme",
-    frequency: "Hourly",
-  },
-  {
-    name: "major",
-    frequency: "Once per 4 hours",
-  },
-  {
-    name: "moderate",
-    frequency: "Once per 8 hours",
-  },
-  {
-    name: "minor",
-    frequency: "Once per day and once per night",
   },
 ];

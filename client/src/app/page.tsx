@@ -10,6 +10,7 @@ import {
   iceland,
   npcs as gamemaster,
   dice,
+  deltaGreen,
 } from "@/app/images";
 
 import type { Metadata } from "next";
@@ -29,9 +30,16 @@ const cards = [
     description: `A software developer with 8+ years experience creating virtual table top software and role playing tools.`,
   },
   {
+    title: "Roll20 Expert",
+    src: deltaGreen,
+    description:
+      "Helper to ttrpg publishers whose is assisting in getting their content online. I've led Roll20 product launches for Paizo, Chaosium, Hunter's Entertainment, Schwalb Entertainment, and more.",
+  },
+  {
     title: "Adventurer",
     src: iceland,
-    description: "American living in Iceland.",
+    description:
+      "American living in Iceland. I love to travel and explore. Been to over 30 countries and counting.",
   },
 ];
 
@@ -44,13 +52,13 @@ const cardNodes = cards.map((props, index) => {
 export default function Home() {
   return (
     <div className="grid gap-8 p-8">
-      <div className="flex flex-row flex-wrap md:flex-nowrap justify-center gap-4">
+      <div className="flex flex-row flex-wrap md:flex-nowrap justify-center gap-8">
         <Image
           alt="A person with short hair wearing a jacket over a super hero costume looks to the sky"
           className={styles.portrait}
           src={portrait}
         />
-        <div className="grid content-center  gap-4 max-w-md">
+        <div className="grid content-center gap-4 max-w-md">
           <Heading as="h2">Caden Levett</Heading>
           <Text as="p" size="3">
             Front-end developer specializing in software for table role playing
@@ -61,7 +69,7 @@ export default function Home() {
           </Text>
         </div>
       </div>
-      <div className="flex justify-center flex-wrap gap-4">{cardNodes}</div>
+      <div className="flex justify-center flex-wrap gap-8">{cardNodes}</div>
     </div>
   );
 }

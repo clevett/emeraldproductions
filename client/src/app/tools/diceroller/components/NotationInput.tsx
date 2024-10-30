@@ -1,6 +1,4 @@
-import { Text } from "@radix-ui/themes";
-
-import { Input } from "@/app/components";
+import { Callout, Input } from "@/app/components";
 
 export const NotationInput = ({
   submit,
@@ -19,9 +17,9 @@ export const NotationInput = ({
         submit={submit}
       />
 
-      <Text as="label" size="3">
-        {message}
-      </Text>
+      <Callout>
+        <span>{message}</span>
+      </Callout>
     </div>
   );
 };
