@@ -29,12 +29,12 @@ export const Input = ({
   };
 
   const onBlur = () => {
-    if (min && max) {
+    if (min) {
       const num = parseInt(value);
       if (isNaN(num)) {
         setValue(defaultValue);
       } else {
-        const v = num < min ? min : num > max ? max : num;
+        const v = num < min ? min : max && num > max ? max : num;
         submit(value);
 
         if (v !== num) {

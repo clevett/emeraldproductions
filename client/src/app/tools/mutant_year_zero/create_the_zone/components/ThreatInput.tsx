@@ -1,7 +1,7 @@
 "use client";
 import { useRecoilState } from "recoil";
 
-import { Heading, Input } from "@/app/components";
+import { Callout, Heading, Input } from "@/app/components";
 
 import { threatLevelAtom } from "../recoil";
 
@@ -24,10 +24,12 @@ export const ThreatInput = () => {
           submit={(value: string) => setBase(parseInt(value))}
         />
       </div>
-      <p>
-        1–4 Fringe Zone Sectors, 5–8 Central Zone Sectors, 9+ Unusually
-        Dangerous Areas
-      </p>
+      <Callout className="max-w-fit">
+        <p>
+          1–4 Fringe Zone Sectors, 5–8 Central Zone Sectors, 9+ Unusually
+          Dangerous Areas
+        </p>
+      </Callout>
     </div>
   );
 };

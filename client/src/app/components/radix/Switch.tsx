@@ -8,8 +8,8 @@ type TextSize =
 type Size = Responsive<"2" | "3" | "1"> | undefined;
 
 export const Switch = ({
-  label,
   defaultChecked = false,
+  label,
   onChange,
   size = "2",
   textSize = "3",

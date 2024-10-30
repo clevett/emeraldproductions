@@ -5,6 +5,7 @@ export { Heading } from "@/app/components/radix/Heading";
 export { IconButton } from "@/app/components/radix/icons/IconButton";
 export { Input } from "@/app/components/radix/Input";
 export { NavigationPills } from "@/app/components/radix/NavigationPills";
+export { RadioCards } from "@/app/components/radix/RadioCards";
 export { ReloadIcon } from "@/app/components/radix/icons/ReloadIcon";
 export { Select } from "@/app/components/radix/Select";
 export { Subtitle } from "@/app/components/radix/Subtitle";
