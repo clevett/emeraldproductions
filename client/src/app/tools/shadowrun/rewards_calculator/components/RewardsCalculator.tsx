@@ -44,10 +44,6 @@ export const RewardsCalculator = () => {
             <NegotiationHits />
           </div>
         </div>
-        {/* <div className={`grid text-center ${styles.rewardsColumns}`}>
-
-          <ResetButton />
-        </div> */}
       </div>
     </RecoilRoot>
   );
