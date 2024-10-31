@@ -26,11 +26,11 @@ export const Switch = ({
     <Text as="label" size={textSize}>
       <Flex gap="2">
         <RadixSwitch
+          checked={checked}
           defaultChecked={defaultChecked}
+          highContrast
           onCheckedChange={onChange}
           size={size}
-          checked={!!checked}
-          highContrast
         />
         {label}
       </Flex>

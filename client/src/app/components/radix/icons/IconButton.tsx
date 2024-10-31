@@ -19,7 +19,7 @@ export const IconButton = ({
   return (
     <RadixIconButton
       aria-label={label}
-      className={styles}
+      className={`cursor-pointer ${styles}`}
       onClick={onClick}
       variant={variant}
     >

@@ -1,3 +1,4 @@
+"use client";
 //@ts-expect-error Not typed
 import DiceParser from "@3d-dice/dice-parser-interface";
 //@ts-expect-error Not typed
@@ -47,7 +48,9 @@ export const useDiceRoller = () => {
 
   if (dicebox) {
     // This method is triggered whenever dice are finished rolling
-    dicebox.onRollComplete = (results: unknown) => {
+    dicebox.onRollComplete = (
+      results: { [key: string]: unknown; mods: unknown[]; value: number }[]
+    ) => {
       // handle any rerolls
       const rerolls = DRP.handleRerolls(results);
       if (rerolls.length) {
@@ -57,8 +60,12 @@ export const useDiceRoller = () => {
         return rerolls;
       }
       // if no rerolls needed then parse the final results
-      const finalResults = DRP.parseFinalResults(results);
-      setResult(finalResults);
+      if (results[0].mods.length > 0) {
+        const finalResults = DRP.parseFinalResults(results);
+        setResult(finalResults);
+      } else {
+        setResult(results[0]);
+      }
     };
   }
 
