@@ -1,12 +1,13 @@
 "use client";
 
-import Image from "next/image";
+import { Link, navigation } from "@/app/resources";
+
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+
 import { TabNav } from "@radix-ui/themes";
 
 import logo from "../imgs/logo.png";
-
-import { navigation, Link } from "@/app/resources";
 
 const NavLink = ({ path, label, isActive }: Link & { isActive: boolean }) => {
   return (
@@ -16,12 +17,12 @@ const NavLink = ({ path, label, isActive }: Link & { isActive: boolean }) => {
   );
 };
 
-export const Navigation = () => {
+export const Header = () => {
   const { about, tools, games } = navigation;
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-wrap gap-4 justify-center md:flex-nowrap">
+    <div className="flex flex-wrap gap-4 justify-center lg:flex-nowrap">
       <Image
         alt="Emerald Productions logo"
         className="scale-70 grow-0"
@@ -36,6 +37,7 @@ export const Navigation = () => {
           <NavLink {...tools} isActive={pathname === tools.path} />
           <NavLink {...games} isActive={pathname === games.path} />
         </TabNav.Root>
+        {/* <Navigation /> */}
       </div>
     </div>
   );

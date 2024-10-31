@@ -16,7 +16,9 @@ export const ToolLayout = ({
   footer,
 }: LayoutBodyProps & { footer?: string }) => {
   return (
-    <section className={`grid gap-6 p-4 ${styles.panel} h-full w-full`}>
+    <section
+      className={`grid gap-6 py-6 px-4 rounded ${styles.panel} h-full w-full`}
+    >
       <DriveThruLink id={DriveThruId}>
         <Title className="mr-2">{title}</Title>
         <OpenInNewWindowIcon />

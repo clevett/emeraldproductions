@@ -13,5 +13,6 @@ export { Subtitle } from "@/app/components/radix/Subtitle";
 export { Switch } from "@/app/components/radix/Switch";
 export { Title } from "@/app/components/radix/Title";
 export { TrashIcon } from "@/app/components/radix/icons/TrashIcon";
+export { Navigation } from "@/app/components/radix/Navigation";
 
 export * from "@/app/components/radix/icons";

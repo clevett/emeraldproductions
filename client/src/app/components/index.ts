@@ -4,6 +4,7 @@ export { Card } from "@/app/components/Card";
 export { DiceRoller } from "@/app/tools/diceroller/components/DiceRoller";
 export { DriveThruLink } from "@/app/components/drive_thru_link/DriveThruLink";
 export { fuzzySearch } from "@/app/components/search_bar/fuzzySearch";
+export { Header } from "@/app/components/Header";
 export { Loading } from "@/app/components/Loading";
 export { SearchBar } from "@/app/components/search_bar/SearchBar";
 export { Sidebar } from "@/app/components/sidebar/Sidebar";
