@@ -1,9 +1,7 @@
 .sidebar {
-  display: grid;
   gap: var(--space-4);
   grid-auto-rows: max-content;
   overflow: hidden;
-  padding: var(--space-6);
   width: 100%;
 }
 

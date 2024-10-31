@@ -1,10 +1,8 @@
 import { Sidebar } from "@/app/components";
 
-import styles from "./layout.module.css";
-
 export default function ToolsLayout({ children }: { children: JSX.Element }) {
   return (
-    <div className={styles.layout}>
+    <div className={`flex flex-direction-row lg:pr-6 h-full w-full`}>
       <Sidebar />
       {children}
     </div>

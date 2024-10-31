@@ -18,18 +18,21 @@ export const DiceRoller = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="w-full grid grid-cols-[400px_min-content] gap-4">
-          <DiceButtons roll={rollDice} />
-          <IconButton
-            label="clear dice results"
-            onClick={clear}
-            styles="self-center"
-            variant="ghost"
-          >
-            <ReloadIcon />
-          </IconButton>
-          <div className="w-full grid gap-2">
-            <div className="grid gap-4 grid-flow-col">
+        <div className="flex flex-wrap gap-6 w-full">
+          <div className="flex flex-wrap flex-direction-row justify-between content-center gap-4 lg:gap-6">
+            <DiceButtons roll={rollDice} />
+            <IconButton
+              label="clear dice results"
+              onClick={clear}
+              styles="self-center"
+              variant="ghost"
+            >
+              <ReloadIcon />
+            </IconButton>
+          </div>
+
+          <div className="grid gap-2 w-full ">
+            <div className="grid gap-4 grid-flow-col justify-start">
               <NotationInput submit={rollDice} />
               <div className="grid gap-2">
                 <button

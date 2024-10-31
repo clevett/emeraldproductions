@@ -41,18 +41,12 @@ export const DiceButtons = ({
       key={`d-${d}-dice`}
       label={`roll a d${d}`}
       onClick={() => roll(`1d${d}`)}
-      styles="self-center min-h-[50px] min-w-[50px] w-full h-full"
+      styles="self-center min-h-[50px] min-w-[50px] max-h-[50px] max-w-[50px]"
       variant="ghost"
     >
       <Image src={getIcon(d)} alt={`d ${d} icon`} />
     </IconButton>
   ));
 
-  return (
-    <div
-      className={`grid grid-flow-col max-w-md min-h-min justify-center content-center gap-6 mb-4`}
-    >
-      {buttons}
-    </div>
-  );
+  return buttons;
 };

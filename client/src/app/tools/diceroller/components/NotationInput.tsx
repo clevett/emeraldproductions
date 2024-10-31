@@ -9,7 +9,7 @@ export const NotationInput = ({
   const message = "Type in the dice string and press Enter";
 
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-4 max-w-md">
       <Input
         defaultValue={defaultRoll}
         label="Enter dice notation"
@@ -17,7 +17,7 @@ export const NotationInput = ({
         submit={submit}
       />
 
-      <Callout>
+      <Callout className="max-w-md">
         <span>{message}</span>
       </Callout>
     </div>

@@ -21,7 +21,7 @@ export const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-wrap md:flex-nowrap gap-4">
+    <div className="flex flex-wrap gap-4 justify-center md:flex-nowrap">
       <Image
         alt="Emerald Productions logo"
         className="scale-70 grow-0"

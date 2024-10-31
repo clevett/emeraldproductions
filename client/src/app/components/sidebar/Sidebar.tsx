@@ -9,9 +9,13 @@ import { Heading } from "@/app/components";
 import { rpgTools, Link as LinkType } from "@/app/resources";
 
 type List = LinkType[];
-export const Sidebar = () => {
+export const Sidebar = ({ className }: { className?: string }) => {
   return (
-    <div className={styles.sidebar}>
+    <div
+      className={`${styles.sidebar} ${
+        className ?? ""
+      } py-2 px-4 max-w-64 hidden lg:grid`}
+    >
       <div className="border-b w-full">
         <Heading size="4">RPG Tools</Heading>
       </div>
