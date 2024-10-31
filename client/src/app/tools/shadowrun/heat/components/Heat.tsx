@@ -15,7 +15,7 @@ type Circumstance = (typeof heat)[0];
 
 export const Heat = () => {
   const [circumstances, setCircumstances] = useState<Circumstance[]>([]);
-  const { roll, isLoading, canvas, result, clear } = useDiceRoller();
+  const { roll, isLoading, canvas, result, clear, isRolling } = useDiceRoller();
 
   const switchToggle = (e: Circumstance) => {
     if (circumstances.includes(e)) {
@@ -64,7 +64,9 @@ export const Heat = () => {
       ) : (
         <div className="grid gap-6 w-full ">
           <div className="grid w-full gap-6">
-            <p className={color}>{message}</p>
+            <div className="min-h-6">
+              {isRolling ? <Spinner /> : <p className={color}>{message}</p>}
+            </div>
 
             <Heading as="h3">
               Positive Circumstances{pos ? ` (${pos})` : null}
@@ -80,6 +82,7 @@ export const Heat = () => {
                   defaultChecked={circumstances.includes(e)}
                   label={e.description}
                   onChange={() => switchToggle(e)}
+                  checked={circumstances.includes(e)}
                 />
               </React.Fragment>
             ))}
@@ -92,7 +95,13 @@ export const Heat = () => {
             >
               Roll Heat
             </Button>
-            <IconButton label="clear dice" onClick={clear}>
+            <IconButton
+              label="clear dice"
+              onClick={() => {
+                clear();
+                setCircumstances([]);
+              }}
+            >
               <ReloadIcon />
             </IconButton>
           </div>

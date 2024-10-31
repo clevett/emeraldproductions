@@ -13,6 +13,7 @@ export const useDiceRoller = () => {
   const [canvasElement, setCanvasElement] = useState<
     HTMLCanvasElement | HTMLDivElement | null
   >(null);
+  const [isRolling, setIsRolling] = useState(false);
 
   useEffect(() => {
     if (canvasElement === null) {
@@ -66,10 +67,12 @@ export const useDiceRoller = () => {
       } else {
         setResult(results[0]);
       }
+      setIsRolling(false);
     };
   }
 
   const roll = (notation: string, color?: string) => {
+    setIsRolling(true);
     const parsedNotation = DRP.parseNotation(notation);
     const diceBoxNotation = color
       ? parsedNotation.map((n: { [key: string]: unknown }) => ({
@@ -111,5 +114,6 @@ export const useDiceRoller = () => {
     result,
     canvas,
     isLoading,
+    isRolling,
   };
 };
