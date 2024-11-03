@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-w-[375px]`}
       >
         <Theme appearance="dark">
-          <div className="grid grid-rows-[auto_1fr_auto] h-full w-full min-h-dvh">
+          <div className="grid grid-rows-[auto_1fr_auto] h-full w-full min-h-dvh gap-4">
             <Header />
             <main className="h-full w-full">{children}</main>
             <footer className="flex w-full py-4 px-6 flex-col">
