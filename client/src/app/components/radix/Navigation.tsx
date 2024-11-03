@@ -1,12 +1,7 @@
 import React from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import {
-  HamburgerMenuIcon,
-  DotFilledIcon,
-  CheckIcon,
-  ChevronRightIcon,
-} from "@radix-ui/react-icons";
-import "./styles.css";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import styles from "./Navigation.module.css";
 
 import { rpgTools, Link as LinkType } from "@/app/resources";
 import Link from "next/link";
@@ -17,9 +12,9 @@ const ListItem = ({ item }: { item: LinkType }) => {
   const href = `/tools${path}`;
 
   return (
-    <DropdownMenu.Item key={path} className="DropdownMenuItem">
+    <DropdownMenu.Item key={path} className={styles.DropdownMenuItem}>
       <Link
-        className={`grid grid-flow-col gap-2`}
+        className={`grid grid-flow-col gap-2 auto-cols-max items-center`}
         href={href}
         key={`sidebar-${path}`}
       >
@@ -33,18 +28,24 @@ const ListItem = ({ item }: { item: LinkType }) => {
 const DropdownMenuDemo = () => {
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
-        <button className="IconButton" aria-label="Customise options">
+      <DropdownMenu.Trigger asChild className={styles.trigger}>
+        <button className={styles.IconButton} aria-label="Customise options">
           <HamburgerMenuIcon />
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
+        <DropdownMenu.Content
+          className={`text-left py-2 px-5 rounded bg-neutral-900 ${styles.DropdownMenuContent}`}
+          sideOffset={5}
+        >
           {rpgTools.map(({ label, list }) => {
             return (
-              <DropdownMenu.Group key={label} className="DropdownMenuGroup">
-                <DropdownMenu.Item className="DropdownMenuItem">
+              <DropdownMenu.Group
+                className={`${styles.DropdownMenuGroup}`}
+                key={label}
+              >
+                <DropdownMenu.Item className={`${styles.DropdownHeader}`}>
                   {label}
                 </DropdownMenu.Item>
                 {list.map((item) => (
