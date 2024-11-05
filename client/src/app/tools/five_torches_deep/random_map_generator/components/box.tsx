@@ -19,7 +19,7 @@ export const Box = ({ name }: { name: string }) => {
 
   return (
     <div
-      className={`grid border-black border-solid border-2 ${background} text-${textColor} content-center justify-center pr-3 pl-3 pt-4 pb-4 gap-4 cursor-pointer`}
+      className={`grid border-black border-solid border-2 ${background} text-${textColor} content-center justify-center p-2 gap-2 md:px-3 md:py-4 md:gap-4 cursor-pointer`}
       onClick={handleClick}
     >
       <Heading as="h4" className={`${textColor}`}>

@@ -4,8 +4,6 @@ import { useState } from "react";
 import { Box } from "./Box";
 import { Button } from "@/app/components";
 
-import styles from "./RandomMapGenerator.module.css";
-
 export const RandomMapGenerator = () => {
   const [refresh, setRefresh] = useState(false);
 
@@ -15,7 +13,9 @@ export const RandomMapGenerator = () => {
     <div className="grid gap-4 auto-rows-max items-start">
       <div
         key={`map-${refresh}`}
-        className={`grid grid-cols-3 grid-rows-3 border-2 border-solid border-black shadow-2xl ${styles.map}`}
+        className={`grid grid-cols-3 grid-rows-3 border-2 border-solid border-black shadow-2xl 
+          
+          md:h-[600px] md:w-[600px]`}
       >
         <Box name="Northwest" />
         <Box name="North" />
