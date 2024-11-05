@@ -7,10 +7,10 @@ const types = {
   },
   long: {
     height: "560px",
-    width: "375px",
+    width: "350px",
   },
   wide: {
-    height: "375px",
+    height: "350px",
     width: "560px",
   },
   business: {
@@ -34,12 +34,10 @@ export const Card = ({
 }) => {
   return (
     <div
-      className={`rounded ${cardStyles.card} ${styles ? styles : ""}  `}
+      className={`rounded  ${cardStyles.card} ${styles ? styles : ""}  `}
       style={{
         width,
         height,
-        minHeight: height,
-        minWidth: width,
         maxHeight: height,
         maxWidth: width,
       }}

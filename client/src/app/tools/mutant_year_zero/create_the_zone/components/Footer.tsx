@@ -27,7 +27,7 @@ export const Footer = ({
       <IconButton
         label="download card"
         onClick={onDownload}
-        styles="justify-self-end"
+        styles="justify-self-center"
       >
         <DownloadIcon />
       </IconButton>

@@ -8,8 +8,6 @@ import { Level, LevelSelect } from "./LevelSelect";
 import { Treasure } from "../helpers/Treasure";
 import { buildResultString } from "../helpers/buildResultString";
 
-import styles from "./RewardsGenerator.module.css";
-
 const getTreasure = (gold: number, level: Level) => {
   const treasure = new Treasure(level);
   return buildResultString(gold, treasure.deleteNullCoins());
