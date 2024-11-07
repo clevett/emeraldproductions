@@ -34,7 +34,7 @@ export const Card = ({
 }) => {
   return (
     <div
-      className={`rounded  ${cardStyles.card} ${styles ? styles : ""}  `}
+      className={`rounded ${cardStyles.card} ${styles ? styles : ""}  `}
       style={{
         width,
         height,
