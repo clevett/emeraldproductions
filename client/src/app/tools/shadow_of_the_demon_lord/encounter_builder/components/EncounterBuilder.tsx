@@ -16,9 +16,8 @@ import { Actions } from "../enums";
 import { data, Monster, Action } from "../types";
 import { typeChecker, levelsChecker } from "../recoil/refine";
 
-import { EncounterTitle } from "./EncounterTitle";
 import { MonsterTable } from "./MonsterTable";
-import { getColor } from "../utils";
+import { getColor, getDanger } from "../utils";
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
@@ -83,6 +82,10 @@ export const EncounterBuilder = () => {
     }
   };
 
+  const total =
+    selected?.map((s) => s.difficulty).reduce((a, b) => a + b, 0) ?? 0;
+  const range = getDanger(total, level);
+
   return (
     <div className="grid gap-4 auto-rows-min p-4">
       <Heading as="h4">
@@ -126,30 +129,29 @@ export const EncounterBuilder = () => {
         })}
       </div>
 
-      <div className="flex">
-        <div className="content-center">
-          <div className={`grid grid-cols-[30%_1fr_30%] mb-4 max-h-[40px]`}>
-            <EncounterTitle
-              total={
-                selected?.map((s) => s.difficulty).reduce((a, b) => a + b, 0) ??
-                0
-              }
-              level={level}
-            />
-          </div>
-          <div>
-            <MonsterTable
-              action={Actions.REMOVE}
-              data={selected ?? []}
-              onSelect={(monster: Monster) =>
-                updateEncounter(monster, Actions.REMOVE)
-              }
-            />
+      <div className="flex flex-row flex-wrap gap-4">
+        <div className="grid gap-4 content-center flex-1 min-w-[300px]">
+          <Heading as="h4" className=" text-center">
+            <h4 className="inline">
+              Encounter Difficulty (
+              <span
+                className={`inline text-2xl ${
+                  range && `text-${getColor(range)}-600`
+                }`}
+              >
+                {total}
+              </span>
+              )
+            </h4>
+          </Heading>
+          <div className="bg-card px-2 py-4">
+            {isLoading ? <Loading /> : <div>stuff</div>}
           </div>
         </div>
-        <div className="content-center">
-          <div className={`grid grid-cols-[30%_1fr_30%] mb-4`}>
-            <Heading as="h4" className="col-start-2 text-center">
+
+        <div className="grid gap-4 content-center flex-1 min-w-[300px]">
+          <div className="grid gap-4 grid-flow-col">
+            <Heading as="h4" className="text-center">
               <h4>Bestiary</h4>
             </Heading>
             <SearchBar
@@ -159,18 +161,8 @@ export const EncounterBuilder = () => {
               label="monster search"
             />
           </div>
-          <div>
-            {isLoading ? (
-              <Loading />
-            ) : (
-              <MonsterTable
-                action={Actions.ADD}
-                data={searchResults ?? []}
-                onSelect={(monster: Monster) =>
-                  updateEncounter(monster, Actions.ADD)
-                }
-              />
-            )}
+          <div className="bg-card px-2 py-4">
+            {isLoading ? <Loading /> : <div>stuff</div>}
           </div>
         </div>
       </div>

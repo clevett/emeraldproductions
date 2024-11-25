@@ -29,7 +29,7 @@ const DropdownMenuDemo = () => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild className={styles.trigger}>
-        <button className={styles.IconButton} aria-label="Customise options">
+        <button className={styles.IconButton} aria-label="Customize options">
           <HamburgerMenuIcon />
         </button>
       </DropdownMenu.Trigger>
