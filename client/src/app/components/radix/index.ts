@@ -11,6 +11,7 @@ export { Select } from "@/app/components/radix/Select";
 export { Slider } from "@/app/components/radix/Slider";
 export { Subtitle } from "@/app/components/radix/Subtitle";
 export { Switch } from "@/app/components/radix/Switch";
+export { Table } from "@/app/components/radix/Table";
 export { Title } from "@/app/components/radix/Title";
 export { TrashIcon } from "@/app/components/radix/icons/TrashIcon";
 

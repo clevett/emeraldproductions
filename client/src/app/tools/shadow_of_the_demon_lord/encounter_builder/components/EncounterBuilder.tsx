@@ -10,13 +10,13 @@ import {
   SearchBar,
   Loading,
   Select,
+  Table,
 } from "@/app/components";
 
 import { Actions } from "../enums";
 import { data, Monster, Action } from "../types";
 import { typeChecker, levelsChecker } from "../recoil/refine";
 
-import { MonsterTable } from "./MonsterTable";
 import { getColor, getDanger } from "../utils";
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
@@ -162,7 +162,25 @@ export const EncounterBuilder = () => {
             />
           </div>
           <div className="bg-card px-2 py-4">
-            {isLoading ? <Loading /> : <div>stuff</div>}
+            {isLoading ? (
+              <Loading />
+            ) : (
+              <Table
+                columns={
+                  data?.[0]
+                    ? Object.keys(data[0])
+                        .map((e) => (e !== "_id" ? { header: e } : null))
+                        .filter((e) => e !== null)
+                    : []
+                }
+                rows={
+                  data?.map((e) => ({
+                    header: e.name,
+                    cell: [e.difficulty, e.descriptor, e.source],
+                  })) ?? []
+                }
+              />
+            )}
           </div>
         </div>
       </div>
