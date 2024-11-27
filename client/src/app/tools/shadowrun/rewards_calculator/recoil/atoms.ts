@@ -1,5 +1,5 @@
 import { atom, atomFamily } from "recoil";
-import { types } from "@/app/data";
+import { types } from "@/data";
 import { getDicePoolKarma, getDicePoolNuyen, getBaseNuyen } from "../helpers";
 
 const dicePoolDefault = 14;

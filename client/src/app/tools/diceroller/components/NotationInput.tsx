@@ -1,4 +1,4 @@
-import { Callout, Input } from "@/app/components";
+import { Callout, Input } from "@/components";
 
 export const NotationInput = ({
   submit,

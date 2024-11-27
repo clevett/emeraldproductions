@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-import d20 from "@/app/images/dice/d20.svg";
-import d12 from "@/app/images/dice/d12.svg";
-import d10 from "@/app/images/dice/d10.svg";
-import d8 from "@/app/images/dice/d8.svg";
-import d6 from "@/app/images/dice/d6-2.svg";
-import d4 from "@/app/images/dice/d4.svg";
-import { IconButton } from "@/app/components";
+import d20 from "@/images/dice/d20.svg";
+import d12 from "@/images/dice/d12.svg";
+import d10 from "@/images/dice/d10.svg";
+import d8 from "@/images/dice/d8.svg";
+import d6 from "@/images/dice/d6-2.svg";
+import d4 from "@/images/dice/d4.svg";
+import { IconButton } from "@/components";
 
 const dice = [20, 12, 10, 8, 6, 4];
 

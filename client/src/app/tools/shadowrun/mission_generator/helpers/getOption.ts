@@ -1,5 +1,5 @@
-import { Options, Option, mission } from "@/app/data";
-import { getDiceRollTotal } from "@/app/tools/utils";
+import { Options, Option, mission } from "@/data";
+import { getDiceRollTotal } from "@/utils";
 
 export const getOption = (item: Option) => {
   const roll = getDiceRollTotal();

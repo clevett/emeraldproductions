@@ -1,6 +1,6 @@
 import { RecoilRoot } from "recoil";
 
-import { Heading } from "@/app/components";
+import { Heading } from "@/components";
 
 import { GermanRulesSwitch } from "./GermanRulesSwitch";
 import { HighestOpposingDicePool } from "./HighestOpposingDicePool";

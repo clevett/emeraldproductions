@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { Spinner } from "@radix-ui/themes";
 
-import { heat } from "@/app/data";
-import {
-  Button,
-  Heading,
-  IconButton,
-  ReloadIcon,
-  Switch,
-} from "@/app/components";
+import { heat } from "@/data";
+import { Button, Heading, IconButton, ReloadIcon, Switch } from "@/components";
 import { useDiceRoller } from "@/app/tools/diceroller/hooks/useDiceBox";
 
 type Circumstance = (typeof heat)[0];

@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 
-import { fuzzySearch, SearchBar } from "@/app/components";
-import { FifthEditionMonster } from "@/app/data/5eMonsters";
+import { fuzzySearch, SearchBar } from "@/components";
+import { FifthEditionMonster } from "@/data/5eMonsters";
 
 import { MonsterCard } from "./MonsterCard";
 import { MonsterFTD } from "../../types/ftdTypes";

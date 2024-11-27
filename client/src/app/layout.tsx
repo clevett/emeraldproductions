@@ -1,21 +1,10 @@
-import "./globals.css";
 import "@radix-ui/themes/styles.css";
-import { Contact } from "./components/Contact";
-import { Header } from "@/app/components/Header";
 import { Theme } from "@radix-ui/themes";
-import localFont from "next/font/local";
 import type { Metadata } from "next";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { Header, Contact } from "@/components";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Emerald Productions",
@@ -29,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-w-[375px]`}
-      >
+      <body className={`antialiased min-w-[375px]`}>
         <Theme appearance="dark">
           <div className="grid grid-rows-[auto_1fr_auto] h-full w-full min-h-dvh gap-4">
             <Header />

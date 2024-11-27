@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Text } from "@radix-ui/themes";
-import { AboutCard, Heading } from "@/app/components";
-import { about } from "@/app/resources";
+import { AboutCard, Heading } from "@/components";
+import { about } from "@/resources";
 
 import styles from "./styles.module.css";
 
@@ -11,7 +11,7 @@ import {
   npcs as gamemaster,
   dice,
   deltaGreen,
-} from "@/app/images";
+} from "@/images";
 
 import type { Metadata } from "next";
 

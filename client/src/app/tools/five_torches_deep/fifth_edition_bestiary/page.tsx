@@ -1,5 +1,5 @@
-import { Subtitle } from "@/app/components";
-import { systems } from "@/app/resources";
+import { Subtitle } from "@/components";
+import { systems } from "@/resources";
 import { FiveTorchesDeepMonsters as FTDM } from "./components/FiveTorchesDeepMonsters";
 
 export default function FiveTorchesDeepMonsters() {

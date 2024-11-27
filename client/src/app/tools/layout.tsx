@@ -1,4 +1,4 @@
-import { Sidebar } from "@/app/components";
+import { Sidebar } from "@/components";
 
 export default function ToolsLayout({ children }: { children: JSX.Element }) {
   return (

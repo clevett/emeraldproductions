@@ -1,4 +1,4 @@
-import { Run, RunType } from "@/app/data";
+import { Run, RunType } from "@/data";
 
 export const getCostModifier = (type: Run, num: number = 10) => {
   const decimal = num / 100;

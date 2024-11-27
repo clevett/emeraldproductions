@@ -1,5 +1,5 @@
-import { ToolLayout } from "@/app/components";
-import { systems } from "@/app/resources";
+import { ToolLayout } from "@/components";
+import { systems } from "@/resources";
 
 export default function Layout({ children }: { children: JSX.Element }) {
   const { driveThruId, title } = systems.sotdl;

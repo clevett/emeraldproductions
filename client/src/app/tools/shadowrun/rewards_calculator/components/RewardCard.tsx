@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 import { selectNuyen, selectKarma } from "../recoil";
-import { Card, Heading } from "@/app/components";
+import { Card, Heading } from "@/components";
 
 export const RewardCard = () => {
   const nuyen = useRecoilValue(selectNuyen);

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Box } from "./Box";
-import { Button } from "@/app/components";
+import { Button } from "@/components";
 
 export const RandomMapGenerator = () => {
   const [refresh, setRefresh] = useState(false);

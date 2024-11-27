@@ -1,5 +1,5 @@
 import { atom, atomFamily } from "recoil";
-import { ZoneSector } from "../../../../data/myz_create_the_zone";
+import { ZoneSector } from "../../../../../data/myz_create_the_zone";
 
 const threatLevelDefault = 3;
 

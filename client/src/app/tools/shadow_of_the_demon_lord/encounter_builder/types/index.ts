@@ -1,4 +1,4 @@
-import { danger } from "@/app/data";
+import { danger } from "@/data";
 
 import { Actions, Levels } from "../enums";
 

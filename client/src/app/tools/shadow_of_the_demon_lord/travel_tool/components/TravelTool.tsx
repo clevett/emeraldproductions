@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 
-import { Callout, Card, Heading, Input, Switch } from "@/app/components";
+import { Callout, Card, Heading, Input, Switch } from "@/components";
 import {
   pace as paceList,
   terrain as terrainList,
   weather as weatherList,
-} from "@/app/data";
+} from "@/data";
 
 import { RandomEncounter } from "./RandomEncounter";
 import { TravelSelect } from "./TravelSelect";

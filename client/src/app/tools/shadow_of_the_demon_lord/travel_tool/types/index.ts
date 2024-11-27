@@ -2,7 +2,7 @@ import {
   pace as paceList,
   threat as threatList,
   weather as weatherList,
-} from "@/app/data";
+} from "@/data";
 
 export type TerrainType = { name: string; multiplier: number };
 

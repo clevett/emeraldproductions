@@ -1,4 +1,4 @@
-import { MissionElement } from "@/app/data";
+import { MissionElement } from "@/data";
 
 export const getLocation = (location: MissionElement) => {
   const result = location.result[0];

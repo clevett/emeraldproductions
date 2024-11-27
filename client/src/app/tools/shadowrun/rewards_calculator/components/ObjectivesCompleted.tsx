@@ -2,7 +2,7 @@ import { useRecoilState } from "recoil";
 
 import { objectiveKarmaAtom } from "../recoil";
 
-import { Heading, RadioCards } from "@/app/components";
+import { Heading, RadioCards } from "@/components";
 
 export const ObjectivesCompleted = () => {
   const [karma, setKarma] = useRecoilState(objectiveKarmaAtom);

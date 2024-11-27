@@ -1,7 +1,7 @@
 "use client";
 import { useRecoilState } from "recoil";
 
-import { Callout, Heading, Input } from "@/app/components";
+import { Callout, Heading, Input } from "@/components";
 
 import { threatLevelAtom } from "../recoil";
 

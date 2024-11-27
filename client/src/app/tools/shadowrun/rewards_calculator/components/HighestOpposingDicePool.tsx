@@ -1,7 +1,7 @@
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { diceKarmaAtom, diceNuyenAtom, opposedDicePoolAtom } from "../recoil";
 import { getDicePoolKarma, getDicePoolNuyen } from "../helpers";
-import { Heading, Input } from "@/app/components";
+import { Heading, Input } from "@/components";
 
 export const HighestOpposingDicePool = () => {
   const [dice, setDice] = useRecoilState(opposedDicePoolAtom);

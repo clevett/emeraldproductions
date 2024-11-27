@@ -1,6 +1,6 @@
 import { useRecoilValue, useRecoilState } from "recoil";
-import { RunType } from "@/app/data";
-import { Heading, Slider } from "@/app/components";
+import { RunType } from "@/data";
+import { Heading, Slider } from "@/components";
 
 import { nuyenModifierPercentAtom, runTypeAtom } from "../recoil";
 import { getCostModifier } from "../helpers";

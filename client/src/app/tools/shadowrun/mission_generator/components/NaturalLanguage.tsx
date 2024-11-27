@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 
-import { Options } from "@/app/data";
+import { Options } from "@/data";
 
 import { getEmployer, getLocation, getMacGuffin, getJob } from "../helpers";
 import { missionAtomFamily } from "../recoil";

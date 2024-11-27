@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 
-import { maps } from "@/app/data/ftdMaps";
-import { getDiceRollTotal } from "@/app/tools/utils";
-import { Heading } from "@/app/components";
+import { maps } from "@/data/ftdMaps";
+import { getDiceRollTotal } from "@/utils";
+import { Heading } from "@/components";
 
 export const Box = ({ name }: { name: string }) => {
   const roll = getDiceRollTotal();

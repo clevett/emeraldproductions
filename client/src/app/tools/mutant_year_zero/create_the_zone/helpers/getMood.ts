@@ -1,6 +1,6 @@
 import { getD66 } from "./getD66";
-import { getRandomArrayElement } from "@/app/tools/utils";
-import { moods } from "../../../../data/myz_moods";
+import { getRandomArrayElement } from "@/utils";
+import { moods } from "../../../../../data/myz_moods";
 
 export const getMood = () => {
   const result = getD66();

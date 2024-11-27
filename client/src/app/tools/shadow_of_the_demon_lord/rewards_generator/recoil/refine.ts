@@ -9,7 +9,7 @@ import {
   stringLiterals,
   union,
 } from "@recoiljs/refine";
-import { danger, pace, terrain, threat, weather } from "@/app/data";
+import { danger, pace, terrain, threat, weather } from "@/data";
 
 export const difficultiesChecker = asType(
   stringLiterals({

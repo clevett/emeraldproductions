@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 
 import { getBaseNuyen } from "../helpers";
 import { nuyenBaseAtom } from "../recoil";
-import { Heading, Input } from "@/app/components";
+import { Heading, Input } from "@/components";
 
 export const NegotiationHits = () => {
   const [value, setValue] = useState("0");

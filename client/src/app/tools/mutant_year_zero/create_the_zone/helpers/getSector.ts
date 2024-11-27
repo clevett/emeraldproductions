@@ -1,8 +1,8 @@
-import { getRandomArrayElement } from "@/app/tools/utils";
+import { getRandomArrayElement } from "@/utils";
 import {
   Environments,
   sectorEnvironments,
-} from "../../../../data/myz_environments";
+} from "../../../../../data/myz_environments";
 import { getArtifactCount, getArtifacts } from "./getArtifacts";
 import { getD66 } from "./getD66";
 import { getMood } from "./getMood";

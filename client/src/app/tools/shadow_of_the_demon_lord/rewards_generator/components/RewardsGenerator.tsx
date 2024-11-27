@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import { Button, Card, Heading } from "@/app/components";
-import { levels } from "@/app/data";
-import { capitalize } from "@/app/tools/utils";
+import { Button, Card, Heading } from "@/components";
+import { levels } from "@/data";
+import { capitalize } from "@/utils";
 
 import { Level, LevelSelect } from "./LevelSelect";
 import { Treasure } from "../helpers/Treasure";

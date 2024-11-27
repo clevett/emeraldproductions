@@ -1,6 +1,6 @@
 "use client";
-import { Subtitle } from "@/app/components";
-import { systems } from "@/app/resources";
+import { Subtitle } from "@/components";
+import { systems } from "@/resources";
 import { TravelTool as Travel } from "./components/TravelTool";
 
 export default function RewardsGenerator() {

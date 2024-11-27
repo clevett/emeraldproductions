@@ -1,5 +1,5 @@
-import { Descriptions, NPC, Type } from "@/app/data";
-import { ChevronRightIcon, IconButton } from "@/app/components";
+import { Descriptions, NPC, Type } from "@/data";
+import { ChevronRightIcon, IconButton } from "@/components";
 
 import styles from "./Footer.module.css";
 

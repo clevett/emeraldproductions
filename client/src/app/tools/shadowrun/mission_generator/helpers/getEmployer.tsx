@@ -1,5 +1,5 @@
-import { getRandomArrayElement } from "@/app/tools/utils";
-import { MissionElement } from "@/app/data";
+import { getRandomArrayElement } from "@/utils";
+import { MissionElement } from "@/data";
 import { isVowel } from "./isVowel";
 
 const splitEmployer = (string: string) => {

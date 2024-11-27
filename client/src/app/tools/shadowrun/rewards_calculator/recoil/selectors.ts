@@ -1,5 +1,5 @@
 import { selector, DefaultValue, selectorFamily } from "recoil";
-import { Situation, Situations } from "@/app/data";
+import { Situation, Situations } from "@/data";
 import {
   diceKarmaAtom,
   germanFlagAtom,

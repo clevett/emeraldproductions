@@ -1,6 +1,6 @@
 import { EuiButton } from "@elastic/eui";
 import { useRecoilCallback } from "recoil";
-import { nuyen } from "../../../../data/srRewards";
+import { nuyen } from "../../../../../data/srRewards";
 import {
   diceKarmaAtom,
   diceNuyenAtom,

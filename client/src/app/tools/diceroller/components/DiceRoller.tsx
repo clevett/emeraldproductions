@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { SketchPicker } from "react-color";
 import { Spinner } from "@radix-ui/themes";
-import { IconButton, ReloadIcon } from "@/app/components/";
+import { IconButton, ReloadIcon } from "@/components";
 
 import { useDiceRoller } from "../hooks/useDiceBox";
 import { DiceButtons, NotationInput } from "./";

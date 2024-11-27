@@ -1,7 +1,7 @@
 import { useRecoilState, useSetRecoilState } from "recoil";
 
-import { Heading, RadioCards } from "@/app/components";
-import { types, RunType as Runs } from "@/app/data";
+import { Heading, RadioCards } from "@/components";
+import { types, RunType as Runs } from "@/data";
 
 import { nuyenModifierPercentAtom, runTypeAtom } from "../recoil";
 import { getCostModifier } from "../helpers";

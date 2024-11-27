@@ -1,4 +1,4 @@
-import { danger } from "@/app/data";
+import { danger } from "@/data";
 
 import { Difficulties as DifficultyEnum } from "../enums";
 import { Difficulty, Level, Danger } from "../types";

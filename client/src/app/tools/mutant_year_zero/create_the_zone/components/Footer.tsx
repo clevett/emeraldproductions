@@ -1,9 +1,4 @@
-import {
-  DownloadIcon,
-  IconButton,
-  ReloadIcon,
-  TrashIcon,
-} from "@/app/components";
+import { DownloadIcon, IconButton, ReloadIcon, TrashIcon } from "@/components";
 import styles from "./Footer.module.css";
 
 export const Footer = ({

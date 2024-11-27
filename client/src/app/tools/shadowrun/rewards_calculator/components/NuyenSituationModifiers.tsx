@@ -1,7 +1,7 @@
 import React from "react";
 
-import { nuyen, Nuyen } from "@/app/data";
-import { Heading } from "@/app/components";
+import { nuyen, Nuyen } from "@/data";
+import { Heading } from "@/components";
 
 import { NuyenSwitch } from "./NuyenSwitch";
 

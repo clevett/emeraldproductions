@@ -1,7 +1,7 @@
 import { RecoilRoot } from "recoil";
 
-import { Options } from "@/app/data";
-import { Card } from "@/app/components";
+import { Options } from "@/data";
+import { Card } from "@/components";
 
 import { ResetButton } from "./ResetButton";
 import { NaturalLanguage } from "./NaturalLanguage";

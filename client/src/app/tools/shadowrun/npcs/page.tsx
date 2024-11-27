@@ -1,7 +1,7 @@
 "use client";
-import { Subtitle } from "@/app/components";
-import { systems } from "@/app/resources";
-import { npcs } from "@/app/data";
+import { Subtitle } from "@/components";
+import { systems } from "@/resources";
+import { npcs } from "@/data";
 
 import { NpcCard } from "./components/NpcCard";
 

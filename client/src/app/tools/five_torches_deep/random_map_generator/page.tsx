@@ -1,5 +1,5 @@
-import { Subtitle } from "@/app/components";
-import { systems, ftdMapGenerator } from "@/app/resources";
+import { Subtitle } from "@/components";
+import { systems, ftdMapGenerator } from "@/resources";
 import { RandomMapGenerator } from "./components/RandomMapGenerator";
 
 import type { Metadata } from "next";

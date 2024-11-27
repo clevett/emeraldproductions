@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { Card } from "@/app/components";
-import { joinList } from "@/app/tools/utils";
-import { NPC } from "@/app/data";
+import { Card } from "@/components";
+import { joinList } from "@/utils";
+import { NPC } from "@/data";
 
 import styles from "./FrontCard.module.css";
 

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 
-import { danger, levels } from "@/app/data";
+import { danger, levels } from "@/data";
 import {
   Heading,
   fuzzySearch,
@@ -11,7 +11,7 @@ import {
   Loading,
   Select,
   Table,
-} from "@/app/components";
+} from "@/components";
 
 import { Actions } from "../enums";
 import { data, Monster, Action } from "../types";

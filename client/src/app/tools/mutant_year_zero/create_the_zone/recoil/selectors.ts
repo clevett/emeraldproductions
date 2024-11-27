@@ -1,6 +1,6 @@
 "use client";
 import { selector, DefaultValue, selectorFamily } from "recoil";
-import { ZoneSector } from "../../../../data/myz_create_the_zone";
+import { ZoneSector } from "../../../../../data/myz_create_the_zone";
 import { sectorFamily, sectorIdsAtom } from "./atoms";
 
 export const selectSectorById = selectorFamily<ZoneSector | undefined, string>({

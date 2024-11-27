@@ -1,9 +1,9 @@
-import { getDiceRollTotal, getRandomArrayElement } from "@/app/tools/utils";
+import { getDiceRollTotal, getRandomArrayElement } from "@/utils";
 import {
   humanoidThreats,
   monsterThreats,
   phenomenonThreats,
-} from "../../../../data/myz_threats";
+} from "../../../../../data/myz_threats";
 import { getD66 } from "./getD66";
 
 enum Types {

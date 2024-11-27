@@ -1,5 +1,5 @@
-import { Button, IconButton, ReloadIcon } from "@/app/components";
-import { AnimatedDie, Die } from "@/app/components/AnimatedDie";
+import { Button, IconButton, ReloadIcon } from "@/components";
+import { AnimatedDie, Die } from "@/components/AnimatedDie";
 
 type DiceTitleProps = {
   die: Die;

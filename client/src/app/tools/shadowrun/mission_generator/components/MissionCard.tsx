@@ -2,10 +2,10 @@ import Image from "next/image";
 
 import { useRecoilState } from "recoil";
 
-import { Option, Options } from "@/app/data";
-import { capitalize } from "@/app/tools/utils";
-import { IconButton, Card, Heading, ReloadIcon } from "@/app/components";
-import { cross, gift, office, infinity, hipster, yen } from "@/app/images";
+import { Option, Options } from "@/data";
+import { capitalize } from "@/utils";
+import { IconButton, Card, Heading, ReloadIcon } from "@/components";
+import { cross, gift, office, infinity, hipster, yen } from "@/images";
 
 import { selectMission } from "../recoil";
 import { getOption } from "../helpers";

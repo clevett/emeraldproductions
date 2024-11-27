@@ -1,4 +1,4 @@
-import { Heading, Select } from "@/app/components";
+import { Heading, Select } from "@/components";
 import { Pace, Threat, Weather } from "../types";
 type Option = Pace | Weather | Threat;
 

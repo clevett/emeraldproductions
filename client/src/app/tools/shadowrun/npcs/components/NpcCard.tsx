@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
-import { NPC } from "@/app/data";
+import { NPC } from "@/data";
 
 import { BackCard } from "./BackCard";
 import { Footer } from "./Footer";

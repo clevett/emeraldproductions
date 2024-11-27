@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 
-import { Callout, Card, Heading, Switch } from "@/app/components";
-import { getDiceRollTotal } from "@/app/tools/utils";
-import { Terrain, Weather } from "@/app/data";
+import { Callout, Card, Heading, Switch } from "@/components";
+import { getDiceRollTotal } from "@/utils";
+import { Terrain, Weather } from "@/data";
 
 import { TerrainType, Weather as WeatherType } from "../types";
 

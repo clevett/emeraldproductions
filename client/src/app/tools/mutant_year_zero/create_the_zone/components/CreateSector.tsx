@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/app/components";
+import { Button } from "@/components";
 import { nanoid } from "nanoid";
 
 import { useRecoilCallback, useRecoilValue } from "recoil";

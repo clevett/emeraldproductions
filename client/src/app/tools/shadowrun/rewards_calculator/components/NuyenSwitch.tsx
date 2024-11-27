@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 
-import { Switch } from "@/app/components";
-import { Nuyen } from "@/app/data";
+import { Switch } from "@/components";
+import { Nuyen } from "@/data";
 
 import { selectNuyenModifier } from "../recoil";
 

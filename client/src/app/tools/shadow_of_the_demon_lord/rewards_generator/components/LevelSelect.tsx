@@ -1,5 +1,5 @@
-import { Heading, Select } from "@/app/components";
-import { levels, danger } from "@/app/data";
+import { Heading, Select } from "@/components";
+import { levels, danger } from "@/data";
 
 import { typeChecker, levelsChecker } from "../recoil/refine";
 

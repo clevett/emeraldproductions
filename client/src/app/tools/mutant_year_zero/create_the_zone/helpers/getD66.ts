@@ -1,4 +1,4 @@
-import { getDiceRollTotal } from "@/app/tools/utils";
+import { getDiceRollTotal } from "@/utils";
 
 export const getD66 = () => {
   const roll = getDiceRollTotal();
