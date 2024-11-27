@@ -13,7 +13,7 @@ export const SearchBar = ({
 }) => {
   return (
     <div
-      className={`search-bar ui segment max-w-[250px] sm:max-w-[350px] ${
+      className={`search-bar ui segment min-w-[250px] sm:w-[350px] ${
         styles ?? ""
       }`}
     >

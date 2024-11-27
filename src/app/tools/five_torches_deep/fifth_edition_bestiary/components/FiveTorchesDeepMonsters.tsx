@@ -25,15 +25,14 @@ export const FiveTorchesDeepMonsters = () => {
     setFilteredMonsters(getSearchResults(term));
 
   return (
-    <div className="grid gap-4 auto-rows-max items-start">
+    <div className="grid gap-4 auto-rows-max items-start justify-items-center w-full h-full">
       <SearchBar
         label="Type in the name of a 5e monster the press enter"
         onSubmit={onTermSubmit}
         placeholder="Enter monster name"
-        styles="justify-self-center"
       />
       {filteredMonsters && (
-        <div className="flex flex-row justify-start gap-4 flex-wrap">
+        <div className="flex flex-row justify-center gap-4 flex-wrap">
           {filteredMonsters.map((monster, index) => {
             return (
               <div key={`ftd-monster-${index}`} className={styles.card}>
