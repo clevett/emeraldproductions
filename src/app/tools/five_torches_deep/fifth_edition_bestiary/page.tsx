@@ -5,9 +5,9 @@ import { FiveTorchesDeepMonsters as FTDM } from "./components/FiveTorchesDeepMon
 export default function FiveTorchesDeepMonsters() {
   const { label } = systems.ftd.tools.ftdMonsters;
   return (
-    <>
-      <Subtitle className="4">{label}</Subtitle>
+    <div className="flex flex-col gap-4 items-center">
+      <Subtitle>{label}</Subtitle>
       <FTDM />
-    </>
+    </div>
   );
 }

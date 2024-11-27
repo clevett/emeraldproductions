@@ -16,9 +16,11 @@ export const DiceRoller = () => {
   return (
     <>
       {isLoading ? (
-        <Spinner />
+        <div className="flex justify-center items-center h-full">
+          <Spinner />
+        </div>
       ) : (
-        <div className="flex flex-wrap gap-6 w-full">
+        <div className="grid justify-center gap-4 sm:gap-6 w-full">
           <div className="flex flex-wrap flex-direction-row justify-between content-center gap-4 lg:gap-6">
             <DiceButtons roll={rollDice} />
             <IconButton
@@ -31,32 +33,30 @@ export const DiceRoller = () => {
             </IconButton>
           </div>
 
-          <div className="grid gap-2 w-full ">
-            <div className="grid gap-4 grid-flow-col justify-start">
-              <NotationInput submit={rollDice} />
-              <div className="grid gap-2">
-                <button
-                  aria-label="color-picker"
-                  className={`rounded-full bg-[${color}] border-[${color}] border-2 border-solid h-8 w-8 relative`}
-                  onClick={() => setIsOpen(!isOpen)}
-                  style={{
-                    backgroundColor: color,
-                    borderColor: color,
-                  }}
-                />
-                <div
-                  className="absolute top-[17%] left-[15%]"
-                  onMouseLeave={() => setIsOpen(false)}
-                >
-                  {isOpen && (
-                    <SketchPicker
-                      color={color}
-                      disableAlpha={true}
-                      onChange={(c) => setColor(c.hex)}
-                      presetColors={undefined}
-                    />
-                  )}
-                </div>
+          <div className="grid gap-4 grid-flow-col">
+            <NotationInput submit={rollDice} />
+            <div className="grid gap-2 relative">
+              <button
+                aria-label="color-picker"
+                className={`rounded-full bg-[${color}] border-[${color}] border-2 border-solid h-8 w-8 relative`}
+                onClick={() => setIsOpen(!isOpen)}
+                style={{
+                  backgroundColor: color,
+                  borderColor: color,
+                }}
+              />
+              <div
+                className="absolute top-[17%] left-[15%]"
+                onMouseLeave={() => setIsOpen(false)}
+              >
+                {isOpen && (
+                  <SketchPicker
+                    color={color}
+                    disableAlpha={true}
+                    onChange={(c) => setColor(c.hex)}
+                    presetColors={undefined}
+                  />
+                )}
               </div>
             </div>
           </div>

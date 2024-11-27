@@ -12,7 +12,11 @@ export const SearchBar = ({
   label: string;
 }) => {
   return (
-    <div className={`search-bar ui segment max-w-[300px] ${styles}`}>
+    <div
+      className={`search-bar ui segment max-w-[250px] sm:max-w-[350px] ${
+        styles ?? ""
+      }`}
+    >
       <Input label={label} placeholder={placeholder} submit={onSubmit} />
     </div>
   );

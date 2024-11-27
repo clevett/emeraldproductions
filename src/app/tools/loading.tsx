@@ -1,5 +1,5 @@
 import { Loading } from "@/components/Loading";
 
-export default function DiceRollerLoading() {
+export default function LoadingTool() {
   return <Loading />;
 }

@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 import { fuzzySearch, SearchBar } from "@/components";
-import { FifthEditionMonster } from "@/data/5eMonsters";
+import { FifthEditionMonster } from "@/data";
 
 import { MonsterCard } from "./MonsterCard";
 import { MonsterFTD } from "../../types/ftdTypes";
@@ -16,6 +16,7 @@ const ftdMonsters = FifthEditionMonster.map((monster) =>
 export const FiveTorchesDeepMonsters = () => {
   const getSearchResults = (term: string) =>
     fuzzySearch(ftdMonsters, term, ["name", "size", "type", "hd"]);
+
   const [filteredMonsters, setFilteredMonsters] = useState<MonsterFTD[] | null>(
     getSearchResults("Goblin")
   );
@@ -26,9 +27,10 @@ export const FiveTorchesDeepMonsters = () => {
   return (
     <div className="grid gap-4 auto-rows-max items-start">
       <SearchBar
+        label="Type in the name of a 5e monster the press enter"
         onSubmit={onTermSubmit}
         placeholder="Enter monster name"
-        label="Type in the name of a 5e monster the press enter"
+        styles="justify-self-center"
       />
       {filteredMonsters && (
         <div className="flex flex-row justify-start gap-4 flex-wrap">
