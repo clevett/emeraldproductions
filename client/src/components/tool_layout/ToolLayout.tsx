@@ -23,7 +23,9 @@ export const ToolLayout = ({
         <Title className="mr-2">{title}</Title>
         <OpenInNewWindowIcon />
       </DriveThruLink>
-      <div>{children}</div>
+      <div className="grid gap-2 md:gap-4 items-start auto-rows-min">
+        {children}
+      </div>
       {footer && <footer className="italic text-center">{footer}</footer>}
     </section>
   );
