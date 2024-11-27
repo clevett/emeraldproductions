@@ -5,12 +5,10 @@ import { useCallback, useEffect, useState } from "react";
 import { danger, levels } from "@/data";
 import { Heading, fuzzySearch, SearchBar, Select, Table } from "@/components";
 
-import { Actions } from "../enums";
-
-import { typeChecker, levelsChecker } from "../recoil/refine";
-
-import { getColor, getDanger } from "../utils";
 import { Action, Monster } from "../types";
+import { Actions } from "../enums";
+import { getColor, getDanger } from "../utils";
+import { typeChecker, levelsChecker } from "../recoil/refine";
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
@@ -26,22 +24,17 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
   );
   const [selected, setSelected] = useState<Monster[] | undefined>(undefined);
 
-  const onTermSubmit = useCallback(
-    (term: string) => {
-      const keys = ["name", "difficulty", "descriptor", "source"];
-      if (data) {
-        const results = fuzzySearch<Monster>(data, term, keys);
-        setSearchResults(results);
-      }
-    },
-    [data]
-  );
-
-  useEffect(() => {
-    if (data && searchResults === undefined) {
-      onTermSubmit("human");
+  const onTermSubmit = (term: string) => {
+    const keys = ["name", "difficulty", "descriptor", "source"];
+    if (data) {
+      const search = fuzzySearch<Monster>(data, term, keys);
+      setSearchResults(search);
     }
-  }, [data, onTermSubmit, searchResults]);
+  };
+
+  if (data && searchResults === undefined) {
+    onTermSubmit("human");
+  }
 
   const updateEncounter = (monster: Monster, action: Action) => {
     if (action === Actions.ADD) {
