@@ -1,4 +1,4 @@
-import { getRandomArrayElement } from "@/utils";
+import { getRandomArrayElement } from "@/app/tools/utils";
 import { rotLevels } from "../../../../../data/myz_create_the_zone";
 import { getD66 } from "./getD66";
 

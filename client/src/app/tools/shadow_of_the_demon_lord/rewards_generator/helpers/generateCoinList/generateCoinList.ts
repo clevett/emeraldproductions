@@ -1,5 +1,5 @@
 import { processRoll } from "../processRoll/processRoll";
-import Coins from "../../../../../../utils/Coins";
+import Coins from "../../../../utils/Coins";
 
 export interface CoinRolls {
   bit?: null | string;

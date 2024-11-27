@@ -1,4 +1,4 @@
-import { getRandomArrayElement } from "@/utils";
+import { getRandomArrayElement } from "@/app/tools/utils";
 
 import {
   Environment,

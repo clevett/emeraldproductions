@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { getDiceRollTotal } from "@/utils";
+import { getDiceRollTotal } from "@/app/tools/utils";
 
 import { d20, d6 } from "@/images";
 

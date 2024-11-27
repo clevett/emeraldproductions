@@ -25,10 +25,10 @@ export const ThreatInput = () => {
         />
       </div>
       <Callout className="max-w-fit">
-        <p>
+        <span>
           1–4 Fringe Zone Sectors, 5–8 Central Zone Sectors, 9+ Unusually
           Dangerous Areas
-        </p>
+        </span>
       </Callout>
     </div>
   );

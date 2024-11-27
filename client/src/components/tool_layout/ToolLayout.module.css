@@ -6,4 +6,5 @@
     rgba(0, 0, 0, 0.14) 0px 15px 15px;
   grid-auto-rows: max-content;
   width: 100%;
+  grid-template-rows: auto 1fr auto;
 }

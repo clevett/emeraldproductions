@@ -17,13 +17,13 @@ export const ToolLayout = ({
 }: LayoutBodyProps & { footer?: string }) => {
   return (
     <section
-      className={`grid gap-6 py-6 px-4 rounded ${styles.panel} h-full w-full`}
+      className={`grid gap-4 md:gap-6 p-2 md:py-6 md:px-4 rounded ${styles.panel} h-full w-full`}
     >
       <DriveThruLink id={DriveThruId}>
         <Title className="mr-2">{title}</Title>
         <OpenInNewWindowIcon />
       </DriveThruLink>
-      {children}
+      <div>{children}</div>
       {footer && <footer className="italic text-center">{footer}</footer>}
     </section>
   );

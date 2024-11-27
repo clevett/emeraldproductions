@@ -10,8 +10,6 @@ export interface Monster {
   source: string;
 }
 
-export type data = Monster[] | undefined;
-
 export type Action = `${Actions}`;
 
 export type Level = keyof typeof danger;

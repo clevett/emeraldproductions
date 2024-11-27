@@ -1,4 +1,4 @@
-import { CoinValue } from "../../../../../../utils/Coins";
+import { CoinValue } from "../../../../utils/Coins";
 import { getProperCoinName } from "../getProperCoinName/getProperCoinName";
 
 export const createListOfCoins = (treasure: CoinValue) => {

@@ -1,4 +1,4 @@
-import { getDiceRollTotal, getRandomArrayElement } from "@/utils";
+import { getDiceRollTotal, getRandomArrayElement } from "@/app/tools/utils";
 import {
   humanoidThreats,
   monsterThreats,

@@ -3,9 +3,11 @@ import { Table as RadixTable } from "@radix-ui/themes";
 export const Table = ({
   columns,
   rows,
+  onRowClick,
 }: {
   columns: { header: string }[];
-  rows: { header: string; cell: (string | number)[] }[];
+  rows: { header: string; cell: (string | number)[]; id: string }[];
+  onRowClick: (id: string) => void;
 }) => {
   return (
     <RadixTable.Root variant="surface">
@@ -24,7 +26,11 @@ export const Table = ({
 
       <RadixTable.Body>
         {rows.map((row, index) => (
-          <RadixTable.Row key={"table-row-" + index}>
+          <RadixTable.Row
+            key={"table-row-" + index}
+            className="cursor-pointer hover:text-blue-500"
+            onClick={() => onRowClick(row.id)}
+          >
             <RadixTable.RowHeaderCell className="capitalize">
               {row.header}
             </RadixTable.RowHeaderCell>

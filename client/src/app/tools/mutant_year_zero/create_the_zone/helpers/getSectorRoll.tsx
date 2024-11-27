@@ -1,4 +1,4 @@
-import { getDiceRollOutput } from "@/utils";
+import { getDiceRollOutput } from "@/app/tools/utils";
 
 export const getSectorRoll = (notation: string) => {
   const roll = getDiceRollOutput();

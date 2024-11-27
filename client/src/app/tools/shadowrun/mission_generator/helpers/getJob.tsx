@@ -1,5 +1,5 @@
 import { isVowel } from "./isVowel";
-import { getRandomArrayElement } from "@/utils";
+import { getRandomArrayElement } from "@/app/tools/utils";
 import { MissionElement } from "@/data";
 
 export const getJob = (job: MissionElement) => {

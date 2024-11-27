@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 import { maps } from "@/data/ftdMaps";
-import { getDiceRollTotal } from "@/utils";
+import { getDiceRollTotal } from "@/app/tools/utils";
 import { Heading } from "@/components";
 
 export const Box = ({ name }: { name: string }) => {

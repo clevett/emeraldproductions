@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRecoilState } from "recoil";
 
 import { Option, Options } from "@/data";
-import { capitalize } from "@/utils";
+import { capitalize } from "@/app/tools/utils";
 import { IconButton, Card, Heading, ReloadIcon } from "@/components";
 import { cross, gift, office, infinity, hipster, yen } from "@/images";
 

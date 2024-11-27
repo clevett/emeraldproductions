@@ -1,5 +1,5 @@
 import { Card } from "@/components";
-import { joinList } from "@/utils";
+import { joinList } from "@/app/tools/utils";
 import { NPC } from "@/data";
 
 import styles from "./BackCard.module.css";

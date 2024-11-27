@@ -1,4 +1,4 @@
-import Coins from "../../../../../utils/Coins";
+import Coins from "../../../utils/Coins";
 
 export const coinList = (total: number) => {
   const treasure = new Coins(null);

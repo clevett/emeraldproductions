@@ -1,6 +1,6 @@
 import { isVowel } from "./isVowel";
 import { MissionElement } from "@/data";
-import { getRandomArrayElement } from "@/utils";
+import { getRandomArrayElement } from "@/app/tools/utils";
 
 const splitMacguffin = (description: string) => {
   const split = description.split(", ");

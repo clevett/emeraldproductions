@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button, Card, Heading } from "@/components";
 import { levels } from "@/data";
-import { capitalize } from "@/utils";
+import { capitalize } from "@/app/tools/utils";
 
 import { Level, LevelSelect } from "./LevelSelect";
 import { Treasure } from "../helpers/Treasure";

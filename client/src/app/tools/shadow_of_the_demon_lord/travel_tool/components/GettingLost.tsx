@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 import { Callout, Card, Heading, Switch } from "@/components";
-import { getDiceRollTotal } from "@/utils";
+import { getDiceRollTotal } from "@/app/tools/utils";
 import { Terrain, Weather } from "@/data";
 
 import { TerrainType, Weather as WeatherType } from "../types";

@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 import { Callout, Card, Heading } from "@/components";
-import { getDiceRollTotal } from "@/utils";
+import { getDiceRollTotal } from "@/app/tools/utils";
 import { threat as threatList, encounter as encounterList } from "@/data";
 
 import { DiceTitle } from "./DiceTitle";
