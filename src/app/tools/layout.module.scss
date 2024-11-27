@@ -1,0 +1,24 @@
+.panel {
+  background: radial-gradient(
+      100% 100% at 49.99% 0%,
+      var(--static-transparent) 0%,
+      var(--page-background) 100%
+    ),
+    radial-gradient(
+      87.4% 84.04% at 6.82% 16.24%,
+      var(--brand-background-medium) 0%,
+      var(--static-transparent) 100%
+    ),
+    radial-gradient(
+      217.89% 126.62% at 48.04% 0%,
+      var(--accent-solid-medium) 0%,
+      var(--static-transparent) 100%
+    );
+  background-color: var(--active);
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 0.9px 4px,
+    rgba(0, 0, 0, 0.21) 0px 2.6px 8px, rgba(0, 0, 0, 0.176) 0px 5.7px 12px,
+    rgba(0, 0, 0, 0.14) 0px 15px 15px;
+  grid-auto-rows: max-content;
+  width: 100%;
+  grid-template-rows: auto 1fr auto;
+}
