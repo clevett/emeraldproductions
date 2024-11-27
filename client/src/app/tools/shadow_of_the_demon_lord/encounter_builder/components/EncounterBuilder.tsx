@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 
 import { danger, levels } from "@/data";
 import { Heading, fuzzySearch, SearchBar, Select, Table } from "@/components";
