@@ -1,4 +1,3 @@
-"use client";
 import { Subtitle } from "@/components";
 import { systems } from "@/resources";
 

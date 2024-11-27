@@ -1,3 +1,4 @@
+"use client";
 import { RecoilRoot } from "recoil";
 
 import { Heading } from "@/components";
@@ -20,13 +21,15 @@ export const RewardsCalculator = () => {
           <RewardCard />
         </div>
         <div className="flex flex-wrap gap-4 justify-start auto-rows-min">
-          <div className="grid gap-4 justify-start auto-cols-fit text-center">
-            <Heading as="h3">Nuyen & Karma Modifiers</Heading>
+          <div className="grid gap-4 justify-start auto-cols-fit auto-rows-min text-center">
+            <Heading as="h3" className="text-center">
+              Nuyen & Karma Modifiers
+            </Heading>
             <HighestOpposingDicePool />
             <RunType />
           </div>
 
-          <div className="grid gap-4 justify-start auto-cols-fit">
+          <div className="grid gap-4 justify-start auto-cols-fit auto-rows-min text-center">
             <Heading as="h3" className="text-center">
               Karma Modifiers
             </Heading>
@@ -35,7 +38,7 @@ export const RewardsCalculator = () => {
             <GermanRulesSwitch />
           </div>
 
-          <div className="grid gap-4 justify-start auto-cols-fit">
+          <div className="grid gap-4 justify-start auto-cols-fit auto-rows-min text-center">
             <Heading as="h3" className="text-center">
               Nuyen Modifiers
             </Heading>
