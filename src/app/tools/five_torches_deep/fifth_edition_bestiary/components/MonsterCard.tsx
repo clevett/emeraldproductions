@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ftdCatagories as catagories } from "@/data/ftdCategories";
+import { ftdCatagories as catagories } from "@/data";
 import { capitalize, getCoinList, getDiceRollTotal } from "@/app/tools/utils";
 import { Button, Card, Heading, ReloadIcon } from "@/components";
 
