@@ -4,14 +4,14 @@ import { CaretDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import Image from "next/image";
 
-import { contacts, navigation, rpgTools } from "@/resources";
+import { contacts, navigation, rpgTools, games } from "@/resources";
 import { Heading } from "./Heading";
 
 const focusShadow = "focus:shadow-[0_0_0_2px] focus:shadow-blue-700";
 const hoverStyle = "hover:bg-card hover:text-blue-500";
 
 export const NavigationMenu = () => {
-  const { about, tools, games } = navigation;
+  const { about, tools, games: NavGames } = navigation;
 
   const listStyle = `block select-none rounded px-3 py-2 font-medium leading-none outline-none ${hoverStyle} ${focusShadow}`;
 
@@ -83,23 +83,29 @@ export const NavigationMenu = () => {
         </RadixNavigationMenu.Item>
 
         <RadixNavigationMenu.Item>
-          <Link className={listStyle} href={games.path}>
-            {games.label}
-          </Link>
-        </RadixNavigationMenu.Item>
+          <RadixNavigationMenu.Trigger
+            className={`group flex select-none items-center justify-between gap-0.5 rounded px-3 py-2 text-[15px] font-medium leading-none outline-none ${hoverStyle} ${focusShadow}`}
+          >
+            {NavGames.label}
+            <CaretDownIcon
+              className={`relative top-px transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180`}
+              aria-hidden
+            />
+          </RadixNavigationMenu.Trigger>
 
-        {contacts.map(({ src, name, href }) => (
-          <RadixNavigationMenu.Item key={name}>
-            <Link
-              aria-label={name}
-              className={listStyle}
-              href={href}
-              target="_blank"
+          {games.map(({ label, path, description }) => (
+            <RadixNavigationMenu.Content
+              key={`nav-menu-${path}`}
+              className="absolute left-0 top-0 w-full data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft sm:w-auto"
             >
-              {src}
-            </Link>
-          </RadixNavigationMenu.Item>
-        ))}
+              <menu className="m-0 grid list-none gap-x-2.5 p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
+                <ListItem title={label} href={path}>
+                  {description}
+                </ListItem>
+              </menu>
+            </RadixNavigationMenu.Content>
+          ))}
+        </RadixNavigationMenu.Item>
 
         <RadixNavigationMenu.Indicator className="top-full z-10 flex h-2.5 items-end justify-center overflow-hidden transition-[width,transform_250ms_ease] data-[state=hidden]:animate-fadeOut data-[state=visible]:animate-fadeIn">
           <div className="relative top-[70%] size-2.5 rotate-45 rounded-tl-sm bg-card" />

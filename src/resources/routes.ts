@@ -28,10 +28,18 @@ export const navigation = {
     path: "/tools/diceroller",
   },
   games: {
-    label: "Vocabulary Builder",
-    path: "/games",
+    label: "Games",
+    path: "/games/vocabulary_builder",
   },
 };
+
+export const games = [
+  {
+    description: "A game to help you build your vocabulary in Suomi.",
+    label: "Vocabulary Builder",
+    path: "/games/vocabulary_builder",
+  },
+];
 
 export const tools = [
   {
