@@ -1,21 +1,21 @@
+"use client";
 import {
   categorySelector,
   languageSelector,
   wordListSelector,
 } from "../recoil/selectors";
-import { Category, Language } from "./types";
+import { Category, Language } from "../types";
 import {
   createLanguageDisplayName,
   getAllCategories,
   getCategory,
 } from "../helpers";
-import { FlashCard } from "./FlashCard/FlashCard";
+import { FlashCard } from "./FlashCard";
 import { ResetIcon } from "@radix-ui/react-icons";
 import { useCardChecker } from "../hooks/useCardChecker";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useResetCards } from "../hooks/useResetCards";
-import { wordLists } from "../../../../client_backup/src/components/Vocab/wordlists";
-import styles from "./styles.module.css";
+import { wordLists } from "../wordlists";
 
 export const Cards = () => {
   const [language, setLanguage] = useRecoilState<Language>(languageSelector);
@@ -84,7 +84,8 @@ export const Cards = () => {
           <ResetIcon />
         </button>
       </div>
-      <div className={styles.layout}>
+
+      <div className="grid gap-4 grid-cols-[repeat(auto-fill,_300px)]">
         {list?.map((word) => (
           <FlashCard key={word} word={word} cardChecker={cardChecker} />
         ))}

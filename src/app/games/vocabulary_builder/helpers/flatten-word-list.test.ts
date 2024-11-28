@@ -1,5 +1,5 @@
 import { defaultLanguage } from "../recoil/defaults";
-import { wordLists } from "../../../../client_backup/src/components/Vocab/wordlists";
+import { wordLists } from "../wordlists";
 import { flattenWordList } from "./flatten-word-list";
 
 describe("flattenWordList", () => {

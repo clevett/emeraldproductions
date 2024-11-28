@@ -1,5 +1,5 @@
 import { Language } from "../types";
-import { wordLists } from "../../../../client_backup/src/components/Vocab/wordlists";
+import { wordLists } from "../wordlists";
 
 export const getAllCategories = (lang: Language) => {
   const wordList = wordLists[lang];

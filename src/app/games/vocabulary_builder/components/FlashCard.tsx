@@ -1,8 +1,11 @@
-import { Card } from "../Card/Card";
-import { cardSelector } from "../../recoil/selectors";
+"use client";
 import { useRecoilState } from "recoil";
-import { Word } from "../../types";
 import ReactCardFlip from "react-card-flip";
+
+import { Card } from "./Card";
+import { cardSelector } from "../recoil/selectors";
+import { Word } from "../types";
+
 export const FlashCard = ({
   word,
   cardChecker,

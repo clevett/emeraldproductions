@@ -1,5 +1,5 @@
 import { defaultLanguage } from "../recoil/defaults";
-import { wordLists } from "../../../../client_backup/src/components/Vocab/wordlists";
+import { wordLists } from "../wordlists";
 import { getMatch } from "./get-match";
 
 describe("getMatch", () => {
