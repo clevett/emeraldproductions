@@ -58,10 +58,8 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
   const range = getDanger(total, level);
 
   return (
-    <div className="grid gap-4 auto-rows-min p-2 md:p-4">
-      <Heading as="h4">Level Difficulty Ranges</Heading>
-
-      <div className="flex flex-row flex-wrap gap-4 justify-between text-center">
+    <div className="grid gap-4 sm:gap-10 auto-rows-min p-2 md:p-4 w-full h-full">
+      <div className="flex flex-row bg-card rounded shadow p-4 sm:px-8 sm:py-6 flex-wrap gap-4  justify-between text-center">
         <div className="grid gap-4">
           <Heading as="h4">Level</Heading>
           <Select
@@ -97,7 +95,7 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
       </div>
 
       <div className="flex flex-row flex-wrap gap-4">
-        <div className="grid gap-4 content-start flex-1 min-w-[300px]">
+        <div className="grid gap-2 content-start flex-1 min-w-[300px]">
           <Heading as="h4" className="text-center">
             <span className="mr-2">Encounter Difficulty =</span>
             <span
@@ -106,7 +104,7 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
               {total}
             </span>
           </Heading>
-          <div className="bg-card px-2 py-4 rounded">
+          <div className="px-2 py-4 rounded">
             <Table
               columns={
                 data?.[0]
@@ -132,22 +130,22 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
           </div>
         </div>
 
-        <div className="grid gap-4 content-start flex-1 min-w-[300px]">
-          <div className="grid grid-cols-1 grid-rows-2 md:grid-rows-1 justify-center content-center gap-4">
+        <div className="grid gap-2 content-start flex-1 min-w-[300px]">
+          <div className="grid grid-cols-1 gap-4 grid-rows-2 xl:grid-rows-1 justify-center content-center">
             <Heading
               as="h4"
-              className="text-center row-start-1 md:col-start-1 md:col-end-3"
+              className="text-center row-start-1 xl:col-start-1 xl:col-end-3"
             >
               Bestiary
             </Heading>
             <SearchBar
               onSubmit={onTermSubmit}
-              styles="md:self-end md:justify-self-end row-start-2 md:row-start-1 md:col-start-2"
+              styles="w-full xl:max-w-60 md:self-end md:justify-self-end row-start-2 xl:row-start-1 xl:col-start-2"
               placeholder="Search monster"
               label="monster search"
             />
           </div>
-          <div className="bg-card px-2 py-4 rounded shadow-2xl">
+          <div className="px-2 py-4 rounded shadow-2xl">
             <Table
               columns={
                 data?.[0]

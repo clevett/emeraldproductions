@@ -36,7 +36,7 @@ export const Table = ({
   };
 
   return (
-    <RadixTable.Root variant="surface">
+    <RadixTable.Root variant="surface" className="bg-card">
       <RadixTable.Header>
         <RadixTable.Row>
           {columns.map((column, index) => (
