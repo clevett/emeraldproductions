@@ -25,11 +25,11 @@ export const LevelSelect = ({
         Level
       </Heading>
       <Select
-        title="Level"
         className="px-4 py-2 rounded capitalize"
-        onChange={handleChange}
         defaultValue={level}
         list={levels.map((l) => l.toString())}
+        onChange={handleChange}
+        title="Level"
       />
     </div>
   );

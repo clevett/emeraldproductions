@@ -26,8 +26,8 @@ export default function RootLayout({
       <body className={`antialiased min-w-[375px]`}>
         <Theme appearance="dark">
           <div className="grid grid-rows-[auto_1fr_auto] h-full w-full min-h-dvh gap-4 overflow-hidden">
-            <header className="flex flex-wrap gap-4 py-2 px-4 sm:px-6 justify-center xl:flex-nowrap relative sm:grid sm:grid-cols-[auto_1fr_auto] sm:items-center">
-              <div className="z-10 sm:col-start-1 sm:col-end-1 sm:row-start-1 xl:min-w-60 ">
+            <header className="flex flex-wrap gap-4 py-2 px-4 sm:px-6 justify-center relative sm:grid sm:grid-cols-[auto_1fr_auto] sm:items-center">
+              <div className="z-10 sm:col-start-1 sm:col-end-1 sm:row-start-1 xl:min-w-60">
                 <Link href="/">
                   <Image
                     alt="Emerald Productions logo"

@@ -4,7 +4,7 @@ import { CaretDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import Image from "next/image";
 
-import { contacts, navigation, rpgTools, games } from "@/resources";
+import { navigation, rpgTools, games } from "@/resources";
 import { Heading } from "./Heading";
 
 const focusShadow = "focus:shadow-[0_0_0_2px] focus:shadow-blue-700";
@@ -16,7 +16,7 @@ export const NavigationMenu = () => {
   const listStyle = `block select-none rounded px-3 py-2 font-medium leading-none outline-none ${hoverStyle} ${focusShadow}`;
 
   return (
-    <RadixNavigationMenu.Root className="relative z-10 flex w-screen justify-center">
+    <RadixNavigationMenu.Root className="relative z-10 flex sm:w-screen justify-center">
       <RadixNavigationMenu.List className="center m-0 flex list-none rounded-md p-1 shadow shadow-white">
         <RadixNavigationMenu.Item>
           <Link href={about.path} className={listStyle}>

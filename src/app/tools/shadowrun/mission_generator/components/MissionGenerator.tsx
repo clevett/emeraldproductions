@@ -14,14 +14,14 @@ export const MissionGenerator = () => {
 
   return (
     <RecoilRoot>
-      <div className="grid gap-4 justify-start auto-rows-min">
+      <div className="grid gap-4 sm:gap-8 items-center auto-rows-min h-full w-full">
         <Card type="business">
           <div className="grid grid-rows-[1fr_min-content] gap-4 py-4 px-6 h-full w-full">
             <NaturalLanguage />
             <ResetButton />
           </div>
         </Card>
-        <div className="flex flex-wrap gap-4">{cardNodes}</div>
+        <div className="flex flex-wrap justify-center gap-4">{cardNodes}</div>
       </div>
     </RecoilRoot>
   );

@@ -40,9 +40,9 @@ export const RewardsGenerator = () => {
       </div>
 
       <div className="grid justify-center gap-4 grid-flow-col">
-        <p className="max-w-xs">
+        <div className="max-w-xs">
           <LevelSelect level={level} onChange={onChange} />
-        </p>
+        </div>
         <div className="max-w-xs justify-end">
           <Button onClick={handleClick} name=" Generate Treasure" />
         </div>
