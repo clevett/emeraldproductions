@@ -1,4 +1,7 @@
 "use client";
+
+import { ReloadIcon } from "@/components";
+
 import {
   categorySelector,
   languageSelector,
@@ -11,7 +14,6 @@ import {
   getCategory,
 } from "../helpers";
 import { FlashCard } from "./FlashCard";
-import { ResetIcon } from "@radix-ui/react-icons";
 import { useCardChecker } from "../hooks/useCardChecker";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useResetCards } from "../hooks/useResetCards";
@@ -39,7 +41,11 @@ export const Cards = () => {
     setLanguage(newLanguage);
 
     const newCategory = getCategory(newLanguage, category.name);
-    newCategory ? setCategory(newCategory) : warn(category.name, newLanguage);
+    if (newCategory) {
+      setCategory(newCategory);
+    } else {
+      warn(category.name, newLanguage);
+    }
   };
 
   const createCategoryOptionsList = (lang: Language) => {
@@ -60,10 +66,10 @@ export const Cards = () => {
   };
 
   return (
-    <div>
-      <div className="grid gap-1 grid-flow-col mb-5">
+    <div className="grid gap-6 sm:gap-8 justify-items-center items-center">
+      <div className="grid gap-4 rounded sm:gap-10 auto-cols-min grid-flow-col">
         <select
-          className="bg-neutral-900 w-fit"
+          className="bg-neutral-900 p-2 w-fit"
           value={language}
           onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
             onLanguageChange(event.target.value as Language)
@@ -72,7 +78,7 @@ export const Cards = () => {
           {createLanguageOptionsList()}
         </select>
         <select
-          className="bg-neutral-900 w-fit capitalize"
+          className="bg-neutral-900 rounded p-2 w-fit capitalize"
           value={category.name}
           onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
             onCategoryChange(event.target.value as Category["name"], language)
@@ -80,12 +86,15 @@ export const Cards = () => {
         >
           {createCategoryOptionsList(language)}
         </select>
-        <button className="bg-neutral-900 w-fit" onClick={() => resetCards()}>
-          <ResetIcon />
+        <button
+          className="bg-neutral-900 p-2 rounded shadow w-fit"
+          onClick={() => resetCards()}
+        >
+          <ReloadIcon />
         </button>
       </div>
 
-      <div className="grid gap-4 grid-cols-[repeat(auto-fill,_300px)]">
+      <div className="grid gap-4 sm:gap-8 justify-center grid-cols-[repeat(auto-fill,_300px)] w-full h-full">
         {list?.map((word) => (
           <FlashCard key={word} word={word} cardChecker={cardChecker} />
         ))}
