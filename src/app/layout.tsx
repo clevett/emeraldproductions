@@ -46,7 +46,9 @@ export default function RootLayout({
                 <Contact />
               </div>
             </header>
-            <main className="h-full w-full py-2 px-4 sm:px-6">{children}</main>
+
+            <main className="h-full w-full p-2 sm:px-6">{children}</main>
+
             <footer className="flex w-full py-4 sm:py-6 flex-col text-center">
               <i>Emerald Productions, LLC 2024</i>
             </footer>

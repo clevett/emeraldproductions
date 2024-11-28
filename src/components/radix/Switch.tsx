@@ -27,6 +27,8 @@ export const Switch = ({
       <Flex gap="2">
         <RadixSwitch
           checked={checked}
+          className="cursor-pointer"
+          color="cyan"
           defaultChecked={defaultChecked}
           highContrast
           onCheckedChange={onChange}

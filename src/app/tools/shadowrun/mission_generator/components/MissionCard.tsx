@@ -44,7 +44,7 @@ export const MissionCard = ({ item }: MissionCardProps) => {
   const note = selected?.note;
 
   return (
-    <Card type="business">
+    <Card type="business" styles="">
       <div className="grid gap-4 py-4 px-6 content-center justify-items-center w-full h-full text-center">
         <Image
           alt=""

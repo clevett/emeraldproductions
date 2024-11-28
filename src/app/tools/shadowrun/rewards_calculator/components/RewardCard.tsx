@@ -8,7 +8,7 @@ export const RewardCard = () => {
 
   return (
     <Card type="business">
-      <div className="grid grid-flow-col gap-4 py-4 px-6 content-center justify-items-center w-full h-full text-center">
+      <div className="grid grid-flow-col gap-4 p-2 sm:py-4 sm:px-6 content-center justify-items-center w-full h-full text-center">
         <div>
           <Heading as="h3">Nuyen Reward</Heading>
           <p>{nuyen.toLocaleString()}¥</p>

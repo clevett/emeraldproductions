@@ -14,7 +14,7 @@ export const FrontCard = ({
   children: JSX.Element;
 }) => {
   return (
-    <Card type="long">
+    <Card type="long" styles="overflow-hidden">
       <div className={`${styles.header}`}>
         <Image src={npc.img} alt={npc.name} />
       </div>

@@ -16,12 +16,12 @@ import { SurvivedSwitch } from "./SurvivedSwitch";
 export const RewardsCalculator = () => {
   return (
     <RecoilRoot>
-      <div className="flex flex-wrap gap-6 justify-start auto-rows-min flex-col">
-        <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-6 justify-center items-center auto-rows-min flex-col">
+        <div className="flex flex-wrap justify-center  items-center gap-4">
           <RewardCard />
         </div>
-        <div className="flex flex-wrap gap-4 justify-start auto-rows-min">
-          <div className="grid gap-4 justify-start auto-cols-fit auto-rows-min text-center">
+        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 auto-rows-min">
+          <div className="grid gap-4  auto-cols-fit auto-rows-min text-center">
             <Heading as="h3" className="text-center">
               Nuyen & Karma Modifiers
             </Heading>
@@ -29,7 +29,7 @@ export const RewardsCalculator = () => {
             <RunType />
           </div>
 
-          <div className="grid gap-4 justify-start auto-cols-fit auto-rows-min text-center">
+          <div className="grid gap-4 justify-center auto-cols-fit auto-rows-min text-center">
             <Heading as="h3" className="text-center">
               Karma Modifiers
             </Heading>
@@ -38,7 +38,7 @@ export const RewardsCalculator = () => {
             <GermanRulesSwitch />
           </div>
 
-          <div className="grid gap-4 justify-start auto-cols-fit auto-rows-min text-center">
+          <div className="grid gap-4 justify-center auto-cols-fit auto-rows-min text-center">
             <Heading as="h3" className="text-center">
               Nuyen Modifiers
             </Heading>

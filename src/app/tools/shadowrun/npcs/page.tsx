@@ -10,7 +10,7 @@ export default function Shadowrun6eNPCs() {
   return (
     <>
       <Subtitle mb="4">{label}</Subtitle>
-      <div className="flex flex-wrap flex-row gap-4">
+      <div className="flex flex-wrap justify-center flex-row gap-4 sm:gap-8">
         {npcs.map((e, index) => (
           <NpcCard key={`npc-card-${index}`} npc={e} />
         ))}
