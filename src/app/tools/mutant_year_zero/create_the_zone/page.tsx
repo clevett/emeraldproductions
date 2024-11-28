@@ -1,5 +1,3 @@
-"use client";
-import { RecoilRoot } from "recoil";
 import { Subtitle } from "@/components";
 import { systems, metaMyzCreateZone } from "@/resources";
 import { Sector } from "./components/Sector";
@@ -13,9 +11,7 @@ export default function CreateTheZone() {
   return (
     <>
       <Subtitle>{label}</Subtitle>
-      <RecoilRoot>
-        <Sector />
-      </RecoilRoot>
+      <Sector />
     </>
   );
 }
