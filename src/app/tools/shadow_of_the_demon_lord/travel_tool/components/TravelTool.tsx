@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { Callout, Card, Heading, Input, Switch } from "@/components";
+import { Card, Heading, Input, Switch } from "@/components";
 import {
   pace as paceList,
   terrain as terrainList,

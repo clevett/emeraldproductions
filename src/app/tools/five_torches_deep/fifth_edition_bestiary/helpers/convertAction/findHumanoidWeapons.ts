@@ -1,7 +1,10 @@
 import { FifthEditionEquipment } from "@/data/5eEquipment";
-import { fifthEdWeapon, ftdWeapon } from "@/app/tools/five_torches_deep/types";
+import {
+  FifthEdWeapon,
+  ftdWeapon,
+} from "@/app/tools/five_torches_deep/fifth_edition_bestiary/types";
 
-const weaponFactory = (weapon: fifthEdWeapon): ftdWeapon => {
+const weaponFactory = (weapon: FifthEdWeapon): ftdWeapon => {
   const { name, weapon_category, weapon_range } = weapon;
   return { name, category: weapon_category, range: weapon_range };
 };

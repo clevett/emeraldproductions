@@ -6,13 +6,6 @@ import {
   sr5eIcon,
   sr6eIcon,
 } from "@/images";
-import { StaticImageData } from "next/image";
-
-export type Link = {
-  label: string;
-  path: string;
-  icon?: StaticImageData;
-};
 
 export const navigation = {
   about: {

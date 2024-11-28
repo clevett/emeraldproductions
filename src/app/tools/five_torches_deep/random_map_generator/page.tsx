@@ -1,10 +1,10 @@
 import { Subtitle } from "@/components";
-import { systems, ftdMapGenerator } from "@/resources";
+import { systems, metaFtdMapGenerator } from "@/resources";
 import { RandomMapGenerator } from "./components/RandomMapGenerator";
 
 import type { Metadata } from "next";
 
-export const metadata: Metadata = ftdMapGenerator;
+export const metadata: Metadata = metaFtdMapGenerator;
 
 export default function FiveTorchesRandomMapGenerator() {
   const { label } = systems.ftd.tools.ftdMaps;

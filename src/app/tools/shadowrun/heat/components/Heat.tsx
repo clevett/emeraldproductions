@@ -1,8 +1,15 @@
+"use client";
 import React, { useState } from "react";
-import { Spinner } from "@radix-ui/themes";
 
 import { heat } from "@/data";
-import { Button, Heading, IconButton, ReloadIcon, Switch } from "@/components";
+import {
+  Button,
+  Heading,
+  IconButton,
+  ReloadIcon,
+  Switch,
+  Loading,
+} from "@/components";
 import { useDiceRoller } from "@/app/tools/diceroller/hooks/useDiceBox";
 
 type Circumstance = (typeof heat)[0];
@@ -54,12 +61,12 @@ export const Heat = () => {
   return (
     <div className="flex-col justify-center gap-4 flex-wrap">
       {isLoading ? (
-        <Spinner />
+        <Loading />
       ) : (
         <div className="grid gap-6 w-full ">
           <div className="grid w-full gap-6">
             <div className="min-h-6">
-              {isRolling ? <Spinner /> : <p className={color}>{message}</p>}
+              {isRolling ? <Loading /> : <p className={color}>{message}</p>}
             </div>
 
             <Heading as="h3">

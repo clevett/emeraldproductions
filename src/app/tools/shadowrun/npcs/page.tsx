@@ -1,9 +1,12 @@
 "use client";
 import { Subtitle } from "@/components";
-import { systems } from "@/resources";
+import { systems, metaSrNPCs } from "@/resources";
 import { npcs } from "@/data";
 
 import { NpcCard } from "./components/NpcCard";
+
+import type { Metadata } from "next";
+export const metadata: Metadata = metaSrNPCs;
 
 export default function Shadowrun6eNPCs() {
   const { label } = systems.sr6e.tools.shadowrunNpcs;

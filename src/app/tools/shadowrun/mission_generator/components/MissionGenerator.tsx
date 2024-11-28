@@ -1,3 +1,4 @@
+"use client";
 import { RecoilRoot } from "recoil";
 
 import { Options } from "@/data";

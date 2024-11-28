@@ -1,0 +1,18 @@
+{
+  "house": "talo",
+  "apartment": "asunto",
+  "hotel": "hotelli",
+  "museum": "museo",
+  "beach": "ranta",
+  "forest": "metsä",
+  "mountain": "vuori",
+  "park": "puisto",
+  "river": "joki",
+  "sea": "meri",
+  "lake": "järvi",
+  "weather": "sää",
+  "sun": "aurinko",
+  "rain": "sade",
+  "snow": "lumi",
+  "thunderstorm": "ukkonen"
+}

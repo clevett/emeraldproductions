@@ -5,7 +5,7 @@ import { fuzzySearch, SearchBar } from "@/components";
 import { FifthEditionMonster } from "@/data";
 
 import { MonsterCard } from "./MonsterCard";
-import { MonsterFTD } from "../../types/ftdTypes";
+import { MonsterFTD } from "../types/ftd";
 import convertFifthMonsterToFTD from "../helpers/convertFifthMonsterToFTD";
 import styles from "./styles.module.css";
 

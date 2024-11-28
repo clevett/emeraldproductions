@@ -1,0 +1,15 @@
+{
+  "doctor": "lääkäri",
+  "hospital": "sairaala",
+  "pharmacy": "apteekki",
+  "painkiller": "särkylääke",
+  "medicine": "lääke",
+  "pain": "kipu",
+  "back": "selkä",
+  "foot": "jalka",
+  "stomach": "vatsa",
+  "leg": "jalka",
+  "head": "pää",
+  "hand": "käsi",
+  "arm": "käsivarsi"
+}

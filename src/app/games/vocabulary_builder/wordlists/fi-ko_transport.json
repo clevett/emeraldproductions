@@ -1,0 +1,12 @@
+{
+  "기차": "juna",
+  "버스": "bussi",
+  "자동차": "auto",
+  "전차": "raitiovaunu",
+  "택시": "taksi",
+  "자전거": "polkupyörä",
+  "걸어서": "jalkaisin",
+  "기차역": "rautatieasema",
+  "버스 터미널": "linja-autoasema",
+  "정거장": "pysäkki"
+}

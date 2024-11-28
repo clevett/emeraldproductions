@@ -1,0 +1,12 @@
+{
+  "방향": "suunta",
+  "입구": "sisäänkäynti",
+  "출구": "uloskäynti",
+  "거리": "katu",
+  "길": "tie",
+  "광장": "tori",
+  "오른쪽": "oikealla",
+  "왼쪽": "vasemmalla",
+  "직진": "suoraan eteenpäin",
+  "뒤로": "takaisin"
+}

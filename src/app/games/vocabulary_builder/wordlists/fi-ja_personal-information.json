@@ -1,0 +1,13 @@
+{
+  "名前": "etunimi",
+  "苗字": "sukunimi",
+  "住所": "osoite",
+  "国": "maa",
+  "出生地": "syntymäpaikka",
+  "生年月日": "syntymäaika",
+  "職業": "ammatti",
+  "男": "mies",
+  "女": "nainen",
+  "成人": "aikuinen",
+  "子供": "lapsi"
+}

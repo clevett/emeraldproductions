@@ -1,8 +1,9 @@
-"use client";
 import { Subtitle } from "@/components";
-import { systems } from "@/resources";
+import { systems, metaSotdlTravelTool } from "@/resources";
 import { TravelTool as Travel } from "./components/TravelTool";
 
+import type { Metadata } from "next";
+export const metadata: Metadata = metaSotdlTravelTool;
 export default function RewardsGenerator() {
   const { label } = systems.sotdl.tools.sotdlTravelTool;
   return (

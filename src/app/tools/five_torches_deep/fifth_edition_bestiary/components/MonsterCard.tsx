@@ -5,7 +5,7 @@ import { capitalize, getCoinList, getDiceRollTotal } from "@/app/tools/utils";
 import { Button, Card, Heading, ReloadIcon } from "@/components";
 
 import displayModifier from "../helpers/displayModifier/displayModifier";
-import { MonsterFTD } from "../../types/ftdTypes";
+import { MonsterFTD } from "../types/ftd";
 
 export const MonsterCard = ({
   monster: {
