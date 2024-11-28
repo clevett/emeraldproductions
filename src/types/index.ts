@@ -8,7 +8,7 @@ export type Link = {
 
 export type List = {
   description: string;
-  icon: StaticImageData;
+  icon?: StaticImageData;
   label: string;
   path: string;
 };

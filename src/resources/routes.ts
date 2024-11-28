@@ -38,77 +38,77 @@ export const tools = [
   {
     icon: diceIcon,
     label: "Dice Roller",
-    path: "/diceroller",
+    path: "/tools/diceroller",
   },
 ];
 
 const ftdMonsters = {
   description: `A list of monsters from the 5th edition of the world's greatest roleplaying game.`,
   label: "Fifth Edition Bestiary",
-  path: "/five_torches_deep/fifth_edition_bestiary",
+  path: "/tools/five_torches_deep/fifth_edition_bestiary",
   icon: ftdIcon,
 };
 
 const ftdMaps = {
   description: `A random map generator for the using color schemes.`,
   label: "Random Map Generator",
-  path: "/five_torches_deep/random_map_generator",
+  path: "/tools/five_torches_deep/random_map_generator",
   icon: ftdIcon,
 };
 
 const myzCreateTheZone = {
   description: `A tool to help you create the zone for your Mutant Year Zero campaign.`,
   label: "Create the Zone",
-  path: "/mutant_year_zero/create_the_zone",
+  path: "/tools/mutant_year_zero/create_the_zone",
   icon: myzIcon,
 };
 
 const sotdlEncounterBuilder = {
   description: `A tool to help you create encounters for your Shadow of the Demon Lord campaign.`,
   label: "Encounter Builder",
-  path: "/shadow_of_the_demon_lord/encounter_builder",
+  path: "/tools/shadow_of_the_demon_lord/encounter_builder",
   icon: sotdlIcon,
 };
 
 const sotdlRewardsGenerator = {
   description: `A tool to help you generate rewards for your Shadow of the Demon Lord campaign.`,
   label: "Rewards Generator",
-  path: "/shadow_of_the_demon_lord/rewards_generator",
+  path: "/tools/shadow_of_the_demon_lord/rewards_generator",
   icon: sotdlIcon,
 };
 
 const sotdlTravelTool = {
   description: `A tool to help you manage travel in your Shadow of the Demon Lord campaign.`,
   label: "Travel Tool",
-  path: "/shadow_of_the_demon_lord/travel_tool",
+  path: "/tools/shadow_of_the_demon_lord/travel_tool",
   icon: sotdlIcon,
 };
 
 const shadowrunMissionGenerator = {
   description: `A tool to help you create missions for your Shadowrun campaign.`,
   label: "Mission Generator",
-  path: "/shadowrun/mission_generator",
+  path: "/tools/shadowrun/mission_generator",
   icon: sr5eIcon,
 };
 
 const shadowrunRewardsCalculator = {
   description: `A tool to help you calculate rewards for your Shadowrun campaign.`,
   label: "Rewards Calculator",
-  path: "/shadowrun/rewards_calculator",
+  path: "/tools/shadowrun/rewards_calculator",
   icon: sr5eIcon,
 };
 
 const shadowrunNpcs = {
   description: `A tool to help you create NPCs for your Shadowrun campaign.`,
   label: "NPCs",
-  path: "/shadowrun/npcs",
+  path: "/tools/shadowrun/npcs",
   icon: sr6eIcon,
 };
 
 const shadowrunHeat = {
   description: `A tool to help you manage heat in your Shadowrun campaign.`,
   label: "Heat",
-  path: "/shadowrun/heat",
+  path: "/tools/shadowrun/heat",
   icon: sr6eIcon,
 };
 

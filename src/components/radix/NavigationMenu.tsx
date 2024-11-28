@@ -54,7 +54,7 @@ export const NavigationMenu = () => {
                       <li className={`ml-1`} key={`nav-tool-${label}`}>
                         <Link
                           className={`grid grid-flow-col grid-cols-[auto_1fr] auto-cols-min gap-2 ${hoverStyle}`}
-                          href={`/tools${path}`}
+                          href={`${path}`}
                         >
                           {icon && (
                             <Image src={icon} alt="" width={24} height={24} />
@@ -69,16 +69,6 @@ export const NavigationMenu = () => {
                 </div>
               ))}
             </div>
-
-            {/* 
-            <ul className="m-0 grid list-none gap-x-2.5 p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-              <ListItem
-                title="Introduction"
-                href="/primitives/docs/overview/introduction"
-              >
-                Build high-quality, accessible design systems and web apps.
-              </ListItem>
-            </ul> */}
           </RadixNavigationMenu.Content>
         </RadixNavigationMenu.Item>
 
