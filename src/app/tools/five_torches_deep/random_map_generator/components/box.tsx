@@ -29,5 +29,3 @@ export const Box = ({ name }: { name: string }) => {
     </div>
   );
 };
-
-export default Box;
