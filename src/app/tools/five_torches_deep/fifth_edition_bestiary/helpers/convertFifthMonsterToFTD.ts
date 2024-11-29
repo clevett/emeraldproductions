@@ -35,8 +35,8 @@ const convertFifthMonstersToFTD = (
 
   const attack = monster.attack_bonus ? monster.attack_bonus : 0;
 
-  const conditionsImmunities = condition_immunities.map((condition: any) =>
-    condition.name.toLowerCase()
+  const conditionsImmunities = condition_immunities.map(
+    (condition: { name: string }) => condition.name.toLowerCase()
   );
   const immunitiesArray = [
     ...conditionsImmunities,
