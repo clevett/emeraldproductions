@@ -3,7 +3,7 @@ import { CoinRolls } from "../generateCoinList/generateCoinList";
 
 const getRolls = (formulas: CoinRolls) => {
   const diceRoll = (notation: string): number => new DiceRoll(notation).total;
-  let results: { name: string; result: number }[] = [];
+  const results: { name: string; result: number }[] = [];
 
   for (const [key, value] of Object.entries(formulas)) {
     if (value) {

@@ -29,7 +29,11 @@ export const generateCoinList = (limit: number, rollFormulas: CoinRolls) => {
       });
 
       //Break out of the loop if rolls can't subtract any more
-      loopNumber > 50 ? (loop = false) : loopNumber++;
+      if (loopNumber > 50) {
+        loop = false;
+      } else {
+        loopNumber++;
+      }
     } else {
       loop = false;
     }

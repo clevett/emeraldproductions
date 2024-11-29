@@ -1,4 +1,4 @@
-import { danger } from "../../../data/sotdlDangerLevels";
+import { danger } from "@/data/sotdlDangerLevels";
 import { Level } from "../components/LevelSelect";
 const less = " or less";
 const more = " or more";
@@ -8,7 +8,7 @@ const getMoreLess = (s: string, key: typeof less | typeof more) =>
   s.split(key)[0];
 const getDash = (string: string) => string.split(dash);
 
-type Danger = typeof danger["starting"];
+type Danger = (typeof danger)["starting"];
 
 type MinMax = { min: number; max: number | null };
 
@@ -40,7 +40,7 @@ export const getMinMax = (range: string) => {
 };
 
 export const getDangerRanges = (level: Level) => {
-  let object: { [key: string]: MinMax } = {};
+  const object: { [key: string]: MinMax } = {};
   const keys = Object.keys(danger[level]) as (keyof Danger)[];
 
   keys.forEach((e) => {

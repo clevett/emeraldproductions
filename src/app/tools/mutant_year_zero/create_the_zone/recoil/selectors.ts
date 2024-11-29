@@ -1,6 +1,6 @@
 "use client";
 import { selector, DefaultValue, selectorFamily } from "recoil";
-import { ZoneSector } from "../../../../../data/myz_create_the_zone";
+import { ZoneSector } from "@/data/myz_create_the_zone";
 import { sectorFamily, sectorIdsAtom } from "./atoms";
 
 export const selectSectorById = selectorFamily<ZoneSector | undefined, string>({
@@ -42,7 +42,7 @@ export const selectSectorFamily = selector({
     const family = ids.map((id) => get(selectSectorById(id)));
     return family.filter((o): o is ZoneSector => !!o);
   },
-  set: ({ set, reset, get }, newValue) => {
+  set: ({ reset, get }, newValue) => {
     const ids = get(sectorIdsAtom);
 
     if (newValue instanceof DefaultValue || newValue === undefined) {

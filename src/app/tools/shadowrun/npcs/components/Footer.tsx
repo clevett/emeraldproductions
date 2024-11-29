@@ -1,8 +1,6 @@
 import { Descriptions, NPC, Type } from "@/data";
 import { ChevronRightIcon, IconButton } from "@/components";
 
-import styles from "./Footer.module.css";
-
 export const getToolTip = (type: NPC["type"]) => {
   switch (type) {
     case Type.FAVORS:
