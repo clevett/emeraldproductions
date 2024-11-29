@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box } from "./Box";
+import { Box } from "./ColorBox";
 import { Button } from "@/components";
 
 export const RandomMapGenerator = () => {
