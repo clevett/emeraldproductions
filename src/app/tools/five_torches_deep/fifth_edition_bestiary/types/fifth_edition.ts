@@ -24,30 +24,30 @@ export interface FifthEditionMonster {
   damage_resistances: string[];
   damage_immunities: string[];
 
-  speed: {
-    walk: string;
-    fly: string;
-    swim: string;
+  speed?: {
+    walk?: string;
+    fly?: string;
+    swim?: string;
   };
 
-  attack_bonus: number;
+  attack_bonus?: number;
 
-  actions: {
+  actions?: {
     name: string;
     desc: string;
     usage?: {
       type: string;
-      times: number;
+      times?: number;
     };
     dc?: {
-      dc_type: {
+      dc_type?: {
         index: string;
         name: string;
         url: string;
       };
-      dc_value: number;
-      success_type: string;
-      dc_success: string;
+      dc_value?: number;
+      success_type?: string;
+      dc_success?: string;
     };
   }[];
 

@@ -1,4 +1,3 @@
-import { MonsterFTD } from "../types/ftd";
 import { FifthEditionMonster } from "../types/fifth_edition";
 
 import convertAbility from "./convertAbility/convertAbility";
@@ -8,9 +7,7 @@ import convertSpeed from "./convertSpeed/convertSpeed";
 import findMonsterMath from "./findMonsterMath";
 import determineModifiers from "./determineModifiers/determineModifiers";
 
-const convertFifthMonstersToFTD = (
-  monster: FifthEditionMonster
-): MonsterFTD => {
+const convertFifthMonstersToFTD = (monster: FifthEditionMonster) => {
   const {
     actions,
     armor_class,
