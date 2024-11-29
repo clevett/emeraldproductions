@@ -1,4 +1,3 @@
-"use client";
 import { Subtitle } from "@/components";
 import { systems, metaSrNPCs } from "@/resources";
 import { npcs } from "@/data";
