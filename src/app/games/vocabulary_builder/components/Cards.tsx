@@ -62,7 +62,11 @@ export const Cards = () => {
     language: Language
   ) => {
     const newCategory = getCategory(language, newCategoryName);
-    newCategory ? setCategory(newCategory) : warn(newCategoryName, language);
+    if (newCategory) {
+      setCategory(newCategory);
+    } else {
+      warn(newCategoryName, language);
+    }
   };
 
   return (
