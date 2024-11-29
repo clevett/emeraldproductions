@@ -1,5 +1,5 @@
 import { DiceRoll } from "@dice-roller/rpg-dice-roller";
-import { MonsterMath } from "../../types/ftdTypes";
+import { MonsterMath } from "../../types/ftd";
 
 import challengeCheck from "../challengeCheck/challengeCheck";
 

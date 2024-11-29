@@ -1,4 +1,4 @@
-import { action } from "../../types/ftdTypes";
+import { action } from "../../types/ftd";
 
 import findHumanoidWeapons from "./findHumanoidWeapons";
 
@@ -34,7 +34,7 @@ const forceCondition = (desc: string): string => {
   return `${ifTargetCreature} ${splitPhrase}`;
 };
 
-const breathToBlast = (hd: number, desc: string): string => {
+const breathToBlast = (hd: number): string => {
   const hdDivideBy2 = Math.max(Math.floor(hd / 2), 1);
   const hdDivideBy3 = Math.max(Math.floor(hd / 3), 1);
   const areaSize = hdDivideBy2 > 0 ? hdDivideBy2 * 10 : 10;
@@ -42,7 +42,7 @@ const breathToBlast = (hd: number, desc: string): string => {
   return `${areaSize}' cone, ${damage}d6 damage, ${hdDivideBy3} user per fight, PCs check to resist or dodge`;
 };
 
-const convertAction = (hd: number, actions: action[]): any[] => {
+const convertAction = (hd: number, actions: action[]) => {
   actions = removeHumanoidWeapons(actions);
   actions = removeNaturalWeapons(actions);
 

@@ -1,5 +1,5 @@
-import { MonsterFTD } from "../types/ftdTypes";
-import { FifthEditionMonster } from "../types/fifthEditionTypes";
+import { MonsterFTD } from "../types/ftd";
+import { FifthEditionMonster } from "../types/fifth_edition";
 
 import convertAbility from "./convertAbility/convertAbility";
 import convertAction from "./convertAction/convertAction";

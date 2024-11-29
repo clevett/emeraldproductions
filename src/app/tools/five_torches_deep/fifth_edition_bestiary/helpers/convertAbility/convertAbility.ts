@@ -1,4 +1,4 @@
-import { ability } from "../../types/ftdTypes";
+import { ability } from "../../types/ftd";
 
 import { convertDesc } from "../convertText";
 

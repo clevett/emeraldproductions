@@ -1,4 +1,4 @@
-import { MonsterMath } from "../../types/ftdTypes";
+import { MonsterMath } from "../../types/ftd";
 
 interface modifiers {
   normal: number;
