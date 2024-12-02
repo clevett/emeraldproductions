@@ -1,4 +1,4 @@
-import { Link as LinkType } from "@/resources";
+import { Link as LinkType } from "@/types";
 import {
   Flex,
   Link,
