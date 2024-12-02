@@ -55,7 +55,7 @@ const convertAction = (hd: number, actions: action[]) => {
     } else if (desc.includes(ifTargetCreature)) {
       desc = forceCondition(desc);
     } else if (name.includes("Breath")) {
-      desc = breathToBlast(hd, desc);
+      desc = breathToBlast(hd);
     } else {
       desc = convertDesc(desc);
     }
