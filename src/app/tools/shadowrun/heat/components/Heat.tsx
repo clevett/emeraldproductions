@@ -10,7 +10,7 @@ import {
   Switch,
   Loading,
 } from "@/components";
-import { useDiceRoller } from "@/app/tools/diceroller/hooks/useDiceBox";
+import { useDiceRoller } from "../../../diceroller/hooks/useDiceBox";
 
 type Circumstance = (typeof heat)[0];
 
