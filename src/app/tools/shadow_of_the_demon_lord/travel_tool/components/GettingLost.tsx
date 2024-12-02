@@ -119,7 +119,7 @@ export const GettingLost = ({ terrain, weather }: GettingLostProps) => {
         />
       </div>
 
-      <Card type="business" height="auto">
+      <Card type="business">
         <div className="py-4 px-2">{list}</div>
       </Card>
     </div>
