@@ -1,13 +1,11 @@
 "use client";
-//@ts-expect-error Not typed
 import DiceParser from "@3d-dice/dice-parser-interface";
-//@ts-expect-error Not typed
-import DiceBox from "@3d-dice/dice-box";
 import { useEffect, useState } from "react";
+import DiceBox, { Notation } from "@3d-dice/dice-box";
 
 export const useDiceRoller = () => {
   const [color, setColor] = useState("#086931");
-  const [dicebox, setDicebox] = useState<DiceBox>(undefined);
+  const [dicebox, setDicebox] = useState<DiceBox | undefined>(undefined);
   const [hasRolled, setHasRolled] = useState(false);
   const [result, setResult] = useState<{ value: number } | null>(null);
   const [canvasElement, setCanvasElement] = useState<
@@ -29,7 +27,9 @@ export const useDiceRoller = () => {
   const DRP = new DiceParser();
 
   const init = async (themeColor = "#086931") => {
-    const Dice = new DiceBox(
+    const { default: Dicebox } = await import("@3d-dice/dice-box");
+
+    const Dice = new Dicebox(
       `#dice-canvas`, // target DOM element to inject the canvas for rendering
       {
         assetPath: "/assets/dice-box/",
@@ -49,19 +49,17 @@ export const useDiceRoller = () => {
 
   if (dicebox) {
     // This method is triggered whenever dice are finished rolling
-    dicebox.onRollComplete = (
-      results: { [key: string]: unknown; mods: unknown[]; value: number }[]
-    ) => {
+    dicebox.onRollComplete = (results) => {
       // handle any rerolls
       const rerolls = DRP.handleRerolls(results);
       if (rerolls.length) {
-        rerolls.forEach((roll: { groupId: unknown }) =>
+        rerolls.forEach((roll: typeof Notation) =>
           dicebox.add(roll, roll.groupId)
         );
         return rerolls;
       }
       // if no rerolls needed then parse the final results
-      if (results[0].mods.length > 0) {
+      if (results[0].mods && results[0].mods.length > 0) {
         const finalResults = DRP.parseFinalResults(results);
         setResult(finalResults);
       } else {
@@ -82,9 +80,9 @@ export const useDiceRoller = () => {
       : parsedNotation;
 
     if (hasRolled) {
-      dicebox.show().add(diceBoxNotation);
+      dicebox?.show().add(diceBoxNotation);
     } else {
-      dicebox.show().roll(diceBoxNotation);
+      dicebox?.show().roll(diceBoxNotation);
       setHasRolled(true);
     }
   };
@@ -92,7 +90,7 @@ export const useDiceRoller = () => {
   const clear = () => {
     setResult(null);
     setHasRolled(false);
-    dicebox.clear();
+    dicebox?.clear();
   };
 
   const canvas = (
