@@ -41,3 +41,8 @@ export const cardAtomFamily = atomFamily<Card, Word>({
       },
   }),
 });
+
+export const isGameOverAtom = atom({
+  key: "isGameOverAtom",
+  default: false,
+});

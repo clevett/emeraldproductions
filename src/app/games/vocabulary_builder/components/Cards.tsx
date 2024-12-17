@@ -1,11 +1,14 @@
 "use client";
 
+import { useRecoilState, useRecoilValue } from "recoil";
+
 import { ReloadIcon } from "@/components";
 
 import {
   categorySelector,
   languageSelector,
   wordListSelector,
+  gameOverSelector,
 } from "../recoil/selectors";
 import { Category, Language } from "../types";
 import {
@@ -15,9 +18,10 @@ import {
 } from "../helpers";
 import { FlashCard } from "./FlashCard";
 import { useCardChecker } from "../hooks/useCardChecker";
-import { useRecoilState, useRecoilValue } from "recoil";
+
 import { useResetCards } from "../hooks/useResetCards";
 import { wordLists } from "../wordlists";
+import { useFireworks } from "../hooks/useFireworks";
 
 export const Cards = () => {
   const [language, setLanguage] = useRecoilState<Language>(languageSelector);
@@ -25,6 +29,7 @@ export const Cards = () => {
   const list = useRecoilValue(wordListSelector);
   const cardChecker = useCardChecker();
   const resetCards = useResetCards();
+  const { canvas } = useFireworks();
 
   const createLanguageOptionsList = () => {
     return Object.keys(wordLists).map((langAbbr) => (
@@ -103,6 +108,8 @@ export const Cards = () => {
           <FlashCard key={word} word={word} cardChecker={cardChecker} />
         ))}
       </div>
+
+      {canvas}
     </div>
   );
 };

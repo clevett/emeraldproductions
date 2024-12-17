@@ -99,3 +99,14 @@ export const activeCardSelector = selector({
     return list.filter((card) => card.isRevealed || card.isMatched);
   },
 });
+
+export const gameOverSelector = selector({
+  key: "gameOverSelector",
+  get: ({ get }) => {
+    const list = get(cardListSelector);
+    return (
+      list.every((card) => card.isMatched) ||
+      list.every((card) => card.isRevealed)
+    );
+  },
+});
