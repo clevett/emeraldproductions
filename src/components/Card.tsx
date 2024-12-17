@@ -4,8 +4,7 @@ const types = {
   auto: "w-auto h-auto",
   long: "w-[350px] h-auto sm:w-[350px] sm:h-[560px] sm:max-w-[350px] sm:min-h-[560px]",
   wide: "w-[560px] h-auto sm:w-[560px] sm:h-[350px] sm:max-w-[560px] sm:min-h-[350px]",
-  business:
-    "w-[350px] h-auto sm:w-[500px] sm:h-[250px] sm:max-w-[500px] sm:min-h-[250px]",
+  business: "w-[350px] h-auto sm:w-[500px] sm:max-w-[500px] sm:min-h-[250px]",
 };
 
 export const Card = ({
