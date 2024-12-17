@@ -72,7 +72,7 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
             }}
             list={levels}
             defaultValue={level}
-            className="w-min"
+            className="w-min capitalize"
           />
         </div>
 
