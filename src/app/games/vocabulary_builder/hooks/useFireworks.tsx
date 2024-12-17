@@ -4,7 +4,6 @@ import { Fireworks } from "fireworks-js";
 import { useRecoilValue } from "recoil";
 import { gameOverSelector } from "../recoil/selectors";
 import { useEffect, useState } from "react";
-import { set } from "@recoiljs/refine";
 
 export const useFireworks = () => {
   const isGameOver = useRecoilValue(gameOverSelector);
