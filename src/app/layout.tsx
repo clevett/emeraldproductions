@@ -39,9 +39,11 @@ export default function RootLayout({
                   />
                 </Link>
               </div>
+
               <div className="sm:col-start-1 sm:col-end-3 sm:row-start-1">
                 <NavigationMenu />
               </div>
+
               <div className="absolute left-4 top-12 z-10 sm:top-0 sm:left-0 sm:relative sm:block sm:col-start-3 sm:col-end-3 sm:row-start-1 sm:justify-self-end">
                 <Contact />
               </div>
