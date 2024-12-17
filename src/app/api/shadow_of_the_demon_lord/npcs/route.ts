@@ -10,10 +10,8 @@ export async function GET() {
   try {
     await client.connect();
 
-    // Choose a name for your database
     const database = client.db(`${process.env.MONGO_DB}`);
 
-    // Choose a name for your collection
     const collection = database.collection(
       `${process.env.SOTDL_NPC_COLLECTION}`
     );
