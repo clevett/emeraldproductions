@@ -1,7 +1,8 @@
+import { useRecoilCallback, useRecoilValue } from "recoil";
+
 import { Card } from "../types";
 import { cardAtomFamily } from "../recoil/atoms";
 import { inPlayCardSelector } from "../recoil/selectors";
-import { useRecoilCallback, useRecoilValue } from "recoil";
 
 export const useCardChecker = () => {
   const inPlayCards = useRecoilValue(inPlayCardSelector);
@@ -28,7 +29,7 @@ export const useCardChecker = () => {
     updateCards(list, { isMatched: true });
 
   const matchCheck = () => {
-    if (inPlayCount === 2) {
+    if (inPlayCount > 1) {
       const [first, second] = inPlayCards;
 
       if (first.match === second.word && second.match === first.word) {
@@ -46,7 +47,7 @@ export const useCardChecker = () => {
       return;
     }
 
-    if (inPlayCount === 2) {
+    if (inPlayCount > 1) {
       setRevealedFalse(inPlayCards);
     }
   };

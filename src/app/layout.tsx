@@ -1,6 +1,7 @@
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import { NavigationMenu, Contact } from "@/components";
 
@@ -50,6 +51,7 @@ export default function RootLayout({
             </header>
 
             <main className="h-full w-full p-2 sm:px-6">{children}</main>
+            <Analytics />
 
             <footer className="flex w-full py-4 sm:py-6 flex-col text-center">
               <i>Emerald Productions, LLC 2024</i>

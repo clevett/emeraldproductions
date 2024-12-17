@@ -10,8 +10,7 @@ export const metadata: Metadata = metaSotdlEncounterBuilder;
 export default async function EncounterBuilder() {
   const { label } = systems.sotdl.tools.sotdlEncounterBuilder;
 
-  const npcs = await GET();
-  const { data } = await npcs?.json();
+  const { data } = await GET().then((res) => res?.json());
 
   return (
     <>
