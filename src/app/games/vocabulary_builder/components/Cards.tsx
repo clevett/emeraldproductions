@@ -8,7 +8,6 @@ import {
   categorySelector,
   languageSelector,
   wordListSelector,
-  gameOverSelector,
 } from "../recoil/selectors";
 import { Category, Language } from "../types";
 import {
@@ -17,11 +16,9 @@ import {
   getCategory,
 } from "../helpers";
 import { FlashCard } from "./FlashCard";
-import { useCardChecker } from "../hooks/useCardChecker";
+import { useCardChecker, useResetCards, useFireworks } from "../hooks";
 
-import { useResetCards } from "../hooks/useResetCards";
 import { wordLists } from "../wordlists";
-import { useFireworks } from "../hooks/useFireworks";
 
 export const Cards = () => {
   const [language, setLanguage] = useRecoilState<Language>(languageSelector);
