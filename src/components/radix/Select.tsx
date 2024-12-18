@@ -16,7 +16,7 @@ export const Select = ({
   return (
     <RadixSelect.Root defaultValue={defaultValue} onValueChange={onChange}>
       <RadixSelect.Trigger className="capitalize" />
-      <RadixSelect.Content className={className ?? ""}>
+      <RadixSelect.Content className={`capitalize ${className ?? ""}`}>
         <RadixSelect.Group>
           <RadixSelect.Label>{title}</RadixSelect.Label>
           {list.map((name) => (

@@ -23,6 +23,11 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
     undefined
   );
   const [selected, setSelected] = useState<Monster[] | undefined>(undefined);
+  const [filters, setFilters] = useState({
+    descriptor: "human",
+    source: "",
+    difficulty: "",
+  });
 
   const onTermSubmit = (term: string) => {
     const keys = ["name", "difficulty", "descriptor", "source"];
@@ -52,6 +57,14 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
       }
     }
   };
+
+  const descriptors = Array.from(
+    new Set(data?.map((e) => e.descriptor))
+  ).sort();
+  const sources = Array.from(new Set(data?.map((e) => e.source))).sort();
+  const difficulties = Array.from(new Set(data?.map((e) => e.difficulty)))
+    .sort((a, b) => a - b)
+    .map((e) => `${e}`);
 
   const total =
     selected?.map((s) => s.difficulty).reduce((a, b) => a + b, 0) ?? 0;
@@ -132,6 +145,32 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
 
         <div className="grid gap-2 content-start flex-1 min-w-[300px]">
           <div className="grid grid-cols-1 gap-4 grid-rows-2 xl:grid-rows-1 justify-center content-center">
+            <Select
+              defaultValue={filters.descriptor}
+              list={descriptors}
+              title="Descriptor"
+              onChange={(item) =>
+                setSearchResults(data?.filter((e) => e.descriptor === item))
+              }
+            />
+            <Select
+              defaultValue={filters.source}
+              list={sources}
+              title="Source"
+              onChange={(item) =>
+                setSearchResults(data?.filter((e) => e.source === item))
+              }
+            />
+            <Select
+              defaultValue={filters.difficulty}
+              list={difficulties}
+              title="Difficulty"
+              onChange={(item) =>
+                setSearchResults(
+                  data?.filter((e) => `${e.difficulty}` === item)
+                )
+              }
+            />
             <Heading
               as="h4"
               className="text-center row-start-1 xl:col-start-1 xl:col-end-3"
