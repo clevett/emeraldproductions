@@ -2,14 +2,14 @@ import { Input } from "@/components";
 
 export const SearchBar = ({
   label,
-  placeholder,
   onSubmit,
+  placeholder,
   styles,
 }: {
-  onSubmit: (term: string) => void;
-  styles?: string;
-  placeholder: string;
   label: string;
+  onSubmit: (term: string) => void;
+  placeholder: string;
+  styles?: string;
 }) => {
   return (
     <div className={`search-bar ui segment min-w-[250px]  ${styles ?? ""}`}>

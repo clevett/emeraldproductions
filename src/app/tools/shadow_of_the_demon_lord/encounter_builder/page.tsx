@@ -1,5 +1,6 @@
 import { Subtitle } from "@/components";
 import { systems, metaSotdlEncounterBuilder } from "@/resources";
+
 import { GET } from "@/app/api/shadow_of_the_demon_lord/npcs/route";
 
 import { EncounterBuilder as Builder } from "./components/EncounterBuilder";

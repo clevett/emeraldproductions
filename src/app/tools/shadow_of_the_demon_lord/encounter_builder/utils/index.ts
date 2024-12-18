@@ -77,3 +77,7 @@ export const getDanger = (total: number, level: Level) => {
   );
   return range;
 };
+
+export const getDangerText = (level: Level, difficulty: Difficulty) => {
+  return danger[`${level}`][difficulty];
+};

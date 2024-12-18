@@ -8,12 +8,12 @@ type Rows = { header: string; cell: (string | number)[]; id: string }[];
 
 export const Table = ({
   columns,
-  rows,
   onRowClick,
+  rows,
 }: {
   columns: { header: string }[];
-  rows: Rows;
   onRowClick: (id: string) => void;
+  rows: Rows;
 }) => {
   const [isAscending, setAscending] = useState(true);
   const [sort, setSort] = useState<string | undefined>(undefined);
