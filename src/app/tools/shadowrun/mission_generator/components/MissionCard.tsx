@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 import { useRecoilState } from "recoil";
@@ -44,7 +45,7 @@ export const MissionCard = ({ item }: MissionCardProps) => {
   const note = selected?.note;
 
   return (
-    <Card type="business" styles="">
+    <Card type="business">
       <div className="grid gap-4 py-4 px-6 content-center justify-items-center w-full h-full text-center">
         <Image
           alt=""

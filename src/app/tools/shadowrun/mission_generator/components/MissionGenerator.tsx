@@ -1,6 +1,4 @@
-"use client";
-import { RecoilRoot } from "recoil";
-
+import RecoilContext from "@/recoil";
 import { Options } from "@/data";
 import { Card } from "@/components";
 
@@ -14,8 +12,8 @@ export const MissionGenerator = () => {
   });
 
   return (
-    <RecoilRoot>
-      <div className="grid gap-4 sm:gap-8 justify-items-center auto-rows-min h-full w-full">
+    <div className="grid gap-4 sm:gap-8 justify-items-center auto-rows-min h-full w-full">
+      <RecoilContext>
         <Card type="business">
           <div className="grid grid-rows-[1fr_min-content] gap-4 py-4 px-6 h-full w-full">
             <NaturalLanguage />
@@ -23,7 +21,7 @@ export const MissionGenerator = () => {
           </div>
         </Card>
         <div className="flex flex-wrap justify-center gap-4">{cardNodes}</div>
-      </div>
-    </RecoilRoot>
+      </RecoilContext>
+    </div>
   );
 };
