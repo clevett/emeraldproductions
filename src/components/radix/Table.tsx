@@ -42,8 +42,8 @@ export const Table = ({
           {columns.map((column, index) => (
             <RadixTable.ColumnHeaderCell
               key={"table-column-" + index}
-              className={`capitalize cursor-pointer hover:text-blue-500 ${
-                sort === column.header ? "text-blue-500" : ""
+              className={`capitalize cursor-pointer hover:text-sky-500 ${
+                sort === column.header ? "text-sky-500" : ""
               }`}
               onClick={() => {
                 setAscending(!isAscending);
@@ -69,14 +69,18 @@ export const Table = ({
         {sortedRows(rows).map((row, index) => (
           <RadixTable.Row
             key={"table-row-" + index}
-            className="cursor-pointer hover:text-blue-500"
+            className=" cursor-pointer hover:text-sky-500"
             onClick={() => onRowClick(row.id)}
           >
-            <RadixTable.RowHeaderCell className="capitalize">
+            <RadixTable.RowHeaderCell className="max-[390px]:py-4 max-[390px]:px-0.5 capitalize text-center sm:text-left">
               {row.header}
             </RadixTable.RowHeaderCell>
+
             {row.cell.map((cell, index) => (
-              <RadixTable.Cell key={"table-cell-" + index}>
+              <RadixTable.Cell
+                key={"table-cell-" + index}
+                className="max-[390px]:py-4 max-[390px]:px-0.5 text-center sm:text-left"
+              >
                 {cell}
               </RadixTable.Cell>
             ))}

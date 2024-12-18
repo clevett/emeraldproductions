@@ -8,7 +8,7 @@ import { navigation, rpgTools, games } from "@/resources";
 import { Heading } from "./Heading";
 
 const focusShadow = "focus:shadow-[0_0_0_2px] focus:shadow-blue-700";
-const hoverStyle = "hover:bg-card hover:text-blue-500";
+const hoverStyle = "hover:bg-card hover:text-sky-500";
 
 export const NavigationMenu = () => {
   const { about, tools, games: NavGames } = navigation;
@@ -44,7 +44,7 @@ export const NavigationMenu = () => {
                 >
                   <Heading
                     as="h2"
-                    className="font-medium text-blue-500"
+                    className="font-medium text-sky-500"
                     size="2"
                   >
                     {system}
@@ -124,7 +124,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
           {...props}
           ref={forwardedRef}
         >
-          <div className="mb-[5px] font-medium leading-[1.2] text-blue-500">
+          <div className="mb-[5px] font-medium leading-[1.2] text-sky-500">
             {title}
           </div>
           <p className="leading-[1.4]">{children}</p>

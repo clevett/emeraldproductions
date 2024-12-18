@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import styles from "./DriveThruLink.module.css";
-
 const driveThru = (id: string) =>
   `https://www.drivethrurpg.com/product/${id}/?affiliate_id=879798`;
 
@@ -14,7 +12,7 @@ export const DriveThruLink = ({
 }) => {
   return (
     <Link
-      className={styles.link}
+      className={`underline hover:underline decoration-sky-500 sm:no-underline text-nowrap text-ellipsis overflow-hidden w-full inline-flex justify-center`}
       href={driveThru(id)}
       rel="noopener noreferrer"
       target="_blank"

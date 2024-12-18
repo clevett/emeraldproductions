@@ -39,8 +39,8 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
 
   return (
     <RecoilContext>
-      <div className="grid gap-4 sm:gap-10 auto-rows-min p-2 md:p-4 w-full h-full">
-        <div className="flex flex-row bg-card rounded shadow p-4 sm:px-8 sm:py-6 flex-wrap gap-4  justify-between text-center">
+      <div className="grid gap-4 sm:p-2 sm:gap-10 auto-rows-min md:p-4 w-full h-full">
+        <div className="flex flex-row flex-wrap gap-4 bg-card rounded shadow justify-center p-2 sm:px-8 sm:py-6 sm:justify-between text-center">
           <div className="grid gap-4">
             <Heading as="h4">Level</Heading>
             <SelectLevel />
@@ -49,9 +49,8 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
           {difficultiesKeys.map((difficulty) => {
             const title =
               difficulty === "max" ? "Max. Creature Difficulty" : difficulty;
-
             return (
-              <div className="grid gap-4" key={`level-${difficulty}`}>
+              <div className="grid gap-2 sm:gap-4" key={`level-${difficulty}`}>
                 <Heading
                   as="h4"
                   className={`text-${getColor(difficulty)}-600 capitalize`}
@@ -70,7 +69,7 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
               <span className="mr-2">Encounter Difficulty =</span>
               <DifficultyTotal />
             </Heading>
-            <div className="px-2 py-4 rounded">
+            <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
               <TableSelected data={data} />
             </div>
           </div>
@@ -111,7 +110,7 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
               </Heading>
               <SearchNPCs data={data} />
             </div>
-            <div className="px-2 py-4 rounded shadow-2xl">
+            <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
               <TableNPCs data={data} />
             </div>
           </div>

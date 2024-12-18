@@ -8,7 +8,6 @@ import { Monster } from "../types";
 import { selectedNPCsSelector, searchNPCsSelector } from "../recoil";
 
 export const TableNPCs = ({ data }: { data?: Monster[] }) => {
-  //TODO: Change this so it is adding one npc at a time instead updating the whole array
   const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
   const searchResults = useRecoilValue(searchNPCsSelector);
 
@@ -20,7 +19,9 @@ export const TableNPCs = ({ data }: { data?: Monster[] }) => {
   const rows =
     searchResults.length > 1
       ? searchResults
-      : data?.filter((e) => e.descriptor === "human");
+      : data
+          ?.filter((e) => e.descriptor === "human")
+          .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <Table

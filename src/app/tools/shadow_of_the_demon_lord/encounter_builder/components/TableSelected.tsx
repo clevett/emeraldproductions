@@ -11,12 +11,12 @@ export const TableSelected = ({ data }: { data?: Monster[] }) => {
   const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
 
   const updateSelected = (monster: Monster) => {
-    const index = selected.indexOf(monster);
-    const monsters = selected;
+    const index = selected.findIndex((m) => m._id === monster._id);
+    const monsters = [...selected];
 
     if (index >= 0) {
       monsters.splice(index, 1);
-      setSelected([...monsters]);
+      setSelected(monsters);
     }
   };
 
