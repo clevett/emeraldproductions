@@ -6,6 +6,7 @@ import { Table } from "@/components";
 
 import { Monster } from "../types";
 import { selectedNPCsSelector, searchNPCsSelector } from "../recoil";
+import { sortNamesAlphabetically } from "../utils";
 
 export const TableNPCs = ({ data }: { data?: Monster[] }) => {
   const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
@@ -18,10 +19,10 @@ export const TableNPCs = ({ data }: { data?: Monster[] }) => {
 
   const rows =
     searchResults.length > 1
-      ? searchResults
-      : data
-          ?.filter((e) => e.descriptor === "human")
-          .sort((a, b) => a.name.localeCompare(b.name));
+      ? sortNamesAlphabetically(searchResults)
+      : sortNamesAlphabetically(
+          data?.filter((e) => e.descriptor === "human") ?? []
+        );
 
   return (
     <Table

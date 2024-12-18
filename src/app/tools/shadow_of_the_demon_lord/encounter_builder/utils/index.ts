@@ -3,20 +3,8 @@ import { danger } from "@/data";
 import { Difficulties as DifficultyEnum } from "../enums";
 import { Difficulty, Level, Danger } from "../types";
 
-export const getColor = (key: Difficulty) => {
-  switch (key) {
-    case DifficultyEnum.EASY:
-      return "green";
-    case DifficultyEnum.AVERAGE:
-      return "amber";
-    case DifficultyEnum.CHALLENGING:
-      return "orange";
-    case DifficultyEnum.HARD:
-      return "red";
-    default:
-      return "";
-  }
-};
+export * from "./sort_names_alphabetically";
+export * from "./get_color";
 
 const less = " or less";
 const more = " or more";

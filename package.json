@@ -10,7 +10,7 @@
     "build": "next build",
     "lint": "next lint",
     "start": "next start -p $PORT",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "dependencies": {
     "@3d-dice/dice-box": "1.0.5",
@@ -40,6 +40,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
     "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.10",
     "@types/mongodb": "^4.0.6",
     "@types/node": "^20",
     "@types/react": "^18.3.12",
