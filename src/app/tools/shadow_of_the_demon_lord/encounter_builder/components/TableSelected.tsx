@@ -7,7 +7,7 @@ import { Table } from "@/components";
 import { selectedNPCsSelector } from "../recoil";
 import { Monster } from "../types";
 
-export const TableSelected = ({ data }: { data?: Monster[] }) => {
+export const TableSelected = ({ data }: { data: Monster[] }) => {
   const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
 
   const updateSelected = (monster: Monster) => {
@@ -23,7 +23,7 @@ export const TableSelected = ({ data }: { data?: Monster[] }) => {
   return (
     <Table
       columns={
-        data?.[0]
+        data[0]
           ? Object.keys(data[0])
               .map((e) => (e !== "_id" ? { header: e } : null))
               .filter((e) => e !== null)
@@ -37,7 +37,7 @@ export const TableSelected = ({ data }: { data?: Monster[] }) => {
         })) ?? []
       }
       onRowClick={(id: Monster["_id"]) => {
-        const monster = data?.find((e) => e._id === id);
+        const monster = data.find((e) => e._id === id);
         if (monster) {
           updateSelected(monster);
         }

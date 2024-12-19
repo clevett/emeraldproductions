@@ -8,7 +8,7 @@ import { Monster } from "../types";
 import { selectedNPCsSelector, searchNPCsSelector } from "../recoil";
 import { sortNamesAlphabetically } from "../utils";
 
-export const TableNPCs = ({ data }: { data?: Monster[] }) => {
+export const TableNPCs = ({ data }: { data: Monster[] }) => {
   const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
   const searchResults = useRecoilValue(searchNPCsSelector);
 
@@ -19,15 +19,15 @@ export const TableNPCs = ({ data }: { data?: Monster[] }) => {
 
   const rows =
     searchResults.length > 1
-      ? sortNamesAlphabetically(searchResults)
+      ? searchResults
       : sortNamesAlphabetically(
-          data?.filter((e) => e.descriptor === "human") ?? []
+          data.filter((e) => e.descriptor === "human") ?? []
         );
 
   return (
     <Table
       columns={
-        data?.[0]
+        data[0]
           ? Object.keys(data[0])
               .map((e) => (e !== "_id" ? { header: e } : null))
               .filter((e) => e !== null)
@@ -41,7 +41,7 @@ export const TableNPCs = ({ data }: { data?: Monster[] }) => {
         })) ?? []
       }
       onRowClick={(id: Monster["_id"]) => {
-        const monster = data?.find((e) => e._id === id);
+        const monster = data.find((e) => e._id === id);
         if (monster) {
           updateSelected(monster);
         }

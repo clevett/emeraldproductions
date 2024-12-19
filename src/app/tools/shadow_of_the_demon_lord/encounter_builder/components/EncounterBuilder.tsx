@@ -10,6 +10,7 @@ import { DifficultyTotal } from "./DifficultyTotal";
 import { TableSelected } from "./TableSelected";
 import { TableNPCs } from "./TableNPCs";
 import { SearchNPCs } from "./SearchNPCs";
+import { Filters } from "./Filters";
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
@@ -19,23 +20,13 @@ export const findIndex = (selected: Monster[], beast: Monster) =>
   Array.isArray(selected) ? selected.indexOf(beast) : false;
 
 export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
-  // const [searchResults, setSearchResults] = useState<Monster[] | undefined>(
-  //   undefined
-  // );
-  // const [selected, setSelected] = useState<Monster[] | undefined>(undefined);
-  // const [filters] = useState({
-  //   descriptor: "human",
-  //   source: "",
-  //   difficulty: "",
-  // });
-
-  // const descriptors = Array.from(
-  //   new Set(data?.map((e) => e.descriptor))
-  // ).sort();
-  // const sources = Array.from(new Set(data?.map((e) => e.source))).sort();
-  // const difficulties = Array.from(new Set(data?.map((e) => e.difficulty)))
-  //   .sort((a, b) => a - b)
-  //   .map((e) => `${e}`);
+  if (data === undefined) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Heading as="h4">Monster list not found...</Heading>
+      </div>
+    );
+  }
 
   return (
     <RecoilContext>
@@ -63,58 +54,38 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
           })}
         </div>
 
-        <div className="flex flex-row flex-wrap gap-4">
-          <div className="grid gap-2 content-start flex-1 min-w-[300px]">
-            <Heading as="h4" className="text-center">
-              <span className="mr-2">Encounter Difficulty =</span>
-              <DifficultyTotal />
-            </Heading>
-            <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
-              <TableSelected data={data} />
-            </div>
-          </div>
-
-          <div className="grid gap-2 content-start flex-1 min-w-[300px]">
-            <div className="grid grid-cols-1 gap-4 grid-rows-2 xl:grid-rows-1 justify-center content-center">
-              {/* <Select
-                defaultValue={filters.descriptor}
-                list={descriptors}
-                title="Descriptor"
-                onChange={(item) =>
-                  setSearchResults(data?.filter((e) => e.descriptor === item))
-                }
-              />
-              <Select
-                defaultValue={filters.source}
-                list={sources}
-                title="Source"
-                onChange={(item) =>
-                  setSearchResults(data?.filter((e) => e.source === item))
-                }
-              />
-              <Select
-                defaultValue={filters.difficulty}
-                list={difficulties}
-                title="Difficulty"
-                onChange={(item) =>
-                  setSearchResults(
-                    data?.filter((e) => `${e.difficulty}` === item)
-                  )
-                }
-              /> */}
-              <Heading
-                as="h4"
-                className="text-center row-start-1 xl:col-start-1 xl:col-end-3"
-              >
-                Bestiary
+        {data && (
+          <div className="flex flex-row flex-wrap gap-4">
+            <div className="grid gap-2 content-start flex-1 min-w-[300px]">
+              <Heading as="h4" className="text-center">
+                <span className="mr-2">Encounter Difficulty =</span>
+                <DifficultyTotal />
               </Heading>
-              <SearchNPCs data={data} />
+              <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
+                <TableSelected data={data} />
+              </div>
             </div>
-            <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
-              <TableNPCs data={data} />
+
+            <div className="grid gap-2 content-start flex-1 min-w-[300px]">
+              <div className="grid grid-cols-1 gap-4 grid-rows-2 xl:grid-rows-1 justify-center content-center">
+                <div className="xl:col-start-1 xl:col-end-2  xl:row-start-1">
+                  <Filters data={data} />
+                </div>
+
+                <Heading
+                  as="h4"
+                  className="text-center row-start-1 xl:col-start-2 xl:col-end-3 xl:row-start-1"
+                >
+                  Bestiary
+                </Heading>
+                <SearchNPCs data={data} />
+              </div>
+              <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
+                <TableNPCs data={data} />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </RecoilContext>
   );
