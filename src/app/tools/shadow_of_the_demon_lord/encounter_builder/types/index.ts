@@ -17,3 +17,5 @@ export type Level = keyof typeof danger;
 export type Difficulty = keyof (typeof danger)[Levels.STARTING];
 
 export type Danger = (typeof danger)[Levels.STARTING];
+
+export type MinMax = { min: number; max: number | null };
