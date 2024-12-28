@@ -21,7 +21,7 @@ export const SearchNPCs = ({ data }: { data: Monster[] }) => {
       label="monster search"
       onSubmit={onTermSubmit}
       placeholder="Search monster"
-      styles="w-full xl:max-w-60 md:self-end md:justify-self-end row-start-2 xl:row-start-1 xl:col-start-3"
+      styles="w-full xl:max-w-60 w-full"
     />
   );
 };

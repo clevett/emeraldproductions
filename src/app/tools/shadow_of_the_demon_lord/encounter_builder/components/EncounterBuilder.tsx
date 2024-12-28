@@ -16,9 +16,6 @@ const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
 >;
 
-export const findIndex = (selected: Monster[], beast: Monster) =>
-  Array.isArray(selected) ? selected.indexOf(beast) : false;
-
 export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
   if (data === undefined) {
     return (
@@ -58,7 +55,9 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
           <div className="flex flex-row flex-wrap gap-4">
             <div className="grid gap-2 content-start flex-1 min-w-[300px]">
               <Heading as="h4" className="text-center">
-                <span className="mr-2">Encounter Difficulty =</span>
+                <span className="mr-2">Encounter Difficulty</span>
+              </Heading>
+              <Heading as="h5" className="text-center min-h-[32px]">
                 <DifficultyTotal />
               </Heading>
               <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
@@ -67,18 +66,19 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
             </div>
 
             <div className="grid gap-2 content-start flex-1 min-w-[300px]">
-              <div className="grid grid-cols-1 gap-4 grid-rows-2 xl:grid-rows-1 justify-center content-center">
-                <div className="xl:col-start-1 xl:col-end-2  xl:row-start-1">
-                  <Filters data={data} />
-                </div>
-
-                <Heading
-                  as="h4"
-                  className="text-center row-start-1 xl:col-start-2 xl:col-end-3 xl:row-start-1"
-                >
+              <div className="grid justify-center content-center">
+                <Heading as="h4" className="text-center">
                   Bestiary
                 </Heading>
-                <SearchNPCs data={data} />
+              </div>
+
+              <div className="flex flex-wrap gap-4 w-full min-w-[300px]">
+                <div className="flex-1">
+                  <Filters data={data} />
+                </div>
+                <div className="flex-none">
+                  <SearchNPCs data={data} />
+                </div>
               </div>
               <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
                 <TableNPCs data={data} />

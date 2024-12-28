@@ -16,12 +16,12 @@ export const Table = ({
   rows: Rows;
 }) => {
   const [isAscending, setAscending] = useState(true);
-  const [sort, setSort] = useState<string | undefined>(undefined);
+  const [sort, setSort] = useState(columns[0].header);
 
-  const sortedRows = (rows: Rows) => {
+  const sortedRows = (r: Rows) => {
     if (sort) {
       const columnIndex = columns.findIndex((column) => column.header === sort);
-      return rows.sort((a, b) => {
+      return r.sort((a, b) => {
         const aValue = columnIndex === 0 ? a.header : a.cell[columnIndex - 1];
         const bValue = columnIndex === 0 ? b.header : b.cell[columnIndex - 1];
 
@@ -32,7 +32,7 @@ export const Table = ({
         }
       });
     }
-    return rows;
+    return r;
   };
 
   return (

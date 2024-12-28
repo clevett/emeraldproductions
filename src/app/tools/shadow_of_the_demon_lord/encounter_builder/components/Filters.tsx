@@ -29,24 +29,29 @@ export const Filters = ({ data }: { data: Monster[] }) => {
   };
 
   return (
-    <div className="grid grid-flow-col gap-4">
+    <div className="grid grid-flow-col gap-4 min-w-[300px] w-full">
       <Select
+        className="min-w-[200px]"
         defaultValue={filters.descriptor}
         list={descriptors}
-        title="Descriptor"
         onChange={(item) => filter(item, "descriptor")}
+        title="Descriptor"
       />
+
       <Select
-        defaultValue={filters.source}
-        list={sources}
-        title="Source"
-        onChange={(item) => filter(item, "source")}
-      />
-      <Select
+        className="min-w-[200px]"
         defaultValue={filters.difficulty}
         list={difficulties}
-        title="Difficulty"
         onChange={(item) => filter(item, "difficulty")}
+        title="Difficulty"
+      />
+
+      <Select
+        className="min-w-[200px]"
+        defaultValue={filters.source}
+        list={sources}
+        onChange={(item) => filter(item, "source")}
+        title="Source"
       />
     </div>
   );

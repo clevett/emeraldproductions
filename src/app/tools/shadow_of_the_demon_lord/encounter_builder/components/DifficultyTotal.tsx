@@ -12,8 +12,15 @@ export const DifficultyTotal = () => {
   const range = getDanger(total, level);
 
   return (
-    <span className={`text-2xl ${range && `text-${getColor(range)}-600`}`}>
-      {total}
-    </span>
+    <>
+      This encounter is{" "}
+      <span className={`${range && `text-${getColor(range)}-600`}`}>
+        {range}
+      </span>{" "}
+      for {level} level with total difficulty of{" "}
+      <span className={`${range && `text-${getColor(range)}-600`}`}>
+        {total}
+      </span>
+    </>
   );
 };
