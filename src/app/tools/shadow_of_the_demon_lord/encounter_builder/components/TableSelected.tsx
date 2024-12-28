@@ -1,14 +1,15 @@
 "use client";
 
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import { Table } from "@/components";
 
-import { selectedNPCsSelector } from "../recoil";
+import { dataSelector, selectedNPCsSelector } from "../recoil";
 import { Monster } from "../types";
 
-export const TableSelected = ({ data }: { data: Monster[] }) => {
+export const TableSelected = () => {
   const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
+  const data = useRecoilValue(dataSelector);
 
   const updateSelected = (monster: Monster) => {
     const index = selected.findIndex((m) => m._id === monster._id);
@@ -19,6 +20,8 @@ export const TableSelected = ({ data }: { data: Monster[] }) => {
       setSelected(monsters);
     }
   };
+
+  if (!data) return null;
 
   return (
     <Table

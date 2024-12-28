@@ -1,15 +1,16 @@
 "use client";
 
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 
 import { fuzzySearch, SearchBar } from "@/components";
 
 import { Monster } from "../types";
-import { filtersSelector, searchNPCsSelector } from "../recoil";
+import { dataSelector, filtersSelector, searchNPCsSelector } from "../recoil";
 
-export const SearchNPCs = ({ data }: { data: Monster[] }) => {
+export const SearchNPCs = () => {
   const setFilters = useSetRecoilState(filtersSelector);
   const setSearchResults = useSetRecoilState(searchNPCsSelector);
+  const data = useRecoilValue(dataSelector);
 
   const onTermSubmit = (term: string) => {
     const keys = ["name", "difficulty", "descriptor", "source"];

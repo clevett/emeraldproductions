@@ -1,8 +1,6 @@
 import { danger } from "@/data";
 import { Heading } from "@/components";
-import RecoilContext from "@/recoil";
 
-import { Monster } from "../types";
 import { getColor } from "../utils";
 import { SelectLevel } from "./SelectLevel";
 import { DifficultRange } from "./DifficultySubheader";
@@ -16,77 +14,65 @@ const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
 >;
 
-export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
-  if (data === undefined) {
-    return (
-      <div className="flex justify-center items-center h-full">
-        <Heading as="h4">Monster list not found...</Heading>
-      </div>
-    );
-  }
-
+export const EncounterBuilder = () => {
   return (
-    <RecoilContext>
-      <div className="grid gap-4 sm:p-2 sm:gap-10 auto-rows-min md:p-4 w-full h-full">
-        <div className="flex flex-row flex-wrap gap-4 bg-card rounded shadow justify-center p-2 sm:px-8 sm:py-6 sm:justify-between text-center">
-          <div className="grid gap-4">
-            <Heading as="h4">Level</Heading>
-            <SelectLevel />
-          </div>
-
-          {difficultiesKeys.map((difficulty) => {
-            const title =
-              difficulty === "max" ? "Max. Creature Difficulty" : difficulty;
-            return (
-              <div className="grid gap-2 sm:gap-4" key={`level-${difficulty}`}>
-                <Heading
-                  as="h4"
-                  className={`text-${getColor(difficulty)}-600 capitalize`}
-                >
-                  {title}
-                </Heading>
-                <DifficultRange difficulty={difficulty} />
-              </div>
-            );
-          })}
+    <div className="grid gap-4 sm:p-2 sm:gap-10 auto-rows-min md:p-4 w-full h-full">
+      <div className="flex flex-row flex-wrap gap-4 bg-card rounded shadow justify-center p-2 sm:px-8 sm:py-6 sm:justify-between text-center">
+        <div className="grid gap-4">
+          <Heading as="h4">Level</Heading>
+          <SelectLevel />
         </div>
 
-        {data && (
-          <div className="flex flex-row flex-wrap gap-4">
-            <div className="grid gap-2 content-start flex-1 min-w-[300px]">
-              <Heading as="h4" className="text-center">
-                <span className="mr-2">Encounter Difficulty</span>
+        {difficultiesKeys.map((difficulty) => {
+          const title =
+            difficulty === "max" ? "Max. Creature Difficulty" : difficulty;
+          return (
+            <div className="grid gap-2 sm:gap-4" key={`level-${difficulty}`}>
+              <Heading
+                as="h4"
+                className={`text-${getColor(difficulty)}-600 capitalize`}
+              >
+                {title}
               </Heading>
-              <Heading as="h5" className="text-center min-h-[32px]">
-                <DifficultyTotal />
-              </Heading>
-              <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
-                <TableSelected data={data} />
-              </div>
+              <DifficultRange difficulty={difficulty} />
             </div>
+          );
+        })}
+      </div>
 
-            <div className="grid gap-2 content-start flex-1 min-w-[300px]">
-              <div className="grid justify-center content-center">
-                <Heading as="h4" className="text-center">
-                  Bestiary
-                </Heading>
-              </div>
+      <div className="flex flex-row flex-wrap gap-4">
+        <div className="grid gap-2 content-start flex-1 min-w-[300px]">
+          <Heading as="h4" className="text-center">
+            <span className="mr-2">Encounter Difficulty</span>
+          </Heading>
+          <Heading as="h5" className="text-center min-h-[32px]">
+            <DifficultyTotal />
+          </Heading>
+          <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
+            <TableSelected />
+          </div>
+        </div>
 
-              <div className="flex flex-wrap gap-4 w-full min-w-[300px]">
-                <div className="flex-none">
-                  <SearchNPCs data={data} />
-                </div>
-                <div className="flex-1">
-                  <Filters data={data} />
-                </div>
-              </div>
-              <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
-                <TableNPCs data={data} />
-              </div>
+        <div className="grid gap-2 content-start flex-1 min-w-[300px]">
+          <div className="grid justify-center content-center">
+            <Heading as="h4" className="text-center">
+              Bestiary
+            </Heading>
+          </div>
+
+          <div className="flex flex-wrap gap-4 w-full min-w-[300px]">
+            <div className="flex-none">
+              <SearchNPCs />
+            </div>
+            <div className="flex-1">
+              <Filters />
             </div>
           </div>
-        )}
+          <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
+            <TableNPCs />
+          </div>
+        </div>
       </div>
-    </RecoilContext>
+    </div>
   );
 };

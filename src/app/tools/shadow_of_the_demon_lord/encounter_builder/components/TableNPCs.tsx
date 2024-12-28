@@ -2,15 +2,28 @@
 
 import { useRecoilState, useRecoilValue } from "recoil";
 
-import { Table } from "@/components";
+import { Heading, Table } from "@/components";
 
 import { Monster } from "../types";
-import { selectedNPCsSelector, searchNPCsSelector } from "../recoil";
+import {
+  selectedNPCsSelector,
+  searchNPCsSelector,
+  dataSelector,
+} from "../recoil";
 import { sortNamesAlphabetically } from "../utils";
 
-export const TableNPCs = ({ data }: { data: Monster[] }) => {
+export const TableNPCs = () => {
   const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
   const searchResults = useRecoilValue(searchNPCsSelector);
+  const data = useRecoilValue(dataSelector);
+
+  if (data === undefined) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Heading as="h4">Monster list not found...</Heading>
+      </div>
+    );
+  }
 
   const updateSelected = (monster: Monster) => {
     const array = !selected ? [monster] : [...selected, monster];

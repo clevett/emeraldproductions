@@ -1,16 +1,18 @@
 "use client";
 
 import { Select } from "@/components";
-import { useRecoilState } from "recoil";
-import { filtersSelector, searchNPCsSelector } from "../recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { dataSelector, filtersSelector, searchNPCsSelector } from "../recoil";
 import { Monster, Filters as FilterType } from "../types";
 
 import { sortNamesAlphabetically } from "../utils";
 import { filterMonsters } from "../utils/filter_monster";
 
-export const Filters = ({ data }: { data: Monster[] }) => {
+export const Filters = () => {
   const [, setSearchResults] = useRecoilState(searchNPCsSelector);
   const [filters, setFilters] = useRecoilState(filtersSelector);
+
+  const data = useRecoilValue(dataSelector);
 
   const list = ["all"];
 

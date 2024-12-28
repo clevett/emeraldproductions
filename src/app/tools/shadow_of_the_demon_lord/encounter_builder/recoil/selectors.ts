@@ -1,5 +1,7 @@
 import { DefaultValue, selector } from "recoil";
 import {
+  dataAtomFamily,
+  dataIdsAtom,
   filtersAtom,
   levelAtom,
   searchNPCsAtomFamily,
@@ -81,5 +83,13 @@ export const filtersSelector = selector({
     }
 
     set(filtersAtom, newValue);
+  },
+});
+
+export const dataSelector = selector({
+  key: "SOTDL_DATA_SELECTOR",
+  get: ({ get }) => {
+    const ids = get(dataIdsAtom);
+    return ids?.map((id) => get(dataAtomFamily(id)));
   },
 });
