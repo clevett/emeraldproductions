@@ -19,3 +19,8 @@ export type Difficulty = keyof (typeof danger)[Levels.STARTING];
 export type Danger = (typeof danger)[Levels.STARTING];
 
 export type MinMax = { min: number; max: number | null };
+
+export type Filter = "descriptor" | "source" | "difficulty";
+export type Value = string | number | undefined;
+
+export type Filters = { [key in Filter]: Value };

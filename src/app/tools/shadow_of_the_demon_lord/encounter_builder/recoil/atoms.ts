@@ -1,6 +1,6 @@
 import { Levels } from "../enums";
 import { atom, atomFamily } from "recoil";
-import { Level, Monster } from "../types";
+import { Filter, Level, Monster, Value } from "../types";
 
 export const levelAtom = atom<Level>({
   key: "SOTDL_LEVEL_ATOM",
@@ -23,4 +23,13 @@ export const searchNPCsIDsAtom = atom<Monster["_id"][]>({
 
 export const searchNPCsAtomFamily = atomFamily<Monster, Monster["_id"]>({
   key: "SOTDL_SEARCH_NPCS_ATOM_FAMILY",
+});
+
+export const filtersAtom = atom<{ [key in Filter]: Value }>({
+  key: "SOTDL_FILTERS_ATOM",
+  default: {
+    descriptor: "human",
+    source: undefined,
+    difficulty: undefined,
+  },
 });

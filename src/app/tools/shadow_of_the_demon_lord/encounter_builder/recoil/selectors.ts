@@ -1,5 +1,6 @@
 import { DefaultValue, selector } from "recoil";
 import {
+  filtersAtom,
   levelAtom,
   searchNPCsAtomFamily,
   searchNPCsIDsAtom,
@@ -67,5 +68,18 @@ export const searchNPCsSelector = selector({
     );
 
     newValue.forEach((s) => set(searchNPCsAtomFamily(s._id), s));
+  },
+});
+
+export const filtersSelector = selector({
+  key: "SOTDL_FILTERS_SELECTOR",
+  get: ({ get }) => get(filtersAtom),
+  set: ({ set, reset }, newValue) => {
+    if (newValue instanceof DefaultValue || newValue === undefined) {
+      reset(filtersAtom);
+      return;
+    }
+
+    set(filtersAtom, newValue);
   },
 });

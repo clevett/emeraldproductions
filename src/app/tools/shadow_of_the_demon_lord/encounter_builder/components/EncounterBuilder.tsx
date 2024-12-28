@@ -73,11 +73,11 @@ export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
               </div>
 
               <div className="flex flex-wrap gap-4 w-full min-w-[300px]">
-                <div className="flex-1">
-                  <Filters data={data} />
-                </div>
                 <div className="flex-none">
                   <SearchNPCs data={data} />
+                </div>
+                <div className="flex-1">
+                  <Filters data={data} />
                 </div>
               </div>
               <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
