@@ -20,7 +20,7 @@ export const TableNPCs = () => {
   if (data === undefined) {
     return (
       <div className="flex justify-center items-center h-full">
-        <Heading as="h4">Monster list not found...</Heading>
+        <Heading as="h5">Monster list not found...</Heading>
       </div>
     );
   }
@@ -30,12 +30,22 @@ export const TableNPCs = () => {
     setSelected(array);
   };
 
-  const rows =
-    searchResults.length > 1
-      ? searchResults
-      : sortNamesAlphabetically(
-          data.filter((e) => e.descriptor === "human") ?? []
-        );
+  if (searchResults.length === 0) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Heading as="h5">No monsters found...</Heading>
+      </div>
+    );
+  }
+
+  // const rows =
+  //   searchResults.length > 1
+  //     ? searchResults
+  //     : sortNamesAlphabetically(
+  //         data.filter((e) => e.descriptor === "human") ?? []
+  //       );
+
+  const rows = searchResults;
 
   return (
     <Table

@@ -41,7 +41,7 @@ export const EncounterBuilder = () => {
       </div>
 
       <div className="flex flex-row flex-wrap gap-4">
-        <div className="grid gap-2 content-start flex-1 min-w-[300px]">
+        <div className="grid gap-2 content-start flex-1 min-w-[300px] grid-rows-[minmax(32px,_min-content)_minmax(32px,_min-content)_1fr]">
           <Heading as="h4" className="text-center">
             <span className="mr-2">Encounter Difficulty</span>
           </Heading>
@@ -53,7 +53,7 @@ export const EncounterBuilder = () => {
           </div>
         </div>
 
-        <div className="grid gap-2 content-start flex-1 min-w-[300px]">
+        <div className="grid gap-2 content-start flex-1 min-w-[300px] grid-rows-[minmax(32px,_min-content)_minmax(32px,_min-content)_1fr]">
           <div className="grid justify-center content-center">
             <Heading as="h4" className="text-center">
               Bestiary
