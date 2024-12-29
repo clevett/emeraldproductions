@@ -20,10 +20,7 @@ describe("sortNamesAlphabetically", () => {
   });
 
   it("should handle an empty array", () => {
-    const monsters: any[] = [];
-
-    const sortedMonsters = sortNamesAlphabetically(monsters);
-
+    const sortedMonsters = sortNamesAlphabetically([]);
     expect(sortedMonsters).toEqual([]);
   });
 

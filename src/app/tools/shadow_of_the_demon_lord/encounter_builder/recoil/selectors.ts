@@ -57,7 +57,8 @@ export const searchNPCsSelector = selector({
   key: "SOTDL_SEARCH_NPCS_SELECTOR",
   get: ({ get }) => {
     const ids = get(searchNPCsIDsAtom);
-    return ids.map((id) => get(searchNPCsAtomFamily(id)));
+    const family = ids.map((id) => get(searchNPCsAtomFamily(id)));
+    return family.filter((s) => s !== undefined);
   },
   set: ({ set, reset }, newValue) => {
     if (newValue instanceof DefaultValue || newValue === undefined) {

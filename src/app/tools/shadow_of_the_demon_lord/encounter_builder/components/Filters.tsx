@@ -5,7 +5,6 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { dataSelector, filtersSelector, searchNPCsSelector } from "../recoil";
 import { Monster, Filters as FilterType } from "../types";
 
-import { sortNamesAlphabetically } from "../utils";
 import { filterMonsters } from "../utils/filter_monster";
 
 export const Filters = () => {

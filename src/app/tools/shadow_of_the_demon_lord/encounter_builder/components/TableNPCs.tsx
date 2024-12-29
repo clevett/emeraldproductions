@@ -2,7 +2,7 @@
 
 import { useRecoilState, useRecoilValue } from "recoil";
 
-import { Heading, Table } from "@/components";
+import { Table } from "@/components";
 
 import { Monster } from "../types";
 import {
