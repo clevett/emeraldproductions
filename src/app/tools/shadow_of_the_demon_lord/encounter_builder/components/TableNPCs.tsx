@@ -10,42 +10,18 @@ import {
   searchNPCsSelector,
   dataSelector,
 } from "../recoil";
-import { sortNamesAlphabetically } from "../utils";
 
 export const TableNPCs = () => {
   const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
-  const searchResults = useRecoilValue(searchNPCsSelector);
   const data = useRecoilValue(dataSelector);
-
-  if (data === undefined) {
-    return (
-      <div className="flex justify-center items-center h-full">
-        <Heading as="h5">Monster list not found...</Heading>
-      </div>
-    );
-  }
+  const searchResults = useRecoilValue(searchNPCsSelector);
 
   const updateSelected = (monster: Monster) => {
     const array = !selected ? [monster] : [...selected, monster];
     setSelected(array);
   };
 
-  if (searchResults.length === 0) {
-    return (
-      <div className="flex justify-center items-center h-full">
-        <Heading as="h5">No monsters found...</Heading>
-      </div>
-    );
-  }
-
-  // const rows =
-  //   searchResults.length > 1
-  //     ? searchResults
-  //     : sortNamesAlphabetically(
-  //         data.filter((e) => e.descriptor === "human") ?? []
-  //       );
-
-  const rows = searchResults;
+  const rows = searchResults ?? [];
 
   return (
     <Table

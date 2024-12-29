@@ -48,7 +48,7 @@ export const EncounterBuilder = () => {
           <Heading as="h5" className="text-center min-h-[32px]">
             <DifficultyTotal />
           </Heading>
-          <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
+          <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl max-h-[600px] overflow-y-auto">
             <TableSelected />
           </div>
         </div>
@@ -68,7 +68,7 @@ export const EncounterBuilder = () => {
               <Filters />
             </div>
           </div>
-          <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl">
+          <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl max-h-[600px] overflow-y-auto">
             <TableNPCs />
           </div>
         </div>

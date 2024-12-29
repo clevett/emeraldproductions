@@ -9,6 +9,7 @@ import {
   selectedNPCsAtomFamily,
   selectedNPCsIDsAtom,
 } from "./atoms";
+import { Monster } from "../types";
 export const levelSelector = selector({
   key: "SOTDL_LEVEL_SELECTOR",
   get: ({ get }) => get(levelAtom),
@@ -64,12 +65,15 @@ export const searchNPCsSelector = selector({
       return;
     }
 
-    set(
-      searchNPCsIDsAtom,
-      newValue.map((s) => s._id)
-    );
+    const ids: Monster["_id"][] = [];
 
-    newValue.forEach((s) => set(searchNPCsAtomFamily(s._id), s));
+    newValue.forEach((s) => {
+      if (s === undefined) return;
+      set(searchNPCsAtomFamily(s._id), s);
+      ids.push(s._id);
+    });
+
+    set(searchNPCsIDsAtom, ids);
   },
 });
 
