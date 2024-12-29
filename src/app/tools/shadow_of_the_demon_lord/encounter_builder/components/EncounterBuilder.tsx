@@ -1,14 +1,16 @@
 import { danger } from "@/data";
 import { Heading } from "@/components";
 
-import { getColor } from "../utils";
-import { SelectLevel } from "./SelectLevel";
+
 import { DifficultRange } from "./DifficultySubheader";
 import { DifficultyTotal } from "./DifficultyTotal";
-import { TableSelected } from "./TableSelected";
-import { TableNPCs } from "./TableNPCs";
-import { SearchNPCs } from "./SearchNPCs";
 import { Filters } from "./Filters";
+import { getColor } from "../utils";
+import { SearchNPCs } from "./SearchNPCs";
+import { SelectLevel } from "./SelectLevel";
+import { TableNPCs } from "./TableNPCs";
+import { TableSelected } from "./TableSelected";
+
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting

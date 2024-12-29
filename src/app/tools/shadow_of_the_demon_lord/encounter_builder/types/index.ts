@@ -1,6 +1,6 @@
 import { danger } from "@/data";
 
-import { Actions, Levels } from "../enums";
+import { Levels } from "../enums";
 
 export interface Monster {
   _id: string;
@@ -9,8 +9,6 @@ export interface Monster {
   name: string;
   source: string;
 }
-
-export type Action = `${Actions}`;
 
 export type Level = keyof typeof danger;
 

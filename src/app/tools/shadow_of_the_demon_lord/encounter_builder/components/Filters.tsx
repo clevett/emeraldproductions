@@ -1,7 +1,10 @@
 "use client";
 
-import { Select } from "@/components";
+
 import { useRecoilState, useRecoilValue } from "recoil";
+
+import { Select } from "@/components";
+
 import { dataSelector, filtersSelector, searchNPCsSelector } from "../recoil";
 import { Monster, Filters as FilterType } from "../types";
 
