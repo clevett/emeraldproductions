@@ -15,10 +15,12 @@ export const ToolContent = ({
 }: LayoutBodyProps & { footer?: string }) => {
   return (
     <>
-      <div className="justify-self-center">
+      <div className="justify-self-center text-center w-full text-nowrap text-ellipsis overflow-hidden">
         <DriveThruLink id={DriveThruId}>
-          <Title className="mr-2">{title}</Title>
-          <OpenInNewWindowIcon height="12" width="12" />
+          <Title className="sm:mr-2">{title}</Title>
+          <div className="hidden sm:flex items-center">
+            <OpenInNewWindowIcon height="12" width="12" />
+          </div>
         </DriveThruLink>
       </div>
 

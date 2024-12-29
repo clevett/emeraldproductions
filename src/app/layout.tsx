@@ -50,7 +50,9 @@ export default function RootLayout({
               </div>
             </header>
 
-            <main className="h-full w-full p-2 sm:px-6">{children}</main>
+            <main className="h-full w-full p-2 sm:px-6 overflow-hidden">
+              {children}
+            </main>
             <Analytics />
 
             <footer className="flex w-full py-4 sm:py-6 flex-col text-center">

@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components";
 import { useRecoilCallback } from "recoil";
 import { selectMissionFamily } from "../recoil";

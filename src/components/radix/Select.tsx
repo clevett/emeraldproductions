@@ -8,15 +8,18 @@ export const Select = ({
   title,
 }: {
   className?: string;
-  defaultValue: string;
+  defaultValue?: string | number;
   list: string[];
   onChange: (item: string) => void;
   title: string;
 }) => {
   return (
-    <RadixSelect.Root defaultValue={defaultValue} onValueChange={onChange}>
-      <RadixSelect.Trigger className="capitalize" />
-      <RadixSelect.Content className={className ?? ""}>
+    <RadixSelect.Root
+      defaultValue={defaultValue?.toString()}
+      onValueChange={onChange}
+    >
+      <RadixSelect.Trigger className="capitalize" placeholder={title} />
+      <RadixSelect.Content className={`capitalize ${className ?? ""}`}>
         <RadixSelect.Group>
           <RadixSelect.Label>{title}</RadixSelect.Label>
           {list.map((name) => (

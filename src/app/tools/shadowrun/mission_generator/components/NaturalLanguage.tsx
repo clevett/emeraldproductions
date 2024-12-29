@@ -1,3 +1,4 @@
+"use client";
 import { useRecoilValue } from "recoil";
 
 import { Options } from "@/data";

@@ -1,173 +1,75 @@
-"use client";
+import { danger } from "@/data";
+import { Heading } from "@/components";
 
-import { useState } from "react";
-
-import { danger, levels } from "@/data";
-import { Heading, fuzzySearch, SearchBar, Select, Table } from "@/components";
-
-import { Action, Monster } from "../types";
-import { Actions } from "../enums";
-import { getColor, getDanger } from "../utils";
-import { typeChecker, levelsChecker } from "../recoil/refine";
+import { getColor } from "../utils";
+import { SelectLevel } from "./SelectLevel";
+import { DifficultRange } from "./DifficultySubheader";
+import { DifficultyTotal } from "./DifficultyTotal";
+import { TableSelected } from "./TableSelected";
+import { TableNPCs } from "./TableNPCs";
+import { SearchNPCs } from "./SearchNPCs";
+import { Filters } from "./Filters";
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
 >;
 
-export const findIndex = (selected: Monster[], beast: Monster) =>
-  Array.isArray(selected) ? selected.indexOf(beast) : false;
-
-export const EncounterBuilder = ({ data }: { data?: Monster[] }) => {
-  const [level, setLevel] = useState(levels[1]);
-  const [searchResults, setSearchResults] = useState<Monster[] | undefined>(
-    undefined
-  );
-  const [selected, setSelected] = useState<Monster[] | undefined>(undefined);
-
-  const onTermSubmit = (term: string) => {
-    const keys = ["name", "difficulty", "descriptor", "source"];
-    if (data) {
-      const search = fuzzySearch<Monster>(data, term, keys);
-      setSearchResults(search);
-    }
-  };
-
-  if (data && searchResults === undefined) {
-    onTermSubmit("human");
-  }
-
-  const updateEncounter = (monster: Monster, action: Action) => {
-    if (action === Actions.ADD) {
-      const array = !selected ? [monster] : [...selected, monster];
-      setSelected(array);
-    }
-
-    if (selected && action === Actions.REMOVE) {
-      const index = selected.indexOf(monster);
-      const monsters = selected;
-
-      if (index >= 0) {
-        monsters.splice(index, 1);
-        setSelected([...monsters]);
-      }
-    }
-  };
-
-  const total =
-    selected?.map((s) => s.difficulty).reduce((a, b) => a + b, 0) ?? 0;
-  const range = getDanger(total, level);
-
+export const EncounterBuilder = () => {
   return (
-    <div className="grid gap-4 sm:gap-10 auto-rows-min p-2 md:p-4 w-full h-full">
-      <div className="flex flex-row bg-card rounded shadow p-4 sm:px-8 sm:py-6 flex-wrap gap-4  justify-between text-center">
+    <div className="grid gap-4 sm:p-2 sm:gap-10 auto-rows-min md:p-4 w-full h-full">
+      <div className="flex flex-row flex-wrap gap-4 bg-card rounded shadow justify-center p-2 sm:px-8 sm:py-6 sm:justify-between text-center">
         <div className="grid gap-4">
           <Heading as="h4">Level</Heading>
-          <Select
-            title="Level"
-            onChange={(e) => {
-              const result = typeChecker(levelsChecker(e));
-              if (result) {
-                setLevel(result);
-              }
-            }}
-            list={levels}
-            defaultValue={level}
-            className="w-min capitalize"
-          />
+          <SelectLevel />
         </div>
 
         {difficultiesKeys.map((difficulty) => {
           const title =
             difficulty === "max" ? "Max. Creature Difficulty" : difficulty;
-
           return (
-            <div className="grid gap-4" key={`level-${difficulty}`}>
+            <div className="grid gap-2 sm:gap-4" key={`level-${difficulty}`}>
               <Heading
                 as="h4"
                 className={`text-${getColor(difficulty)}-600 capitalize`}
               >
                 {title}
               </Heading>
-              <p className="text-center">{danger[`${level}`][difficulty]}</p>
+              <DifficultRange difficulty={difficulty} />
             </div>
           );
         })}
       </div>
 
       <div className="flex flex-row flex-wrap gap-4">
-        <div className="grid gap-2 content-start flex-1 min-w-[300px]">
+        <div className="grid gap-2 content-start flex-1 min-w-[300px] grid-rows-[minmax(32px,_min-content)_minmax(32px,_min-content)_1fr]">
           <Heading as="h4" className="text-center">
-            <span className="mr-2">Encounter Difficulty =</span>
-            <span
-              className={`text-2xl ${range && `text-${getColor(range)}-600`}`}
-            >
-              {total}
-            </span>
+            <span className="mr-2">Encounter Difficulty</span>
           </Heading>
-          <div className="px-2 py-4 rounded">
-            <Table
-              columns={
-                data?.[0]
-                  ? Object.keys(data[0])
-                      .map((e) => (e !== "_id" ? { header: e } : null))
-                      .filter((e) => e !== null)
-                  : []
-              }
-              rows={
-                selected?.map((e) => ({
-                  id: e._id,
-                  header: e.name,
-                  cell: [e.difficulty, e.descriptor, e.source],
-                })) ?? []
-              }
-              onRowClick={(id: Monster["_id"]) => {
-                const monster = data?.find((e) => e._id === id);
-                if (monster) {
-                  updateEncounter(monster, Actions.REMOVE);
-                }
-              }}
-            />
+          <Heading as="h5" className="text-center min-h-[32px]">
+            <DifficultyTotal />
+          </Heading>
+          <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl max-h-[600px] overflow-y-auto">
+            <TableSelected />
           </div>
         </div>
 
-        <div className="grid gap-2 content-start flex-1 min-w-[300px]">
-          <div className="grid grid-cols-1 gap-4 grid-rows-2 xl:grid-rows-1 justify-center content-center">
-            <Heading
-              as="h4"
-              className="text-center row-start-1 xl:col-start-1 xl:col-end-3"
-            >
+        <div className="grid gap-2 content-start flex-1 min-w-[300px] grid-rows-[minmax(32px,_min-content)_minmax(32px,_min-content)_1fr]">
+          <div className="grid justify-center content-center">
+            <Heading as="h4" className="text-center">
               Bestiary
             </Heading>
-            <SearchBar
-              onSubmit={onTermSubmit}
-              styles="w-full xl:max-w-60 md:self-end md:justify-self-end row-start-2 xl:row-start-1 xl:col-start-2"
-              placeholder="Search monster"
-              label="monster search"
-            />
           </div>
-          <div className="px-2 py-4 rounded shadow-2xl">
-            <Table
-              columns={
-                data?.[0]
-                  ? Object.keys(data[0])
-                      .map((e) => (e !== "_id" ? { header: e } : null))
-                      .filter((e) => e !== null)
-                  : []
-              }
-              rows={
-                searchResults?.map((e) => ({
-                  id: e._id,
-                  header: e.name,
-                  cell: [e.difficulty, e.descriptor, e.source],
-                })) ?? []
-              }
-              onRowClick={(id: Monster["_id"]) => {
-                const monster = data?.find((e) => e._id === id);
-                if (monster) {
-                  updateEncounter(monster, Actions.ADD);
-                }
-              }}
-            />
+
+          <div className="flex flex-wrap gap-4 w-full min-w-[300px]">
+            <div className="flex-none">
+              <SearchNPCs />
+            </div>
+            <div className="flex-1">
+              <Filters />
+            </div>
+          </div>
+          <div className="py-2 sm:px-2 sm:py-4 rounded shadow-2xl max-h-[600px] overflow-y-auto">
+            <TableNPCs />
           </div>
         </div>
       </div>

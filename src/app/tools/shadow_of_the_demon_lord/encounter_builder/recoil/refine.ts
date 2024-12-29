@@ -1,8 +1,9 @@
 import { asType, CheckResult, stringLiterals } from "@recoiljs/refine";
 
-import { Levels, Difficulties } from "../enums";
-
 import { danger } from "@/data";
+
+import { Level } from "../types";
+import { Levels, Difficulties } from "../enums";
 
 export const difficultiesChecker = asType(
   stringLiterals({
@@ -15,7 +16,7 @@ export const difficultiesChecker = asType(
   (s) => s as keyof typeof danger.starting
 );
 
-export const levelsChecker = asType(
+export const dangerChecker = asType(
   stringLiterals({
     starting: Levels.STARTING,
     novice: Levels.NOVICE,
@@ -24,6 +25,8 @@ export const levelsChecker = asType(
   }),
   (s) => s as keyof typeof danger
 );
+
+export const levelsChecker = asType(dangerChecker, (s: Level) => s);
 
 export const typeChecker = <T>(checker: CheckResult<T>) => {
   if (checker.type === "success") {
