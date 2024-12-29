@@ -1,10 +1,11 @@
 "use client";
 
-import { Select } from "@/components";
 import { useRecoilState, useRecoilValue } from "recoil";
+
+import { Select } from "@/components";
+
 import { dataSelector, filtersSelector, searchNPCsSelector } from "../recoil";
 import { Monster, Filters as FilterType } from "../types";
-
 import { filterMonsters } from "../utils/filter_monster";
 
 export const Filters = () => {

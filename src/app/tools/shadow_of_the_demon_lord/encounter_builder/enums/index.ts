@@ -1,13 +1,3 @@
-export enum Actions {
-  ADD = "add",
-  REMOVE = "remove",
-}
-
-export enum Sort {
-  DESC = "desc",
-  ASC = "asc",
-}
-
 export enum Levels {
   STARTING = "starting",
   NOVICE = "novice",

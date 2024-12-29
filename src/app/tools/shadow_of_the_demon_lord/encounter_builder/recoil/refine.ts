@@ -3,18 +3,7 @@ import { asType, CheckResult, stringLiterals } from "@recoiljs/refine";
 import { danger } from "@/data";
 
 import { Level } from "../types";
-import { Levels, Difficulties } from "../enums";
-
-export const difficultiesChecker = asType(
-  stringLiterals({
-    easy: Difficulties.EASY,
-    average: Difficulties.AVERAGE,
-    challenging: Difficulties.CHALLENGING,
-    hard: Difficulties.HARD,
-    max: Difficulties.MAX,
-  }),
-  (s) => s as keyof typeof danger.starting
-);
+import { Levels } from "../enums";
 
 export const dangerChecker = asType(
   stringLiterals({
