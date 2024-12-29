@@ -3,6 +3,7 @@ import { asType, CheckResult, stringLiterals } from "@recoiljs/refine";
 import { danger } from "@/data";
 
 import { Level } from "../types";
+
 import { Levels } from "../enums";
 
 export const dangerChecker = asType(

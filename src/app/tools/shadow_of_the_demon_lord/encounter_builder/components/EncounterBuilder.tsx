@@ -1,6 +1,7 @@
 import { danger } from "@/data";
 import { Heading } from "@/components";
 
+
 import { DifficultRange } from "./DifficultySubheader";
 import { DifficultyTotal } from "./DifficultyTotal";
 import { Filters } from "./Filters";
@@ -9,6 +10,7 @@ import { SearchNPCs } from "./SearchNPCs";
 import { SelectLevel } from "./SelectLevel";
 import { TableNPCs } from "./TableNPCs";
 import { TableSelected } from "./TableSelected";
+
 
 const difficultiesKeys = Object.keys(danger.starting) as Array<
   keyof typeof danger.starting
