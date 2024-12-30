@@ -12,3 +12,8 @@ export type List = {
   label: string;
   path: string;
 };
+
+export type MenuSection = {
+  label: string;
+  list: Link[] | List[];
+};

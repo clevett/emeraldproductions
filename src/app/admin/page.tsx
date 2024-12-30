@@ -10,18 +10,20 @@ const LoginPage = async () => {
 
   return (
     <div className="flex flex-col items-center m-4">
-      <h1 className="text-3xl my-2">
-        Welcome{session?.user?.name ? `, ${session?.user?.name}` : "!"}
-      </h1>
-      {session?.user?.image && (
-        <Image
-          alt={"user profile image"}
-          className="rounded-full"
-          height={72}
-          src={session?.user?.image}
-          width={72}
-        />
-      )}
+      <div className="grid gap-4 grid-flow-col items-center">
+        <h1 className="text-3xl my-2">
+          Welcome{session?.user?.name ? `, ${session?.user?.name}` : "!"}
+        </h1>
+        {session?.user?.image && (
+          <Image
+            alt="user profile image"
+            className="rounded-full"
+            height={72}
+            src={session?.user?.image}
+            width={72}
+          />
+        )}
+      </div>
       {!session?.user && (
         <form action={socialLogin}>
           <Button
