@@ -2,7 +2,7 @@ import convertHp from "./convertHP";
 
 import { rollD8s } from "./convertHP";
 
-import { ftdMonsters } from "../../../../data/ftdMonsters";
+import { ftdMonsters } from "@/data";
 
 describe("Given convert HP is called", () => {
   it("then returns a string", () => {
