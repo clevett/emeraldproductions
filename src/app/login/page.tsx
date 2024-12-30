@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { auth } from "@/auth";
-import { socialLogout, socialLogin } from "@/app/actions";
+import { socialLogout, socialLogin } from "@/actions";
 import { Button } from "@/components";
 
-const HomePage = async () => {
+const LoginPage = async () => {
   const session = await auth();
-
-  console.table({ session });
+  const user = session?.user;
+  console.table({ ...user });
 
   return (
     <div className="flex flex-col items-center m-4">
@@ -26,6 +26,7 @@ const HomePage = async () => {
         <form action={socialLogin}>
           <Button
             className="bg-pink-400 text-white p-1 rounded-md m-1 text-lg"
+            name="action"
             type="submit"
             value="google"
           >
@@ -50,4 +51,4 @@ const HomePage = async () => {
   );
 };
 
-export default HomePage;
+export default LoginPage;

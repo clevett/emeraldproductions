@@ -13,11 +13,7 @@ export const navigation = {
     path: "/",
   },
   tools: {
-    label: "TTRPG Tools",
-    path: "/tools/diceroller",
-  },
-  diceroller: {
-    label: "Dice Roller",
+    label: "Tools",
     path: "/tools/diceroller",
   },
   games: {
