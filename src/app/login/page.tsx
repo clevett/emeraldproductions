@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { auth } from "@/auth";
 import { socialLogout, socialLogin } from "@/app/actions";
+import { Button } from "@/components";
 
 const HomePage = async () => {
   const session = await auth();
@@ -9,7 +10,9 @@ const HomePage = async () => {
 
   return (
     <div className="flex flex-col items-center m-4">
-      <h1 className="text-3xl my-2">Welcome, {session?.user?.name}</h1>
+      <h1 className="text-3xl my-2">
+        Welcome{session?.user?.name ? `, ${session?.user?.name}` : "!"}
+      </h1>
       {session?.user?.image && (
         <Image
           alt={"user profile image"}
@@ -21,25 +24,27 @@ const HomePage = async () => {
       )}
       {!session?.user && (
         <form action={socialLogin}>
-          <button
+          <Button
             className="bg-pink-400 text-white p-1 rounded-md m-1 text-lg"
             type="submit"
-            name="action"
             value="google"
           >
             Sign In With Google
-          </button>
+          </Button>
         </form>
       )}
       {session?.user && (
-        <form action={socialLogout}>
-          <button
-            className="bg-blue-400 my-2 text-white p-1 rounded"
-            type="submit"
-          >
-            Logout
-          </button>
-        </form>
+        <>
+          <form action={socialLogout}>
+            <Button
+              aria-label="Logout"
+              className="bg-blue-400 my-2 text-white p-1 rounded"
+              type="submit"
+            >
+              Logout
+            </Button>
+          </form>
+        </>
       )}
     </div>
   );

@@ -17,8 +17,7 @@ export const DiceTitle = ({ onClick, onReset, title, die }: DiceTitleProps) => {
         </IconButton>
       )}
 
-      <Button onClick={onClick} name={title} />
-
+      <Button onClick={onClick}>{title}</Button>
       <AnimatedDie dieSize={die} onRoll={onClick} />
     </div>
   );

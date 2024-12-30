@@ -6,6 +6,7 @@ import { getDiceRollTotal } from "@/app/tools/utils";
 import { d20, d6 } from "@/images";
 
 import styles from "./AnimatedDie.module.css";
+import { IconButton } from "./radix";
 
 export type Die = "d20" | "d6";
 
@@ -56,7 +57,8 @@ export const AnimatedDie = ({
 
   return (
     <div>
-      <button
+      <IconButton
+        aria-label="Roll Die"
         className={`w-10 h-10 bg-transparent ${
           animation ? styles.rollDie : ""
         }`}
@@ -64,8 +66,8 @@ export const AnimatedDie = ({
         onClick={handleClick}
         type="button"
       >
-        <Image alt={altText()} src={image}></Image>
-      </button>
+        <Image alt={altText()} src={image} height={50} width={50}></Image>
+      </IconButton>
       <span className="text-white">{result}</span>
     </div>
   );

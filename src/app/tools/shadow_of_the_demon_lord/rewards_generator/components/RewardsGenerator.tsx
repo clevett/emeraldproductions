@@ -44,7 +44,7 @@ export const RewardsGenerator = () => {
           <LevelSelect level={level} onChange={onChange} />
         </div>
         <div className="max-w-xs justify-end">
-          <Button onClick={handleClick} name=" Generate Treasure" />
+          <Button onClick={handleClick}>Generate Treasure</Button>
         </div>
       </div>
     </Card>
