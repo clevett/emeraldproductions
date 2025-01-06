@@ -6,7 +6,6 @@ import { Button } from "@/components";
 const LoginPage = async () => {
   const session = await auth();
   const user = session?.user;
-  console.table({ ...user });
 
   return (
     <div className="flex flex-col items-center m-4">
@@ -24,7 +23,7 @@ const LoginPage = async () => {
           />
         )}
       </div>
-      {!session?.user && (
+      {!user && (
         <form action={socialLogin}>
           <Button
             className="bg-pink-400 text-white p-1 rounded-md m-1 text-lg"
@@ -36,7 +35,7 @@ const LoginPage = async () => {
           </Button>
         </form>
       )}
-      {session?.user && (
+      {user && (
         <>
           <form action={socialLogout}>
             <Button

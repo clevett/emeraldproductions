@@ -5,6 +5,7 @@ import {
   myzIcon,
   sr5eIcon,
   sr6eIcon,
+  hipster,
 } from "@/images";
 import { MenuSection } from "@/types";
 
@@ -167,12 +168,23 @@ export const rpgTools: MenuSection[] = [
 
 export const adminTools: MenuSection[] = [
   {
+    label: "General",
+    list: [
+      {
+        description: `Login to access the admin tools.`,
+        label: "Login/Logout",
+        path: "/admin",
+        icon: hipster,
+      },
+    ],
+  },
+  {
     label: systems.sotdl.title,
     list: [
       {
         description: `Submit new monsters to be used in the Encounter Builder.`,
         label: "Add Npcs",
-        path: "/admin/shadow_of_the_demon_lord/npcs",
+        path: "/tools/shadow_of_the_demon_lord/add_npcs",
         icon: sotdlIcon,
       },
     ],
