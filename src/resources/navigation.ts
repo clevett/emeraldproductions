@@ -208,7 +208,7 @@ export const navigation = {
   },
   admin: {
     label: "Admin",
-    path: "/admin",
+    path: "/login",
     menu: adminTools,
   },
 };
