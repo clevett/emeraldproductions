@@ -1,5 +1,7 @@
 import { StaticImageData } from "next/image";
 
+export * from "./user";
+
 export type Link = {
   icon?: StaticImageData;
   label: string;

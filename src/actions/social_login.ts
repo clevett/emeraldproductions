@@ -7,5 +7,5 @@ export async function socialLogin(formData: {
 }) {
   const action = formData.get("action");
   //@ts-expect-error ignore action error for now
-  await signIn(action, { redirectTo: "/admin" });
+  await signIn(action, { redirectTo: "/login" });
 }
