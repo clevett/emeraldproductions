@@ -1,24 +1,35 @@
-import { gql, useQuery } from "urql";
+import Image from "next/image";
 
-const BookQuery = gql`
-  query {
-    me {
-      username
-    }
-  }
-`;
+import { Heading } from "@/components";
+import { HardcoverBook as Book, HardcoverList as Lists } from "@/types";
 
-export const BookList = () => {
-  const [result] = useQuery({
-    query: BookQuery,
+export const BookList = ({ list }: { list: Lists }) => {
+  const { id, name, list_books: books } = list;
+
+  const sortedBooks = books?.sort((a, b) => {
+    return a.book.title.localeCompare(b.book.title);
   });
 
-  const { data, fetching, error } = result;
-
-  if (fetching) return <p>Loading...</p>;
-  if (error) return <p>Oh no... {error.message}</p>;
-
-  console.log("DATA", data);
-
-  return <p>{data.me.username}</p>;
+  return (
+    <div key={id}>
+      <Heading as="h3">{name} Reading</Heading>
+      <ul>
+        {sortedBooks?.map((book: { id: string; book: Book }) => (
+          <li key={book.id}>
+            <h3>{book.book.title}</h3>
+            <p>{book.book.subtitle}</p>
+            <p>{book.book.headline}</p>
+            <p>{book.book.description}</p>
+            <p>{book.book.rating}</p>
+            <Image
+              alt={book.book.title}
+              src={book.book.image.url}
+              height={192}
+              width={128}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };

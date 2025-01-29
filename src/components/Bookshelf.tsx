@@ -1,44 +1,27 @@
-"use client";
+import { Suspense } from "react";
+import { BookList } from "@/components/Booklist";
 
-import { useMemo } from "react";
-import {
-  UrqlProvider,
-  ssrExchange,
-  cacheExchange,
-  fetchExchange,
-  createClient,
-} from "@urql/next";
+import { getClient, BookListsQuery } from "@/api/hardcover";
+import { HardcoverList } from "@/types";
 
-import { Heading } from "@/components";
-import { BookList } from "./Booklist";
+export const Bookshelf = async () => {
+  const { data, error } = await getClient().query(BookListsQuery, {});
 
-export const Bookshelf = () => {
-  const [client, ssr] = useMemo(() => {
-    const ssr = ssrExchange({
-      isClient: typeof window !== "undefined",
-    });
-    const client = createClient({
-      exchanges: [cacheExchange, ssr, fetchExchange],
-      suspense: true,
-      url: "https://api.hardcover.app/v1/graphql",
-      fetchOptions: () => {
-        const token = process.env.HARDCOVER_API_TOKEN;
+  if (error) return <p>Oh no... {error.message}</p>;
 
-        console.log(token);
+  const { lists } = data.me[0];
 
-        return {
-          headers: { authorization: token ?? "" },
-        };
-      },
-    });
+  const getSortedBooks = (listName: string): HardcoverList => {
+    return lists.find((list: { name: string }) => list.name === listName);
+  };
 
-    return [client, ssr];
-  }, []);
+  const influential = getSortedBooks("Influential");
+  const professional = getSortedBooks("Professional");
 
   return (
-    <UrqlProvider client={client} ssr={ssr}>
-      <Heading as="h3">Influential Reading</Heading>
-      <BookList />
-    </UrqlProvider>
+    <Suspense fallback={<p>Loading...</p>}>
+      {influential && <BookList list={influential} />}
+      {professional && <BookList list={professional} />}
+    </Suspense>
   );
 };
