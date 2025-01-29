@@ -3,9 +3,11 @@
 import { signIn } from "@/auth";
 
 export async function socialLogin(formData: {
-  get: (name: string) => string | null;
+  get: (name: string) => FormDataEntryValue | null;
 }) {
   const action = formData.get("action");
-  //@ts-expect-error ignore action error for now
-  await signIn(action, { redirectTo: "/login" });
+
+  if (typeof action === "string") {
+    await signIn(action, { redirectTo: "/login" });
+  }
 }

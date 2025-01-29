@@ -1,33 +1,13 @@
 import Image from "next/image";
 import { auth } from "@/auth";
+import { socialLogout } from "@/actions";
 import { Button } from "@/components";
-import { GET } from "../api/login/route";
-import { socialLogout, socialLogin } from "@/actions";
-import { User } from "@/types";
+
+import { LoginForm } from "./components/LoginForm";
 
 export default async function Page() {
   const session = await auth();
   const user = session?.user;
-
-  if (!user) {
-    return (
-      <form action={socialLogin}>
-        <Button
-          className="bg-pink-400 text-white p-1 rounded-md m-1 text-lg"
-          name="action"
-          type="submit"
-          value="google"
-        >
-          Sign In With Google
-        </Button>
-      </form>
-    );
-  }
-
-  const data = await GET(user).then((res) => res?.json());
-
-  console.log("DATA");
-  console.log(data);
 
   return (
     <div className="flex flex-col items-center m-4">
@@ -45,7 +25,7 @@ export default async function Page() {
           />
         )}
       </div>
-
+      {!user && <LoginForm />}
       {user && (
         <>
           <form action={socialLogout}>

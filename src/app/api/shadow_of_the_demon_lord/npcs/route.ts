@@ -1,11 +1,7 @@
-//@ts-expect-error - mongo not typed
 import { MongoClient } from "mongodb";
 
 export async function GET() {
-  const client = new MongoClient(process.env.ATLAS_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  const client = new MongoClient(process.env.ATLAS_URI ?? "");
 
   try {
     await client.connect();

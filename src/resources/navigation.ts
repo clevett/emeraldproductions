@@ -173,7 +173,7 @@ export const adminTools: MenuSection[] = [
       {
         description: `Login to access the admin tools.`,
         label: "Login/Logout",
-        path: "/admin",
+        path: "/login",
         icon: hipster,
       },
     ],

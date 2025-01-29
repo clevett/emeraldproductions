@@ -1,10 +1,11 @@
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
-import type { Metadata } from "next";
+
 import { Analytics } from "@vercel/analytics/react";
 
 import { NavigationMenu, Contact } from "@/components";
 
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
