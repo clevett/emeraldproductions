@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-
+export * from "./hardcover";
 export * from "./user";
 
 export type Link = {
