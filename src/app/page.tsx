@@ -1,47 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Text } from "@radix-ui/themes";
-import { AboutCard, Heading } from "@/components";
-import { about } from "@/resources";
+
+import { AboutCard, Heading, Bookshelf } from "@/components";
+import { about, cards } from "@/resources";
+import { takedown as portrait } from "@/images";
 
 import styles from "./styles.module.css";
 
-import {
-  takedown as portrait,
-  iceland,
-  npcs as gamemaster,
-  dice,
-  deltaGreen,
-} from "@/images";
-
-import type { Metadata } from "next";
-
 export const metadata: Metadata = about;
-
-const cards = [
-  {
-    title: "Gamemaster",
-    src: gamemaster,
-    description:
-      "Forever gamemaster who loves to play Pendragon, Shadow of the Demon Lord, Shadowrun, Symbaroum, Paranoia, and Mutant Year Zero.",
-  },
-  {
-    title: "Developer",
-    src: dice,
-    description: `A software developer with 8+ years experience creating virtual table top software and role playing tools.`,
-  },
-  {
-    title: "Roll20 Expert",
-    src: deltaGreen,
-    description:
-      "Helper to ttrpg publishers whose is assisting in getting their content online. I've led Roll20 product launches for Paizo, Chaosium, Hunter's Entertainment, Schwalb Entertainment, and more.",
-  },
-  {
-    title: "Adventurer",
-    src: iceland,
-    description:
-      "American living in Iceland. I love to travel and explore. Been to over 30 countries and counting.",
-  },
-];
 
 const cardNodes = cards.map((props, index) => {
   return (
@@ -51,7 +18,7 @@ const cardNodes = cards.map((props, index) => {
 
 export default function Home() {
   return (
-    <div className="grid gap-8 p-8">
+    <div className="grid gap-8 p-8 lg:gap-32">
       <div className="flex flex-row flex-wrap md:flex-nowrap justify-center gap-8">
         <Image
           alt="A person with short hair wearing a jacket over a super hero costume looks to the sky"
@@ -70,6 +37,9 @@ export default function Home() {
         </div>
       </div>
       <div className="flex justify-center flex-wrap gap-8">{cardNodes}</div>
+      <div className="grid justify-center gap-8">
+        <Bookshelf />
+      </div>
     </div>
   );
 }

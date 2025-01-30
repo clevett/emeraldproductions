@@ -1,4 +1,15 @@
 module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.hardcover.app",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
+    ],
+  },
   async redirects() {
     return [
       {
