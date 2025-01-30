@@ -6,8 +6,6 @@ import { Button } from "@/components";
 import { socialLogin } from "@/actions";
 
 export const LoginForm = () => {
-  //const [state, action, pending] = useActionState(socialLogin, undefined);
-
   return (
     <form action={socialLogin}>
       <Button

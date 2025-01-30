@@ -1,8 +1,6 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-//https://docs.kinde.com/developer-tools/sdks/frontend/react-sdk/
-
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     GoogleProvider({
@@ -21,38 +19,20 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        // get user from db with the email
-        // if there is no user with the email, create new user
-        // else set the user data to token
-        //const dbUser = await GET(user);
-        console.log("DATABASE USER");
-        //console.log(dbUser);
+        console.log("User is logged in");
+
+        const response = await fetch(
+          process.env.URL + "/api/login/" + user.id,
+          {
+            headers: { "Content-Type": "application/json" },
+            method: "GET",
+          }
+        );
+
+        const data = await response.json();
+
+        console.log("JWT", data);
       }
-
-      console.log(user);
-
-      // // 2. Prepare data for insertion into database
-      // const { name, email, password } = validatedFields.data;
-      // // e.g. Hash the user's password before storing it
-      // const hashedPassword = await bcrypt.hash(password, 10);
-
-      // // 3. Insert the user into the database or call an Auth Library's API
-      // const data = await db
-      //   .insert(users)
-      //   .values({
-      //     name,
-      //     email,
-      //     password: hashedPassword,
-      //   })
-      //   .returning({ id: users.id });
-
-      // const user = data[0];
-
-      // if (!user) {
-      //   return {
-      //     message: "An error occurred while creating your account.",
-      //   };
-      // }
 
       return token;
     },
