@@ -16,7 +16,7 @@ export const BookList = ({ list }: { list: Lists }) => {
       <Heading className="text-center" as="h3">
         {name} Reading
       </Heading>
-      <ul className="flex flex-row flex-wrap gap-5 lg:gap-2">
+      <ul className="flex flex-row flex-wrap justify-center gap-5 lg:gap-2">
         {sortedBooks?.map((book: { id: string; book: Book }) => (
           <li
             className="relative overflow-hidden group transition-all border border-gray-100/20 ring-accent hover:ring-1 hover:border-sky-500 rounded-l-sm rounded-r-md shadow-md block"
@@ -26,17 +26,22 @@ export const BookList = ({ list }: { list: Lists }) => {
               key={id}
               content={
                 <div>
-                  <h3>{book.book.title}</h3>
-                  <p>{book.book.subtitle}</p>
+                  <Heading className="bold text-wrap break-words" as="h4">
+                    {book.book.title}
+                  </Heading>
+                  <p className="opacity-80">{book.book.subtitle}</p>
                 </div>
               }
               trigger={
-                <Link href={`https://hardcover.app/books/${book.book.slug}`}>
+                <Link
+                  href={`https://hardcover.app/books/${book.book.slug}`}
+                  target="_blank"
+                >
                   <Image
-                    className="rounded-l-sm rounded-r-md"
+                    className="rounded-l-sm rounded-r-md h-full"
                     alt={book.book.title}
                     src={book.book.image.url}
-                    height={150}
+                    height={180}
                     width={100}
                   />
                 </Link>
