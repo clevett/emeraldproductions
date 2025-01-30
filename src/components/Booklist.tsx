@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 
-import { Heading } from "@/components";
+import { Heading, HoverCard } from "@/components";
 import { HardcoverBook as Book, HardcoverList as Lists } from "@/types";
 
 export const BookList = ({ list }: { list: Lists }) => {
@@ -11,21 +12,35 @@ export const BookList = ({ list }: { list: Lists }) => {
   });
 
   return (
-    <div key={id}>
-      <Heading as="h3">{name} Reading</Heading>
-      <ul>
+    <div className="flex flex-col flex-wrap gap-5 lg:gap-2" key={id}>
+      <Heading className="text-center" as="h3">
+        {name} Reading
+      </Heading>
+      <ul className="flex flex-row flex-wrap gap-5 lg:gap-2">
         {sortedBooks?.map((book: { id: string; book: Book }) => (
-          <li key={book.id}>
-            <h3>{book.book.title}</h3>
-            <p>{book.book.subtitle}</p>
-            <p>{book.book.headline}</p>
-            <p>{book.book.description}</p>
-            <p>{book.book.rating}</p>
-            <Image
-              alt={book.book.title}
-              src={book.book.image.url}
-              height={192}
-              width={128}
+          <li
+            className="relative overflow-hidden group transition-all border border-gray-100/20 ring-accent hover:ring-1 hover:border-sky-500 rounded-l-sm rounded-r-md shadow-md block"
+            key={book.id}
+          >
+            <HoverCard
+              key={id}
+              content={
+                <div>
+                  <h3>{book.book.title}</h3>
+                  <p>{book.book.subtitle}</p>
+                </div>
+              }
+              trigger={
+                <Link href={`https://hardcover.app/books/${book.book.slug}`}>
+                  <Image
+                    className="rounded-l-sm rounded-r-md"
+                    alt={book.book.title}
+                    src={book.book.image.url}
+                    height={150}
+                    width={100}
+                  />
+                </Link>
+              }
             />
           </li>
         ))}

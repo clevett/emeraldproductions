@@ -18,7 +18,7 @@ const cardNodes = cards.map((props, index) => {
 
 export default function Home() {
   return (
-    <div className="grid gap-8 p-8">
+    <div className="grid gap-8 p-8 lg:gap-32">
       <div className="flex flex-row flex-wrap md:flex-nowrap justify-center gap-8">
         <Image
           alt="A person with short hair wearing a jacket over a super hero costume looks to the sky"
