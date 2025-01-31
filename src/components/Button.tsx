@@ -10,7 +10,7 @@ export const Button = ({
 } & ButtonProps) => {
   return (
     <RadixButton
-      className={`cursor-pointer shadow-lg rounded py-1 px-2 bg-green-800 ${
+      className={`cursor-pointer shadow-lg rounded-md py-3 px-4 text-white text-base bg-green-950 ${
         buttonStyles.button
       } ${className ?? ""}`}
       {...props}

@@ -5,7 +5,7 @@ export const LoginForm = () => {
   return (
     <form action={socialLogin}>
       <Button
-        className="bg-sky-700 text-white p-8 rounded-md m-1 text-lg"
+        className="bg-sky-700 p-8 m-1"
         name="action"
         type="submit"
         value="google"
