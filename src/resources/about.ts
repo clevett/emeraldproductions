@@ -1,4 +1,16 @@
-import { iceland, npcs as gamemaster, dice, deltaGreen } from "@/images";
+import {
+  iceland,
+  npcs as gamemaster,
+  dice,
+  deltaGreen,
+  sixthworld,
+  emeraldgrid,
+  nightwitches,
+  complexaction,
+  optiverse,
+  stuffershack,
+  logo,
+} from "@/images";
 
 export const cards = [
   {
@@ -26,8 +38,51 @@ export const cards = [
   },
 ];
 
-export const books = [
+export const media = [
   {
-    ISBN: "9781524746735",
+    title: "Emerald Grid",
+    description:
+      "Creator and head gamemaster of Shadowrun Living Community for 5th Edition.",
+    src: "https://www.youtube.com/@emeraldgrid2072",
+    icon: emeraldgrid,
+  },
+  {
+    title: "The Sixth World podcast",
+    description:
+      "Co-host of podcast about Shadowrun and other cyberpunk games.",
+    src: "https://www.youtube.com/@sixthworldpodcast7527",
+    icon: sixthworld,
+  },
+  {
+    title: "Tales from the Stuffer Shack",
+    description:
+      "Cast member for Shadowrun Anarchy actual play focusing on two characters living the life as Stuffer Shack clerks.",
+    src: "https://podcasts.apple.com/nz/podcast/tales-from-the-stuffer-shack/id1772143282",
+    icon: stuffershack,
+  },
+  {
+    title: "Night Witches",
+    description: "Cast member for Night Witches actual play.",
+    src: "https://youtube.com/playlist?list=PLLyRFLHROONsXCeAC9n9hs1HTQfs4jhxx&si=BGHIDIu2NBomqEY0",
+    icon: nightwitches,
+  },
+  {
+    title: "Optiverse: The Variants",
+    description:
+      "Mutants & Masterminds actual play were I was a caster member playing Takedown.",
+    src: "https://www.twitch.tv/collections/FN6Hyy19mhVo7Q",
+    icon: optiverse,
+  },
+  {
+    title: "Complex Action",
+    description: "Writer for Shadowrun 5th Edition rules.",
+    src: "https://www.youtube.com/@ComplexAction",
+    icon: complexaction,
+  },
+  {
+    title: "Twitch Streamer",
+    description: "Former professional game master and Twitch streamer.",
+    src: "https://www.twitch.tv/cadenlevett",
+    icon: logo,
   },
 ];

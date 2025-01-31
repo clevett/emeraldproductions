@@ -25,4 +25,13 @@ export { default as infinity } from "@/images/icomoon/304-infinite.svg";
 export { default as office } from "@/images/icomoon/004-office.svg";
 export { default as yen } from "@/images/icomoon/063-coin-yen.svg";
 
+export { default as emeraldgrid } from "@/images/podcasts/egrid.png";
+export { default as sixthworld } from "@/images/podcasts/sixthworld.png";
+export { default as nightwitches } from "@/images/podcasts/nightwitches.png";
+export { default as complexaction } from "@/images/podcasts/complexaction.jpg";
+export { default as optiverse } from "@/images/podcasts/optiverse.png";
+export { default as stuffershack } from "@/images/podcasts/stuffershack.webp";
+
+export { default as logo } from "@/images/logo.png";
+
 export * from "@/images/shadowrun";
