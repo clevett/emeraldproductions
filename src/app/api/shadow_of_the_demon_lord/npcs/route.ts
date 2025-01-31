@@ -8,9 +8,7 @@ export async function GET() {
 
     const database = client.db(`${process.env.MONGO_DB}`);
 
-    const collection = database.collection(
-      `${process.env.SOTDL_NPC_COLLECTION}`
-    );
+    const collection = database.collection(`sodlbeasts`);
     const data = await collection.find({}).toArray();
 
     return Response.json({ data });
