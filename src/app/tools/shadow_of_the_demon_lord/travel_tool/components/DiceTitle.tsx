@@ -12,7 +12,7 @@ export const DiceTitle = ({ onClick, onReset, title, die }: DiceTitleProps) => {
   return (
     <div className={`grid gap-4 grid-flow-col content-center items-center`}>
       {onReset && (
-        <IconButton label={title} onClick={onReset}>
+        <IconButton aria-label={title} onClick={onReset}>
           <ReloadIcon />
         </IconButton>
       )}
