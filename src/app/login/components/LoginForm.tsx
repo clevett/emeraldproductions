@@ -1,7 +1,3 @@
-"use client";
-
-//import { useActionState } from "react";
-
 import { Button } from "@/components";
 import { socialLogin } from "@/actions";
 
