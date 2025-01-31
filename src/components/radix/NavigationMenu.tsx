@@ -3,8 +3,9 @@ import * as RadixNavigationMenu from "@radix-ui/react-navigation-menu";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
-import { auth } from "@/auth";
+import { verifyAdminPrivileges } from "@/utils";
 import { navigation } from "@/resources";
+
 import { NavigationMenuSection } from "../navigation/";
 
 const focusShadow = "focus:shadow-[0_0_0_2px] focus:shadow-blue-700";
@@ -18,7 +19,7 @@ const Caret = (
 );
 
 export const NavigationMenu = async () => {
-  const session = await auth();
+  const isAdmin = await verifyAdminPrivileges();
   const { about, tools, games, admin } = navigation;
 
   const listStyle = `block select-none rounded px-3 py-2 font-medium leading-none outline-none ${hoverStyle} ${focusShadow}`;
@@ -66,7 +67,7 @@ export const NavigationMenu = async () => {
           ))}
         </RadixNavigationMenu.Item>
 
-        {session?.user && (
+        {isAdmin && (
           <RadixNavigationMenu.Item>
             <RadixNavigationMenu.Trigger className={menuStyle}>
               {admin.label}

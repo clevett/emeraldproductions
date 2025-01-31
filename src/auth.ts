@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import { fetchUserByEmail } from "@/db";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
@@ -18,37 +19,26 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, user }) {
-      if (user) {
-        const email = user.email;
-        console.log("User is logged in");
+      if (user && user.email) {
+        const data = await fetchUserByEmail(user.email);
 
-        const response = await fetch(
-          `${process.env.URL}/api/login?email=${email}`,
+        if (!data) {
+          return token;
+        }
 
-          {
-            headers: { "Content-Type": "application/json" },
-            method: "GET",
-          }
-        );
-
-        const dbUser = await response.json();
-
-        if (!dbUser.email) {
+        if (data && !data.id) {
           const create = await fetch(`${process.env.URL}/api/register`, {
             body: JSON.stringify({ user }),
             headers: { "Content-Type": "application/json" },
             method: "POST",
           });
 
-          const newUser = await create.json();
+          const dbUser = await create.json();
 
-          console.log("NEW USER", newUser);
-
-          return newUser;
+          return { ...token, user: dbUser.data };
         }
 
-        console.log("JWT", dbUser);
-        return dbUser;
+        return { ...token, user: data };
       }
 
       return token;
