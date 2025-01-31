@@ -3,5 +3,5 @@
 import { signOut } from "@/auth";
 
 export async function socialLogout() {
-  await signOut({ redirectTo: "/admin" });
+  await signOut({ redirectTo: "/login" });
 }
