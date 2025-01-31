@@ -60,7 +60,7 @@ export const MissionCard = ({ item }: MissionCardProps) => {
         <Heading as="h3">{capitalize(item)}</Heading>
         <p>{selected?.description}</p>
         <span>{note}</span>
-        <IconButton onClick={handleClick} label={`roll for a new ${item}`}>
+        <IconButton onClick={handleClick} aria-label={`roll for a new ${item}`}>
           <ReloadIcon />
         </IconButton>
       </div>

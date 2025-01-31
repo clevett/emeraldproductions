@@ -5,26 +5,9 @@ import {
   myzIcon,
   sr5eIcon,
   sr6eIcon,
+  hipster,
 } from "@/images";
-
-export const navigation = {
-  about: {
-    label: "About",
-    path: "/",
-  },
-  tools: {
-    label: "TTRPG Tools",
-    path: "/tools/diceroller",
-  },
-  diceroller: {
-    label: "Dice Roller",
-    path: "/tools/diceroller",
-  },
-  games: {
-    label: "Games",
-    path: "/games/vocabulary_builder",
-  },
-};
+import { MenuSection } from "@/types";
 
 export const games = [
   {
@@ -160,7 +143,7 @@ export const systems = {
   },
 };
 
-export const rpgTools = [
+export const rpgTools: MenuSection[] = [
   {
     label: "General",
     list: tools,
@@ -182,3 +165,50 @@ export const rpgTools = [
     list: [...systems.sr5e.list, ...systems.sr6e.list],
   },
 ];
+
+export const adminTools: MenuSection[] = [
+  {
+    label: "General",
+    list: [
+      {
+        description: `Login to access the admin tools.`,
+        label: "Login/Logout",
+        path: "/login",
+        icon: hipster,
+      },
+    ],
+  },
+  {
+    label: systems.sotdl.title,
+    list: [
+      {
+        description: `Submit new monsters to be used in the Encounter Builder.`,
+        label: "Add Npcs",
+        path: "/tools/shadow_of_the_demon_lord/add_npcs",
+        icon: sotdlIcon,
+      },
+    ],
+  },
+];
+
+export const navigation = {
+  about: {
+    label: "About",
+    path: "/",
+  },
+  tools: {
+    label: "Tools",
+    path: "/tools/diceroller",
+    menu: rpgTools,
+  },
+  games: {
+    label: "Games",
+    path: "/games/vocabulary_builder",
+    menu: games,
+  },
+  admin: {
+    label: "Admin",
+    path: "/login",
+    menu: adminTools,
+  },
+};

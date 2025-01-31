@@ -13,23 +13,23 @@ export const Footer = ({
   return (
     <div className={`${styles.footer} gap-2`}>
       <IconButton
-        label="delete card"
+        aria-label="delete card"
         onClick={onDelete}
-        styles="justify-self-start"
+        className="justify-self-start"
       >
         <TrashIcon />
       </IconButton>
       <IconButton
-        label="download card"
+        aria-label="download card"
         onClick={onDownload}
-        styles="justify-self-center"
+        className="justify-self-center"
       >
         <DownloadIcon />
       </IconButton>
       <IconButton
-        label="download card"
+        aria-label="download card"
         onClick={onRefresh}
-        styles="justify-self-end"
+        className="justify-self-end"
       >
         <ReloadIcon />
       </IconButton>

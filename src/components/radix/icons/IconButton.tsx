@@ -5,23 +5,20 @@ import {
 
 export const IconButton = ({
   children,
+  className,
   onClick,
-  styles,
   variant = "ghost",
-  label,
+  ...props
 }: {
-  label: string;
   children: JSX.Element;
-  onClick: () => void;
-  styles?: string;
   variant?: IconButtonProps["variant"];
-}) => {
+} & IconButtonProps) => {
   return (
     <RadixIconButton
-      aria-label={label}
-      className={`cursor-pointer ${styles}`}
+      className={`cursor-pointer ${className ?? ""}`}
       onClick={onClick}
       variant={variant}
+      {...props}
     >
       {children}
     </RadixIconButton>

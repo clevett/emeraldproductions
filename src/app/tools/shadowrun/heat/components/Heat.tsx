@@ -90,14 +90,13 @@ export const Heat = () => {
           </div>
           <div className="grid gap-4 grid-flow-col auto-cols-min">
             <Button
-              aria-label="flip the card"
+              className="self-center min-w-[100px] max-w-[200px] h-full"
               onClick={() => roll(`2d6+(${modifier})`)}
-              styles="self-center min-w-[100px] max-w-[200px] h-full"
             >
               Roll Heat
             </Button>
             <IconButton
-              label="clear dice"
+              aria-label="clear dice"
               onClick={() => {
                 clear();
                 setCircumstances([]);

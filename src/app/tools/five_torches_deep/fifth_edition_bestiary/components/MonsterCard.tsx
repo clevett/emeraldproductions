@@ -59,18 +59,18 @@ export const MonsterCard = ({
   const showResist = immunities || resistances || vulnerabilities;
 
   const getRerollButton = ({
-    onClick,
+    label,
     name,
+    onClick,
   }: {
+    label: string;
     name: string;
     onClick: () => void;
   }) => {
     return (
-      <Button
-        onClick={onClick}
-        name={`${name}`}
-        icon={<ReloadIcon height="10px" width="10px" />}
-      />
+      <Button onClick={onClick} aria-label={`Reroll ${label}`}>
+        {`${name}`} <ReloadIcon height="10px" width="10px" />
+      </Button>
     );
   };
 
@@ -111,6 +111,7 @@ export const MonsterCard = ({
                 {getRerollButton({
                   onClick: () => setDamageTotal(roll(damage)),
                   name: `${damageTotal} (${damage})`,
+                  label: "damage",
                 })}
               </div>
               <div>
@@ -118,6 +119,7 @@ export const MonsterCard = ({
                 {getRerollButton({
                   onClick: () => setHitPoints(roll(hp.dice)),
                   name: `${hitPoints} (${hp.dice})`,
+                  label: "hit points",
                 })}
               </div>
             </div>
@@ -228,6 +230,7 @@ export const MonsterCard = ({
             {getRerollButton({
               onClick: () => setTreasure(getCoinList(goldRoll(hd))),
               name: `${treasure}`,
+              label: "treasure",
             })}
           </div>
         </div>

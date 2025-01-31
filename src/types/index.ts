@@ -1,4 +1,6 @@
 import { StaticImageData } from "next/image";
+export * from "./hardcover";
+export * from "./user";
 
 export type Link = {
   icon?: StaticImageData;
@@ -13,4 +15,7 @@ export type List = {
   path: string;
 };
 
-export * from "./hardcover";
+export type MenuSection = {
+  label: string;
+  list: Link[] | List[];
+};

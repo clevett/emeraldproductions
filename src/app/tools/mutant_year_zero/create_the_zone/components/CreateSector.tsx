@@ -18,5 +18,5 @@ export const CreateSector = () => {
     [threat]
   );
 
-  return <Button onClick={upsertSector} name="Create Sector" />;
+  return <Button onClick={upsertSector}>Create Sector</Button>;
 };

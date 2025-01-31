@@ -1,31 +1,20 @@
-import { Button as RadixButton } from "@radix-ui/themes";
+import { ButtonProps, Button as RadixButton } from "@radix-ui/themes";
 import buttonStyles from "./Button.module.css";
 
 export const Button = ({
   children,
-  color = "bg-green-800",
-  icon,
-  name,
-  onClick,
-  styles,
+  className,
+  ...props
 }: {
-  children?: React.ReactNode;
   color?: string;
-  icon?: React.ReactNode;
-  name?: string;
-  onClick: () => void;
-  styles?: string;
-}) => {
+} & ButtonProps) => {
   return (
     <RadixButton
-      aria-label={name}
-      className={`cursor-pointer ${color} shadow-lg rounded py-1 px-2 ${
+      className={`cursor-pointer shadow-lg rounded-md py-3 px-4 text-white text-base bg-green-950 ${
         buttonStyles.button
-      } ${styles ?? ""}`}
-      onClick={onClick}
+      } ${className ?? ""}`}
+      {...props}
     >
-      {icon}
-      {name}
       {children}
     </RadixButton>
   );

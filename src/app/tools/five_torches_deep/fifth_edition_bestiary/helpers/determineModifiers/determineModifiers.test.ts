@@ -1,5 +1,5 @@
 import determineModifiers from "./determineModifiers";
-import { ftdMonsters } from "../../../../data/ftdMonsters";
+import { ftdMonsters } from "@/data";
 
 describe("Given determineModifirs is called", () => {
   describe("when passed hd and monsterMath Object", () => {

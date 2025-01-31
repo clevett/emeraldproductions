@@ -24,9 +24,9 @@ export const DiceRoller = () => {
           <div className="flex flex-wrap flex-direction-row justify-between content-center gap-4 lg:gap-6">
             <DiceButtons roll={rollDice} />
             <IconButton
-              label="clear dice results"
+              aria-label="clear dice results"
+              className="self-center"
               onClick={clear}
-              styles="self-center"
               variant="ghost"
             >
               <ReloadIcon />

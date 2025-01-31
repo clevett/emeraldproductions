@@ -34,9 +34,8 @@ export const Footer = ({
       </span>
       <IconButton
         aria-label={`flip the card`}
-        label="flip card"
         onClick={onClick}
-        styles="justify-self-end"
+        className="justify-self-end"
       >
         <ChevronRightIcon />
       </IconButton>
