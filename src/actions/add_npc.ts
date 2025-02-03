@@ -19,6 +19,4 @@ export const addNpc = (formData: {
       },
     }),
   });
-
-  console.log("AddNpc");
 };
