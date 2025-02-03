@@ -25,10 +25,17 @@ export const Table = ({
         const aValue = columnIndex === 0 ? a.header : a.cell[columnIndex - 1];
         const bValue = columnIndex === 0 ? b.header : b.cell[columnIndex - 1];
 
+        const aValueStr = aValue.toString();
+        const bValueStr = bValue.toString();
+
         if (isAscending) {
-          return aValue > bValue ? 1 : -1;
+          return aValueStr.localeCompare(bValueStr, undefined, {
+            numeric: true,
+          });
         } else {
-          return aValue < bValue ? 1 : -1;
+          return bValueStr.localeCompare(aValueStr, undefined, {
+            numeric: true,
+          });
         }
       });
     }
