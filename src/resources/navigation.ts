@@ -46,6 +46,13 @@ const myzCreateTheZone = {
   icon: myzIcon,
 };
 
+const myzRoller = {
+  description: `A tool to roll dice for  Mutant Year Zero.`,
+  label: "Dice Roller",
+  path: "/tools/mutant_year_zero/roller",
+  icon: myzIcon,
+};
+
 const sotdlEncounterBuilder = {
   description: `A tool to help you create encounters for your Shadow of the Demon Lord campaign.`,
   label: "Encounter Builder",
@@ -110,8 +117,9 @@ export const systems = {
     driveThruId: "139453",
     tools: {
       createTheZone: myzCreateTheZone,
+      roller: myzRoller,
     },
-    list: [myzCreateTheZone],
+    list: [myzCreateTheZone, myzRoller],
   },
   sotdl: {
     title: "Shadow of the Demon Lord",

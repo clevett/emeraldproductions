@@ -45,6 +45,14 @@ export const metaMyzCreateZone = {
   title: "Create The Zone",
 };
 
+export const metaMyzDiceRoller = {
+  applicationName: "Mutant Year Zero Dice Roller",
+  authors,
+  description:
+    "A tool for rolling dice in the Mutant Year Zero table top role playing game.",
+  title: "MYZ Dice Roller",
+};
+
 export const metaSotdlEncounterBuilder = {
   applicationName: "Shadow of the Demon Lord Encounter Builder",
   authors,
