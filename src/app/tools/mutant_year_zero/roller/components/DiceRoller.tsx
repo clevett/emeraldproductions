@@ -2,6 +2,7 @@
 import { RecoilRoot } from "recoil";
 import { attributeSelector, skillSelector, gearSelector } from "../recoil";
 import { DiceCounter } from "./DiceCounter";
+import { Dicebox } from "./Dicebox";
 
 export const DiceRoller = () => {
   return (
@@ -24,16 +25,10 @@ export const DiceRoller = () => {
               />
             </div>
           </div>
-          {/* <Callout className="max-w-fit">
-            <span>
-              1–4 Fringe Zone Sectors, 5–8 Central Zone Sectors, 9+ Unusually
-              Dangerous Areas
-            </span>
-          </Callout> */}
         </div>
 
         <div className="flex flex-row gap-4 justify-center flex-wrap">
-          Content
+          <Dicebox />
         </div>
       </div>
     </RecoilRoot>

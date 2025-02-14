@@ -1,13 +1,14 @@
 "use client";
 import DiceParser from "@3d-dice/dice-parser-interface";
 import { useEffect, useState } from "react";
-import DiceBox, { Notation } from "@3d-dice/dice-box";
+import DiceBox from "@3d-dice/dice-box";
+import { Notation, RollResults, NotationObject } from "@/types/dice";
 
 export const useDiceRoller = () => {
   const [color, setColor] = useState("#086931");
   const [dicebox, setDicebox] = useState<DiceBox | undefined>(undefined);
   const [hasRolled, setHasRolled] = useState(false);
-  const [result, setResult] = useState<{ value: number } | null>(null);
+  const [result, setResult] = useState<RollResults | null>(null);
   const [canvasElement, setCanvasElement] = useState<
     HTMLCanvasElement | HTMLDivElement | null
   >(null);
@@ -26,7 +27,7 @@ export const useDiceRoller = () => {
   // create Dice Roll Parser to handle complex notations
   const DRP = new DiceParser();
 
-  const init = async (themeColor = "#086931") => {
+  const init = async (themeColor = color) => {
     const { default: Dicebox } = await import("@3d-dice/dice-box");
 
     const Dice = new Dicebox(
@@ -53,9 +54,7 @@ export const useDiceRoller = () => {
       // handle any rerolls
       const rerolls = DRP.handleRerolls(results);
       if (rerolls.length) {
-        rerolls.forEach((roll: typeof Notation) =>
-          dicebox.add(roll, roll.groupId)
-        );
+        rerolls.forEach((roll: Notation) => dicebox.add(roll, roll.groupId));
         return rerolls;
       }
       // if no rerolls needed then parse the final results
@@ -69,15 +68,23 @@ export const useDiceRoller = () => {
     };
   }
 
-  const roll = (notation: string, color?: string) => {
+  const roll = (
+    notation: string | Pick<NotationObject, "themeColor" | "sides" | "qty">[],
+    color?: NotationObject["themeColor"]
+  ) => {
     setIsRolling(true);
-    const parsedNotation = DRP.parseNotation(notation);
-    const diceBoxNotation = color
-      ? parsedNotation.map((n: { [key: string]: unknown }) => ({
-          ...n,
-          themeColor: color,
-        }))
-      : parsedNotation;
+
+    let diceBoxNotation = notation;
+
+    if (typeof notation === "string") {
+      const parsedNotation = DRP.parseNotation(notation);
+      diceBoxNotation = color
+        ? parsedNotation.map((n: { [key: string]: unknown }) => ({
+            ...n,
+            themeColor: color,
+          }))
+        : parsedNotation;
+    }
 
     if (hasRolled) {
       dicebox?.show().add(diceBoxNotation);
@@ -108,10 +115,10 @@ export const useDiceRoller = () => {
     color,
     setColor,
     clear,
-    dicebox,
     result,
     canvas,
     isLoading,
     isRolling,
+    hasRolled,
   };
 };

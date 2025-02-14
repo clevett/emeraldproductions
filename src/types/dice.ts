@@ -23,11 +23,11 @@ type DiceRoll = {
 };
 export type RollResults = {
   modifier: number;
+  mods?: Mods[];
   qty: Qty;
   rolls: DiceRoll[];
   side: Sides;
   value: number;
-  mods?: Mods[];
 };
 
 type Mods = {
@@ -39,14 +39,15 @@ type Mods = {
   type: "keep";
 };
 
-type NotationObject = {
+export type NotationObject = {
+  groupId?: number;
   id: number;
   mods: Mods[];
   qty: Qty;
   rolls: Roll[];
   sides: Sides;
+  themeColor?: Theme;
   value: number;
-  groupId?: number;
 };
 
 export type Notation = string | NotationObject | NotationObject[];
