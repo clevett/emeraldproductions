@@ -32,10 +32,10 @@ export const useMYZRoller = () => {
       `#dice-canvas`, // target DOM element to inject the canvas for rendering
       {
         assetPath: "/assets/dice-box/",
-        delay: 2,
+        delay: 1,
         lightIntensity: 0.9,
         scale: 4,
-        spinForce: 5,
+        spinForce: 2,
         startingHeight: 8,
         themeColor,
         throwForce: 6,
@@ -85,13 +85,12 @@ export const useMYZRoller = () => {
 
   const clear = () => {
     setResult(null);
-    setHasRolled(false);
     dicebox?.clear();
   };
 
   const canvas = (
     <canvas
-      className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
+      className="w-full h-80 pointer-events-none absolute z-10 bottom-0 left-0 "
       id="dice-canvas"
       ref={setCanvasElement}
     />

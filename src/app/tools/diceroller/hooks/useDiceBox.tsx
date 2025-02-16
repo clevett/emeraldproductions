@@ -37,11 +37,11 @@ export const useDiceBox = () => {
         assetPath: "/assets/dice-box/",
         delay: 2,
         lightIntensity: 0.9,
-        scale: 2.5,
-        spinForce: 3,
-        startingHeight: 4,
+        scale: 4,
+        spinForce: 5,
+        startingHeight: 8,
         themeColor,
-        throwForce: 5,
+        throwForce: 6,
       }
     );
 
@@ -71,7 +71,7 @@ export const useDiceBox = () => {
     };
   }
 
-  const roll = (notation: string | string[], color?: string) => {
+  const roll = (notation: string, color?: string) => {
     setIsRolling(true);
     const parsedNotation = DRP.parseNotation(notation);
     const diceBoxNotation = color
@@ -97,7 +97,7 @@ export const useDiceBox = () => {
 
   const canvas = (
     <canvas
-      className="w-xs h-full pointer-events-none absolute z-10 top-0 left-0"
+      className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
       id="dice-canvas"
       ref={setCanvasElement}
     />

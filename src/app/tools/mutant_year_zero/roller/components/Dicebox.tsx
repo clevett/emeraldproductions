@@ -9,7 +9,7 @@ import { useMYZRoller } from "@/app/tools/diceroller/hooks";
 import { RollResults } from "@/types/dice";
 
 export const Dicebox = () => {
-  const { roll, clear, isLoading, isRolling, result, canvas } = useMYZRoller();
+  const { roll, clear, isLoading, result, canvas } = useMYZRoller();
   const attribute = useRecoilValue(attributeSelector);
   const skill = useRecoilValue(skillSelector);
   const gear = useRecoilValue(gearSelector);
