@@ -18,7 +18,7 @@ type DiceRoll = {
   result: number;
   rollId: number;
   sides: Sides;
-  theme: Theme;
+  themeColor: Theme;
   value: number;
 };
 export type RollResults = {
@@ -41,13 +41,13 @@ type Mods = {
 
 export type NotationObject = {
   groupId?: number;
-  id: number;
-  mods: Mods[];
+  id?: number;
+  mods?: Mods[];
   qty: Qty;
-  rolls: Roll[];
+  rolls?: Roll[];
   sides: Sides;
   themeColor?: Theme;
-  value: number;
+  value?: number;
 };
 
 export type Notation = string | NotationObject | NotationObject[];

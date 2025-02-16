@@ -24,5 +24,7 @@ declare module "@3d-dice/dice-box" {
     roll(notation: Notation): this;
     clear(): void;
     onRollComplete: (results: RollResults[]) => void;
+
+    getRollResults: () => RollResults[];
   }
 }

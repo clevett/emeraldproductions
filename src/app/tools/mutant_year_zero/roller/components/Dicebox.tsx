@@ -1,31 +1,29 @@
 import { useRecoilValue } from "recoil";
 
-import { useDiceRoller } from "@/app/tools/diceroller/hooks/useDiceBox";
-import { Button } from "@/components";
 import { Spinner } from "@radix-ui/themes";
+
 import { attributeSelector, gearSelector, skillSelector } from "../recoil";
 
+import { Button } from "@/components";
+import { useMYZRoller } from "@/app/tools/diceroller/hooks";
+import { RollResults } from "@/types/dice";
+
 export const Dicebox = () => {
+  const { roll, clear, isLoading, isRolling, result, canvas } = useMYZRoller();
   const attribute = useRecoilValue(attributeSelector);
   const skill = useRecoilValue(skillSelector);
   const gear = useRecoilValue(gearSelector);
 
-  const { roll, isLoading, canvas, clear, hasRolled, dicebox } =
-    useDiceRoller();
-
   const rollDice = () => {
-    if (hasRolled) {
-      clear();
-    }
-
-    const a = roll([
-      { qty: attribute, sides: 6, themeColor: "#facc15" },
-      { qty: skill, sides: 6, themeColor: "#84cc16" },
-      { qty: gear, sides: 6, themeColor: "#000000" },
-    ]);
-
-    console.log(a);
+    roll({
+      skill,
+      attribute,
+      gear,
+    });
+    return roll;
   };
+
+  console.log("result", result);
 
   return (
     <>
@@ -35,7 +33,37 @@ export const Dicebox = () => {
         </div>
       ) : (
         <div className="grid justify-center gap-4 sm:gap-6 w-full">
-          <Button onClick={rollDice}>Roll</Button>
+          <div className="grid grid-flow-col justify-center gap-4 sm:gap-6 w-full">
+            <Button className="py-3 px-4" onClick={rollDice}>
+              Roll
+            </Button>
+
+            <Button className="py-3 px-4" onClick={clear}>
+              Clear
+            </Button>
+          </div>
+
+          {result?.length && (
+            <div className="grid gap-4 grid-flow-col grid-cols-3 w-full">
+              {result.map((r, index) => (
+                <div key={index} className="flex flex-col flex-wrap gap-2">
+                  {r.rolls.map(
+                    (roll: RollResults["rolls"][0], index: number) => (
+                      <div
+                        key={roll.id ?? index}
+                        className={
+                          "grid justify-center  items-center rounded-lg h-[30px] w-[30px] " +
+                          `bg-[${roll.themeColor}]`
+                        }
+                      >
+                        <span className="font-bold">{roll.value}</span>
+                      </div>
+                    )
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
       {canvas}

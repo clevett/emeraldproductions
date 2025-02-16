@@ -26,7 +26,7 @@ export const DiceCounter = ({
   };
 
   const styles =
-    "text-lg font-bold p-6 rounded disabled:bg-gray-500 disabled:cursor-not-allowed min-w-[60px] min-h-[60px] sm:min-w-[50px] sm:min-h-[50px] ";
+    "text-lg font-bold p-6 rounded disabled:bg-gray-500 disabled:cursor-not-allowed min-w-[50px] min-h-[50px] ";
 
   return (
     <div className="grid gap-4 grid-flow-col auto-cols-max justify-center items-center grid-cols-[1fr_minmax(2em,_1fr)_1fr]">

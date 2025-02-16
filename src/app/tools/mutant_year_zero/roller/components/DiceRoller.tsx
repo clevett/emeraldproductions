@@ -13,15 +13,15 @@ export const DiceRoller = () => {
             <div className="flex flex-wrap gap-6 grid-flow-col auto-cols-max justify-center">
               <DiceCounter
                 selector={attributeSelector}
-                className="bg-yellow-400 hover:bg-yellow-600 text-neutral-950"
+                className="bg-yellow-400 hover:bg-yellow-700 text-neutral-950"
               />
               <DiceCounter
                 selector={skillSelector}
-                className="bg-lime-500 hover:bg-lime-700 text-neutral-950"
+                className="bg-green-700 hover:bg-green-500 text-neutral-950"
               />
               <DiceCounter
                 selector={gearSelector}
-                className="bg-neutral-950 hover:bg-neutral-700"
+                className="bg-neutral-900 hover:bg-neutral-500"
               />
             </div>
           </div>

@@ -1,15 +1,15 @@
 "use client";
-import DiceParser from "@3d-dice/dice-parser-interface";
+
 import { useEffect, useState } from "react";
-import DiceBox, { Notation } from "@3d-dice/dice-box";
+import DiceBox from "@3d-dice/dice-box";
+import { RollResults } from "@/types/dice";
 
 const defaultColor = "#086931";
 
-export const useDiceBox = () => {
+export const useMYZRoller = () => {
   const [color, setColor] = useState(defaultColor);
   const [dicebox, setDicebox] = useState<DiceBox | undefined>(undefined);
-  const [hasRolled, setHasRolled] = useState(false);
-  const [result, setResult] = useState<{ value: number } | null>(null);
+  const [result, setResult] = useState<RollResults[] | null>(null);
   const [canvasElement, setCanvasElement] = useState<
     HTMLCanvasElement | HTMLDivElement | null
   >(null);
@@ -25,9 +25,6 @@ export const useDiceBox = () => {
     }
   }, [canvasElement, dicebox]);
 
-  // create Dice Roll Parser to handle complex notations
-  const DRP = new DiceParser();
-
   const init = async (themeColor = defaultColor) => {
     const { default: Dicebox } = await import("@3d-dice/dice-box");
 
@@ -37,11 +34,11 @@ export const useDiceBox = () => {
         assetPath: "/assets/dice-box/",
         delay: 2,
         lightIntensity: 0.9,
-        scale: 2.5,
-        spinForce: 3,
-        startingHeight: 4,
+        scale: 4,
+        spinForce: 5,
+        startingHeight: 8,
         themeColor,
-        throwForce: 5,
+        throwForce: 6,
       }
     );
 
@@ -52,40 +49,37 @@ export const useDiceBox = () => {
   if (dicebox) {
     // This method is triggered whenever dice are finished rolling
     dicebox.onRollComplete = (results) => {
-      // handle any rerolls
-      const rerolls = DRP.handleRerolls(results);
-      if (rerolls.length) {
-        rerolls.forEach((roll: typeof Notation) =>
-          dicebox.add(roll, roll.groupId)
-        );
-        return rerolls;
-      }
-      // if no rerolls needed then parse the final results
-      if (results[0].mods && results[0].mods.length > 0) {
-        const finalResults = DRP.parseFinalResults(results);
-        setResult(finalResults);
-      } else {
-        setResult(results[0]);
-      }
+      setResult(results);
       setIsRolling(false);
     };
   }
 
-  const roll = (notation: string | string[], color?: string) => {
+  const roll = ({
+    skill,
+    attribute,
+    gear,
+  }: {
+    skill?: number;
+    attribute: number;
+    gear?: number;
+  }) => {
     setIsRolling(true);
-    const parsedNotation = DRP.parseNotation(notation);
-    const diceBoxNotation = color
-      ? parsedNotation.map((n: { [key: string]: unknown }) => ({
-          ...n,
-          themeColor: color,
-        }))
-      : parsedNotation;
 
-    if (hasRolled) {
-      dicebox?.show().add(diceBoxNotation);
-    } else {
-      dicebox?.show().roll(diceBoxNotation);
-      setHasRolled(true);
+    //@ts-expect-error ignore
+    dicebox?.roll(`${attribute}d6>5`, {
+      themeColor: "#f0b100",
+    });
+
+    if (skill) {
+      //@ts-expect-error ignore
+      dicebox?.add(`${skill}d6>5`, {
+        themeColor: "#008236",
+      });
+    }
+
+    if (gear) {
+      //@ts-expect-error ignore
+      dicebox?.add(`${gear}d6>5`, { themeColor: "#0a0a0a" });
     }
   };
 
@@ -97,7 +91,7 @@ export const useDiceBox = () => {
 
   const canvas = (
     <canvas
-      className="w-xs h-full pointer-events-none absolute z-10 top-0 left-0"
+      className="w-full h-full pointer-events-none absolute z-10 top-0 left-0"
       id="dice-canvas"
       ref={setCanvasElement}
     />

@@ -10,13 +10,13 @@ import {
   Switch,
   Loading,
 } from "@/components";
-import { useDiceRoller } from "@/app/tools/diceroller/hooks/useDiceBox";
+import { useDiceBox } from "@/app/tools/diceroller/hooks/useDiceBox";
 
 type Circumstance = (typeof heat)[0];
 
 export const Heat = () => {
   const [circumstances, setCircumstances] = useState<Circumstance[]>([]);
-  const { roll, isLoading, canvas, result, clear, isRolling } = useDiceRoller();
+  const { roll, isLoading, canvas, result, clear, isRolling } = useDiceBox();
 
   const switchToggle = (e: Circumstance) => {
     if (circumstances.includes(e)) {

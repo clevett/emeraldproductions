@@ -5,11 +5,11 @@ import { SketchPicker } from "react-color";
 import { Spinner } from "@radix-ui/themes";
 import { IconButton, ReloadIcon } from "@/components";
 
-import { useDiceRoller } from "../hooks/useDiceBox";
+import { useDiceBox } from "../hooks/useDiceBox";
 import { DiceButtons, NotationInput } from "./";
 
 export const DiceRoller = () => {
-  const { roll, isLoading, canvas, clear, setColor, color } = useDiceRoller();
+  const { roll, isLoading, canvas, clear, setColor, color } = useDiceBox();
   const [isOpen, setIsOpen] = useState(false);
   const rollDice = (notation: string) => roll(notation, color);
 
