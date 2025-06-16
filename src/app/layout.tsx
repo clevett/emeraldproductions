@@ -8,6 +8,7 @@ import { NavigationMenu, Contact } from "@/components";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 import logo from "@/images/logo.png";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER ?? ""} />
       <body className={`antialiased min-w-[375px]`}>
         <Theme appearance="dark">
           <div className="grid grid-rows-[auto_1fr_auto] h-full w-full min-h-dvh gap-4 overflow-hidden">
@@ -62,6 +64,7 @@ export default function RootLayout({
           </div>
         </Theme>
       </body>
+      <GoogleAnalytics gaId={process.env.GOOGLE_GA4 ?? ""} />
     </html>
   );
 }
