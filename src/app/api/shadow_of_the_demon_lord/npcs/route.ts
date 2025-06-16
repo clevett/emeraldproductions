@@ -16,5 +16,6 @@ export async function GET() {
     Response.json({ message: `Error: ${error}` });
   } finally {
     await client.close();
+    return Response.json({ message: "Connection closed" });
   }
 }
