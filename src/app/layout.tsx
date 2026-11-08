@@ -38,8 +38,9 @@ export default function RootLayout({
                     className="scale-70 grow-0 "
                     src={logo}
                     priority
-                    height={84}
+                    height={88}
                     width={200}
+                    style={{ height: "auto" }}
                   />
                 </Link>
               </div>
@@ -59,7 +60,7 @@ export default function RootLayout({
             <Analytics />
 
             <footer className="flex w-full py-4 sm:py-6 flex-col text-center">
-              <i>Emerald Productions, LLC 2024</i>
+              <i>Emerald Productions, LLC 2026</i>
             </footer>
           </div>
         </Theme>

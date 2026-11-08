@@ -1,15 +1,15 @@
 "use client";
 
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useAtom, useAtomValue } from "jotai";
 
 import { Table } from "@/components";
 
-import { dataSelector, selectedNPCsSelector } from "../recoil";
+import { dataSelector, selectedNPCsSelector } from "../state";
 import { Monster } from "../types";
 
 export const TableSelected = () => {
-  const [selected, setSelected] = useRecoilState(selectedNPCsSelector);
-  const data = useRecoilValue(dataSelector);
+  const [selected, setSelected] = useAtom(selectedNPCsSelector);
+  const data = useAtomValue(dataSelector);
 
   const updateSelected = (monster: Monster) => {
     const index = selected.findIndex((m) => m._id === monster._id);

@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
-import { useRecoilState } from "recoil";
+import { useAtom } from "jotai";
 
 import { getBaseNuyen } from "../helpers";
-import { nuyenBaseAtom } from "../recoil";
+import { nuyenBaseAtom } from "../state";
 import { Callout, Heading, Input } from "@/components";
 
 export const NegotiationHits = () => {
   const [value, setValue] = useState("0");
-  const [base, setBase] = useRecoilState(nuyenBaseAtom);
+  const [base, setBase] = useAtom(nuyenBaseAtom);
 
   const onSubmit = (value: string) => {
     const num = parseInt(value);

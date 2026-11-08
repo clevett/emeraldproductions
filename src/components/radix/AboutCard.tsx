@@ -6,9 +6,10 @@ type CardProps = {
   src: StaticImageData;
   styles?: string;
   title: string;
+  loading?: "eager" | "lazy";
 };
 
-export const AboutCard = ({ src, title, description, styles }: CardProps) => {
+export const AboutCard = ({ src, title, description, styles, loading }: CardProps) => {
   return (
     <Box
       className={`shadow-lg rounded-md grow ${styles}`}
@@ -20,6 +21,7 @@ export const AboutCard = ({ src, title, description, styles }: CardProps) => {
           <Image
             src={src}
             alt="A person with short hair wearing a jacket over a super hero costume looks to the sky"
+            loading={loading}
             style={{
               backgroundColor: "var(--gray-5)",
               display: "block",

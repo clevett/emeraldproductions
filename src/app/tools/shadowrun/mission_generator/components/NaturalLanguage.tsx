@@ -1,17 +1,17 @@
 "use client";
-import { useRecoilValue } from "recoil";
+import { useAtomValue } from "jotai";
 
 import { Options } from "@/data";
 
 import { getEmployer, getLocation, getMacGuffin, getJob } from "../helpers";
-import { missionAtomFamily } from "../recoil";
+import { missionAtomFamily } from "../state";
 
 export const NaturalLanguage = () => {
-  const location = useRecoilValue(missionAtomFamily(Options.LOCATION));
-  const employer = useRecoilValue(missionAtomFamily(Options.EMPLOYER));
-  const job = useRecoilValue(missionAtomFamily(Options.JOB));
-  const macguffin = useRecoilValue(missionAtomFamily(Options.MACGUFFIN));
-  const twist = useRecoilValue(missionAtomFamily(Options.TWIST));
+  const location = useAtomValue(missionAtomFamily(Options.LOCATION));
+  const employer = useAtomValue(missionAtomFamily(Options.EMPLOYER));
+  const job = useAtomValue(missionAtomFamily(Options.JOB));
+  const macguffin = useAtomValue(missionAtomFamily(Options.MACGUFFIN));
+  const twist = useAtomValue(missionAtomFamily(Options.TWIST));
 
   if (!location || !employer || !job || !macguffin || !twist) {
     return null;

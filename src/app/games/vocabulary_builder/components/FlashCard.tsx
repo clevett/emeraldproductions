@@ -1,9 +1,9 @@
 "use client";
-import { useRecoilState } from "recoil";
-import ReactCardFlip from "react-card-flip";
+import { useAtom } from "jotai";
+import { FlipCard } from "@/components/FlipCard";
 
 import { Card } from "./Card";
-import { cardSelector } from "../recoil/selectors";
+import { cardSelector } from "../state/selectors";
 import { Word } from "../types";
 
 export const FlashCard = ({
@@ -13,7 +13,7 @@ export const FlashCard = ({
   word: Word;
   cardChecker: () => void;
 }) => {
-  const [card, setCard] = useRecoilState(cardSelector(word));
+  const [card, setCard] = useAtom(cardSelector(word));
   const { isMatched, isRevealed } = card;
 
   const onFlip = () => {
@@ -23,10 +23,9 @@ export const FlashCard = ({
 
   return (
     <div onClick={onFlip}>
-      <ReactCardFlip
+      <FlipCard
         isFlipped={isRevealed || isMatched}
-        flipDirection="horizontal"
-        flipSpeedFrontToBack={0.3}
+        frontToBackDuration={0.3}
       >
         <Card>
           <span>?</span>
@@ -34,7 +33,7 @@ export const FlashCard = ({
         <Card isActive={isMatched}>
           <span>{word}</span>
         </Card>
-      </ReactCardFlip>
+      </FlipCard>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import ReactCardFlip from "react-card-flip";
+import { FlipCard } from "@/components/FlipCard";
 import { NPC } from "@/data";
 
 import { BackCard } from "./BackCard";
@@ -12,14 +12,14 @@ export const NpcCard = ({ npc }: { npc: NPC }) => {
   const handleClick = () => setIsFlipped(!isFlipped);
   return (
     <div className="flex flex-wrap" onClick={handleClick}>
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+      <FlipCard isFlipped={isFlipped}>
         <FrontCard npc={npc}>
           <Footer type={npc.type} onClick={handleClick} />
         </FrontCard>
         <BackCard npc={npc}>
           <Footer type={npc.type} onClick={handleClick} />
         </BackCard>
-      </ReactCardFlip>
+      </FlipCard>
     </div>
   );
 };

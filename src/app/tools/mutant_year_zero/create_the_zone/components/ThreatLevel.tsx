@@ -1,11 +1,11 @@
-import { useRecoilState } from "recoil";
+import { useAtom } from "jotai";
 
 import { Input } from "@/components";
 
-import { threatLevelAtom } from "../recoil";
+import { threatLevelAtom } from "../state";
 
 export const ThreatLevel = () => {
-  const [base, setBase] = useRecoilState(threatLevelAtom);
+  const [base, setBase] = useAtom(threatLevelAtom);
 
   return (
     <Input

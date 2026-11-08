@@ -1,7 +1,7 @@
 import { Subtitle } from "@/components";
 import { systems, metaSrMissionGenerator } from "@/resources";
 
-import { MissionGenerator } from "./components/MissionGenerator";
+import MissionGeneratorClient from "./components/MissionGeneratorClient";
 
 import type { Metadata } from "next";
 export const metadata: Metadata = metaSrMissionGenerator;
@@ -10,7 +10,7 @@ export default function MissionGeneratorPage() {
   return (
     <>
       <Subtitle mb="4">{label}</Subtitle>
-      <MissionGenerator />
+      <MissionGeneratorClient />
     </>
   );
 }

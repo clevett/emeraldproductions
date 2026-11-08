@@ -1,5 +1,5 @@
 import { getAllCategories } from "./get-all-categories";
-import { defaultLanguage } from "../recoil/defaults";
+import { defaultLanguage } from "../state/defaults";
 import { wordLists } from "../wordlists";
 
 describe("getAllCategories", () => {

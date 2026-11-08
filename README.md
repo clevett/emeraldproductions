@@ -18,6 +18,8 @@ Please use github Issues to report bugs and ask for feature requests.
 
 This a project used to experiment with new libraries.
 
+Interactive game and tool state uses [Jotai](https://jotai.org/), with a separate provider for each feature. The vocabulary game and mission generator render on the client because their initial data is randomized.
+
 ## Next
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).

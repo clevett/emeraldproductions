@@ -3,7 +3,7 @@ import { ToolContent } from "@/components";
 import { systems } from "@/resources";
 import { usePathname } from "next/navigation";
 
-export default function Layout({ children }: { children: JSX.Element }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { sr6e, sr5e } = systems;
   const isSR6e = !!sr6e.list

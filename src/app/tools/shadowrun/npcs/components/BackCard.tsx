@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import { Card } from "@/components";
 import { joinList } from "@/app/tools/utils";
 import { NPC } from "@/data";

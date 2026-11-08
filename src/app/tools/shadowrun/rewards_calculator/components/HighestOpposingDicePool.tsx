@@ -1,12 +1,12 @@
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { diceKarmaAtom, diceNuyenAtom, opposedDicePoolAtom } from "../recoil";
+import { useAtom, useSetAtom } from "jotai";
+import { diceKarmaAtom, diceNuyenAtom, opposedDicePoolAtom } from "../state";
 import { getDicePoolKarma, getDicePoolNuyen } from "../helpers";
 import { Heading, Input } from "@/components";
 
 export const HighestOpposingDicePool = () => {
-  const [dice, setDice] = useRecoilState(opposedDicePoolAtom);
-  const setKarma = useSetRecoilState(diceKarmaAtom);
-  const setNuyen = useSetRecoilState(diceNuyenAtom);
+  const [dice, setDice] = useAtom(opposedDicePoolAtom);
+  const setKarma = useSetAtom(diceKarmaAtom);
+  const setNuyen = useSetAtom(diceNuyenAtom);
 
   const onSubmit = (value: string) => {
     const num = parseInt(value);

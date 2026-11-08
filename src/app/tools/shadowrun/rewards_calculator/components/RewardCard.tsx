@@ -1,10 +1,10 @@
-import { useRecoilValue } from "recoil";
-import { selectNuyen, selectKarma } from "../recoil";
+import { useAtomValue } from "jotai";
+import { selectNuyen, selectKarma } from "../state";
 import { Card, Heading } from "@/components";
 
 export const RewardCard = () => {
-  const nuyen = useRecoilValue(selectNuyen);
-  const karma = useRecoilValue(selectKarma);
+  const nuyen = useAtomValue(selectNuyen);
+  const karma = useAtomValue(selectKarma);
 
   return (
     <Card type="business">

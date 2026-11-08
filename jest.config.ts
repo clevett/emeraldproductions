@@ -11,7 +11,7 @@ const createJestConfig = nextJest({
   dir: "./",
 });
 
-const config: Config = {
+const config = {
   testEnvironment: "jsdom",
 
   // All imported modules in your tests should be mocked automatically
@@ -197,6 +197,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+} satisfies Config;
 
 export default createJestConfig(config);

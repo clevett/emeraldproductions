@@ -1,20 +1,20 @@
 "use client";
 
 
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useAtom, useAtomValue } from "jotai";
 
 import { Select } from "@/components";
 
-import { dataSelector, filtersSelector, searchNPCsSelector } from "../recoil";
+import { dataSelector, filtersSelector, searchNPCsSelector } from "../state";
 import { Monster, Filters as FilterType } from "../types";
 
 import { filterMonsters } from "../utils/filter_monster";
 
 export const Filters = () => {
-  const [, setSearchResults] = useRecoilState(searchNPCsSelector);
-  const [filters, setFilters] = useRecoilState(filtersSelector);
+  const [, setSearchResults] = useAtom(searchNPCsSelector);
+  const [filters, setFilters] = useAtom(filtersSelector);
 
-  const data = useRecoilValue(dataSelector);
+  const data = useAtomValue(dataSelector);
 
   const list = ["all"];
 

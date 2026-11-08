@@ -1,13 +1,13 @@
 "use client";
 
-import { useRecoilValue } from "recoil";
+import { useAtomValue } from "jotai";
 
-import { levelSelector } from "../recoil";
+import { levelSelector } from "../state";
 import { Difficulty } from "../types";
 import { getDangerText } from "../utils";
 
 export const DifficultRange = ({ difficulty }: { difficulty: Difficulty }) => {
-  const level = useRecoilValue(levelSelector);
+  const level = useAtomValue(levelSelector);
 
   return <p className="text-center">{getDangerText(level, difficulty)}</p>;
 };

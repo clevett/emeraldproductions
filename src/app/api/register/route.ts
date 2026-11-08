@@ -2,10 +2,11 @@ import { MongoClient } from "mongodb";
 import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const client = new MongoClient(process.env.ATLAS_URI_USERS ?? "");
   const { user } = await request.json();
+  let client: MongoClient | undefined;
 
   try {
+    client = new MongoClient(process.env.ATLAS_URI_USERS ?? "");
     await client.connect();
 
     const database = client.db(`${process.env.MONGO_DB}`);
@@ -29,8 +30,9 @@ export async function POST(request: NextRequest) {
 
     return Response.json({ data });
   } catch (error) {
-    Response.json({ message: `Error: ${error}` });
+    console.error("User registration failed:", error);
+    return Response.json({ message: "User registration failed" }, { status: 500 });
   } finally {
-    await client.close();
+    await client?.close();
   }
 }

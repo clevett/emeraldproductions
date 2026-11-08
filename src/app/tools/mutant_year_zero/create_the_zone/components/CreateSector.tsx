@@ -2,21 +2,18 @@
 import { Button } from "@/components";
 import { nanoid } from "nanoid";
 
-import { useRecoilCallback, useRecoilValue } from "recoil";
+import { useAtomValue, useStore } from "jotai";
 import { getSector } from "../helpers";
-import { threatLevelAtom, selectSectorById } from "../recoil";
+import { threatLevelAtom, selectSectorById } from "../state";
 
 export const CreateSector = () => {
-  const threat = useRecoilValue(threatLevelAtom);
+  const threat = useAtomValue(threatLevelAtom);
+  const store = useStore();
 
-  const upsertSector = useRecoilCallback(
-    ({ set }) =>
-      () => {
-        const id = nanoid();
-        set(selectSectorById(id), getSector(id, threat));
-      },
-    [threat]
-  );
+  const upsertSector = () => {
+    const id = nanoid();
+    store.set(selectSectorById(id), getSector(id, threat));
+  };
 
   return <Button onClick={upsertSector}>Create Sector</Button>;
 };

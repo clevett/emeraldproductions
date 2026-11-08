@@ -1,5 +1,5 @@
 "use client";
-import { RecoilRoot } from "recoil";
+import { Provider } from "jotai";
 
 import { Callout, Heading } from "@/components";
 
@@ -9,7 +9,7 @@ import { Sectors } from "./Sectors";
 
 export const Sector = () => {
   return (
-    <RecoilRoot>
+    <Provider>
       <div className="grid gap-4 sm:gap-6 auto-rows-max items-start justify-items-center w-full h-full">
         <div className="grid gap-4 sm:gap-6">
           <div className="flex flex-wrap flex-row gap-4 justify-center sm:justify-between">
@@ -31,6 +31,6 @@ export const Sector = () => {
           <Sectors />
         </div>
       </div>
-    </RecoilRoot>
+    </Provider>
   );
 };

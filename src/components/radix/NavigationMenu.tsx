@@ -37,6 +37,12 @@ export const NavigationMenu = async () => {
         </RadixNavigationMenu.Item>
 
         <RadixNavigationMenu.Item>
+          <Link href="/contact" className={listStyle}>
+            Contact
+          </Link>
+        </RadixNavigationMenu.Item>
+
+        <RadixNavigationMenu.Item>
           <RadixNavigationMenu.Trigger className={menuStyle}>
             {tools.label}
             {Caret}

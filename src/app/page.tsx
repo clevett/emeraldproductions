@@ -13,7 +13,12 @@ export const metadata: Metadata = about;
 
 const cardNodes = cards.map((props, index) => {
   return (
-    <AboutCard key={`skill-card-${index}`} {...props} styles={styles.cards} />
+    <AboutCard
+      key={`skill-card-${index}`}
+      {...props}
+      styles={styles.cards}
+      loading={index === 0 ? "eager" : "lazy"}
+    />
   );
 });
 
@@ -29,7 +34,7 @@ export default function Home() {
         <div className="grid content-center gap-4 max-w-md">
           <Heading as="h2">Caden Levett</Heading>
           <Text as="p" size="3">
-            Front-end developer specializing in software for table role playing
+            Full-stack developer specializing in software for table role playing
             games. I have an interest in accessibility, user experience, and
             project management. As a member of a team of engineers, I use my
             well-developed information organization and communications skills to
@@ -40,14 +45,14 @@ export default function Home() {
 
       <div className="flex justify-center flex-wrap gap-8">{cardNodes}</div>
 
-      <div className="grid justify-center gap-8">
+      {/* <div className="grid justify-center gap-8">
         <Bookshelf />
-      </div>
+      </div> */}
 
       <div className="grid justify-center gap-8">
         <div className="flex flex-col flex-wrap gap-5 lg:gap-2">
           <Heading className="text-center" as="h3">
-            Podcasts / Media / Creator
+            Podcasts / Media
           </Heading>
           <ul className="flex flex-row flex-wrap justify-center gap-5 lg:gap-2">
             {media.map(
@@ -66,19 +71,23 @@ export default function Home() {
                       </div>
                     }
                     trigger={
-                      <Link href={src} target="_blank">
+                      <Link
+                        href={src}
+                        target="_blank"
+                        className="relative block h-[200px] w-[200px]"
+                      >
                         <Image
-                          className="rounded-l-sm rounded-r-md h-full"
+                          className="rounded-l-sm rounded-r-md object-contain"
                           alt={title}
                           src={icon}
-                          height={100}
-                          width={200}
+                          fill
+                          sizes="200px"
                         />
                       </Link>
                     }
                   />
                 </li>
-              )
+              ),
             )}
           </ul>
         </div>
