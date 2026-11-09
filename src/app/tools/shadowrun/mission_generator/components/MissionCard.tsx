@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 
-import { useRecoilState } from "recoil";
+import { useAtom } from "jotai";
 
 import { Option, Options } from "@/data";
 import { capitalize } from "@/app/tools/utils";
 import { IconButton, Card, Heading, ReloadIcon } from "@/components";
 import { cross, gift, office, infinity, hipster, yen } from "@/images";
 
-import { selectMission } from "../recoil";
+import { selectMission } from "../state";
 import { getOption } from "../helpers";
 
 type MissionCardProps = {
@@ -16,7 +16,7 @@ type MissionCardProps = {
 };
 
 export const MissionCard = ({ item }: MissionCardProps) => {
-  const [selected, setSelected] = useRecoilState(selectMission(item));
+  const [selected, setSelected] = useAtom(selectMission(item));
 
   const getIcon = (option: Option) => {
     switch (option) {

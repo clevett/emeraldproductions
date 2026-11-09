@@ -1,16 +1,16 @@
 "use client";
 
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useAtomValue, useSetAtom } from "jotai";
 
 import { fuzzySearch, SearchBar } from "@/components";
 
 import { Monster } from "../types";
-import { dataSelector, filtersSelector, searchNPCsSelector } from "../recoil";
+import { dataSelector, filtersSelector, searchNPCsSelector } from "../state";
 
 export const SearchNPCs = () => {
-  const setFilters = useSetRecoilState(filtersSelector);
-  const setSearchResults = useSetRecoilState(searchNPCsSelector);
-  const data = useRecoilValue(dataSelector);
+  const setFilters = useSetAtom(filtersSelector);
+  const setSearchResults = useSetAtom(searchNPCsSelector);
+  const data = useAtomValue(dataSelector);
 
   const onTermSubmit = (term: string) => {
     const keys = ["name", "difficulty", "descriptor", "source"];

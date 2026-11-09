@@ -1,4 +1,4 @@
-import { defaultLanguage } from "../recoil/defaults";
+import { defaultLanguage } from "../state/defaults";
 import { getRandomCategory } from "./get-random-category";
 
 describe("getRandomCategory", () => {

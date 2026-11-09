@@ -1,12 +1,12 @@
 "use client";
 import { Fireworks } from "fireworks-js";
 
-import { useRecoilValue } from "recoil";
-import { gameOverSelector } from "../recoil/selectors";
+import { useAtomValue } from "jotai";
+import { gameOverSelector } from "../state/selectors";
 import { useEffect, useState } from "react";
 
 export const useFireworks = () => {
-  const isGameOver = useRecoilValue(gameOverSelector);
+  const isGameOver = useAtomValue(gameOverSelector);
   const [fireworks, setFireworks] = useState<Fireworks | undefined>(undefined);
   const [canvasElement, setCanvasElement] = useState<
     HTMLCanvasElement | HTMLDivElement | null

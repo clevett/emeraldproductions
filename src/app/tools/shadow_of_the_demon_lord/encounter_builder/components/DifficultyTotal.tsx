@@ -1,13 +1,13 @@
 "use client";
 
-import { useRecoilValue } from "recoil";
+import { useAtomValue } from "jotai";
 
-import { difficultyTotalSelector, levelSelector } from "../recoil";
+import { difficultyTotalSelector, levelSelector } from "../state";
 import { getColor, getDanger } from "../utils";
 
 export const DifficultyTotal = () => {
-  const total = useRecoilValue(difficultyTotalSelector);
-  const level = useRecoilValue(levelSelector);
+  const total = useAtomValue(difficultyTotalSelector);
+  const level = useAtomValue(levelSelector);
 
   const range = getDanger(total, level);
 

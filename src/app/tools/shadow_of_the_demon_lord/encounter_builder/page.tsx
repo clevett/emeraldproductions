@@ -4,7 +4,7 @@ import { Subtitle } from "@/components";
 import { systems, metaSotdlEncounterBuilder } from "@/resources";
 
 import { EncounterBuilder as Builder } from "./components/EncounterBuilder";
-import { Recoil } from "./components/Recoil";
+import { EncounterState } from "./components/EncounterState";
 import { Monster } from "./types";
 export const metadata: Metadata = metaSotdlEncounterBuilder;
 
@@ -17,25 +17,17 @@ export default async function EncounterBuilder() {
       method: "GET",
     }
   );
+  if (!response.ok) {
+    throw new Error(`NPC lookup failed (HTTP ${response.status}); check server logs`);
+  }
   const { data }: { data: Monster[] | undefined } = await response.json();
-
-  const props: {
-    ids: Monster["_id"][];
-    [key: Monster["_id"]]: unknown;
-  } = {
-    ids: data?.map((monster) => monster._id) || [],
-  };
-
-  data?.forEach((monster) => {
-    props[monster._id] = monster;
-  });
 
   return (
     <>
       <Subtitle mb="4">{label}</Subtitle>
-      <Recoil {...props}>
+      <EncounterState monsters={data ?? []}>
         <Builder />
-      </Recoil>
+      </EncounterState>
     </>
   );
 }

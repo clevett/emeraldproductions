@@ -1,9 +1,10 @@
 import { MongoClient } from "mongodb";
 
 export async function GET() {
-  const client = new MongoClient(process.env.ATLAS_URI ?? "");
+  let client: MongoClient | undefined;
 
   try {
+    client = new MongoClient(process.env.ATLAS_URI ?? "");
     await client.connect();
 
     const database = client.db(`${process.env.MONGO_DB}`);
@@ -13,8 +14,9 @@ export async function GET() {
 
     return Response.json({ data });
   } catch (error) {
-    Response.json({ message: `Error: ${error}` });
+    console.error("NPC lookup failed:", error);
+    return Response.json({ message: "NPC lookup failed" }, { status: 500 });
   } finally {
-    await client.close();
+    await client?.close();
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useAtom, useAtomValue } from "jotai";
 
 import { ReloadIcon } from "@/components";
 
@@ -8,7 +8,7 @@ import {
   categorySelector,
   languageSelector,
   wordListSelector,
-} from "../recoil/selectors";
+} from "../state/selectors";
 import { Category, Language } from "../types";
 import {
   createLanguageDisplayName,
@@ -21,9 +21,9 @@ import { useCardChecker, useResetCards, useFireworks } from "../hooks";
 import { wordLists } from "../wordlists";
 
 export const Cards = () => {
-  const [language, setLanguage] = useRecoilState<Language>(languageSelector);
-  const [category, setCategory] = useRecoilState<Category>(categorySelector);
-  const list = useRecoilValue(wordListSelector);
+  const [language, setLanguage] = useAtom(languageSelector);
+  const [category, setCategory] = useAtom(categorySelector);
+  const list = useAtomValue(wordListSelector);
   const cardChecker = useCardChecker();
   const resetCards = useResetCards();
   const { canvas } = useFireworks();

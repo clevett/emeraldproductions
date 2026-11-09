@@ -1,13 +1,13 @@
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useAtomValue, useAtom } from "jotai";
 import { RunType } from "@/data";
 import { Callout, Heading, Slider } from "@/components";
 
-import { nuyenModifierPercentAtom, runTypeAtom } from "../recoil";
+import { nuyenModifierPercentAtom, runTypeAtom } from "../state";
 import { getCostModifier } from "../helpers";
 
 export const PercentModifierSlider = () => {
-  const type = useRecoilValue(runTypeAtom);
-  const [percent, setPercent] = useRecoilState(nuyenModifierPercentAtom);
+  const type = useAtomValue(runTypeAtom);
+  const [percent, setPercent] = useAtom(nuyenModifierPercentAtom);
 
   const description = () => {
     const text = (percent * 100).toFixed();

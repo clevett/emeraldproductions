@@ -1,12 +1,12 @@
-import { useRecoilState } from "recoil";
+import { useAtom } from "jotai";
 
 import { Switch } from "@/components";
 import { Nuyen } from "@/data";
 
-import { selectNuyenModifier } from "../recoil";
+import { selectNuyenModifier } from "../state";
 
 export const NuyenSwitch = ({ name, description }: Nuyen) => {
-  const [flag, setFlag] = useRecoilState(selectNuyenModifier(name));
+  const [flag, setFlag] = useAtom(selectNuyenModifier(name));
 
   return (
     <Switch

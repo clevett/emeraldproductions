@@ -1,14 +1,12 @@
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 
-import { Analytics } from "@vercel/analytics/react";
-
 import { NavigationMenu, Contact } from "@/components";
 
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import logo from "@/images/logo.png";
 
@@ -26,7 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER ?? ""} />
       <body className={`antialiased min-w-[375px]`}>
         <Theme appearance="dark">
           <div className="grid grid-rows-[auto_1fr_auto] h-full w-full min-h-dvh gap-4 overflow-hidden">
@@ -38,8 +35,9 @@ export default function RootLayout({
                     className="scale-70 grow-0 "
                     src={logo}
                     priority
-                    height={84}
+                    height={88}
                     width={200}
+                    style={{ height: "auto" }}
                   />
                 </Link>
               </div>
@@ -59,12 +57,12 @@ export default function RootLayout({
             <Analytics />
 
             <footer className="flex w-full py-4 sm:py-6 flex-col text-center">
-              <i>Emerald Productions, LLC 2024</i>
+              <i>Emerald Productions, LLC 2026</i>
             </footer>
           </div>
         </Theme>
       </body>
-      <GoogleAnalytics gaId={process.env.GOOGLE_GA4 ?? ""} />
+      <Analytics />
     </html>
   );
 }

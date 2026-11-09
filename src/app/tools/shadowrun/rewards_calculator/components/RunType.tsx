@@ -1,14 +1,14 @@
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useAtom, useSetAtom } from "jotai";
 
 import { Heading, RadioCards } from "@/components";
 import { types, RunType as Runs } from "@/data";
 
-import { nuyenModifierPercentAtom, runTypeAtom } from "../recoil";
+import { nuyenModifierPercentAtom, runTypeAtom } from "../state";
 import { getCostModifier } from "../helpers";
 
 export const RunType = () => {
-  const [type, setType] = useRecoilState(runTypeAtom);
-  const setPercent = useSetRecoilState(nuyenModifierPercentAtom);
+  const [type, setType] = useAtom(runTypeAtom);
+  const setPercent = useSetAtom(nuyenModifierPercentAtom);
 
   const onChange = (name: string) => {
     const run = types.find((t) => t.name === name);

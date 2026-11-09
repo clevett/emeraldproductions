@@ -1,4 +1,4 @@
-import { defaultLanguage } from "../recoil/defaults";
+import { defaultLanguage } from "../state/defaults";
 import { wordLists } from "../wordlists";
 import { getMatch } from "./get-match";
 

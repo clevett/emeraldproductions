@@ -1,7 +1,7 @@
 import { DriveThruLink, Title, OpenInNewWindowIcon } from "@/components";
 
 interface LayoutBodyProps {
-  children: JSX.Element | (JSX.Element | null)[] | null;
+  children: React.ReactNode;
   DriveThruId: string;
   subtitle?: string;
   title: string;

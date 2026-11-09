@@ -1,4 +1,4 @@
-import { defaultLanguage, defaultCategory } from "../recoil/defaults";
+import { defaultLanguage, defaultCategory } from "../state/defaults";
 import { getCategoryList } from "./get-category-list";
 
 describe("getCategoryList", () => {

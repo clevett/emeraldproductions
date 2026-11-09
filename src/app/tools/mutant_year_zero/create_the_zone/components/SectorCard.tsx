@@ -1,6 +1,6 @@
 "use client";
 import { toPng } from "html-to-image";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useAtom, useAtomValue } from "jotai";
 import { useRef, useCallback } from "react";
 import Image from "next/image";
 
@@ -8,13 +8,13 @@ import { Card, Heading } from "@/components";
 
 import { Footer } from "./Footer";
 import { getImg, getSector } from "../helpers";
-import { selectSectorById, threatLevelAtom } from "../recoil";
+import { selectSectorById, threatLevelAtom } from "../state";
 import { ZoneSector } from "../data";
 import styles from "./SectorCard.module.css";
 
 export const SectorCard = ({ id }: { id: ZoneSector["id"] }) => {
-  const [sector, setSector] = useRecoilState(selectSectorById(id));
-  const threatLevel = useRecoilValue(threatLevelAtom);
+  const [sector, setSector] = useAtom(selectSectorById(id));
+  const threatLevel = useAtomValue(threatLevelAtom);
 
   const ref = useRef<HTMLDivElement>(null);
 

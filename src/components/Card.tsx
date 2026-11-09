@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import cardStyles from "./Card.module.css";
 
 const types = {

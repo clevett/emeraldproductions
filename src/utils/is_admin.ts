@@ -8,5 +8,5 @@ export const verifyAdminPrivileges = async () => {
   if (!email) return false;
 
   const user = await getUserByEmail(email);
-  return user.isAdmin;
+  return user?.isAdmin ?? false;
 };

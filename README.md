@@ -18,6 +18,8 @@ Please use github Issues to report bugs and ask for feature requests.
 
 This a project used to experiment with new libraries.
 
+Interactive game and tool state uses [Jotai](https://jotai.org/), with a separate provider for each feature. The vocabulary game and mission generator render on the client because their initial data is randomized.
+
 ## Next
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
@@ -31,3 +33,12 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+For production mode, build the app first and then start it:
+
+```bash
+npm run build
+npm run start
+```
+
+The production server defaults to port 3000 and respects the `PORT` environment variable. Use `npm run dev` to see code changes without rebuilding.

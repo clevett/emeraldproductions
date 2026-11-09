@@ -1,11 +1,11 @@
-import { useSetRecoilState } from "recoil";
+import { useSetAtom } from "jotai";
 
-import { objectiveKarmaAtom } from "../recoil";
+import { objectiveKarmaAtom } from "../state";
 
 import { Heading, RadioCards } from "@/components";
 
 export const ObjectivesCompleted = () => {
-  const setKarma = useSetRecoilState(objectiveKarmaAtom);
+  const setKarma = useSetAtom(objectiveKarmaAtom);
 
   const objectives = [
     { name: "None", value: 0 },

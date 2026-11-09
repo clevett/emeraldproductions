@@ -1,29 +1,24 @@
-import { useRecoilCallback, useRecoilState, useRecoilValue } from "recoil";
+import { useAtom, useAtomValue, useStore } from "jotai";
 import {
   activeCardSelector,
   cardSelector,
   wordListSelector,
-} from "../recoil/selectors";
+} from "../state/selectors";
 import { Card } from "../types";
 import { shuffle } from "../helpers/shuffle";
 
 export const useResetCards = () => {
-  const activeCards = useRecoilValue(activeCardSelector);
-  const [words, setWords] = useRecoilState(wordListSelector);
+  const activeCards = useAtomValue(activeCardSelector);
+  const [words, setWords] = useAtom(wordListSelector);
+  const store = useStore();
 
-  const uplift = useRecoilCallback(
-    ({ set }) =>
-      async (cards: Card[]) => {
-        cards.forEach((c) =>
-          set(cardSelector(c.word), {
-            ...c,
-            isRevealed: false,
-            isMatched: false,
-          })
-        );
-      },
-    []
-  );
+  const uplift = (cards: Card[]) => {
+    cards.forEach((c) => store.set(cardSelector(c.word), {
+      ...c,
+      isRevealed: false,
+      isMatched: false,
+    }));
+  };
 
   const reshuffle = () => {
     if (words) {
@@ -32,5 +27,8 @@ export const useResetCards = () => {
     }
   };
 
-  return () => uplift(activeCards).then(reshuffle);
+  return () => {
+    uplift(activeCards);
+    reshuffle();
+  };
 };

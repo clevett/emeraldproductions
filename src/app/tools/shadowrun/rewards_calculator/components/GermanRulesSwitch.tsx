@@ -1,9 +1,9 @@
-import { useRecoilState } from "recoil";
-import { germanFlagAtom } from "../recoil";
+import { useAtom } from "jotai";
+import { germanFlagAtom } from "../state";
 import { Switch } from "@/components";
 
 export const GermanRulesSwitch = () => {
-  const [flag, setFlag] = useRecoilState(germanFlagAtom);
+  const [flag, setFlag] = useAtom(germanFlagAtom);
 
   return (
     <Switch

@@ -1,16 +1,10 @@
 "use client";
 import { Button } from "@/components";
-import { useRecoilCallback } from "recoil";
-import { selectMissionFamily } from "../recoil";
+import { useSetAtom } from "jotai";
+import { resetMissionAtom } from "../state";
 
 export const ResetButton = () => {
-  const resetOptions = useRecoilCallback(
-    ({ reset }) =>
-      () => {
-        reset(selectMissionFamily);
-      },
-    []
-  );
+  const resetOptions = useSetAtom(resetMissionAtom);
 
   return <Button onClick={() => resetOptions()}>Generate Mission</Button>;
 };

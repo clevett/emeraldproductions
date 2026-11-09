@@ -1,5 +1,5 @@
 "use client";
-import { RecoilRoot } from "recoil";
+import { Provider } from "jotai";
 
 import { Heading } from "@/components";
 
@@ -15,7 +15,7 @@ import { SurvivedSwitch } from "./SurvivedSwitch";
 
 export const RewardsCalculator = () => {
   return (
-    <RecoilRoot>
+    <Provider>
       <div className="flex flex-wrap gap-6 justify-center items-center auto-rows-min flex-col">
         <div className="flex flex-wrap justify-center  items-center gap-4">
           <RewardCard />
@@ -48,6 +48,6 @@ export const RewardsCalculator = () => {
           </div>
         </div>
       </div>
-    </RecoilRoot>
+    </Provider>
   );
 };

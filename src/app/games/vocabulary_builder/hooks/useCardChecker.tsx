@@ -1,27 +1,17 @@
-import { useRecoilCallback, useRecoilValue } from "recoil";
+import { useAtomValue, useStore } from "jotai";
 
 import { Card } from "../types";
-import { cardAtomFamily } from "../recoil/atoms";
-import { inPlayCardSelector } from "../recoil/selectors";
+import { cardAtomFamily } from "../state/atoms";
+import { inPlayCardSelector } from "../state/selectors";
 
 export const useCardChecker = () => {
-  const inPlayCards = useRecoilValue(inPlayCardSelector);
+  const inPlayCards = useAtomValue(inPlayCardSelector);
   const inPlayCount = inPlayCards.length;
+  const store = useStore();
 
-  const updateCards = useRecoilCallback(
-    ({ set }) =>
-      async (list: Card[], updateProps: Partial<Card>) => {
-        const updatedList = list.map((card) => ({
-          ...card,
-          ...updateProps,
-        }));
-
-        updatedList.forEach((card) => {
-          set(cardAtomFamily(card.word), card);
-        });
-      },
-    []
-  );
+  const updateCards = (list: Card[], updateProps: Partial<Card>) => {
+    list.forEach((card) => store.set(cardAtomFamily(card.word), { ...card, ...updateProps }));
+  };
 
   const setRevealedFalse = (list: Card[]) =>
     updateCards(list, { isRevealed: false });

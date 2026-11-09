@@ -1,13 +1,13 @@
 "use client";
-import { useRecoilState } from "recoil";
+import { useAtom } from "jotai";
 
 import { Select } from "@/components";
 import { levels } from "@/data";
 
-import { typeChecker, levelsChecker, levelSelector } from "../recoil";
+import { typeChecker, levelsChecker, levelSelector } from "../state";
 
 export const SelectLevel = () => {
-  const [level, setLevel] = useRecoilState(levelSelector);
+  const [level, setLevel] = useAtom(levelSelector);
 
   return (
     <Select

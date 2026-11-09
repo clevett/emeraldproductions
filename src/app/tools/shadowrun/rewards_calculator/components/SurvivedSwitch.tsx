@@ -1,9 +1,9 @@
-import { useRecoilState } from "recoil";
-import { survivedAtom } from "../recoil";
+import { useAtom } from "jotai";
+import { survivedAtom } from "../state";
 import { Switch } from "@/components";
 
 export const SurvivedSwitch = () => {
-  const [flag, setFlag] = useRecoilState(survivedAtom);
+  const [flag, setFlag] = useAtom(survivedAtom);
 
   return (
     <Switch

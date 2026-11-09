@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { Callout as RadixCallout } from "@radix-ui/themes";
 
