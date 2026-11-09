@@ -33,3 +33,12 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+For production mode, build the app first and then start it:
+
+```bash
+npm run build
+npm run start
+```
+
+The production server defaults to port 3000 and respects the `PORT` environment variable. Use `npm run dev` to see code changes without rebuilding.
